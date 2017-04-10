@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="omale" />
+        <meta name="copyright" content="omale" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content=", misc, " />
+
+<meta property="og:title" content="&#39;用Platform Builder 5.0命令行编译托管C#代码&#39; "/>
+<meta property="og:url" content="./yong-platform-builder-50ming-ling-xing-bian-yi-tuo-guan-cdai-ma.html" />
+<meta property="og:description" content="未分类 tags: C++ 微软 在微软的MSDN文档中，并没有介绍使用命令行工具编译托管代码，仅仅介绍了如何使用sources, dirs编译C/C++代码。但是我们每次通过命令行编译代码，最终都会列出一个这样的清单： BUILD: [00:0000000029screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ]                      Files BUILD: [00:0000000030screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Midl                     0 BUILD: [00:0000000031screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Resource                 1 BUILD: [00:0000000032screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Message                  0 BUILD: [00:0000000033screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Precomp Header           1 BUILD: [00:0000000034screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] C/Cpp/Cxx                1 BUILD: [00:0000000035screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Assembler                0 BUILD: [00:0000000036screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Static Libraries         0 BUILD: [00:0000000037screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Dll’s                    0 BUILD: [00:0000000038screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Exe’s                    0 BUILD: [00:0000000039screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Resx                     0 BUILD: [00:0000000040screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Csharp Targets           0 BUILD: [00:0000000041screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Other                    0 BUILD: [00:0000000042screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] BUILD: [00:0000000043screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Total                    3 我们可以注意到有一项这样的提示： BUILD: [00:0000000040screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Csharp Targets           0 C# Target？对！C# Target，如果Build System真的不支持编译托管代码，那么怎么会有这项提示呢，直觉中感觉似乎微软在Windows CE 5.0中增加了点什么。 今天无意浏览了每个makefile都会包含的在编译系统中地位极为重要makefile.def文件，发现其中有大量的关于managed代码的描述。例如： RELEASETYPE=DEFAULT !ELSEIF “＄(RELEASETYPE)” == “SDK” !ELSEIF “＄(RELEASETYPE)” == “OAK” !ELSEIF “＄(RELEASETYPE)” == “DDK” !ELSEIF “＄(RELEASETYPE)” == “MANAGED”   注意注意！！ !ELSEIF “＄(RELEASETYPE)” == “PLATFORM” !ELSEIF “＄(RELEASETYPE)” == “LOCAL” !ELSEIF “＄(RELEASETYPE)” == “CETK” !ELSEIF “＄(RELEASETYPE)” == “CUSTOM” 经过精密的理论推导，觉得Windows CE 5.0的Build System应该是可以直接编译C#代码的。那就自己动手来一把。 随便在某个平台下建立一个目录，就叫manage，然后用迅雷不及掩耳盗铃的速度就写好了hello.cs，内容当然是HelloWorld： using System; namespace Hello {     class Hello     {         public static void Main(String [] args)         {             System.Console.WriteLine(“Hello World”);         }              } } 然后建立makefile文件，内容当然只有永远的一行： !INCLUDE ＄(_MAKEENVROOT)\makefile.def 然后sources文件是重点，内容如下： __PROJROOT= E:\WINCE500\PBWorkspaces\Test\manage RELEASETYPE=MANAGED TARGETTYPE=MANAGED_EXE TARGETNAME=Hello MANAGED_REFERENCES = mscorlib.dll;System.dll SOURCES= \   hello.cs \ RELEASETYPE和TARGETTYPE都要设置成文档中没有说明的类型，MANAGED和MANAGED_EXE。（文档没说你怎么知道的？…我是看makefile.def里面看到的）。MANAGED_REFERENCES是其他DLL引用。要把mscorlib.dll和System.dll加进去，否则会抱错。中间是用分号间隔。 然后在PB里面Open Release Directory，CD到Manage目录，然后build –c，呵呵0 error 0 warning。然后再\oak\target\MANAGED\debug目录下顺利地找到的Hello.exe。 大功告成，事实证明。虽然文档没记载，在Platform Builder下编译managed Code还是可行的。" />
+<meta property="og:site_name" content="Zongjian&#39;s blog" />
+<meta property="og:article:author" content="omale" />
+<meta property="og:article:published_time" content="2005-08-01T18:31:38+00:00" />
+<meta name="twitter:title" content="&#39;用Platform Builder 5.0命令行编译托管C#代码&#39; ">
+<meta name="twitter:description" content="未分类 tags: C++ 微软 在微软的MSDN文档中，并没有介绍使用命令行工具编译托管代码，仅仅介绍了如何使用sources, dirs编译C/C++代码。但是我们每次通过命令行编译代码，最终都会列出一个这样的清单： BUILD: [00:0000000029screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ]                      Files BUILD: [00:0000000030screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Midl                     0 BUILD: [00:0000000031screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Resource                 1 BUILD: [00:0000000032screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Message                  0 BUILD: [00:0000000033screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Precomp Header           1 BUILD: [00:0000000034screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] C/Cpp/Cxx                1 BUILD: [00:0000000035screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Assembler                0 BUILD: [00:0000000036screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Static Libraries         0 BUILD: [00:0000000037screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Dll’s                    0 BUILD: [00:0000000038screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Exe’s                    0 BUILD: [00:0000000039screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Resx                     0 BUILD: [00:0000000040screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Csharp Targets           0 BUILD: [00:0000000041screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Other                    0 BUILD: [00:0000000042screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] BUILD: [00:0000000043screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Total                    3 我们可以注意到有一项这样的提示： BUILD: [00:0000000040screen.width/2)this.style.width=screen.width/2;’&gt;ROGC ] Csharp Targets           0 C# Target？对！C# Target，如果Build System真的不支持编译托管代码，那么怎么会有这项提示呢，直觉中感觉似乎微软在Windows CE 5.0中增加了点什么。 今天无意浏览了每个makefile都会包含的在编译系统中地位极为重要makefile.def文件，发现其中有大量的关于managed代码的描述。例如： RELEASETYPE=DEFAULT !ELSEIF “＄(RELEASETYPE)” == “SDK” !ELSEIF “＄(RELEASETYPE)” == “OAK” !ELSEIF “＄(RELEASETYPE)” == “DDK” !ELSEIF “＄(RELEASETYPE)” == “MANAGED”   注意注意！！ !ELSEIF “＄(RELEASETYPE)” == “PLATFORM” !ELSEIF “＄(RELEASETYPE)” == “LOCAL” !ELSEIF “＄(RELEASETYPE)” == “CETK” !ELSEIF “＄(RELEASETYPE)” == “CUSTOM” 经过精密的理论推导，觉得Windows CE 5.0的Build System应该是可以直接编译C#代码的。那就自己动手来一把。 随便在某个平台下建立一个目录，就叫manage，然后用迅雷不及掩耳盗铃的速度就写好了hello.cs，内容当然是HelloWorld： using System; namespace Hello {     class Hello     {         public static void Main(String [] args)         {             System.Console.WriteLine(“Hello World”);         }              } } 然后建立makefile文件，内容当然只有永远的一行： !INCLUDE ＄(_MAKEENVROOT)\makefile.def 然后sources文件是重点，内容如下： __PROJROOT= E:\WINCE500\PBWorkspaces\Test\manage RELEASETYPE=MANAGED TARGETTYPE=MANAGED_EXE TARGETNAME=Hello MANAGED_REFERENCES = mscorlib.dll;System.dll SOURCES= \   hello.cs \ RELEASETYPE和TARGETTYPE都要设置成文档中没有说明的类型，MANAGED和MANAGED_EXE。（文档没说你怎么知道的？…我是看makefile.def里面看到的）。MANAGED_REFERENCES是其他DLL引用。要把mscorlib.dll和System.dll加进去，否则会抱错。中间是用分号间隔。 然后在PB里面Open Release Directory，CD到Manage目录，然后build –c，呵呵0 error 0 warning。然后再\oak\target\MANAGED\debug目录下顺利地找到的Hello.exe。 大功告成，事实证明。虽然文档没记载，在Platform Builder下编译managed Code还是可行的。">
+
+        <title>&#39;用Platform Builder 5.0命令行编译托管C#代码&#39;  · Zongjian&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zongjian&#39;s blog - Full Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>Zongjian's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./yong-platform-builder-50ming-ling-xing-bian-yi-tuo-guan-cdai-ma.html"> '用Platform Builder 5.0命令行编译托管C#代码'  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <ul>
+<li>未分类
+tags:</li>
+<li>C++</li>
+<li>微软</li>
+</ul>
+<hr>
+<p>在微软的MSDN文档中，并没有介绍使用命令行工具编译托管代码，仅仅介绍了如何使用sources,&nbsp;dirs编译C/C++代码。但是我们每次通过命令行编译代码，最终都会列出一个这样的清单：<br>
+BUILD:&nbsp;[00:0000000029<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Files<br>
+BUILD:&nbsp;[00:0000000030<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Midl&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000031<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Resource&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+BUILD:&nbsp;[00:0000000032<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000033<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Precomp&nbsp;Header&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+BUILD:&nbsp;[00:0000000034<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;C/Cpp/Cxx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
+BUILD:&nbsp;[00:0000000035<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Assembler&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000036<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Static&nbsp;Libraries&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000037<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Dll&#8217;s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000038<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Exe&#8217;s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000039<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Resx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000040<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Csharp&nbsp;Targets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000041<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Other&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+BUILD:&nbsp;[00:0000000042<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]<br>
+BUILD:&nbsp;[00:0000000043<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3<br>
+我们可以注意到有一项这样的提示：<br>
+BUILD:&nbsp;[00:0000000040<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;&gt;ROGC&nbsp;]&nbsp;Csharp&nbsp;Targets&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+C#&nbsp;Target？对！C#&nbsp;Target，如果Build&nbsp;System真的不支持编译托管代码，那么怎么会有这项提示呢，直觉中感觉似乎微软在Windows&nbsp;CE&nbsp;5.0中增加了点什么。<br>
+今天无意浏览了每个makefile都会包含的在编译系统中地位极为重要makefile.def文件，发现其中有大量的关于managed代码的描述。例如：<br>
+RELEASETYPE=DEFAULT<br>
+!ELSEIF&nbsp;&#8220;＄(RELEASETYPE)&#8221;&nbsp;==&nbsp;&#8220;SDK&#8221;<br>
+!ELSEIF&nbsp;&#8220;＄(RELEASETYPE)&#8221;&nbsp;==&nbsp;&#8220;OAK&#8221;<br>
+!ELSEIF&nbsp;&#8220;＄(RELEASETYPE)&#8221;&nbsp;==&nbsp;&#8220;DDK&#8221;<br>
+!ELSEIF&nbsp;&#8220;＄(RELEASETYPE)&#8221;&nbsp;==&nbsp;&#8220;MANAGED&#8221;&nbsp;&nbsp;&nbsp;注意注意！！<br>
+!ELSEIF&nbsp;&#8220;＄(RELEASETYPE)&#8221;&nbsp;==&nbsp;&#8220;PLATFORM&#8221;<br>
+!ELSEIF&nbsp;&#8220;＄(RELEASETYPE)&#8221;&nbsp;==&nbsp;&#8220;LOCAL&#8221;<br>
+!ELSEIF&nbsp;&#8220;＄(RELEASETYPE)&#8221;&nbsp;==&nbsp;&#8220;CETK&#8221;<br>
+!ELSEIF&nbsp;&#8220;＄(RELEASETYPE)&#8221;&nbsp;==&nbsp;&#8220;CUSTOM&#8221;<br>
+经过精密的理论推导，觉得Windows&nbsp;CE&nbsp;5.0的Build&nbsp;System应该是可以直接编译C#代码的。那就自己动手来一把。<br>
+随便在某个平台下建立一个目录，就叫manage，然后用迅雷不及掩耳盗铃的速度就写好了hello.cs，内容当然是HelloWorld：<br>
+using&nbsp;System;</p>
+<p>namespace&nbsp;Hello<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Hello<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;void&nbsp;Main(String&nbsp;[]&nbsp;args)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Console.WriteLine(&#8220;Hello&nbsp;World&#8221;);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}</p>
+<p>然后建立makefile文件，内容当然只有永远的一行：<br>
+!INCLUDE&nbsp;＄(_MAKEENVROOT)\makefile.def<br>
+然后sources文件是重点，内容如下：</p>
+<p>__PROJROOT=&nbsp;E:\WINCE500\PBWorkspaces\Test\manage<br>
+RELEASETYPE=MANAGED<br>
+TARGETTYPE=MANAGED_EXE<br>
+TARGETNAME=Hello<br>
+MANAGED_REFERENCES&nbsp;=&nbsp;mscorlib.dll;System.dll</p>
+<p>SOURCES=&nbsp;\<br>
+&nbsp;&nbsp;hello.cs&nbsp;\</p>
+<p>RELEASETYPE和TARGETTYPE都要设置成文档中没有说明的类型，MANAGED和MANAGED_EXE。（文档没说你怎么知道的？…我是看makefile.def里面看到的）。MANAGED_REFERENCES是其他DLL引用。要把mscorlib.dll和System.dll加进去，否则会抱错。中间是用分号间隔。</p>
+<p>然后在PB里面Open&nbsp;Release&nbsp;Directory，CD到Manage目录，然后build&nbsp;–c，呵呵0&nbsp;error&nbsp;0&nbsp;warning。然后再\oak\target\MANAGED\debug目录下顺利地找到的Hello.exe。<br>
+大功告成，事实证明。虽然文档没记载，在Platform&nbsp;Builder下编译managed&nbsp;Code还是可行的。</p>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2005-08-01T18:31:38+00:00">Aug 1, 2005</time>
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#misc-ref">misc</a>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

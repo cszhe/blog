@@ -1,0 +1,35 @@
+---
+id: 9787
+title: My Experience inside Microsoft
+date: 2005-06-12T18:11:54+00:00
+author: omale
+layout: post
+guid: http://hezongjian.com/blog/?p=9787
+permalink: /2005/06/12/my-experience-inside-microsoft/
+categories:
+  - 未分类
+tags:
+  - 软件
+---
+这也是英语课上的演讲，最近几天软件学院的MS热又有抬头之势,贴上来吧，是我对Microsoft企业文化的变迁的一些感觉。
+
+My&nbsp;Experience&nbsp;inside&nbsp;Microsoft
+
+He&nbsp;Zongjian  
+0420080256  
+Dept.&nbsp;of&nbsp;Computer&nbsp;Science
+
+One&nbsp;year&nbsp;ago,&nbsp;I&nbsp;was&nbsp;lucky&nbsp;enough&nbsp;to&nbsp;have&nbsp;the&nbsp;chance&nbsp;to&nbsp;work&nbsp;in&nbsp;Microsoft&nbsp;as&nbsp;an&nbsp;intern.&nbsp;I&nbsp;stayed&nbsp;in&nbsp;Microsoft&nbsp;Global&nbsp;Technical&nbsp;Engineering&nbsp;Center&nbsp;in&nbsp;Shanghai&nbsp;for&nbsp;eight&nbsp;months&nbsp;and&nbsp;would&nbsp;like&nbsp;to&nbsp;share&nbsp;some&nbsp;experiences&nbsp;and&nbsp;my&nbsp;point&nbsp;of&nbsp;view&nbsp;of&nbsp;something&nbsp;inside&nbsp;Microsoft.  
+About&nbsp;the&nbsp;Employees  
+My&nbsp;overview&nbsp;impression&nbsp;on&nbsp;the&nbsp;employees&nbsp;in&nbsp;Microsoft&nbsp;is&nbsp;that&nbsp;they&nbsp;are&nbsp;both&nbsp;smart&nbsp;and&nbsp;diligent.&nbsp;  
+For&nbsp;one&nbsp;thing,&nbsp;most&nbsp;of&nbsp;the&nbsp;employees&nbsp;are&nbsp;top&nbsp;students&nbsp;when&nbsp;they&nbsp;are&nbsp;at&nbsp;school.&nbsp;It&nbsp;is&nbsp;well&nbsp;known&nbsp;that&nbsp;if&nbsp;one&nbsp;wants&nbsp;to&nbsp;work&nbsp;for&nbsp;Microsoft,&nbsp;he&nbsp;or&nbsp;she&nbsp;must&nbsp;pass&nbsp;at&nbsp;least&nbsp;nine&nbsp;interviews&nbsp;one&nbsp;after&nbsp;another.&nbsp;“Hire&nbsp;the&nbsp;best&nbsp;developers&nbsp;and&nbsp;create&nbsp;the&nbsp;best&nbsp;software”&nbsp;is&nbsp;always&nbsp;Microsoft&#8217;s&nbsp;goal.&nbsp;Microsoft&nbsp;guy&nbsp;is&nbsp;always&nbsp;the&nbsp;symbol&nbsp;of&nbsp;smart&nbsp;and&nbsp;intelligent.&nbsp;Most&nbsp;of&nbsp;the&nbsp;employees&nbsp;are&nbsp;quick&nbsp;learners.&nbsp;If&nbsp;they&nbsp;encounter&nbsp;something&nbsp;that&nbsp;they&nbsp;are&nbsp;not&nbsp;familiar,&nbsp;they&nbsp;can&nbsp;find&nbsp;related&nbsp;information&nbsp;on&nbsp;the&nbsp;web&nbsp;or&nbsp;in&nbsp;some&nbsp;books&nbsp;and&nbsp;learn&nbsp;the&nbsp;necessary&nbsp;knowledge.  
+For&nbsp;another,&nbsp;they&nbsp;are&nbsp;really&nbsp;hardworking&nbsp;guys.&nbsp;Once&nbsp;they&nbsp;are&nbsp;concentrated&nbsp;on&nbsp;something,&nbsp;they&nbsp;are&nbsp;difficult&nbsp;to&nbsp;be&nbsp;disturbed&nbsp;by&nbsp;external&nbsp;environment.&nbsp;Also,&nbsp;overtime&nbsp;is&nbsp;a&nbsp;piece&nbsp;of&nbsp;cake.&nbsp;If&nbsp;they&nbsp;some&nbsp;critical&nbsp;problems&nbsp;occur,&nbsp;a&nbsp;special&nbsp;group&nbsp;would&nbsp;be&nbsp;formed&nbsp;and&nbsp;all&nbsp;the&nbsp;people&nbsp;in&nbsp;the&nbsp;group&nbsp;would&nbsp;work&nbsp;together&nbsp;until&nbsp;it&nbsp;is&nbsp;solved.&nbsp;Sometimes,&nbsp;they&nbsp;even&nbsp;get&nbsp;up&nbsp;in&nbsp;the&nbsp;midnight&nbsp;and&nbsp;come&nbsp;to&nbsp;office&nbsp;to&nbsp;work&nbsp;when&nbsp;necessary.  
+In&nbsp;a&nbsp;word,&nbsp;hardworking&nbsp;and&nbsp;smart&nbsp;are&nbsp;two&nbsp;obvious&nbsp;features&nbsp;of&nbsp;the&nbsp;employee&nbsp;in&nbsp;Microsoft.  
+About&nbsp;the&nbsp;Culture  
+The&nbsp;culture&nbsp;in&nbsp;Microsoft&nbsp;is&nbsp;quite&nbsp;different&nbsp;from&nbsp;other&nbsp;companies.&nbsp;There&nbsp;is&nbsp;a&nbsp;tag&nbsp;in&nbsp;Microsoft:&nbsp;“feel&nbsp;free”.&nbsp;If&nbsp;you&nbsp;want&nbsp;to&nbsp;anything,&nbsp;you&nbsp;can&nbsp;feel&nbsp;free&nbsp;to&nbsp;do.&nbsp;In&nbsp;the&nbsp;morning,&nbsp;you&nbsp;can&nbsp;see&nbsp;all&nbsp;kinds&nbsp;of&nbsp;people&nbsp;in&nbsp;all&nbsp;kinds&nbsp;of&nbsp;clothes.&nbsp;But&nbsp;unlike&nbsp;other&nbsp;companies,&nbsp;none&nbsp;of&nbsp;them&nbsp;dress&nbsp;business&nbsp;suit.&nbsp;You&nbsp;can&nbsp;even&nbsp;see&nbsp;someone&nbsp;come&nbsp;to&nbsp;work&nbsp;with&nbsp;slippers.&nbsp;Because&nbsp;of&nbsp;the&nbsp;free&nbsp;culture&nbsp;here,&nbsp;all&nbsp;of&nbsp;the&nbsp;above&nbsp;does&nbsp;not&nbsp;matter.&nbsp;  
+Also,&nbsp;the&nbsp;decision&nbsp;is&nbsp;made&nbsp;very&nbsp;freely.&nbsp;When&nbsp;a&nbsp;conference&nbsp;or&nbsp;meeting&nbsp;is&nbsp;held,&nbsp;most&nbsp;of&nbsp;the&nbsp;people&nbsp;talk&nbsp;whatever&nbsp;they&nbsp;think.&nbsp;There&nbsp;is&nbsp;always&nbsp;a&nbsp;white&nbsp;board&nbsp;in&nbsp;the&nbsp;meeting&nbsp;room,&nbsp;no&nbsp;matter&nbsp;what&nbsp;title&nbsp;you&nbsp;are,&nbsp;you&nbsp;can&nbsp;stand&nbsp;up&nbsp;and&nbsp;come&nbsp;to&nbsp;the&nbsp;white&nbsp;board&nbsp;and&nbsp;state&nbsp;your&nbsp;opinion&nbsp;and&nbsp;even&nbsp;draw&nbsp;something&nbsp;to&nbsp;let&nbsp;yourself&nbsp;understood.&nbsp;Perhaps,&nbsp;the&nbsp;final&nbsp;decision&nbsp;is&nbsp;just&nbsp;what&nbsp;you&nbsp;think.&nbsp;So,&nbsp;the&nbsp;hierarchy&nbsp;is&nbsp;not&nbsp;obvious&nbsp;in&nbsp;Microsoft.&nbsp;Especially&nbsp;when&nbsp;making&nbsp;decision.&nbsp;  
+Microsoft&nbsp;in&nbsp;change  
+Almost&nbsp;30&nbsp;years&nbsp;has&nbsp;passed&nbsp;since&nbsp;Bill&nbsp;Gates&nbsp;and&nbsp;Paul&nbsp;Allen&nbsp;first&nbsp;started&nbsp;Microsoft.&nbsp;Microsoft&nbsp;has&nbsp;changed&nbsp;a&nbsp;lot&nbsp;in&nbsp;the&nbsp;30&nbsp;years.&nbsp;In&nbsp;the&nbsp;early&nbsp;years,&nbsp;as&nbsp;the&nbsp;text&nbsp;book&nbsp;described,&nbsp;Microsoft&nbsp;always&nbsp;represents&nbsp;passion&nbsp;and&nbsp;creativity.&nbsp;But&nbsp;now,&nbsp;Microsoft&nbsp;is&nbsp;a&nbsp;middle&nbsp;aged&nbsp;man.&nbsp;A&nbsp;lot&nbsp;of&nbsp;new&nbsp;culture&nbsp;and&nbsp;new&nbsp;ideas&nbsp;has&nbsp;been&nbsp;introduced&nbsp;to&nbsp;Microsoft.  
+The&nbsp;first&nbsp;change&nbsp;in&nbsp;Microsoft&#8217;s&nbsp;culture&nbsp;is&nbsp;“Custom&nbsp;Focus”.&nbsp;In&nbsp;Microsoft,&nbsp;you&nbsp;can&nbsp;almost&nbsp;see&nbsp;CFC&nbsp;anywhere;&nbsp;CFC&nbsp;stands&nbsp;for&nbsp;Customer&nbsp;Focused&nbsp;Culture.&nbsp;It&nbsp;means,&nbsp;as&nbsp;an&nbsp;engineer,&nbsp;we&nbsp;should&nbsp;consider&nbsp;what&nbsp;customers&nbsp;concern&nbsp;and&nbsp;improve&nbsp;the&nbsp;customers&#8217;&nbsp;satisfaction.&nbsp;This&nbsp;is&nbsp;quite&nbsp;different&nbsp;from&nbsp;the&nbsp;former&nbsp;idea&nbsp;“Hire&nbsp;the&nbsp;best&nbsp;developers&nbsp;and&nbsp;create&nbsp;the&nbsp;best&nbsp;software”.&nbsp;It&nbsp;is&nbsp;can&nbsp;be&nbsp;seen&nbsp;from&nbsp;the&nbsp;advertisement.&nbsp;Ten&nbsp;years&nbsp;ago,&nbsp;Microsoft&nbsp;use&nbsp;the&nbsp;sentence&nbsp;“Where&nbsp;do&nbsp;you&nbsp;want&nbsp;to&nbsp;go&nbsp;today?”&nbsp;as&nbsp;its&nbsp;advertisement.&nbsp;But&nbsp;now,&nbsp;it&nbsp;has&nbsp;been&nbsp;changed&nbsp;to&nbsp;“Your&nbsp;potential,&nbsp;our&nbsp;passion.”&nbsp;which&nbsp;also&nbsp;shows&nbsp;that&nbsp;Microsoft&nbsp;is&nbsp;more&nbsp;and&nbsp;more&nbsp;customer-focused&nbsp;rather&nbsp;than&nbsp;self-focused.&nbsp;  
+Conclusion  
+As&nbsp;many&nbsp;companies,&nbsp;Microsoft&nbsp;has&nbsp;its&nbsp;enterprise&nbsp;culture.&nbsp;The&nbsp;culture&nbsp;somewhat&nbsp;can&nbsp;represent&nbsp;the&nbsp;enterprise&nbsp;public&nbsp;image.&nbsp;And,&nbsp;it&nbsp;is&nbsp;changing.

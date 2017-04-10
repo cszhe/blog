@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="omale" />
+        <meta name="copyright" content="omale" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content=", misc, " />
+
+<meta property="og:title" content="理解Windows CE .NET的文件系统架构 "/>
+<meta property="og:url" content="./li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou.html" />
+<meta property="og:description" content="未分类 tags: Windows CE 概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。   如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关与文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。 Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中 …" />
+<meta property="og:site_name" content="Zongjian&#39;s blog" />
+<meta property="og:article:author" content="omale" />
+<meta property="og:article:published_time" content="2004-08-20T23:21:37+00:00" />
+<meta name="twitter:title" content="理解Windows CE .NET的文件系统架构 ">
+<meta name="twitter:description" content="未分类 tags: Windows CE 概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。   如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关与文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。 Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中 …">
+
+        <title>理解Windows CE .NET的文件系统架构  · Zongjian&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zongjian&#39;s blog - Full Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>Zongjian's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou.html"> 理解Windows CE .NET的文件系统架构  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <ul>
+<li>未分类
+tags:</li>
+<li>Windows CE</li>
+</ul>
+<hr>
+<p>概述:&nbsp;在本月的文章中，我们来看一下Windows&nbsp;CE&nbsp;.NET的文件系统，它的组件，以及如何扩展文件系统。</p>
+<p>&nbsp;&nbsp;如果你是微软Windows&nbsp;CE&nbsp;.NET的新闻组的常客，你会发现反复有关与文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows&nbsp;CE&nbsp;.NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。</p>
+<p>Windows&nbsp;CE&nbsp;.NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，&ldquo;\&rdquo;。在Windows&nbsp;CE&nbsp;.NET中，所有的文件和文件系统存在于一个以&ldquo;\&rdquo;作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows&nbsp;CE中，驱动器被挂接为根目录下的文件夹。因此，一个新添加到系统中的存储卡被以类似&ldquo;\Storage&nbsp;Card&rdquo;这样的名字挂接到根目录树下。</p>
+<p>FileSys.exe包括一些组件：</p>
+<p>&middot;ROM文件系统&nbsp;</p>
+<p>&middot;存储管理器&nbsp;</p>
+<p>&middot;对象存储&nbsp;</p>
+<p>对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册标在一些Windows&nbsp;CE设备中是必需的。在Windows&nbsp;CE&nbsp;4.0之前，它总是位于对象存储中。从Windows&nbsp;CE&nbsp;.NET开始，它可以作为一个文件存在与外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。</p>
+<p>基于RAM的文件系统通常直接连接到文件系统的唯一的根。也就是说，一个文件&ldquo;\MyFile.txt&rdquo;位于系统的根目录，也是基于RAM的文件系统的根。基于ROM的文件系统通常被连接到唯一的文件系统的&ldquo;\Windows&rdquo;目录。也就是说在ROM里面的所有文件都是&rdquo;\Windows&rdquo;目录下的只读文件。</p>
+<p>存储管理器是Windows&nbsp;CE&nbsp;.NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理其主要负责四件事：</p>
+<p>&middot;存储驱动程序.&nbsp;这是物理存储介质的设备驱动程序。有时候也被叫做&ldquo;块设备&rdquo;因为它们提供对块数据的随机地址访问。</p>
+<p>&middot;分区驱动程序.&nbsp;它管理一个存储设备上的多个分区。Windows&nbsp;CE&nbsp;.NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相通的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。</p>
+<p>&middot;文件系统驱动程序.&nbsp;这些驱动程序把存储设备上的数据组织成文件和文件夹。Windows&nbsp;CE&nbsp;.NET内建对一些文件不同文件系统的支持，包括为CD和DVD准备的UDFS，还有FATFS（包括对FAT32的支持）。4.2版本之后又引入了新的文件系统叫做事务安全的FAT文件系统（TFAT）。（我们在以后的文章中有可能会讨论这个，如果你有兴趣，请告诉我们）</p>
+<p>&middot;文件系统过滤器.&nbsp;文件系统过滤器在对文件系统的调用接触到文件系统之前事先处理它们。这样就允许一些特殊的处理，访问加密、压缩的数据或使用统计监视器。</p>
+<p>就像谚语说的，百闻不如一见，所以下面的图就描述了文件系统中各种组件的关系。</p>
+<p>图&nbsp;1.&nbsp;Windows&nbsp;CE&nbsp;文件系统概貌</p>
+<p>这个结构中值得注意的是文件系统过滤器只在存储管理器下并不能作用于ROM文件系统或对象存储中的RAM文件系统。目前为止，微软还没有提供过滤这些文件系统的方法。因此，本文详细讨论这幅图的右边部分。下图就对该部分放大仔细看看。</p>
+<p><a href="http://msdn.microsoft.com/library/en-us/dnembedded/html/embedded06172003_fig2.gif" target="_blank"><img border="0" onload="if(this.width>screen.width/2)this.width=screen.width/2;" src="http://msdn.microsoft.com/library/en-us/dnembedded/html/embedded06172003_fig2.gif" /&gt;</a></p>
+<p>图&nbsp;2.&nbsp;存储管理器和相关组件</p>
+<p>就像你在图上看到的，不是所有的文件系统驱动程序都使用物理设备，即使它们使用，也不一定使用分区驱动程序。这样就极大增强了灵活性，例如，网络重定向器，负责提供网络共享访问，使用WinSock与远程服务器通过网络交流，它就在Windows&nbsp;CE的设备中没有物理的磁盘。</p>
+<p>现在我们已经知道大多数模块的作用和它们之间的关系了。我们下一步看看系统是如何把它们都加载起来的。当操作系统启动的时候，NK.exe直接从ROM文件系统加载FileSys.exe。FileSys.exe然后使用ROM文件系统中的默认注册表来初始化注册表。（这里遇到一个鸡生蛋、蛋生鸡的问题，我们使用在磁盘上作为一个文件的蜂箱注册表，但是文件系统还没有被挂接。当我们后面谈到蜂箱注册表的时候，我们会研究操作系统是如何解决这个问题的。）</p>
+<p>FileSys.exe然后会读取注册表项来开始一系列的操作。罗列在注册表中的应用程序之一通常是Device.exe，设备管理器。设备管理器从HKEY_LOCAL_MACHINE\Driver\BuiltIn键下加载驱动程序。一般来说，所有内建的磁盘设备，例如硬盘，都在这个键下，所以块驱动就被加载了。块驱动带有一个特定的设备类标记，BLOCK_DRIVER_GUID&nbsp;{A4E7EDDA-E575-4252-9D6B-4195D48BB865}.</p>
+<p>FileSys.exe中的存储管理器注册了设备管理器的提醒系统来获取块设备加载和卸载的提醒。然后，存储管理器打开块设备来询问描述信息（profile）名称。每个块设备类型都有一个与之相关联的描述信息名称。PROFILE就是一个指定分区驱动程序和某类设备的默认文件系统的注册表键。（我们稍后马上就讨论描述信息注册表项）</p>
+<p>存储管理器读取关于设备分区驱动程序的信息然后加载合适的驱动程序。（微软提供了一个叫做&ldquo;mspart&rdquo;的分区驱动程序，通过标准的硬盘分区通过磁盘主引导记录上的分区表进行分区，当然你也可以自由的建立你自己的分区，或者什么都不用。）</p>
+<p>一旦分区驱动程序被加载，存储管理器就请求分区驱动程序枚举磁盘上的分区并识别分区上的文件系统。分区驱动程序从主引导纪录（MBR）上读取分区和文件系统信息，然后把它提供给存储管理器。存储管理器使用它为每个分区加载文件系统驱动程序然后把文件系统挂接到统一文件系统的根目录。虽然这看起来步骤繁多，但是这也增加了让网络重定向器，FATFS和DVD&nbsp;ROMs在同一个框架内的灵活性。</p>
+<p>现在我们已经理解了FileSys.exe如何一步步把各种组件加载起来的，现在我们来仔细看看文件系统驱动程序和文件系统驱动程序管理器（FSDMG R）所扮演的角色。FSDMGR是存储管理器的一部分（在以前版本的操作系统中他是设备管理器的一部分），负责为文件系统驱动程序提供服务。因为文件系统不需要知道数据是来自磁盘上的分区还是直接来自磁盘，FSDMGR封装文件系统驱动程序，为驱动程序的上下边提供接口。下图显示了这是如何工作的。</p>
+<p>&nbsp;</p>
+<p><a href="http://msdn.microsoft.com/library/en-us/dnembedded/html/embedded06172003_fig3.gif" target="_blank"><img border="0" onload="if(this.width>screen.width/2)this.width=screen.width/2;" src="http://msdn.microsoft.com/library/en-us/dnembedded/html/embedded06172003_fig3.gif" /&gt;</a></p>
+<p>图&nbsp;3.&nbsp;存储管理器</p>
+<p>存储管理器调用文件系统驱动程序（FSD），然后FSD使用FSDMGR_API来从设备接收数据。像对CD这种没有分区的设备来说，设备通过FSDMGR与块驱动交流。如果是个有多个分区的硬盘，它就以同样的方式使用FSDMGR_API。然而，FSDMGR把工作转给合适的分区驱动程序。</p>
+<p>我们已经看了存储管理器，FSDMGR，FSDs，分区驱动程序和块设备是如何交户和协作的。让我们返回到他们是如何加载的，然后看看注册表中的描述信息细节。一个描述信息，像前面所提到的，就是定义关于块设备和应该如何使用它们的一系列注册表值。描述信息位于：HKEY_LOCAL_MACHINE\System\StorageManager\Profiles。</p>
+<p>每一个描述信息都是位于基本描述信息键下面的键。例如，如果我们的Windows&nbsp;CE&nbsp;.NET设备里面有一个硬盘，并且它确定使用硬盘描述信息，那么描述信息位于：HKEY_LOCAL_MACHINE\System\StorageManager\Profiles\Hard&nbsp;Disk。所有的描述信息都是profile键下的名字和值。各种各样的名字和它们的作用如下表所示：</p>
+<p>表&nbsp;1.&nbsp;Profile&nbsp;注册表键</p>
+<p>值类型描述</p>
+<p>FolderREG_SZ在&nbsp;Windows&nbsp;资源管理器中显示给用户的文件夹名称。对于多个实例，将自动追加整数。（例如，Storage&nbsp;Card、Storage&nbsp;Card2&nbsp;等等。）</p>
+<p>FileSystemREG_SZ用作磁盘的默认文件系统的名称。（如果使用了分区驱动程序，则通常不使用它。）</p>
+<p>PartitionDriverREG_SZ列出如果默认驱动程序不合适时要使用的分区驱动程序。如果该字符串为空，则不加载任何分区驱动程序。如果该值不出现，则使用默认分区驱动程序。</p>
+<p>AutoFormatREG_DWORD如果磁盘还没格式化，就自动格式化。</p>
+<p>AutoPartREG_DWORD如果磁盘还没有分区，就自动分成一个占有最大可用磁盘空间的区。</p>
+<p>AutoMountREG_DWORD当存储设备驱动程序加载时，自动挂接文件系统。</p>
+<p>NameREG_SZ显示在控制面板&nbsp;UI&nbsp;中的配置文件名称。</p>
+<p>MountFlagsREG_DWORD用于确定如何装入文件系统的标志。（详细信息下面叙述）</p>
+<p>需要特别注意&nbsp;MountFlags&nbsp;值。它是下表中的值的位掩码。</p>
+<p>表&nbsp;2.&nbsp;MountFlags&nbsp;注册表键的标记</p>
+<p>标记描述</p>
+<p>1隐藏的文件系统。</p>
+<p>2可能包含蜂箱注册表</p>
+<p>4挂接为文件系统的根&nbsp;("\").</p>
+<p>8隐藏ROM文件系统&nbsp;(只与[4]一起使用.)</p>
+<p>把文件系统隐藏阻止它被任何正常的对文件和文件夹的枚举找到（例如FindFirstFile等等）。存储管理器独立完成该操作，以便设备驱动程序和应用程序可以检测到是否特定系统正在使用存储管理器。（由于较旧版本的操作系统没有它，所以某些驱动程序可能需要与旧的&nbsp;LoadFSD(Ex)&nbsp;机制相兼容，以用于加载文件系统。）虽然无法使用&nbsp;FindFirstFile&nbsp;来枚举任意的隐藏系统，但如果知道文件系统的名称，则可以在任何会使用文件路径的地方使用它。以下示例显示了如何检测存储管理器是否正在使用某个系统。</p>
+<p>BOOL&nbsp;IsStorageManagerRunning()</p>
+<p>{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;attr&nbsp;=&nbsp;GetFileAttributes(&nbsp;_T("\StoreMgr")&nbsp;);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;if(&nbsp;(attr&nbsp;!=&nbsp;-1)&nbsp;&amp;&amp;&nbsp;(attr&nbsp;&amp;&nbsp;FILE_ATTRIBUTE_TEMPORARY)&nbsp;)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;TRUE;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;FALSE;</p>
+<p>}</p>
+<p>MountFlags的下一位指示文件系统是否包含基于蜂箱的注册表。这允许FileSys.exe解决前面提到的鸡生蛋，蛋生鸡的问题。（因为需要注册表才能加载访问可能在磁盘上的注册表配置单元文件所需的组件&hellip;）我们呆会再看这一位是怎么用在基于蜂箱的注册表上的。</p>
+<p>下面两位是相关联的用在当你希望把外部文件系统挂接为单一文件系统的根时。回忆一下通常单一文件系统的根是RAM文件系统。这对于电池供电的手持设备来说非常好，但是对经常断电的A/C电线供电的设备来说却不太好，因为每次断电RAM的内容就丢了。把文件系统挂接为根允许你把外部的存储设置为根来解决这个问题，所以文件\MyDateFile.TXT将会存在与外部的存储设备上。隐藏ROM文件系统将会隐藏ROM文件系统的数据文件（但是不隐藏现场执行的EXE和DLL）允许你升级所有的ROM里面的文件。这样允许你在FLASH里面使用非常小的操作系统映像，然后把主要的可执行文件放在磁盘上并在使用时加载。（与现在桌面系统很类似）。</p>
+<p>如果特定的描述信息的值不存在，存储管理器会从HKEY_LOCAL_MACHINE\System\StorageManager\Profiles键下使用默认的设置。你可以重写的默认设置位于COMMON.REG。你可以用你的PLATFORM.REG或者PROJECT.REG来重写（记住你不应该修改COMMON.REG）。下表显示了默认的COMMON.REG。</p>
+<p>表&nbsp;3.&nbsp;COMMON.REG&nbsp;的默认值</p>
+<p>值默认值</p>
+<p>FolderLOC_STORE_DEFAULT_FOLDER&nbsp;(在.STR文件中的设备的标识；在英文版本中通常是&ldquo;Storage&nbsp;Card&rdquo;)</p>
+<p>FileSystemFATFS</p>
+<p>PartitionDriverMspart.dll</p>
+<p>AutoFormat0</p>
+<p>AutoPart0</p>
+<p>AutoMount1</p>
+<p>MountFlags0</p>
+<p>概述</p>
+<p>Windows&nbsp;CE文件系统架构非常灵活和可扩展，并支持：&nbsp;</p>
+<p>&middot;多个块设备</p>
+<p>&middot;每个块设备上多个分区</p>
+<p>&middot;每个分区上不同的文件系统&nbsp;</p>
+<p>&middot;把外部设备文件系统挂接到系统的根&nbsp;</p>
+<p>注册表是让加载和运行文件系统的过程具有正确的（期望的）行为的关键。基于蜂箱的注册表把它们粘合在一起。为了缓解你对&ldquo;加载&ldquo;它的恐怖，我们会在后面几个月的文章中使用一些实际的例子详细讨论基于蜂箱的注册表，但是现在，我们是要&ldquo;卸载&rdquo;这个月的文章的时候了。</p>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2004-08-20T23:21:37+00:00">Aug 20, 2004</time>
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#misc-ref">misc</a>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="omale" />
+        <meta name="copyright" content="omale" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content=", misc, " />
+
+<meta property="og:title" content="SSCLI下的可执行文件格式分析（续集） "/>
+<meta property="og:url" content="./ssclixia-de-ke-zhi-xing-wen-jian-ge-shi-fen-xi-xu-ji.html" />
+<meta property="og:description" content="未分类 计算机技术 闲来无事了，接着写吧。 上回书说到，一个Assembly的MetaData里面大概会有40多种表，然后我们根据一个例子分析了SSCLI下的PE文件的结构和MetaData其中的两种表Module和TypeRef。这次我们依然结合上次的例子，把剩余的几张元数据表分析完。 剩余还有12种元数据表，分别是TypeDef，Field，Method，Param，MemberRef，CustomAttribute，StandAloneSig，PropertyMap，Property，MethodSemantic，Assembly和AssemblyRef。像上面一样，我们首先看表类型的定义，在clr\src\md\runtime\metamodelcolumndefs.h中。     //————————————————————————-     // TypeDef     SCHEMA_TABLE_START(TypeDef)     SCHEMA_ITEM(TypeDef, ULONG, Flags)     SCHEMA_ITEM_STRING(TypeDef, Name)     SCHEMA_ITEM_STRING(TypeDef, Namespace)     SCHEMA_ITEM_CDTKN(TypeDef, Extends, TypeDefOrRef)     SCHEMA_ITEM_RID(TypeDef, FieldList, Field …" />
+<meta property="og:site_name" content="Zongjian&#39;s blog" />
+<meta property="og:article:author" content="omale" />
+<meta property="og:article:published_time" content="2005-02-07T02:42:54+00:00" />
+<meta name="twitter:title" content="SSCLI下的可执行文件格式分析（续集） ">
+<meta name="twitter:description" content="未分类 计算机技术 闲来无事了，接着写吧。 上回书说到，一个Assembly的MetaData里面大概会有40多种表，然后我们根据一个例子分析了SSCLI下的PE文件的结构和MetaData其中的两种表Module和TypeRef。这次我们依然结合上次的例子，把剩余的几张元数据表分析完。 剩余还有12种元数据表，分别是TypeDef，Field，Method，Param，MemberRef，CustomAttribute，StandAloneSig，PropertyMap，Property，MethodSemantic，Assembly和AssemblyRef。像上面一样，我们首先看表类型的定义，在clr\src\md\runtime\metamodelcolumndefs.h中。     //————————————————————————-     // TypeDef     SCHEMA_TABLE_START(TypeDef)     SCHEMA_ITEM(TypeDef, ULONG, Flags)     SCHEMA_ITEM_STRING(TypeDef, Name)     SCHEMA_ITEM_STRING(TypeDef, Namespace)     SCHEMA_ITEM_CDTKN(TypeDef, Extends, TypeDefOrRef)     SCHEMA_ITEM_RID(TypeDef, FieldList, Field …">
+
+        <title>SSCLI下的可执行文件格式分析（续集）  · Zongjian&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zongjian&#39;s blog - Full Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>Zongjian's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./ssclixia-de-ke-zhi-xing-wen-jian-ge-shi-fen-xi-xu-ji.html"> SSCLI下的可执行文件格式分析（续集）  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <ul>
+<li>未分类</li>
+<li>计算机技术</li>
+</ul>
+<hr>
+<p>闲来无事了，接着写吧。<br>
+上回书说到，一个Assembly的MetaData里面大概会有40多种表，然后我们根据一个例子分析了SSCLI下的PE文件的结构和MetaData其中的两种表Module和TypeRef。这次我们依然结合上次的例子，把剩余的几张元数据表分析完。<br>
+剩余还有12种元数据表，分别是TypeDef，Field，Method，Param，MemberRef，CustomAttribute，StandAloneSig，PropertyMap，Property，MethodSemantic，Assembly和AssemblyRef。像上面一样，我们首先看表类型的定义，在clr\src\md\runtime\metamodelcolumndefs.h中。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TypeDef<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(TypeDef)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(TypeDef,&nbsp;ULONG,&nbsp;Flags)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(TypeDef,&nbsp;Name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(TypeDef,&nbsp;Namespace)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_CDTKN(TypeDef,&nbsp;Extends,&nbsp;TypeDefOrRef)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_RID(TypeDef,&nbsp;FieldList,&nbsp;Field)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_RID(TypeDef,&nbsp;MethodList,&nbsp;Method)<br>
+SCHEMA_TABLE_END(TypeDef)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//Field<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(Field)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Field,&nbsp;USHORT,&nbsp;Flags)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(Field,Name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_BLOB(Field,Signature)<br>
+SCHEMA_TABLE_END(Field)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//Method<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(Method)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Method,&nbsp;ULONG,&nbsp;RVA)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Method,&nbsp;USHORT,&nbsp;ImplFlags)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Method,&nbsp;USHORT,&nbsp;Flags)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(Method,Name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_BLOB(Method,Signature)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_RID(Method,ParamList,Param)<br>
+SCHEMA_TABLE_END(Method)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Param<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(Param)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Param,&nbsp;USHORT,&nbsp;Flags)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Param,&nbsp;USHORT,&nbsp;Sequence)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(Param,Name)<br>
+SCHEMA_TABLE_END(Param)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//MemberRef<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(MemberRef)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_NOFIXED()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_CDTKN(MemberRef,Class,MemberRefParent)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(MemberRef,Name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_BLOB(MemberRef,Signature)<br>
+SCHEMA_TABLE_END(MemberRef)</p>
+<p>//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+//CustomAttribute<br>
+SCHEMA_TABLE_START(CustomAttribute)<br>
+SCHEMA_ITEM_NOFIXED()<br>
+SCHEMA_ITEM_CDTKN(CustomAttribute,Parent,HasCustomAttribute)<br>
+SCHEMA_ITEM_CDTKN(CustomAttribute,Type,CustomAttributeType)<br>
+SCHEMA_ITEM_BLOB(CustomAttribute,Value)<br>
+SCHEMA_TABLE_END(CustomAttribute)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//StandAloneSig<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(StandAloneSig)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_NOFIXED()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_BLOB(StandAloneSig,Signature)<br>
+SCHEMA_TABLE_END(StandAloneSig)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//PropertyMap<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(PropertyMap)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_NOFIXED()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_RID(PropertyMap,Parent,TypeDef)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_RID(PropertyMap,PropertyList,Property)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_END(PropertyMap)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//Property<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(Property)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Property,&nbsp;USHORT,&nbsp;PropFlags)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(Property,Name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_BLOB(Property,Type)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_END(Property)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//MethodSemantics<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(MethodSemantics)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(MethodSemantics,&nbsp;USHORT,&nbsp;Semantic)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_RID(MethodSemantics,Method,Method)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_CDTKN(MethodSemantics,Association,HasSemantic)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_END(MethodSemantics)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Assembly<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(Assembly)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Assembly,&nbsp;ULONG,&nbsp;HashAlgId)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Assembly,&nbsp;USHORT,&nbsp;MajorVersion)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Assembly,&nbsp;USHORT,&nbsp;MinorVersion)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Assembly,&nbsp;USHORT,&nbsp;BuildNumber)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Assembly,&nbsp;USHORT,&nbsp;RevisionNumber)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(Assembly,&nbsp;ULONG,&nbsp;Flags)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_BLOB(Assembly,&nbsp;PublicKey)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(Assembly,&nbsp;Name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(Assembly,&nbsp;Locale)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_END(Assembly)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;AssemblyRef<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_START(AssemblyRef)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(AssemblyRef,&nbsp;USHORT,&nbsp;MajorVersion)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(AssemblyRef,&nbsp;USHORT,&nbsp;MinorVersion)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(AssemblyRef,&nbsp;USHORT,&nbsp;BuildNumber)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(AssemblyRef,&nbsp;USHORT,&nbsp;RevisionNumber)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM(AssemblyRef,&nbsp;ULONG,&nbsp;Flags)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_BLOB(AssemblyRef,&nbsp;PublicKeyOrToken)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(AssemblyRef,&nbsp;Name)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_ITEM_STRING(AssemblyRef,&nbsp;Locale)<br>
+SCHEMA_ITEM_BLOB(AssemblyRef,&nbsp;HashValue)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SCHEMA_TABLE_END(AssemblyRef)<br>
+这几个宏也可以展开为MetaData表的描述信息，由于在前面的文章中我们已经演示过展开Module和TypeRef定义的宏，这里就不再展开了。读者感兴趣的可以自己尝试一下。我们还是切入正题，开始逐一分析每个表。</p>
+<p>TypeDef表描述了该程序集中的某个类型定义，它包含如下属性：4字节的Flags，Flags描述了这个类型的可访问性，例如C#中的public,&nbsp;private等等，具体的定义在clr/src/inc/Corhdr.h中。</p>
+<p>//&nbsp;TypeDef/ExportedType&nbsp;attr&nbsp;bits,&nbsp;used&nbsp;</p>
+<p>by&nbsp;DefineTypeDef.<br>
+typedef&nbsp;enum&nbsp;CorTypeAttr<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Use&nbsp;this&nbsp;mask&nbsp;to&nbsp;retrieve&nbsp;the&nbsp;type&nbsp;visibility&nbsp;information.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>tdVisibilityMask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000007,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tdNotPublic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000000,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Class&nbsp;is&nbsp;not&nbsp;public&nbsp;scope.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tdPublic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000001,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Class&nbsp;is&nbsp;public&nbsp;scope.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tdNestedPublic&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000002,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Class&nbsp;is&nbsp;nested&nbsp;with&nbsp;public&nbsp;visibility.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tdNestedPrivate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000003,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Class&nbsp;is&nbsp;nested&nbsp;with&nbsp;private&nbsp;visibility.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tdNestedFamily&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000004,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Class&nbsp;is&nbsp;nested&nbsp;with&nbsp;family&nbsp;visibility.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tdNestedAssembly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000005,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Class&nbsp;is&nbsp;nested&nbsp;with&nbsp;assembly&nbsp;visibility.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tdNestedFamANDAssem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000006,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Class&nbsp;is&nbsp;nested&nbsp;with&nbsp;family&nbsp;and&nbsp;assembly&nbsp;visibility.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tdNestedFamORAssem&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;0x00000007,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Class&nbsp;is&nbsp;nested&nbsp;with&nbsp;family&nbsp;or&nbsp;assembly&nbsp;visibility.<br>
+………………<br>
+}&nbsp;CorTypeAttr;</p>
+<p>指向#Strings流的两字节的Name索引，两字节的NameSpace索引，分别描述了类型的名称和命名空间。2个Byte的名为Extends的指向mdtTypeDefOrRef类型Coded&nbsp;Token的索引，描述了该类型继承了那个父类和实现了哪些接口。2个Byte的FieldList和MethodList索引，描述了该类型有哪些成员变量和成员函数，一个类型有哪些成员变量或成员函数应该是一个范围，这个范围的开始就是FieldList和MethodList所指向FieldDef或MethodDef中的方法，范围的结尾是FieldDef表结尾，或者下一个TypeDef中的FieldList指向的项。这样每个TypeDef占14个Byte。<br>
+在本例中，一共有3个TypeDef，它们的二进制值分别是：00&nbsp;00&nbsp;00&nbsp;00/01&nbsp;00/00&nbsp;00/00&nbsp;00/01&nbsp;00/01&nbsp;00|01&nbsp;00&nbsp;10&nbsp;00/2B&nbsp;00/00&nbsp;00/05&nbsp;00/01&nbsp;00/01&nbsp;00|01&nbsp;00&nbsp;10&nbsp;00/30&nbsp;00/00&nbsp;00/05&nbsp;00/02&nbsp;00/05&nbsp;00。我们分析第一项，其Flags值为0x00000000，Name为0x0001，值为“<Module>”；NameSpace为空。其实这是一个伪类型，定义为模块级的函数和变量就放在这个里面，但是C#中似乎不允许定义模块级的方法和变量，所以这项实际上没什么用。<br>
+那么接着分析第二项，其Flags的值为0x00100001，从CorTypeAttr的定义可以知道意思为tdPublic和tdBeforeFieldInit。Name索引是0x002B，值为“Echo”；Namespace值为空。Extends值为0x0005，由于它是个mdtTypeDefOrRef类型的Coded&nbsp;Token，解码后其实是0x01000001，正如上次分析的，指向TypeDef表的第一项:System.Object；然后是FieldList和MethodList，值都为0x0001。我们先看下一项Typedef的FieldList为0x0002，MethodList为0x0005，也就是说Echo类有一个Field，4个Method（我们猜一下：一个Field肯定就是private&nbsp;string&nbsp;toEcho了，4个Method么，DoEcho算一个，一个EchoString属性其实会被编译成两个Method，一个get一个set，最后一个其实是编译器给我们加上的构造函数）。综合一下，这个Typedef的意思是说，这个Assembly里面定义了一个Echo类，有public的访问属性，它继承自System.Object，它含有一个Field和四个方法。剩下一个Typedef就是Hello类了，就不再详细分析了。</p>
+<p>Field表描述了MetaData中的所有成员变量定义。Field表包含下面一些列：2个Byte的Flags，定义可参见clr/src/inc/Corhdr.h中的CorFieldAttr枚举，这里就不罗列了。2个Byte的到#Strings流的Name索引，2个Byte的到#Blob流的Signature索引。一个FieldDef有6个Byte。<br>
+本例中仅有的1个FieldDef的值是01&nbsp;00&nbsp;36&nbsp;00&nbsp;0A&nbsp;00。Flags的值为0x0001，参考CorFieldAttr，其意思为fdPrivate；Name的值是0x0036，值是“toEcho”；Signature的值是0x000A，对应#Blob流中的值是06&nbsp;0E。总结一下，这个项表示该Assembly中有一个名为toEcho的Field，有Private的访问属性，签名是06&nbsp;0E。</p>
+<p>Method表描述了MetaData中的所有成员函数定义。Method标包含了下面一些列：4个Byte的RVA，两个Byte的ImpFlags，两个Byte的Flags，指向#Strings流的两个Byte的Name索引，指向#Blob流得两个Byte的Signature，两个Byte的ParamList。因此一个MethodDef有14个Byte。<br>
+RVA定义了方法开始的偏移地址，注意，是针对当前段（也就是.text段的偏移，不是针对MetaData起始地址的偏移。）。ImpFlags是方法实现上的标记，定义可参见clr/src/inc/Corhdr.h中的CorMethodImpl枚举。Flags是方法上的其他标记，定义可参见clr/src/inc/Corhdr.h中的CorMethodAttr枚举。Name是这个方法的名称，Signature没多大意义，ParamList是指向ParamDef表的索引向，也是一个范围，范围开始结束的方法跟前面讲述的TypeDef中的FieldList，MethodList差不多。<br>
+在本例中，一共有6个MethodDef，其值分别为：50&nbsp;20&nbsp;00&nbsp;00/00&nbsp;00/86&nbsp;08/3D&nbsp;00/0D&nbsp;00/01&nbsp;00|68&nbsp;20&nbsp;00&nbsp;00/00&nbsp;00/86&nbsp;08/4C&nbsp;00/11&nbsp;00/01&nbsp;00|7C&nbsp;20&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;86&nbsp;00&nbsp;5B&nbsp;00&nbsp;0D&nbsp;00&nbsp;02&nbsp;00|A8&nbsp;20&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;86&nbsp;18&nbsp;62&nbsp;00&nbsp;16&nbsp;00&nbsp;02&nbsp;00|C4&nbsp;20&nbsp;00&nbsp;00/00&nbsp;00/96&nbsp;00/73&nbsp;00/1E&nbsp;00/02&nbsp;00|F4&nbsp;20&nbsp;00&nbsp;00&nbsp;00&nbsp;00&nbsp;86&nbsp;18&nbsp;62&nbsp;00&nbsp;16&nbsp;00&nbsp;03&nbsp;00。<br>
+我们这次不看第1项，看第5项（因为这个比较有代表性，在IMAGE_COR20_HEADER中，我们知道EntryPointToken的值是0x60000005，那么Method的第5项就应该是入口的Main函数，这里顺便验证一下），其RVA的值为0x000020C4。那么，我们可以算得其偏移地址为&nbsp;=&nbsp;0x000020C4&nbsp;&#8211;&nbsp;0x00002000&nbsp;+&nbsp;0x00000200&nbsp;=&nbsp;0x000002C4，一会我们再看这里放了什么。ImpFlags值为0x0000，Flags值为0x0096，表示mdHideBySig&nbsp;|&nbsp;mdStatic&nbsp;|&nbsp;mdPublic。Name的值是0x0073，为“Main”；Signature值为0x001E，相应的#Blob数据为“00&nbsp;01&nbsp;01&nbsp;1D&nbsp;0E”。ParamList值为0x0002，表示指向ParamDef表的第二项。综合一下，第五项描述了一个方法，名字叫Main，有public&nbsp;static属性，有一个参数，代码开始于0x000002C4。<br>
+下面就要分析IL代码的格式：为了节省空间（又是节省空间添的麻烦），SSCLI定义了两种方法格式，Tiny和Fat。当代码小于64&nbsp;byte，并且没有局部变量的时候，我们可以选用Tiny方法,否则就只能Fat了。Tiny和Fat的定义可以在clr/src/inc/Corhdr.h中找到，列举如下，省略了一些关系不大的方法：</p>
+<p>typedef&nbsp;enum&nbsp;CorILMethodFlags<br>
+{&nbsp;<br>
+&nbsp;&nbsp;&nbsp;//&nbsp;Indicates&nbsp;the&nbsp;format&nbsp;for&nbsp;the&nbsp;COR_ILMETHOD&nbsp;header&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CorILMethod_FormatShift&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;3,&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&amp;</p>
+<p>nbsp;&nbsp;&nbsp;CorILMethod_FormatMask&nbsp;&nbsp;&nbsp;&amp;</p>
+<p>nbsp;&nbsp;&nbsp;=&nbsp;((1&nbsp;&lt;&lt;&nbsp;CorILMethod_FormatShift)&nbsp;&#8211;&nbsp;1),&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CorILMethod_TinyFormat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0x0002,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;use&nbsp;this&nbsp;code&nbsp;if&nbsp;the&nbsp;code&nbsp;size&nbsp;is&nbsp;even&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CorILMethod_SmallFormat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0x0000,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CorILMethod_FatFormat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0x0003,&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CorILMethod_TinyFormat1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;0x0006,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;use&nbsp;this&nbsp;code&nbsp;if&nbsp;the&nbsp;code&nbsp;size&nbsp;is&nbsp;odd&nbsp;&nbsp;<br>
+}&nbsp;CorILMethodFlags;</p>
+<p>/*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>***/<br>
+/*&nbsp;Used&nbsp;when&nbsp;the&nbsp;method&nbsp;is&nbsp;tiny&nbsp;(&lt;&nbsp;64&nbsp;bytes),&nbsp;and&nbsp;there&nbsp;are&nbsp;no&nbsp;local&nbsp;vars&nbsp;*/<br>
+typedef&nbsp;struct&nbsp;IMAGE_COR_ILMETHOD_TINY<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BYTE&nbsp;Flags_CodeSize;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+}&nbsp;IMAGE_COR_ILMETHOD_TINY;</p>
+<p>/*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>*<strong>*</strong>/<br>
+//&nbsp;This&nbsp;strucuture&nbsp;is&nbsp;the&nbsp;&#8221;fat&#8221;&nbsp;layout,&nbsp;where&nbsp;no&nbsp;compression&nbsp;is&nbsp;attempted.&nbsp;<br>
+//&nbsp;Note&nbsp;that&nbsp;this&nbsp;structure&nbsp;can&nbsp;be&nbsp;added&nbsp;on&nbsp;at&nbsp;the&nbsp;end,&nbsp;thus&nbsp;making&nbsp;it&nbsp;extensible<br>
+typedef&nbsp;struct&nbsp;IMAGE_COR_ILMETHOD_FAT<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;Flags&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;12;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Flags&nbsp;&nbsp;&nbsp;&nbsp;0x13<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;Size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;4;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;size&nbsp;in&nbsp;DWords&nbsp;of&nbsp;this&nbsp;structure&nbsp;(currently&nbsp;3)&nbsp;&nbsp;&nbsp;0y0011<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;MaxStack&nbsp;:&nbsp;16;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;maximum&nbsp;number&nbsp;of&nbsp;items&nbsp;(I4,&nbsp;I,&nbsp;I8,&nbsp;obj&nbsp;&#8230;),&nbsp;on&nbsp;the&nbsp;operand&nbsp;stack&nbsp;&nbsp;&nbsp;0x2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;&nbsp;&nbsp;CodeSize;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;size&nbsp;of&nbsp;the&nbsp;code&nbsp;0x22<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mdSignature&nbsp;&nbsp;&nbsp;LocalVarSigTok;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;token&nbsp;that&nbsp;indicates&nbsp;the&nbsp;signature&nbsp;of&nbsp;the&nbsp;local&nbsp;vars&nbsp;(0&nbsp;means&nbsp;none)&nbsp;&nbsp;0x11000002<br>
+}&nbsp;IMAGE_COR_ILMETHOD_FAT;</p>
+<p>typedef&nbsp;struct&nbsp;tagCOR_ILMETHOD_TINY&nbsp;:&nbsp;IMAGE_COR_ILMETHOD_TINY<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IsTiny()&nbsp;const&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;return((Flags_CodeSize&nbsp;&amp;&nbsp;(CorILMethod_FormatMask&nbsp;&gt;&gt;&nbsp;1))&nbsp;==&nbsp;CorILMethod_TinyFormat);&nbsp;}&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;GetCodeSize()&nbsp;const&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;return(((unsigned)&nbsp;Flags_CodeSize)&nbsp;&gt;&gt;&nbsp;(CorILMethod_FormatShift-1));&nbsp;}&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;GetMaxStack()&nbsp;const&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;return(8);&nbsp;}&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BYTE*&nbsp;&nbsp;&nbsp;&nbsp;GetCode()&nbsp;const&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;return(((BYTE*)&nbsp;this)&nbsp;+&nbsp;sizeof(struct&nbsp;tagCOR_ILMETHOD_TINY));&nbsp;}&nbsp;<br>
+}&nbsp;COR_ILMETHOD_TINY;</p>
+<p>typedef&nbsp;struct&nbsp;tagCOR_ILMETHOD_FAT&nbsp;:&nbsp;IMAGE_COR_ILMETHOD_FAT<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;GetSize()&nbsp;const&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BYTE*&nbsp;p&nbsp;=&nbsp;(BYTE*)this;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;*(p+1)&nbsp;&gt;&gt;&nbsp;4;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;GetFlags()&nbsp;const&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BYTE*&nbsp;p&nbsp;=&nbsp;(BYTE*)this;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;((unsigned)*(p+0))&nbsp;|&nbsp;((&nbsp;((unsigned)*(p+1))&nbsp;&lt;&lt;&nbsp;8)&nbsp;&amp;&nbsp;0x0F);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;IsFat()&nbsp;const&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(*(BYTE*)this&nbsp;&amp;&nbsp;CorILMethod_FormatMask)&nbsp;==&nbsp;CorILMethod_FatFormat;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;BYTE<em>&nbsp;GetCode()&nbsp;const&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return(((BYTE*)&nbsp;this)&nbsp;+&nbsp;4*GetSize());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;COR_ILMETHOD_SECT</em>&nbsp;GetSect()&nbsp;const&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!(*(B &#8230;</p>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2005-02-07T02:42:54+00:00">Feb 7, 2005</time>
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#misc-ref">misc</a>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="omale" />
+        <meta name="copyright" content="omale" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content=", misc, " />
+
+<meta property="og:title" content="建立SSCLI运行和调试环境 "/>
+<meta property="og:url" content="./jian-li-sscliyun-xing-he-diao-shi-huan-jing.html" />
+<meta property="og:description" content="未分类 计算机技术 tags: C++ 微软 软件 从微软网站上(http://msdn.microsoft.com/net/sscli)下载回来的SSCLI是一个15M的压缩包。本文介绍如编译，运行，调试SSCLI和如何察看它的代码。下文所述都是笔者使用的运行环境和方法。有可能有更好的方法，欢迎交流，我的电子邮件：xxx@msn.com。 SSCLI是一个可以跨平台的实现，可以运行在Winodws，FreeBSD和Mac OS上，据说有些高手已经成功的把SSCLI跑在了Linux上。但是后面几个环境笔者不熟悉，所以Windows就成了不二之选。 安装必备的软件： 操作系统：  Microsoft Windows XP 其它软件：  Visual Studio.NET 2003专业版 （用来编译SSCLI，至少安装VC++.NET）                    Active Perl（Perl的引擎，用来编译SSCLI）                    Source Insight …" />
+<meta property="og:site_name" content="Zongjian&#39;s blog" />
+<meta property="og:article:author" content="omale" />
+<meta property="og:article:published_time" content="2005-01-25T00:01:23+00:00" />
+<meta name="twitter:title" content="建立SSCLI运行和调试环境 ">
+<meta name="twitter:description" content="未分类 计算机技术 tags: C++ 微软 软件 从微软网站上(http://msdn.microsoft.com/net/sscli)下载回来的SSCLI是一个15M的压缩包。本文介绍如编译，运行，调试SSCLI和如何察看它的代码。下文所述都是笔者使用的运行环境和方法。有可能有更好的方法，欢迎交流，我的电子邮件：xxx@msn.com。 SSCLI是一个可以跨平台的实现，可以运行在Winodws，FreeBSD和Mac OS上，据说有些高手已经成功的把SSCLI跑在了Linux上。但是后面几个环境笔者不熟悉，所以Windows就成了不二之选。 安装必备的软件： 操作系统：  Microsoft Windows XP 其它软件：  Visual Studio.NET 2003专业版 （用来编译SSCLI，至少安装VC++.NET）                    Active Perl（Perl的引擎，用来编译SSCLI）                    Source Insight …">
+
+        <title>建立SSCLI运行和调试环境  · Zongjian&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zongjian&#39;s blog - Full Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>Zongjian's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./jian-li-sscliyun-xing-he-diao-shi-huan-jing.html"> 建立SSCLI运行和调试环境  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <ul>
+<li>未分类</li>
+<li>计算机技术
+tags:</li>
+<li>C++</li>
+<li>微软</li>
+<li>软件</li>
+</ul>
+<hr>
+<p>从微软网站上(http://msdn.microsoft.com/net/sscli)下载回来的SSCLI是一个15M的压缩包。本文介绍如编译，运行，调试SSCLI和如何察看它的代码。下文所述都是笔者使用的运行环境和方法。有可能有更好的方法，欢迎交流，我的电子邮件：xxx@msn.com。</p>
+<p>SSCLI是一个可以跨平台的实现，可以运行在Winodws，FreeBSD和Mac&nbsp;OS上，据说有些高手已经成功的把SSCLI跑在了Linux上。但是后面几个环境笔者不熟悉，所以Windows就成了不二之选。</p>
+<p>安装必备的软件：</p>
+<p>操作系统：&nbsp;&nbsp;Microsoft&nbsp;Windows&nbsp;XP</p>
+<p>其它软件：&nbsp;&nbsp;Visual&nbsp;Studio.NET&nbsp;2003专业版&nbsp;（用来编译SSCLI，至少安装VC++.NET）</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active&nbsp;Perl（Perl的引擎，用来编译SSCLI）</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source&nbsp;Insight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(不错的源代码查看工具，可以方便的在代码之间进行符号跳转。用来查看SSCIL源代码)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windbg（微软的调试工具，用来调试SSCLI的运行情况）</p>
+<p>编译SSCLI：</p>
+<p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;把下载来的压缩文件解压缩到某个盘的根目录，笔者为F:\sscli。</p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打开命令行窗口cmd.exe。把当前目录切换到F:\sscli。</p>
+<p>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入：</p>
+<blockquote>
+<p>&nbsp;env.bat&nbsp;checked&nbsp;</p>
+</blockquote>
+<p>设置编译所需要的环境变量。SSCLI有三个编译版本。分别为：checked,&nbsp;fastchecked和free。free大概相当于C++中的release版本，有编译器优化，不能调试。fastchecked也有编译器优化，但是可以调试。checked是没有优化可以调试的版本。默认env.bat会把环境变量设置为fastchecked。但是调试经过编译器优化过的代码会有一些令人迷惑的地方，例如碰上循环消解&hellip;&hellip;。所以选择checked版本最容易调试跟踪。</p>
+<p>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入：</p>
+<blockquote>
+<p>&nbsp;buildall&nbsp;</p>
+</blockquote>
+<p>编译SSCLI。编译过程大概分为六个步骤，分别是：</p>
+<p>a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平台抽象层PAL和非托管工具，例如binplace。</p>
+<p>b)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他的非托管工具，例如资源编译器resourcecompiler等等。</p>
+<p>c)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SSCLI的实现，还有C#编译器。</p>
+<p>d)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;精简过的.net&nbsp;framework类库。</p>
+<p>e)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他程序集，主要是序列化和Remoting支持。</p>
+<p>f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;托管的编译器。Javascript的编译器jsc.exe等</p>
+<p>如果运气足够好，经过半个小时左右，就可以大功告成了。如果不幸出错了，可以通过build&nbsp;log来解决。文件名为buildd.log，buildd.wrn和buildd.wrn。分散在各个子目录下。</p>
+<p>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;测试：编译的结果会放在名为build的目录下。用cd转到该目录输入</p>
+<blockquote>
+<p>&nbsp;csc&nbsp;/?</p>
+</blockquote>
+<p>如果看到下面的输出，则基本上编译成功：</p>
+<p>Microsoft&nbsp;(R)&nbsp;Visual&nbsp;C#&nbsp;Shared&nbsp;Source&nbsp;CLI&nbsp;Compiler&nbsp;version&nbsp;1.0.0003</p>
+<p>for&nbsp;Microsoft&nbsp;(R)&nbsp;Shared&nbsp;Source&nbsp;CLI&nbsp;version&nbsp;1.0.0</p>
+<p>Copyright&nbsp;(C)&nbsp;Microsoft&nbsp;Corporation&nbsp;2002.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
+<p>运行和调试第一个程序</p>
+<p>用notepad建立Hello.cs，文件内容如下：</p>
+<p>&nbsp;</p>
+<p>using&nbsp;System;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;Hello</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;void&nbsp;Main(string[]&nbsp;args)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;=&nbsp;10;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.Console.WriteLine("Hello&nbsp;World,&nbsp;x&nbsp;is&nbsp;{0}",&nbsp;x);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+<p>&nbsp;</p>
+<p>把文件复制到F:\sscli\build\v1.x86chk.rotor，然后输入下面的命令行来编译该程序：</p>
+<blockquote>
+<p>csc&nbsp;/debug+&nbsp;/t:exe&nbsp;Hello.cs</p>
+</blockquote>
+<p>没有报错就说明编译成功（出了错的话，买本《C#入门到精通》什么的看看吧&hellip;&hellip;）。会生成两个文件Hello.exe和Hello.ildb。前者就是包含托管代码的程序集，后者是用来调试用的，类似于VC生成的PDB文件。</p>
+<p>这时直接双击Hello.exe或者在命令行里输入Hello.exe都可以看到想要得执行结果。但是我们却不能这样做，因为这样子是利用了Windows操作系统把Hello.exe加载进系统，然后在.net&nbsp;Framework中运行了Hello.exe。在MacOS或Unix下是不会有这种便宜赚的。SSCLI提供了一个工具clix，专门用来帮助我们代替完成加载工作。因此我们需要在命令行下输入：</p>
+<blockquote>
+<p>clix&nbsp;Hello.exe</p>
+</blockquote>
+<p>这时，clix会帮助我们加载和执行Hello.exe，这才是只依赖SSCLI的方式。输出结果：</p>
+<p>Hello&nbsp;World,&nbsp;x&nbsp;is&nbsp;10</p>
+<p>SSCLI提供了cordbg调试器（debugger）用来调试托管代码。编译结束后cordbg会放在F:\sscli\build\v1.x86chk.rotor\sdk\bin目录下。</p>
+<p>在命令行下输入如下命令启动cordbg</p>
+<blockquote>
+<p>sdk\bin\cordbg.exe</p>
+</blockquote>
+<p>系统进入cordbg命令行状态，显示如下：</p>
+<p>Microsoft&nbsp;(R)&nbsp;Shared&nbsp;Source&nbsp;CLI&nbsp;Test&nbsp;Debugger&nbsp;Shell&nbsp;Version&nbsp;1.0.0003.0</p>
+<p>Copyright&nbsp;(C)&nbsp;Microsoft&nbsp;Corporation&nbsp;1998-2002.&nbsp;All&nbsp;rights&nbsp;reserved.</p>
+<p>&nbsp;</p>
+<p>(cordbg)</p>
+<p>这时，输入?可以看到cordbg的帮助信息。</p>
+<p>Usage:&nbsp;?&nbsp;[<command>&nbsp;&#8230;]</p>
+<p>Displays&nbsp;debugger&nbsp;command&nbsp;descriptions.&nbsp;If&nbsp;no&nbsp;arguments</p>
+<p>are&nbsp;passed,&nbsp;a&nbsp;list&nbsp;of&nbsp;debugger&nbsp;commands&nbsp;is&nbsp;displayed.&nbsp;If</p>
+<p>one&nbsp;or&nbsp;more&nbsp;command&nbsp;arguments&nbsp;is&nbsp;provided,&nbsp;descriptions</p>
+<p>are&nbsp;displayed&nbsp;for&nbsp;the&nbsp;specified&nbsp;commands.&nbsp;The&nbsp;?&nbsp;command</p>
+<p>is&nbsp;an&nbsp;alias&nbsp;for&nbsp;the&nbsp;help&nbsp;command.</p>
+<p>&nbsp;</p>
+<p>The&nbsp;following&nbsp;commands&nbsp;are&nbsp;available:</p>
+<p>&nbsp;</p>
+<p>ap[pdomainenum]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Display&nbsp;appdomains/assemblies/modules&nbsp;in&nbsp;the&nbsp;current&nbsp;process</p>
+<p>&nbsp;</p>
+<p>a[ttach]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attach&nbsp;to&nbsp;a&nbsp;running&nbsp;process</p>
+<p>&hellip;&hellip;&hellip;&hellip;</p>
+<p>cordbg是一个基于命令行的调试器，提供了设置断点，单步跟踪，查看变量值，查看源代码等调试器所必备的所有功能。有可能使用IDE习惯了的开发者一开始会不太习惯。但是熟悉了以后，效率也不会比IDE图形界面操作差多少。</p>
+<p>这时，输入下面命令来启动要调试的程序：</p>
+<p>(cordbg)&nbsp;run&nbsp;Hello.exe</p>
+<p>Process&nbsp;19432/0x4be8&nbsp;created.</p>
+<p>[thread&nbsp;0x4a7c]&nbsp;Thread&nbsp;created.</p>
+<p>&nbsp;</p>
+<p>011:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;x&nbsp;=&nbsp;10;</p>
+<p>(cordbg)&nbsp;_</p>
+<p>我们可以看到程序停在了要执行的第一条代码之前，等待下面的输入。通过命令，就可以进行一系列调试了。我们让程序直接执行到结束，然后退出cordbg：</p>
+<p>(cordbg)&nbsp;g</p>
+<p>Hello&nbsp;Wold,&nbsp;x&nbsp;is&nbsp;10</p>
+<p>[thread&nbsp;0x4830]&nbsp;Thread&nbsp;created.</p>
+<p>[thread&nbsp;0x4a7c]&nbsp;Thread&nbsp;exited.</p>
+<p>Process&nbsp;exited.</p>
+<p>(cordbg)&nbsp;quit</p>
+<p>&nbsp;</p>
+<p>F:\sscli\build\v1.x86chk.rotor&gt;</p>
+<p>调试SSCLI的代码</p>
+<p>cordbg是一个调试托管代码的好工具，然而整个CLI执行引擎中最精彩的部分例如垃圾回收，元数据等都是用非托管代码编写的。跟踪调试这一部分代码cordbg就无能为力了。目前为止，似乎还没有一个调试器可以既调试托管代码又调试非托管代码（有些调试器可以加载extension以实现少量支持）。好在在Windows下，SSCLI也不过就是一个标准windows程序，否则SSCLI也没法在Windows上跑啊。所以我们仍然可以用调试windows程序的办法去调试SSCLI。</p>
+<p>调试一个Windows程序无非需要这么几样东西：调试器，pdb符号文件和源代码。源代码不必多说，符号文件在编译SSCLI的时候已经自动生成了。放在F:\sscli\build\v1.x86chk.rotor\Symbols下面。调试器有多种选择，最简单的方法就直接使用Visual&nbsp;Studio.net。鉴于功能和实用，笔者选用了Windbg，该软件可以从http://www.microsoft.com/ddk/debugging/下载。</p>
+<p>安装Windbg完毕后，建立一个小的批处理程序，内容如下：</p>
+<p>F:</p>
+<p>cd&nbsp;F:\sscli\build\v1.x86chk.rotor</p>
+<p>call&nbsp;F:\debug\windbg&nbsp;clix&nbsp;Hello.exe</p>
+<p>其中F:\debug是Windbg的安装目录。下次每次Double&nbsp;Click这个小批处理程序，就可以直接启动Windbg，并调试通过clix运行的Hello.exe程序。</p>
+<p>这时在命令窗口输入：</p>
+<p>0:000</a>&gt;bp&nbsp;main</p>
+<p>0:000&gt;g</p>
+<p>其中第一条命令的意思是在主函数main处设置断点，g命令是使程序继续执行，当然，程序执行到main的时候，就停下来了。如下图所示。&nbsp;</p>
+<p><a href="http://images.blogcn.com/2005/1/24/12/omale,20050124234733.jpg" target="_blank"><img border="0" onload="if(this.width>screen.width/2)this.width=screen.width/2;" src="http://images.blogcn.com/2005/1/24/12/omale,20050124234733.jpg" /&gt;</a></p>
+<p>这里有必要澄清一个问题，有人或许会问，main不就是程序执行的第一行代码么？为什么要还要go才能撞上main。其实Windows下一个应用程序执行的第一条指令写在PE文件头的某个位置，一般是0x0400000，这个地方的函数的名字官方叫WinMainCRTStartup。这个函数作一些初始化工作，然后才会去调用main或者WinMain。也就是我们看到的程序入口点函数。</p>
+<p>下面我们简单的分析一下clix的代码。Clix是个很简单的程序，首先，main函数解析命令行参数，收集三样东西CLI运行时所在的库文件名，托管可执行文件的名称和命令行参数，分别放在pRuntimeName,&nbsp;pModuleName和pActualCmdLine中，然后调用Launch函数。下面是简化的main函数代码。</p>
+<p>&nbsp;</p>
+<p>int&nbsp;__cdecl&nbsp;main(int&nbsp;argc,&nbsp;char&nbsp;**argv)</p>
+<p>{</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;WCHAR*&nbsp;pRuntimeName;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;WCHAR*&nbsp;pModuleName;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;WCHAR*&nbsp;pActualCmdLine;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;First,&nbsp;parse&nbsp;the&nbsp;program&nbsp;name.&nbsp;Anything&nbsp;up&nbsp;to&nbsp;the&nbsp;first&nbsp;whitespace&nbsp;outside&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;a&nbsp;quoted&nbsp;substring&nbsp;is&nbsp;accepted&nbsp;(algorithm&nbsp;from&nbsp;clr/src/vm/util.cpp)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;pRuntimeName&nbsp;=&nbsp;pdst;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Now,&nbsp;load&nbsp;the&nbsp;runtime&nbsp;from&nbsp;the&nbsp;clix&nbsp;directory</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Parse&nbsp;the&nbsp;first&nbsp;arg&nbsp;&#8211;&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;module&nbsp;to&nbsp;run</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;pModuleName&nbsp;=&nbsp;pdst;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;nExitCode&nbsp;=&nbsp;Launch(pRuntimeName,&nbsp;pModuleName,&nbsp;pActualCmdLine);</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;nExitCode;</p>
+<p>}</p>
+<p>使用bp命令在Launch一句设置断点，然后go，当断点hit的时候，输入下列命令察看三个参数的值：</p>
+<p>0:000&gt;&nbsp;dt&nbsp;pRuntimeName</p>
+<p>Local&nbsp;var&nbsp;@&nbsp;0x6ff30&nbsp;Type&nbsp;unsigned&nbsp;short*</p>
+<p>0x002b2670&nbsp;</p>
+<p>&nbsp;-&gt;&nbsp;0x73</p>
+<p>0:000&gt;&nbsp;du&nbsp;0x002b2670</p>
+<p>002b2670&nbsp;&nbsp;"sscoree.dll"</p>
+<p>其中dt是显示pRuntimeName的类型和地址，du是显示一个unicode的字符串。依此，我们可以得到三个参数的值分别是："sscoree.dll"，"Hello.exe&rdquo;和"Hello.exe&rdquo;。后面两个重复的原因是我们Hello.exe后面并没有其他参数，否则pActualCmdLine的值会加上其他参数。</p>
+<p>然后我们用t命令跟踪到Launch函数里面去。下面是精简过的Launch代码。</p>
+<p>&nbsp;</p>
+<p>DWORD&nbsp;Launch(WCHAR*&nbsp;pRunTime,&nbsp;WCHAR*&nbsp;pFileName,&nbsp;WCHAR*&nbsp;pCmdLine)</p>
+<p>{</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;open&nbsp;the&nbsp;file&nbsp;&amp;&nbsp;map&nbsp;it</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;hFile&nbsp;=&nbsp;::CreateFile(pFileName,&nbsp;GENERIC_READ,&nbsp;FILE_SHARE_READ,</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0,&nbsp;OPEN_EXISTING,&nbsp;0,&nbsp;0);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;hMapFile&nbsp;=&nbsp;::CreateFileMapping(hFile,&nbsp;NULL,&nbsp;PAGE_WRITECOPY,&nbsp;0,&nbsp;0,&nbsp;NULL);</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;pModule&nbsp;=&nbsp;::MapViewOfFile(hMapFile,&nbsp;FILE_MAP_COPY,&nbsp;0,&nbsp;0,&nbsp;0);</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;check&nbsp;the&nbsp;DOS&nbsp;headers</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;pdosHeader&nbsp;=&nbsp;(IMAGE_DOS_HEADER*)&nbsp;pModule;</p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;check&nbsp;the&nbsp;NT&nbsp;headers</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;pNtHeaders&nbsp;=&nbsp;(IMAGE_NT_HEADERS32*)&nbsp;((BYTE*)pModule&nbsp;+&nbsp;VAL32(pdosHeader-&gt;e_lfanew));</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;check&nbsp;the&nbsp;COR&nbsp;headers</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;pSectionHeader&nbsp;=&nbsp;(PIMAGE_SECTION_HEADER)&nbsp;Cor_RtlImageRvaToVa(pNtHeaders,&nbsp;(PBYTE)pModule,&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;load&nbsp;the&nbsp;runtime&nbsp;and&nbsp;go</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;hRuntime&nbsp;=&nbsp;::LoadLibrary(pRunTime);</p>
+<p>&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;__int32&nbsp;(STDMETHODCALLTYPE&nbsp;*&nbsp;pCorExeMain2)(</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp; nbsp;PBYTE&nbsp;&nbsp;&nbsp;pUnmappedPE,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;-&gt;&nbsp;memory&nbsp;mapped&nbsp;code</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DWORD&nbsp;&nbsp;&nbsp;cUnmappedPE,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Size&nbsp;of&nbsp;memory&nbsp;mapped&nbsp;code</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LPWSTR&nbsp;&nbsp;pImageNameIn,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;-&gt;&nbsp;Executable&nbsp;Name</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LPWSTR&nbsp;&nbsp;pLoadersFileName,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;-&gt;&nbsp;Loaders&nbsp;Name</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LPWSTR&nbsp;&nbsp;pCmdLine);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;-&gt;&nbsp;Command&nbsp;Line</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;*((VOID**)&amp;pCorExeMain2)&nbsp;=&nbsp;(LPVOID)&nbsp;::GetProcAddress(hRuntime,&nbsp;"_CorExeMain2");</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;nExitCode&nbsp;=&nbsp;(int)pCorExeMain2((PBYTE)pModule,&nbsp;dwSize,&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pFileName,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;-&gt;&nbsp;Executable&nbsp;Name</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NULL,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;-&gt;&nbsp;Loaders&nbsp;Name</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pCmdLine);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;-&gt;&nbsp;Command&nbsp;Line</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;nExitCode;</p>
+<p>}</p>
+<p>函数的功能很简单，首先把Hello.exe作为内存映射文件加载到进程的地址空间内。然后对合法性作必要的检查，最后加载sscoree.dll，然后找到入口函数_CorExeMain2的地址，并且转到那个函数去执行。</p>
+<p>我们可以在最后一句设断点，然后用t命令跟进_CorExeMain2的函数里面去。这时，程序离开了clix，转到了F:\sscli\clr\src\vm\ceemain.cpp中执行。欢迎来到.NET虚拟机内部。</p>
+<p>跟踪SSCLI的动态执行</p>
+<p>由于虚拟机是一个非常复杂的环境，.NET&nbsp;Assembly的执行也相当复杂，牵扯到多线程，同步等等，有些问题很难通过调试器一行一行跟踪代码来发现，这时候所需要的是动态的环境，也就是要得到程序真正执行的时候的一些信息。</p>
+<p>好在SSCLI提供了功能极为强大的Log功能，可以动态的记录很多代码的执行。其基本思想就是设置一些环境变量，然后SSCLI的代码会根据这些预先设置的环境变量来输出一些调试信息。例如我们在命令行窗口下输入下面的命令，就可以跟踪JIT编译器所即时编译的所有函数：</p>
+<blockquote>
+<p>set&nbsp;COMPlus_JitTrace=1</p>
+<p>clix&nbsp;Hello.exe</p>
+</blockquote>
+<p>程序执行的时候就会输出大量的信息，如下所示：</p>
+<p>Method&nbsp;SetupDomain&nbsp;Class&nbsp;System.AppDomain&nbsp;</p>
+<p>Method&nbsp;.cctor&nbsp;Class&nbsp;System.Runtime.Remoting.Proxies.RealProxy&nbsp;</p>
+<p>Method&nbsp;.ctor&nbsp;Class&nbsp;System.AppDomainSetup&nbsp;</p>
+<p>Method&nbsp;.ctor&nbsp;Class&nbsp;System.Object&nbsp;</p>
+<p>Method&nbsp;SetupFusionStore&nbsp;Class&nbsp;System.AppDomain&nbsp;</p>
+<p>Method&nbsp;get_Value&nbsp;Class&nbsp;System.AppDomainSetup&nbsp;</p>
+<p>Method&nbsp;.cctor&nbsp;Class&nbsp;System.String&nbsp;</p>
+<p>Method&nbsp;LastIndexOfAny&nbsp;Class&nbsp;System.String&nbsp;</p>
+<p>Method&nbsp;get_Length&nbsp;Class&nbsp;System.String&nbsp;</p>
+<p>&hellip;&hellip;&hellip;&hellip;</p>
+<p>随机文档\docs\techinfo\logging.html提供了对Log功能的完整介绍。在此就不再多做敷述。</p>
+<p>结束语</p>
+<p>除了上面介绍的一些工具方法外，在几十万行代码中来回穿梭，Source&nbsp;Insight是一个不可缺少的好帮手，由于介绍Source&nbsp;Insight的使用超出了本文的范畴，读者可以查阅相关的资料。有了上面的环境，方法，工具，我们下一步就可以向SSCLI的深处探秘了。</p>
+<p>&nbsp;</p>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2005-01-25T00:01:23+00:00">Jan 25, 2005</time>
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#misc-ref">misc</a>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

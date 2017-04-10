@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="omale" />
+        <meta name="copyright" content="omale" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content=", misc, " />
+
+<meta property="og:title" content="NDS程序设计（三） "/>
+<meta property="og:url" content="./ndscheng-xu-she-ji-san.html" />
+<meta property="og:description" content="未分类 计算机技术 tags: Google 程序员 软件 3.1开发环境杂谈 要想给NDS开发程序，最好的选择当然是买任天堂公司提供的开发套件了，任天堂的套件非常好，开发调试一条龙俱全（我没见过）。但是这个东西相当贵不说，它也不是有钱就卖的。还必须跟任天堂搞好关系才可以。所以呢一般的平民百姓想玩是不可能了，除非练好身手加入Konami，Namoco……开发工具的网址是：http://www.warioworld.com 当御林军当不成，就只好当民间高手了。国外有一群高人不甘寂寞，就自己动手丰衣足食，DIY了一套开发环境，这帮人自称Homebrew（为什么这个单词金山词霸里面没有……）这套开发环境叫做devkitPro。我们下面的开发工作，全都是在devkitPro下进行的。 devkitPro是一个为多种游戏机开发程序的开发环境，不只可以为NDS开发程序，还可以为GBA，PSP，NGC和GP32（据传说GP32是韩国人开发的一个掌机……）编写代码。那些游戏机有的是MIPS有的是PowerPC，就不在我们的瞎扯范围之内了。我们就关注NDS。 3.2安装和配置开发环境 devkitPro是sourceforge.net上的一个项目，所以最新的东西都可以从sourceforge上下载，老家在这里 …" />
+<meta property="og:site_name" content="Zongjian&#39;s blog" />
+<meta property="og:article:author" content="omale" />
+<meta property="og:article:published_time" content="2006-05-09T11:00:20+00:00" />
+<meta name="twitter:title" content="NDS程序设计（三） ">
+<meta name="twitter:description" content="未分类 计算机技术 tags: Google 程序员 软件 3.1开发环境杂谈 要想给NDS开发程序，最好的选择当然是买任天堂公司提供的开发套件了，任天堂的套件非常好，开发调试一条龙俱全（我没见过）。但是这个东西相当贵不说，它也不是有钱就卖的。还必须跟任天堂搞好关系才可以。所以呢一般的平民百姓想玩是不可能了，除非练好身手加入Konami，Namoco……开发工具的网址是：http://www.warioworld.com 当御林军当不成，就只好当民间高手了。国外有一群高人不甘寂寞，就自己动手丰衣足食，DIY了一套开发环境，这帮人自称Homebrew（为什么这个单词金山词霸里面没有……）这套开发环境叫做devkitPro。我们下面的开发工作，全都是在devkitPro下进行的。 devkitPro是一个为多种游戏机开发程序的开发环境，不只可以为NDS开发程序，还可以为GBA，PSP，NGC和GP32（据传说GP32是韩国人开发的一个掌机……）编写代码。那些游戏机有的是MIPS有的是PowerPC，就不在我们的瞎扯范围之内了。我们就关注NDS。 3.2安装和配置开发环境 devkitPro是sourceforge.net上的一个项目，所以最新的东西都可以从sourceforge上下载，老家在这里 …">
+
+        <title>NDS程序设计（三）  · Zongjian&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zongjian&#39;s blog - Full Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>Zongjian's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./ndscheng-xu-she-ji-san.html"> NDS程序设计（三）  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <ul>
+<li>未分类</li>
+<li>计算机技术
+tags:</li>
+<li>Google</li>
+<li>程序员</li>
+<li>软件</li>
+</ul>
+<hr>
+<p>3.1开发环境杂谈</p>
+<p>要想给NDS开发程序，最好的选择当然是买任天堂公司提供的开发套件了，任天堂的套件非常好，开发调试一条龙俱全（我没见过）。但是这个东西相当贵不说，它也不是有钱就卖的。还必须跟任天堂搞好关系才可以。所以呢一般的平民百姓想玩是不可能了，除非练好身手加入Konami，Namoco&hellip;&hellip;开发工具的网址是：http://www.warioworld.com</p>
+<p>当御林军当不成，就只好当民间高手了。国外有一群高人不甘寂寞，就自己动手丰衣足食，DIY了一套开发环境，这帮人自称Homebrew（为什么这个单词金山词霸里面没有&hellip;&hellip;）这套开发环境叫做devkitPro。我们下面的开发工作，全都是在devkitPro下进行的。</p>
+<p>devkitPro是一个为多种游戏机开发程序的开发环境，不只可以为NDS开发程序，还可以为GBA，PSP，NGC和GP32（据传说GP32是韩国人开发的一个掌机&hellip;&hellip;）编写代码。那些游戏机有的是MIPS有的是PowerPC，就不在我们的瞎扯范围之内了。我们就关注NDS。</p>
+<p>3.2安装和配置开发环境</p>
+<p>devkitPro是sourceforge.net上的一个项目，所以最新的东西都可以从sourceforge上下载，老家在这里：http://sourceforge.net/projects/devkitpro</a>&nbsp;。但是google一下应该可以找到不少链接。</p>
+<p>devkitPro是完全开源的，可以从sourceforege网站上下载到几乎所有的类库和工具的源代码。如果你是个想对任何细节都穷根究底的程序员（就像我&hellip;&hellip;），读devkitPro里面的代码是一个不错的选择。同时，与其它开源项目一样，devkitPro中关于NDS部分的文档是悲惨的可怜。想了解怎么写程序和一些库函数的作用功能参数，基本上就一个办法&mdash;&mdash;读代码。</p>
+<p>下载下来应该是一个名字类似于这个的exe文件：devkitProUpdater-1.2.7.exe。这个不是直接的安装文件，但是通过它可以在线安装最新版本的devkitpro。如果速度不慢，硬盘不小，保险就是所有选项全选，这是我的一贯作风。一般把它安装在磁盘跟目录，例如我把它安装在D:\devkitPro目录。</p>
+<p>安装完了之后是配置环境变量，有三个环境变量要设置，一个是DEVKITARM，把它指向devkitARM目录，（因为要用到ARM的工具么）。还有DEVKITPRO，把它设置成devkitpro根目录。注意注意！这两个变量的路径必须用类UNIX路径，也就是目录要用&ldquo;/&rdquo;斜杠而不是Windows的&ldquo;\&rdquo;斜杠，而且D盘不能写成D冒号，要写成&ldquo;/d/&rdquo;，也是仿照UNIX单根目录来的。另外就是要设置一下PATH路径，把编译器等几个重要的工具所在目录加进去，这样Windows就可以自动搜索到它们。当然设置环境变量可以在&ldquo;我的电脑&rdquo;右键&#8230;&#8230;去设置，我比较习惯自己写一个批处理程序，设置这些变量，这样既不会影响到整个系统的环境变量，又不耽误一个命令行窗口正常使用这些环境变量。</p>
+<p>我写的批处理程序如下：</p>
+<p>@echo&nbsp;off</p>
+<p>REM</p>
+<p>REM&nbsp;Written&nbsp;by&nbsp;Jason&nbsp;He;&nbsp;Set&nbsp;up&nbsp;NDS&nbsp;development&nbsp;enviorment</p>
+<p>REM&nbsp;4/19/2006</p>
+<p>REM</p>
+<p>REM&nbsp;set&nbsp;environment</p>
+<p>set&nbsp;DEVKITARM=/D/devkitPro/devkitARM</p>
+<p>set&nbsp;DEVKITPRO=/D/devkitPro</p>
+<p>REMset&nbsp;path</p>
+<p>set&nbsp;PATH=%PATH%D:\devkitPro\devkitARM\arm-elf\bin;D:\devkitpro\devkitarm\bin;D:\devkitpro\msys\bin;</p>
+<p>cd&nbsp;/d&nbsp;D:\devkitPro\examples\nds\</p>
+<p>echo&nbsp;Welcome&nbsp;to&nbsp;enter&nbsp;NDS&nbsp;development&nbsp;world!</p>
+<p>把这些东西复制到一个文本文件里面，然后保存成nds.bat（注意，有些内容可能要修改哈）。然后再建立一个快捷方式，快捷方式指向的内容是：%SystemRoot%\system32\cmd.exe&nbsp;/K&nbsp;D:\devkitPro\nds.bat。这样，只要双击这个快捷方式，就可以打开我们以后要一直面对的开发环境了。（用惯了Visual&nbsp;Studio的同志也不要失落，命令行也不一定就坏）</p>
+<p>3.3编译NDS版Hello&nbsp;World</p>
+<p>在写我们自己的程序之前，还是先编译运行devkitPro中自带的示例程序。让大家有个感性的认识。</p>
+<p>编译还是挺简单的。在上一节创建好的命令行开发环境中cd到D:\devkitPro\examples\nds\Graphics\2D\hello_world目录（终于看到Hello&nbsp;World了）。代码的组织结构和含义我们以后再看，编译只需要输入make，就可以看到编译开始了。编译结束之后，可以看到hello_world目录下多了几个文件，最重要的也就是hello_world.nds文件了。如果读者用过烧录卡，就知道.nds文件也就是NDS可以运行的ROM文件了。这里的hello_world.nds也是NDS可以直接运行的二进制文件。</p>
+<p>3.4让Hello&nbsp;World运行起来</p>
+<p>如果你有NDS&nbsp;+&nbsp;烧录卡，想运行这个程序，那么只需要直接把这个文件复制到烧录卡上就可以直接像运行其他NDS游戏一样运行hello&nbsp;world了。在我的Super&nbsp;Card&nbsp;SD版上，无需转化就可以直接运行。</p>
+<p>如果你只有NDS并没有烧录卡，想运行这个程序，那么国外有一个软件叫WifiMe，据说用这个软件可以通过NDS自带的Wifi无线网络把hello_world.nds文件从PC机下载到NDS上运行。但是据说这种方法对PC端的wifi网卡要求挺高。我没有试过WifiMe，所以这种方法我就不详细介绍了。</p>
+<p>如果你连NDS游戏机都没有，也想运行这个游戏。也行！到网上下载几个NDS模拟器来，用NDS模拟器来运行这个例子也可以。由于NDS的硬件比较复杂，所以目前NDS模拟器目前还都处于比较原始的状态，基本上不能运行商业游戏，但是用来运行这些示例代码已经是绰绰有余了。</p>
+<p>我觉得比较有前途的一个模拟器是ideas，作者还在不断的对这个模拟器进行更新。此外，据说是任天堂开发的内部泄漏的模拟器ensata也不错，但是这个模拟器已近不会更新了。此外还有几个模拟器也不错，读者可以自行选择。</p>
+<p>下面是分别在我的爱机NDSL和模拟器上运行这个程序的图片。</p>
+<p>&nbsp;</p>
+<p><a href="http://images.blogcn.com/2006/5/9/6/omale,20060509105825.jpg" target="_blank"><img border="0" onload="if(this.width>screen.width/2)this.width=screen.width/2;" src="http://images.blogcn.com/2006/5/9/6/omale,20060509105825.jpg" /&gt;</a></p>
+<p>&nbsp;</p>
+<p>以后我们自己开发的游戏都可以通过这种方式运行调试。</p>
+<p>3.5项目代码分析</p>
+<p>3.5.1hello&nbsp;world目录结构</p>
+<p>好了，Hello&nbsp;World终于在NDS上跑起来了。鲜也尝过了，其然也知了，是该回头来看看这些代码，知其所以然的时候了。</p>
+<p>让我们来看看刚才编译过的hello_world目录，看看这个� ��录下的一些文件组织结构。经过make之后，这个目录的组织结构如下（省略了几个Programmers&nbsp;Notepad的工程文件），我在文件和目录后面加了解释：</p>
+<p>|&nbsp;&nbsp;&nbsp;hello_world.arm9//&nbsp;编译之后生成，似乎是ARM二进制代码</p>
+<p>|&nbsp;&nbsp;&nbsp;hello_world.elf//&nbsp;elf文件格式的二进制</p>
+<p>|&nbsp;&nbsp;&nbsp;hello_world.nds//&nbsp;可执行的NDS&nbsp;ROM</p>
+<p>|&nbsp;&nbsp;&nbsp;Makefile//&nbsp;构建脚本，稍后详细介绍</p>
+<p>|</p>
+<p>+&#8212;build//&nbsp;编译生成的目录，用来存放编译生成的临时文件</p>
+<p>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hello_world.map//&nbsp;编译生成的map文件</p>
+<p>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.d//&nbsp;编译生成的文件，main.cpp所包含的文件列表</p>
+<p>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.o//&nbsp;main.cpp编译生成的目标文件</p>
+<p>|</p>
+<p>+&#8212;include//&nbsp;存放头文件的目录，为空</p>
+<p>\&#8212;source//&nbsp;存放源代码的目录</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.cpp//&nbsp;源代码文件</p>
+<p>我们可以看到，其实这个目下的大多数文件都是make之后才生成的，make之前这个目录中只有两个文件：makefile和main.cpp。也就是说，如果我们要自己新建一个项目，其实最少只要makefile和main.cpp就够了。网上看到有网友问如何从0开始一步一步创建一个新项目，其实只要把D:\devkitPro\examples\nds\templates\目录下的arm9或combined目录复制一份就好了。也可以复制这个hello_world目录，都无所谓。下面就分别介绍main.cpp和makefile这两个文件。</p>
+<p>3.5.2main.cpp</p>
+<p>main.cpp内容很短，一行汇编都没看到，热衷于ASM的人是不是会有一丝丝失望呢。代码分成几大段：</p>
+<p>第一段，包含头文件。main.cpp中包含了三个头文件，其中nds.h一般是所有nds程序都需要包含的。console.h包含一些命令行相关的函数声明。stdio.h就不用我多介绍了。</p>
+<h1>include&nbsp;<nds.h></h1>
+<h1>include&nbsp;<nds/arm9/console.h></h1>
+<h1>include&nbsp;<stdio.h></h1>
+<p>第二段，全局变量和Vblank()函数，Vblank的作用就是把全局变量加一，系统是借此来统计桢数。工作原理我们后面会介绍。</p>
+<p>volatile&nbsp;int&nbsp;frame&nbsp;=&nbsp;0;</p>
+<p>//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>void&nbsp;Vblank()&nbsp;{</p>
+<p>frame++;</p>
+<p>}</p>
+<p>第三段，大戏上演，main()函数，这也是代码的入口函数。首先main()函数会对硬件进行一些初始化，我在代码中做了一些注释。这些初始化工作读者暂时可以当它没有，具体的详细技术细节我们以后再介绍。读者可以从iprintf()一句开始读，相信这样剩下的代码就不难懂了。首先打印几句话，然后通过一个死循环读取触摸屏的信息，然后打印显示。</p>
+<p>//&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
+<p>int&nbsp;main(void)&nbsp;{</p>
+<p>touchPosition&nbsp;touchXY;</p>
+<p>irqInit();//&nbsp;初始化中断</p>
+<p>irqSet(IRQ_VBLANK,&nbsp;Vblank);//&nbsp;设置画图中断处理函数为vblank()</p>
+<p>irqEnable(IRQ_VBLANK);//&nbsp;打开VBLANK中断</p>
+<p>videoSetMode(0);//&nbsp;下面几行初始化显示屏</p>
+<p>videoSetModeSub(MODE_0_2D&nbsp;|&nbsp;DISPLAY_BG0_ACTIVE);</p>
+<p>vramSetBankC(VRAM_C_SUB_BG);&nbsp;</p>
+<p>SUB_BG0_CR&nbsp;=&nbsp;BG_MAP_BASE(31);</p>
+<p>BG_PALETTE_SUB[255]&nbsp;=&nbsp;RGB15(31,31,31);</p>
+<p>//&nbsp;初始化控制台</p>
+<p>consoleInitDefault((u16*)SCREEN_BASE_BLOCK_SUB(31),&nbsp;(u16*)CHAR_BASE_BLOCK_SUB(0),&nbsp;16);</p>
+<p>//&nbsp;打印Hello信息</p>
+<p>iprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello&nbsp;DS&nbsp;dev'rs\n");</p>
+<p>iprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;www.devkitpro.org\n");</p>
+<p>iprintf("&nbsp;&nbsp;&nbsp;www.drunkencoders.com");</p>
+<p>//&nbsp;下面是轮询死循环</p>
+<p>while(1)&nbsp;{</p>
+<p>swiWaitForVBlank();//&nbsp;BIOS调用，等待vblank中断</p>
+<p>touchXY=touchReadXY();//&nbsp;读取当前触摸屏的X&nbsp;Y坐标</p>
+<p>iprintf("\x1b[10;0HFrame&nbsp;=&nbsp;%d",frame);//&nbsp;打印桢数</p>
+<p>//&nbsp;打印触摸屏触摸信息</p>
+<p>iprintf("\x1b[16;0HTouch&nbsp;x&nbsp;=&nbsp;%04X,&nbsp;%04X\n",&nbsp;touchXY.x,&nbsp;touchXY.px);</p>
+<p>iprintf("Touch&nbsp;y&nbsp;=&nbsp;%04X,&nbsp;%04X\n",&nbsp;touchXY.y,&nbsp;touchXY.py);</p>
+<p>}</p>
+<p>return&nbsp;0;</p>
+<p>}</p>
+<p>读者如果心痒手痒，可以尝试着自己修改一下这些代码，然后再编译运行一下，看看会有什么结果。给各位布置各作业了，默认打印的字是白色的，能不能想办法让它变变颜色？</p>
+<p>3.5.3makefile</p>
+<p>makefile是进行自动编译的脚本。make.exe会读取makefile，然后根据makefile的内容来决定如何编译整个系统，从而简化整个构建过程。正是因为makefile的存在，所以我们在构建的时候，只需要在该目录敲一个make命令，系统就可以帮我们自动构建。</p>
+<p>虽然说是简化，但是由于在Windows上有大批被IDE给&ldquo;惯坏&rdquo;了的程序员，对makefile不了解，看到makefile就害怕，所以在windows下makefile通常不但起不到简化的作用，还经常成为程序员的&ldquo;拦路虎&rdquo;。不能不说是可叹可叹阿。</p>
+<p>关于makefile的详细内容我想我就不介绍了。如果你看到makefile也心虚，那就要自己google搜索一下教程，自己补习了。</p>
+<p>那我们就分析一下hello_world目录中的makefile，其实这个makefile是一个典型的makefile的模板，读者在新建立文件的时候，通常只需要在这个makefile的基础上把几个宏稍作修改就可以了。我们只介绍关键部分，说明都在代码里了，如下：</p>
+<p>（略）</p>
+<h1>&nbsp;下面这行包含了另外一个文件，它包含通用的NDS构建规则。</h1>
+<p>include&nbsp;＄(DEVKITARM)/ds_rules</p>
+<h1>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</h1>
+<h1>&nbsp;下面几个宏比较重要：</h1>
+<h1>&nbsp;TARGET&nbsp;是输出的文件名，默认被设置成了当前目录名</h1>
+<h1>&nbsp;BUILD&nbsp;是obj和其他中间文件的存放目录，默认叫build</h1>
+<h1>&nbsp;SOURCES是包含源代码的目录列表</h1>
+<h1>&nbsp;INCLUDES包含头文件的目录列表</h1>
+<h1>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</h1>
+<p>TARGET:=＄(shell&nbsp;basename&nbsp;＄(CURDIR))</p>
+<p>BUILD:=build</p>
+<p>SOURCES:=gfx&nbsp;source&nbsp;data&nbsp;&nbsp;</p>
+<p>INCLUDES:=include&nbsp;build</p>
+<p>（略）</p>
+<h1>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</h1>
+<h1>&nbsp;这里是额外链接的库，设置成nds9意味着链接了libnds9.a，也就是libnds提供的一个库</h1>
+<h1>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-</h1>
+<p>LIBS:=&nbsp;-lnds9</p>
+<p>（略）</p>
+<h1>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</h1>
+<h1>&nbsp;这里是要build的所有文件列表，默认是这个目录下的所有文件。</h1>
+<p>CFILES:=＄(foreach&nbsp;dir,＄(SOURCES),＄(notdir&nbsp;＄(wildcard&nbsp;＄(dir)/*.c)))</p>
+<p>CPPFILES:=＄(foreach&nbsp;dir,＄(SOURCES),＄(notdir&nbsp;＄(wildcard&nbsp;＄(dir)/*.cpp)))</p>
+<p>SFILES:=＄(foreach&nbsp;dir,＄(SOURCES),＄(notdir&nbsp;＄(wildcard&nbsp;＄(dir)/*.s)))</p>
+<p>BINFILES:=＄(foreach&nbsp;dir,＄(SOURCES),＄(notdir&nbsp;＄(wildcard&nbsp;＄(dir)/*.bin)))</p>
+<p>（略）</p>
+<p>通过上面的介绍，基本上makefile要编译哪些文件，链接哪些库，生成的文件叫什么名字我们都知道了，新建项目的时候，只需要把上述的东西改改基本就可以了。</p>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2006-05-09T11:00:20+00:00">May 9, 2006</time>
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#misc-ref">misc</a>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

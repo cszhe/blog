@@ -1,0 +1,92 @@
+---
+id: 9782
+title: Proposal of performing “Learning by doing”
+date: 2005-05-23T01:02:14+00:00
+author: omale
+layout: post
+guid: http://hezongjian.com/blog/?p=9782
+permalink: /2005/05/23/proposal-of-performing-learning-by-doing/
+categories:
+  - 工作和学习
+  - 未分类
+---
+知道自己英语不咋地，花了三个晚上把中文硬生生翻译成英文。等着被英语专家们批斗了。
+
+Introduction&nbsp;to&nbsp;the&nbsp;course  
+“Windows&nbsp;CE&nbsp;Embedded&nbsp;System”&nbsp;is&nbsp;an&nbsp;elective&nbsp;course&nbsp;of&nbsp;Embedded&nbsp;Computing&nbsp;in&nbsp;School&nbsp;of&nbsp;Software&nbsp;Engineering&nbsp;in&nbsp;Tongji&nbsp;University.&nbsp;It&nbsp;is&nbsp;a&nbsp;3-credit&nbsp;course&nbsp;and&nbsp;it&nbsp;has&nbsp;3&nbsp;hours&nbsp;per&nbsp;week.&nbsp;In&nbsp;September&nbsp;2004,&nbsp;we&nbsp;started&nbsp;to&nbsp;teach&nbsp;this&nbsp;course&nbsp;between&nbsp;students&nbsp;who&nbsp;enrolled&nbsp;in&nbsp;2002.&nbsp;In&nbsp;March&nbsp;2005,&nbsp;the&nbsp;course&nbsp;is&nbsp;available&nbsp;to&nbsp;master&nbsp;of&nbsp;software&nbsp;engineer.  
+There&nbsp;a&nbsp;four&nbsp;goals&nbsp;of&nbsp;the&nbsp;course.&nbsp;First,&nbsp;make&nbsp;the&nbsp;student&nbsp;understand&nbsp;the&nbsp;characteristics&nbsp;of&nbsp;embedded&nbsp;system&nbsp;and&nbsp;embedded&nbsp;software.&nbsp;Second,&nbsp;understand&nbsp;the&nbsp;features&nbsp;and&nbsp;architecture&nbsp;of&nbsp;Windows&nbsp;CE,&nbsp;especially&nbsp;the&nbsp;differences&nbsp;from&nbsp;other&nbsp;embedded&nbsp;operating&nbsp;systems.&nbsp;Third,&nbsp;know&nbsp;how&nbsp;to&nbsp;customize&nbsp;the&nbsp;OS&nbsp;and&nbsp;how&nbsp;to&nbsp;develop&nbsp;applications&nbsp;and&nbsp;device&nbsp;drivers.&nbsp;Fourth,&nbsp;give&nbsp;the&nbsp;students&nbsp;more&nbsp;practice&nbsp;via&nbsp;one&nbsp;or&nbsp;two&nbsp;projects.  
+The&nbsp;course&nbsp;is&nbsp;divided&nbsp;into&nbsp;13&nbsp;classroom&nbsp;courses&nbsp;and&nbsp;3&nbsp;lab&nbsp;courses.&nbsp;The&nbsp;list&nbsp;is&nbsp;as&nbsp;follows,&nbsp;with&nbsp;the&nbsp;credit&nbsp;hours&nbsp;in&nbsp;braces:  
+&#61548;Introduction&nbsp;to&nbsp;Windows&nbsp;CE&nbsp;(1)  
+&#61548;Application&nbsp;Development&nbsp;(2)  
+&#61548;Windows&nbsp;CE&nbsp;OS&nbsp;Development&nbsp;(3)  
+&#61548;Windows&nbsp;CE&nbsp;System&nbsp;Architecture&nbsp;(1)  
+&#61548;Device&nbsp;Driver&nbsp;Development&nbsp;(2)  
+&#61548;BSP&nbsp;Development&nbsp;and&nbsp;Advanced&nbsp;Topics&nbsp;(2)  
+&#61548;Summary&nbsp;and&nbsp;Case&nbsp;Study&nbsp;(2)  
+3&nbsp;lab&nbsp;courses&nbsp;are:  
+&#61548;Application&nbsp;Development（Including&nbsp;Pocket&nbsp;PC&nbsp;and&nbsp;Smartphone）  
+&#61548;The&nbsp;usage&nbsp;of&nbsp;Platform&nbsp;Builder&nbsp;and&nbsp;how&nbsp;to&nbsp;create&nbsp;download&nbsp;and&nbsp;debug&nbsp;OS  
+&#61548;Device&nbsp;driver&nbsp;development&nbsp;and&nbsp;component&nbsp;creation  
+Since&nbsp;the&nbsp;begging&nbsp;of&nbsp;the&nbsp;course,&nbsp;students&nbsp;show&nbsp;great&nbsp;interests&nbsp;in&nbsp;this&nbsp;course.&nbsp;106&nbsp;undergraduate&nbsp;students&nbsp;and&nbsp;over&nbsp;20&nbsp;graduate&nbsp;students&nbsp;have&nbsp;selected&nbsp;this&nbsp;course.&nbsp;It&nbsp;has&nbsp;the&nbsp;largest&nbsp;attendance&nbsp;among&nbsp;all&nbsp;the&nbsp;elective&nbsp;courses.&nbsp;After&nbsp;the&nbsp;course,&nbsp;a&nbsp;lot&nbsp;of&nbsp;students&nbsp;want&nbsp;to&nbsp;continue&nbsp;to&nbsp;learn&nbsp;Windows&nbsp;CE&nbsp;related&nbsp;knowledge&nbsp;and&nbsp;want&nbsp;to&nbsp;have&nbsp;more&nbsp;chances&nbsp;to&nbsp;practice.&nbsp;So&nbsp;we&nbsp;set&nbsp;up&nbsp;a&nbsp;club&nbsp;named&nbsp;Windows&nbsp;CE&nbsp;club.&nbsp;Now,&nbsp;more&nbsp;than&nbsp;150&nbsp;members&nbsp;have&nbsp;joined&nbsp;the&nbsp;club.  
+There&nbsp;are&nbsp;about&nbsp;200&nbsp;students&nbsp;in&nbsp;grade&nbsp;03.&nbsp;They&nbsp;will&nbsp;learn&nbsp;Windows&nbsp;CE&nbsp;Embedded&nbsp;System&nbsp;course&nbsp;in&nbsp;September&nbsp;2005.&nbsp;Approximately,&nbsp;more&nbsp;than&nbsp;100&nbsp;students&nbsp;will&nbsp;take&nbsp;part&nbsp;in&nbsp;this&nbsp;course&nbsp;and&nbsp;we&nbsp;plan&nbsp;to&nbsp;practice&nbsp;“learning&nbsp;and&nbsp;doing”&nbsp;in&nbsp;this&nbsp;course&nbsp;from&nbsp;September&nbsp;2005.  
+The&nbsp;necessity&nbsp;of&nbsp;“Learning&nbsp;by&nbsp;doing”&nbsp;and&nbsp;expected&nbsp;result  
+The&nbsp;research&nbsp;of&nbsp;Dr.&nbsp;Nancy&nbsp;Dixon&nbsp;shows&nbsp;that:&nbsp;We&nbsp;can&nbsp;remember&nbsp;10%&nbsp;of&nbsp;what&nbsp;we&nbsp;hear,&nbsp;15%&nbsp;of&nbsp;what&nbsp;we&nbsp;see,&nbsp;20%&nbsp;of&nbsp;what&nbsp;we&nbsp;hear&nbsp;and&nbsp;see,&nbsp;60%&nbsp;of&nbsp;what&nbsp;we&nbsp;have&nbsp;done,&nbsp;80%&nbsp;of&nbsp;what&nbsp;we&nbsp;have&nbsp;done&nbsp;and&nbsp;have&nbsp;been&nbsp;responded.&nbsp;90%&nbsp;of&nbsp;what&nbsp;we&nbsp;have&nbsp;taught.&nbsp;Improving&nbsp;students’&nbsp;practice&nbsp;skill&nbsp;and&nbsp;engineering&nbsp;skill&nbsp;is&nbsp;always&nbsp;the&nbsp;most&nbsp;important&nbsp;aim&nbsp;of&nbsp;SSE,&nbsp;Tongji.&nbsp;Because&nbsp;Windows&nbsp;CE&nbsp;Embedded&nbsp;System&nbsp;is&nbsp;a&nbsp;course&nbsp;that&nbsp;requires&nbsp;a&nbsp;lot&nbsp;of&nbsp;engineer&nbsp;skill,&nbsp;we&nbsp;pay&nbsp;great&nbsp;attention&nbsp;on&nbsp;how&nbsp;to&nbsp;improve&nbsp;the&nbsp;students&nbsp;practice&nbsp;experience&nbsp;when&nbsp;teaching,&nbsp;we&nbsp;added&nbsp;a&nbsp;lot&nbsp;of&nbsp;lab&nbsp;courses&nbsp;and&nbsp;we&nbsp;give&nbsp;the&nbsp;course&nbsp;rank&nbsp;according&nbsp;to&nbsp;a&nbsp;project&nbsp;instead&nbsp;of&nbsp;paper&nbsp;exam.  
+This&nbsp;teaching&nbsp;mode&nbsp;can&nbsp;obviously&nbsp;give&nbsp;the&nbsp;students&nbsp;more&nbsp;practice,&nbsp;but&nbsp;little&nbsp;engineering&nbsp;experience&nbsp;can&nbsp;be&nbsp;improved.&nbsp;There&nbsp;are&nbsp;several&nbsp;problems&nbsp;in&nbsp;students’&nbsp;projects:&nbsp;Coding&nbsp;is&nbsp;over-emphasized.&nbsp;Analysis,&nbsp;designed,&nbsp;testing&nbsp;is&nbsp;probably&nbsp;ignored;&nbsp;projects&nbsp;documentation&nbsp;is&nbsp;not&nbsp;formal;&nbsp;no&nbsp;project&nbsp;planning;&nbsp;always&nbsp;rush&nbsp;for&nbsp;projects&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;each&nbsp;term;&nbsp;teamwork&nbsp;is&nbsp;not&nbsp;good.&nbsp;So,&nbsp;the&nbsp;students&nbsp;seem&nbsp;to&nbsp;be&nbsp;good&nbsp;at&nbsp;technology&nbsp;and&nbsp;professional&nbsp;skill,&nbsp;but&nbsp;are&nbsp;still&nbsp;lack&nbsp;of&nbsp;engineering&nbsp;experience.  
+This&nbsp;is&nbsp;the&nbsp;main&nbsp;cause&nbsp;of&nbsp;the&nbsp;gap&nbsp;between&nbsp;the&nbsp;requirement&nbsp;of&nbsp;embedded&nbsp;elitists&nbsp;and&nbsp;school&nbsp;embedded&nbsp;teaching.&nbsp;For&nbsp;one&nbsp;thing,&nbsp;enterprises&nbsp;need&nbsp;students&nbsp;who&nbsp;know&nbsp;both&nbsp;skills&nbsp;and&nbsp;engineering,&nbsp;for&nbsp;anther&nbsp;most&nbsp;of&nbsp;the&nbsp;students&nbsp;is&nbsp;good&nbsp;at&nbsp;skills&nbsp;but&nbsp;fewer&nbsp;can&nbsp;follow&nbsp;the&nbsp;process&nbsp;of&nbsp;software&nbsp;engineering.  
+We&nbsp;know&nbsp;“learning&nbsp;by&nbsp;doing”&nbsp;in&nbsp;CMU&nbsp;via&nbsp;the&nbsp;con-call&nbsp;with&nbsp;Dr.&nbsp;Ling&nbsp;Xiaoning.&nbsp;We&nbsp;think&nbsp;that&nbsp;“learning&nbsp;by&nbsp;doing”&nbsp;can&nbsp;solve&nbsp;the&nbsp;above&nbsp;problems.&nbsp;So,&nbsp;we’d&nbsp;like&nbsp;to&nbsp;introduce&nbsp;“Learning&nbsp;by&nbsp;doing”&nbsp;teaching&nbsp;mode&nbsp;as&nbsp;well&nbsp;as&nbsp;software&nbsp;project&nbsp;management&nbsp;(such&nbsp;as&nbsp;MSF)&nbsp;into&nbsp;our&nbsp;courses.&nbsp;We&nbsp;believe&nbsp;that&nbsp;students&nbsp;can&nbsp;get&nbsp;more&nbsp;engineering&nbsp;experiences&nbsp;and&nbsp;learn&nbsp;how&nbsp;to&nbsp;learn&nbsp;via&nbsp;“doing”.&nbsp;The&nbsp;gap&nbsp;between&nbsp;enterprise&nbsp;need&nbsp;and&nbsp;school&nbsp;teaching&nbsp;can&nbsp;be&nbsp;diminished.&nbsp;  
+The&nbsp;planned&nbsp;new&nbsp;teaching&nbsp;mode&nbsp;can&nbsp;be&nbsp;summarized&nbsp;as&nbsp;follows:  
+&#61548;CMU&nbsp;Learning&nbsp;by&nbsp;Doing&nbsp;+&nbsp;the&nbsp;situation&nbsp;of&nbsp;China&nbsp;+&nbsp;the&nbsp;involvement&nbsp;of&nbsp;software&nbsp;industry  
+&#61548;Use&nbsp;large-scale&nbsp;applied&nbsp;or&nbsp;virtual&nbsp;software&nbsp;projects  
+&#61548;Organize&nbsp;students&nbsp;like&nbsp;software&nbsp;company&nbsp;members  
+&#61548;Organize&nbsp;teaching&nbsp;courses&nbsp;like&nbsp;real&nbsp;software&nbsp;developing&nbsp;process  
+&#61548;20%&nbsp;teaching,&nbsp;80%&nbsp;projects  
+&#61548;Teachers&nbsp;give&nbsp;the&nbsp;key&nbsp;points&nbsp
+  
+;to&nbsp;students;&nbsp;students&nbsp;learn&n
+  
+bsp;knowledge&nbsp;by&nbsp;self-study&nbsp;and&nbsp;doing&nbsp;projects.&nbsp;Teacher&nbsp;works&nbsp;as&nbsp;consultants.  
+&#61548;The&nbsp;grading&nbsp;criterion&nbsp;is&nbsp;whether&nbsp;students&nbsp;can&nbsp;finish&nbsp;software&nbsp;projects&nbsp;on&nbsp;schedule&nbsp;and&nbsp;on&nbsp;demand.  
+We&nbsp;hope&nbsp;to&nbsp;enhance&nbsp;communication&nbsp;with&nbsp;Microsoft&nbsp;Corp&nbsp;when&nbsp;performing&nbsp;“Learning&nbsp;by&nbsp;doing”.&nbsp;We&nbsp;also&nbsp;hope&nbsp;that&nbsp;MSRA&nbsp;can&nbsp;provide&nbsp;some&nbsp;resources.&nbsp;For&nbsp;example:&nbsp;Invie&nbsp;some&nbsp;experts&nbsp;in&nbsp;software&nbsp;engineering&nbsp;or&nbsp;experienced&nbsp;developers&nbsp;in&nbsp;Microsoft&nbsp;to&nbsp;give&nbsp;some&nbsp;speeches&nbsp;or&nbsp;teach&nbsp;some&nbsp;lessons.&nbsp;Provide&nbsp;some&nbsp;chances&nbsp;to&nbsp;let&nbsp;teachers&nbsp;and&nbsp;students&nbsp;join&nbsp;Microsoft’s&nbsp;program&nbsp;development&nbsp;and&nbsp;training.&nbsp;Share&nbsp;some&nbsp;CASE&nbsp;tools&nbsp;and&nbsp;document&nbsp;templates&nbsp;used&nbsp;in&nbsp;Microsoft.&nbsp;When&nbsp;performing&nbsp;“Learning&nbsp;by&nbsp;doing”,&nbsp;we&nbsp;would&nbsp;like&nbsp;to&nbsp;deepen&nbsp;the&nbsp;communication&nbsp;between&nbsp;Microsoft&nbsp;and&nbsp;School&nbsp;of&nbsp;Software&nbsp;Engineering,&nbsp;Tongji&nbsp;University.
+
+Sources&nbsp;of&nbsp;projects  
+1.&nbsp;Consider&nbsp;whether&nbsp;Microsoft&nbsp;can&nbsp;provide&nbsp;some&nbsp;detailed&nbsp;project&nbsp;requirements,&nbsp;the&nbsp;projects&nbsp;can&nbsp;be&nbsp;virtual&nbsp;or&nbsp;real.&nbsp;Students&nbsp;can&nbsp;be&nbsp;grouped&nbsp;and&nbsp;“bid”&nbsp;for&nbsp;the&nbsp;projects.  
+2.&nbsp;Students&nbsp;can&nbsp;be&nbsp;organized&nbsp;to&nbsp;join&nbsp;“Microsoft&nbsp;Windows&nbsp;Embedded&nbsp;Student&nbsp;ChallengE”&nbsp;competition.  
+3.&nbsp;Some&nbsp;internal&nbsp;embedded&nbsp;projects&nbsp;in&nbsp;school.  
+Training&nbsp;of&nbsp;engineering&nbsp;experience  
+During&nbsp;the&nbsp;whole&nbsp;projects,&nbsp;we&nbsp;want&nbsp;to&nbsp;focus&nbsp;on&nbsp;training&nbsp;the&nbsp;engineering&nbsp;attainment&nbsp;of&nbsp;students.&nbsp;Not&nbsp;only&nbsp;lies&nbsp;in&nbsp;the&nbsp;usage&nbsp;of&nbsp;CASE&nbsp;tools,&nbsp;but&nbsp;also&nbsp;in&nbsp;the&nbsp;management&nbsp;of&nbsp;software&nbsp;process.&nbsp;From&nbsp;the&nbsp;initial&nbsp;business&nbsp;plan&nbsp;to&nbsp;analysis&nbsp;and&nbsp;design,&nbsp;coding&nbsp;and&nbsp;testing,&nbsp;product&nbsp;release&nbsp;and&nbsp;so&nbsp;on.&nbsp;All&nbsp;of&nbsp;these&nbsp;should&nbsp;be&nbsp;strictly&nbsp;according&nbsp;to&nbsp;the&nbsp;process&nbsp;of&nbsp;software&nbsp;companies.  
+The&nbsp;responsibility&nbsp;of&nbsp;the&nbsp;teacher  
+The&nbsp;teacher&nbsp;can&nbsp;simplify&nbsp;the&nbsp;classroom&nbsp;teaching.&nbsp;Besides&nbsp;necessary&nbsp;technical&nbsp;explanations,&nbsp;teacher&nbsp;can&nbsp;be&nbsp;the&nbsp;role&nbsp;of&nbsp;consultant,&nbsp;tell&nbsp;students&nbsp;how&nbsp;to&nbsp;obtain&nbsp;necessary&nbsp;knowledge&nbsp;and&nbsp;provide&nbsp;just&nbsp;in&nbsp;time&nbsp;help&nbsp;to&nbsp;students.&nbsp;Make&nbsp;the&nbsp;students&nbsp;learn&nbsp;knowledge&nbsp;on&nbsp;their&nbsp;own.&nbsp;  
+Teacher’s&nbsp;responsibilities&nbsp;maybe:  
+&#61548;Provide&nbsp;fundamental&nbsp;course&nbsp;introduction&nbsp;and&nbsp;introduction&nbsp;to&nbsp;tools&nbsp;and&nbsp;technologies.  
+&#61548;Help&nbsp;students&nbsp;to&nbsp;build&nbsp;the&nbsp;develop&nbsp;environment&nbsp;and&nbsp;tools&nbsp;(code&nbsp;management,&nbsp;bug&nbsp;management)  
+&#61548;assort&nbsp;with&nbsp;project&nbsp;process&nbsp;(coding,&nbsp;testing&nbsp;and&nbsp;communication)  
+&#61548;Provide&nbsp;technical&nbsp;support&nbsp;(solving&nbsp;problems&nbsp;in&nbsp;projects)&nbsp;and&nbsp;so&nbsp;on…
+
+How&nbsp;students&nbsp;get&nbsp;knowledge  
+Students&nbsp;can&nbsp;get&nbsp;knowledge&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:  
+1.&nbsp;The&nbsp;teacher’s&nbsp;necessary&nbsp;explanation.  
+2.&nbsp;Self-learning.&nbsp;This&nbsp;is&nbsp;the&nbsp;main&nbsp;approach&nbsp;of&nbsp;getting&nbsp;knowledge.  
+3.&nbsp;Communications&nbsp;between&nbsp;students.  
+Organization&nbsp;of&nbsp;the&nbsp;students  
+Students&nbsp;can&nbsp;be&nbsp;divided&nbsp;into&nbsp;several&nbsp;groups.&nbsp;Each&nbsp;students&nbsp;can&nbsp;act&nbsp;as&nbsp;a&nbsp;specific&nbsp;role,&nbsp;such&nbsp;as：Architect，Program&nbsp;Manager，Developer，Test&nbsp;and&nbsp;so&nbsp;on.&nbsp;Each&nbsp;student&nbsp;takes&nbsp;his&nbsp;own&nbsp;responsibility&nbsp;and&nbsp;finishes&nbsp;the&nbsp;program&nbsp;together.&nbsp;In&nbsp;order&nbsp;to&nbsp;let&nbsp;students&nbsp;experience&nbsp;different&nbsp;roles,&nbsp;we&nbsp;can&nbsp;perhaps&nbsp;put&nbsp;one&nbsp;student&nbsp;in&nbsp;different&nbsp;groups&nbsp;and&nbsp;let&nbsp;him&nbsp;/&nbsp;her&nbsp;act&nbsp;as&nbsp;different&nbsp;roles.  
+Process&nbsp;of&nbsp;the&nbsp;projects  
+After&nbsp;the&nbsp;projects&nbsp;are&nbsp;defined&nbsp;and&nbsp;students&nbsp;are&nbsp;grouped,&nbsp;the&nbsp;projects&nbsp;start.  
+We&nbsp;can&nbsp;divide&nbsp;the&nbsp;project&nbsp;into&nbsp;several&nbsp;phases.&nbsp;For&nbsp;example,&nbsp;writing&nbsp;business&nbsp;planning,&nbsp;project&nbsp;designing,&nbsp;software&nbsp;developing,&nbsp;testing&nbsp;and&nbsp;software&nbsp;release.  
+At&nbsp;the&nbsp;beginning&nbsp;of&nbsp;each&nbsp;phase,&nbsp;teachers&nbsp;or&nbsp;experts&nbsp;from&nbsp;enterprise&nbsp;can&nbsp;tell&nbsp;the&nbsp;students&nbsp;the&nbsp;tasks&nbsp;of&nbsp;this&nbsp;phase&nbsp;and&nbsp;important&nbsp;things.&nbsp;At&nbsp;the&nbsp;end&nbsp;of&nbsp;each&nbsp;phase,&nbsp;teachers&nbsp;or&nbsp;experts&nbsp;should&nbsp;review&nbsp;the&nbsp;results&nbsp;to&nbsp;see&nbsp;whether&nbsp;they&nbsp;can&nbsp;pass.&nbsp;If&nbsp;the&nbsp;result&nbsp;passes,&nbsp;they&nbsp;can&nbsp;go&nbsp;to&nbsp;next&nbsp;phase,&nbsp;or&nbsp;else,&nbsp;they&nbsp;should&nbsp;redo&nbsp;or&nbsp;modify&nbsp;it.  
+How&nbsp;to&nbsp;grade  
+Students&nbsp;are&nbsp;divided&nbsp;into&nbsp;several&nbsp;groups.&nbsp;For&nbsp;each&nbsp;group,&nbsp;we&nbsp;give&nbsp;the&nbsp;members&nbsp;the&nbsp;same&nbsp;result.&nbsp;We&nbsp;treat&nbsp;each&nbsp;group&nbsp;as&nbsp;a&nbsp;unit&nbsp;so&nbsp;that&nbsp;team&nbsp;working&nbsp;can&nbsp;be&nbsp;trained.  
+Future&nbsp;vision  
+We&nbsp;would&nbsp;like&nbsp;to&nbsp;make&nbsp;this&nbsp;course&nbsp;and&nbsp;this&nbsp;teaching&nbsp;mode&nbsp;as&nbsp;a&nbsp;brand&nbsp;and&nbsp;this&nbsp;brand&nbsp;can&nbsp;have&nbsp;certain&nbsp;effect&nbsp;in&nbsp;software&nbsp;industry.&nbsp;We&nbsp;may&nbsp;give&nbsp;the&nbsp;students&nbsp;a&nbsp;“Learning&nbsp;by&nbsp;doing”&nbsp;certification,&nbsp;so&nbsp;that&nbsp;students&nbsp;who&nbsp;take&nbsp;part&nbsp;in&nbsp;this&nbsp;course&nbsp;can&nbsp;have&nbsp;more&nbsp;advantages&nbsp;in&nbsp;job&nbsp;hunting.  
+Fields&nbsp;that&nbsp;may&nbsp;need&nbsp;Microsoft’s&nbsp;help  
+As&nbsp;Dr.&nbsp;Ling&nbsp;Xiaoning&nbsp;said,&nbsp;to&nbsp;perform&nbsp;“Learning&nbsp;by&nbsp;doing”&nbsp;we&nbsp;need&nbsp;to&nbsp;find&nbsp;a&nbsp;partner&nbsp;in&nbsp;software&nbsp;industry.&nbsp;Since&nbsp;Microsoft&nbsp;and&nbsp;Tongji&nbsp;University&nbsp;have&nbsp;wide&nbsp;communication&nbsp;and&nbsp;collaboration&nbsp;in&nbsp;many&nbsp;aspects,&nbsp;we&nbsp;hope&nbsp;that&nbsp;Microsoft&nbsp;can&nbsp;be&nbsp;our&nbsp;partner&nbsp;in&nbsp;this&nbsp;course&nbsp;can&nbsp;provide&nbsp;some&nbsp;help&nbsp;for&nbsp;us,&nbsp;maybe&nbsp;as&nbsp;follows:  
+Help&nbsp;us&nbsp;to&nbsp;improve&nbsp;the&nbsp;teaching&nbsp;resources.&nbsp;Allow&nbsp;the&nbsp;teacher&nbsp;or&nbsp;core&nbsp;TA&nbsp;of&nbsp;Tongji&nbsp;University&nbsp;to&nbsp;intern&nbsp;in&nbsp;ATC&nbsp;for&nbsp;3-6&nbsp;months&nbsp;and&nbsp;attend&nbsp;some&nbsp;projects,&nbsp;so&nbsp;that&nbsp;we&nbsp;can&nbsp;learn&nbsp;some&nbsp;project&nbsp;management&nbsp;experience&nbsp;to&nbsp;improve&nbsp;this&nbsp;course.&nbsp;Currently,&nbsp;it&nbsp;is&nbsp;a&nbsp;truth&nbsp;that&nbsp;there&nbsp;are&nbsp;few&nbsp;teachers&nbsp;who&nbsp;are&nbsp;good&nbsp;at&nbsp;both&nbsp;professional&nbsp;skill&nbsp;and&nbsp;software&nbsp;engineering&nbsp;experience&nbsp;in&n
+  
+bsp;embedded&nbsp;system&nbsp;teaching,&nbsp;especially&nbsp;Windows&n
+  
+bsp;CE&nbsp;teaching.&nbsp;To&nbsp;solve&nbsp;this&nbsp;problem,&nbsp;School&nbsp;of&nbsp;Software&nbsp;Engineering&nbsp;would&nbsp;like&nbsp;to&nbsp;ask&nbsp;some&nbsp;teachers&nbsp;to&nbsp;ATC&nbsp;to&nbsp;attend&nbsp;some&nbsp;large-scale&nbsp;projects.&nbsp;After&nbsp;this,&nbsp;teachers&nbsp;can&nbsp;gain&nbsp;experiences&nbsp;and&nbsp;can&nbsp;put&nbsp;their&nbsp;experience&nbsp;into&nbsp;“Learning&nbsp;by&nbsp;Doing”.&nbsp;This&nbsp;is&nbsp;obviously&nbsp;good&nbsp;to&nbsp;“Learning&nbsp;by&nbsp;doing”&nbsp;course.  
+In&nbsp;the&nbsp;middle&nbsp;of&nbsp;the&nbsp;projects,&nbsp;we&nbsp;would&nbsp;like&nbsp;Microsoft&nbsp;to&nbsp;send&nbsp;some&nbsp;engineers&nbsp;and&nbsp;experts&nbsp;to&nbsp;tell&nbsp;their&nbsp;experiences&nbsp;in&nbsp;software&nbsp;development,&nbsp;project&nbsp;management&nbsp;and&nbsp;software&nbsp;engineering.&nbsp;If&nbsp;allowed,&nbsp;provide&nbsp;some&nbsp;document&nbsp;templates&nbsp;or&nbsp;share&nbsp;some&nbsp;MS&nbsp;internal&nbsp;used&nbsp;software&nbsp;management&nbsp;tools.  
+Student&nbsp;Encouragement:&nbsp;Let&nbsp;some&nbsp;students&nbsp;who&nbsp;do&nbsp;well&nbsp;in&nbsp;this&nbsp;course&nbsp;have&nbsp;the&nbsp;chances&nbsp;to&nbsp;be&nbsp;interns&nbsp;in&nbsp;Microsoft.  
+Give&nbsp;some&nbsp;funds&nbsp;from&nbsp;“Microsoft-Tongji&nbsp;Windows&nbsp;Mobile&nbsp;and&nbsp;Embedded&nbsp;Technology&nbsp;Center”&nbsp;to&nbsp;support&nbsp;the&nbsp;expense&nbsp;of&nbsp;students&nbsp;projects&nbsp;or&nbsp;be&nbsp;the&nbsp;scholarship&nbsp;for&nbsp;good&nbsp;students.
+
+Conclusion  
+“Learning&nbsp;by&nbsp;Doing”&nbsp;teaching&nbsp;mode&nbsp;is&nbsp;very&nbsp;suitable&nbsp;for&nbsp;engineering&nbsp;courses&nbsp;and&nbsp;Windows&nbsp;CE&nbsp;Embedded&nbsp;System&nbsp;is&nbsp;this&nbsp;kind&nbsp;of&nbsp;course.&nbsp;There&nbsp;may&nbsp;be&nbsp;problems&nbsp;in&nbsp;perform&nbsp;this&nbsp;mode,&nbsp;but&nbsp;we&nbsp;believe&nbsp;that&nbsp;we&nbsp;can&nbsp;make&nbsp;the&nbsp;best&nbsp;of&nbsp;“Learning&nbsp;by&nbsp;doing”&nbsp;via&nbsp;our&nbsp;efforts&nbsp;together.

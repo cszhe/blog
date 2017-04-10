@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="omale" />
+        <meta name="copyright" content="omale" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content=", misc, " />
+
+<meta property="og:title" content="在boot loader中加入启动画面及插值算法 "/>
+<meta property="og:url" content="./zai-boot-loaderzhong-jia-ru-qi-dong-hua-mian-ji-cha-zhi-suan-fa.html" />
+<meta property="og:description" content="嵌入式 未分类 tags: Windows CE 软件 最近有个朋友希望我帮忙给他的一块板子加一个启动画面。板子是用烂了的三星2410处理器。 不同之处就在于他的板子是640 x 480 VGA输出，而不是通常的240 x 320的LCD。 在Windows CE中，通常加入启动画面的方法很土，因为OS没有启动，所以没有什么BitBlt，StretchBlt等方法可以贴图，唯一的方法就是在启动的过程中，直接往显卡的Framebuffer里面写数据。这个工作一般在Boot Loader里面做，如果在OS启动的时候一般就太晚了，如果不加入人为的延时，启动画面刚一显示，就到了OS画面了。做法一般是这样，在Boot Loader里面： BOOL OEMPlatformInit() { …………………………               // Init the Display     InitDisplay(); ………………………… } 然后是InitDisplay函数一般如下所示： static void InitDisplay() {     int i = 0;  int j = 0;     volatile IOPreg …" />
+<meta property="og:site_name" content="Zongjian&#39;s blog" />
+<meta property="og:article:author" content="omale" />
+<meta property="og:article:published_time" content="2007-10-24T10:13:00+00:00" />
+<meta name="twitter:title" content="在boot loader中加入启动画面及插值算法 ">
+<meta name="twitter:description" content="嵌入式 未分类 tags: Windows CE 软件 最近有个朋友希望我帮忙给他的一块板子加一个启动画面。板子是用烂了的三星2410处理器。 不同之处就在于他的板子是640 x 480 VGA输出，而不是通常的240 x 320的LCD。 在Windows CE中，通常加入启动画面的方法很土，因为OS没有启动，所以没有什么BitBlt，StretchBlt等方法可以贴图，唯一的方法就是在启动的过程中，直接往显卡的Framebuffer里面写数据。这个工作一般在Boot Loader里面做，如果在OS启动的时候一般就太晚了，如果不加入人为的延时，启动画面刚一显示，就到了OS画面了。做法一般是这样，在Boot Loader里面： BOOL OEMPlatformInit() { …………………………               // Init the Display     InitDisplay(); ………………………… } 然后是InitDisplay函数一般如下所示： static void InitDisplay() {     int i = 0;  int j = 0;     volatile IOPreg …">
+
+        <title>在boot loader中加入启动画面及插值算法  · Zongjian&#39;s blog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="./theme/css/custom.css" media="screen">
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Zongjian&#39;s blog - Full Atom Feed" />
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="./"><span class=site-name>Zongjian's blog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href=".">Home</a></li>
+                            <li ><a href="./categories.html">Categories</a></li>
+                            <li ><a href="./tags.html">Tags</a></li>
+                            <li ><a href="./archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="./search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="./zai-boot-loaderzhong-jia-ru-qi-dong-hua-mian-ji-cha-zhi-suan-fa.html"> 在boot loader中加入启动画面及插值算法  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <ul>
+<li>嵌入式</li>
+<li>未分类
+tags:</li>
+<li>Windows CE</li>
+<li>软件</li>
+</ul>
+<hr>
+<p>最近有个朋友希望我帮忙给他的一块板子加一个启动画面。板子是用烂了的三星2410处理器。 不同之处就在于他的板子是640 x 480 VGA输出，而不是通常的240 x 320的LCD。</p>
+<p>在Windows CE中，通常加入启动画面的方法很土，因为OS没有启动，所以没有什么BitBlt，StretchBlt等方法可以贴图，唯一的方法就是在启动的过程中，直接往显卡的Framebuffer里面写数据。这个工作一般在Boot Loader里面做，如果在OS启动的时候一般就太晚了，如果不加入人为的延时，启动画面刚一显示，就到了OS画面了。做法一般是这样，在Boot Loader里面：</p>
+<p>BOOL OEMPlatformInit()<br>
+{<br>
+…………………………<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp; // Init the Display<br>
+&nbsp;&nbsp;&nbsp; InitDisplay();</p>
+<p>…………………………<br>
+}</p>
+<p>然后是InitDisplay函数一般如下所示：<br>
+static void InitDisplay()<br>
+{<br>
+&nbsp;&nbsp;&nbsp; int i = 0;<br>
+&nbsp;int j = 0;<br>
+&nbsp;&nbsp;&nbsp; volatile IOPreg <em>s2410IOP;<br>
+&nbsp;&nbsp;&nbsp; volatile LCDreg </em>s2410LCD;</p>
+<p>&nbsp;&nbsp;&nbsp; s2410IOP = (IOPreg <em>)IOP_BASE;<br>
+&nbsp;&nbsp;&nbsp; s2410LCD = (LCDreg </em>)LCD_BASE; </p>
+<p>&nbsp;&nbsp;&nbsp; // LCD port initialize.<br>
+&nbsp;&nbsp;&nbsp; s2410IOP-&gt;rGPCUP&nbsp; = 0xFFFFFFFF;<br>
+&nbsp;&nbsp;&nbsp; s2410IOP-&gt;rGPCCON = 0xAAAAAAAA;<br>
+&nbsp;&nbsp;&nbsp; s2410IOP-&gt;rGPCCON = 0xAAAAAAAA;</p>
+<p>&nbsp;&nbsp;&nbsp; s2410IOP-&gt;rGPDUP&nbsp; = 0xFFFFFFFF;<br>
+&nbsp;&nbsp;&nbsp; s2410IOP-&gt;rGPDCON = 0xAAAAAAAA;</p>
+<p>&nbsp;&nbsp;&nbsp; s2410IOP-&gt;rGPGCON &amp;= ~(3 &lt;&lt; 8);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Set LCD_PWREN as output&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */<br>
+&nbsp;&nbsp;&nbsp; s2410IOP-&gt;rGPGCON |=&nbsp; (1 &lt;&lt; 8);</p>
+<p>&nbsp;&nbsp;&nbsp; s2410IOP-&gt;rGPGDAT |=&nbsp; (1 &lt;&lt; 4);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Backlight ON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */</p>
+<p>&nbsp;s2410LCD-&gt;rLCDCON1=(1&lt;&lt;8)|(MVAL_USED&lt;&lt;7)|(3&lt;&lt;5)|(12&lt;&lt;1)|0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // TFT LCD panel,16bpp TFT,ENVID=off<br>
+&nbsp;s2410LCD-&gt;rLCDCON2=(VBPD&lt;&lt;24)|(LINEVAL_TFT&lt;&lt;14)|(VFPD&lt;&lt;6)|(VSPW);<br>
+&nbsp;s2410LCD-&gt;rLCDCON3=(HBPD&lt;&lt;19)|(HOZVAL_TFT&lt;&lt;8)|(HFPD);<br>
+&nbsp;s2410LCD-&gt;rLCDCON4=(MVAL&lt;&lt;8)|(HSPW);<br>
+&nbsp;s2410LCD-&gt;rLCDCON5=(1&lt;&lt;11)|(1&lt;&lt;9)|(1&lt;&lt;8)|(1&lt;&lt;3)|(1&lt;&lt;0);&nbsp;//FRM5:6:5,HSYNC and VSYNC are inverted<br>
+&nbsp;s2410LCD-&gt;rLCDSADDR1=((FRAMEBUF_DMA_BASE&gt;&gt;22)&lt;&lt;21)|M5D(FRAMEBUF_DMA_BASE&gt;&gt;1);<br>
+&nbsp;s2410LCD-&gt;rLCDSADDR2=M5D( (FRAMEBUF_DMA_BASE+(LCD_XSIZE_TFT*LCD_YSIZE_TFT*2))&gt;&gt;1 );<br>
+&nbsp;s2410LCD-&gt;rLCDSADDR3=(((LCD_XSIZE_TFT-LCD_XSIZE_TFT)/1)&lt;&lt;11)|(LCD_XSIZE_TFT/1);<br>
+&nbsp;//s2410LCD-&gt;rLCDINTMSK|=(3); // MASK LCD Sub Interrupt<br>
+&nbsp;s2410LCD-&gt;rLPCSEL&amp;=(~7); // Disable LPC3600<br>
+&nbsp;s2410LCD-&gt;rTPAL=0; // Disable Temp Palette<br>
+&nbsp;<br>
+&nbsp;s2410LCD-&gt;rLCDCON1 |= 1;</p>
+<p>&nbsp;<br>
+&nbsp;// Display a bitmap image on the LCD&#8230;<br>
+&nbsp;&nbsp;&nbsp; //memcpy((void *)FRAMEBUF_BASE, ScreenBitmap, ARRAY_SIZE_TFT_16BIT);</p>
+<p>&nbsp;// Jason : Interpolation</p>
+<p>&nbsp;EdbgOutputDebugString(&#8220;+Interpolation\r\n&#8221;);</p>
+<p>&nbsp;for(i = 0; i &lt; 320 * 240; i++)<br>
+&nbsp;{<br>
+&nbsp;&nbsp;PWORD pWord = (PWORD)ScreenBitmap;<br>
+&nbsp;&nbsp;PWORD pFrmBuf = (PWORD)FRAMEBUF_BASE;</p>
+<p>&nbsp;&nbsp;pFrmBuf[4 * i &#8211; 2 * (i % 320)] = pWord[i];<br>
+&nbsp;&nbsp;pFrmBuf[4 * i &#8211; 2 * (i % 320) + 1] = pWord[i];<br>
+&nbsp;&nbsp;pFrmBuf[4 * i &#8211; 2 * (i % 320) + 320 * 2] = pWord[i];<br>
+&nbsp;&nbsp;pFrmBuf[4 * i &#8211; 2 * (i % 320) + 1 + 320 * 2] = pWord[i];</p>
+<p>&nbsp;}</p>
+<p>前面初始化硬件的代码没什么好看的。<br>
+注意到memcpy((void *)FRAMEBUF_BASE, ScreenBitmap, ARRAY_SIZE_TFT_16BIT);这一句，这就是显示启动画面的关键了，直接调用memcpy函数，把一个大数组，复制到了FRAMEBUF_BASE这个地址。这个其实就是直接往显卡缓冲区里面填东西了。至于这个大数组，可以用Image2LCD等类似软件生成，也就是直接把一张位图转成C语言数组的软件，这东西在游戏开发中用的比较多。</p>
+<p>一般情况下，这种方法都是OK的，但是现在遇到什么问题呢？</p>
+<p>因为目标设备的显示分辨率是640 x 480 x 16位的，所以这个大数组需要多大的存储空间是可以算出来的：640 * 480 * 2 = 600KB。但是对于一般的boot loader而言，板子上不会划分这么大的空间给boot loader用，一般boot loader的空间只有256KB。（其实可以人为改，只不过这个板子用linux的loader 引导CE的loader，才产生这么多问题）。所以解决方法只能有下面两条：</p>
+<ol>
+<li>压缩，然后在运行时候解压缩，然后再memcpy。可以找一些最基本的通用开源压缩算法来完成。  </li>
+<li>插值，弄一张小图片，把它插值到640 x 480。</li>
+</ol>
+<p>两者权衡，偶还是决定采用插值的办法，这样的工作量还是小一些的。其实也就是自己把StretchBlt函数实现了。</p>
+<p>哎，本科的时候没有开设图形学，所以也不知道插值有没有具体的公式，只能自己推导了。好在这个不是一个通用的算法，只是放大4倍的这样一个特例。一个点变四个点，还是很容易的。自己拿着纸笔比划了一阵子，终于得出个公式来，公式不好帖，直接帖代码就是下面这样：</p>
+<p>&nbsp;for(i = 0; i &lt; 320 * 240; i++)<br>
+&nbsp;{<br>
+&nbsp;&nbsp;PWORD pWord = (PWORD)ScreenBitmap;<br>
+&nbsp;&nbsp;PWORD pFrmBuf = (PWORD)FRAMEBUF_BASE;</p>
+<p>&nbsp;&nbsp;pFrmBuf[4 * i &#8211; 2 * (i % 320)] = pWord[i];<br>
+&nbsp;&nbsp;pFrmBuf[4 * i &#8211; 2 * (i % 320) + 1] = pWord[i];<br>
+&nbsp;&nbsp;pFrmBuf[4 * i &#8211; 2 * (i % 320) + 320 * 2] = pWord[i];<br>
+&nbsp;&nbsp;pFrmBuf[4 * i &#8211; 2 * (i % 320) + 1 + 320 * 2] = pWord[i];<br>
+&nbsp;}</p>
+<p>只不过这次准备的是一张320 x 240的照片，然后采用一重的循环，把它写到framebuffer相应的位置去。</p>
+<p>最终的效果还是不错的，不知道插值有没有更好的公式。如果有，也请告诉偶。呵呵。</p>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2007-10-24T10:13:00+00:00">Oct 24, 2007</time>
+            <h4>Category</h4>
+            <a class="category-link" href="./categories.html#misc-ref">misc</a>
+<h4>Contact</h4>
+    <a href="#" title="My You can add links in your config file Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-you can add links in your config file sidebar-social-links"></i></a>
+    <a href="#" title="My Another social link Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-another social link sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>

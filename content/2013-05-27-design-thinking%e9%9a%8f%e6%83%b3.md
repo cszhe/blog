@@ -1,0 +1,69 @@
+---
+id: 10876
+title: Design Thinking随想
+date: 2013-05-27T17:12:09+00:00
+author: omale
+layout: post
+guid: http://hezongjian.com/blog/?p=10876
+permalink: '/2013/05/27/design-thinking%e9%9a%8f%e6%83%b3/'
+categories:
+  - 工作和学习
+  - 未分类
+---
+上周应SAP公司的邀请，到奥兰多参加SAP公司的**sapphire**now年度会议。US去了很多趟，这种大企业的会议也参加了不少，旅游，开会，购物都没留下什么深刻的印象，唯一让我感觉到有收获的，是参加SAP University Alliance会前组织的一个Design Thinking Jam，亲身体验、实践了一下这个方法。
+
+Design Thinking是一个群体思维方法论性的东西。为一群人在一起讨论特定问题提供一些指导方法，怎样更有效的去思考。它把思考过程分为几个环节，每个环节提供一些注意要点。具体我就不介绍了，参见 [Wikipedia链接](http://en.wikipedia.org/wiki/Design_thinking)
+
+最早听说Design Thinking是几个月前从奥迪那里，奥迪在同济有个Lab，他们想办一个workshop，召集一群有想法的学生，去设计符合中国市场的手机汽车软件。因为他们希望邀请软件学院苹果俱乐部的同学，所以跟我聊过几次，其中提到用的方法就是Design Thinking。奥迪的那几个德国哥们在国内呆久了，比较了解中国特色，知道中国人唯牛校是瞻，号称这方法是斯坦福发明的，忽悠我们。后来我查了一下，跟斯坦福有关系，但说是斯坦福发明的还是有点言过其实。
+
+SAP公司把Design Thinking提到对公司很重要的地位。Co-CEO在keynote上多次提到他们用Design Thinking方法设计SAP的软件。在Sapphire大会现场的展示中也专门设置了Design Thinking区，区内还搭建了透明玻璃房，房子里面一群人在现场用Design Thinking解决问题。可见公司对这个方法的重视。大学联盟自然也要上行下效，紧密围绕在领导周围，在学生中推广Design Thinking。所以在大会提前一天，组织了一群来自世界各地的学生跟老师，先灌输一下这个方法。
+
+Design Thinking Jam安排在下午，日程很紧张，从介绍什么是Design Thinking开始到整个项目结束只有几个小时。由于第一天到US，正好12个小时时差，到了下午两点之后这个时间段真心困。[<img class="aligncenter size-medium wp-image-10887" alt="Screen Shot 2013-05-27 at 3.33.25 PM" src="http://localhost/hezongjian/wp-content/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM-237x300.png" width="237" height="300" srcset="http://localhost/hezongjian/wp-content/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM-237x300.png 237w, http://localhost/hezongjian/wp-content/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM.png 446w" sizes="(max-width: 237px) 100vw, 237px" />](http://localhost/hezongjian/wp-content/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM.png)
+
+参加Design Thinking Jam的有来自美国，德国，印度，中国，还有些不知道什么国家的学生。他们把人抽签随机分配成6组，因此每个组都是社会教育背景迥异的人组成的。同组的有7个人：一个美国教授，一个德国教授，我，一个德国学生，还有三个中国学生。每个组给一个题目，题目都来自于SAP最近组织跟赞助的一些比赛。其中有个题目是智能汽车，其实我挺感兴趣，跟我的研究也沾边。结果我那组分到的题目是如何用新能源去改变人类生活。这个对我来说基本是两眼一抹黑。一无所知。这样也好，正好可以评测一下这个方法靠不靠谱。
+
+Design Thinking主要分为这样几个环节，Scoping, Research, Synthesis, Ideation, Prototype和Validation。这个Jam的形式是每个环节都是先介绍，15分钟左右的介绍，介绍完了之后就开始动手实干，围绕分给你的题目，实际做一下，当然也是限时的。我大概说一下每个环节是干嘛的。
+
+Scoping: 确定你要干嘛，不要干嘛。类似需求分析。因为DT主要就是为了解决ill defined problem，就是一坨浆糊的问题，所以首先要对问题的本身自己有个定位。
+
+Research: 调研客户，啥是客户想要的东西。
+
+Synthesis: 就是根据调研，生成一个个的类似用例的东西，可以讲故事。
+
+Ideation: 头脑风暴，讨论怎么把上面的故事变成现实。
+
+Prototype: 做个可以展示的原型，当然不一定编码，在纸上画几个UI也可以。
+
+Validation: 评价这个原型有啥问题，再改进。
+
+具体每个步骤我们是如何进行的我就不详细介绍了，否则就成了流水账，有几个印象比较深刻的东西还是可以提一下的。
+
+比如第一个scoping。因为我们拿到的题目就是一句话，如何使新能源，尤其是水资源，改变人类的生活。一开始我们组内的理解是如何设计一种新能源，一想这个完蛋了，对新能源一窍不通，还让我们设计新能源，这不扯么。但是经过几轮探讨，后来我们都觉得学IT的去搞新能源不靠谱，不如搞个如何用IT技术来协助把水资源做得更好，反正也不偏题，至于说怎么设计新的水资源，还是别搞了。这样scope就清晰多了。
+
+还有一些指导原则也比较有用，比如有一条别着急考虑实现。可能也是常犯的错误，我看隔壁一组很high，在前两个环节的时候，我去拿咖啡路过他们组，发现系统结构图什么的都已经出来了，看来组员是一群码农，一看到问题，就马上恨不得要动手写代码。
+
+还有一个就是在ideation阶段不要忙着去评价idea，否则容易限制发挥。我们组有个中国女孩子，英语一般，还挺喜欢说，然后提了一个无关的问题。说的很慢很慢，我忍无可忍，觉得时间不够了，就说你这问题偏题了，别浪费时间了。居然那个德国哥们说应该让她说，不要着急评价idea么，否则就没人敢提了。
+
+下面这个图就是我们组的两个用来讲故事的case。说我们要做个移动的水质监测装置，可以跟手机联系起来，检测某个地方的水质，还可以上传到互联网分享。其他人可以看到这个地区的水质，从而提前做一些保护措施什么的。这个系统也可以给自来水公司什么的用，用来检测改善水质等等。
+
+<img class="aligncenter size-medium wp-image-10877" alt="dtoutput" src="http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_029-169x300.jpg" width="169" height="300" srcset="http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_029-169x300.jpg 169w, http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_029-577x1024.jpg 577w, http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_029.jpg 720w" sizes="(max-width: 169px) 100vw, 169px" />
+
+<p style="text-align: center;">
+  图. 讲故事的两个Case。
+</p>
+
+中间还有个小插曲挺有意思，因为中国人一向内敛，不开口，我们组虽然有几个中国人，但是加起来说的话还不如一个老外多，为了不给中国人丢脸，我一开始狂说，后来美国那教授喝茶的时候把我叫出去，说这是学生的事情，咱们就别多管了，打酱油吧，否则到时候又变成课程练习了。听了以后觉得也对。然后回去之后我跟他两个人立马一唱一和变成插科打诨模式。让我们画Use Case，他说，不画，我是教神经元网络，基因算法的，这个我行，画图不行。我马上说，我也是教这个的，也不会画，同道中人，give me five! 组里的那个德国的哥们还是hold不住了，看着这几个学生不给力，后来最后演讲的时候居然把学生踢开，亲自上了。当然讲的还是不错的，至少在几个组里面应该算中游。
+
+[<img class="aligncenter size-medium wp-image-10878" alt="dtpresent" src="http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_028-300x169.jpg" width="300" height="169" srcset="http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_028-300x169.jpg 300w, http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_028-768x433.jpg 768w, http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_028-1024x577.jpg 1024w, http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_028.jpg 1278w" sizes="(max-width: 300px) 100vw, 300px" />](http://localhost/hezongjian/wp-content/uploads/2013/05/WP_20130513_028.jpg)
+
+<p style="text-align: center;">
+  图. 五分钟演讲
+</p>
+
+&nbsp;
+
+最后还有些什么感想呢。
+
+第一个，老外们貌似挺喜欢研究这种创新方法论的东西，就是怎么动脑子，才能想出新的想法来。在学院里，遇到过好多老外来忽悠思维方法论的事情，以前一群英国人来忽悠过TRIZ，我们还主办过TRIZ的workshop。也难怪，中国历来的教育方法就是给你一个题目，你给解出来，很多时候解还有标准答案，不需要创新。在现场的时候也有体现，中国的学生跟印度的学生都是好学生的样子，他们ppt讲完告诉你要怎么做，马上就按照Design Thinking要求的方法开动了，隔壁一个组有个白人，一直在跟Design Thinking的讲师argue，说你这个方法不靠谱，如果我要这么做的话，会有啥啥啥不良后果。这才叫think out of the box&#8230;
+
+第二个，中国学生跟老师的国际交流能力还是很弱的，这么多国家的人混在一起，中国人无疑是垫底的，虽然出来之前SAP打过招呼，说要积极表现，为国争光之类的。但是几个其它学校的Professor从头到尾一言不发。我组里面也有一个中国学生，也是一言不发。别人问他他也不发言。这也不能不说跟国内的教育有很大的关系吧。从小学开始教英语，教到大学，还是这个样子。
