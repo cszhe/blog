@@ -56,11 +56,11 @@ tags:   Windows CE
 </p>
 
 <p style="margin-top: 15px; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; font-size: 14px; line-height: 23px; padding: 0px; border: 0px initial initial;">
-  &nbsp;
+   
 </p>
 
 <p style="margin-top: 15px; margin-right: 0px; margin-bottom: 15px; margin-left: 0px; font-size: 14px; line-height: 23px; padding: 0px; border: 0px initial initial;">
-  &nbsp;
+   
 </p>
 
 <p>

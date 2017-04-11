@@ -11,7 +11,7 @@ tags:   Windows CE
 ---
 第三场webcast了，地址如下：
 
-<span style="font-family: arial; font-size: 19px; line-height: normal; color: #0066cc;"><span id="lblEventTitle">MSDN Webcast &#8211; Windows Embedded从入门到精通系列课程(40)：深度探索Windows CE的内存管理机制(Level 300)</span>&nbsp;</span>
+<span style="font-family: arial; font-size: 19px; line-height: normal; color: #0066cc;"><span id="lblEventTitle">MSDN Webcast &#8211; Windows Embedded从入门到精通系列课程(40)：深度探索Windows CE的内存管理机制(Level 300)</span> </span>
 
 http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032412283&Culture=zh-CN
 

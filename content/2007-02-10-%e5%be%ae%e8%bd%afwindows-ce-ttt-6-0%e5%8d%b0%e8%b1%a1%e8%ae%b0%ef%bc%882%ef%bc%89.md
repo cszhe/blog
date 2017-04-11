@@ -17,7 +17,7 @@ tags:   C++  , Google  , Windows CE
   <div>
     <div>
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
@@ -28,7 +28,7 @@ tags:   C++  , Google  , Windows CE
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
@@ -36,7 +36,7 @@ tags:   C++  , Google  , Windows CE
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
@@ -44,7 +44,7 @@ tags:   C++  , Google  , Windows CE
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
@@ -52,7 +52,7 @@ tags:   C++  , Google  , Windows CE
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
@@ -60,7 +60,7 @@ tags:   C++  , Google  , Windows CE
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
@@ -68,7 +68,7 @@ tags:   C++  , Google  , Windows CE
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
@@ -80,15 +80,15 @@ tags:   C++  , Google  , Windows CE
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
       
       <div>
-        &nbsp;
+         
       </div>
     </div>
   </div>

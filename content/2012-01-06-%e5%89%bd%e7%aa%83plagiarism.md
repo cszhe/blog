@@ -14,7 +14,7 @@ category:   工作和学习
 
 [<img alt="" class="aligncenter size-medium wp-image-10689" height="180" src="/uploads/2012/01/BOOKLET-300x180.jpg" title="BOOKLET" width="300"  />](/uploads/2012/01/BOOKLET.jpg)
 
-&nbsp;
+ 
 
 本来是我们8个人分工，意大利的Riccardo同学是组长，带了5个大陆人，2个香港人一起做册子。我们7个中国人分三组，每组都做不同的部分。我负责找案例，找了一些山寨建筑（山寨白宫）、山寨动画片（高铁侠）、山寨软件（facebook）、山寨日用品（KFG，周住 洗衣粉）等，不要说我是汉奸卖国贼，这些在祖国的确存在。问题有俩：
 

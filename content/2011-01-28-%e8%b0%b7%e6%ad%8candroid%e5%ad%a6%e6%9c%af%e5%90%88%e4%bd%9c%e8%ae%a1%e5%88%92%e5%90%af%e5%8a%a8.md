@@ -12,13 +12,13 @@ category:   嵌入式
 
 上海的负责高校可是我们哦。预计暑假对上海范围的高校师生召开教学研讨会。把Android课程辐射到上海的更多高校。
 
-&nbsp;
+ 
 
 Android学术合作计划说明
 
 <http://www.google.com/intl/zh-CN/corporate/university/programs/android-academic-initiative.html>
 
-&nbsp;
+ 
 
 在线申请表
 

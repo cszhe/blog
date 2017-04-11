@@ -47,87 +47,87 @@ Part 3 开发起步
 
 一个由IDE生成的Android项目包括如下文件：
 
-`| &nbsp; .classpath<span class="Apple-tab-span" style="white-space: pre"> </span>// xml路径文件`
+`|   .classpath<span class="Apple-tab-span" style="white-space: pre"> </span>// xml路径文件`
 
-`| &nbsp; .project<span class="Apple-tab-span" style="white-space: pre"> </span>// xml项目文件`
+`|   .project<span class="Apple-tab-span" style="white-space: pre"> </span>// xml项目文件`
 
-`| &nbsp; AndroidManifest.xml<span class="Apple-tab-span" style="white-space: pre"> </span>// android程序配置文件`
+`|   AndroidManifest.xml<span class="Apple-tab-span" style="white-space: pre"> </span>// android程序配置文件`
 
-`| &nbsp; default.properties<span class="Apple-tab-span" style="white-space: pre"> </span>// android的build system用的`
+`|   default.properties<span class="Apple-tab-span" style="white-space: pre"> </span>// android的build system用的`
 
-`+---.settings &nbsp; // 设置信息`
+`+---.settings   // 设置信息`
 
 `+---assets<span class="Apple-tab-span" style="white-space: pre"> </span>// 目前暂时为空`
 
 `+---bin<span class="Apple-tab-span" style="white-space: pre"> </span>// 编译生成的东西`
 
-`| &nbsp; | &nbsp; classes.dex<span class="Apple-tab-span" style="white-space: pre"> </span>// delvik vm的可执行文件`
+`|   |   classes.dex<span class="Apple-tab-span" style="white-space: pre"> </span>// delvik vm的可执行文件`
 
-`| &nbsp; | &nbsp; HelloAndroid.apk<span class="Apple-tab-span" style="white-space: pre"> </span>// android的可执行文件`
+`|   |   HelloAndroid.apk<span class="Apple-tab-span" style="white-space: pre"> </span>// android的可执行文件`
 
-`| &nbsp; | &nbsp; resources.ap_<span class="Apple-tab-span" style="white-space: pre"> </span>// 资源文件`
+`|   |   resources.ap_<span class="Apple-tab-span" style="white-space: pre"> </span>// 资源文件`
 
-`| &nbsp; \---com`
+`|   \---com`
 
-`| &nbsp; &nbsp; &nbsp; \---hezongjian<span class="Apple-tab-span" style="white-space: pre"> </span>// java编译生成的class`
+`|       \---hezongjian<span class="Apple-tab-span" style="white-space: pre"> </span>// java编译生成的class`
 
-`| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MyActivity.class`
+`|               MyActivity.class`
 
-`| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; R.class &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;`
+`|               R.class         `
 
 `+---gen<span class="Apple-tab-span" style="white-space: pre"> </span>// R.java，类似于resource.h`
 
-`| &nbsp; \---com<span class="Apple-tab-span" style="white-space: pre"> </span>// IDE自动管理，定义一些常量`
+`|   \---com<span class="Apple-tab-span" style="white-space: pre"> </span>// IDE自动管理，定义一些常量`
 
-`| &nbsp; &nbsp; &nbsp; \---hezongjian`
+`|       \---hezongjian`
 
-`| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; R.java`
+`|               R.java`
 
-`| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;`
+`|               `
 
 `+---res<span class="Apple-tab-span" style="white-space: pre"> </span>// 资源`
 
-`| &nbsp; +---drawable-hdpi<span class="Apple-tab-span" style="white-space: pre"> </span>// 各种分辨率的资源 &nbsp; &nbsp;&nbsp;`
+`|   +---drawable-hdpi<span class="Apple-tab-span" style="white-space: pre"> </span>// 各种分辨率的资源     `
 
-`| &nbsp; +---drawable-ldpi`
+`|   +---drawable-ldpi`
 
-`| &nbsp; +---drawable-mdpi &nbsp; &nbsp;`
+`|   +---drawable-mdpi    `
 
-`| &nbsp; +---layout<span class="Apple-tab-span" style="white-space: pre"> </span>// 界面UI布局`
+`|   +---layout<span class="Apple-tab-span" style="white-space: pre"> </span>// 界面UI布局`
 
-`| &nbsp; | &nbsp; &nbsp; &nbsp; main.xml &nbsp; &nbsp; // 主界面布局xml文件`
+`|   |       main.xml     // 主界面布局xml文件`
 
-`| &nbsp; \---values`
+`|   \---values`
 
-`| &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; strings.xml &nbsp; &nbsp; // 字符串资源&nbsp;`
+`|           strings.xml     // 字符串资源 `
 
 `\---src<span class="Apple-tab-span" style="white-space: pre"> </span>// 源代码目录`
 
-`&nbsp;&nbsp; &nbsp;\---com`
+`    \---com`
 
-`&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;\---hezongjian`
+`        \---hezongjian`
 
-`&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;MyActivity.java<span class="Apple-tab-span" style="white-space: pre"> </span>// 主程序java文件`
+`                MyActivity.java<span class="Apple-tab-span" style="white-space: pre"> </span>// 主程序java文件`
 
-&nbsp;
+ 
 
 android程序UI采用流行的xml文件定义，例如main.xml，可以在xml中设定各个控件。
 
-&nbsp;
+ 
 
 主java文件的内容
 
-&nbsp;
+ 
 
-`public class MyActivity extends Activity { &nbsp;// 从Activity继承一个自己的行动`
+`public class MyActivity extends Activity {  // 从Activity继承一个自己的行动`
 
-`&nbsp;&nbsp; &nbsp;public void onCreate(Bundle savedInstanceState) { &nbsp;// 重写onCreate`
+`    public void onCreate(Bundle savedInstanceState) {  // 重写onCreate`
 
-`&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;super.onCreate(savedInstanceState);`
+`        super.onCreate(savedInstanceState);`
 
-`&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;setContentView(R.layout.main); &nbsp;// 根据xml文件来设置view的内容`
+`        setContentView(R.layout.main);  // 根据xml文件来设置view的内容`
 
-`&nbsp;&nbsp; &nbsp;}`
+`    }`
 
 `}`
 
@@ -143,11 +143,11 @@ android程序UI采用流行的xml文件定义，例如main.xml，可以在xml中
 
 或者也可以这样：
 
-&nbsp;
+ 
 
 `AlertDialog.Builder alert = new AlertDialog.Builder(this)`
 
-`alert.setTitle("Title"); &nbsp;`
+`alert.setTitle("Title");  `
 
 `alert.setMessage("Hello World");`
 
@@ -155,7 +155,7 @@ android程序UI采用流行的xml文件定义，例如main.xml，可以在xml中
 
 用android.app下的AlertDialog来实现，不过AlertDialog功能比较强大，在这里是大炮打蚊子了。
 
-&nbsp;
+ 
 
 Android应用程序由如下几个部分构成，但都不是必须的：
 
@@ -168,6 +168,6 @@ Android的task就是一个Activity的stack。一个task可以调用其他程序�
 
 这些部分需要由Intent来组合。Intent是一个非常抽象的东西。看了很多中文解释或翻译都不明白。而英文原版网页被GFW给Ban了。无奈翻墙看developer.android.com上的东西，哎呀，再清楚明白不过了。估计需要文章再详细解释了。
 
-&nbsp;
+ 
 
 * * *

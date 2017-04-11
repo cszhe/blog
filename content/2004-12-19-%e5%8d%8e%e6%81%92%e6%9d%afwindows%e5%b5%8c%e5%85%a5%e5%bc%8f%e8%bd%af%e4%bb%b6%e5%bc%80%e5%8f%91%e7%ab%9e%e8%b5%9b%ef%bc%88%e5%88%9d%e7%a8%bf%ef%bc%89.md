@@ -9,13 +9,13 @@ permalink: '/2004/12/19/%e5%8d%8e%e6%81%92%e6%9d%afwindows%e5%b5%8c%e5%85%a5%e5%
 category:   未分类
 tags:   同济  , 嵌入式  , 软件
 ---
-今天早上吃了万老师一顿牛排&nbsp;+&nbsp;摩卡咖啡。价格不菲，感觉呢，牛排七成熟，跟学校1.4RMB一块的大排差不多。只不过没有刀叉，摩卡咖啡么，怎么那么多泡沫阿。还有所谓的芝士点心，咋看咋吃都像炸馒头干……鄙视我把，我就是没有品味的人，吃了两次哈根达斯都觉得不如门口地摊上1RMB一根的雪糕好吃。吃归吃，或还是要干的，今天晚上憋出来一篇竞赛宣传文字。。
+今天早上吃了万老师一顿牛排 + 摩卡咖啡。价格不菲，感觉呢，牛排七成熟，跟学校1.4RMB一块的大排差不多。只不过没有刀叉，摩卡咖啡么，怎么那么多泡沫阿。还有所谓的芝士点心，咋看咋吃都像炸馒头干……鄙视我把，我就是没有品味的人，吃了两次哈根达斯都觉得不如门口地摊上1RMB一根的雪糕好吃。吃归吃，或还是要干的，今天晚上憋出来一篇竞赛宣传文字。。
 
 竞赛介绍  
-Windows&nbsp;CE是微软公司推出的面向移动智能连接设备的模块化实时嵌入式操作系统。凭借其广泛的适应性，丰富的功能，强大的多媒体能力，友好的开发环境，Windows&nbsp;CE已经被广泛应用于掌上电脑，智能手机，汽车电子，信息终端等领域。在当前嵌入式领域占有较大市场。  
-华恒科技（<img src=/images/aurl.gif align=absbottom hspace=2 alt=::URL:: border=0><a href=http://www.hhcn.com）是国内著名的嵌入式Linux，Windows target=_blank>http://www.hhcn.com）是国内著名的嵌入式Linux，Windows</a> &nbsp;CE开发平台及OEM板级硬件提供商。同济大学软件学院与华恒科技共同在同济大学全校范围内举办这次“华恒杯”Windows&nbsp;CE软件开发竞赛，目标在于：  
+Windows CE是微软公司推出的面向移动智能连接设备的模块化实时嵌入式操作系统。凭借其广泛的适应性，丰富的功能，强大的多媒体能力，友好的开发环境，Windows CE已经被广泛应用于掌上电脑，智能手机，汽车电子，信息终端等领域。在当前嵌入式领域占有较大市场。  
+华恒科技（<img src=/images/aurl.gif align=absbottom hspace=2 alt=::URL:: border=0><a href=http://www.hhcn.com）是国内著名的嵌入式Linux，Windows target=_blank>http://www.hhcn.com）是国内著名的嵌入式Linux，Windows</a>  CE开发平台及OEM板级硬件提供商。同济大学软件学院与华恒科技共同在同济大学全校范围内举办这次“华恒杯”Windows CE软件开发竞赛，目标在于：  
 1、迎接2005年春微软亚洲研究院与同济大学共同举办的Windows嵌入式教学促进会。  
-2、通过竞赛推广同学对于嵌入式系统和Windows&nbsp;CE的认识，引领移动计算的潮流。  
+2、通过竞赛推广同学对于嵌入式系统和Windows CE的认识，引领移动计算的潮流。  
 3、为软件开发爱好者和优秀作品提供展示的舞台。  
 4、培养同学的创新意识，鼓励同学充分发挥创造力，自由命题，设计各种嵌入式系统应用。  
 参赛对象  
@@ -30,7 +30,7 @@ Windows&nbsp;CE是微软公司推出的面向移动智能连接设备的模块�
 &#61692; 项目描述，包括该项目是否参加过其他比赛并获奖。  
 &#61692; 目标运行环境  
 &#61692; 开发环境  
-&#61692; 参赛者&nbsp;/&nbsp;参赛队名单及联系方式，包括姓名、专业、年级、联系电话（固定电话请注明联系时间）、常用电子邮件地址；若为队伍请注明队长  
+&#61692; 参赛者 / 参赛队名单及联系方式，包括姓名、专业、年级、联系电话（固定电话请注明联系时间）、常用电子邮件地址；若为队伍请注明队长  
 报名邮件收到后必定回复。若三日内未收到主办方的确认邮件，请重新发送报名邮件，或通过电话报名方式报名。  
 (b) 电话报名  
 若无法通过Email报名，也可于工作日的9:00―15:00拨打电话69589713（周老师）报名，电话报名也请提供上述信息。  
@@ -43,18 +43,18 @@ Windows&nbsp;CE是微软公司推出的面向移动智能连接设备的模块�
 （4）得奖作品公开演示暨颁奖：  
 得奖名单将会于2005年3月1日公布于竞赛专用论坛板块（网址如上），并发布于校内相关媒体（校内媒体可能有滞后）。  
 颁奖典礼定于2005年3月4日。  
-另会于微软亚洲研究院与同济大学联合举办的首届Windows&nbsp;CE嵌入式系统教学研讨会上，邀请部分得奖作品展示。  
+另会于微软亚洲研究院与同济大学联合举办的首届Windows CE嵌入式系统教学研讨会上，邀请部分得奖作品展示。  
 作品要求  
-本次参赛作品要求在Windows&nbsp;CE（具体可以是标准Windows&nbsp;CE，Pocket&nbsp;PC或Smartphone等）平台下可演示运行。若参赛作品也可运行于华恒ARM9平台，或额外为华恒平台下的运行优化，将有适当加分。若参赛作品考虑兼容于华恒平台，则请在报名时注明。软件学院位于嘉定校区的Windows&nbsp;CE嵌入式实验室拥有三十套HHARM9-EDU-R1实验系统。将于2005年2月10日至19日开放，供这些参赛作品测试。另外，该实验室还可以提供基于Smartphone操作系统的dopod&nbsp;515智能手机作为手机软件的调试环境。（华恒ARM9开发板的资料请参考：<img src=/images/aurl.gif align=absbottom hspace=2 alt=::URL:: border=0><a href=http://www.hhcn.com/chinese/HHARM9-EDU-R1.html。dopod target=_blank>http://www.hhcn.com/chinese/HHARM9-EDU-R1.html。dopod</a> &nbsp;515智能手机资料请参考：<img src=/images/aurl.gif align=absbottom hspace=2 alt=::URL:: border=0><a href=http://www.dopod.com） target=_blank>http://www.dopod.com）</a>   
-作品内容不限，最好能体现出嵌入式移动应用和Windows&nbsp;CE的特色。如驱动程序、多媒体应用、PDA/智能手机应用、无线通信应用、消费电子应用等。开发环境和开发语言均不限。  
+本次参赛作品要求在Windows CE（具体可以是标准Windows CE，Pocket PC或Smartphone等）平台下可演示运行。若参赛作品也可运行于华恒ARM9平台，或额外为华恒平台下的运行优化，将有适当加分。若参赛作品考虑兼容于华恒平台，则请在报名时注明。软件学院位于嘉定校区的Windows CE嵌入式实验室拥有三十套HHARM9-EDU-R1实验系统。将于2005年2月10日至19日开放，供这些参赛作品测试。另外，该实验室还可以提供基于Smartphone操作系统的dopod 515智能手机作为手机软件的调试环境。（华恒ARM9开发板的资料请参考：<img src=/images/aurl.gif align=absbottom hspace=2 alt=::URL:: border=0><a href=http://www.hhcn.com/chinese/HHARM9-EDU-R1.html。dopod target=_blank>http://www.hhcn.com/chinese/HHARM9-EDU-R1.html。dopod</a>  515智能手机资料请参考：<img src=/images/aurl.gif align=absbottom hspace=2 alt=::URL:: border=0><a href=http://www.dopod.com） target=_blank>http://www.dopod.com）</a>   
+作品内容不限，最好能体现出嵌入式移动应用和Windows CE的特色。如驱动程序、多媒体应用、PDA/智能手机应用、无线通信应用、消费电子应用等。开发环境和开发语言均不限。  
 提交的参赛作品，除包含作品完整源码，还必须含有完整文档。文档纲要如下：  
-（一）作品规格书(High&nbsp;Level&nbsp;Design&nbsp;Specification)，内容包括但不限于：描述作品的应用领域、创作思路，对实际问题的解决方案和实现模型。  
-（二）设计架构及技术报告&nbsp;(Detailed&nbsp;Design&nbsp;Specification)&nbsp;，内容包括但不限于：系统设计架构概述、所使用的技术机制分析，各个模块功能描述。  
-（三）详细的用户使用手册&nbsp;(User&nbsp;Manual)。  
+（一）作品规格书(High Level Design Specification)，内容包括但不限于：描述作品的应用领域、创作思路，对实际问题的解决方案和实现模型。  
+（二）设计架构及技术报告 (Detailed Design Specification) ，内容包括但不限于：系统设计架构概述、所使用的技术机制分析，各个模块功能描述。  
+（三）详细的用户使用手册 (User Manual)。  
 （四）可执行文件或者安装软件包。  
 （五）带注释的源代码：包括各种代码说明文件和源文件，说明编译环境、编译选项、执行方式等。  
 评奖方式  
-所有在截止时间前提交的参赛作品，将由华恒科技的技术专家与软件学院Windows&nbsp;CE嵌入式系统专业教师组成的评委会，按照盲评（即评委不知道参赛作品的作者）的方式，根据多项评定内容打分并确定最终名次。评分内容为：  
+所有在截止时间前提交的参赛作品，将由华恒科技的技术专家与软件学院Windows CE嵌入式系统专业教师组成的评委会，按照盲评（即评委不知道参赛作品的作者）的方式，根据多项评定内容打分并确定最终名次。评分内容为：  
 &#61618; 参赛作品的难度、创意性与新颖性（30%）  
 &#61618; 参赛作品的用户界面设计与易用性（40%）  
 &#61618; 参赛作品文档的完备性与合理性（20%）  

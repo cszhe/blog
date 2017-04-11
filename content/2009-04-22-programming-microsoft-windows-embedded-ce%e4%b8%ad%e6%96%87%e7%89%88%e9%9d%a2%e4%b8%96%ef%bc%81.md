@@ -13,7 +13,7 @@ tags:   Windows CE
 ---
 在同济大学软件学院Windows CE俱乐部同学们的大力支持下，在微软马丹同学的协助下，这本书经过一年的努力，终于出版了！！这是本人参与翻译的第一本书。
 
-&nbsp;
+ 
 
 目前为止，本人著作译作一共三本，离&ldquo;著作等身&rdquo;还很远呢（看来武大郎著作等身最容易，个子矮在这方面有优势）。它们分别是：
 
@@ -21,13 +21,13 @@ tags:   Windows CE
 
 [http://www.china-pub.com/32406](http://www.china-pub.com/32406 "http://www.china-pub.com/32406")
 
-&nbsp;
+ 
 
 2.《嵌入式软件开发导论》为了完成教育部十一五教材项目而编写的基础书籍。内容很简单。
 
 <http://www.china-pub.com/44881>
 
-&nbsp;
+ 
 
 3. 《Windows CE 6.0开发者参考》，翻译的书。这本书还是挺贵的： 
 

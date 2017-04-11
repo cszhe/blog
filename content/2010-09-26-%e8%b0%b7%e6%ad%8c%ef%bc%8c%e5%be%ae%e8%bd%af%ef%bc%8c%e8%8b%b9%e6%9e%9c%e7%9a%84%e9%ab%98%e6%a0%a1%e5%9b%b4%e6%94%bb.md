@@ -10,10 +10,10 @@ category:   未分类
 ---
 前几天在学院的海报栏里面排了几张照片，这些业界当红企业的触手已经伸入高校，很深，很深了。是好事还是坏事呢？
 
-&nbsp;
+ 
 
 [<img alt="" class="aligncenter size-medium wp-image-10454" height="200" src="/uploads/2010/09/Google-Apple-300x200.jpg" title="Google Apple" width="300"  />](/uploads/2010/09/Google-Apple.jpg)
 
-&nbsp;
+ 
 
 [<img alt="" class="aligncenter size-medium wp-image-10455" height="200" src="/uploads/2010/09/google-MS-300x200.jpg" title="google MS" width="300"  />](/uploads/2010/09/google-MS.jpg)

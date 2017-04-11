@@ -18,7 +18,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -26,7 +26,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -34,7 +34,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -42,7 +42,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -50,7 +50,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -58,15 +58,15 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
-  什么？不信？不信看抓下来的图。这是从新的Smartphone上抓拍下来的。第一行大标题Windows Mobile 6，第二行注意，OS：5.2.318。所以，严格地说，Windows Mobile 6使用的是一个没有公开发行的Windows CE 5.x版本。正如Windows Mobile 5使用的是Win CE 5.1一样，Windows Mobile 6使用的是Windows CE 5.2。&nbsp;
+  什么？不信？不信看抓下来的图。这是从新的Smartphone上抓拍下来的。第一行大标题Windows Mobile 6，第二行注意，OS：5.2.318。所以，严格地说，Windows Mobile 6使用的是一个没有公开发行的Windows CE 5.x版本。正如Windows Mobile 5使用的是Win CE 5.1一样，Windows Mobile 6使用的是Windows CE 5.2。 
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -74,7 +74,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -82,7 +82,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -90,7 +90,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -98,7 +98,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -106,7 +106,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -114,7 +114,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -122,7 +122,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -130,7 +130,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -138,7 +138,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -146,9 +146,9 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
-  &nbsp;
+   
 </div>

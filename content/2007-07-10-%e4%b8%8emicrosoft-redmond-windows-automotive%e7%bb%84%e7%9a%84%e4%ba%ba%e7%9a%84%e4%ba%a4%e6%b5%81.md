@@ -19,7 +19,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -27,7 +27,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -35,7 +35,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -43,7 +43,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -51,15 +51,15 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
-  Windows Automotive是基于Windows CE平台的。只不过它在Windows CE平台上面搭建了一些适合于车载领域使用的特殊组件。（感觉跟当年偶做的那个科委项目思路还真是一模一样：用CE做一个通用的车载平台，支持汽车行业的标准）在CE的基础上，主要有两大组件，一个叫AUI，另外一个叫AST。AUI&nbsp;是 Automotive User Interface的缩写。其实主要就是一些适合于车载电脑的图形界面，例如仪表盘啊，里程表转速表油量表什么的，同时还提供了强大的图形render功能，来画一些3D导航什么的。AST是 Automotive System Tool的缩写，主要提供了一些工具，用来诊断车载电脑以及汽车的运行情况，可以实现故障诊断等等（这个东东涉及了太多汽车领域的知识，原来诊断什么的都是有行业标准的）。
+  Windows Automotive是基于Windows CE平台的。只不过它在Windows CE平台上面搭建了一些适合于车载领域使用的特殊组件。（感觉跟当年偶做的那个科委项目思路还真是一模一样：用CE做一个通用的车载平台，支持汽车行业的标准）在CE的基础上，主要有两大组件，一个叫AUI，另外一个叫AST。AUI 是 Automotive User Interface的缩写。其实主要就是一些适合于车载电脑的图形界面，例如仪表盘啊，里程表转速表油量表什么的，同时还提供了强大的图形render功能，来画一些3D导航什么的。AST是 Automotive System Tool的缩写，主要提供了一些工具，用来诊断车载电脑以及汽车的运行情况，可以实现故障诊断等等（这个东东涉及了太多汽车领域的知识，原来诊断什么的都是有行业标准的）。
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -67,7 +67,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -95,7 +95,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -103,7 +103,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -111,7 +111,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -119,7 +119,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -131,7 +131,7 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
@@ -143,9 +143,9 @@ tags:   Windows CE
 </div>
 
 <div>
-  &nbsp;
+   
 </div>
 
 <div>
-  &nbsp;
+   
 </div>

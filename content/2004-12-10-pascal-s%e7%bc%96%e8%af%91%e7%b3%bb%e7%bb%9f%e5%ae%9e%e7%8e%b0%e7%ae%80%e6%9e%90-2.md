@@ -20,29 +20,29 @@ Pascal-S的编译程序也是由Pascal编写而成。由五十多个函数构成
 	  
 表格是编译程序不可缺少的一部分，Pascal-S编译程序包含符号表（tab），块表（btab），数组表（atab），实常量表（rconst），字符串常量表（stab）以及生成的中间代码表（code）。Pascal-S的代码中，使用一系列ENTER打头的函数往这些表中添加信息。
 	  
-2.1&nbsp;符号表tab
+2.1 符号表tab
 	  
 符号表由变量t作为索引，它主要用来存储在编译的时候发现的代码中的标志符的信息。他的数据结构定义和成员的意义解释如下：
 	  
-tab:&nbsp;array&nbsp;[0..tmax]&nbsp;of
+tab: array [0..tmax] of
 	  
-packed&nbsp;record
+packed record
 	  
-name:&nbsp;alfa;{标识符的名字}
+name: alfa;{标识符的名字}
 	  
-link:&nbsp;index;{链表，链向同一块中的上一个标识符}
+link: index;{链表，链向同一块中的上一个标识符}
 	  
-obj:&nbsp;object;{种类，可以是常量，函数，变量等}
+obj: object;{种类，可以是常量，函数，变量等}
 	  
-typ:&nbsp;types;{数据类型，可以是整形，布尔形等}
+typ: types;{数据类型，可以是整形，布尔形等}
 	  
-ref:&nbsp;index;{当为数组或者函数时，指向atab或者btab的索引}
+ref: index;{当为数组或者函数时，指向atab或者btab的索引}
 	  
-normal:&nbsp;boolean;{没太搞明白，标识符是变量形参为false}
+normal: boolean;{没太搞明白，标识符是变量形参为false}
 	  
-lev:&nbsp;0..lmax;{嵌套的级别}
+lev: 0..lmax;{嵌套的级别}
 	  
-adr:&nbsp;integer;{地址，变量是相对地址，函数是入口地址}
+adr: integer;{地址，变量是相对地址，函数是入口地址}
 	  
 end;
 	  
@@ -50,9 +50,9 @@ end;
 	  
 程序块表用变量b索引，程序中每个程序块都在该表对应一个入口。记录也被看作是一个块。它的数据结构定义和成员的意义解释如下：
 	  
-btab:&nbsp;array&nbsp;[1..bmax]&nbsp;of
+btab: array [1..bmax] of
 	  
-packed&nbsp;record
+packed record
 	  
 last,{指向tab表，该块中最后的一个标识符在tab表中的位置}
 	  
@@ -60,7 +60,7 @@ lastpar,{过程或者函数最后一个参数在tab中的位置}
 	  
 psize,{参数和保留区的大小}
 	  
-vsize:&nbsp;index{总大小}
+vsize: index{总大小}
 	  
 end;
 	  
@@ -68,21 +68,21 @@ end;
 	  
 数组表用变量a索引，程序中每个数组都在该表对应一个入口。多维数组被看成数组的数组。它的数据结构定义和成员的意义解释如下：
 	  
-atab:&nbsp;array&nbsp;[1..amax]&nbsp;of
+atab: array [1..amax] of
 	  
-packed&nbsp;record
+packed record
 	  
 inxtyp,{索引下标的类型}
 	  
-eltyp:&nbsp;types;{数组元素的类型}
+eltyp: types;{数组元素的类型}
 	  
-elref,&nbsp;{指向atab或btab，数组的数组则指向atab索引，记录则指向btab的索引}
+elref, {指向atab或btab，数组的数组则指向atab索引，记录则指向btab的索引}
 	  
-low,&nbsp;high,&nbsp;{数组上下界}
+low, high, {数组上下界}
 	  
-elsize,&nbsp;{数组元素的大小}
+elsize, {数组元素的大小}
 	  
-size:&nbsp;index;{数组大小}
+size: index;{数组大小}
 	  
 end;
 	  
@@ -90,7 +90,7 @@ end;
 	  
 三、词法分析程序
 	  
-Pascal-S一共定义了51个symbol，放在TYPE&nbsp;symbol构造类型中。词法分析的功能就是从文本文件中读取字符，识别为51个符号中的一个。
+Pascal-S一共定义了51个symbol，放在TYPE symbol构造类型中。词法分析的功能就是从文本文件中读取字符，识别为51个符号中的一个。
 	  
 词法分析程序主要有下面几个函数构成，它们的功能分别是：
 	  
@@ -112,9 +112,9 @@ adjustscale：调整实数
 	  
 语法分析是Pascal-S的重点，也占据了代码的最大篇幅。总体来说，Pascal-S的编译程序采用语法制导的翻译。词法分析，代码生成都是围绕语法分析展开的。语法分析子程序采用了自顶向下的递归子程序法，语法分析同时也根据程序的语意生成相应的代码，并提供了出错处理的机制。
 	  
-4.1&nbsp;Pascal-S文法
+4.1 Pascal-S文法
 	  
-Pascal-S程序由block，statement,&nbsp;expression,&nbsp;term,&nbsp;factor等等构成，本部分试图描述Pascal-S的文法结构。描述方法参考ANSI&nbsp;C语言规范，tab表示and，换行表示or，opt下标表示可选，星号表示重复0次或若干次。
+Pascal-S程序由block，statement, expression, term, factor等等构成，本部分试图描述Pascal-S的文法结构。描述方法参考ANSI C语言规范，tab表示and，换行表示or，opt下标表示可选，星号表示重复0次或若干次。
 	  
 Program:
 	  
@@ -122,51 +122,51 @@ ProgramHeaderBlock
 
 Block:
 	  
-(Declaration)&nbsp;optStatement
+(Declaration) optStatement
 
 Declaration:
 	  
-(ConstDeclaration&nbsp;)opt(TypeDeclaration)opt(VaraiableDeclaration)optBlock
+(ConstDeclaration )opt(TypeDeclaration)opt(VaraiableDeclaration)optBlock
 
 ConstDeclaration:
 	  
-CONSTIdentifier&nbsp;=&nbsp;Constant&nbsp;(;&nbsp;Identifier&nbsp;=&nbsp;Constant)*;
+CONSTIdentifier = Constant (; Identifier = Constant)*;
 
 TypeDeclaration:
 	  
-TYPEIdentifier&nbsp;=&nbsp;Type&nbsp;(;&nbsp;Identifier&nbsp;=&nbsp;Type)*;
+TYPEIdentifier = Type (; Identifier = Type)*;
 
 VaraiableDeclaration:
 	  
-VARIdentifier&nbsp;(,&nbsp;Identifier)\*&nbsp;:&nbsp;Type;&nbsp;(Identifier&nbsp;(,&nbsp;Identifier)\*&nbsp;:&nbsp;Type)*;
+VARIdentifier (, Identifier)\* : Type; (Identifier (, Identifier)\* : Type)*;
 
 Statement:
 	  
-Variable&nbsp;:=&nbsp;Expression
+Variable := Expression
 	  
-BEGIN&nbsp;Statement&nbsp;(;&nbsp;Statment)&nbsp;END
+BEGIN Statement (; Statment) END
 	  
-IF&nbsp;Expression&nbsp;THEN&nbsp;Statement&nbsp;(ELSE&nbsp;Statement)&nbsp;opt
+IF Expression THEN Statement (ELSE Statement) opt
 	  
-CASE&nbsp;Expression&nbsp;OF&nbsp;(Constant&nbsp;(,&nbsp;Constant)&nbsp;:&nbsp;Statement,&nbsp;)*&nbsp;END
+CASE Expression OF (Constant (, Constant) : Statement, )* END
 	  
-WHILE&nbsp;Expression&nbsp;Do&nbsp;Statement
+WHILE Expression Do Statement
 	  
-REPEAT&nbsp;Statement&nbsp;(,&nbsp;Statement)*&nbsp;Until&nbsp;Expression
+REPEAT Statement (, Statement)* Until Expression
 	  
-FOR&nbsp;Variable&nbsp;:=&nbsp;Expression&nbsp;TO&nbsp;|&nbsp;DOWNTO&nbsp;Expression&nbsp;DO&nbsp;Statement
+FOR Variable := Expression TO | DOWNTO Expression DO Statement
 
 Expression:
 	  
-SimpleExpression&nbsp;(=&nbsp;|&nbsp;<&nbsp;|&nbsp;>&nbsp;|&nbsp;<>&nbsp;|&nbsp;>=&nbsp;|&nbsp;<=&nbsp;SimpleExpression)&nbsp;opt
+SimpleExpression (= | < | > | <> | >= | <= SimpleExpression) opt
 
 SimpleExpression:
 	  
-(+&nbsp;|&nbsp;-)&nbsp;opt&nbsp;Term&nbsp;(+&nbsp;|&nbsp;&#8211;&nbsp;|&nbsp;OR&nbsp;Term)*
+(+ | -) opt Term (+ | &#8211; | OR Term)*
 
 Term:
 	  
-Factor&nbsp;(&nbsp;\*&nbsp;|&nbsp;/&nbsp;|&nbsp;DIV&nbsp;|&nbsp;MOD&nbsp;|&nbsp;AND&nbsp;Factor)\*
+Factor ( \* | / | DIV | MOD | AND Factor)\*
 
 Factor:
 	  
@@ -176,23 +176,23 @@ Variable
 	  
 FunctionCall
 	  
-(&nbsp;Expression&nbsp;)
+( Expression )
 	  
-NOT&nbsp;Factor
+NOT Factor
 
 Constant:
 	  
-(+&nbsp;|&nbsp;-)&nbsp;opt&nbsp;Identifier&nbsp;|&nbsp;Figure
+(+ | -) opt Identifier | Figure
 	  
-&lsquo;&nbsp;Character(Character)*&nbsp;&lsquo;
+&lsquo; Character(Character)* &lsquo;
 
 Identifier:
 	  
-Character(Character&nbsp;|&nbsp;Number)*
+Character(Character | Number)*
 
 Figure:
 	  
-Number(Number)\*(.Number(Number)\*)&nbsp;opt&nbsp;(E(+&nbsp;|-)&nbsp;opt&nbsp;Number(Number)*))&nbsp;opt
+Number(Number)\*(.Number(Number)\*) opt (E(+ |-) opt Number(Number)*)) opt
 
 五、代码生成和解释执行
 	  
@@ -202,7 +202,7 @@ Pascal-S的编译系统并不直接生成机器码，而是生成类似于四元
 	  
 解释执行类PCODE代码时，数据段存储分配方式如下：
 	  
-对于源程序的每一个Block（包括主程序），在被调用时，首先在数据段中开辟五个空间，存放静态链，动态链，返回地址，函数返回值和过程名在tab表中的位置。静态链记录了定义该过程的直接外过程（或主程序）运行时最新数据段的基地址。动态链记录调用该过程前正在运行的过程的数据段基址。返回� ��址记录了调用该过程时程序运行的断点位置。静态链的功能是在一个子过程要引用它的直接或间接父过程（这里的父过程是按定义过程时的嵌套情况来定的，而不是按执行时的调用顺序定的）的变量时，可以通过静态链，跳过个数为层差的数据段，找到包含要引用的变量所在的数据段基址，然后通过偏移地址访问它。&nbsp;
+对于源程序的每一个Block（包括主程序），在被调用时，首先在数据段中开辟五个空间，存放静态链，动态链，返回地址，函数返回值和过程名在tab表中的位置。静态链记录了定义该过程的直接外过程（或主程序）运行时最新数据段的基地址。动态链记录调用该过程前正在运行的过程的数据段基址。返回� ��址记录了调用该过程时程序运行的断点位置。静态链的功能是在一个子过程要引用它的直接或间接父过程（这里的父过程是按定义过程时的嵌套情况来定的，而不是按执行时的调用顺序定的）的变量时，可以通过静态链，跳过个数为层差的数据段，找到包含要引用的变量所在的数据段基址，然后通过偏移地址访问它。 
 	  
 在过程返回时，解释程序通过返回地址恢复指令指针的值到调用前的地址，通过当前段基址恢复数据段分配指针，通过动态链恢复局部段基址指针。实现子过程的返回。对于主程序来说，解释程序会遇到返回地址为0的情况，这时就认为程序运行结束。
 	  

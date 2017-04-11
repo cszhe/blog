@@ -36,7 +36,7 @@ category:   嵌入式
 
 [<img title="history_timeline" src="/uploads/2012/03/history_timeline-300x120.jpg" alt="" width="300" height="120" />](/uploads/2012/03/history_timeline.jpg)
 
-&nbsp;
+ 
 
 Windows CE从1996年发展至今，已经有16个年头了。版本号从1.0翻到了7.0，据某不愿透露姓名的微软公司员工透露，下一个版本8.0也在开发之中了。但是，Windows CE的辉煌年代已经远去了。
 

@@ -12,7 +12,7 @@ category:   嵌入式
 
 微软声称Direct 3D Mobile是针对嵌入式设备完全重写过的。其接口与桌面任何一个版本的Direct 3D版本都不大。其实呢，怎么可能重新发明轮子，接口跟桌面Direct X还是有些神似的。基本而言，D3DM其实是介于Dx8和dx9之间的一个接口。总结了一下，具体两者差距如下：
 
-&nbsp;
+ 
 
 <p style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0.5em; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; color: rgb(0, 0, 0); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; ">
   Direct3D Mobile上有，而桌面D3D没有的特性:
@@ -101,11 +101,11 @@ category:   嵌入式
   </li>
 </ul>
 
-&nbsp;
+ 
 
 * * *
 
-&nbsp;
+ 
 
 从代码层面上来说，改代码改得头昏脑胀，也总结一下，大概有如下要点：
 
@@ -128,7 +128,7 @@ category:   嵌入式
 
 还以为D3DM只支持定点运算，后来发现，原来虽然这个宏被定义成了整形，但是其实可以把它当成浮点型来用。方法是通过一个inline函数来变换的。
 
-&nbsp;
+ 
 
 `inline D3DMVALUE D3DM_MAKE_D3DMVALUE(float Value)`
 

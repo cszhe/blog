@@ -21,7 +21,7 @@ devkitPro是一个为多种游戏机开发程序的开发环境，不只可以�
 
 3.2安装和配置开发环境
 	  
-devkitPro是sourceforge.net上的一个项目，所以最新的东西都可以从sourceforge上下载，老家在这里：http://sourceforge.net/projects/devkitpro</a>&nbsp;。但是google一下应该可以找到不少链接。
+devkitPro是sourceforge.net上的一个项目，所以最新的东西都可以从sourceforge上下载，老家在这里：http://sourceforge.net/projects/devkitpro</a> 。但是google一下应该可以找到不少链接。
 
 devkitPro是完全开源的，可以从sourceforege网站上下载到几乎所有的类库和工具的源代码。如果你是个想对任何细节都穷根究底的程序员（就像我&hellip;&hellip;），读devkitPro里面的代码是一个不错的选择。同时，与其它开源项目一样，devkitPro中关于NDS部分的文档是悲惨的可怜。想了解怎么写程序和一些库函数的作用功能参数，基本上就一个办法&mdash;&mdash;读代码。
 
@@ -31,41 +31,41 @@ devkitPro是完全开源的，可以从sourceforege网站上下载到几乎所�
 
 我写的批处理程序如下：
 
-@echo&nbsp;off
+@echo off
 
 REM
 	  
-REM&nbsp;Written&nbsp;by&nbsp;Jason&nbsp;He;&nbsp;Set&nbsp;up&nbsp;NDS&nbsp;development&nbsp;enviorment
+REM Written by Jason He; Set up NDS development enviorment
 	  
-REM&nbsp;4/19/2006
+REM 4/19/2006
 	  
 REM
 
-REM&nbsp;set&nbsp;environment
+REM set environment
 	  
-set&nbsp;DEVKITARM=/D/devkitPro/devkitARM
+set DEVKITARM=/D/devkitPro/devkitARM
 	  
-set&nbsp;DEVKITPRO=/D/devkitPro
+set DEVKITPRO=/D/devkitPro
 
-REMset&nbsp;path
+REMset path
 	  
-set&nbsp;PATH=%PATH%D:\devkitPro\devkitARM\arm-elf\bin;D:\devkitpro\devkitarm\bin;D:\devkitpro\msys\bin;
+set PATH=%PATH%D:\devkitPro\devkitARM\arm-elf\bin;D:\devkitpro\devkitarm\bin;D:\devkitpro\msys\bin;
 
-cd&nbsp;/d&nbsp;D:\devkitPro\examples\nds\
+cd /d D:\devkitPro\examples\nds\
 
-echo&nbsp;Welcome&nbsp;to&nbsp;enter&nbsp;NDS&nbsp;development&nbsp;world!
+echo Welcome to enter NDS development world!
 
-把这些东西复制到一个文本文件里面，然后保存成nds.bat（注意，有些内容可能要修改哈）。然后再建立一个快捷方式，快捷方式指向的内容是：%SystemRoot%\system32\cmd.exe&nbsp;/K&nbsp;D:\devkitPro\nds.bat。这样，只要双击这个快捷方式，就可以打开我们以后要一直面对的开发环境了。（用惯了Visual&nbsp;Studio的同志也不要失落，命令行也不一定就坏）
+把这些东西复制到一个文本文件里面，然后保存成nds.bat（注意，有些内容可能要修改哈）。然后再建立一个快捷方式，快捷方式指向的内容是：%SystemRoot%\system32\cmd.exe /K D:\devkitPro\nds.bat。这样，只要双击这个快捷方式，就可以打开我们以后要一直面对的开发环境了。（用惯了Visual Studio的同志也不要失落，命令行也不一定就坏）
 
-3.3编译NDS版Hello&nbsp;World
+3.3编译NDS版Hello World
 
 在写我们自己的程序之前，还是先编译运行devkitPro中自带的示例程序。让大家有个感性的认识。
 
-编译还是挺简单的。在上一节创建好的命令行开发环境中cd到D:\devkitPro\examples\nds\Graphics\2D\hello\_world目录（终于看到Hello&nbsp;World了）。代码的组织结构和含义我们以后再看，编译只需要输入make，就可以看到编译开始了。编译结束之后，可以看到hello\_world目录下多了几个文件，最重要的也就是hello\_world.nds文件了。如果读者用过烧录卡，就知道.nds文件也就是NDS可以运行的ROM文件了。这里的hello\_world.nds也是NDS可以直接运行的二进制文件。
+编译还是挺简单的。在上一节创建好的命令行开发环境中cd到D:\devkitPro\examples\nds\Graphics\2D\hello\_world目录（终于看到Hello World了）。代码的组织结构和含义我们以后再看，编译只需要输入make，就可以看到编译开始了。编译结束之后，可以看到hello\_world目录下多了几个文件，最重要的也就是hello\_world.nds文件了。如果读者用过烧录卡，就知道.nds文件也就是NDS可以运行的ROM文件了。这里的hello\_world.nds也是NDS可以直接运行的二进制文件。
 
-3.4让Hello&nbsp;World运行起来
+3.4让Hello World运行起来
 
-如果你有NDS&nbsp;+&nbsp;烧录卡，想运行这个程序，那么只需要直接把这个文件复制到烧录卡上就可以直接像运行其他NDS游戏一样运行hello&nbsp;world了。在我的Super&nbsp;Card&nbsp;SD版上，无需转化就可以直接运行。
+如果你有NDS + 烧录卡，想运行这个程序，那么只需要直接把这个文件复制到烧录卡上就可以直接像运行其他NDS游戏一样运行hello world了。在我的Super Card SD版上，无需转化就可以直接运行。
 
 如果你只有NDS并没有烧录卡，想运行这个程序，那么国外有一个软件叫WifiMe，据说用这个软件可以通过NDS自带的Wifi无线网络把hello_world.nds文件从PC机下载到NDS上运行。但是据说这种方法对PC端的wifi网卡要求挺高。我没有试过WifiMe，所以这种方法我就不详细介绍了。
 
@@ -75,47 +75,47 @@ echo&nbsp;Welcome&nbsp;to&nbsp;enter&nbsp;NDS&nbsp;development&nbsp;world!
 
 下面是分别在我的爱机NDSL和模拟器上运行这个程序的图片。
 	  
-&nbsp;
+ 
 	  
 <a href="http://images.blogcn.com/2006/5/9/6/omale,20060509105825.jpg" target="_blank"><img border="0" onload="if(this.width>screen.width/2)this.width=screen.width/2;" src="http://images.blogcn.com/2006/5/9/6/omale,20060509105825.jpg" /></a>
 
-&nbsp;
+ 
 
 以后我们自己开发的游戏都可以通过这种方式运行调试。
 
 3.5项目代码分析
 	  
-3.5.1hello&nbsp;world目录结构
+3.5.1hello world目录结构
 
-好了，Hello&nbsp;World终于在NDS上跑起来了。鲜也尝过了，其然也知了，是该回头来看看这些代码，知其所以然的时候了。
+好了，Hello World终于在NDS上跑起来了。鲜也尝过了，其然也知了，是该回头来看看这些代码，知其所以然的时候了。
 
-让我们来看看刚才编译过的hello_world目录，看看这个� ��录下的一些文件组织结构。经过make之后，这个目录的组织结构如下（省略了几个Programmers&nbsp;Notepad的工程文件），我在文件和目录后面加了解释：
+让我们来看看刚才编译过的hello_world目录，看看这个� ��录下的一些文件组织结构。经过make之后，这个目录的组织结构如下（省略了几个Programmers Notepad的工程文件），我在文件和目录后面加了解释：
 
-|&nbsp;&nbsp;&nbsp;hello_world.arm9//&nbsp;编译之后生成，似乎是ARM二进制代码
+|   hello_world.arm9// 编译之后生成，似乎是ARM二进制代码
 	  
-|&nbsp;&nbsp;&nbsp;hello_world.elf//&nbsp;elf文件格式的二进制
+|   hello_world.elf// elf文件格式的二进制
 	  
-|&nbsp;&nbsp;&nbsp;hello_world.nds//&nbsp;可执行的NDS&nbsp;ROM
+|   hello_world.nds// 可执行的NDS ROM
 	  
-|&nbsp;&nbsp;&nbsp;Makefile//&nbsp;构建脚本，稍后详细介绍
+|   Makefile// 构建脚本，稍后详细介绍
 	  
 |
 	  
-+&#8212;build//&nbsp;编译生成的目录，用来存放编译生成的临时文件
++&#8212;build// 编译生成的目录，用来存放编译生成的临时文件
 	  
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hello_world.map//&nbsp;编译生成的map文件
+|       hello_world.map// 编译生成的map文件
 	  
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.d//&nbsp;编译生成的文件，main.cpp所包含的文件列表
+|       main.d// 编译生成的文件，main.cpp所包含的文件列表
 	  
-|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.o//&nbsp;main.cpp编译生成的目标文件
+|       main.o// main.cpp编译生成的目标文件
 	  
 |
 	  
-+&#8212;include//&nbsp;存放头文件的目录，为空
++&#8212;include// 存放头文件的目录，为空
 	  
-\&#8212;source//&nbsp;存放源代码的目录
+\&#8212;source// 存放源代码的目录
 	  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;main.cpp//&nbsp;源代码文件
+        main.cpp// 源代码文件
 
 我们可以看到，其实这个目下的大多数文件都是make之后才生成的，make之前这个目录中只有两个文件：makefile和main.cpp。也就是说，如果我们要自己新建一个项目，其实最少只要makefile和main.cpp就够了。网上看到有网友问如何从0开始一步一步创建一个新项目，其实只要把D:\devkitPro\examples\nds\templates\目录下的arm9或combined目录复制一份就好了。也可以复制这个hello_world目录，都无所谓。下面就分别介绍main.cpp和makefile这两个文件。
 
@@ -125,19 +125,19 @@ main.cpp内容很短，一行汇编都没看到，热衷于ASM的人是不是会
 
 第一段，包含头文件。main.cpp中包含了三个头文件，其中nds.h一般是所有nds程序都需要包含的。console.h包含一些命令行相关的函数声明。stdio.h就不用我多介绍了。
 
-#include&nbsp;<nds.h>
+#include <nds.h>
 
-#include&nbsp;<nds/arm9/console.h>
+#include <nds/arm9/console.h>
 	  
-#include&nbsp;<stdio.h>
+#include <stdio.h>
 
 第二段，全局变量和Vblank()函数，Vblank的作用就是把全局变量加一，系统是借此来统计桢数。工作原理我们后面会介绍。
 
-volatile&nbsp;int&nbsp;frame&nbsp;=&nbsp;0;
+volatile int frame = 0;
 
 //&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
 	  
-void&nbsp;Vblank()&nbsp;{
+void Vblank() {
 	  
 frame++;
 	  
@@ -147,57 +147,57 @@ frame++;
 
 //&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
 	  
-int&nbsp;main(void)&nbsp;{
+int main(void) {
 	  
-touchPosition&nbsp;touchXY;
+touchPosition touchXY;
 
-irqInit();//&nbsp;初始化中断
+irqInit();// 初始化中断
 	  
-irqSet(IRQ_VBLANK,&nbsp;Vblank);//&nbsp;设置画图中断处理函数为vblank()
+irqSet(IRQ_VBLANK, Vblank);// 设置画图中断处理函数为vblank()
 	  
-irqEnable(IRQ_VBLANK);//&nbsp;打开VBLANK中断
+irqEnable(IRQ_VBLANK);// 打开VBLANK中断
 	  
-videoSetMode(0);//&nbsp;下面几行初始化显示屏
+videoSetMode(0);// 下面几行初始化显示屏
 	  
-videoSetModeSub(MODE\_0\_2D&nbsp;|&nbsp;DISPLAY\_BG0\_ACTIVE);
+videoSetModeSub(MODE\_0\_2D | DISPLAY\_BG0\_ACTIVE);
 	  
-vramSetBankC(VRAM\_C\_SUB_BG);&nbsp;
+vramSetBankC(VRAM\_C\_SUB_BG); 
 
-SUB\_BG0\_CR&nbsp;=&nbsp;BG\_MAP\_BASE(31);
+SUB\_BG0\_CR = BG\_MAP\_BASE(31);
 
-BG\_PALETTE\_SUB[255]&nbsp;=&nbsp;RGB15(31,31,31);
+BG\_PALETTE\_SUB[255] = RGB15(31,31,31);
 
-//&nbsp;初始化控制台
+// 初始化控制台
 	  
-consoleInitDefault((u16\*)SCREEN\_BASE\_BLOCK\_SUB(31),&nbsp;(u16\*)CHAR\_BASE\_BLOCK\_SUB(0),&nbsp;16);
+consoleInitDefault((u16\*)SCREEN\_BASE\_BLOCK\_SUB(31), (u16\*)CHAR\_BASE\_BLOCK\_SUB(0), 16);
 
-//&nbsp;打印Hello信息
+// 打印Hello信息
 	  
-iprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello&nbsp;DS&nbsp;dev'rs\n");
+iprintf("      Hello DS dev'rs\n");
 	  
-iprintf("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;www.devkitpro.org\n");
+iprintf("     www.devkitpro.org\n");
 	  
-iprintf("&nbsp;&nbsp;&nbsp;www.drunkencoders.com");
+iprintf("   www.drunkencoders.com");
 
-//&nbsp;下面是轮询死循环
+// 下面是轮询死循环
 	  
-while(1)&nbsp;{
+while(1) {
 	  
-swiWaitForVBlank();//&nbsp;BIOS调用，等待vblank中断
+swiWaitForVBlank();// BIOS调用，等待vblank中断
 	  
-touchXY=touchReadXY();//&nbsp;读取当前触摸屏的X&nbsp;Y坐标
+touchXY=touchReadXY();// 读取当前触摸屏的X Y坐标
 
-iprintf("\x1b[10;0HFrame&nbsp;=&nbsp;%d",frame);//&nbsp;打印桢数
+iprintf("\x1b[10;0HFrame = %d",frame);// 打印桢数
 	  
-//&nbsp;打印触摸屏触摸信息
+// 打印触摸屏触摸信息
 	  
-iprintf("\x1b[16;0HTouch&nbsp;x&nbsp;=&nbsp;%04X,&nbsp;%04X\n",&nbsp;touchXY.x,&nbsp;touchXY.px);
+iprintf("\x1b[16;0HTouch x = %04X, %04X\n", touchXY.x, touchXY.px);
 	  
-iprintf("Touch&nbsp;y&nbsp;=&nbsp;%04X,&nbsp;%04X\n",&nbsp;touchXY.y,&nbsp;touchXY.py);
+iprintf("Touch y = %04X, %04X\n", touchXY.y, touchXY.py);
 	  
 }
 	  
-return&nbsp;0;
+return 0;
 	  
 }
 
@@ -215,55 +215,55 @@ makefile是进行自动编译的脚本。make.exe会读取makefile，然后根�
 
 （略）
 
-#&nbsp;下面这行包含了另外一个文件，它包含通用的NDS构建规则。
+# 下面这行包含了另外一个文件，它包含通用的NDS构建规则。
 	  
-include&nbsp;＄(DEVKITARM)/ds_rules
+include ＄(DEVKITARM)/ds_rules
 
 #&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
 	  
-#&nbsp;下面几个宏比较重要：
+# 下面几个宏比较重要：
 	  
-#&nbsp;TARGET&nbsp;是输出的文件名，默认被设置成了当前目录名
+# TARGET 是输出的文件名，默认被设置成了当前目录名
 	  
-#&nbsp;BUILD&nbsp;是obj和其他中间文件的存放目录，默认叫build
+# BUILD 是obj和其他中间文件的存放目录，默认叫build
 	  
-#&nbsp;SOURCES是包含源代码的目录列表
+# SOURCES是包含源代码的目录列表
 	  
-#&nbsp;INCLUDES包含头文件的目录列表
+# INCLUDES包含头文件的目录列表
 	  
 #&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
 	  
-TARGET:=＄(shell&nbsp;basename&nbsp;＄(CURDIR))
+TARGET:=＄(shell basename ＄(CURDIR))
 	  
 BUILD:=build
 	  
-SOURCES:=gfx&nbsp;source&nbsp;data&nbsp;&nbsp;
+SOURCES:=gfx source data  
 	  
-INCLUDES:=include&nbsp;build
+INCLUDES:=include build
 
 （略）
 
 #&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
 	  
-#&nbsp;这里是额外链接的库，设置成nds9意味着链接了libnds9.a，也就是libnds提供的一个库
+# 这里是额外链接的库，设置成nds9意味着链接了libnds9.a，也就是libnds提供的一个库
 	  
 #&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
 	  
-LIBS:=&nbsp;-lnds9
+LIBS:= -lnds9
 
 （略）
 
 #&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
 	  
-#&nbsp;这里是要build的所有文件列表，默认是这个目录下的所有文件。
+# 这里是要build的所有文件列表，默认是这个目录下的所有文件。
 	  
-CFILES:=＄(foreach&nbsp;dir,＄(SOURCES),＄(notdir&nbsp;＄(wildcard&nbsp;＄(dir)/*.c)))
+CFILES:=＄(foreach dir,＄(SOURCES),＄(notdir ＄(wildcard ＄(dir)/*.c)))
 	  
-CPPFILES:=＄(foreach&nbsp;dir,＄(SOURCES),＄(notdir&nbsp;＄(wildcard&nbsp;＄(dir)/*.cpp)))
+CPPFILES:=＄(foreach dir,＄(SOURCES),＄(notdir ＄(wildcard ＄(dir)/*.cpp)))
 	  
-SFILES:=＄(foreach&nbsp;dir,＄(SOURCES),＄(notdir&nbsp;＄(wildcard&nbsp;＄(dir)/*.s)))
+SFILES:=＄(foreach dir,＄(SOURCES),＄(notdir ＄(wildcard ＄(dir)/*.s)))
 	  
-BINFILES:=＄(foreach&nbsp;dir,＄(SOURCES),＄(notdir&nbsp;＄(wildcard&nbsp;＄(dir)/*.bin)))
+BINFILES:=＄(foreach dir,＄(SOURCES),＄(notdir ＄(wildcard ＄(dir)/*.bin)))
 
 （略）
 

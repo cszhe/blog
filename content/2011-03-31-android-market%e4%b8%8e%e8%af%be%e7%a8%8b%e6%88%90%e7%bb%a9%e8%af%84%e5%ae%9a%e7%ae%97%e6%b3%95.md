@@ -10,9 +10,9 @@ category:   工作和学习
 ---
 本学期开设Android课程，要求所有同学的软件都要上传到Android Market里面，并且根据Market的表现占课程成绩的一部分。虽然学院很多课程都要做项目，但是课程项目要全球发布，接受全球考验却是第一回。绞尽脑汁想了一个评估算法，今年先尝试一下，是否合理，课程项目考核要求如下：
 
-&nbsp;
+ 
 
-&nbsp;
+ 
 
 
 
@@ -99,7 +99,7 @@ mso-hansi-font-family:微软雅黑;mso-fareast-language:ZH-CN">Angry Birds, PvZ<
 
 <p class="MsoNormal">
   <span style="font-family:微软雅黑;mso-hansi-font-family:微软雅黑;
-mso-fareast-language:ZH-CN">&nbsp;</span>
+mso-fareast-language:ZH-CN"> </span>
 </p>
 
 ## <span lang="ZH-CN" style="font-family:宋体;mso-hansi-font-family:宋体;mso-bidi-font-family:
@@ -174,4 +174,4 @@ mso-fareast-language:ZH-CN">Di<span lang="ZH-CN">为你的下载量。</span>n<s
 
 不知道这个评价标准是否可行，今年7月所有作品上架之后见分晓吧。或者大家有没有啥更科学合理的算法，拿出来分享一下。
 
-&nbsp;
+ 
