@@ -55,7 +55,7 @@ def sort_category(file_content : str) -> str:
 def relative_graph(file_content : str) -> str:
     ret = file_content
 
-    regex = r"\"(http://\S*/wp-content)/uploads/\S*\""
+    regex = r"(http://\S*/wp-content)/uploads/\S*"
     matches = re.finditer(regex, file_content)
 
     for _, match in enumerate(matches):
@@ -67,6 +67,7 @@ def relative_graph(file_content : str) -> str:
 
 if __name__ == '__main__':
     md_files = glob.glob('{}/*.md'.format(CONTENT_PATH))
+    # md_files = ['/Users/hezongjian/dev/blog/content/2015-08-31-%e6%99%ae%e6%9e%97%e6%96%af%e9%a1%bf%e5%a4%a7%e5%ad%a6%e5%8f%82%e8%a7%82%e8%ae%b0.md']
 
     for file in md_files:
         print('processing {}'.format(file))
