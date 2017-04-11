@@ -16,7 +16,7 @@ Design Thinking是一个群体思维方法论性的东西。为一群人在一�
 
 SAP公司把Design Thinking提到对公司很重要的地位。Co-CEO在keynote上多次提到他们用Design Thinking方法设计SAP的软件。在Sapphire大会现场的展示中也专门设置了Design Thinking区，区内还搭建了透明玻璃房，房子里面一群人在现场用Design Thinking解决问题。可见公司对这个方法的重视。大学联盟自然也要上行下效，紧密围绕在领导周围，在学生中推广Design Thinking。所以在大会提前一天，组织了一群来自世界各地的学生跟老师，先灌输一下这个方法。
 
-Design Thinking Jam安排在下午，日程很紧张，从介绍什么是Design Thinking开始到整个项目结束只有几个小时。由于第一天到US，正好12个小时时差，到了下午两点之后这个时间段真心困。[<img class="aligncenter size-medium wp-image-10887" alt="Screen Shot 2013-05-27 at 3.33.25 PM" src="/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM-237x300.png" width="237" height="300" srcset="/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM-237x300.png 237w, /uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM.png 446w" sizes="(max-width: 237px) 100vw, 237px" />](/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM.png)
+Design Thinking Jam安排在下午，日程很紧张，从介绍什么是Design Thinking开始到整个项目结束只有几个小时。由于第一天到US，正好12个小时时差，到了下午两点之后这个时间段真心困。[<img class="aligncenter size-medium wp-image-10887" alt="Screen Shot 2013-05-27 at 3.33.25 PM" src="/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM-237x300.png" width="237" height="300"  />](/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM.png)
 
 参加Design Thinking Jam的有来自美国，德国，印度，中国，还有些不知道什么国家的学生。他们把人抽签随机分配成6组，因此每个组都是社会教育背景迥异的人组成的。同组的有7个人：一个美国教授，一个德国教授，我，一个德国学生，还有三个中国学生。每个组给一个题目，题目都来自于SAP最近组织跟赞助的一些比赛。其中有个题目是智能汽车，其实我挺感兴趣，跟我的研究也沾边。结果我那组分到的题目是如何用新能源去改变人类生活。这个对我来说基本是两眼一抹黑。一无所知。这样也好，正好可以评测一下这个方法靠不靠谱。
 
@@ -44,7 +44,7 @@ Validation: 评价这个原型有啥问题，再改进。
 
 下面这个图就是我们组的两个用来讲故事的case。说我们要做个移动的水质监测装置，可以跟手机联系起来，检测某个地方的水质，还可以上传到互联网分享。其他人可以看到这个地区的水质，从而提前做一些保护措施什么的。这个系统也可以给自来水公司什么的用，用来检测改善水质等等。
 
-<img class="aligncenter size-medium wp-image-10877" alt="dtoutput" src="/uploads/2013/05/WP_20130513_029-169x300.jpg" width="169" height="300" srcset="/uploads/2013/05/WP_20130513_029-169x300.jpg 169w, /uploads/2013/05/WP_20130513_029-577x1024.jpg 577w, /uploads/2013/05/WP_20130513_029.jpg 720w" sizes="(max-width: 169px) 100vw, 169px" />
+<img class="aligncenter size-medium wp-image-10877" alt="dtoutput" src="/uploads/2013/05/WP_20130513_029-169x300.jpg" width="169" height="300"  />
 
 <p style="text-align: center;">
   图. 讲故事的两个Case。
@@ -52,7 +52,7 @@ Validation: 评价这个原型有啥问题，再改进。
 
 中间还有个小插曲挺有意思，因为中国人一向内敛，不开口，我们组虽然有几个中国人，但是加起来说的话还不如一个老外多，为了不给中国人丢脸，我一开始狂说，后来美国那教授喝茶的时候把我叫出去，说这是学生的事情，咱们就别多管了，打酱油吧，否则到时候又变成课程练习了。听了以后觉得也对。然后回去之后我跟他两个人立马一唱一和变成插科打诨模式。让我们画Use Case，他说，不画，我是教神经元网络，基因算法的，这个我行，画图不行。我马上说，我也是教这个的，也不会画，同道中人，give me five! 组里的那个德国的哥们还是hold不住了，看着这几个学生不给力，后来最后演讲的时候居然把学生踢开，亲自上了。当然讲的还是不错的，至少在几个组里面应该算中游。
 
-[<img class="aligncenter size-medium wp-image-10878" alt="dtpresent" src="/uploads/2013/05/WP_20130513_028-300x169.jpg" width="300" height="169" srcset="/uploads/2013/05/WP_20130513_028-300x169.jpg 300w, /uploads/2013/05/WP_20130513_028-768x433.jpg 768w, /uploads/2013/05/WP_20130513_028-1024x577.jpg 1024w, /uploads/2013/05/WP_20130513_028.jpg 1278w" sizes="(max-width: 300px) 100vw, 300px" />](/uploads/2013/05/WP_20130513_028.jpg)
+[<img class="aligncenter size-medium wp-image-10878" alt="dtpresent" src="/uploads/2013/05/WP_20130513_028-300x169.jpg" width="300" height="169"  />](/uploads/2013/05/WP_20130513_028.jpg)
 
 <p style="text-align: center;">
   图. 五分钟演讲

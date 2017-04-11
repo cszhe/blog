@@ -12,7 +12,7 @@ category:   工作和学习
 
 不管怎麽說，還是小有成果的。寫完代碼之後，打成个jar包，要發佈給Customer。發郵件之前好奇，從虛擬機裏面出來，跑到mac下面double click了一下我的程序，除了啟動速度很慢之外，居然還真跑起來了。Chart，Table等復雜控件，Derby database都沒問題。是不是突然感覺java的巨大優勢。
 
-[<img alt="" class="aligncenter size-medium wp-image-10650" height="218" src="/uploads/2011/07/java-300x218.png" title="java" width="300" srcset="/uploads/2011/07/java-300x218.png 300w, /uploads/2011/07/java-768x559.png 768w, /uploads/2011/07/java.png 951w" sizes="(max-width: 300px) 100vw, 300px" />](/uploads/2011/07/java.png)
+[<img alt="" class="aligncenter size-medium wp-image-10650" height="218" src="/uploads/2011/07/java-300x218.png" title="java" width="300"  />](/uploads/2011/07/java.png)
 
 這個就是java一直標榜的run everywhere，當然我們都知道這個不過是廣告語。忽悠不明真相群眾的。以前我在一本C語言教材上，還看到說C語言的優點是移植性好，跨平臺呢。人家是跟匯編比較的。java可以用虛擬機屏蔽一部分OS的差異，但是不能屏蔽所有差異。比方說下面這個UI：
 

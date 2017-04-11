@@ -15,7 +15,7 @@ tags:   iPhone  , 软件
 
 <p style="margin: 0in; font-size: 11.0pt;">
   <p style="margin: 0in; font-size: 11.0pt;">
-    <a href="/uploads/2014/11/IMG_20141117_143140.jpg"><img class="aligncenter size-medium wp-image-10969" src="/uploads/2014/11/IMG_20141117_143140-225x300.jpg" alt="IMG_20141117_143140" width="225" height="300" srcset="/uploads/2014/11/IMG_20141117_143140-225x300.jpg 225w, /uploads/2014/11/IMG_20141117_143140-768x1024.jpg 768w" sizes="(max-width: 225px) 100vw, 225px" /></a><a href="/uploads/2014/11/IMG_20141117_143150.jpg"><img class="aligncenter size-medium wp-image-10970" src="/uploads/2014/11/IMG_20141117_143150-225x300.jpg" alt="IMG_20141117_143150" width="225" height="300" srcset="/uploads/2014/11/IMG_20141117_143150-225x300.jpg 225w, /uploads/2014/11/IMG_20141117_143150-768x1024.jpg 768w" sizes="(max-width: 225px) 100vw, 225px" /></a>
+    <a href="/uploads/2014/11/IMG_20141117_143140.jpg"><img class="aligncenter size-medium wp-image-10969" src="/uploads/2014/11/IMG_20141117_143140-225x300.jpg" alt="IMG_20141117_143140" width="225" height="300"  /></a>
   </p>
   
   <p style="margin: 0in; font-size: 11.0pt;">

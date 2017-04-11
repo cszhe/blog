@@ -22,7 +22,7 @@ http://msdn.microsoft.com/en-us/library/ff402563(v=VS.92).aspx
 
 XDE的默认安装目录是C:\Program Files (x86)\Microsoft XDE\1.0，看着眼熟么？跟以前的Device Emulator挺像，尤其是那个文件夹里面的1.0目录，device emulator发展到3.0的时候，安装目录的文件夹名字依然是&ldquo;1.0&rdquo;，很容易混淆视听。如果要重新做个模拟器，这点早就应该改掉，怎么还留着，看看两个emulator的help吧。(点击看大图，下同)
 
-[<img alt="" class="aligncenter size-medium wp-image-10541" height="214" src="/uploads/2010/12/help-300x214.png" title="emulator help" width="300" srcset="/uploads/2010/12/help-300x214.png 300w, /uploads/2010/12/help-768x548.png 768w, /uploads/2010/12/help-1024x731.png 1024w, /uploads/2010/12/help.png 1066w" sizes="(max-width: 300px) 100vw, 300px" />](/uploads/2010/12/help.png)
+[<img alt="" class="aligncenter size-medium wp-image-10541" height="214" src="/uploads/2010/12/help-300x214.png" title="emulator help" width="300"  />](/uploads/2010/12/help.png)
 
 左面的是XDE.exe的help，右面是device emulator的help，不难看出，其实80%是一样的。唯一的变化是可以模拟arm处理器不同的版本（v4, v5,v6）。貌似<span style="color:#(color);">xde也是基于arm的模拟器。甚至有可能是传统Device Emulator的升级改进版。真是这样么？看表象就被MS给骗了。命令行的方式启动一下xde，直接xde.exe [image name]，就可以启动模拟器。试几个参数，发现/c /z等参数全然无效。哈原来是挂羊头卖狗肉，忽悠纯情少年。</span>
 

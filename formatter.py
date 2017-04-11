@@ -65,6 +65,14 @@ def relative_graph(file_content : str) -> str:
     return ret
 
 
+def remove_srcset(file_content : str) -> str:
+    regex = r"srcset=\".*\""
+
+    ret  = re.sub(regex, '', file_content)
+
+    return ret
+
+
 if __name__ == '__main__':
     md_files = glob.glob('{}/*.md'.format(CONTENT_PATH))
     # md_files = ['/Users/hezongjian/dev/blog/content/2015-08-31-%e6%99%ae%e6%9e%97%e6%96%af%e9%a1%bf%e5%a4%a7%e5%ad%a6%e5%8f%82%e8%a7%82%e8%ae%b0.md']
@@ -77,6 +85,7 @@ if __name__ == '__main__':
             content = sort_tags(content)
             content = sort_category(content)
             content = relative_graph(content)
+            content = remove_srcset(content)
 
         with open(file, 'w') as f:
             f.write(content)
