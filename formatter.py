@@ -32,7 +32,6 @@ def sort_tags(file_content : str, tag : str) -> str:
 
     if full:
         repl = full.group(0).replace('-', ',').replace('\n', '').replace(',', '', 1)
-        repl = repl.replace('tags', 'tag')
         repl = repl.replace('categories', 'category')
         matches = re.sub(myreg, repl, file_content)
         return matches
