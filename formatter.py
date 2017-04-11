@@ -26,16 +26,18 @@ tags:iPhone,软件
 
 """
 
-def sort_tags(content : str, tag : str) -> str:
+def sort_tags(file_content : str, tag : str) -> str:
     myreg = r"{}:\n(\W*- \w*)*".format(tag)
-    full = re.search(myreg, content)
+    full = re.search(myreg, file_content)
 
     if full:
         repl = full.group(0).replace('-', ',').replace('\n', '').replace(',', '', 1)
-        matches = re.sub(myreg, repl, content)
+        repl = repl.replace('tags', 'tag')
+        repl = repl.replace('categories', 'category')
+        matches = re.sub(myreg, repl, file_content)
         return matches
     else:
-        return content
+        return file_content
 
 
 
