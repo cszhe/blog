@@ -35,7 +35,7 @@ def sort_tags(content : str, tag : str) -> str:
         matches = re.sub(myreg, repl, content)
         return matches
     else:
-        return str
+        return content
 
 
 
@@ -46,12 +46,13 @@ if __name__ == '__main__':
 
     for file in md_files:
         print('processing {}'.format(file))
-        with open(file, 'r+') as f:
+        content = ''
+        with open(file, 'r') as f:
             content = f.read()
             content = sort_tags(content, 'tags')
             content = sort_tags(content, 'categories')
-            # print(content)
-            f.seek(0)
+
+        with open(file, 'w') as f:
             f.write(content)
 
     #
