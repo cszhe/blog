@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9702
 permalink: '/2009/10/12/windows-embedded-ce%e9%98%bf%e4%b8%89%e5%8f%91%e5%b8%83/'
-categories:
-  - 嵌入式
-  - 未分类
-tags:
-  - 微软
+category:   嵌入式  
+tags:   微软
 ---
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
   <span lang="EN-US"></span>

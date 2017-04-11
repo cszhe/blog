@@ -6,9 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10563
 permalink: '/2011/01/21/%e6%94%be%e5%81%87%ef%bc%8c%e5%8f%82%e5%8a%a0%e8%b0%b7%e6%ad%8candroid%e8%af%be%e7%a8%8b%e5%bb%ba%e8%ae%be%e7%a0%94%e8%ae%a8%e4%bc%9a%e4%b8%ad/'
-categories:
-  - 未分类
-  - 计算机技术
+category:   未分类  
 ---
 学校放假了。冒着大雪到了杭州，参加Google的Android课程建设研讨会。
 

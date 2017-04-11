@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9759
 permalink: /2005/01/19/shared-source-cli/
-categories:
-  - 未分类
-  - 计算机技术
-tags:
-  - 微软
+category:   未分类  
+tags:   微软
 ---
 不知什么时候起，发现自己迷上了读源代码。MFC,&nbsp;CRT,&nbsp;STL,&nbsp;java&nbsp;VM,&nbsp;编译器,&nbsp;Linux，Linux下的WINE,&nbsp;Windows&nbsp;CE,&nbsp;Boost,&nbsp;ACE,&nbsp;泄露的Windows源代码都小有研究，虽然不能完全看懂，但是偶尔从代码里面发现一丝丝的小秘密，都会让我开心兴奋不已。或许应了侯捷在《STL源码剖析》中的一句话：&ldquo;源码之前，了无秘密&rdquo;。
 	  

@@ -6,14 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9861
 permalink: '/2007/12/07/microsoft-robotics-studio%e4%b8%8elego%e6%9c%ba%e5%99%a8%e4%ba%ba/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
-tags:
-  - 微软
-  - 程序员
-  - 软件
+category:   嵌入式  
+tags:   微软  , 程序员  , 软件
 ---
 盖主席（Bill Gates）20年前发表过一篇语录，说：&ldquo;要让每个家庭的桌子上都有一台PC机，每个PC上都跑的是Windows操作系统&rdquo;。经过广大无产阶级革命群众二十年的艰苦奋斗之后，现在再回头看，语录的内容虽然没完全实现但是也差不多了。
 
@@ -28,7 +22,7 @@ tags:
 &nbsp;
 
 <p align="left">
-  <a href="http://hezongjian.com/blog/wp-content/uploads/2007/12/lego-nxt-robot.jpg"><img alt="" class="aligncenter size-medium wp-image-10300" height="300" src="http://hezongjian.com/blog/wp-content/uploads/2007/12/lego-nxt-robot-233x300.jpg" title="lego-nxt-robot" width="233" /></a><br /> 图：LEGO NXT
+  <a href="/uploads/2007/12/lego-nxt-robot.jpg"><img alt="" class="aligncenter size-medium wp-image-10300" height="300" src="/uploads/2007/12/lego-nxt-robot-233x300.jpg" title="lego-nxt-robot" width="233" /></a><br /> 图：LEGO NXT
 </p>
 
 目前的机器人主要有专用，通用等几类。专用的如流水线控制等等，这种基本是不可能走入寻常百姓家的。可能走进百姓家的就是一些通用机器人，例如可以帮你打扫垃圾什么的。

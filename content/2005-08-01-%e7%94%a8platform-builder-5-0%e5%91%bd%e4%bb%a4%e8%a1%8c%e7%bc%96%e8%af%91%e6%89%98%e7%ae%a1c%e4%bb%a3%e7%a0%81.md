@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9800
 permalink: '/2005/08/01/%e7%94%a8platform-builder-5-0%e5%91%bd%e4%bb%a4%e8%a1%8c%e7%bc%96%e8%af%91%e6%89%98%e7%ae%a1c%e4%bb%a3%e7%a0%81/'
-categories:
-  - 未分类
-tags:
-  - C++
-  - 微软
+category:   未分类
+tags:   C++  , 微软
 ---
 在微软的MSDN文档中，并没有介绍使用命令行工具编译托管代码，仅仅介绍了如何使用sources,&nbsp;dirs编译C/C++代码。但是我们每次通过命令行编译代码，最终都会列出一个这样的清单：  
 BUILD:&nbsp;[00:0000000029<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;>ROGC&nbsp;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Files  

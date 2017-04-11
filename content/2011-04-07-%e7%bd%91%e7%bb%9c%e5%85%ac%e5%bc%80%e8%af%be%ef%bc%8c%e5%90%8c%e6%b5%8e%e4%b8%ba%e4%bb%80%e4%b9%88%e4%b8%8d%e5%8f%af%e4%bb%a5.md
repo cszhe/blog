@@ -8,9 +8,7 @@ guid: http://hezongjian.com/blog/?p=10602
 permalink: '/2011/04/07/%e7%bd%91%e7%bb%9c%e5%85%ac%e5%bc%80%e8%af%be%ef%bc%8c%e5%90%8c%e6%b5%8e%e4%b8%ba%e4%bb%80%e4%b9%88%e4%b8%8d%e5%8f%af%e4%bb%a5/'
 if_slider_image:
   - ""
-categories:
-  - 工作和学习
-  - 未分类
+category:   工作和学习  
 ---
 这几天，复旦大学在网易上开设网络公开课的消息吸引了不少眼球，从网友评论来看，顶的比踩的要多不少。
 

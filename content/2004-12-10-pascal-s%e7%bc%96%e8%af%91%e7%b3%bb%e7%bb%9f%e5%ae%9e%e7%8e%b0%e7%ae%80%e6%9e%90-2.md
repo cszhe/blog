@@ -6,9 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9749
 permalink: '/2004/12/10/pascal-s%e7%bc%96%e8%af%91%e7%b3%bb%e7%bb%9f%e5%ae%9e%e7%8e%b0%e7%ae%80%e6%9e%90-2/'
-categories:
-  - 未分类
-  - 计算机技术
+category:   未分类  
 ---
 一、Pascal-S及Pascal-S编译程序
 	  

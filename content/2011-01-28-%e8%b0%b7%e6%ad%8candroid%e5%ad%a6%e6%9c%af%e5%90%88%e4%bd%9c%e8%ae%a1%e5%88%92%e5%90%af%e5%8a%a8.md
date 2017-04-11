@@ -6,10 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10570
 permalink: '/2011/01/28/%e8%b0%b7%e6%ad%8candroid%e5%ad%a6%e6%9c%af%e5%90%88%e4%bd%9c%e8%ae%a1%e5%88%92%e5%90%af%e5%8a%a8/'
-categories:
-  - 嵌入式
-  - 工作和学习
-  - 未分类
+category:   嵌入式  
 ---
 启动比想象中的要快啊。
 

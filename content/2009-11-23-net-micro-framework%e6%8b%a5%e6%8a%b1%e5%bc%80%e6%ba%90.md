@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9698
 permalink: '/2009/11/23/net-micro-framework%e6%8b%a5%e6%8a%b1%e5%bc%80%e6%ba%90/'
-categories:
-  - 嵌入式
-  - 未分类
-tags:
-  - Windows CE
+category:   嵌入式  
+tags:   Windows CE
   - 嵌入式
   - 程序员
 ---

@@ -6,13 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9897
 permalink: /2004/06/16/farewellampnbsptoampnbsp03/
-categories:
-  - 工作和学习
-  - 未分类
-tags:
-  - C++
-  - 同济
-  - 嵌入式
+category:   工作和学习  
+tags:   C++  , 同济  , 嵌入式
 ---
 Dear&nbsp;All:  
 &nbsp;  

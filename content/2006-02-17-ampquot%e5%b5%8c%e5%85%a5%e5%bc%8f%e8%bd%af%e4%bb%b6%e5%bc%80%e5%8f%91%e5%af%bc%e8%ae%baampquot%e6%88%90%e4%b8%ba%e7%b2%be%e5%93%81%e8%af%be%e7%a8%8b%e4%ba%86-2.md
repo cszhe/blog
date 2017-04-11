@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9813
 permalink: '/2006/02/17/ampquot%e5%b5%8c%e5%85%a5%e5%bc%8f%e8%bd%af%e4%bb%b6%e5%bc%80%e5%8f%91%e5%af%bc%e8%ae%baampquot%e6%88%90%e4%b8%ba%e7%b2%be%e5%93%81%e8%af%be%e7%a8%8b%e4%ba%86-2/'
-categories:
-  - 工作和学习
-  - 未分类
-tags:
-  - 嵌入式
-  - 软件
+category:   工作和学习  
+tags:   嵌入式  , 软件
 ---
 今天得知&ldquo;嵌入式软件开发导论&rdquo;终于通过了评估，成为精品课程了。也算是对半路出家我一年半教课的一种肯定吧。
 

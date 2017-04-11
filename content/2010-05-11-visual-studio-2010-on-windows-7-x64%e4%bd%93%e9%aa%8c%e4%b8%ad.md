@@ -6,9 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10385
 permalink: '/2010/05/11/visual-studio-2010-on-windows-7-x64%e4%bd%93%e9%aa%8c%e4%b8%ad/'
-categories:
-  - 未分类
-  - 计算机技术
+category:   未分类  
 ---
 注：本篇文章中含有大量敏感词64，但其实这是一篇纯种的技术文章，与某Incident无关（那年我才8岁，绝对吃了睡、睡了吃，很傻很天真。纷纷表示对瘦小的我影响不大，唯一的影响就是学会了：妈妈你不给我买玩具我就拒绝吃饭！）。但愿不会因为这个被封IP。人肉敏感词补丁已经启动，全篇文章肯定只出现这一次敏感词。真的，我敢向敏感词保证！
 

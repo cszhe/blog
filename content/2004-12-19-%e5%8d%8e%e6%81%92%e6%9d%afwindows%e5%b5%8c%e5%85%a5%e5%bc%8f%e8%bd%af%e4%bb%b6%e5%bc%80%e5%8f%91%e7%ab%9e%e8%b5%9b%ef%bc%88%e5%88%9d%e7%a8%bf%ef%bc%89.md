@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9913
 permalink: '/2004/12/19/%e5%8d%8e%e6%81%92%e6%9d%afwindows%e5%b5%8c%e5%85%a5%e5%bc%8f%e8%bd%af%e4%bb%b6%e5%bc%80%e5%8f%91%e7%ab%9e%e8%b5%9b%ef%bc%88%e5%88%9d%e7%a8%bf%ef%bc%89/'
-categories:
-  - 未分类
-tags:
-  - 同济
-  - 嵌入式
-  - 软件
+category:   未分类
+tags:   同济  , 嵌入式  , 软件
 ---
 今天早上吃了万老师一顿牛排&nbsp;+&nbsp;摩卡咖啡。价格不菲，感觉呢，牛排七成熟，跟学校1.4RMB一块的大排差不多。只不过没有刀叉，摩卡咖啡么，怎么那么多泡沫阿。还有所谓的芝士点心，咋看咋吃都像炸馒头干……鄙视我把，我就是没有品味的人，吃了两次哈根达斯都觉得不如门口地摊上1RMB一根的雪糕好吃。吃归吃，或还是要干的，今天晚上憋出来一篇竞赛宣传文字。。
 

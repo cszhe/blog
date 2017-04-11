@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9711
 permalink: '/2009/04/28/%e5%ad%a6%e6%a0%a1%e7%bb%88%e4%ba%8e%e5%81%9a%e4%ba%86%e4%b8%80%e4%b8%aa%e5%a4%a7%e4%ba%8b%ef%bc%8c%e8%bd%af%e4%bb%b6%e6%ad%a3%e7%89%88%e5%8c%96%e4%ba%86/'
-categories:
-  - 工作和学习
-  - 未分类
-tags:
-  - 同济
-  - 软件
+category:   工作和学习  
+tags:   同济  , 软件
 ---
 今天快下班了，收到一封邮件，学校终于干了一件还算有良心的事情。以后所有同济在编老师都可以用免费的正版软件了，期待正版Windows 7啊。。。
 

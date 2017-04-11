@@ -6,14 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9781
 permalink: '/2005/05/21/%e9%a2%84%e8%ae%a1%e5%85%ad%e6%9c%88%e5%ba%95%e5%9c%a8%e5%be%ae%e8%bd%af%e5%9f%b9%e8%ae%ad%e4%bc%9a%e8%ae%ae%e4%b8%8a%e7%9a%84%e6%bc%94%e8%ae%b2%e8%af%8d-2/'
-categories:
-  - 工作和学习
-  - 未分类
-tags:
-  - C++
-  - 同济
-  - 嵌入式
-  - 软件
+category:   工作和学习  
+tags:   C++  , 同济  , 嵌入式  , 软件
 ---
 何宗键  
 2005年5月21日

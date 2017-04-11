@@ -6,15 +6,13 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10685
 permalink: '/2012/01/06/%e5%89%bd%e7%aa%83plagiarism/'
-categories:
-  - 工作和学习
-  - 未分类
+category:   工作和学习  
 ---
 本学期《研究伦理》课程即将结束，要交两个作业，一个是独立写一篇论文，一个是团队项目。今天上午团队小组最后一次会议，闹出一些不愉快的&ldquo;国际纠纷&rdquo;，因此想到了写这篇文章。
 
 事情是这样的，小组作业要8个人一组，做一个小booklet，我们的topics是做一本关于山寨文化的册子，介绍山寨的起源、定义，犯了啥伦理错误等。最终的结果如下图：
 
-[<img alt="" class="aligncenter size-medium wp-image-10689" height="180" src="http://localhost/hezongjian/wp-content/uploads/2012/01/BOOKLET-300x180.jpg" title="BOOKLET" width="300" srcset="http://localhost/hezongjian/wp-content/uploads/2012/01/BOOKLET-300x180.jpg 300w, http://localhost/hezongjian/wp-content/uploads/2012/01/BOOKLET-768x461.jpg 768w, http://localhost/hezongjian/wp-content/uploads/2012/01/BOOKLET.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" />](http://localhost/hezongjian/wp-content/uploads/2012/01/BOOKLET.jpg)
+[<img alt="" class="aligncenter size-medium wp-image-10689" height="180" src="/uploads/2012/01/BOOKLET-300x180.jpg" title="BOOKLET" width="300" srcset="/uploads/2012/01/BOOKLET-300x180.jpg 300w, /uploads/2012/01/BOOKLET-768x461.jpg 768w, /uploads/2012/01/BOOKLET.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" />](/uploads/2012/01/BOOKLET.jpg)
 
 &nbsp;
 
@@ -26,7 +24,7 @@ categories:
 
 第二个作业是自己写一篇文章，结合自己专业讨论一些伦理问题。我写的是流氓软件中的伦理问题。每个人的作业，都要到在线反剽窃系统里面过一遍，看看你跟别人的相似度，虽然对剽窃的定义不同，但是这个系统只要有7个连续的单词跟人家一样，就会被判做相似，无论你是否cite了人家的文章。按照剽窃的定义，即使你说了你是cite别人，也是有字数长度限制的。这个系统非常严格。
 
-[<img alt="" class="size-medium wp-image-10686" height="191" src="http://localhost/hezongjian/wp-content/uploads/2012/01/copycat-300x191.png" title="copycat" width="300" srcset="http://localhost/hezongjian/wp-content/uploads/2012/01/copycat-300x191.png 300w, http://localhost/hezongjian/wp-content/uploads/2012/01/copycat-768x490.png 768w, http://localhost/hezongjian/wp-content/uploads/2012/01/copycat.png 949w" sizes="(max-width: 300px) 100vw, 300px" />](http://localhost/hezongjian/wp-content/uploads/2012/01/copycat.png)
+[<img alt="" class="size-medium wp-image-10686" height="191" src="/uploads/2012/01/copycat-300x191.png" title="copycat" width="300" srcset="/uploads/2012/01/copycat-300x191.png 300w, /uploads/2012/01/copycat-768x490.png 768w, /uploads/2012/01/copycat.png 949w" sizes="(max-width: 300px) 100vw, 300px" />](/uploads/2012/01/copycat.png)
 
 我的文章提交上去之后，系统判定相似度是8%。这个8%有些冤枉，因为有些重复是在参考文献部分，我的文章跟另外一篇文章引用了同一篇参考文献，就被判重复了。图中（点小图看大图）的红色部分一点也不冤枉。我引用了wiki的一个定义，其实是半个定义，连一句话都不到，就被系统检测出来了。标红，要重新修改，重新提交。
 

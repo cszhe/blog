@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9793
 permalink: '/2005/06/27/%e5%90%8c%e6%b5%8e%e5%be%ae%e8%bd%af2005-windows-embedded%e6%95%99%e5%ad%a6%e7%a0%94%e8%ae%a8%e4%bc%9a%e6%84%9f%e6%83%b3/'
-categories:
-  - 未分类
-tags:
-  - 同济
-  - 嵌入式
-  - 软件
+category:   未分类
+tags:   同济  , 嵌入式  , 软件
 ---
 6月25日和26日，由我校软件学院与微软亚洲研究院联合举办的&#8221;2005微软嵌入式系统教学研讨会&#8221;，在我校成功举行。（此处略去数百字，原文，同济大学网站：<img src=http://style.blogcn.com/blogcnpage/style/images/images/aurl.gif align=absbottom hspace=2 alt='::URL::' border=0><a href='http://www.tongji.edu.cn/news/20050627162954.htm）  
 从二月延期到四月，从四月延期到六月，终于，这个研讨会结束了。终于可以长长的松一口气，压在胸口半年的一块石头也可以落地了。回想一下，还是感慨良多。  

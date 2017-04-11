@@ -6,13 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9745
 permalink: /2004/11/25/microsofts-cultural-revolution/
-categories:
-  - 未分类
-  - 生活随笔
-  - 计算机技术
-tags:
-  - 微软
-  - 软件
+category:   未分类  
+tags:   微软  , 软件
 ---
 今天在图书馆里面看书，发现了一本封面很吸引人的newsweek，Bill&nbsp;Gates哥哥被PS成了毛泽东爷爷，然后文章的标题是&ldquo;微软的文化大革命&rdquo;全文转发如下
 

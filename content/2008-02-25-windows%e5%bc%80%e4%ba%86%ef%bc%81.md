@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9862
 permalink: '/2008/02/25/windows%e5%bc%80%e4%ba%86%ef%bc%81/'
-categories:
-  - 未分类
-  - 计算机技术
-tags:
-  - 微软
+category:   未分类  
+tags:   微软
 ---
 在杭州参加微软举行的亚太windows核心技术研讨会，用手机发贴。
 

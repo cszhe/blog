@@ -10,10 +10,7 @@ if_slider_image:
   - ""
 slider_hidetitle:
   - 'off'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
+category:   嵌入式  
 ---
 昨天4500入手了谷歌的三儿子，Galaxy Nexus。用了一天，感觉畅快淋漓。昨天在微薄上发了一条消息，说终于不用忍受WP7了，激起了一些小讨论，可能有WP7的爱好者吧。那就详细的说一下我的看法吧。也算是一个在Mobile Computing的Research和Development领域摸爬滚打了将近10年的人的一家之言。本来文章的题目叫&ldquo;我为什么要换安卓&rdquo;，后来想干脆要玩就玩大的，把几个平台都评头论足一番。
 
@@ -21,7 +18,7 @@ categories:
 
 那天在小米网站上看到有个展示手机的功能，就花了点时间做了一个图，如下（点小图看大图）。
 
-[<img alt="" class="aligncenter size-medium wp-image-10698" height="228" src="http://localhost/hezongjian/wp-content/uploads/2012/01/myphones-300x228.jpg" title="myphones" width="300" />](http://localhost/hezongjian/wp-content/uploads/2012/01/myphones.jpg)
+[<img alt="" class="aligncenter size-medium wp-image-10698" height="228" src="/uploads/2012/01/myphones-300x228.jpg" title="myphones" width="300" />](/uploads/2012/01/myphones.jpg)
 
 十多年，用了这么多部手机，除了第一步Motorola的手机是所谓的feature phone之外，其它的都可以算是smartphone。这其中绝大多数都是Windows CE。当然，这跟我当了4年的微软Windows CE的MVP有关系。我的Mobile Computing之路也是从Windows CE开始的。当然，这几年对Android玩得多一些。至于Research领域么，不在手机，就在此不表了。
 
@@ -55,7 +52,7 @@ iphone V.S. Windows Mobile V.S. Symbian（续）
 
 别的不说，就说一个弹对话框问题。MessageBox这个API在桌面上用的很多，但是在手机里面如果太多的对话框，不是好事情。除了对话框通知用户，应该有其它方式。在安卓上，弹出一个传统的windows一样的对话框，估计要消耗10行代码左右。在ios上我不知道，但在Windows Phone上，只需要一行代码。这里一行代码就实现一个功能是好事么？不见得，很容易导致码农对此功能的滥用。所以，在Windows Phone的各类应用上，都可以经常看到弹框：退出的时候，弹框，问你要退出么，亲？保存的时候，弹框，问你要保存么，亲？发送的时候弹框，问你要发送么，亲？废话，我当然要退出，当然要保存，当然要发送，烦死了烦死了，把我当傻子。倒是搞了一个search键，一不小心碰到就打开浏览器上bing了。你这个时候怎么不弹框问我你要search么？我不要search，真要search我也不用bing去search，可你那个破搜索按钮一不小心就按到了，谢特！这也都罢了，哪个傻子设计的，WP7里面弹出来的框居然在屏幕的最上边，单手操作的时候，伸手指头去够那个框的yes/no去把它点掉，手指头太短的人，花好大力气也够不到，比iPhone跟安卓的居中弹框费劲多了。在安卓上，各种各样的弹框虽然存在，就少不少。因为码农可以用Toast，Toast只要一行代码，而toast却不那么烦人。iOS么，我不了解，iOS 5里面从安卓山寨来一个从上面拉下来的提示窗口，不得不说苹果也意识到弹框提醒太多是要不得的。
 
-[<img alt="" class="aligncenter size-medium wp-image-10705" height="300" src="http://hezongjian.com/blog/wp-content/uploads/2012/01/Emulator_Running_File_Demand-158x300.jpg" title="Emulator_Running_File_Demand" width="158" />](http://hezongjian.com/blog/wp-content/uploads/2012/01/Emulator_Running_File_Demand.jpg)
+[<img alt="" class="aligncenter size-medium wp-image-10705" height="300" src="/uploads/2012/01/Emulator_Running_File_Demand-158x300.jpg" title="Emulator_Running_File_Demand" width="158" />](/uploads/2012/01/Emulator_Running_File_Demand.jpg)
 
 插图：我当然要replay，否则我干嘛按replay按钮？你干嘛把OK放得那么远，谁的手指头有那么长？
 

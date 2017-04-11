@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9819
 permalink: '/2006/04/09/blog%e8%ae%bf%e9%97%ae%e9%87%8f%e5%b1%85%e7%84%b6%e8%bf%87%e4%b8%87-google-pages/'
-categories:
-  - 未分类
-  - 生活随笔
-tags:
-  - Google
-  - 程序员
+category:   未分类  
+tags:   Google  , 程序员
 ---
 今天不经意看了自己的Blog，居然访问量过万了。在CSDN那种地方上，1W的访问量应该不是什么稀奇的事情吧。毕竟闲逛的程序员N多。可惜一开始选择的是这个个鸟不拉屎的BSP(他们自称的Blog&nbsp;Service&nbsp;Provider)。最近似乎有了一点点的自己的空闲时间了，也可以看看《国富论》，《电子学》，《Davinci&nbsp;Code》虾米的著作了，所以呢，也可以多到Blog上灌两下了。
 

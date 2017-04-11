@@ -6,10 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9797
 permalink: '/2005/07/06/windows-ce%e4%b8%8b%e7%9a%84%e7%bd%91%e7%bb%9c%e4%bd%93%e7%b3%bb%e7%bb%93%e6%9e%84/'
-categories:
-  - 未分类
-tags:
-  - Windows CE
+category:   未分类
+tags:   Windows CE
 ---
 今天画了一幅图，是Windows&nbsp;CE下的网络体系结构图。其实图里面的有些东西以前没怎么接触过，例如blue&nbsp;tooth，贴出来，还请高手批评指正。
 

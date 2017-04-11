@@ -14,11 +14,8 @@ geo_public:
   - "1"
 if_slider_image:
   - ""
-categories:
-  - 工作和学习
-  - 未分类
-tags:
-  - 教育
+category:   工作和学习  
+tags:   教育
 ---
 读博士一年了，其中一个收获是学会了如何用严谨、科学、无歧义的形式化语言去描述一个问题，包括这个问题给定什么，假设什么，要干什么，以及有什么限制条件等，我们管这个过程叫Problem Formulation。只有把一个问题formulate出来之后，才去评估、解决这个问题。这文章不谈学术问题的formulation，否则就没人看了，正所谓曲高和寡，一篇Paper能被引个几百次就相当牛了，被引个几千次就是神文了，谷歌在OSDI上发表的关于MapReduce的神文也不过引了几千次。这篇文章我们来Formulate国内高等教育的问题。
 
@@ -30,7 +27,7 @@ tags:
 
 下图只是一小部分，全都放出来的话，估计就要有人来找我麻烦了。至于说为啥能形成环路，可谓冰冻三尺非一日之寒，这个问题我们不去探讨了。
 
-[<img class="aligncenter size-medium wp-image-10790" title="xsq" src="http://localhost/hezongjian/wp-content/uploads/2012/08/xsq-300x268.png" alt="" width="300" height="268" srcset="http://localhost/hezongjian/wp-content/uploads/2012/08/xsq-300x268.png 300w, http://localhost/hezongjian/wp-content/uploads/2012/08/xsq.png 747w" sizes="(max-width: 300px) 100vw, 300px" />](http://localhost/hezongjian/wp-content/uploads/2012/08/xsq.png)
+[<img class="aligncenter size-medium wp-image-10790" title="xsq" src="/uploads/2012/08/xsq-300x268.png" alt="" width="300" height="268" srcset="/uploads/2012/08/xsq-300x268.png 300w, /uploads/2012/08/xsq.png 747w" sizes="(max-width: 300px) 100vw, 300px" />](/uploads/2012/08/xsq.png)
 
 做Research还有一点，如果一个问题能够Reduce或者Transform成已有的问题，那对于解这个问题就大大地有利。这个问题可以Reduce到啥问题呢，举个通俗一点的问题，这个就是一个**死锁检测**问题。一堆进程，占着碗里的资源，还想要锅里的，要来要去，就锁上了。这个搞计算机的都懂，我就不重复了。
 

@@ -6,10 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9872
 permalink: '/2008/06/11/iphone-v-s-windows-mobile-v-s-symbian%ef%bc%88%e7%bb%ad%ef%bc%89/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
+category:   嵌入式  
 ---
 二、开发技术和语言：
 

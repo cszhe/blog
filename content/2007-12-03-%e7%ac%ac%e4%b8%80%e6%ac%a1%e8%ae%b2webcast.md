@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9860
 permalink: '/2007/12/03/%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%ae%b2webcast/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
-tags:
-  - Windows CE
+category:   嵌入式  
+tags:   Windows CE
 ---
 上周我在美罗大厦讲了一次webcast，内容是
 

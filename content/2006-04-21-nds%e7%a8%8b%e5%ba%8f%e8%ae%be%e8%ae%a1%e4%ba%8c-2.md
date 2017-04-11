@@ -6,13 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9821
 permalink: '/2006/04/21/nds%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%e4%ba%8c-2/'
-categories:
-  - 未分类
-  - 计算机技术
-tags:
-  - 嵌入式
-  - 程序员
-  - 软件
+category:   未分类  
+tags:   嵌入式  , 程序员  , 软件
 ---
 一、硬件介绍：
 	  

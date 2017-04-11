@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9889
 permalink: '/2003/12/28/%e5%ae%9e%e4%b9%a0%e7%94%9f%ef%bc%9f%e7%8f%ad%e9%95%bf%ef%bc%9f%e5%bb%89%e4%bb%b7%e5%8a%b3%e5%8a%a8%e5%8a%9b%ef%bc%9f%e9%9a%90%e5%b1%85%ef%bc%9f/'
-categories:
-  - 未分类
-tags:
-  - 微软
-  - 软件
+category:   未分类
+tags:   微软  , 软件
 ---
 快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，造就融入了Microsoft这个团体。Microsoft&nbsp;Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。
 

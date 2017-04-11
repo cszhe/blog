@@ -6,10 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9725
 permalink: /2004/02/20/farewell-to-gtec/
-categories:
-  - 未分类
-tags:
-  - 微软
+category:   未分类
+tags:   微软
 ---
 依依不舍的告别了微软全球技术中心，开始了我新的生活。八个月充实又充满激情的工作就这么告一段落了。把同事们对我的鼓励，放在这里，作为永远激励我前进的动力。
 

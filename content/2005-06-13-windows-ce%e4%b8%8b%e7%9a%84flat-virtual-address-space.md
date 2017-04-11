@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9789
 permalink: '/2005/06/13/windows-ce%e4%b8%8b%e7%9a%84flat-virtual-address-space/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
-tags:
-  - Windows CE
+category:   嵌入式  
+tags:   Windows CE
   - 嵌入式
 ---
 On&nbsp;6/10/05,&nbsp;song&nbsp;titan&nbsp;&nbsp;wrote:  

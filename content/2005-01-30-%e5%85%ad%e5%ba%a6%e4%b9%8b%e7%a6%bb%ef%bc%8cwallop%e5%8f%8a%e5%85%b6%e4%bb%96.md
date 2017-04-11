@@ -6,10 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9922
 permalink: '/2005/01/30/%e5%85%ad%e5%ba%a6%e4%b9%8b%e7%a6%bb%ef%bc%8cwallop%e5%8f%8a%e5%85%b6%e4%bb%96/'
-categories:
-  - 未分类
-tags:
-  - 软件
+category:   未分类
+tags:   软件
 ---
 去年软院的某个MM给了我Wallop的邀请，后来我又邀请了几个朋友，加上后来勾搭上的几个wallop友，人际网络可以说已经铺开了，但是使用度却一直上不去。不光是我，我所见之处几乎遍地荒芜，除了一些横七竖八的测试贴。
 

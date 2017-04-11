@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9877
 permalink: '/2008/07/18/%e5%ae%9a%e8%a5%bf%e7%ac%ac%e4%b8%89%e5%a4%a9-%e7%ac%ac%e4%b8%80%e5%a4%a9%e4%b8%8a%e7%8f%ad/'
-categories:
-  - 未分类
-  - 生活随笔
-tags:
-  - Google
-  - 同济
+category:   未分类  
+tags:   Google  , 同济
 ---
 来之前就听说这边的行政效率如何如何低，公务员如何如何FB..但是这两天的感觉，完全不是这样么。来定西的第二天就分配任务，第三天就正式上班了，偶们都没机会熟悉一下这个地级市。效率不比外企低么。。。
 

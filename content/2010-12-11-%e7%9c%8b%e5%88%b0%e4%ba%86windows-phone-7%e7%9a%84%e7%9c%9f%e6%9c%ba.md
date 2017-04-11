@@ -6,10 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10517
 permalink: '/2010/12/11/%e7%9c%8b%e5%88%b0%e4%ba%86windows-phone-7%e7%9a%84%e7%9c%9f%e6%9c%ba/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
+category:   嵌入式  
 ---
 这两天在成都参加微软的嵌入式师资研讨会，见到了久违的李贝、马宁和卢列同志。李贝和马宁已经装备上WP7了，用WP7就一个好，锻炼英语，他们给我发短信都用英文了。没中文输入法，哈。
 

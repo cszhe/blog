@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9713
 permalink: '/2009/04/22/nds%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%e4%b9%8b-%e6%ad%bb%e7%81%b0%e5%a4%8d%e7%87%83%e7%af%87/'
-categories:
-  - 未分类
-  - 计算机技术
-tags:
-  - Google
-  - 嵌入式
+category:   未分类  
+tags:   Google  , 嵌入式
 ---
 今天看了一下blogbus的统计，发现通过搜索引擎搜到这个博客的关键字中，nds的排名居然是第二（第一当然是我的名字了）。真是令人惊讶。大概是因为3年前，我写了一些名字叫《NDS程序设计》的文章吧，而且由于后来工作一忙，那一系列文章根本没有坚持写下去。居然还得到了这么大的关注，没想到。
 

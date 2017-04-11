@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9910
 permalink: '/2004/12/11/%e4%bb%8e%e8%b6%85%e8%b6%8a%e6%b1%bd%e8%bd%a6%e6%95%85%e9%9a%9c%e8%af%8a%e6%96%ad%e8%bd%af%e4%bb%b6%e8%b0%88%e8%bd%af%e4%bb%b6%e8%b4%a8%e9%87%8f/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
-tags:
-  - 软件
+category:   嵌入式  
+tags:   软件
 ---
 作完了，终于做完了！几个晚上忙碌到凌晨。有成果了。这是最终的截图：
 

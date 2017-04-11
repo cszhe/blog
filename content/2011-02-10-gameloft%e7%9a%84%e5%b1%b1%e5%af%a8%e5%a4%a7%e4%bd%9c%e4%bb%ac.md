@@ -6,9 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10579
 permalink: '/2011/02/10/gameloft%e7%9a%84%e5%b1%b1%e5%af%a8%e5%a4%a7%e4%bd%9c%e4%bb%ac/'
-categories:
-  - 未分类
-  - 生活随笔
+category:   未分类  
 ---
 假期终于可以无所顾虑的玩几天了。在iPad上装了几个游戏大作。都是Gameloft的，从一开始的斯巴达勇士就越玩越不对劲。怎么跟某游戏这么像啊，后来又尝试了几个，摸出套路来了，Gameloft不愧是山寨大厂，据说这些山寨作品全是在国内做的，符合氛围啊。当然，咱玩的都是D，没付钱，没资格喷，就是评论两句。
 

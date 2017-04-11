@@ -6,17 +6,14 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10281
 permalink: '/2010/04/13/intel-idf-2010%e4%bc%9a%e8%ae%ae%e4%be%a7%e8%ae%b0/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
+category:   嵌入式  
 ---
 2010年4月13日，我在北京参加了Intel IDF 2010会议，所谓IDF是Intel Developer Forum的简称。但是中文却不知道为什么被翻译成了Intel信息技术峰会。可能在国内一说&ldquo;开发者&rdquo;就掉价了，政府领导跟单位领导们都不来了。
 
 大会在国家会议中心举行，这个地方还是比较牛x的，紧邻鸟巢、水立方，在会场一抬头就可以看到边上的鸟巢。早上9点钟会议正式开始，结果上来估计是为了烘托&ldquo;和谐社会花似锦，科学发展势如涛&rdquo;的氛围，请了杂技团表演了15分钟的杂技。这在本人参加的各种技术峰会中可谓闻所未闻，见所未见。充分体现了我泱泱大国，和谐盛世，一派歌舞升平的社会风貌。接下来，在一片背景音乐及聚光灯下，终于boss登场。结果，这，这，这不是mop上的&ldquo;70后高端白领&rdquo;么？mopper肯定都不陌生，连我这个不怎么上mop的人都知道了。怎么把他给请来了，难道为了体现Intel作为IT企业与时俱进的作风，要来个娱乐至死。找过气70后白领来撑腰，还不如找凤姐春哥阿。
 
 <p style="text-align: center;">
-  <a href="http://localhost/hezongjian/wp-content/uploads/2010/04/70.jpg"><img alt="" class="aligncenter size-thumbnail wp-image-10283" height="150" src="http://localhost/hezongjian/wp-content/uploads/2010/04/70-150x150.jpg" title="70" width="150" srcset="http://localhost/hezongjian/wp-content/uploads/2010/04/70-150x150.jpg 150w, http://localhost/hezongjian/wp-content/uploads/2010/04/70-100x100.jpg 100w" sizes="(max-width: 150px) 100vw, 150px" /></a>
+  <a href="/uploads/2010/04/70.jpg"><img alt="" class="aligncenter size-thumbnail wp-image-10283" height="150" src="/uploads/2010/04/70-150x150.jpg" title="70" width="150" srcset="/uploads/2010/04/70-150x150.jpg 150w, /uploads/2010/04/70-100x100.jpg 100w" sizes="(max-width: 150px) 100vw, 150px" /></a>
 </p>
 
 原来这位所谓70后高端白领是Intel的中国总裁，上来抛砖引玉来了。唉，在mop上火了一把，不知道这人平常上班的时候，手下是怎么看的。

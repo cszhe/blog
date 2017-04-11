@@ -6,20 +6,15 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10557
 permalink: '/2011/01/10/windows-on-arm%ef%bc%8c%e5%8f%88%e8%83%bd%e5%92%8b%e6%a0%b7/'
-categories:
-  - 未分类
-  - 计算机技术
-tags:
-  - ARM
-  - iPad
-  - Windows CE
+category:   未分类  
+tags:   ARM  , iPad  , Windows CE
   - 微软
 ---
 年前天MVP的内部讨论组里面就在疯传Windows for ARM已经就绪了，马上就来了。Windows CE的末日到了。
 
 这次的CES上，果不其然，验证了。下面这张是传说的ARM Windows还可以连接打印机进行打印的图。
 
-[<img alt="" class="aligncenter size-medium wp-image-10558" height="200" src="http://hezongjian.com/blog/wp-content/uploads/2011/01/ARMWindows-300x200.jpg" title="ARMWindows" width="300" />](http://hezongjian.com/blog/wp-content/uploads/2011/01/ARMWindows.jpg)
+[<img alt="" class="aligncenter size-medium wp-image-10558" height="200" src="/uploads/2011/01/ARMWindows-300x200.jpg" title="ARMWindows" width="300" />](/uploads/2011/01/ARMWindows.jpg)
 
 就算能跑，又能怎么样呢？
 

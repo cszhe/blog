@@ -6,8 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9786
 permalink: /2005/06/12/introduction-to-smartphone/
-categories:
-  - 未分类
+category:   未分类
 ---
 Introduction&nbsp;to&nbsp;Smartphone
 	  

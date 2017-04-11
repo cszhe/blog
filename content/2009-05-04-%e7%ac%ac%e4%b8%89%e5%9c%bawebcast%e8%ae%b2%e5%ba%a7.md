@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9709
 permalink: '/2009/05/04/%e7%ac%ac%e4%b8%89%e5%9c%bawebcast%e8%ae%b2%e5%ba%a7/'
-categories:
-  - 未分类
-  - 计算机技术
-tags:
-  - Windows CE
+category:   未分类  
+tags:   Windows CE
 ---
 第三场webcast了，地址如下：
 

@@ -6,9 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9782
 permalink: /2005/05/23/proposal-of-performing-learning-by-doing/
-categories:
-  - 工作和学习
-  - 未分类
+category:   工作和学习  
 ---
 知道自己英语不咋地，花了三个晚上把中文硬生生翻译成英文。等着被英语专家们批斗了。
 

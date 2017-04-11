@@ -35,3 +35,5 @@ DEFAULT_PAGINATION = False
 RELATIVE_URLS = True
 
 THEME = "elegant"
+
+STATIC_PATHS = ['images', 'uploads']

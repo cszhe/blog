@@ -6,9 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10520
 permalink: '/2010/12/15/liveedu%e8%bf%98%e6%98%afgoogle-app-for-education/'
-categories:
-  - 未分类
-  - 计算机技术
+category:   未分类  
 ---
 学校的信息化建设实在差到令人发指，发指到@tongji.edu.cn的邮箱几乎没人在用，除了发重要邮件的时候用一下，其它时候都是杂牌军在作战，gmail, hotmail, yahoo mail, 163 mail甚至qq mail都用上了。其它一些协作功能，例如日程管理，联系人管理，文档共享协作就更别奢望了。
 

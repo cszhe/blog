@@ -6,10 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10539
 permalink: '/2010/12/29/%e6%8e%a2%e7%b4%a2%e4%b8%80%e4%b8%8bwindows-phone-7%e7%9a%84xde%e5%92%8cimage/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
+category:   嵌入式  
 ---
 今天又玩了一下windows phone 7的sdk，发现模拟器改名叫xde.exe了，不是以前的device emulator了。对于喜欢穷根究底的我，第一希望研究的不是复杂的.NET类库及API，而是WP7到底是怎么回事。那就做个小测试，深度探索一下这个xde，以及sdk中自带的image映像吧。
 
@@ -25,7 +22,7 @@ http://msdn.microsoft.com/en-us/library/ff402563(v=VS.92).aspx
 
 XDE的默认安装目录是C:\Program Files (x86)\Microsoft XDE\1.0，看着眼熟么？跟以前的Device Emulator挺像，尤其是那个文件夹里面的1.0目录，device emulator发展到3.0的时候，安装目录的文件夹名字依然是&ldquo;1.0&rdquo;，很容易混淆视听。如果要重新做个模拟器，这点早就应该改掉，怎么还留着，看看两个emulator的help吧。(点击看大图，下同)
 
-[<img alt="" class="aligncenter size-medium wp-image-10541" height="214" src="http://localhost/hezongjian/wp-content/uploads/2010/12/help-300x214.png" title="emulator help" width="300" srcset="http://localhost/hezongjian/wp-content/uploads/2010/12/help-300x214.png 300w, http://localhost/hezongjian/wp-content/uploads/2010/12/help-768x548.png 768w, http://localhost/hezongjian/wp-content/uploads/2010/12/help-1024x731.png 1024w, http://localhost/hezongjian/wp-content/uploads/2010/12/help.png 1066w" sizes="(max-width: 300px) 100vw, 300px" />](http://localhost/hezongjian/wp-content/uploads/2010/12/help.png)
+[<img alt="" class="aligncenter size-medium wp-image-10541" height="214" src="/uploads/2010/12/help-300x214.png" title="emulator help" width="300" srcset="/uploads/2010/12/help-300x214.png 300w, /uploads/2010/12/help-768x548.png 768w, /uploads/2010/12/help-1024x731.png 1024w, /uploads/2010/12/help.png 1066w" sizes="(max-width: 300px) 100vw, 300px" />](/uploads/2010/12/help.png)
 
 左面的是XDE.exe的help，右面是device emulator的help，不难看出，其实80%是一样的。唯一的变化是可以模拟arm处理器不同的版本（v4, v5,v6）。貌似<span style="color:#(color);">xde也是基于arm的模拟器。甚至有可能是传统Device Emulator的升级改进版。真是这样么？看表象就被MS给骗了。命令行的方式启动一下xde，直接xde.exe [image name]，就可以启动模拟器。试几个参数，发现/c /z等参数全然无效。哈原来是挂羊头卖狗肉，忽悠纯情少年。</span>
 
@@ -39,7 +36,7 @@ XDE的默认安装目录是C:\Program Files (x86)\Microsoft XDE\1.0，看着眼�
 
 我们也来试一下吧，当然，我们用官方工具，不用民间工具。用装了pb扩展的vs2005直接打开这个bin文件，解包成功！<span style="color:#f00;"><strong>说明WP7还是用的CE的标准bin文件格式</strong></span>。在实际设备上，应该也会用nb0或者nbh这种格式。哎，MS啊MS，这个bin格式已经被一群别有用心的人给研究得底裤都不剩了，怪不得模拟器出来几天就被人家给unlock。
 
-[<img alt="" class="aligncenter size-medium wp-image-10546" height="187" src="http://hezongjian.com/blog/wp-content/uploads/2010/12/bin-300x187.png" title="rom content" width="300" />](http://hezongjian.com/blog/wp-content/uploads/2010/12/bin.png)
+[<img alt="" class="aligncenter size-medium wp-image-10546" height="187" src="/uploads/2010/12/bin-300x187.png" title="rom content" width="300" />](/uploads/2010/12/bin.png)
 
 从ROM内容来看，是个典型的CE OS。先看注册表有什么好玩的东东。
 
@@ -47,7 +44,7 @@ XDE的默认安装目录是C:\Program Files (x86)\Microsoft XDE\1.0，看着眼�
 
 再看看启动项，也就是HKEY\_LOCAL\_MACHINE\init，如下图：
 
-[<img alt="" class="aligncenter size-medium wp-image-10547" height="237" src="http://localhost/hezongjian/wp-content/uploads/2010/12/boot-300x237.png" title="boot" width="300" />](http://localhost/hezongjian/wp-content/uploads/2010/12/boot.png)
+[<img alt="" class="aligncenter size-medium wp-image-10547" height="237" src="/uploads/2010/12/boot-300x237.png" title="boot" width="300" />](/uploads/2010/12/boot.png)
 
 这个是WP7启动的顺序，gwes.dll, device.dll自然不必多说，系统组件。熟悉的explorer.exe不在里面，当然不能在里面了。否则就弹出来标准Windows桌面了。猜一下，大概wp7的主界面应该叫telshell.exe。当然也可能不是，毕竟没有真实设备。最后加载的那个东西有意思，k.mscoree3_7.dll，大家知道k.打头的都在kernel里，微软终于把.NET虚拟机做到OS内核里了？这样也好，可以解决以前的NETCF不能解决的问题。
 

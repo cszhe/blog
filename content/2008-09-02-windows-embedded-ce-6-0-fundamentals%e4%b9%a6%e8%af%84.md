@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9880
 permalink: '/2008/09/02/windows-embedded-ce-6-0-fundamentals%e4%b9%a6%e8%af%84/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
-tags:
-  - Windows CE
+category:   嵌入式  
+tags:   Windows CE
   - 嵌入式
 ---
 最近几年，Windows CE的发展可谓顺风顺水，Windows CE操作系统和Windows Mobile平台两线都全面开花，同时，由于微软产品组的不懈努力，我们可以看到Windows CE作为一个通用嵌入式操作系统，越来越成熟了。但是，与之截然相反的是在美国的图书出版市场，却很少能够看到Windows CE开发方面的专业书籍。记得几年前有一本叫做Building Powerful Platform using Windows CE的书籍，可能是许多开发人员的入门书。但是那本书的内容已经严重过时了。介绍的是Windows CE 3.0时代的内容，许多内容与最新的Windows CE 6相比，已经谬以千里了。也正是由于这个空白，笔者在06年曾经编写了一本基于Windows CE 5.0的教材，那个时候，居然就有美国的出版商抛出绣球，要我把书籍翻译成英文出版。无奈担心自己的Chinglish丢人现眼，最终才没有答应。

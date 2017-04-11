@@ -6,12 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9828
 permalink: '/2006/09/07/windows-ce-%e5%b5%8c%e5%85%a5%e5%bc%8f%e7%b3%bb%e7%bb%9f/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
-tags:
-  - Windows CE
+category:   嵌入式  
+tags:   Windows CE
   - 嵌入式
   - 软件
 ---

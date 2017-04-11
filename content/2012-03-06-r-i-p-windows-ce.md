@@ -8,16 +8,13 @@ guid: http://hezongjian.com/blog/?p=10748
 permalink: /2012/03/06/r-i-p-windows-ce/
 if_slider_image:
   - ""
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
+category:   嵌入式  
 ---
 <p style="text-align: center;">
   RIP
 </p>
 
-[<img class="aligncenter size-medium wp-image-10750" title="windowsmcefuneral" src="http://hezongjian.com/blog/wp-content/uploads/2012/03/windowsmcefuneral-300x140.jpg" alt="" width="300" height="140" />](http://hezongjian.com/blog/wp-content/uploads/2012/03/windowsmcefuneral.jpg)
+[<img class="aligncenter size-medium wp-image-10750" title="windowsmcefuneral" src="/uploads/2012/03/windowsmcefuneral-300x140.jpg" alt="" width="300" height="140" />](/uploads/2012/03/windowsmcefuneral.jpg)
 
 想到要写这篇文章的时候，心情还是有些沉重的。毕竟自己曾经在这个平台上付出了很多精力与汗水。可以说见证Windows CE的成长，CE也见证了我的成长。但是现在，到了说再见的时候了。
 
@@ -37,7 +34,7 @@ categories:
 
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
 
-[<img title="history_timeline" src="http://hezongjian.com/blog/wp-content/uploads/2012/03/history_timeline-300x120.jpg" alt="" width="300" height="120" />](http://hezongjian.com/blog/wp-content/uploads/2012/03/history_timeline.jpg)
+[<img title="history_timeline" src="/uploads/2012/03/history_timeline-300x120.jpg" alt="" width="300" height="120" />](/uploads/2012/03/history_timeline.jpg)
 
 &nbsp;
 

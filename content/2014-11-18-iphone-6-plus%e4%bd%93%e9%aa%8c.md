@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=10968
 permalink: '/2014/11/18/iphone-6-plus%e4%bd%93%e9%aa%8c/'
-categories:
-  - 未分类
-tags:
-  - iPhone
-  - 软件
+category:   未分类
+tags:   iPhone  , 软件
 ---
 <p style="margin: 0in; font-size: 11.0pt;">
   <span lang="zh-CN" style="font-family: SimSun;">为了犒劳自己，买了一个</span><span lang="en-US" style="font-family: Calibri;">iPhone 6 Plus</span><span lang="zh-CN" style="font-family: SimSun;">。银色，我自己最喜欢的颜色。土豪金太俗了，不喜欢。黑色的太老气了，不喜欢。我最喜欢的还是浅色系。</span>
@@ -18,7 +15,7 @@ tags:
 
 <p style="margin: 0in; font-size: 11.0pt;">
   <p style="margin: 0in; font-size: 11.0pt;">
-    <a href="http://localhost/hezongjian/wp-content/uploads/2014/11/IMG_20141117_143140.jpg"><img class="aligncenter size-medium wp-image-10969" src="http://localhost/hezongjian/wp-content/uploads/2014/11/IMG_20141117_143140-225x300.jpg" alt="IMG_20141117_143140" width="225" height="300" srcset="http://localhost/hezongjian/wp-content/uploads/2014/11/IMG_20141117_143140-225x300.jpg 225w, http://localhost/hezongjian/wp-content/uploads/2014/11/IMG_20141117_143140-768x1024.jpg 768w" sizes="(max-width: 225px) 100vw, 225px" /></a><a href="http://localhost/hezongjian/wp-content/uploads/2014/11/IMG_20141117_143150.jpg"><img class="aligncenter size-medium wp-image-10970" src="http://localhost/hezongjian/wp-content/uploads/2014/11/IMG_20141117_143150-225x300.jpg" alt="IMG_20141117_143150" width="225" height="300" srcset="http://localhost/hezongjian/wp-content/uploads/2014/11/IMG_20141117_143150-225x300.jpg 225w, http://localhost/hezongjian/wp-content/uploads/2014/11/IMG_20141117_143150-768x1024.jpg 768w" sizes="(max-width: 225px) 100vw, 225px" /></a>
+    <a href="/uploads/2014/11/IMG_20141117_143140.jpg"><img class="aligncenter size-medium wp-image-10969" src="/uploads/2014/11/IMG_20141117_143140-225x300.jpg" alt="IMG_20141117_143140" width="225" height="300" srcset="/uploads/2014/11/IMG_20141117_143140-225x300.jpg 225w, /uploads/2014/11/IMG_20141117_143140-768x1024.jpg 768w" sizes="(max-width: 225px) 100vw, 225px" /></a><a href="/uploads/2014/11/IMG_20141117_143150.jpg"><img class="aligncenter size-medium wp-image-10970" src="/uploads/2014/11/IMG_20141117_143150-225x300.jpg" alt="IMG_20141117_143150" width="225" height="300" srcset="/uploads/2014/11/IMG_20141117_143150-225x300.jpg 225w, /uploads/2014/11/IMG_20141117_143150-768x1024.jpg 768w" sizes="(max-width: 225px) 100vw, 225px" /></a>
   </p>
   
   <p style="margin: 0in; font-size: 11.0pt;">

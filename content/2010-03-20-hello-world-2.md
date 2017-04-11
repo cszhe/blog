@@ -6,9 +6,7 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=1
 permalink: /2010/03/20/hello-world-2/
-categories:
-  - 未分类
-  - 生活随笔
+category:   未分类  
 ---
 Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!
 

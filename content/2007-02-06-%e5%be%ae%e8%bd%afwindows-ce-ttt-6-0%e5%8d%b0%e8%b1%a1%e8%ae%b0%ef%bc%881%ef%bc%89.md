@@ -6,13 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9836
 permalink: '/2007/02/06/%e5%be%ae%e8%bd%afwindows-ce-ttt-6-0%e5%8d%b0%e8%b1%a1%e8%ae%b0%ef%bc%881%ef%bc%89/'
-categories:
-  - 嵌入式
-  - 未分类
-  - 计算机技术
-tags:
-  - Google
-  - Windows CE
+category:   嵌入式  
+tags:   Google  , Windows CE
 ---
 <meta content="MSHTML 6.00.5730.11" name=GENERATOR>
 

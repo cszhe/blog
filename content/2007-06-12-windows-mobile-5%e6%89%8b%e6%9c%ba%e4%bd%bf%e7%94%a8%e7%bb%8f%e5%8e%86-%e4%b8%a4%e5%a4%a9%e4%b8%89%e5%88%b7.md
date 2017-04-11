@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9846
 permalink: '/2007/06/12/windows-mobile-5%e6%89%8b%e6%9c%ba%e4%bd%bf%e7%94%a8%e7%bb%8f%e5%8e%86-%e4%b8%a4%e5%a4%a9%e4%b8%89%e5%88%b7/'
-categories:
-  - 嵌入式
-  - 未分类
-tags:
-  - Windows CE
+category:   嵌入式  
+tags:   Windows CE
   - 嵌入式
   - 软件
 ---

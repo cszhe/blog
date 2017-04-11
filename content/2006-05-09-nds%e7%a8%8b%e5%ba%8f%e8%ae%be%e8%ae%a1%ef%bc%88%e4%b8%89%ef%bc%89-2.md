@@ -6,13 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9822
 permalink: '/2006/05/09/nds%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%ef%bc%88%e4%b8%89%ef%bc%89-2/'
-categories:
-  - 未分类
-  - 计算机技术
-tags:
-  - Google
-  - 程序员
-  - 软件
+category:   未分类  
+tags:   Google  , 程序员  , 软件
 ---
 3.1开发环境杂谈
 	  

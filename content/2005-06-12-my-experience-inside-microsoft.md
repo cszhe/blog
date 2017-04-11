@@ -6,10 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9787
 permalink: /2005/06/12/my-experience-inside-microsoft/
-categories:
-  - 未分类
-tags:
-  - 软件
+category:   未分类
+tags:   软件
 ---
 这也是英语课上的演讲，最近几天软件学院的MS热又有抬头之势,贴上来吧，是我对Microsoft企业文化的变迁的一些感觉。
 

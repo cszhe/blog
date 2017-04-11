@@ -6,11 +6,8 @@ author: omale
 layout: post
 guid: http://hezongjian.com/blog/?p=9847
 permalink: '/2007/06/18/%e4%b8%ad%e5%9b%bd%e7%a7%bb%e5%8a%a8gprs-cmnet%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a/'
-categories:
-  - 嵌入式
-  - 未分类
-tags:
-  - 同济
+category:   嵌入式  
+tags:   同济
 ---
 <h1 style="MARGIN: 17pt 0cm 16.5pt; TEXT-ALIGN: center" align=center><font color=#000000><span style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin">中国移动</span><span lang=EN-US><font face=Calibri>GPRS cmnet</font></span><span style="FONT-FAMILY: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin">测试报告</span></font></h1> <p class=MsoNormal style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" align=center><span lang=EN-US><?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office"  /><o:p><font face=Calibri color=#000000 size=3>&nbsp;</font></o:p></span></p> <p class=MsoNormal style="MARGIN: 0cm 0cm 0pt; TEXT-ALIGN: center" align=center><span lang=EN-US><o:p><font face=Calibri color=#000000 size=3>&nbsp;</font></o:p></span><font size=3><font color=#000000>
 

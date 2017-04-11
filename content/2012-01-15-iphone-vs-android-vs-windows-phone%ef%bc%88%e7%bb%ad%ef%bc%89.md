@@ -10,8 +10,7 @@ if_slider_image:
   - ""
 slider_hidetitle:
   - 'off'
-categories:
-  - 未分类
+category:   未分类
 ---
 杯具啊！！这部分本来都写完了，不小心按了backspace，退到以前的页面去了，东西都木有了，欲哭无泪啊，我还是应该在word里面写完再贴上来。这一部分稍显简略，因为我不想再打一遍，就一切从简了，精彩程度肯定要打折扣了。
 
@@ -96,7 +95,7 @@ minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin
 </p>
 
 <p class="MsoNormal">
-  <a href="http://hezongjian.com/blog/wp-content/uploads/2012/01/best-windows-phone-7-apps-31.jpg"><img class="aligncenter size-medium wp-image-10714" title="best-windows-phone-7-apps-3" src="http://hezongjian.com/blog/wp-content/uploads/2012/01/best-windows-phone-7-apps-31-180x300.jpg" alt="" width="180" height="300" /></a>
+  <a href="/uploads/2012/01/best-windows-phone-7-apps-31.jpg"><img class="aligncenter size-medium wp-image-10714" title="best-windows-phone-7-apps-3" src="/uploads/2012/01/best-windows-phone-7-apps-31-180x300.jpg" alt="" width="180" height="300" /></a>
 </p>
 
 <p class="MsoNormal" style="text-align: center;">
