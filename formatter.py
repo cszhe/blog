@@ -26,19 +26,30 @@ tags:iPhone,软件
 
 """
 
-def sort_tags(file_content : str, tag : str) -> str:
-    myreg = r"{}:\n(\W*- \w*)*".format(tag)
+def sort_tags(file_content : str) -> str:
+    myreg = r"tags:\n(\W*- \w*)*"
     full = re.search(myreg, file_content)
 
     if full:
         repl = full.group(0).replace('-', ',').replace('\n', '').replace(',', '', 1)
-        repl = repl.replace('categories', 'category')
         matches = re.sub(myreg, repl, file_content)
         return matches
     else:
         return file_content
 
 
+def sort_category(file_content : str) -> str:
+    myreg = r"categories:\n(\W*- \w*)*"
+    full = re.search(myreg, file_content)
+
+    if full:
+        repl = full.group(0).replace('-', ',').replace('\n', '').replace(',', '', 1)
+        repl = repl.replace('categories', 'category')
+        repl = repl.split(',')[0]
+        matches = re.sub(myreg, repl, file_content)
+        return matches
+    else:
+        return file_content
 
 
 
@@ -50,8 +61,8 @@ if __name__ == '__main__':
         content = ''
         with open(file, 'r') as f:
             content = f.read()
-            content = sort_tags(content, 'tags')
-            content = sort_tags(content, 'categories')
+            content = sort_tags(content)
+            content = sort_category(content)
 
         with open(file, 'w') as f:
             f.write(content)
