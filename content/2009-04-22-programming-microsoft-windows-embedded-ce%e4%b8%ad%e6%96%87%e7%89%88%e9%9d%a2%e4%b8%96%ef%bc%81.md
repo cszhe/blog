@@ -35,6 +35,6 @@ tags:   Windows CE
 
 本书封面：
 
- ![](http://images.china-pub.com/ebook195001-200000/195314/shupi.jpg)
+ ![test](http://images.china-pub.com/ebook195001-200000/195314/shupi.jpg)
 
 PS：如果你觉得书籍的名字翻译的都成问题，抱歉，那不是我的错，因为这个是出版社很早就已经定下来的。

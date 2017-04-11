@@ -37,22 +37,22 @@ Omelet Style
 
 下面是poached，就是俺们说的荷包蛋
 	  
-[<img alt="" class="aligncenter size-medium wp-image-10302" height="225" src="/uploads/2008/06/poached-300x225.jpg" title="poached" width="300" />](/uploads/2008/06/poached.jpg)
+[<img class="aligncenter size-medium wp-image-10302" height="225" src="/uploads/2008/06/poached-300x225.jpg" title="poached" width="300" />](/uploads/2008/06/poached.jpg)
 
 下面是scrambled，就是把鸡蛋捣得乱七八糟的。
 	  
-[<img alt="" class="aligncenter size-medium wp-image-10303" height="300" src="/uploads/2008/06/scrambled-275x300.jpg" title="scrambled" width="275" />](/uploads/2008/06/scrambled.jpg)
+[<img class="aligncenter size-medium wp-image-10303" height="300" src="/uploads/2008/06/scrambled-275x300.jpg" title="scrambled" width="275" />](/uploads/2008/06/scrambled.jpg)
 
 下面是omelet stlye，就是鸡蛋卷。
 	  
-[<img alt="" class="aligncenter size-medium wp-image-10304" height="211" src="/uploads/2008/06/omelet-300x211.jpg" title="omelet" width="300" />](/uploads/2008/06/omelet.jpg)
+[<img class="aligncenter size-medium wp-image-10304" height="211" src="/uploads/2008/06/omelet-300x211.jpg" title="omelet" width="300" />](/uploads/2008/06/omelet.jpg)
 
 下面是fried egg，就是单面煎鸡蛋
 	  
-[<img alt="" class="aligncenter size-full wp-image-10305" height="250" src="/uploads/2008/06/fried.jpg" title="fried" width="249" />](/uploads/2008/06/fried.jpg)
+[<img class="aligncenter size-full wp-image-10305" height="250" src="/uploads/2008/06/fried.jpg" title="fried" width="249" />](/uploads/2008/06/fried.jpg)
 
 下面是boilded egg，就是煮鸡蛋。
 	  
-[<img alt="" class="aligncenter size-medium wp-image-10306" height="199" src="/uploads/2008/06/boiled-300x199.jpg" title="boiled" width="300" />](/uploads/2008/06/boiled.jpg)
+[<img class="aligncenter size-medium wp-image-10306" height="199" src="/uploads/2008/06/boiled-300x199.jpg" title="boiled" width="300" />](/uploads/2008/06/boiled.jpg)
 
 最后结尾，如果上帝能再给我一次机会，我会对那个鸡蛋服务员MM说：scrambled with mushrooms and onions, topped with pepper jack cheese.

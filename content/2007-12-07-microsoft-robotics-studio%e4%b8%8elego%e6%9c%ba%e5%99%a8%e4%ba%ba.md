@@ -22,7 +22,7 @@ tags:   微软  , 程序员  , 软件
  
 
 <p align="left">
-  <a href="/uploads/2007/12/lego-nxt-robot.jpg"><img alt="" class="aligncenter size-medium wp-image-10300" height="300" src="/uploads/2007/12/lego-nxt-robot-233x300.jpg" title="lego-nxt-robot" width="233" /></a><br /> 图：LEGO NXT
+  <a href="/uploads/2007/12/lego-nxt-robot.jpg"><img class="aligncenter size-medium wp-image-10300" height="300" src="/uploads/2007/12/lego-nxt-robot-233x300.jpg" title="lego-nxt-robot" width="233" /></a><br /> 图：LEGO NXT
 </p>
 
 目前的机器人主要有专用，通用等几类。专用的如流水线控制等等，这种基本是不可能走入寻常百姓家的。可能走进百姓家的就是一些通用机器人，例如可以帮你打扫垃圾什么的。

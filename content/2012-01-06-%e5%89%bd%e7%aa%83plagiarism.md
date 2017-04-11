@@ -12,7 +12,7 @@ category:   工作和学习
 
 事情是这样的，小组作业要8个人一组，做一个小booklet，我们的topics是做一本关于山寨文化的册子，介绍山寨的起源、定义，犯了啥伦理错误等。最终的结果如下图：
 
-[<img alt="" class="aligncenter size-medium wp-image-10689" height="180" src="/uploads/2012/01/BOOKLET-300x180.jpg" title="BOOKLET" width="300"  />](/uploads/2012/01/BOOKLET.jpg)
+[<img class="aligncenter size-medium wp-image-10689" height="180" src="/uploads/2012/01/BOOKLET-300x180.jpg" title="BOOKLET" width="300"  />](/uploads/2012/01/BOOKLET.jpg)
 
  
 
@@ -24,7 +24,7 @@ category:   工作和学习
 
 第二个作业是自己写一篇文章，结合自己专业讨论一些伦理问题。我写的是流氓软件中的伦理问题。每个人的作业，都要到在线反剽窃系统里面过一遍，看看你跟别人的相似度，虽然对剽窃的定义不同，但是这个系统只要有7个连续的单词跟人家一样，就会被判做相似，无论你是否cite了人家的文章。按照剽窃的定义，即使你说了你是cite别人，也是有字数长度限制的。这个系统非常严格。
 
-[<img alt="" class="size-medium wp-image-10686" height="191" src="/uploads/2012/01/copycat-300x191.png" title="copycat" width="300"  />](/uploads/2012/01/copycat.png)
+[<img class="size-medium wp-image-10686" height="191" src="/uploads/2012/01/copycat-300x191.png" title="copycat" width="300"  />](/uploads/2012/01/copycat.png)
 
 我的文章提交上去之后，系统判定相似度是8%。这个8%有些冤枉，因为有些重复是在参考文献部分，我的文章跟另外一篇文章引用了同一篇参考文献，就被判重复了。图中（点小图看大图）的红色部分一点也不冤枉。我引用了wiki的一个定义，其实是半个定义，连一句话都不到，就被系统检测出来了。标红，要重新修改，重新提交。
 

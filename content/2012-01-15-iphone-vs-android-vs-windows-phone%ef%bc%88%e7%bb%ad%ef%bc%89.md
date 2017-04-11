@@ -95,7 +95,7 @@ minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin
 </p>
 
 <p class="MsoNormal">
-  <a href="/uploads/2012/01/best-windows-phone-7-apps-31.jpg"><img class="aligncenter size-medium wp-image-10714" title="best-windows-phone-7-apps-3" src="/uploads/2012/01/best-windows-phone-7-apps-31-180x300.jpg" alt="" width="180" height="300" /></a>
+  <a href="/uploads/2012/01/best-windows-phone-7-apps-31.jpg"><img class="aligncenter size-medium wp-image-10714" title="best-windows-phone-7-apps-3" src="/uploads/2012/01/best-windows-phone-7-apps-31-180x300.jpg" width="180" height="300" /></a>
 </p>
 
 <p class="MsoNormal" style="text-align: center;">

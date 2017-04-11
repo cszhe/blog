@@ -14,7 +14,7 @@ tags:   ARM  , iPad  , Windows CE
 
 这次的CES上，果不其然，验证了。下面这张是传说的ARM Windows还可以连接打印机进行打印的图。
 
-[<img alt="" class="aligncenter size-medium wp-image-10558" height="200" src="/uploads/2011/01/ARMWindows-300x200.jpg" title="ARMWindows" width="300" />](/uploads/2011/01/ARMWindows.jpg)
+[<img class="aligncenter size-medium wp-image-10558" height="200" src="/uploads/2011/01/ARMWindows-300x200.jpg" title="ARMWindows" width="300" />](/uploads/2011/01/ARMWindows.jpg)
 
 就算能跑，又能怎么样呢？
 

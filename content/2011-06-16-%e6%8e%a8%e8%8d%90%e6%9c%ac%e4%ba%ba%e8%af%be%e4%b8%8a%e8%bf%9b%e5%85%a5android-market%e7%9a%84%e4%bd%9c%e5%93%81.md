@@ -12,7 +12,7 @@ category:   未分类
 
 所有作品大集合如下图，都为免费应用。
 
-[<img alt="" class="aligncenter size-medium wp-image-10628" height="300" src="/uploads/2011/06/market-224x300.png" title="market" width="224"  />](/uploads/2011/06/market.png)
+[<img class="aligncenter size-medium wp-image-10628" height="300" src="/uploads/2011/06/market-224x300.png" title="market" width="224"  />](/uploads/2011/06/market.png)
 
 有几个程序居然被国内无良论坛的黑商店盗链。破解后把apk放在自己的论坛上供别人下载，Market里面的下载量不准了。
 

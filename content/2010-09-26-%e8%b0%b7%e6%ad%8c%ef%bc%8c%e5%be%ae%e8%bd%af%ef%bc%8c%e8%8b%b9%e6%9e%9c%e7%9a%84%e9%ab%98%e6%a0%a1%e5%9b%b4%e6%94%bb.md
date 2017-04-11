@@ -12,8 +12,8 @@ category:   未分类
 
  
 
-[<img alt="" class="aligncenter size-medium wp-image-10454" height="200" src="/uploads/2010/09/Google-Apple-300x200.jpg" title="Google Apple" width="300"  />](/uploads/2010/09/Google-Apple.jpg)
+[<img class="aligncenter size-medium wp-image-10454" height="200" src="/uploads/2010/09/Google-Apple-300x200.jpg" title="Google Apple" width="300"  />](/uploads/2010/09/Google-Apple.jpg)
 
  
 
-[<img alt="" class="aligncenter size-medium wp-image-10455" height="200" src="/uploads/2010/09/google-MS-300x200.jpg" title="google MS" width="300"  />](/uploads/2010/09/google-MS.jpg)
+[<img class="aligncenter size-medium wp-image-10455" height="200" src="/uploads/2010/09/google-MS-300x200.jpg" title="google MS" width="300"  />](/uploads/2010/09/google-MS.jpg)
