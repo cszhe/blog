@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 import glob
+import re
 from typing import List
 
 
@@ -25,9 +26,16 @@ tags:iPhone,软件
 
 """
 
-def sort_tags(files : List) -> None:
-    for file in files:
-        with open(file, 'r+') as f:
+def sort_tags(content : str, tag : str) -> str:
+    myreg = r"{}:\n(\W*- \w*)*".format(tag)
+    full = re.search(myreg, content)
+
+    if full:
+        repl = full.group(0).replace('-', ',').replace('\n', '').replace(',', '', 1)
+        matches = re.sub(myreg, repl, content)
+        return matches
+    else:
+        return str
 
 
 
@@ -36,5 +44,15 @@ def sort_tags(files : List) -> None:
 if __name__ == '__main__':
     md_files = glob.glob('{}/*.md'.format(CONTENT_PATH))
 
-    sort_tags(md_files)
+    for file in md_files:
+        print('processing {}'.format(file))
+        with open(file, 'r+') as f:
+            content = f.read()
+            content = sort_tags(content, 'tags')
+            content = sort_tags(content, 'categories')
+            # print(content)
+            f.seek(0)
+            f.write(content)
+
+    #
     # convert_image_path()
