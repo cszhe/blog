@@ -52,6 +52,17 @@ def sort_category(file_content : str) -> str:
         return file_content
 
 
+def relative_graph(file_content : str) -> str:
+    regex = r"\"(http://\S*/wp-content)/uploads/\S*\""
+    full = re.search(regex, file_content)
+
+    if full:
+        repl = full.group(0).replace(full.group(1), '')
+        matches = re.sub(regex, repl, file_content)
+        return matches
+    else:
+        return file_content
+
 
 if __name__ == '__main__':
     md_files = glob.glob('{}/*.md'.format(CONTENT_PATH))
@@ -63,6 +74,7 @@ if __name__ == '__main__':
             content = f.read()
             content = sort_tags(content)
             content = sort_category(content)
+            content = relative_graph(content)
 
         with open(file, 'w') as f:
             f.write(content)
