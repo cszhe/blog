@@ -53,15 +53,16 @@ def sort_category(file_content : str) -> str:
 
 
 def relative_graph(file_content : str) -> str:
-    regex = r"\"(http://\S*/wp-content)/uploads/\S*\""
-    full = re.search(regex, file_content)
+    ret = file_content
 
-    if full:
-        repl = full.group(0).replace(full.group(1), '')
-        matches = re.sub(regex, repl, file_content)
-        return matches
-    else:
-        return file_content
+    regex = r"\"(http://\S*/wp-content)/uploads/\S*\""
+    matches = re.finditer(regex, file_content)
+
+    for _, match in enumerate(matches):
+        repl = match.group(0).replace(match.group(1), '')
+        ret = ret.replace(match.group(0), repl)
+
+    return ret
 
 
 if __name__ == '__main__':
