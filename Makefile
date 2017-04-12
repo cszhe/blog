@@ -23,7 +23,7 @@ CLOUDFILES_USERNAME=my_rackspace_username
 CLOUDFILES_API_KEY=my_rackspace_api_key
 CLOUDFILES_CONTAINER=my_cloudfiles_container
 
-DROPBOX_DIR=~/Dropbox/Public/
+DROPBOX_DIR=~/wwwroot
 
 GITHUB_PAGES_BRANCH=gh-pages
 
