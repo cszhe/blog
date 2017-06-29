@@ -102,9 +102,12 @@ def grab_jianshu(file_content : str, file_title : str) -> str:
 
 
 
-if __name__ == '__main__':
+def convert_all():
+    """
+    Only need to be execute once
+    :return:
+    """
     md_files = glob.glob('{}/*.md'.format(CONTENT_PATH))
-    # md_files = ['/Users/hezongjian/dev/blog/content/2015-08-31-%e6%99%ae%e6%9e%97%e6%96%af%e9%a1%bf%e5%a4%a7%e5%ad%a6%e5%8f%82%e8%a7%82%e8%ae%b0.md']
 
     for file in md_files:
         file_name = os.path.basename(file)
@@ -125,3 +128,23 @@ if __name__ == '__main__':
 
     #
     # convert_image_path()
+
+if __name__ == '__main__':
+    md_files = ['{}/{}'.format(CONTENT_PATH, '新西兰工作记.md')]
+    for file in md_files:
+        file_name = os.path.basename(file)
+        print('processing {}'.format(file_name))
+        content = ''
+        with open(file, 'r') as f:
+            content = f.read()
+            content = sort_tags(content)
+            content = sort_category(content)
+            content = relative_graph(content)
+            content = remove_srcset(content)
+
+            # grab images
+            content = grab_jianshu(content, file_name)
+
+        with open(file, 'w') as f:
+            f.write(content)
+
