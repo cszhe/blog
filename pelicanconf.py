@@ -34,6 +34,6 @@ DEFAULT_PAGINATION = False
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME = "elegant"
+THEME = "./themes/elegant"
 
 STATIC_PATHS = ['images', 'uploads']
