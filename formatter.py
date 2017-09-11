@@ -7,10 +7,8 @@ import os
 from slugify import slugify
 from typing import List
 
-
-
-CONTENT_PATH = '/Users/hezongjian/dev/blog/content'
-IMAGE_PATH = '/Users/hezongjian/dev/blog/content/uploads/'
+CONTENT_PATH = '{}/dev/blog/content'.format(os.getenv("HOME"))
+IMAGE_PATH = CONTENT_PATH + '/uploads/'
 
 def convert_image_path(files : List):
     pass
@@ -130,7 +128,18 @@ def convert_all():
     # convert_image_path()
 
 if __name__ == '__main__':
-    md_files = ['{}/{}'.format(CONTENT_PATH, '新西兰工作记.md')]
+
+    # Warning: Before running this script. Don't forget to add the following meta data manually to md files.
+    """
+    Title: 新西兰买房记-#-2
+    Date: 2017-09-06 10:20
+    Category: 新西兰生活
+    """
+
+    md_files = [
+        '{}/{}'.format(CONTENT_PATH, '新西兰买房记-#-1.md'),
+        '{}/{}'.format(CONTENT_PATH, '新西兰买房记-#-2.md')
+    ]
     for file in md_files:
         file_name = os.path.basename(file)
         print('processing {}'.format(file_name))
