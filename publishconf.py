@@ -2,23 +2,38 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-# This file is only used if you use `make publish` or
-# explicitly specify it as your config file.
-
-import os
-import sys
-sys.path.append(os.curdir)
-from pelicanconf import *
-
+AUTHOR = 'Zongjian He'
+SITENAME = "Zongjian's blog"
 SITEURL = ''
+
+PATH = 'content'
+
+TIMEZONE = 'Asia/Shanghai'
+
+DEFAULT_LANG = 'ch'
+
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
+# Blogroll
+LINKS = (('Pelican', 'http://getpelican.com/'),
+         ('Python.org', 'http://python.org/'),
+         ('Jinja2', 'http://jinja.pocoo.org/'),
+         ('You can modify those links in your config file', '#'),)
+
+# Social widget
+SOCIAL = (('You can add links in your config file', '#'),
+          ('Another social link', '#'),)
+
+DEFAULT_PAGINATION = False
+
+# Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+THEME = "./themes/elegant"
 
-DELETE_OUTPUT_DIRECTORY = True
-
-# Following items are often useful when publishing
-
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+STATIC_PATHS = ['images', 'uploads']
