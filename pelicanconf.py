@@ -10,7 +10,7 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = 'ch'
+DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -22,18 +22,31 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         ('Google', 'http://www.google.com/'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('twitter', '#'),
+          ('facebook', '#'),
+	  ('weibo', '#'),)
 
-DEFAULT_PAGINATION = False
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME = "./themes/elegant"
+THEME = "../pelican-themes/pelican-bootstrap3/"
 
 STATIC_PATHS = ['images', 'uploads']
+
+# pelican-bootstrap3 specific settings
+
+JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+PLUGIN_PATHS = ['../pelican-plugins'] 
+PLUGINS = ['i18n_subsites']
+
+I18N_TEMPLATES_LANG = 'en'
+DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
+DISPLAY_ARCHIVE_ON_SIDEBAR = True
+
+
