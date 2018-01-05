@@ -1,4 +1,4 @@
 python-slugify
 pelican
 markdown
-Jinja2==2.8
+Jinja2
