@@ -21,13 +21,25 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
          ('Google', 'http://www.google.com/'),)
 
 # Social widget
-SOCIAL = (('twitter', 'hezongjian'),
-          ('facebook', 'hezongjian'),
-	  ('weibo', '#'),)
+SOCIAL = (
+    ('Facebook', 'https://www.facebook.com/hezongjian'),
+    ('Twitter', 'https://twitter.com/hezongjian'),
+    ('Weibo', 'https://www.weibo.com/omale'),
+    # ('微信', 'omalechat', 'weixin')
+          )
+
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_PAGES_ON_MENU = False
+MENUITEMS = (
+    ('Home', './'),
+    ('Categories', './categories.html'),
+    ('Tags', './tags.html'),
+    ('Archives', './archives.html'),
+    # ('CV', '/pdfs/HouserCV.pdf')
+    )
 
 DEFAULT_PAGINATION = 10
 
@@ -42,11 +54,13 @@ STATIC_PATHS = ['images', 'uploads']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 PLUGIN_PATHS = ['../pelican-plugins'] 
-PLUGINS = ['i18n_subsites']
+PLUGINS = ['i18n_subsites', 'tag_cloud']
 
 I18N_TEMPLATES_LANG = 'en'
 DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_INLINE = True
 DISPLAY_CATEGORIES_ON_SIDEBAR = True
 DISPLAY_ARCHIVE_ON_SIDEBAR = True
-
-
+SHOW_ARTICLE_CATEGORY = True
+BOOTSTRAP_NAVBAR_INVERSE = False
+CC_LICENSE = "CC-BY-NC-SA"
