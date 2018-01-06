@@ -12,8 +12,6 @@ geo_longitude:
   - "114.185295"
 geo_public:
   - "1"
-if_slider_image:
-  - ""
 category:   工作和学习  
 tags:   教育
 ---

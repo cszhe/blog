@@ -7,8 +7,7 @@ layout: post
 guid: http://hezongjian.com/blog/?p=9789
 permalink: '/2005/06/13/windows-ce%e4%b8%8b%e7%9a%84flat-virtual-address-space/'
 category:   嵌入式  
-tags:   Windows CE
-  - 嵌入式
+tags:   Windows CE, 嵌入式
 ---
 On 6/10/05, song titan  wrote:  
 >  

@@ -41,6 +41,8 @@ MENUITEMS = (
     # ('CV', '/pdfs/HouserCV.pdf')
     )
 
+DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
+
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -54,7 +56,7 @@ STATIC_PATHS = ['images', 'uploads']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 PLUGIN_PATHS = ['../pelican-plugins'] 
-PLUGINS = ['i18n_subsites', 'tag_cloud']
+PLUGINS = ['i18n_subsites', 'tag_cloud', 'tipue_search']
 
 I18N_TEMPLATES_LANG = 'en'
 DISPLAY_TAGS_ON_SIDEBAR = True
