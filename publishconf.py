@@ -10,7 +10,7 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = 'ch'
+DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -21,20 +21,46 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         ('Google', 'http://www.google.com/'),)
 
 # Social widget
-SOCIAL = (('Facebook', 'https://www.facebook.com/hezongjian'),
-          ('Twitter', 'https://twitter.com/hezongjian'),
-          ('Weibo', 'https://www.weibo.com/omale'))
+SOCIAL = (
+    ('Facebook', 'https://www.facebook.com/hezongjian'),
+    ('Twitter', 'https://twitter.com/hezongjian'),
+    ('Weibo', 'https://www.weibo.com/omale'),
+    # ('微信', 'omalechat', 'weixin')
+          )
 
-DEFAULT_PAGINATION = False
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_PAGES_ON_MENU = False
+MENUITEMS = (
+    ('Home', './'),
+    ('Categories', './categories.html'),
+    ('Tags', './tags.html'),
+    ('Archives', './archives.html'),
+    # ('CV', '/pdfs/HouserCV.pdf')
+    )
+
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME = "./themes/elegant"
+THEME = "../pelican-themes/pelican-bootstrap3/"
 
 STATIC_PATHS = ['images', 'uploads']
+
+# pelican-bootstrap3 specific settings
+
+JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+PLUGIN_PATHS = ['../pelican-plugins'] 
+PLUGINS = ['i18n_subsites', 'tag_cloud']
+
+I18N_TEMPLATES_LANG = 'en'
+DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_INLINE = True
+DISPLAY_CATEGORIES_ON_SIDEBAR = True
+DISPLAY_ARCHIVE_ON_SIDEBAR = True
+SHOW_ARTICLE_CATEGORY = True
+BOOTSTRAP_NAVBAR_INVERSE = True
+CC_LICENSE = "CC-BY-NC-SA"
