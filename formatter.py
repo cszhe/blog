@@ -7,6 +7,11 @@ import os
 from slugify import slugify
 from typing import List
 
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
+
 CONTENT_PATH = '{}/dev/blog/content'.format(os.getenv("HOME"))
 IMAGE_PATH = CONTENT_PATH + '/uploads/'
 
@@ -81,7 +86,7 @@ def grab_jianshu(file_content : str, file_title : str) -> str:
     ret = file_content
     slug_title = slugify(file_title)
 
-    regex = r"\((http:\/\/.*jianshu.io.*)\)"
+    regex = r"\((https:\/\/.*jianshu.io.*)\)"
 
     matches = re.finditer(regex, file_content)
 
@@ -137,8 +142,9 @@ if __name__ == '__main__':
     """
 
     md_files = [
-        '{}/{}'.format(CONTENT_PATH, '新西兰买房记-#-1.md'),
-        '{}/{}'.format(CONTENT_PATH, '新西兰买房记-#-2.md')
+        '{}/{}'.format(CONTENT_PATH, '何事谦求学记#2.md'),
+        '{}/{}'.format(CONTENT_PATH, '中年人如何提高英语-#1.md'),
+        '{}/{}'.format(CONTENT_PATH, '中年人如何提高英语-#2.md')
     ]
     for file in md_files:
         file_name = os.path.basename(file)
