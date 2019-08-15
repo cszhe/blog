@@ -101,3 +101,6 @@ ENV/
 
 output/
 *.pid
+
+# firebase
+.firebase/
