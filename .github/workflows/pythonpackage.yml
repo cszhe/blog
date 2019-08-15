@@ -9,10 +9,11 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.6, 3.7]
+        python-version: [3.7]
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout source code
+      uses: actions/checkout@v1
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
@@ -31,9 +32,9 @@ jobs:
         make html
     - name: Deploy to firebase
       uses: w9jds/firebase-action@master
-      args: "deploy"
-      env:
-        PROJECT_ID: zhe-dev
-      secrets:
-        - FIREBASE_TOKEN
+      with:
+        args: "deploy"
+        env:
+          PROJECT_ID: zhe-dev
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       
