@@ -32,9 +32,10 @@ jobs:
         make html
     - name: Deploy to firebase
       uses: w9jds/firebase-action@master
+      env:
+        PROJECT_ID: zhe-dev
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       with:
         args: "deploy"
-        env:
-          PROJECT_ID: zhe-dev
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
       
