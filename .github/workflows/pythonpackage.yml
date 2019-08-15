@@ -21,6 +21,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Checkout themes:
+      run: |
+        git clone https://github.com/getpelican/pelican-themes.git ../
     - name: Generate HTML
       run: |
         make clean
