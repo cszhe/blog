@@ -23,7 +23,7 @@ jobs:
         pip install -r requirements.txt
     - name: Checkout themes
       run: |
-        git clone https://github.com/getpelican/pelican-themes.git ../
+        git clone https://github.com/getpelican/pelican-themes.git ../pelican-themes
     - name: Generate HTML
       run: |
         make clean
