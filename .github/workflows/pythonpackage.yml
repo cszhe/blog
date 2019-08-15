@@ -29,3 +29,11 @@ jobs:
       run: |
         make clean
         make html
+    - name: Deploy to firebase
+      uses: w9jds/firebase-action@master
+      args: "deploy"
+      env:
+        PROJECT_ID: zhe-dev
+      secrets:
+        - FIREBASE_TOKEN
+      
