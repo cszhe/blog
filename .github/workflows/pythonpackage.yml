@@ -29,7 +29,7 @@ jobs:
     - name: Generate HTML
       run: |
         make clean
-        make html
+        make publish
     - name: Deploy to firebase
       uses: w9jds/firebase-action@master
       env:
