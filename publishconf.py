@@ -29,7 +29,7 @@ SOCIAL = (
     ('Twitter', 'https://twitter.com/hezongjian'),
     ('Weibo', 'https://www.weibo.com/omale'),
     # ('微信', 'omalechat', 'weixin')
-          )
+    )
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
@@ -41,7 +41,7 @@ MENUITEMS = (
     # ('CV', '/pdfs/HouserCV.pdf')
     )
 
-DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
+DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'tags', 'archives', 'search')
 
 DEFAULT_PAGINATION = 10
 
@@ -55,7 +55,7 @@ STATIC_PATHS = ['images', 'uploads']
 # pelican-bootstrap3 specific settings
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
-PLUGIN_PATHS = ['../pelican-plugins'] 
+PLUGIN_PATHS = ['../pelican-plugins']
 PLUGINS = ['i18n_subsites', 'tag_cloud', 'tipue_search']
 
 I18N_TEMPLATES_LANG = 'en'
