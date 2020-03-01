@@ -45,7 +45,7 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
       with:
         source: "output/*"
-        target: "~/wwwroot_nectar"
+        target: "~/wwwroot"
         strip_components: 1
         rm: true
       
