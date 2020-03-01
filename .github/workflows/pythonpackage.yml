@@ -46,4 +46,6 @@ jobs:
       with:
         source: "output/*"
         target: "~/wwwroot_nectar"
+        strip_components: 1
+        rm: true
       
