@@ -1,13 +1,12 @@
 name: KUBE
 
-#on: [push]
-on:
-  watch:
-    types: [started]
+on: [push]
+# on:
+#   watch:
+#     types: [started]
 
 jobs:
   build:
-
     runs-on: ubuntu-18.04
     strategy:
       max-parallel: 2
@@ -17,37 +16,45 @@ jobs:
     steps:
     - name: Checkout source code
       uses: actions/checkout@v1
+      
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
+    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    
     - name: Checkout themes and plugins
       run: |
         git clone https://github.com/getpelican/pelican-themes.git ../pelican-themes
         git clone https://github.com/getpelican/pelican-plugins.git ../pelican-plugins
+    
     - name: Generate HTML
       run: |
         make clean
         make publish
+    
     - name: build docker
       run: |
           docker build . -t hezongjian/blog:latest
+    
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: hezongjian/blog
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
+    
     - name: deploy to cluster
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
         args: set image --record deployment/hzj-deployment hzj-nginx=hezongjian/blog:latest
+    
     - name: verify deployment
       uses: steebchen/kubectl@master
       env:
@@ -55,4 +62,3 @@ jobs:
         KUBECTL_VERSION: "1.15"
       with:
         args: rollout status deployment/hzj-deployment
-        
