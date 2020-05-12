@@ -33,14 +33,13 @@ jobs:
       run: |
         make clean
         make publish
-    - name: login to docker hub
-      uses: azure/docker-login@v1
+    - name: build docker
+      run: |
+          docker build . -t hezongjian/blog:latest
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        login-server: index.docker.io
+        name: hezongjian/blog
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
-    - name: build docker image
-      run: |
-        docker build . -t hezongjian/blog:latest
-        docker push hezongjian/blog:latest
       
