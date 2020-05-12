@@ -1,4 +1,4 @@
-name: kube
+name: KUBE
 
 on: [push]
 
