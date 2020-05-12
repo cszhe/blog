@@ -47,7 +47,7 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: set image --record deployment/hzj-deployment container=hezongjian/blog:latest
+        args: set image --record deployment/hzj-deployment hezongjian/blog:latest
     - name: verify deployment
       uses: steebchen/kubectl@master
       env:
