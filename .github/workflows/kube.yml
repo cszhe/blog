@@ -39,7 +39,7 @@ jobs:
     
     - name: build docker
       run: |
-          docker build . -t hezongjian/blog:latest
+          docker build . -t hezongjian/blog:${{ github.sha }}
     
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
@@ -47,13 +47,14 @@ jobs:
         name: hezongjian/blog
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
+        tags: ${{ github.sha }}
     
     - name: deploy to cluster
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: set image --record deployment/hzj-deployment hzj-nginx=hezongjian/blog:latest
+        args: set image --record deployment/hzj-deployment hzj-nginx=hezongjian/blog:${{ github.sha }}
     
     - name: verify deployment
       uses: steebchen/kubectl@master
