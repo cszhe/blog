@@ -11,7 +11,7 @@ spec:
     - next.hezongjian.com
     secretName: hzj-tls
   rules:
-  - host: next.example.com
+  - host: next.hezongjian.com
     http:
       paths:
       - path: /
