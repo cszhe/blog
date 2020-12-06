@@ -1,9 +1,10 @@
 name: KUBE
 
-on: [push]
-# on:
-#   watch:
-#     types: [started]
+on:
+  # Trigger the workflow on push only for the master branch
+  push:
+    branches:
+      - master
 
 jobs:
   build:
