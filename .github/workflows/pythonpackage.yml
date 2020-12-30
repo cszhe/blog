@@ -34,13 +34,13 @@ jobs:
       run: |
         make clean
         make publish
-#     - name: Deploy to firebase
-#       uses: w9jds/firebase-action@master
-#       env:
-#         PROJECT_ID: zhe-dev
-#         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-#       with:
-#         args: "deploy"
+    - name: Deploy to firebase
+      uses: w9jds/firebase-action@master
+      env:
+        PROJECT_ID: zhe-dev
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      with:
+        args: "deploy"
     - name: copy htmls via ssh key
       uses: appleboy/scp-action@master
       env:
