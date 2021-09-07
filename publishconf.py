@@ -50,7 +50,7 @@ RELATIVE_URLS = True
 
 THEME = "../pelican-themes/pelican-bootstrap3/"
 
-STATIC_PATHS = ['images', 'uploads']
+STATIC_PATHS = ['uploads']
 
 # pelican-bootstrap3 specific settings
 
