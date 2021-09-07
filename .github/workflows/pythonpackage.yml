@@ -38,7 +38,8 @@ jobs:
       uses: w9jds/firebase-action@master
       env:
         PROJECT_ID: zhe-dev
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       with:
         args: "deploy"
     - name: copy htmls via ssh key
