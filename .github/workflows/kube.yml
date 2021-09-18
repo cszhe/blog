@@ -40,9 +40,9 @@ jobs:
     
     - name: build docker
       run: |
-          docker build . -t hezongjian/blog:${{ github.sha }}
+          docker build . -t hezongjian/blog:${{ github.sha }} -t hezongjian/blog:latest
     
-    - name: Publish to Registry
+    - name: Publish to Docker Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
         name: hezongjian/blog
