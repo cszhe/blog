@@ -1,4 +1,4 @@
-name: KUBE
+name: Conatainerisation
 
 on:
   # Trigger the workflow on push only for the master branch
@@ -49,6 +49,16 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
         tags: "latest, ${{ github.sha }}"
+        
+    - name: deploy docker to hezongjian.com
+      uses: appleboy/ssh-action@master
+      with:
+        host: hezongjian.com
+        username: ubuntu
+        key: ${{ secrets.SSHKEY }}
+        script:  |
+          docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml pull
+          docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml up -d
     
     - name: deploy to cluster
       uses: steebchen/kubectl@master
