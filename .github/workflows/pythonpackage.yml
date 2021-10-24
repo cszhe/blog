@@ -41,7 +41,7 @@ jobs:
         GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
         # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       with:
-        args: "deploy"
+        args: deploy --only hosting
     - name: copy htmls via ssh key
       uses: appleboy/scp-action@master
       env:
