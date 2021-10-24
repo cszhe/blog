@@ -35,10 +35,10 @@ jobs:
         make clean
         make publish
     - name: Deploy to firebase
-      uses: w9jds/firebase-action@v2.0.0
+      uses: w9jds/firebase-action@master
       env:
         PROJECT_ID: zhe-dev
-        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY_PLAIN }}
         # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       with:
         args: deploy --only hosting
