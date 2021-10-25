@@ -35,7 +35,7 @@ jobs:
         make clean
         make publish
     - name: Deploy to firebase
-      uses: cszhe/firebase-action@master
+      uses: w9jds/firebase-action@master
       env:
         PROJECT_ID: zhe-dev
         GCP_SA_KEY: ${{ secrets.GCP_SA_KEY_PLAIN }}
