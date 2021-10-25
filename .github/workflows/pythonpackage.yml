@@ -38,7 +38,7 @@ jobs:
       uses: w9jds/firebase-action@master
       env:
         PROJECT_ID: zhe-dev
-        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY_PLAIN }}
+        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
         # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       with:
         args: deploy --only hosting
