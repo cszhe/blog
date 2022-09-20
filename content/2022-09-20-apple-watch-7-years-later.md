@@ -3,7 +3,7 @@ Date: 2022-04-03 10:20
 Category: Apple
 tags: Apple
 
-# 前沿
+# 前言
 
 时光飞逝, 岁月如梭, 转眼Apple Watch第8代都发售了. 在2015年Apple Watch第一代发售的时候, 曾经写过一篇Apple Watch第一代的使用体验. 如下文:
 
@@ -23,7 +23,7 @@ tags: Apple
 
 # 外观
 
-直接上图. 7年过去了, Apple Watch的表带居然还能做到向后兼容. 实在是厉害. 表壳倒是除了银色之外有了不同颜色, 可惜当年奢侈至极的黄金Apple Watch没有了. 7年前的Apple Watch第一代是蓝色的Sports loop, 颜色我还是很喜欢的. 不知道Apple咋想的, 把蓝色给停了, 剩下的一堆粉色黑色彩虹色没有一个我喜欢的, 只能忍痛舍弃, 然后加了100刀, 买了一条Apple Watch第一代的时候就有的milanese金属表带. 黑色表带配黑色表壳, 属于流行的dark theme, 还挺好看的. milanese金属表带虽然完全通过磁铁来吸住, 不过还挺坚固的. 没得说. 虽然7年过去了, 看起来还是不落伍.
+直接上图. 7年过去了, Apple Watch的表带居然还能做到向后兼容. 实在是厉害. 表壳倒是除了银色之外有了不同颜色, 可惜当年奢侈至极的黄金Apple Watch没有了. 7年前的Apple Watch第一代是蓝色的Sports loop, 颜色我还是很喜欢的. 不知道Apple咋想的, 把蓝色的表带给停了, 剩下的一堆粉色黑色彩虹色没有一个我喜欢的, 只能忍痛舍弃, 然后加了100刀, 买了一条Apple Watch第一代的时候就有的milanese金属表带. 黑色表带配黑色表壳, 属于流行的dark theme, 还挺好看的. milanese金属表带虽然完全通过磁铁来吸住, 不过还挺坚固的, 戴在手腕上也非常舒服. 没发现啥缺点. 虽然7年过去了, 苹果有研发了很多花里胡哨的表带, 但是milanese依然不落伍.
 
 <p style="text-align: center;">
   <a href="/uploads/2015/04/2015-04-24-132847.jpg"><img class="aligncenter size-medium wp-image-10992" src="/uploads/2015/04/2015-04-24-132847-300x225.jpg" width="300" height="225"  /></a><br /> 图1：2015年Apple Watch第一代
