@@ -3,6 +3,7 @@ Date: 2022-04-03 10:20
 Category: Apple
 tags: Apple
 
+# 前沿
 
 时光飞逝, 岁月如梭, 转眼Apple Watch第8代都发售了. 在2015年Apple Watch第一代发售的时候, 曾经写过一篇Apple Watch第一代的使用体验. 如下文:
 
@@ -20,18 +21,31 @@ tags: Apple
 
 这次购买的是Apple Watch SE 2 44毫米版, 并不是最先进的Ultra, 也不是标准版的Apple Watch Series 8. 因为它比标准版便宜几百刀, 就少了测心电图, 测体温和测血氧. 其它基本的健康功能还是有的. 像我同事说的, 测心电图测了自己也看不懂, 测体温总归36度多一点, 发烧不用测你自己就感觉出来了, 测血氧每次都是98, 99, 毕竟血氧到了95就说明快挂了. 所以多的那几个功能没啥用. 省下几百刀可是全家一周的饭钱, 为了家庭, 不丢人.
 
-**外观**
+# 外观
 
 直接上图. 7年过去了, Apple Watch的表带居然还能做到向后兼容. 实在是厉害. 表壳倒是除了银色之外有了不同颜色, 可惜当年奢侈至极的黄金Apple Watch没有了. 7年前的Apple Watch第一代是蓝色的Sports loop, 颜色我还是很喜欢的. 不知道Apple咋想的, 把蓝色给停了, 剩下的一堆粉色黑色彩虹色没有一个我喜欢的, 只能忍痛舍弃, 然后加了100刀, 买了一条Apple Watch第一代的时候就有的milanese金属表带. 黑色表带配黑色表壳, 属于流行的dark theme, 还挺好看的. milanese金属表带虽然完全通过磁铁来吸住, 不过还挺坚固的. 没得说. 虽然7年过去了, 看起来还是不落伍.
 
 <p style="text-align: center;">
-  <a href="/uploads/2015/04/2015-04-24-132847.jpg"><img class="aligncenter size-medium wp-image-10992" src="/uploads/2015/04/2015-04-24-132847-300x225.jpg" width="300" height="225"  /></a><br /> 图1：Apple Watch第一代
+  <a href="/uploads/2015/04/2015-04-24-132847.jpg"><img class="aligncenter size-medium wp-image-10992" src="/uploads/2015/04/2015-04-24-132847-300x225.jpg" width="300" height="225"  /></a><br /> 图1：2015年Apple Watch第一代
 </p>
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/apple_watch_se_2.jpg"><img class="aligncenter size-medium wp-image-10992" src="/uploads/2022/apple_watch_se_2.jpg" width="300" height="225" /></a><br /> 图2：Apple Watch SE 2
+  <a href="/uploads/2022/apple_watch_se_2.jpg"><img class="aligncenter size-medium wp-image-10992" src="/uploads/2022/apple_watch_se_2.jpg" width="300" height="225" /></a><br /> 图2：2022年Apple Watch SE 2
 </p>
 
+# 健身
+
+ Apple Watch的健身功能增强了很多. 之前的Apple Watch第一代连GPS都没有, 要连到手机的GPS上, 现在有了独立的GPS, 可以不用带着手机独立去跑步了. 此外, 它的内置运动功能增加了很多. 什么室内室外跑步, 走路, 骑车, 游泳, 打太极, 练瑜伽, 划船机等等, 而且可以自动检测. 你不需要去启动, 它能自动检测到你在做什么锻炼, 然后就提醒你记录. 
+
+# 续航
+
+续航其实跟之前差不多, 都是苹果宣称的18个小时. 但是其实2天1冲还是可以的. 而且增加了睡眠监测, 你可以看到自己的睡眠质量. 之前的Apple Watch是没有的. 这也带来一个问题, 我之前Apple Watch一代的时候习惯睡觉的时候充电, 反正没有睡眠监测. 但是现在如果还这样就没法检测睡眠了, 可能Apple设计了快充, 目的是让你睡觉的时候带着表, 然后早上起床之后洗澡刷牙的时间充电(虽然号称防水, 我可不敢带着它去游泳或者洗澡). 洗漱完毕, 充电也就差不多可以了.
+
+# 智能
+
+跟7年前相比, 还是增加了一些智能的功能的. 譬如噪音提醒, 如果你在非常吵的环境, 例如数据中心里, 它会提醒你现在的环境太吵闹了, 要你小心. 还有就是摔倒检测和撞车检测, 发生事故之后会自动帮你打电话给急救中心. 这个功能我觉得很有用, 但是就像苹果发布会上说的, 不希望有任何人能够用到这个功能. 
+
+最直观的感受, 就是Siri不再是哑巴了. 可以说话了. 7年前的Apple Watch第一代, Siri只能跟你文字聊天. 没有语音功能. 
 
 
 
