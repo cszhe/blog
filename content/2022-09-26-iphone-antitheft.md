@@ -6,7 +6,7 @@ tags: Apple
 话说那是十多年前的2011年, 我带领一群同济的同学, 远赴重洋, 到美国去参加苹果一年一度的WWDC 2011开发者大会. 并且亲眼见证了乔布斯去世以前最后一次公开亮相, 并向世界发布iCloud. 
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/apple_watch_se_2.jpg"><img class="aligncenter size-medium" src="/uploads/2022/wwdc2011.jpg" width="300" height="225" /></a><br /> 我拍摄的WWDC 2011上乔布斯最后一次露面
+  <a href="/uploads/2022/wwdc2011.jpg"><img class="aligncenter size-medium" src="/uploads/2022/wwdc2011.jpg" width="400" height="300" /></a><br /> 我拍摄的WWDC 2011上乔布斯最后一次露面
 </p>
 
 大会本身今天不多讲, 毕竟我算不上iPhone开发者, 会上讲的大多数内容我都听不懂. 我只是完成学校交给的使命, 带队学生. 但期间还发生了不少印象深刻的事情. 其中之一是排队, 因为想看乔布斯的人太多了, 队伍排得绕着会场一圈又一圈. 我记得排队的时候有两个荷枪实弹的美国警察走过来跟我们说, 注意你们的iPhone. 我们已经收到好几起报案, 说他们的iPhone被偷被抢了. 坏人也知道这里在开苹果的大会, 来这里偷iPhone一偷一个准...

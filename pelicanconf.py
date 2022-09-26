@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'Asia/Shanghai'
+TIMEZONE = 'Pacific/Auckland'
 
 DEFAULT_LANG = 'en'
 
@@ -46,7 +46,8 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME = "../pelican-themes/pelican-bootstrap3/"
+# THEME = "../pelican-themes/pelican-bootstrap3/"
+THEME = "../pelican-themes/blue-penguin-dark/"
 
 STATIC_PATHS = ['uploads']
 
@@ -58,9 +59,12 @@ PLUGINS = ['i18n_subsites', 'tag_cloud']
 
 I18N_TEMPLATES_LANG = 'en'
 DISPLAY_TAGS_ON_SIDEBAR = True
+DISPLAY_TAGS_ON_SIDEBAR_LIMIT = 10
+DISPLAY_LINKS_ON_SIDEBAR_LIMIT = 5
 DISPLAY_TAGS_INLINE = True
 DISPLAY_CATEGORIES_ON_SIDEBAR = True
 DISPLAY_ARCHIVE_ON_SIDEBAR = True
 SHOW_ARTICLE_CATEGORY = True
 BOOTSTRAP_NAVBAR_INVERSE = True
+LICENSE = 'CC-BY-NC-SA'
 CC_LICENSE = "CC-BY-NC-SA"
