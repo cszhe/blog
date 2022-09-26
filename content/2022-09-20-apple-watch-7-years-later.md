@@ -1,5 +1,5 @@
 Title: Apple Watch发售7年后再体验
-Date: 2022-04-03 10:20
+Date: 2022-09-20 10:20
 Category: Apple
 tags: Apple
 
@@ -26,11 +26,11 @@ tags: Apple
 直接上图. 7年过去了, Apple Watch的表带居然还能做到向后兼容. 实在是厉害. 表壳倒是除了银色之外有了不同颜色, 可惜当年奢侈至极的黄金Apple Watch没有了. 7年前的Apple Watch第一代是蓝色的Sports loop, 颜色我还是很喜欢的. 不知道Apple咋想的, 把蓝色的表带给停了, 剩下的一堆粉色、黑色、彩虹色没有一个我喜欢的, 只能忍痛舍弃, 然后加了100刀, 买了一条Apple Watch第一代的时候就有的milanese金属表带. 黑色表带配黑色表壳, 属于流行的dark theme, 还挺好看的. milanese金属表带虽然完全通过磁铁来吸住, 不过还挺坚固的, 戴在手腕上也非常舒服, 也不是很重. 没发现啥缺点. 虽然7年过去了, 苹果又研发了很多花里胡哨的表带, 譬如那个braided solo loop. 但是milanese依然不落伍. 但唯一的缺点就是夹头发. 千万别让表带碰到头发, 否则就是拔毛神器. 
 
 <p style="text-align: center;">
-  <a href="/uploads/2015/04/2015-04-24-132847.jpg"><img class="aligncenter size-medium wp-image-10992" src="/uploads/2015/04/2015-04-24-132847-300x225.jpg" width="300" height="225"  /></a><br /> 图1：2015年Apple Watch第一代
+  <a href="/uploads/2015/04/2015-04-24-132847.jpg"><img class="aligncenter" src="/uploads/2015/04/2015-04-24-132847-300x225.jpg" width="300" height="225"  /></a><br /> 图1：2015年的Apple Watch第一代
 </p>
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/apple_watch_se_2.jpg"><img class="aligncenter size-medium wp-image-10992" src="/uploads/2022/apple_watch_se_2.jpg" width="300" height="225" /></a><br /> 图2：2022年Apple Watch SE 2
+  <a href="/uploads/2022/apple_watch_se_2.jpg"><img class="aligncenter" src="/uploads/2022/apple_watch_se_2.jpg" width="300" height="225" /></a><br /> 图2：2022年的Apple Watch SE 2
 </p>
 
 # 健身
