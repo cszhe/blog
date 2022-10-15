@@ -7,16 +7,24 @@ on:
       - master
 
 jobs:
-  build:
+  buildx:
     runs-on: ubuntu-22.04
     strategy:
-      max-parallel: 2
+      max-parallel: 1
       matrix:
         python-version: ['3.10']
 
     steps:
     - name: Checkout source code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      with:
+        buildkitd-flags: --debug
       
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
@@ -33,17 +41,18 @@ jobs:
         make clean
         make publish
     
-    - name: build docker
-      run: |
-          docker build . -t hezongjian/blog:${{ github.sha }} -t hezongjian/blog:latest
-    
-    - name: Publish to Docker Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
       with:
-        name: hezongjian/blog
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
-        tags: "latest, ${{ github.sha }}"
+    
+    - name: Build and push
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        push: true
+        tags: hezongjian/blog:latest
         
     - name: deploy docker to hezongjian.com
       uses: appleboy/ssh-action@master
@@ -55,17 +64,3 @@ jobs:
           docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml pull
           docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml up -d
     
-    # - name: deploy to cluster
-    #   uses: steebchen/kubectl@master
-    #   env:
-    #     KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-    #   with:
-    #     args: set image --record deployment/hzj-deployment hzj-nginx=hezongjian/blog:${{ github.sha }}
-    
-    # - name: verify deployment
-    #   uses: steebchen/kubectl@master
-    #   env:
-    #     KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-    #     KUBECTL_VERSION: "1.15"
-    #   with:
-    #     args: rollout status deployment/hzj-deployment
