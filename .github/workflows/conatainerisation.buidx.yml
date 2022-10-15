@@ -28,7 +28,7 @@ jobs:
         platforms: linux/amd64, linux/aarch64
       
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
     
@@ -66,3 +66,4 @@ jobs:
           docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml pull
           docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml up -d
     
+# TODO: deply to arm.hezongjian.com
