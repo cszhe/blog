@@ -54,6 +54,7 @@ jobs:
         context: .
         push: true
         tags: hezongjian/blog:latest
+        platforms: linux/amd64, linux/aarch64
         
     - name: deploy docker to hezongjian.com
       uses: appleboy/ssh-action@master
