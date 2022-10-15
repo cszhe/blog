@@ -1,4 +1,4 @@
-name: Conatainerisation
+name: Conatainerisation_Buildx
 
 on:
   # Trigger the workflow on push only for the master branch
