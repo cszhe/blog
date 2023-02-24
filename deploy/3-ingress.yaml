@@ -11,7 +11,7 @@ spec:
       paths:
       - backend:
           service:
-            name: blog
+            name: hzj-svc
             port:
               number: 80
         path: /
