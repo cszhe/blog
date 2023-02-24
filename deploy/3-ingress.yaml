@@ -1,21 +1,21 @@
-# apiVersion: extensions/v1beta1
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hzj-ingress
-  annotations:
-    kubernetes.io/ingress.class: "nginx"    
-    cert-manager.io/issuer: "letsencrypt-prod"
+  creationTimestamp: null
+  name: blog
 spec:
-  tls:
-  - hosts:
-    - next.hezongjian.com
-    secretName: hzj-tls
+  ingressClassName: nginx
   rules:
-  - host: next.hezongjian.com
+  - host: kube-test.nectar.auckland.ac.nz
     http:
       paths:
-      - path: /
-        backend:
-          serviceName: hzj-svc
-          servicePort: 80
+      - backend:
+          service:
+            name: blog
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer: {}
+
