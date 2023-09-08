@@ -63,14 +63,14 @@ jobs:
         tags: hezongjian/blog:latest
         platforms: linux/amd64, linux/aarch64
         
-    - name: deploy docker to hezongjian.com
-      uses: appleboy/ssh-action@master
-      with:
-        host: hezongjian.com
-        username: ubuntu
-        key: ${{ secrets.SSHKEY }}
-        script:  |
-          docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml pull
-          docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml up -d
+    # - name: deploy new container to www.hezongjian.com
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     host: www.hezongjian.com
+    #     username: ubuntu
+    #     key: ${{ secrets.SSHKEY }}
+    #     script:  |
+    #       docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml pull
+    #       docker-compose -f /home/ubuntu/dev/compose/hezongjian/docker-compose.yml up -d
     
 # TODO: deply to arm.hezongjian.com
