@@ -41,14 +41,14 @@ jobs:
         # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       with:
         args: deploy --only hosting
-    - name: copy htmls via ssh key
-      uses: appleboy/scp-action@v0.1.4
-      with:
-        host: hezongjian.com
-        username: ubuntu
-        key: ${{ secrets.SSHKEY }}
-        source: "output/*"
-        target: "~/wwwroot"
+    # - name: copy htmls via ssh key
+    #   uses: appleboy/scp-action@v0.1.4
+    #   with:
+    #     host: hezongjian.com
+    #     username: ubuntu
+    #     key: ${{ secrets.SSHKEY }}
+    #     source: "output/*"
+    #     target: "~/wwwroot"
         strip_components: 1
         rm: true
       
