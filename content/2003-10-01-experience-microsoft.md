@@ -1,14 +1,11 @@
 ---
-id: 9720
 title: eXPerience Microsoft
 date: 2003-10-01T01:01:01+00:00
-author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9720
-permalink: /2003/10/01/experience-microsoft/
-category:   未分类
+category:   工作和学习
 tags:   微软, 软件
 ---
+
 6月22日，我接到了盼望已久的微软全球技术中心 (Microsoft Global Technique Engineering Center) 的实习通知，开始了我在GTEC的intern生活。时光飞逝，转眼间在GTEC已经度过了一个多月。期间的一些感想和体会，采撷一二，以飨各位。  
 
 在全球技术中心实习，理应首先谈谈技术。但是在GTEC的这些日子，给我感受最深的不是工程师们的技术，而是他们对待客户的态度和处理客户关系时候表现出来的专业精神。微软内部有个流行的词：CFC，全称是：Customer Focused Culture。这个短语，才是Microsoft GTEC所有工作的核心，下面是一个被评为CFC Star的工程师的话：  

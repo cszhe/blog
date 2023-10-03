@@ -1,14 +1,11 @@
 ---
-id: 10954
 title: 都市里的放羊娃
 date: 2014-09-17T15:29:24+00:00
-author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10954
-permalink: '/2014/09/17/%e9%83%bd%e5%b8%82%e9%87%8c%e7%9a%84%e6%94%be%e7%be%8a%e5%a8%83/'
 category:   未分类  
 tags:   教育
 ---
+
 <div style="direction: ltr; border-width: 100%;">
   <div style="direction: ltr; margin-top: 0in; margin-left: 0in; width: 6.8381in;">
     <div style="direction: ltr; margin-top: 0in; margin-left: 0in; width: 6.8381in;">
