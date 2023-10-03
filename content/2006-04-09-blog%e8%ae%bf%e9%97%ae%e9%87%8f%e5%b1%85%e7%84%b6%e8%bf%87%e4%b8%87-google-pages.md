@@ -1,11 +1,8 @@
 ---
-id: 9819
-title: 'Blog访问量居然过万 &#124; Google Pages'
+title: Blog访问量居然过万 and Google Pages
 date: 2006-04-09T19:41:07+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9819
-permalink: '/2006/04/09/blog%e8%ae%bf%e9%97%ae%e9%87%8f%e5%b1%85%e7%84%b6%e8%bf%87%e4%b8%87-google-pages/'
 category:   未分类  
 tags:   Google  , 程序员
 ---

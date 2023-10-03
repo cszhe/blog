@@ -1,11 +1,8 @@
 ---
-id: 9997
-title: '开发板是怎样炼成的――白痴’s&#160;perspective'
+title: 开发板是怎样炼成的
 date: 2007-02-26T00:00:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9997
-permalink: '/2007/02/26/%e5%bc%80%e5%8f%91%e6%9d%bf%e6%98%af%e6%80%8e%e6%a0%b7%e7%82%bc%e6%88%90%e7%9a%84%e2%80%95%e2%80%95%e7%99%bd%e7%97%b4sampnbspperspective/'
 category:   嵌入式  
 tags:   Google
 ---
