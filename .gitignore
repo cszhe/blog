@@ -104,3 +104,4 @@ output/
 
 # firebase
 .firebase/
+.DS_Store
