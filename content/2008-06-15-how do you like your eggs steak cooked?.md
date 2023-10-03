@@ -1,11 +1,8 @@
 ---
-id: 9873
-title: 'How do you like your (eggs &#124;&#124; steak) cooked?'
+title: How do you like your eggs steak cooked?
 date: 2008-06-15T11:56:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9873
-permalink: /2008/06/15/how-do-you-like-your-eggs-steak-cooked/
 category:   未分类  
 tags:   Google
 ---

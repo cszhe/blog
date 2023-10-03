@@ -34,7 +34,7 @@ def auto_rename_blogs(path: Path):
             file_name = f"{date}-{title}.md"
             # print(f"Rename {file} to {file_name}")
             print(f"Rename to: {file_name}")
-            file.rename(file_name)
+            file.rename(path.joinpath(file_name))
         else:
             print(f"Skip {file} because it is not a file")
 
