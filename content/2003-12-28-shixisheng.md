@@ -22,4 +22,4 @@ tags:   微软  , 软件
   
 我希望能自己能成为一个出色的软件工程师。能给人们在计算机上带来全新的计算体验。</table> 
 
-<font class=diary_poster>omale 发表于</font> **<font color=#666699 style=font size=9px>>2003-12-28 21:02:29<font color=#999999 class=diary_arr onClick="javascript:window.history.back()" title=返回前页>←</font></font>** [<img src=/images/saveas.gif width=16 height=16 border=0 alt=保存该日志到本地 align=middle>](javascript:sv(793955))
+
