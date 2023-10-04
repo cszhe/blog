@@ -26,7 +26,6 @@ LINKS = (
     ('AMD', 'http://www.amd.com/'),
 )
 
-
 # Social widget
 SOCIAL = (
     ('Facebook', 'https://www.facebook.com/hezongjian'),
@@ -53,7 +52,8 @@ RELATIVE_URLS = True
 
 THEME = "./external/themes/pelican-bootstrap3"
 
-STATIC_PATHS = ['uploads']
+STATIC_PATHS = ['uploads', 'extra/favicon.ico']
+EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'}}
 
 # pelican-bootstrap3 specific settings
 
