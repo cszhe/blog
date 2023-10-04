@@ -1,11 +1,13 @@
 ----
-Title: CloudFlare试用
+Title: 博客搬家-CloudFlare试用
 Date: 2023-10-01 20:24:00
+Modified: 2023-10-04 20:06:00
 Category: 工作和学习
+author: omale
 tags: Geek, CloudFlare
 ----
 
-博客已经开了20年了. 期间搬家了无数次, 好在数据没丢. 最早是用国内的额所谓Blog service provider, 那个时候网络管理还不是那么严格. 有很多博客大巴, blogcn之泪的网站可以让你开个账号就写文章. 但是这些网站都是免费的, 也不知道什么时候就会关门, 我最早用的博客大巴就关门了. 好在博客搬家功能不错, 数据都没丢.
+博客已经开了20年了. 期间搬家了无数次, 好在数据没丢. 最早是用国内的所谓Blog service provider, 那个时候网络管理还不是那么严格. 有很多博客大巴, blogcn之类的网站可以让你开个账号就写文章. 但是这些网站都是免费的, 也不知道什么时候就会关门, 我最早用的博客大巴就关门了. 好在博客搬家功能不错, 数据都没丢.
 
 后来我就开始自己搭建博客. 最早的时候是用的是Wordpress, 需要花钱买个域名和虚拟主机. 所谓的虚拟主机, 就是在一台服务器上划分出来的一块空间, 你可以在上面安装自己的wordpress博客. 后来我才知道wordpress简直是维护的噩梦, Bug超多, 经常被攻击. 而且早期的wordpress还不支持Unicode, 所有写到wordpress里面的文章都成了乱码. 而且由于是共享IP, 你不知道什么时候你的网站就被GFW墙了, 不一定是你发的文章有问题, 也可能是你的邻居(同一个虚拟主机上的其它用户)发的文章有问题, 你就跟着一起倒霉了.
 
@@ -21,8 +23,8 @@ tags: Geek, CloudFlare
 
 后来我发现自己维护虚拟机也是个大问题. 网上的script boys太多了. 不断的攻击你的虚拟机. 我用了fail2ban来屏蔽一些攻击, 看我随便抓的一段日志: 3千多个攻击, 78个IP被ban掉了. 你得不断的升级系统, 升级软件, 不然就会被攻击. 有时候你升级了系统, 但是软件没升级, 也会被攻击. 虽然我很有信心自己的虚拟机不会被攻破, 但是还是很烦的. 你得不断的维护. 而且时不时爆出各种漏洞, 你就得打补丁, 然后虚拟机本身也得经常升级系统. 哪怕是用Ubuntu LTS, 也得2年升级一个. 平时就不断的apt update, apt upgrade, 虽然我用puppet自动化了, 但是还是很烦. 
 
-```
-$ sudo fail2ban-client status sshd
+```bash
+webhost$ sudo fail2ban-client status sshd
 Status for the jail: sshd
 |- Filter
 |  |- Currently failed:	0
@@ -36,7 +38,9 @@ Status for the jail: sshd
 
 后来我就想不用虚拟机了, 直接找个HTML的免费存放空间, 就少了维护的痛苦了. 我最早找到的是Google的FireBase, 它提供静态网页Host, 然后你可以用github action自己运行pelican, 然后把生成的静态网页通过firebase的API上传到谷歌空间. 但是谷歌我一直不太放心, 毕竟在国内被干掉了. 说不定firebase跟着哪天就没了.
 
-后来我就找到了CloudFlare的Pages. CloudFlare是一个CDN服务商, 你可以把你的网站放在CloudFlare上, 他会帮你做CDN, 你的网站会变得很快. 他们最近推出了Pages, 你可以把静态网页放在CloudFlare上, 他们会帮你做CDN. 而且CloudFlare的Pages是免费的, 你可以放无限量的静态网页. 只是单个文件有大小限制 (25MB, 还好). 而且CloudFlare的Pages还支持自定义域名, 你可以把你的域名绑定到CloudFlare的Pages上. 这样就不用担心CloudFlare的Pages会关门了. 而且国外很多服务都用CloudFlare, 除非GFW把CloudFlare的IP全部墙掉, 或者搞成白名单. 不然CloudFlare的Pages应该是比较安全的.
+后来我就找到了CloudFlare的Pages. CloudFlare是一个CDN服务商, 你可以把你的网站放在CloudFlare上, 他会帮你做CDN, 你的网站会变得很快. 他们最近推出了Pages, 你可以把静态网页放在CloudFlare上, 他们会帮你做CDN. 而且CloudFlare的Pages是免费的, 你可以放无限量的静态网页. 只是单个文件有大小限制 (25MB, 还好). 而且, CloudFlare可以自动连接到你的GitHub上, 设置一个hook, 如果你的代码仓库有更新, 它自动下载代码, 自动编译, 自动部署到CloudFlare. 支持绝大多数的静态网站生成工具, 连自己写GitHub Actions的代码都省了.
+
+其次呢, CloudFlare的Pages还支持自定义域名, 你可以把你的域名绑定到CloudFlare的Pages上. 这样就不用担心CloudFlare的Pages会关门了. 而且国外很多服务都用CloudFlare, 除非GFW把CloudFlare的IP全部墙掉, 或者搞成白名单. 不然CloudFlare的Pages应该是比较安全的. 
 
 先这样用着吧, 看看CloudFlare的Pages能不能长久. 如果不行, 我就再搬家吧.
 
