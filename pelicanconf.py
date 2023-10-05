@@ -45,7 +45,16 @@ MENUITEMS = (
     # ('CV', '/pdfs/HouserCV.pdf')
 )
 
-DEFAULT_PAGINATION = 10
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
+
+DEFAULT_PAGINATION = 12
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
@@ -54,6 +63,13 @@ THEME = "./external/themes/pelican-bootstrap3"
 
 STATIC_PATHS = ['uploads', 'extra/favicon.ico']
 EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'}}
+
+# feed settings
+FEED_DOMAIN = "https://www.hezongjian.com"
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_MAX_ITEMS = 12
+
+GITHUB_URL = 'https://github.com/cszhe/blog' 
 
 # pelican-bootstrap3 specific settings
 
