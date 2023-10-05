@@ -45,7 +45,16 @@ MENUITEMS = (
     # ('CV', '/pdfs/HouserCV.pdf')
 )
 
-DEFAULT_PAGINATION = 10
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
+
+DEFAULT_PAGINATION = 12
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
@@ -55,11 +64,21 @@ THEME = "./external/themes/pelican-bootstrap3"
 STATIC_PATHS = ['uploads', 'extra/favicon.ico']
 EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'}}
 
+# feed settings
+FEED_DOMAIN = "https://www.hezongjian.com"
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_MAX_ITEMS = 12
+
+GITHUB_URL = 'https://github.com/cszhe/blog' 
+
 # pelican-bootstrap3 specific settings
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 PLUGIN_PATHS = ['./external/plugins']
-PLUGINS = ['i18n_subsites', 'tag_cloud']
+PLUGINS = ['i18n_subsites', 'tag_cloud', 'tipue_search']
+
+# tipue_search settings
+DIRECT_TEMPLATES = ('index', 'categories', 'tag', 'archives', 'search')
 
 I18N_TEMPLATES_LANG = 'en'
 DISPLAY_TAGS_ON_SIDEBAR = True
