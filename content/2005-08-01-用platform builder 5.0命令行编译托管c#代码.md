@@ -1,11 +1,8 @@
 ---
-id: 9800
-title: '用Platform Builder 5.0命令行编译托管C#代码'
+title: 用Platform Builder 5.0命令行编译托管C#代码
 date: 2005-08-01T18:31:38+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9800
-permalink: '/2005/08/01/%e7%94%a8platform-builder-5-0%e5%91%bd%e4%bb%a4%e8%a1%8c%e7%bc%96%e8%af%91%e6%89%98%e7%ae%a1c%e4%bb%a3%e7%a0%81/'
 category:   未分类
 tags:   C++  , 微软
 ---
