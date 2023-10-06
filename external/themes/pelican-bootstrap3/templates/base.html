@@ -241,5 +241,12 @@
 {% endif %}
 
 {% block scripts %}{% endblock %}
+<!-- add logging scrip-->
+<script type="text/javascript">
+    // GET request to https://access.hezongjian.workers.dev/
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://access.hezongjian.workers.dev/');
+    xhr.send();
+</script>
 </body>
 </html>
