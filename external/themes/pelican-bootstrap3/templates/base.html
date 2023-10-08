@@ -243,14 +243,17 @@
 {% block scripts %}{% endblock %}
 <!-- add logging scrip-->
 <script type="text/javascript">
-    // GET request to https://access.hezongjian.workers.dev/?page=[page]
-    var url = new URL (window.location.href);
-    var page = url.pathname;
-    console.log(page);
-    var url = `https://access.hezongjian.workers.dev/?page=${page}`;
-    console.log(url);
+    // send survey to servers
+    var href = new URL (window.location.href);
+    var page = href.pathname;
     var xhr = new XMLHttpRequest();
+    // hezongjian
+    var url = `https://gw.hezongjian.com/logger/access?page=${page}`;
     xhr.open('GET', url);
+    xhr.send();
+    // cloudflare
+    var url2 = `https://access.hezongjian.workers.dev/?page=${page}`;
+    xhr.open('GET', url2);
     xhr.send();
 </script>
 </body>
