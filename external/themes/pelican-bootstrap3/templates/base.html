@@ -249,11 +249,11 @@
     var xhr = new XMLHttpRequest();
     // hezongjian
     var url = `https://gw.hezongjian.com/logger/access?page=${page}`;
-    xhr.open('GET', url);
+    xhr.open('GET', url, false);
     xhr.send();
     // cloudflare
     var url2 = `https://access.hezongjian.workers.dev/?page=${page}`;
-    xhr.open('GET', url2);
+    xhr.open('GET', url2, false);
     xhr.send();
 </script>
 </body>
