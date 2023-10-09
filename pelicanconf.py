@@ -61,8 +61,11 @@ RELATIVE_URLS = True
 
 THEME = "./external/themes/pelican-bootstrap3"
 
-STATIC_PATHS = ['uploads', 'extra/favicon.ico', 'functions']
-EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'}}
+STATIC_PATHS = ['uploads', 'extra/favicon.ico', 'extra/_headers']
+EXTRA_PATH_METADATA = {
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/_headers': {'path': '_headers'}
+    }
 
 # feed settings
 FEED_DOMAIN = "https://www.hezongjian.com"
