@@ -251,10 +251,10 @@
     var url = `https://gw.hezongjian.com/logger/access?page=${page}`;
     xhr.open('GET', url, false);
     xhr.send();
-    // cloudflare
-    var url2 = `https://access.hezongjian.workers.dev/?page=${page}`;
-    xhr.open('GET', url2, false);
-    xhr.send();
+    // cloudflare, not accessbile in China
+    // var url2 = `https://access.hezongjian.workers.dev/?page=${page}`;
+    // xhr.open('GET', url2, false);
+    // xhr.send();
 </script>
 </body>
 </html>
