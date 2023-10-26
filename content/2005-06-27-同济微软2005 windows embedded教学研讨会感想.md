@@ -1,12 +1,9 @@
 ---
-id: 9793
 title: 同济微软2005 Windows Embedded教学研讨会感想
 date: 2005-06-27T23:52:55+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9793
-permalink: '/2005/06/27/%e5%90%8c%e6%b5%8e%e5%be%ae%e8%bd%af2005-windows-embedded%e6%95%99%e5%ad%a6%e7%a0%94%e8%ae%a8%e4%bc%9a%e6%84%9f%e6%83%b3/'
-category:   未分类
+category:   工作和学习
 tags:   同济  , 嵌入式  , 软件
 ---
 6月25日和26日，由我校软件学院与微软亚洲研究院联合举办的2005微软嵌入式系统教学研讨会，在我校成功举行。（此处略去数百字，原文，同济大学网站：http://www.tongji.edu.cn/news/20050627162954.htm
