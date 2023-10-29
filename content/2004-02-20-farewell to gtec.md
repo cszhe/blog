@@ -1,11 +1,8 @@
 ---
-id: 9725
 title: Farewell to GTEC
 date: 2004-02-20T00:00:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9725
-permalink: /2004/02/20/farewell-to-gtec/
 category:   未分类
 tags:   微软
 ---

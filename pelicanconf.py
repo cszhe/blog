@@ -81,7 +81,7 @@ PLUGIN_PATHS = ['./external/plugins']
 PLUGINS = ['i18n_subsites', 'tag_cloud', 'tipue_search']
 
 # tipue_search settings
-DIRECT_TEMPLATES = ('index', 'categories', 'tag', 'archives', 'search')
+DIRECT_TEMPLATES = ('index', 'categories', 'tags', 'archives', 'search')
 
 I18N_TEMPLATES_LANG = 'en'
 DISPLAY_TAGS_ON_SIDEBAR = True

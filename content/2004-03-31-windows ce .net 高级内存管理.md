@@ -1,11 +1,8 @@
 ---
-id: 9727
 title: Windows CE .NET 高级内存管理
 date: 2004-03-31T22:26:19+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9727
-permalink: '/2004/03/31/windows-ce-net-%e9%ab%98%e7%ba%a7%e5%86%85%e5%ad%98%e7%ae%a1%e7%90%86/'
 category:   嵌入式  
 tags:   Windows CE, 嵌入式, 程序员
 ---
