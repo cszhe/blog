@@ -1,11 +1,8 @@
 ---
-id: 9846
 title: Windows Mobile 5手机使用经历——两天三刷
 date: 2007-06-12T02:32:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9846
-permalink: '/2007/06/12/windows-mobile-5%e6%89%8b%e6%9c%ba%e4%bd%bf%e7%94%a8%e7%bb%8f%e5%8e%86-%e4%b8%a4%e5%a4%a9%e4%b8%89%e5%88%b7/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

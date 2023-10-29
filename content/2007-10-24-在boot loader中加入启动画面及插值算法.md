@@ -1,11 +1,8 @@
 ---
-id: 9858
 title: 在boot loader中加入启动画面及插值算法
 date: 2007-10-24T10:13:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9858
-permalink: '/2007/10/24/%e5%9c%a8boot-loader%e4%b8%ad%e5%8a%a0%e5%85%a5%e5%90%af%e5%8a%a8%e7%94%bb%e9%9d%a2%e5%8f%8a%e6%8f%92%e5%80%bc%e7%ae%97%e6%b3%95/'
 category:   嵌入式  
 tags:   Windows CE
   - 软件

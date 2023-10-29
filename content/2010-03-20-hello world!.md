@@ -1,11 +1,8 @@
 ---
-id: 11025
 title: Hello world!
 date: 2010-03-20T21:08:12+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=1
-permalink: /2010/03/20/hello-world-2/
 category:   未分类  
 ---
 Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!

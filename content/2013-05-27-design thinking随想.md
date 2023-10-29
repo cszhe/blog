@@ -1,11 +1,8 @@
 ---
-id: 10876
 title: Design Thinking随想
 date: 2013-05-27T17:12:09+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10876
-permalink: '/2013/05/27/design-thinking%e9%9a%8f%e6%83%b3/'
 category:   工作和学习  
 ---
 上周应SAP公司的邀请，到奥兰多参加SAP公司的**sapphire**now年度会议。US去了很多趟，这种大企业的会议也参加了不少，旅游，开会，购物都没留下什么深刻的印象，唯一让我感觉到有收获的，是参加SAP University Alliance会前组织的一个Design Thinking Jam，亲身体验、实践了一下这个方法。

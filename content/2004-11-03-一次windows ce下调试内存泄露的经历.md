@@ -1,11 +1,8 @@
 ---
-id: 9742
 title: 一次Windows CE下调试内存泄露的经历
 date: 2004-11-03T00:41:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9742
-permalink: '/2004/11/03/%e4%b8%80%e6%ac%a1windows-ce%e4%b8%8b%e8%b0%83%e8%af%95%e5%86%85%e5%ad%98%e6%b3%84%e9%9c%b2%e7%9a%84%e7%bb%8f%e5%8e%86/'
 category:   未分类  
 tags:   Windows CE
   - 嵌入式

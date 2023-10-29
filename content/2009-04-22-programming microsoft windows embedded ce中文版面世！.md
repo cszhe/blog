@@ -1,11 +1,8 @@
 ---
-id: 9714
 title: Programming Microsoft Windows Embedded CE中文版面世！
 date: 2009-04-22T18:58:42+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9714
-permalink: '/2009/04/22/programming-microsoft-windows-embedded-ce%e4%b8%ad%e6%96%87%e7%89%88%e9%9d%a2%e4%b8%96%ef%bc%81/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

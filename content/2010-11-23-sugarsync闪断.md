@@ -1,11 +1,8 @@
 ---
-id: 10502
 title: SugarSync闪断
 date: 2010-11-23T00:25:20+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10502
-permalink: '/2010/11/23/sugarsync%e9%97%aa%e6%96%ad/'
 category:   未分类
 ---
 刚刚推荐大家用SugarSync，通过我的reference link，居然注册了20多个人。感动，感动。

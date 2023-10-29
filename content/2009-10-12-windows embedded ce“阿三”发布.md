@@ -1,11 +1,8 @@
 ---
-id: 9702
 title: Windows Embedded CE“阿三”发布
 date: 2009-10-12T16:59:54+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9702
-permalink: '/2009/10/12/windows-embedded-ce%e9%98%bf%e4%b8%89%e5%8f%91%e5%b8%83/'
 category:   嵌入式  
 tags:   微软
 ---

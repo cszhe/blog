@@ -1,11 +1,8 @@
 ---
-id: 9843
 title: Windows CE、Windows Mobile升级的杂谈
 date: 2007-04-15T13:21:32+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9843
-permalink: '/2007/04/15/windows-ce%e3%80%81windows-mobile%e5%8d%87%e7%ba%a7%e7%9a%84%e6%9d%82%e8%b0%88/'
 category:   嵌入式  
 tags:   Windows CE
 ---

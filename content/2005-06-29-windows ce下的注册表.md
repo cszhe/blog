@@ -1,11 +1,8 @@
 ---
-id: 9794
 title: Windows CE下的注册表
 date: 2005-06-29T18:22:56+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9794
-permalink: '/2005/06/29/windows-ce%e4%b8%8b%e7%9a%84%e6%b3%a8%e5%86%8c%e8%a1%a8/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

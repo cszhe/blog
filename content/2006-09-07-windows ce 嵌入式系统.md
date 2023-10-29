@@ -1,11 +1,8 @@
 ---
-id: 9828
 title: Windows CE 嵌入式系统
 date: 2006-09-07T17:32:41+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9828
-permalink: '/2006/09/07/windows-ce-%e5%b5%8c%e5%85%a5%e5%bc%8f%e7%b3%bb%e7%bb%9f/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

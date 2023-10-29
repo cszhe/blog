@@ -1,11 +1,8 @@
 ---
-id: 10988
 title: Becoming Steve Jobs的简单读后感
 date: 2015-04-10T10:58:57+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10988
-permalink: '/2015/04/10/becoming-steve-jobs%e7%9a%84%e7%ae%80%e5%8d%95%e8%af%bb%e5%90%8e%e6%84%9f/'
 category:   未分类
 tags: Apple  
 ---

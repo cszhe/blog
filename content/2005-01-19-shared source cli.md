@@ -1,11 +1,8 @@
 ---
-id: 9759
 title: Shared Source CLI
 date: 2005-01-19T11:30:19+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9759
-permalink: /2005/01/19/shared-source-cli/
 category:   未分类  
 tags:   微软
 ---

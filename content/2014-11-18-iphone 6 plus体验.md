@@ -1,11 +1,8 @@
 ---
-id: 10968
 title: iPhone 6 Plus体验
 date: 2014-11-18T21:08:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10968
-permalink: '/2014/11/18/iphone-6-plus%e4%bd%93%e9%aa%8c/'
 category:   Apple
 tags:   iPhone , 软件
 ---

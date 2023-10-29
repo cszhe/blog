@@ -1,11 +1,8 @@
 ---
-id: 10649
 title: write once, run everywhere! everywhere?
 date: 2011-07-22T16:24:01+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10649
-permalink: /2011/07/22/write-once-run-everywhere-everywhere/
 category:   工作和学习  
 ---
 給香港地鐵寫了一週的java代碼，真是受罪。怪不得Java的Desktop編程不行，感覺連MFC都不如，UI上的控件要一點一點用代碼寫出來，人家MFC至少還有個Dialog可以所見即所得的拖拽。而且還沒有AbsoluteLayout，都是相對佈局，累死人了。對於習慣了Android的XML來構造的人來說，簡直是一覺回到解放前啊。

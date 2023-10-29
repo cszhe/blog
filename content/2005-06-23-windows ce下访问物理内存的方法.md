@@ -1,11 +1,8 @@
 ---
-id: 9792
 title: Windows CE下访问物理内存的方法
 date: 2005-06-23T21:19:32+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9792
-permalink: '/2005/06/23/windows-ce%e4%b8%8b%e8%ae%bf%e9%97%ae%e7%89%a9%e7%90%86%e5%86%85%e5%ad%98%e7%9a%84%e6%96%b9%e6%b3%95/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

@@ -1,11 +1,8 @@
 ---
-id: 9758
 title: Hello ElaME
 date: 2005-01-17T16:56:54+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9758
-permalink: /2005/01/17/hello-elame/
 category:   未分类
 tags:   软件
 ---

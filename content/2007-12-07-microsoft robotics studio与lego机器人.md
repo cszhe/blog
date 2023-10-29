@@ -1,11 +1,8 @@
 ---
-id: 9861
 title: Microsoft Robotics Studio与LEGO机器人
 date: 2007-12-07T16:04:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9861
-permalink: '/2007/12/07/microsoft-robotics-studio%e4%b8%8elego%e6%9c%ba%e5%99%a8%e4%ba%ba/'
 category:   嵌入式  
 tags:   微软  , 程序员  , 软件
 ---

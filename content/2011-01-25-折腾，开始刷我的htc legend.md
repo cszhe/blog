@@ -1,11 +1,8 @@
 ---
-id: 10566
 title: 折腾，开始刷我的HTC Legend
 date: 2011-01-25T20:24:44+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10566
-permalink: '/2011/01/25/%e6%8a%98%e8%85%be%ef%bc%8c%e5%bc%80%e5%a7%8b%e5%88%b7%e6%88%91%e7%9a%84htc-legend/'
 category:   未分类 
 tags: Android
 ---

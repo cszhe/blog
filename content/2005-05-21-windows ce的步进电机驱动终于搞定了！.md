@@ -1,11 +1,8 @@
 ---
-id: 9780
 title: Windows CE的步进电机驱动终于搞定了！
 date: 2005-05-21T13:26:28+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9780
-permalink: '/2005/05/21/windows-ce%e7%9a%84%e6%ad%a5%e8%bf%9b%e7%94%b5%e6%9c%ba%e9%a9%b1%e5%8a%a8%e7%bb%88%e4%ba%8e%e6%90%9e%e5%ae%9a%e4%ba%86%ef%bc%81/'
 category:   嵌入式  
 tags:   Windows CE
 ---

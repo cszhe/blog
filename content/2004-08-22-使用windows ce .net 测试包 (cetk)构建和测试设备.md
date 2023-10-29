@@ -1,11 +1,8 @@
 ---
-id: 9736
 title: 使用Windows CE .NET 测试包 (CETK)构建和测试设备
 date: 2004-08-22T12:10:02+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9736
-permalink: '/2004/08/22/%e4%bd%bf%e7%94%a8windows-ce-net-%e6%b5%8b%e8%af%95%e5%8c%85-cetk%e6%9e%84%e5%bb%ba%e5%92%8c%e6%b5%8b%e8%af%95%e8%ae%be%e5%a4%87/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

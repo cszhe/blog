@@ -1,11 +1,8 @@
 ---
-id: 9847
 title: 中国移动GPRS cmnet测试报告
 date: 2007-06-18T22:01:32+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9847
-permalink: '/2007/06/18/%e4%b8%ad%e5%9b%bd%e7%a7%bb%e5%8a%a8gprs-cmnet%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a/'
 category:   嵌入式  
 tags:   同济
 ---

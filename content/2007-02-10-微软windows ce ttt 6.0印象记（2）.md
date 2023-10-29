@@ -1,11 +1,8 @@
 ---
-id: 9837
 title: 微软Windows CE TTT 6.0印象记（2）
 date: 2007-02-10T22:48:50+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9837
-permalink: '/2007/02/10/%e5%be%ae%e8%bd%afwindows-ce-ttt-6-0%e5%8d%b0%e8%b1%a1%e8%ae%b0%ef%bc%882%ef%bc%89/'
 category:   嵌入式  
 tags:   C++  , Google  , Windows CE
 ---

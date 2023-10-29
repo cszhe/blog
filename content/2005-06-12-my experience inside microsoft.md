@@ -1,11 +1,8 @@
 ---
-id: 9787
 title: My Experience inside Microsoft
 date: 2005-06-12T18:11:54+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9787
-permalink: /2005/06/12/my-experience-inside-microsoft/
 category:   未分类
 tags:   软件
 ---

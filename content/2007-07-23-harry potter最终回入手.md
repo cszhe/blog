@@ -1,11 +1,8 @@
 ---
-id: 9853
 title: Harry Potter最终回入手
 date: 2007-07-23T23:53:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9853
-permalink: '/2007/07/23/harry-potter%e6%9c%80%e7%bb%88%e5%9b%9e%e5%85%a5%e6%89%8b/'
 category:   未分类  
 ---
 自己不能算是个正宗的哈迷吧。去年夏天在张江无助的时候，为了使自己的英语不至于荒废，在地摊上以极低的价格一次性购入了Harry Potter英文版1-6（当然是D的）。然后一个夏天全部读完。毕竟是写给小朋友看的书，难度不高。结果呢，优美的词汇和描述没学到多少，反而学了些什么魔杖啊，咒语啊之类的东西。

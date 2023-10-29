@@ -1,11 +1,8 @@
 ---
-id: 9804
 title: 活动：Windows Embedded Technical Seminar
 date: 2005-08-19T16:04:53+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9804
-permalink: '/2005/08/19/%e6%b4%bb%e5%8a%a8%ef%bc%9awindows-embedded-technical-seminar/'
 category:   未分类
 tags:   同济  , 嵌入式  , 软件
 ---

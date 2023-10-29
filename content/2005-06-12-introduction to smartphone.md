@@ -1,11 +1,8 @@
 ---
-id: 9786
 title: Introduction to Smartphone
 date: 2005-06-12T18:08:45+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9786
-permalink: /2005/06/12/introduction-to-smartphone/
 category:   未分类
 ---
 Introduction to Smartphone
