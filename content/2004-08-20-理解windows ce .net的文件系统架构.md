@@ -1,11 +1,8 @@
 ---
-id: 9735
 title: 理解Windows CE .NET的文件系统架构
 date: 2004-08-20T23:21:37+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9735
-permalink: '/2004/08/20/%e7%90%86%e8%a7%a3windows-ce-net%e7%9a%84%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e6%9e%b6%e6%9e%84/'
 category:   未分类
 tags:   Windows CE
 ---

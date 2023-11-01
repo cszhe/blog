@@ -1,11 +1,8 @@
 ---
-id: 9796
 title: Windows CE下的错误报告
 date: 2005-07-01T16:10:08+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9796
-permalink: '/2005/07/01/windows-ce%e4%b8%8b%e7%9a%84%e9%94%99%e8%af%af%e6%8a%a5%e5%91%8a/'
 category:   嵌入式  
 tags:   Windows CE
 ---

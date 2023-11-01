@@ -1,11 +1,8 @@
 ---
-id: 10240
 title: 另起炉灶的Windows Phone 7
 date: 2010-03-30T16:36:40+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10240
-permalink: '/2010/03/30/%e5%8f%a6%e8%b5%b7%e7%82%89%e7%81%b6%e7%9a%84windows-phone-7/'
 category:   嵌入式  
 tags:   Windows CE
   - 微软

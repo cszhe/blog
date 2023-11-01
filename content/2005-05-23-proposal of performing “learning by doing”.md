@@ -1,11 +1,8 @@
 ---
-id: 9782
 title: Proposal of performing “Learning by doing”
 date: 2005-05-23T01:02:14+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9782
-permalink: /2005/05/23/proposal-of-performing-learning-by-doing/
 category:   工作和学习  
 ---
 知道自己英语不咋地，花了三个晚上把中文硬生生翻译成英文。等着被英语专家们批斗了。

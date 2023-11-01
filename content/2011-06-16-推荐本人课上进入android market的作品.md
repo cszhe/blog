@@ -1,11 +1,8 @@
 ---
-id: 10627
 title: 推荐本人课上进入Android Market的作品
 date: 2011-06-16T22:58:35+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10627
-permalink: '/2011/06/16/%e6%8e%a8%e8%8d%90%e6%9c%ac%e4%ba%ba%e8%af%be%e4%b8%8a%e8%bf%9b%e5%85%a5android-market%e7%9a%84%e4%bd%9c%e5%93%81/'
 category:   未分类
 tags: 教育, Android
 ---

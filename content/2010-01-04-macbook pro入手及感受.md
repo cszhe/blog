@@ -1,11 +1,8 @@
 ---
-id: 9696
 title: MacBook Pro入手及感受
 date: 2010-01-04T15:02:22+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9696
-permalink: '/2010/01/04/macbook-pro%e5%85%a5%e6%89%8b%e5%8f%8a%e6%84%9f%e5%8f%97/'
 category:   未分类  
 tags:   微软  , 软件
 ---

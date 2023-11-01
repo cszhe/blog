@@ -1,11 +1,8 @@
 ---
-id: 9850
 title: 与Microsoft Redmond Windows Automotive组的人的交流
 date: 2007-07-10T17:40:33+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9850
-permalink: '/2007/07/10/%e4%b8%8emicrosoft-redmond-windows-automotive%e7%bb%84%e7%9a%84%e4%ba%ba%e7%9a%84%e4%ba%a4%e6%b5%81/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

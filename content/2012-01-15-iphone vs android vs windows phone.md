@@ -1,11 +1,8 @@
 ---
-id: 10697
 title: iPhone vs Android vs Windows Phone
 date: 2012-01-15T16:55:01+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10697
-permalink: /2012/01/15/iphone-vs-android-vs-windows-phone/
 category:   嵌入式  
 tags: Apple, Android
 ---

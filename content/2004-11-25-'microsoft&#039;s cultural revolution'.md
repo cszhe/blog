@@ -1,11 +1,8 @@
 ---
-id: 9745
 title: 'Microsoft&#039;s Cultural Revolution'
 date: 2004-11-25T20:02:02+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9745
-permalink: /2004/11/25/microsofts-cultural-revolution/
 category:   未分类  
 tags:   微软  , 软件
 ---

@@ -1,11 +1,8 @@
 ---
-id: 9760
 title: Shared Source CLI——窥探.NET底层机制的钥匙
 date: 2005-01-24T19:32:58+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9760
-permalink: '/2005/01/24/shared-source-cli-%e7%aa%a5%e6%8e%a2-net%e5%ba%95%e5%b1%82%e6%9c%ba%e5%88%b6%e7%9a%84%e9%92%a5%e5%8c%99/'
 category:   未分类
 tags:   C++  , 微软  , 软件
 ---

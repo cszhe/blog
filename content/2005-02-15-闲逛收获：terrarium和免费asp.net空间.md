@@ -1,11 +1,8 @@
 ---
-id: 9770
 title: 闲逛收获：Terrarium和免费asp.net空间
 date: 2005-02-15T01:42:38+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9770
-permalink: '/2005/02/15/%e9%97%b2%e9%80%9b%e6%94%b6%e8%8e%b7%ef%bc%9aterrarium%e5%92%8c%e5%85%8d%e8%b4%b9asp-net%e7%a9%ba%e9%97%b4-2/'
 category:   未分类  
 tags:   程序员
 ---

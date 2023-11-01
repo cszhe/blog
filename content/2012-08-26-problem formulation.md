@@ -1,11 +1,8 @@
 ---
-id: 10784
 title: Problem Formulation
 date: 2012-08-26T00:42:09+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10784
-permalink: /2012/08/26/problem-formulation/
 geo_latitude:
   - "22.304584"
 geo_longitude:

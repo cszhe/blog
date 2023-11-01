@@ -1,11 +1,8 @@
 ---
-id: 9693
 title: Windows CE，你妈吗喊你在多核上玩玩
 date: 2010-01-24T22:23:45+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9693
-permalink: '/2010/01/24/windows-ce%ef%bc%8c%e4%bd%a0%e5%a6%88%e5%90%97%e5%96%8a%e4%bd%a0%e5%9c%a8%e5%a4%9a%e6%a0%b8%e4%b8%8a%e7%8e%a9%e7%8e%a9/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

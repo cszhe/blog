@@ -1,11 +1,8 @@
 ---
-id: 10539
 title: 探索一下Windows Phone 7的xde和image
 date: 2010-12-29T23:31:14+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=10539
-permalink: '/2010/12/29/%e6%8e%a2%e7%b4%a2%e4%b8%80%e4%b8%8bwindows-phone-7%e7%9a%84xde%e5%92%8cimage/'
 category:   嵌入式  
 ---
 今天又玩了一下windows phone 7的sdk，发现模拟器改名叫xde.exe了，不是以前的device emulator了。对于喜欢穷根究底的我，第一希望研究的不是复杂的.NET类库及API，而是WP7到底是怎么回事。那就做个小测试，深度探索一下这个xde，以及sdk中自带的image映像吧。

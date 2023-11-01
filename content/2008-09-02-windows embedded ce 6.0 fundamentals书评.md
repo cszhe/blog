@@ -1,11 +1,8 @@
 ---
-id: 9880
 title: Windows Embedded CE 6.0 Fundamentals书评
 date: 2008-09-02T13:13:00+00:00
 author: omale
 layout: post
-guid: http://hezongjian.com/blog/?p=9880
-permalink: '/2008/09/02/windows-embedded-ce-6-0-fundamentals%e4%b9%a6%e8%af%84/'
 category:   嵌入式  
 tags:   Windows CE
   - 嵌入式

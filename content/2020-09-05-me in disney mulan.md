@@ -1,9 +1,9 @@
-----
+---
 title: Me in Disney Mulan
 date: 2020-09-05 20:20
 category: 新西兰生活
 tags:   海外经历
-----
+---
 
 
 This is all the screenshots from Disney Mulan that include me.
