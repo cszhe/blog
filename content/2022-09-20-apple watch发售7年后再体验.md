@@ -7,7 +7,7 @@ tags: Apple
 
 时光飞逝, 岁月如梭, 转眼Apple Watch第8代都发售了. 在2015年Apple Watch第一代发售的时候, 曾经写过一篇Apple Watch第一代的使用体验. 如下文:
 
-[Apple Watch三天体验](https://hezongjian.com/apple-watchsan-tian-ti-yan.html)
+[Apple Watch三天体验](https://www.hezongjian.com/apple-watchsan-tian-ti-yan.html)
 
 [Apple Watch三天体验]({filename}2015-04-27-apple watch三天体验.md)
 
