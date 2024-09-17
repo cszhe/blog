@@ -78,7 +78,7 @@ GITHUB_URL = 'https://github.com/cszhe/blog'
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 PLUGIN_PATHS = ['./external/plugins']
-PLUGINS = ['i18n_subsites', 'tag_cloud', 'tipue_search']
+PLUGINS = ['i18n_subsites', 'tag_cloud', 'tipue_search', 'render_math']
 
 # tipue_search settings
 DIRECT_TEMPLATES = ('index', 'categories', 'tags', 'archives', 'search')
