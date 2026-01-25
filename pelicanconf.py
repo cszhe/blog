@@ -61,11 +61,15 @@ RELATIVE_URLS = True
 
 THEME = "./external/themes/pelican-bootstrap3"
 
-STATIC_PATHS = ['uploads', 'extra/favicon.ico', 'extra/_headers']
+STATIC_PATHS = ['uploads', 'extra/favicon.ico', 'extra/_headers', 'extra/custom.css']
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
-    'extra/_headers': {'path': '_headers'}
+    'extra/_headers': {'path': '_headers'},
+    'extra/custom.css': {'path': 'static/css/custom.css'}
     }
+
+# Load theme custom CSS (see external/themes/pelican-bootstrap3 README)
+CUSTOM_CSS = 'static/css/custom.css' 
 
 # feed settings
 FEED_DOMAIN = "https://www.hezongjian.com"

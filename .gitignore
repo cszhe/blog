@@ -106,4 +106,6 @@ output/
 .firebase/
 .DS_Store
 
+# vendor
 vendor/
+
