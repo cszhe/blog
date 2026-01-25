@@ -1,0 +1,29 @@
+/* Custom CSS to show visible vertical borders for tables inside post content */
+.entry-content table {
+  border-collapse: collapse;
+}
+.entry-content table, .entry-content th, .entry-content td {
+  border: 1px solid #ddd;
+}
+.entry-content th, .entry-content td {
+  padding: 6px 8px;
+}
+.entry-content thead th {
+  border-bottom: 2px solid #ccc;
+}
+
+/* Image helper for single-article use: add class="half" to apply */
+.entry-content img.half {
+  width: 50%;
+  height: auto; /* preserves aspect ratio */
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Video helper for single-article use: add class="center" to apply */
+.entry-content video.center {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
