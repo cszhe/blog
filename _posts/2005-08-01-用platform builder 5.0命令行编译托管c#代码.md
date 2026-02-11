@@ -7,6 +7,7 @@ category:   未分类
 tags:
   - C++
   - 微软
+slug: yong-platform-builder-50ming-ling-xing-bian-yi-tuo-guan-cdai-ma
 ---
 在微软的MSDN文档中，并没有介绍使用命令行工具编译托管代码，仅仅介绍了如何使用sources, dirs编译C/C++代码。但是我们每次通过命令行编译代码，最终都会列出一个这样的清单：  
 BUILD: [00:0000000029<img src='http://sys2.blogcn.com/images/tongue.gif' border='0' onload='if(this.width>screen.width/2)this.style.width=screen.width/2;&#8217;>ROGC ]                      Files  

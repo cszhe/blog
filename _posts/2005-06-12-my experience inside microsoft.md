@@ -6,6 +6,7 @@ layout: post
 category:   未分类
 tags:
   - 软件
+slug: my-experience-inside-microsoft
 ---
 这也是英语课上的演讲，最近几天软件学院的MS热又有抬头之势,贴上来吧，是我对Microsoft企业文化的变迁的一些感觉。
 

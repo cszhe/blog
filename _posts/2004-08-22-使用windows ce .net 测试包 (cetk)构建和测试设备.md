@@ -8,6 +8,7 @@ tags:
   - Windows CE
   - 嵌入式
   - 软件
+slug: shi-yong-windows-ce-net-ce-shi-bao-cetkgou-jian-he-ce-shi-she-bei
 ---
 James Zwygart
 	  

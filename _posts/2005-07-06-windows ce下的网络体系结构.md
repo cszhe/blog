@@ -6,6 +6,7 @@ layout: post
 category:   未分类
 tags:
   - Windows CE
+slug: windows-cexia-de-wang-luo-ti-xi-jie-gou
 ---
 今天画了一幅图，是Windows CE下的网络体系结构图。其实图里面的有些东西以前没怎么接触过，例如blue tooth，贴出来，还请高手批评指正。
 

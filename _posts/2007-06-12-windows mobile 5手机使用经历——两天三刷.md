@@ -8,6 +8,7 @@ tags:
   - Windows CE
   - 嵌入式
   - 软件
+slug: windows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua
 ---
 <div>
   <div>

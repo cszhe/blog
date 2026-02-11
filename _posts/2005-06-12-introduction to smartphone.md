@@ -4,6 +4,7 @@ date: 2005-06-12T18:08:45+00:00
 author: omale
 layout: post
 category:   未分类
+slug: introduction-to-smartphone
 ---
 Introduction to Smartphone
 	  

@@ -6,6 +6,7 @@ layout: post
 category:   嵌入式  
 tags:
   - 微软
+slug: windows-embedded-cea-san-fa-bu
 ---
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
   <span lang="EN-US"></span>

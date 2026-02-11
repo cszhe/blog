@@ -7,6 +7,7 @@ category:   未分类
 tags:
   - 教育
   - Android
+slug: tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin
 ---
 本学期《移动应用开发》课程接近尾声，正如课程考核要求，课程项目必须全球发布，接受全球Android用户的考验。至今，十几个课程项目已经基本进入Market。推荐大家猛烈下载。
 

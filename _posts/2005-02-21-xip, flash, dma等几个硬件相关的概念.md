@@ -7,4 +7,5 @@ category:   嵌入式
 tags:
   - Google
   - 软件
+slug: xip-flash-dmadeng-ji-ge-ying-jian-xiang-guan-de-gai-nian
 ---

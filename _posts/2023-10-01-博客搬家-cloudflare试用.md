@@ -6,6 +6,7 @@ category: 工作和学习
 tags:
   - Geek
   - CloudFlare
+slug: bo-ke-ban-jia-cloudflareshi-yong
 ---
 博客已经开了20年了. 期间搬家了无数次, 好在数据没丢. 最早是用国内的所谓Blog service provider, 那个时候网络管理还不是那么严格. 有很多博客大巴, blogcn之类的网站可以让你开个账号就写文章. 但是这些网站都是免费的, 也不知道什么时候就会关门, 我最早用的博客大巴就关门了. 好在博客搬家功能不错, 数据都没丢.
 

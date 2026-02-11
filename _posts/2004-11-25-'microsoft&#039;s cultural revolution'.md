@@ -7,6 +7,7 @@ category:   未分类
 tags:
   - 微软
   - 软件
+slug: microsofts-cultural-revolution
 ---
 今天在图书馆里面看书，发现了一本封面很吸引人的newsweek，Bill Gates哥哥被PS成了毛泽东爷爷，然后文章的标题是&ldquo;微软的文化大革命&rdquo;全文转发如下
 

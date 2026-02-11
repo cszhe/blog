@@ -4,6 +4,7 @@ date: 2010-12-15T23:29:09+00:00
 author: omale
 layout: post
 category:   未分类  
+slug: liveeduhuan-shi-google-app-for-education
 ---
 学校的信息化建设实在差到令人发指，发指到@tongji.edu.cn的邮箱几乎没人在用，除了发重要邮件的时候用一下，其它时候都是杂牌军在作战，gmail, hotmail, yahoo mail, 163 mail甚至qq mail都用上了。其它一些协作功能，例如日程管理，联系人管理，文档共享协作就更别奢望了。
 

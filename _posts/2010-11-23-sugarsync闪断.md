@@ -4,6 +4,7 @@ date: 2010-11-23T00:25:20+00:00
 author: omale
 layout: post
 category:   未分类
+slug: sugarsyncshan-duan
 ---
 刚刚推荐大家用SugarSync，通过我的reference link，居然注册了20多个人。感动，感动。
 

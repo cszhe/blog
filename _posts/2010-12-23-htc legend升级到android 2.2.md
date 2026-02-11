@@ -4,6 +4,7 @@ date: 2010-12-23T13:56:37+00:00
 author: omale
 layout: post
 category:   嵌入式  
+slug: htc-legendsheng-ji-dao-android-22
 ---
 今天无意手机点了一下check for upgrade，居然弹出对话框说有2.2更新，真是喜出望外。我的印度版HTC Legend，网上一直戏称&ldquo;三版&rdquo;，居然有更新了。
 

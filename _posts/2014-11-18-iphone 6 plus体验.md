@@ -7,6 +7,7 @@ category:   Apple
 tags:
   - iPhone
   - 软件
+slug: iphone-6-plusti-yan
 ---
 <p style="margin: 0in; font-size: 11.0pt;">
   <span lang="zh-CN" style="font-family: SimSun;">为了犒劳自己，买了一个</span><span lang="en-US" style="font-family: Calibri;">iPhone 6 Plus</span><span lang="zh-CN" style="font-family: SimSun;">。银色，我自己最喜欢的颜色。土豪金太俗了，不喜欢。黑色的太老气了，不喜欢。我最喜欢的还是浅色系。</span>

@@ -4,6 +4,7 @@ date: 2010-05-06T23:22:12+00:00
 author: omale
 layout: post
 category:   嵌入式  
+slug: direct-3dyi-zhi-dao-direct-3d-mobile
 ---
 最近有个项目，要把原本用Direct 3D 8和Direct 3D 9写的程序移植到基于Windows CE的嵌入式设备上去。嵌入式设备上用的Direct X版本与桌面截然不同，名字叫做Direct 3D Mobile（简称D3DM），顾名思义，是从Windows Mobile上挪到Windows CE上的feature之一。其实在D3DM之前，偶记得在遥远的Windows CE .NET 4.2时期，微软曾经在CE上做过桌面dx的支持，那时候api名字什么完全一样，估计后来发现实在不是个好主意，才另起炉灶了。
 

@@ -8,6 +8,7 @@ tags:
   - 同济
   - 嵌入式
   - 软件
+slug: tong-ji-wei-ruan-2005-windows-embeddedjiao-xue-yan-tao-hui-gan-xiang
 ---
 6月25日和26日，由我校软件学院与微软亚洲研究院联合举办的2005微软嵌入式系统教学研讨会，在我校成功举行。（此处略去数百字，原文，同济大学网站：http://www.tongji.edu.cn/news/20050627162954.htm
 

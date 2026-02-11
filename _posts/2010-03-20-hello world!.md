@@ -4,6 +4,7 @@ date: 2010-03-20T21:08:12+00:00
 author: omale
 layout: post
 category:   未分类  
+slug: hello-world
 ---
 Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!
 

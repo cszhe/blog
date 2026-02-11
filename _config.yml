@@ -11,6 +11,7 @@ timezone: America/New_York
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+  - jekyll_slugify
 
 exclude:
   - "Gemfile"
@@ -30,11 +31,8 @@ exclude:
   - ".jekyll-cache"
   - "vendor"
 
-# Handle Chinese characters in URLs
-permalink: /:categories/:year/:month/:day/:title.html
-
-# Slugify settings for non-ASCII characters
-slugify: ascii
+# Preserve old Pelican URLs - use same slug format
+permalink: /:title.html
 
 # Keep uploads in root directory
 include:
@@ -45,10 +43,12 @@ remote_theme: jekyll/minima
 
 # Minima theme settings
 minima:
-  skin: dark
   date_format: "%B %-d, %Y"
   show_excerpts: true
 
 # Pagination settings
 paginate: 10
 paginate_path: "/page/:num/"
+
+# Slugify settings
+slugify: none

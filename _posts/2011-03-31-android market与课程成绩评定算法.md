@@ -4,6 +4,7 @@ date: 2011-03-31T10:54:53+00:00
 author: omale
 layout: post
 category:   工作和学习  
+slug: android-marketyu-ke-cheng-cheng-ji-ping-ding-suan-fa
 ---
 本学期开设Android课程，要求所有同学的软件都要上传到Android Market里面，并且根据Market的表现占课程成绩的一部分。虽然学院很多课程都要做项目，但是课程项目要全球发布，接受全球考验却是第一回。绞尽脑汁想了一个评估算法，今年先尝试一下，是否合理，课程项目考核要求如下：
 

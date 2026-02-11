@@ -6,6 +6,7 @@ layout: post
 category:   未分类  
 tags:
   - 程序员
+slug: xian-guang-shou-huo-terrariumhe-mian-fei-aspnetkong-jian
 ---
 习惯于在网上闲逛，偶尔还能有些小收获。今天有两个比较值得一提的东西。  
 第一个是MS开发的一个程序员游戏Terrarium，这个玩意其实早就知道了，跟java的robocode(不知道是不是叫这个名字)差不多，不过一个是机器人（？）一个是动植物。都是Coding来操纵动植物的行为，然后Coding的越好，动物就越凶猛越强。今天终于把Terrarium的客户端下载到机器上，装了一下，然后又用vs.net写了一个动物一个植物（都是sample code），还真把这个东西跑起来了。看着那几个蜘蛛有模有样的吃草，还真有点感觉。  

@@ -8,6 +8,7 @@ tags:
   - Windows CE
   - 嵌入式
   - 软件
+slug: windows-ce-qian-ru-shi-xi-tong
 ---
 [后来加上去的]  
 这个是China-pub上面的书籍信息连接：  

@@ -6,6 +6,7 @@ layout: post
 category:   嵌入式  
 tags:
   - Windows CE
+slug: windows-ce-windows-mobilesheng-ji-de-za-tan
 ---
 <meta content="MSHTML 6.00.6000.16414" name=GENERATOR>
 

@@ -4,6 +4,7 @@ date: 2010-12-11T23:26:21+00:00
 author: omale
 layout: post
 category:   嵌入式  
+slug: kan-dao-liao-windows-phone-7de-zhen-ji
 ---
 这两天在成都参加微软的嵌入式师资研讨会，见到了久违的李贝、马宁和卢列同志。李贝和马宁已经装备上WP7了，用WP7就一个好，锻炼英语，他们给我发短信都用英文了。没中文输入法，哈。
 

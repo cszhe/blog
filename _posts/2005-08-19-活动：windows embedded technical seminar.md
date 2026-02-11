@@ -8,6 +8,7 @@ tags:
   - 同济
   - 嵌入式
   - 软件
+slug: huo-dong-windows-embedded-technical-seminar
 ---
 9月2日我会在微软06财年的Windows Embedded Technical Seminar上海站上做一个演讲。内容是Platform Builder 5.0的介绍，难度不是很大，比较适合初、中级水平的人。
 	  

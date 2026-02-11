@@ -8,6 +8,7 @@ tags:
   - Windows CE
   - 微软
   - 软件
+slug: ling-qi-lu-zao-de-windows-phone-7
 ---
 作为MVP，在MIX会议还没有召开之前，就第一时间知道了微软MIX会议的内容。以及Windows Phone 7系列的最新消息。虽然之前在iPhone, Android等后起之秀的群起而攻之下，谣言四起，当事实真的来临时，不免还是唏嘘不已。
 

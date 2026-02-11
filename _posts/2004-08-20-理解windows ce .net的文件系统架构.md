@@ -6,6 +6,7 @@ layout: post
 category:   未分类
 tags:
   - Windows CE
+slug: li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou
 ---
 概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。
 	  

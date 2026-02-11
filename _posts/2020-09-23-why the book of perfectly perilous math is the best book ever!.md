@@ -5,6 +5,7 @@ date: 2020-09-23 10:20 +00:00
 category: 何事谦
 tags:
   - 何事谦
+slug: why-the-book-of-perfectly-perilous-math-is-the-best-book-ever
 ---
 Why the Book of Perfectly Perilous Math is the best book ever!
 

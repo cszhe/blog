@@ -7,6 +7,7 @@ category:   嵌入式
 tags:
   - Windows CE
   - 嵌入式
+slug: windows-cexia-de-flat-virtual-address-space
 ---
 On 6/10/05, song titan  wrote:  
 >  

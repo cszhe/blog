@@ -9,8 +9,8 @@ tags:
   - Windows CE
   - 微软
 
+slug: windows-on-armyou-neng-zha-yang
 ---
-
 年前天MVP的内部讨论组里面就在疯传Windows for ARM已经就绪了，马上就来了。Windows CE的末日到了。
 
 这次的CES上，果不其然，验证了。下面这张是传说的ARM Windows还可以连接打印机进行打印的图。

@@ -6,8 +6,8 @@ layout: post
 category:   未分类  
 tags:
   - Apple
+slug: apple-watchsan-tian-ti-yan
 ---
-
 Apple Watch首发当天4月24号下午一点拿到了Apple Watch。我的是42mm的sports蓝色款。马上就跟iPhone配对使用。到今天为止，正好三天，写一点自己的体会吧。
 
 **第一次设置：**

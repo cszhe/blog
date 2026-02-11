@@ -8,6 +8,7 @@ tags:
   - Windows CE
   - 嵌入式
   - 程序员
+slug: windows-ce-net-gao-ji-nei-cun-guan-li
 ---
 Windows CE .NET 高级内存管理
 	  

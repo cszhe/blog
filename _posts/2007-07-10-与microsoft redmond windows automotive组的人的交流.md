@@ -7,6 +7,7 @@ category:   嵌入式
 tags:
   - Windows CE
   - 嵌入式
+slug: yu-microsoft-redmond-windows-automotivezu-de-ren-de-jiao-liu
 ---
 <meta content="MSHTML 6.00.6000.16481" name=GENERATOR>
 

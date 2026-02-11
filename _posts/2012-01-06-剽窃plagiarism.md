@@ -4,6 +4,7 @@ date: 2012-01-06T22:36:25+00:00
 author: omale
 layout: post
 category:   工作和学习  
+slug: piao-qie-plagiarism
 ---
 本学期《研究伦理》课程即将结束，要交两个作业，一个是独立写一篇论文，一个是团队项目。今天上午团队小组最后一次会议，闹出一些不愉快的&ldquo;国际纠纷&rdquo;，因此想到了写这篇文章。
 

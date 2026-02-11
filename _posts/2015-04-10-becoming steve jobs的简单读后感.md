@@ -6,6 +6,7 @@ layout: post
 category:   未分类
 tags:
   - Apple
+slug: becoming-steve-jobsde-jian-dan-du-hou-gan
 ---
 <p style="margin: 0in; font-size: 11.0pt;">
   <span lang="zh-CN" style="font-family: SimSun;">终于读完了</span><span lang="en-US" style="font-family: Calibri;">Becoming Steve Jobs</span><span lang="zh-CN" style="font-family: SimSun;">全书，网上前几天热炒这本书中库克割肝救主，乔布斯劝库克家长相亲等桥段，实在三俗不能忍，自己写篇简单读后感。</span>

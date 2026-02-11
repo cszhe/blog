@@ -5,6 +5,7 @@ date: 2022-09-20 10:20
 category: Apple
 tags:
   - Apple
+slug: apple-watchfa-shou-7nian-hou-zai-ti-yan
 ---
 时光飞逝, 岁月如梭, 转眼Apple Watch第8代都发售了. 在2015年Apple Watch第一代发售的时候, 曾经写过一篇Apple Watch第一代的使用体验. 如下文:
 

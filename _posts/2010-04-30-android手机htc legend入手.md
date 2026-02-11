@@ -4,6 +4,7 @@ date: 2010-04-30T22:41:27+00:00
 author: omale
 layout: post
 category:   嵌入式  
+slug: androidshou-ji-htc-legendru-shou
 ---
 前几天手机被儿子给摔差不多要散架了。今天上午一时冲动，到老丁那里自摸3K RMB把HTC Legend请回家。作为一个微软公司及其Windows CE的坚定支持者，顶住了Apple请到美国参加WWDC加旧金山游玩的诱惑没有用iPhone，顶住了Blackberry到加拿大滑铁卢大学边上的总部参观的诱惑没有用黑莓，顶住了Symbian公司请到京城郊外某皇家度假村吃喝玩乐的诱惑没有用Symbian。这次在谷歌给学院捐赠13.6W RMB用来建立Android实验室的诱惑下，终于劈腿了。这也验证了一句话，叫做&ldquo;没有拆不散的家庭，只有不努力的小三&rdquo;。
 

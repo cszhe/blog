@@ -6,6 +6,7 @@ layout: post
 category:   嵌入式  
 tags:
   - Windows CE
+slug: windows-cexia-de-cuo-wu-bao-gao
 ---
 错误报告是Windows CE 5.0中添加的新功能，它是操作系统的一个可选组件。与我们熟悉的Windows XP的错误报告类似，在应用程序崩溃的时候，错误报告可以自动收集崩溃时的系统和应用程序的状态信息（通常叫做Dump File），并允许把收集的错误信息发送给微软或者OEM商，来更好的改善系统的可靠性。  
  <a href='http://images.blogcn.com/2005/7/1/8/omale,20050701155741.jpg'  target='_blank' ><img src='http://images.blogcn.com/2005/7/1/8/omale,20050701155741.jpg' border='0' onload='if(this.width>screen.width/2)this.width=screen.width/2;&#8217; ></img></a>  

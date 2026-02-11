@@ -6,6 +6,7 @@ layout: post
 category:   未分类  
 tags:
   - Google
+slug: how-do-you-like-your-eggs-steak-cooked
 ---
 虽然在US已经十天了，但是顿顿是亚洲中餐，长寿面，基本没有吃到鬼子的东西，今天是在美国的最后一天，最后一顿饭的时候被几个学生蛊惑去吃西餐。结果在西餐厅被鄙视了。
 

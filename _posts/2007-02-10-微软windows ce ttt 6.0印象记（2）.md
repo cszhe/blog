@@ -8,6 +8,7 @@ tags:
   - C++
   - Google
   - Windows CE
+slug: wei-ruan-windows-ce-ttt-60yin-xiang-ji-2
 ---
 <meta content="MSHTML 6.00.5730.11" name=GENERATOR>
 

@@ -7,6 +7,7 @@ category:   嵌入式
 tags:
   - Apple
   - Android
+slug: iphone-vs-android-vs-windows-phone
 ---
 昨天4500入手了谷歌的三儿子，Galaxy Nexus。用了一天，感觉畅快淋漓。昨天在微薄上发了一条消息，说终于不用忍受WP7了，激起了一些小讨论，可能有WP7的爱好者吧。那就详细的说一下我的看法吧。也算是一个在Mobile Computing的Research和Development领域摸爬滚打了将近10年的人的一家之言。本来文章的题目叫&ldquo;我为什么要换安卓&rdquo;，后来想干脆要玩就玩大的，把几个平台都评头论足一番。
 

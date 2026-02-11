@@ -1,36 +1,3 @@
-<script>
-  (function() {
-    // Get skin from localStorage or use default
-    var currentSkin = localStorage.getItem('minima-skin') || 'auto';
-    
-    // Set data attribute for initial skin
-    document.documentElement.setAttribute('data-skin', currentSkin);
-    
-    // Create skin switcher button
-    var button = document.createElement('button');
-    button.innerHTML = '🌗';
-    button.style.cssText = 'position: fixed; bottom: 20px; right: 20px; z-index: 9999; background: #ffffff; border: 2px solid #333; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3); outline: none; transition: transform 0.2s;';
-    button.title = 'Toggle skin: auto/light/dark/classic';
-    
-    button.onclick = function() {
-      // Define available skins
-      var skins = ['auto', 'light', 'dark', 'classic'];
-      var idx = skins.indexOf(currentSkin);
-      currentSkin = skins[(idx + 1) % skins.length];
-      
-      // Save and apply
-      localStorage.setItem('minima-skin', currentSkin);
-      document.documentElement.setAttribute('data-skin', currentSkin);
-      
-      // Update button icon
-      button.innerHTML = currentSkin === 'auto' ? '🌗' : (currentSkin === 'light' ? '☀️' : (currentSkin === 'dark' ? '🌑' : '🌙'));
-      
-      // Reload page to apply CSS
-      setTimeout(function() {
-        location.reload();
-      }, 300);
-    };
-    
-    document.body.appendChild(button);
-  })();
-</script>
+{% comment %}
+  Minima skin switcher via remote theme
+{% endcomment %}

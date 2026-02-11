@@ -7,6 +7,7 @@ category:   未分类
 tags:
   - Google
   - 程序员
+slug: blogfang-wen-liang-ju-ran-guo-mo-and-google-pages
 ---
 今天不经意看了自己的Blog，居然访问量过万了。在CSDN那种地方上，1W的访问量应该不是什么稀奇的事情吧。毕竟闲逛的程序员N多。可惜一开始选择的是这个个鸟不拉屎的BSP(他们自称的Blog Service Provider)。最近似乎有了一点点的自己的空闲时间了，也可以看看《国富论》，《电子学》，《Davinci Code》虾米的著作了，所以呢，也可以多到Blog上灌两下了。
 
