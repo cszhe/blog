@@ -11,7 +11,6 @@ timezone: America/New_York
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
-  - jekyll_slugify
 
 exclude:
   - "Gemfile"
@@ -31,8 +30,9 @@ exclude:
   - ".jekyll-cache"
   - "vendor"
 
-# Preserve old Pelican URLs - use same slug format
-permalink: /:title.html
+# Preserve old Pelican URLs - use slug field from frontmatter
+# For future posts: add 'slug: your-slug-here' to frontmatter
+permalink: /:slug.html
 
 # Keep uploads in root directory
 include:
@@ -49,6 +49,3 @@ minima:
 # Pagination settings
 paginate: 10
 paginate_path: "/page/:num/"
-
-# Slugify settings
-slugify: none
