@@ -1,12 +1,12 @@
 title: Zongjian's blog
 description: Personal blog of Zongjian He
-url: "https://www.hezongjian.com"
+url: "https://gh.hezongjian.com"
 
 author:
   name: Zongjian He
   email: ""
 
-timezone: America/New_York
+timezone: Pacific/Auckland
 
 plugins:
   - jekyll-feed
