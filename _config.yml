@@ -27,3 +27,17 @@ exclude:
   - "external/"
   - "deploy/"
   - "tasks.py"
+  - "content"
+  - ".bundle"
+  - ".jekyll-cache"
+  - "vendor"
+
+# Handle Chinese characters in URLs
+permalink: /:categories/:year/:month/:day/:title.html
+
+# Slugify settings for non-ASCII characters
+slugify: ascii
+
+# Keep uploads in root directory
+include:
+  - "uploads"
