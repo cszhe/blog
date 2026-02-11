@@ -1,4 +1,4 @@
-name: Build and Deploy Jekyll
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - convert-to-jekyll
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-22.04
     
     steps:
@@ -24,8 +24,11 @@ jobs:
           bundle install
           bundle exec jekyll build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to cszhe.github.io
+        uses: cpina/github-action-push-to-another-repository@v1.7
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          source-directory: '_site'
+          destination-github-username: 'cszhe'
+          destination-repository-name: 'cszhe.github.io'
+          target-branch: 'main'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
