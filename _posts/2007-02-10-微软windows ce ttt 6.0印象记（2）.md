@@ -4,7 +4,10 @@ date: 2007-02-10T22:48:50+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   C++  , Google  , Windows CE
+tags:
+  - C++
+  - Google
+  - Windows CE
 ---
 <meta content="MSHTML 6.00.5730.11" name=GENERATOR>
 

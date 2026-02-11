@@ -4,7 +4,8 @@ date: 2009-10-12T16:59:54+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   微软
+tags:
+  - 微软
 ---
 <p class="MsoNormal" style="margin: 0cm 0cm 0pt;">
   <span lang="EN-US"></span>

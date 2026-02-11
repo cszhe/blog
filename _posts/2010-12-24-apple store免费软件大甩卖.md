@@ -4,7 +4,8 @@ date: 2010-12-24T22:48:46+00:00
 author: omale
 layout: post
 category:   未分类  
-tags:   软件
+tags:
+  - 软件
 ---
 
 今天平安夜，可怜我还被学院派到外地去上课，在火车上无聊，登录app

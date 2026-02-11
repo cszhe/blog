@@ -4,7 +4,8 @@ date: 2005-05-21T13:26:28+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   Windows CE
+tags:
+  - Windows CE
 ---
 今天虽然是周末，但是还是跑到了嘉定校区工作。头等大事就是搞步进电机的驱动。以前虽然只是理论上推导，应该可以写成功，但是由于缺乏硬件，始终没有动过手。不免心虚。这次终于，硬件设备，代码，人都有了，开始写。  
 代码并不复杂。一个感觉HHARM的BSP可真够烂的！几乎什么都不支持，居然Windows CE能在这个板子上跑起来，真是奇迹。把driver相对应的注册表放到project.reg里面，Driver居然Load不起来。又没有registry editor可以查看，我只好摸黑操作。后来，后来，居然work了。  

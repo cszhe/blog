@@ -4,7 +4,10 @@ date: 2005-08-19T16:04:53+00:00
 author: omale
 layout: post
 category:   未分类
-tags:   同济  , 嵌入式  , 软件
+tags:
+  - 同济
+  - 嵌入式
+  - 软件
 ---
 9月2日我会在微软06财年的Windows Embedded Technical Seminar上海站上做一个演讲。内容是Platform Builder 5.0的介绍，难度不是很大，比较适合初、中级水平的人。
 	  

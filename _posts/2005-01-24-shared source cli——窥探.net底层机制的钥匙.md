@@ -4,7 +4,10 @@ date: 2005-01-24T19:32:58+00:00
 author: omale
 layout: post
 category:   未分类
-tags:   C++  , 微软  , 软件
+tags:
+  - C++
+  - 微软
+  - 软件
 ---
 编者按：Microsoft于2002年2月发布了Visual Studio.NET，揭开了.NET时代的序幕。几乎是与此同时，2002年3月27日，微软发布了Shared Sourced Common Language Infrastructure(共享源代码的通用语言基础设施，以下简称SSCLI)。两年过去了，国外已经有不少的大学和机构在研究SSCLI，也做出了一些比较不错的项目。但是反观国内，关于SSCLI的讨论和研究却乏善可陈。本文简单的介绍一下SSCLI的内容，希望能引起广大.NET爱好者的兴趣。
 

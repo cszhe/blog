@@ -4,7 +4,10 @@ date: 2004-03-31T22:26:19+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   Windows CE, 嵌入式, 程序员
+tags:
+  - Windows CE
+  - 嵌入式
+  - 程序员
 ---
 Windows CE .NET 高级内存管理
 	  

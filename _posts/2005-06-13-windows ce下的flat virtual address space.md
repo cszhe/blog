@@ -4,7 +4,9 @@ date: 2005-06-13T09:08:54+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   Windows CE, 嵌入式
+tags:
+  - Windows CE
+  - 嵌入式
 ---
 On 6/10/05, song titan  wrote:  
 >  

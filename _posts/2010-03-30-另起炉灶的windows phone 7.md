@@ -4,7 +4,8 @@ date: 2010-03-30T16:36:40+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   Windows CE
+tags:
+  - Windows CE
   - 微软
   - 软件
 ---

@@ -3,7 +3,9 @@ title: eXPerience Microsoft
 date: 2003-10-01T01:01:01+00:00
 layout: post
 category:   工作和学习
-tags:   微软, 软件
+tags:
+  - 微软
+  - 软件
 ---
 
 6月22日，我接到了盼望已久的微软全球技术中心 (Microsoft Global Technique Engineering Center) 的实习通知，开始了我在GTEC的intern生活。时光飞逝，转眼间在GTEC已经度过了一个多月。期间的一些感想和体会，采撷一二，以飨各位。  

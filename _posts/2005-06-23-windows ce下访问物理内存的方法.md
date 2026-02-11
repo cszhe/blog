@@ -4,7 +4,8 @@ date: 2005-06-23T21:19:32+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   Windows CE
+tags:
+  - Windows CE
   - 嵌入式
 ---
 嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。  

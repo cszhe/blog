@@ -4,5 +4,7 @@ date: 2005-02-21T14:30:25+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   Google  , 软件
+tags:
+  - Google
+  - 软件
 ---

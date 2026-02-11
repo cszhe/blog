@@ -4,7 +4,8 @@ date: 2015-04-27T12:03:19+00:00
 author: omale
 layout: post
 category:   未分类  
-tags: Apple
+tags:
+  - Apple
 ---
 
 Apple Watch首发当天4月24号下午一点拿到了Apple Watch。我的是42mm的sports蓝色款。马上就跟iPhone配对使用。到今天为止，正好三天，写一点自己的体会吧。

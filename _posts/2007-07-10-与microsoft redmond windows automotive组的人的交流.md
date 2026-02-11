@@ -4,7 +4,8 @@ date: 2007-07-10T17:40:33+00:00
 author: omale
 layout: post
 category:   嵌入式  
-tags:   Windows CE
+tags:
+  - Windows CE
   - 嵌入式
 ---
 <meta content="MSHTML 6.00.6000.16481" name=GENERATOR>

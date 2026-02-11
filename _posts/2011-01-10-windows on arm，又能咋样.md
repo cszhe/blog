@@ -3,7 +3,11 @@ title: Windows on ARM，又能咋样
 date: 2011-01-10T12:33:48+00:00
 layout: post
 category:   嵌入式  
-tags:   ARM  , iPad  , Windows CE, 微软
+tags:
+  - ARM
+  - iPad
+  - Windows CE
+  - 微软
 
 ---
 
