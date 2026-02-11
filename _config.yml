@@ -45,7 +45,6 @@ remote_theme: jekyll/minima
 
 # Minima theme settings
 minima:
-  skin: dark
   date_format: "%B %-d, %Y"
   show_excerpts: true
 

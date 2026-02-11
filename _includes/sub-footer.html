@@ -1,0 +1,28 @@
+{% comment %}
+  Minima skin switcher
+{% endcomment %}
+
+<script>
+  (function() {
+    var skins = ['auto', 'light', 'dark', 'classic'];
+    var currentSkin = localStorage.getItem('minima-skin') || 'auto';
+    
+    // Apply skin on load
+    document.documentElement.setAttribute('data-skin', currentSkin);
+    
+    // Create skin switcher button
+    var button = document.createElement('button');
+    button.innerHTML = '🌗';
+    button.style.cssText = 'position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: #fff; border: 1px solid #ccc; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); outline: none;';
+    button.title = 'Toggle skin';
+    
+    button.onclick = function() {
+      var idx = skins.indexOf(currentSkin);
+      currentSkin = skins[(idx + 1) % skins.length];
+      localStorage.setItem('minima-skin', currentSkin);
+      document.documentElement.setAttribute('data-skin', currentSkin);
+    };
+    
+    document.body.appendChild(button);
+  })();
+</script>
