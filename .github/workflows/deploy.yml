@@ -25,10 +25,8 @@ jobs:
           bundle exec jekyll build
 
       - name: Deploy to cszhe.github.io
-        uses: cpina/github-action-push-to-another-repository@v1.7
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          source-directory: '_site'
-          destination-github-username: 'cszhe'
-          destination-repository-name: 'cszhe.github.io'
-          target-branch: 'main'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: cszhe/cszhe.github.io
+          publish_dir: ./_site
