@@ -6,7 +6,7 @@ tags:
 These are all the screenshots from Disney Mulan that include me.
 
 <video controls width="640" height="360" poster="/uploads/2020/mulan/me.png">
-    <source src="/uploads/2020/mulan/me.mp4" type='video/mp4'>
+    <source src="/uploads/2020/mulan/me.mp4" type="video/mp4">
 </video>
 
 ![1](/uploads/2020/mulan/1.png)
