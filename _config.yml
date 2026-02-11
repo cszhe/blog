@@ -1,0 +1,29 @@
+title: Zongjian's blog
+description: Personal blog of Zongjian He
+url: "https://www.hezongjian.com"
+
+author:
+  name: Zongjian He
+  email: ""
+
+timezone: America/New_York
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "Makefile"
+  - "fabfile.py"
+  - "pelicanconf.py"
+  - "publishconf.py"
+  - "requirements.txt"
+  - "Dockerfile"
+  - "external/"
+  - "deploy/"
+  - "tasks.py"

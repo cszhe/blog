@@ -1,0 +1,39 @@
+<footer class="site-footer h-card">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">{{ site.author.name | escape }}</li>
+          {%- if site.author.email -%}
+          <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+      <div class="footer-col footer-col-2">
+        {%- if site.social -%}
+          <ul class="social-icons">
+            {%- if site.social.twitter -%}
+            <li>
+              <a href="https://twitter.com/{{ site.social.twitter }}">
+                <span class="screen-reader-text">Twitter</span>
+                <svg class="svg-icon"><use xlink:href="#twitter"></use></svg>
+              </a>
+            </li>
+            {%- endif -%}
+            {%- if site.social.github -%}
+            <li>
+              <a href="https://github.com/{{ site.social.github }}">
+                <span class="screen-reader-text">GitHub</span>
+                <svg class="svg-icon"><use xlink:href="#github"></use></svg>
+              </a>
+            </li>
+            {%- endif -%}
+          </ul>
+        {%- endif -%}
+      </div>
+      <div class="footer-col footer-col-3">
+        <p>{{ site.description | escape }}</p>
+      </div>
+    </div>
+  </div>
+</footer>
