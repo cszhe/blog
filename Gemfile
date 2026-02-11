@@ -10,3 +10,4 @@ end
 group :development, :test do
   gem "jekyll-remote-theme", "~> 0.4"
 end
+gem "jekyll-paginate"

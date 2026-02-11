@@ -41,3 +41,7 @@ slugify: ascii
 # Keep uploads in root directory
 include:
   - "uploads"
+
+# Pagination settings
+paginate: 10
+paginate_path: "/page/:num/"
