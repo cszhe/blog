@@ -1,6 +1,7 @@
 title: Zongjian's blog
 description: Personal blog of Zongjian He
 url: "https://gh.hezongjian.com"
+baseurl: ""
 
 author:
   name: Zongjian He
@@ -16,11 +17,8 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
   - "README.md"
-  - "Makefile"
   - "fabfile.py"
-  - "pelicanconf.py"
   - "publishconf.py"
-  - "requirements.txt"
   - "Dockerfile"
   - "external/"
   - "deploy/"
