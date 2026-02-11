@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Android开发学习笔记 | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Android开发学习笔记" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="买了Android手机，经过了一天的尝鲜期之后，开始学习Android编程开发了。毕竟以后学院的《移动设备开发》这门课将由我来上。没办法，三十岁的老程序员又开始学习编程了。" />
+<meta property="og:description" content="买了Android手机，经过了一天的尝鲜期之后，开始学习Android编程开发了。毕竟以后学院的《移动设备开发》这门课将由我来上。没办法，三十岁的老程序员又开始学习编程了。" />
+<link rel="canonical" href="https://www.hezongjian.com/androidkai-fa-xue-xi-bi-ji.html" />
+<meta property="og:url" content="https://www.hezongjian.com/androidkai-fa-xue-xi-bi-ji.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-05-02T16:30:34-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Android开发学习笔记" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2010-05-02T16:30:34-04:00","datePublished":"2010-05-02T16:30:34-04:00","description":"买了Android手机，经过了一天的尝鲜期之后，开始学习Android编程开发了。毕竟以后学院的《移动设备开发》这门课将由我来上。没办法，三十岁的老程序员又开始学习编程了。","headline":"Android开发学习笔记","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/androidkai-fa-xue-xi-bi-ji.html"},"url":"https://www.hezongjian.com/androidkai-fa-xue-xi-bi-ji.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Android开发学习笔记</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2010-05-02T16:30:34-04:00" itemprop="datePublished">
+        May 2, 2010
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>买了Android手机，经过了一天的尝鲜期之后，开始学习Android编程开发了。毕竟以后学院的《移动设备开发》这门课将由我来上。没办法，三十岁的老程序员又开始学习编程了。</p>
+
+<p>记录一些学习笔记，持续更新中。</p>
+
+<p>================================================================</p>
+
+<p>Part 1 基础部分</p>
+
+<p>Android分层：Hardware -&gt; Linux Kernel -&gt; Dalvik VM -&gt; Android Libraries -&gt; App</p>
+
+<p>Dalvik不是标准java实现，增加了自有的指令，基于寄存器的虚拟机，很多代码来自Apache Harmony (这个和谐啊)</p>
+
+<ul>
+  <li>单个可执行文件：.class -&gt; .dex的文件。</li>
+  <li>打包后的文件：.jar -&gt; .apk（其实就是zip，这导致android汉化没难度了，连PE文件格式解析器都不用了，直接unzip + notepad就行了）</li>
+</ul>
+
+<p>Android Libraries都以android namespace开头，包括view, app, util, widget, webkit等。</p>
+
+<p>Android支持多任务，系统同时可以运行6个任务，超过6个将会被杀死，长按home按钮可以看到正在运行的6个任务。</p>
+
+<p>Android每个任务都运行在独立的linux进程中，有独立的dalvik实例，并且有独立的用户ID。（这个太狠了，比.NET啥的都狠）不过也有办法让多个任务运行在同一个instance中，共享同一个 vm instance。</p>
+
+<p>Android的设备不可能做到iphone一样只有一个按钮，至少要有home, back和context menu三个按键。</p>
+
+<p>盈利模式：Android Market分成 + Google Service</p>
+
+<hr />
+
+<p>Part 2 开发环境搭建</p>
+
+<p>所需内容：JDK + eclipse + Android SDK + ADT(Google开发的Eclipse扩展插件)</p>
+
+<p>编程语言：SDK支持java，NDK支持C/C++，另外开发还可以用Simple语言，类BASIC（Bill Gates内牛满面….）</p>
+
+<hr />
+
+<p>Part 3 开发起步</p>
+
+<p>一个由IDE生成的Android项目包括如下文件：</p>
+
+<p><code class="language-plaintext highlighter-rouge">|   .classpath&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// xml路径文件</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   .project&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// xml项目文件</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   AndroidManifest.xml&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// android程序配置文件</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   default.properties&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// android的build system用的</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">+---.settings   // 设置信息</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">+---assets&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// 目前暂时为空</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">+---bin&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// 编译生成的东西</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   |   classes.dex&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// delvik vm的可执行文件</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   |   HelloAndroid.apk&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// android的可执行文件</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   |   resources.ap_&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// 资源文件</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   \---com</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|       \---hezongjian&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// java编译生成的class</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|               MyActivity.class</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|               R.class         </code></p>
+
+<p><code class="language-plaintext highlighter-rouge">+---gen&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// R.java，类似于resource.h</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   \---com&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// IDE自动管理，定义一些常量</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|       \---hezongjian</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|               R.java</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|               </code></p>
+
+<p><code class="language-plaintext highlighter-rouge">+---res&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// 资源</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   +---drawable-hdpi&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// 各种分辨率的资源     </code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   +---drawable-ldpi</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   +---drawable-mdpi    </code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   +---layout&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// 界面UI布局</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   |       main.xml     // 主界面布局xml文件</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|   \---values</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">|           strings.xml     // 字符串资源 </code></p>
+
+<p><code class="language-plaintext highlighter-rouge">\---src&lt;span class="Apple-tab-span" style="white-space: pre"&gt; &lt;/span&gt;// 源代码目录</code></p>
+
+<p>`    -–com`</p>
+
+<p>`        -–hezongjian`</p>
+
+<p>`                MyActivity.java<span class="Apple-tab-span" style="white-space: pre"> </span>// 主程序java文件`</p>
+
+<p>android程序UI采用流行的xml文件定义，例如main.xml，可以在xml中设定各个控件。</p>
+
+<p>主java文件的内容</p>
+
+<p><code class="language-plaintext highlighter-rouge">public class MyActivity extends Activity {  // 从Activity继承一个自己的行动</code></p>
+
+<p>`    public void onCreate(Bundle savedInstanceState) {  // 重写onCreate`</p>
+
+<p>`        super.onCreate(savedInstanceState);`</p>
+
+<p>`        setContentView(R.layout.main);  // 根据xml文件来设置view的内容`</p>
+
+<p>`    }`</p>
+
+<p><code class="language-plaintext highlighter-rouge">}</code></p>
+
+<font class="Apple-style-span" face="monospace">下面是增加messagebox的内容，方法是用android.widget.Toast中的方法。这个对话框过一会儿自己会消失，跟Windows上的不一样。</font>
+
+<p><code class="language-plaintext highlighter-rouge">public boolean onTouchEvent(MotionEvent event) {</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">return super.onTouchEvent(event);</code></p>
+
+<p><span class="Apple-style-span" style="font-family: monospace">}</span></p>
+
+<p>或者也可以这样：</p>
+
+<p><code class="language-plaintext highlighter-rouge">AlertDialog.Builder alert = new AlertDialog.Builder(this)</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">alert.setTitle("Title");  </code></p>
+
+<p><code class="language-plaintext highlighter-rouge">alert.setMessage("Hello World");</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">alert.show();</code></p>
+
+<p>用android.app下的AlertDialog来实现，不过AlertDialog功能比较强大，在这里是大炮打蚊子了。</p>
+
+<p>Android应用程序由如下几个部分构成，但都不是必须的：</p>
+
+<ul>
+  <li>Activity: 就是一个window，当然和window不一样。</li>
+  <li>Broadcast Receiver:就是接受系统广播的东西</li>
+  <li>Content Provider:向其他程序提供数据，例如你是一个杀毒软件，你要向其它程序提供当前系统安全级别</li>
+  <li>Service: 就是一个service。</li>
+</ul>
+
+<p>Android的task就是一个Activity的stack。一个task可以调用其他程序中的activity，然后放在自己的task stack里面，这样看起来其它任务就成了自己的一部分。这个设计比树形的windows tree要新颖多了。</p>
+
+<p>这些部分需要由Intent来组合。Intent是一个非常抽象的东西。看了很多中文解释或翻译都不明白。而英文原版网页被GFW给Ban了。无奈翻墙看developer.android.com上的东西，哎呀，再清楚明白不过了。估计需要文章再详细解释了。</p>
+
+<hr />
+
+  </div>
+
+  <a class="u-url" href="/androidkai-fa-xue-xi-bi-ji.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

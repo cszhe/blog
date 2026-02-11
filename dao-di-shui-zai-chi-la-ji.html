@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>到底谁在吃垃圾 | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="到底谁在吃垃圾" />
+<meta name="author" content="Zongjian He" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了." />
+<meta property="og:description" content="之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了." />
+<link rel="canonical" href="https://www.hezongjian.com/dao-di-shui-zai-chi-la-ji.html" />
+<meta property="og:url" content="https://www.hezongjian.com/dao-di-shui-zai-chi-la-ji.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-09-17T17:06:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="到底谁在吃垃圾" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Zongjian He"},"dateModified":"2025-09-17T17:06:00-04:00","datePublished":"2025-09-17T17:06:00-04:00","description":"之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了.","headline":"到底谁在吃垃圾","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/dao-di-shui-zai-chi-la-ji.html"},"url":"https://www.hezongjian.com/dao-di-shui-zai-chi-la-ji.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">到底谁在吃垃圾</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2025-09-17T17:06:00-04:00" itemprop="datePublished">
+        September 17, 2025
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span><span class="kn">from</span> <span class="n">cerebras.cloud.sdk</span> <span class="kn">import</span> <span class="n">Cerebras</span>
+<span class="kn">import</span> <span class="n">os</span>
+<span class="kn">import</span> <span class="n">logging</span>
+<span class="kn">from</span> <span class="n">logging.handlers</span> <span class="kn">import</span> <span class="n">RotatingFileHandler</span>
+<span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="n">pathvalidate</span> <span class="kn">import</span> <span class="n">sanitize_filename</span>
+<span class="kn">import</span> <span class="n">dotenv</span>
+<span class="n">dotenv</span><span class="p">.</span><span class="nf">load_dotenv</span><span class="p">()</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="nc">Cerebras</span><span class="p">(</span>
+  <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">CEREBRAS_API_KEY</span><span class="sh">"</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="sh">"</span><span class="s">html</span><span class="sh">"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="sh">"</span><span class="s">logs</span><span class="sh">"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Configure logging: console + rotating file
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="sh">"</span><span class="s">ai_server</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">Formatter</span><span class="p">(</span><span class="sh">"</span><span class="s">%(asctime)s %(levelname)s %(message)s</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">console_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">StreamHandler</span><span class="p">()</span>
+<span class="n">console_handler</span><span class="p">.</span><span class="nf">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
+
+<span class="n">file_handler</span> <span class="o">=</span> <span class="nc">RotatingFileHandler</span><span class="p">(</span><span class="sh">"</span><span class="s">logs/requests.log</span><span class="sh">"</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">file_handler</span><span class="p">.</span><span class="nf">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">path</span><span class="sh">'</span><span class="p">:</span> <span class="sh">''</span><span class="p">},</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">GET</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">POST</span><span class="sh">'</span><span class="p">])</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/&lt;path:path&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">GET</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">POST</span><span class="sh">'</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">catch_all</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="c1"># Log incoming request
+</span>    <span class="n">req_path</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">full_path</span><span class="p">.</span><span class="nf">strip</span><span class="p">(</span><span class="sh">"</span><span class="s">?</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">client_ip</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">remote_addr</span> <span class="ow">or</span> <span class="sh">"</span><span class="s">-</span><span class="sh">"</span>
+    <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Incoming request: method=%s path=%s client=%s UA=%s</span><span class="sh">"</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span><span class="p">,</span> <span class="n">req_path</span><span class="p">,</span> <span class="n">client_ip</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">headers</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">User-Agent</span><span class="sh">"</span><span class="p">))</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="n">req_path</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">html/</span><span class="sh">"</span> <span class="o">+</span> <span class="nf">sanitize_filename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">+</span> <span class="sh">"</span><span class="s">.html</span><span class="sh">"</span>
+    <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+            <span class="c1"># logger.info("Serving cached file=%s size=%d", filename, len(content))
+</span>            <span class="k">return</span> <span class="n">content</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Build and send prompt to the model
+</span>        <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">chat</span><span class="p">.</span><span class="n">completions</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
+            <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+                <span class="p">{</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="sa">f</span><span class="sh">"""</span><span class="s">You are a web server. A request has just come in on the path </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s">.
+                    Respond with HTML/CSS/JS that is appropriate for that path.
+                    Only return the HTML/CSS/JS, nothing else.
+                    Do not include any comments or explanations.
+                    Try to make the web page as beautiful and functional as possible.
+                    Don</span><span class="sh">'</span><span class="s">t mention that this is a simulation, make it as realistic as possible.
+                    You can add relative links if appropriate, but if the user follows a relative link, you</span><span class="sh">'</span><span class="s">ll have to handle that too, so be sure to pass enough context for yourself to understand what you</span><span class="sh">'</span><span class="s">re doing in the URL.
+                </span><span class="sh">"""</span>
+            <span class="p">}],</span>
+            <span class="n">model</span><span class="o">=</span><span class="sh">"</span><span class="s">gpt-oss-120b</span><span class="sh">"</span><span class="p">,</span>
+        <span class="p">).</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">message</span><span class="p">.</span><span class="n">content</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="p">.</span><span class="nf">exception</span><span class="p">(</span><span class="sh">"</span><span class="s">Model request failed for path=%s</span><span class="sh">"</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+        <span class="nf">return </span><span class="p">(</span><span class="sh">"</span><span class="s">&lt;h1&gt;Internal Server Error&lt;/h1&gt;</span><span class="sh">"</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="p">{</span><span class="sh">"</span><span class="s">Content-Type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">text/html</span><span class="sh">"</span><span class="p">}</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">7890</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>这段代码就是接受一个任意的URL请求, 然后把请求的路径发给LLM, 让LLM生成一个网页返回给用户. 我把它host在我自己的服务器上, https://wario.hezongjian.com/ 譬如你访问 https://wario.hezongjian.com/training, 它就会把路径/training发给LLM, 让LLM生成一个网页返回给你. 感觉这是一个培训网站, AI生成的网页大概是这样的:</p>
+
+<p><img src="/uploads/2025/AInternet/training.png" alt="图 training" /></p>
+
+<p>免费版, 生不成图, 所以图片看不了, 但是其它的东西都还行. 当然, 这个网页是AI生成的, 肯定东西是不存在的. 反正这种创作性东西, 可以胡编乱造, AI还是很擅长的, 有Hallucination也没关系, 又不是让AI给你看病, 看错了会出人命. 或者让AI给你投资, 投错了会亏钱. 这种东西, 让AI胡编乱造, 也没什么大不了的.</p>
+
+<p>最初只是我自己的一个娱乐项目, 它生成的网页有好多我觉得都还挺有那么回事, 譬如举几个例子:</p>
+
+<p>中文的:</p>
+
+<ul>
+  <li><a href="https://wario.hezongjian.com/上海地铁">上海地铁</a></li>
+  <li><a href="https://wario.hezongjian.com/东方明珠">东方明珠</a></li>
+</ul>
+
+<p>英文的:</p>
+
+<ul>
+  <li><a href="https://wario.hezongjian.com/universityofauckland">University of Auckland</a></li>
+  <li><a href="https://wario.hezongjian.com/newzealand">New Zealand</a></li>
+</ul>
+
+<p>过了几天, 我发现它生成的网页还真能用. 譬如:</p>
+
+<ul>
+  <li><a href="https://wario.hezongjian.com/passwordgenerator">Password Generator</a></li>
+</ul>
+
+<p>这个是一个密码生成器, 还挺好用的. 你可以选择密码的强度等, 它就自动帮你生成一个密码. 完全到了可用的程度了. 怪不得有人说AI可以顶个初级程序员. 这没几年HTML+JS的编程经验, 普通程序员还真不一定写得出来.</p>
+
+<p>后来发现, 这个东西真是黑客之友, 因为网上有无数的script boys在用各种黑客工具扫描你的网站, 看看你有没有把管理员什么打开, 他们的做法就是拼命扫描一些常见的路径. 譬如 /admin, /login, /wp-admin, /user, /cpanel, /config, /setup, /test, /debug, /.env, /.git, /backup, /old, /data等等等. 你的网站如果有这些路径的话, 他们就会尝试攻击你的网站. 但是如果你的网站没有这些路径, 他们就会放弃. 因为我这个网站是AI生成的, 对所有路径请求来者不拒, 而且会生成一个貌似是你要访问的网页, 所以黑客感觉得手了, 譬如这个:</p>
+
+<ul>
+  <li><a href="https://wario.hezongjian.com/admin">Admin</a></li>
+</ul>
+
+<p>然后它会返回你这个页面:</p>
+
+<p><img src="/uploads/2025/AInternet/admin.png" alt="图 admin" /></p>
+
+<p>简直惟妙惟肖. 你看这个页面, 乍一看还真像是进入了网站后台, 连财务收入数据都能看到, 狂喜! 当然这个页面是假的.</p>
+
+<h2 id="失控">失控</h2>
+
+<p>我把这个网页放了一段时间后, 有一天, 我自己请求的时候, 发现这个网页返回了 too many requests. 居然把免费的token给用完了. 其实我最开始用的是谷歌云上的Gemini模型, 但是谷歌云的速度不够快, 我换成了Cerebras的模型, 速度快多了. 它可是号称一天有14,400个请求, 一共1,000,000的token呢. 谁知道半天就给用完了. 我到html目录下去看, 果然生成了大量的网页. 这才不到半个月, 给我生成了200多MB的HTML网页, 这个可是纯粹的HTML网页啊, 没有任何图, 任何多媒体.</p>
+
+<p>但是, 问题是不知道是谁在请求. 所以我给我的网页加上了日志功能, 记录每次请求的IP地址和User-Agent, 然后把这些请求记录下来, 以便于分析. 然后, 又过了半个月….</p>
+
+<h2 id="分析">分析</h2>
+
+<p>我们来看一下日期请求, 都不用专业的工具, 眼睛看就很容易就发现, 来源主要三个:</p>
+
+<ul>
+  <li>compatible; Googlebot/2.1; +http://www.google.com/bot.html</li>
+  <li>compatible; GPTBot/1.2; +https://openai.com/gptbot</li>
+  <li>compatible; SemrushBot/7~bl; +http://www.semrush.com/bot.html</li>
+</ul>
+
+<p>我们分别来看一下他们都在干啥:</p>
+
+<h3 id="googlebot">Googlebot</h3>
+
+<p>这个是谷歌的爬虫, 不用说了, 爬下来数据不是用来谷歌搜索, 就是用来训练他们自家的Gemini模型的. 谷歌的爬虫是很有名的, 他们爬取了全世界绝大部分的网页, 但是我这个小网站, 谷歌爬虫很搞笑, 它把我这个网站当成了一个科技论坛, 然后就拼命的爬取各种论坛的常见路径, 诸如 /forum, /thread, /post, /reply, /topic, /viewtopic, /viewforum等等等. 你看它爬取的路径:</p>
+
+<ul>
+  <li>/community/forums/storage/cloud-storage-alternatives</li>
+  <li>/topic/emerging-tech/ai-automation</li>
+  <li>/posts/restful-api-design</li>
+</ul>
+
+<p>更有甚者, 它还把它当成了微软的官方文档MSDN, 然后就拼命的爬取MSDN的常见路径:</p>
+
+<ul>
+  <li>/msdn/documentation/azure/networking/network-interfaces/</li>
+  <li>/msdn/learn/azure/cognitive-services-path</li>
+  <li>/msdn/tutorials/azure-functions-serverless/http-trigger</li>
+</ul>
+
+<p>那自然, AI就给它生成了这些网页, 让它爬取. 自然, 这些网页都是假的. 但这个就很严重, 因为MSDN是微软的官方文档, 按理说是很权威的, 但是AI生成的MSDN文档, 可能是错误的, 甚至是误导性的. 这就很危险了. 你想想, 如果谷歌把这些错误的MSDN文档给索引了, 然后有程序员去搜索MSDN, 结果看到的是AI生成的错误文档, 那岂不是害人害己?</p>
+
+<h3 id="gptbot">GPTBot</h3>
+
+<p>这个是OpenAI的爬虫, 主要用来收集数据, 以便于训练他们的GPT模型. 比较搞笑的是, 我这个网站, 现在就是用GPT OSS模型来生成的数据, 所以, 他自己也不知道他生成的数据又被喂给了自己么? 自己生成的数据又喂给了自己来训练, 这也是另一种unsupervised learning吧. 前一阵子, “蒸馏”(distillation)这个词很火, 说得好听一点是学习致敬, 说得不好听一点就是窃. 其实这也是一种蒸馏, 让模型自己给自己喂数据, 然后自己给自己学习, 自己把自己都骗了, 以为自己很能打, 颇有点马保国的意思.</p>
+
+<p>OpenAI涉猎比较广泛, 它会爬取一些貌似是知识库的路径, 例如/kb等:</p>
+
+<ul>
+  <li>/kb/guides/managing-storage/file-systems</li>
+  <li>/docs/sdks/javascript</li>
+  <li>/solutions/iot/security</li>
+</ul>
+
+<p>一会儿又把这个网站当成个事件通知网站:</p>
+
+<ul>
+  <li>/events/cloud-native-summit</li>
+  <li>/sports/motorsports/wec</li>
+</ul>
+
+<p>看, 这个貌似是云原生峰会, 还挺高大上, 但是你自己想去参会, 结果发现根本没有这个峰会, 这就很尴尬了.</p>
+
+<h3 id="semrushbot">SemrushBot</h3>
+
+<p>这个是Semrush的爬虫, Semrush这个公司不像前面两个公司那么有名. 这个公司主要是做SEO(搜索引擎优化)相关的业务, 主要用来收集SEO相关的数据, 以便于提供更好的SEO服务.</p>
+
+<p>它非常专一, 专一到一直把这个网站当成微软的MSDN文档来爬取, 你看它爬取的路径:</p>
+
+<ul>
+  <li>/msdn/documentation/windows/drivers/kernel-mode-drivers/memory-management/</li>
+  <li>/msdn/documentation/net/apis/System/Linq</li>
+  <li>/msdn/documentation/windows/api-reference/networking/winsock/introduction/</li>
+  <li>/msdn/documentation/azure/tutorials/ai-ml/mlops-azureml/ml-governance</li>
+</ul>
+
+<p>我不知道为啥谷歌的bot会和Semrush的bot都把我这个网站当成MSDN文档来爬取. 我深度怀疑这两者背后在互通数据, 狼狈为奸, 当然我没有其它证据.</p>
+
+<h2 id="后记">后记</h2>
+
+<p>我最终决定把这个网页关掉了. 因为觉得它浪费资源, 浪费电力是一方面, 另一方面最主要的是没有正面意义, 在污染互联网. 一个LLM生成的东西, 被另一个LLM给吸收了, 成了训练集. 这就像是一个人不停地自言自语, 说一些不着边际的话, 然后另一个人把它听进去, 以为这是有意义的对话. 其实并没有. 最终的结果, 就会导致垃圾进垃圾出 (Garbage In, Garbage Out). 所以我觉得这个网页还是关掉的好. 也算是对互联网的一种保护吧.</p>
+
+
+  </div>
+
+  <a class="u-url" href="/dao-di-shui-zai-chi-la-ji.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

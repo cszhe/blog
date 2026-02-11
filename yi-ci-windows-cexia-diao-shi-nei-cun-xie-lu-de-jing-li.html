@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>一次Windows CE下调试内存泄露的经历 | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="一次Windows CE下调试内存泄露的经历" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：" />
+<meta property="og:description" content="上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：" />
+<link rel="canonical" href="https://www.hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li.html" />
+<meta property="og:url" content="https://www.hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2004-11-02T19:41:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="一次Windows CE下调试内存泄露的经历" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2004-11-02T19:41:00-05:00","datePublished":"2004-11-02T19:41:00-05:00","description":"上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：","headline":"一次Windows CE下调试内存泄露的经历","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li.html"},"url":"https://www.hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">一次Windows CE下调试内存泄露的经历</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2004-11-02T19:41:00-05:00" itemprop="datePublished">
+        November 2, 2004
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。</p>
+
+<p>这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。</p>
+
+<p>我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。</p>
+
+<p>但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。</p>
+
+<p>走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？</p>
+
+<p>我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：</p>
+
+<p>void CEvcFCVDlg::ClockPainting_N(double dblClockStartData, double dblClockEndData, double dblClockStartAngel, double dblClockEndAngel, double dblClockData, int nClockLength, int nClockLengthOffset, int nStartWidth, int nEndWidth, int nColorRGB, int nPicture, CPoint CPOrintalOffset)</p>
+
+<p>{</p>
+
+<p>int nWidth;</p>
+
+<p>int nHeight;</p>
+
+<p>int nPenWidth=0;</p>
+
+<p>CRect crecXY;</p>
+
+<p>CRect rect;</p>
+
+<p>int xLength=0;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> int yLength=0;
+  
+ 
+  
+CWnd* pWnd=GetDlgItem(nPicture);
+</code></pre></div></div>
+
+<p>CDC* pDC=pWnd-&gt;GetDC();</p>
+
+<p>pWnd-&gt;UpdateWindow();</p>
+
+<p>pWnd-&gt;GetWindowRect(rect);</p>
+
+<p>pWnd-&gt;GetWindowRect(crecXY);</p>
+
+<p>nWidth=rect.Width();</p>
+
+<p>nHeight=rect.Height();</p>
+
+<p>CDC  MemDC;</p>
+
+<p>CBitmap  MemBitmap;</p>
+
+<p>MemDC.CreateCompatibleDC (NULL);</p>
+
+<p>MemBitmap.CreateCompatibleBitmap(pDC,nWidth,nHeight);</p>
+
+<p>CBitmap *pOldBit=MemDC.SelectObject(&amp;MemBitmap);</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> MemDC.FillSolidRect(0,0,nWidth,nHeight,RGB(255,255,255));
+  
+ 
+  
+ //////////////////////////////////////////////   
+</code></pre></div></div>
+
+<p>pWnd-&gt;GetClientRect(rect);</p>
+
+<p>BITMAP bm;</p>
+
+<p>CDC dcMem;</p>
+
+<p>m_bmpN.GetObject(sizeof(bm),&amp;bm);</p>
+
+<p>dcMem.CreateCompatibleDC(pDC);</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CBitmap \*pOldBMP =(CBitmap\*)dcMem.SelectObject(&amp;m_bmpN);
+</code></pre></div></div>
+
+<p>MemDC.BitBlt( (rect.right-bm.bmWidth)/2,(rect.bottom-bm.bmHeight)/2,bm.bmWidth,bm.bmHeight,&amp;dcMem,0,0,SRCCOPY);</p>
+
+<p>dcMem.SelectObject(pOldBMP);</p>
+
+<p>/////////////////////////////////////////</p>
+
+<p>double dblADk=-1;//计算作图角度时的系数。</p>
+
+<p>double dblClockAngel;</p>
+
+<p>if((dblClockEndAngel-dblClockStartAngel)&lt;0){</p>
+
+<p>dblADk=(360+(dblClockEndAngel-dblClockStartAngel))/(dblClockEndData-dblClockStartData);</p>
+
+<p>}</p>
+
+<p>else{</p>
+
+<p>dblADk=(dblClockEndAngel-dblClockStartAngel)/(dblClockEndData-dblClockStartData);</p>
+
+<p>}</p>
+
+<p>nClockLength=(nClockLength)/(nStartWidth-nEndWidth);</p>
+
+<p>//计算dblClockAngel,最后化成弧度;</p>
+
+<p>dblClockAngel=(3.1416/180)*((dblClockData-dblClockStartData)*dblADk+dblClockStartAngel);</p>
+
+<p>xLength=crecXY.Width()/2+CPOrintalOffset.x;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> yLength=crecXY.Height()/2+CPOrintalOffset.y;
+</code></pre></div></div>
+
+<p>for(int i=nStartWidth;i&gt;nEndWidth;–i)</p>
+
+<p>{</p>
+
+<p>nPenWidth=i;</p>
+
+<p>CPen newPen(PS_SOLID,nPenWidth,nColorRGB);//RGB(0,0,255)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> CPen* pOldPen=MemDC.SelectObject(&amp;newPen);
+  
+ MemDC.MoveTo(xLength+nClockLengthOffset\*cos(dblClockAngel),yLength+nClockLengthOffset\*sin(dblClockAngel));
+</code></pre></div></div>
+
+<p>MemDC.LineTo((nClockLength*(nStartWidth-i)+nClockLengthOffset)*cos(dblClockAngel)+xLength,(nClockLength*(nStartWidth-i)+nClockLengthOffset)*sin(dblClockAngel)+yLength);</p>
+
+<p>if(i==nStartWidth)</p>
+
+<p>MemDC.SetPixel(xLength+nClockLengthOffset*cos(dblClockAngel),yLength+nClockLengthOffset*sin(dblClockAngel),nColorRGB);</p>
+
+<p>MemDC.SelectObject(pOldPen);</p>
+
+<p>}</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> //////////////////////////////////////////////
+</code></pre></div></div>
+
+<p>pDC-&gt;BitBlt(0,0,nWidth,nHeight,&amp;MemDC,0,0,SRCCOPY);</p>
+
+<p>pWnd-&gt;ReleaseDC (pDC);</p>
+
+<p>MemBitmap.DeleteObject();</p>
+
+<p>MemDC.DeleteDC();</p>
+
+<p>}</p>
+
+<p>然后，我又调试了几轮，最后终于把泄漏的代码定位到了这一行：</p>
+
+<p>MemBitmap.CreateCompatibleBitmap(pDC,nWidth,nHeight);</p>
+
+<p>也就是说，创建的Bitmap没有被释放掉。但是，这段代码的最后面，的确有MemBitmap.DeleteObject();来释放bitmap阿。我打开Windows CE的MSDN，查找CreaeteCompatibleBitmap和DeleteObject的解释，一会儿，我的目光锁定在了DeleteObject的解释上：Zero indicates that the specified handle is not valid or that the handle is currently selected into a device context. 对！会不会是DeleteObject失败了呢？我把那句话改成了BOOL fRet = MemBitmap.DeleteObject(); 果然，返回值是0！再仔细查看一下上面的代码，我发现这个时候MemBitmap的确被MemDC占用！好，既然是这样，在</p>
+
+<p>pDC-&gt;BitBlt(0,0,nW idth,nHeight,&amp;MemDC,0,0,SRCCOPY);</p>
+
+<p>pWnd-&gt;ReleaseDC (pDC);</p>
+
+<p>两句之间添加一行MemDC-&gt;SelectObject(pOldBit); 然后再跑一下，果然，DeleteObject成功了！那么，内存泄漏是否就此解决了呢？我把代码编译成Release版本，然后在开发板上重新跑了起来，结果真没让人失望，10分钟过去了，那个讨厌的Out of Memory对话框还没有跳出来。搞定！这个时候，机房关门的时间也到了。颇有点最后一刻投篮中的扭转乾坤的感觉！</p>
+
+<p>回招待所的路上，我都很兴奋，好久都没有从Coding中体会到成就感的乐趣了，记得刚刚转到软院，写那个简单的扫雷和画图的时候，当实现了扫雷的递归翻开和画图的Redo， UnDo的时候，曾经有过这样的感觉。回到招待所，给GF发了条短信，希望她也能分享我的快乐。</p>
+
+<p>总结一下，可以有这么一些经验教训：</p>
+
+<p>1．Windows CE和Windows虽然都使用Win 32 API作为编程接口，但是API内部的实现是不一样的。同样的代码，那个程序在Windows下Bitmap可以正常删除，但是在CE下，DeleteObject就失败了。</p>
+
+<p>2．Windows下的调试技巧，还是可以拿来Windows CE上用的。就像那本书上说的“It’s still Windows Programming”</p>
+
+<p>3．不要轻易去怀疑是操作系统的bug，遇到问题先从自己那里着手。</p>
+
+<p>4．Enjoy the joy of coding！</p>
+
+  </div>
+
+  <a class="u-url" href="/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

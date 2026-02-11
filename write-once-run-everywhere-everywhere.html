@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>write once, run everywhere! everywhere? | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="write once, run everywhere! everywhere?" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="給香港地鐵寫了一週的java代碼，真是受罪。怪不得Java的Desktop編程不行，感覺連MFC都不如，UI上的控件要一點一點用代碼寫出來，人家MFC至少還有個Dialog可以所見即所得的拖拽。而且還沒有AbsoluteLayout，都是相對佈局，累死人了。對於習慣了Android的XML來構造的人來說，簡直是一覺回到解放前啊。" />
+<meta property="og:description" content="給香港地鐵寫了一週的java代碼，真是受罪。怪不得Java的Desktop編程不行，感覺連MFC都不如，UI上的控件要一點一點用代碼寫出來，人家MFC至少還有個Dialog可以所見即所得的拖拽。而且還沒有AbsoluteLayout，都是相對佈局，累死人了。對於習慣了Android的XML來構造的人來說，簡直是一覺回到解放前啊。" />
+<link rel="canonical" href="https://www.hezongjian.com/write-once-run-everywhere-everywhere.html" />
+<meta property="og:url" content="https://www.hezongjian.com/write-once-run-everywhere-everywhere.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-07-22T12:24:01-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="write once, run everywhere! everywhere?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2011-07-22T12:24:01-04:00","datePublished":"2011-07-22T12:24:01-04:00","description":"給香港地鐵寫了一週的java代碼，真是受罪。怪不得Java的Desktop編程不行，感覺連MFC都不如，UI上的控件要一點一點用代碼寫出來，人家MFC至少還有個Dialog可以所見即所得的拖拽。而且還沒有AbsoluteLayout，都是相對佈局，累死人了。對於習慣了Android的XML來構造的人來說，簡直是一覺回到解放前啊。","headline":"write once, run everywhere! everywhere?","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/write-once-run-everywhere-everywhere.html"},"url":"https://www.hezongjian.com/write-once-run-everywhere-everywhere.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">write once, run everywhere! everywhere?</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2011-07-22T12:24:01-04:00" itemprop="datePublished">
+        July 22, 2011
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>給香港地鐵寫了一週的java代碼，真是受罪。怪不得Java的Desktop編程不行，感覺連MFC都不如，UI上的控件要一點一點用代碼寫出來，人家MFC至少還有個Dialog可以所見即所得的拖拽。而且還沒有AbsoluteLayout，都是相對佈局，累死人了。對於習慣了Android的XML來構造的人來說，簡直是一覺回到解放前啊。</p>
+
+<p>不管怎麽說，還是小有成果的。寫完代碼之後，打成个jar包，要發佈給Customer。發郵件之前好奇，從虛擬機裏面出來，跑到mac下面double click了一下我的程序，除了啟動速度很慢之外，居然還真跑起來了。Chart，Table等復雜控件，Derby database都沒問題。是不是突然感覺java的巨大優勢。</p>
+
+<p><a href="/uploads/2011/07/java.png"><img class="aligncenter size-medium wp-image-10650" height="218" src="/uploads/2011/07/java-300x218.png" title="java" width="300" /></a></p>
+
+<p>這個就是java一直標榜的run everywhere，當然我們都知道這個不過是廣告語。忽悠不明真相群眾的。以前我在一本C語言教材上，還看到說C語言的優點是移植性好，跨平臺呢。人家是跟匯編比較的。java可以用虛擬機屏蔽一部分OS的差異，但是不能屏蔽所有差異。比方說下面這個UI：</p>
+
+<p><a href="/uploads/2011/07/COM.png"><img class="aligncenter size-medium wp-image-10651" height="212" src="/uploads/2011/07/COM-300x212.png" title="COM" width="300" /></a></p>
+
+<p>我們的無線傳感器採集到的數據，是通過USB轉串口傳過來的，到Mac上傻眼了吧，木有COM口。要用＊nix風格的/dev/ttyUSB*這種了。</p>
+
+<p>順便，上面這個圖上是Java Swing的Bug麽？把COM口的下拉菜單打開，然後拖動一下窗口，下拉菜單沒有消失，也沒有跟著窗口走，居然還停留在原位置，比較不可思議。</p>
+
+  </div>
+
+  <a class="u-url" href="/write-once-run-everywhere-everywhere.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

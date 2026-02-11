@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windows CE下的错误报告 | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Windows CE下的错误报告" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="错误报告是Windows CE 5.0中添加的新功能，它是操作系统的一个可选组件。与我们熟悉的Windows XP的错误报告类似，在应用程序崩溃的时候，错误报告可以自动收集崩溃时的系统和应用程序的状态信息（通常叫做Dump File），并允许把收集的错误信息发送给微软或者OEM商，来更好的改善系统的可靠性。 &lt;img src=’http://images.blogcn.com/2005/7/1/8/omale,20050701155741.jpg’ border=’0’ onload=’if(this.width&gt;screen.width/2)this.width=screen.width/2;’ &gt;&lt;/img&gt; 图：Windows CE下的发送错误报告对话框 Windows CE提供两种获取Dump File的方式。自动模式和手动模式，在自动模式中，系统会抓取应用程序没有捕捉的异常（Second Chance Exception），然后自动生成Dump文件，然后打包提交到服务器。在手动模式中，我们可以调用系统提供的API函数，手动创建某个程序某一时刻的Dump File，以利于程序的调试。最常用的情况是某个程序造成了死锁，我们可以使用函数手动创建该称序的Dump文件，然后查看死锁发生的原因。Windows CE提供了一个函数CaptureDumpFileOnDevice来手动的获得Dump，其声明如下： BOOL CaptureDumpFileOnDevice( DWORD dwProcessId,// 要抓取dump的进程的ID DWORD dwThreadId, // 要抓取dump的线程的ID LPCWSTR pwzExtraFilesPath// 可选，包含dump的目录 ); Windows CE提供了四种类型的Dump文件，不同的Dump文件的大小不同，包含的内容也不同。一般来说Dump文件越大，包含的信息也越多。 Dump File类型大小描述 上下文dump4 KB, 64 KB." />
+<meta property="og:description" content="错误报告是Windows CE 5.0中添加的新功能，它是操作系统的一个可选组件。与我们熟悉的Windows XP的错误报告类似，在应用程序崩溃的时候，错误报告可以自动收集崩溃时的系统和应用程序的状态信息（通常叫做Dump File），并允许把收集的错误信息发送给微软或者OEM商，来更好的改善系统的可靠性。 &lt;img src=’http://images.blogcn.com/2005/7/1/8/omale,20050701155741.jpg’ border=’0’ onload=’if(this.width&gt;screen.width/2)this.width=screen.width/2;’ &gt;&lt;/img&gt; 图：Windows CE下的发送错误报告对话框 Windows CE提供两种获取Dump File的方式。自动模式和手动模式，在自动模式中，系统会抓取应用程序没有捕捉的异常（Second Chance Exception），然后自动生成Dump文件，然后打包提交到服务器。在手动模式中，我们可以调用系统提供的API函数，手动创建某个程序某一时刻的Dump File，以利于程序的调试。最常用的情况是某个程序造成了死锁，我们可以使用函数手动创建该称序的Dump文件，然后查看死锁发生的原因。Windows CE提供了一个函数CaptureDumpFileOnDevice来手动的获得Dump，其声明如下： BOOL CaptureDumpFileOnDevice( DWORD dwProcessId,// 要抓取dump的进程的ID DWORD dwThreadId, // 要抓取dump的线程的ID LPCWSTR pwzExtraFilesPath// 可选，包含dump的目录 ); Windows CE提供了四种类型的Dump文件，不同的Dump文件的大小不同，包含的内容也不同。一般来说Dump文件越大，包含的信息也越多。 Dump File类型大小描述 上下文dump4 KB, 64 KB." />
+<link rel="canonical" href="https://www.hezongjian.com/windows-cexia-de-cuo-wu-bao-gao.html" />
+<meta property="og:url" content="https://www.hezongjian.com/windows-cexia-de-cuo-wu-bao-gao.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2005-07-01T12:10:08-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windows CE下的错误报告" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-07-01T12:10:08-04:00","datePublished":"2005-07-01T12:10:08-04:00","description":"错误报告是Windows CE 5.0中添加的新功能，它是操作系统的一个可选组件。与我们熟悉的Windows XP的错误报告类似，在应用程序崩溃的时候，错误报告可以自动收集崩溃时的系统和应用程序的状态信息（通常叫做Dump File），并允许把收集的错误信息发送给微软或者OEM商，来更好的改善系统的可靠性。 &lt;img src=’http://images.blogcn.com/2005/7/1/8/omale,20050701155741.jpg’ border=’0’ onload=’if(this.width&gt;screen.width/2)this.width=screen.width/2;’ &gt;&lt;/img&gt; 图：Windows CE下的发送错误报告对话框 Windows CE提供两种获取Dump File的方式。自动模式和手动模式，在自动模式中，系统会抓取应用程序没有捕捉的异常（Second Chance Exception），然后自动生成Dump文件，然后打包提交到服务器。在手动模式中，我们可以调用系统提供的API函数，手动创建某个程序某一时刻的Dump File，以利于程序的调试。最常用的情况是某个程序造成了死锁，我们可以使用函数手动创建该称序的Dump文件，然后查看死锁发生的原因。Windows CE提供了一个函数CaptureDumpFileOnDevice来手动的获得Dump，其声明如下： BOOL CaptureDumpFileOnDevice( DWORD dwProcessId,// 要抓取dump的进程的ID DWORD dwThreadId, // 要抓取dump的线程的ID LPCWSTR pwzExtraFilesPath// 可选，包含dump的目录 ); Windows CE提供了四种类型的Dump文件，不同的Dump文件的大小不同，包含的内容也不同。一般来说Dump文件越大，包含的信息也越多。 Dump File类型大小描述 上下文dump4 KB, 64 KB.","headline":"Windows CE下的错误报告","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/windows-cexia-de-cuo-wu-bao-gao.html"},"url":"https://www.hezongjian.com/windows-cexia-de-cuo-wu-bao-gao.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Windows CE下的错误报告</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2005-07-01T12:10:08-04:00" itemprop="datePublished">
+        July 1, 2005
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>错误报告是Windows CE 5.0中添加的新功能，它是操作系统的一个可选组件。与我们熟悉的Windows XP的错误报告类似，在应用程序崩溃的时候，错误报告可以自动收集崩溃时的系统和应用程序的状态信息（通常叫做Dump File），并允许把收集的错误信息发送给微软或者OEM商，来更好的改善系统的可靠性。<br />
+ <a href="http://images.blogcn.com/2005/7/1/8/omale,20050701155741.jpg" target="_blank">&lt;img src=’http://images.blogcn.com/2005/7/1/8/omale,20050701155741.jpg’ border=’0’ onload=’if(this.width&gt;screen.width/2)this.width=screen.width/2;’ &gt;&lt;/img&gt;</a><br />
+图：Windows CE下的发送错误报告对话框<br />
+Windows CE提供两种获取Dump File的方式。自动模式和手动模式，在自动模式中，系统会抓取应用程序没有捕捉的异常（Second Chance Exception），然后自动生成Dump文件，然后打包提交到服务器。在手动模式中，我们可以调用系统提供的API函数，手动创建某个程序某一时刻的Dump File，以利于程序的调试。最常用的情况是某个程序造成了死锁，我们可以使用函数手动创建该称序的Dump文件，然后查看死锁发生的原因。Windows CE提供了一个函数CaptureDumpFileOnDevice来手动的获得Dump，其声明如下：<br />
+BOOL CaptureDumpFileOnDevice(<br />
+  DWORD dwProcessId,// 要抓取dump的进程的ID<br />
+  DWORD dwThreadId, // 要抓取dump的线程的ID<br />
+  LPCWSTR pwzExtraFilesPath// 可选，包含dump的目录<br />
+);<br />
+Windows CE提供了四种类型的Dump文件，不同的Dump文件的大小不同，包含的内容也不同。一般来说Dump文件越大，包含的信息也越多。<br />
+Dump File类型大小描述<br />
+上下文dump4 KB, 64 KB.</p>
+
+<p>崩溃系统的信息</p>
+<ul>
+  <li>导致崩溃的异常</li>
+  <li>出错线程的上下文</li>
+  <li>进程所加载的模块列表</li>
+  <li>进程的线程列表</li>
+  <li>出错线程的调用栈</li>
+  <li>出错时候指令指针（IP，Instruction Pointer）前后的64字节数据</li>
+  <li>64KB的出错线程的栈<br />
+系统dump64 KB – 几MB- 上下文dump中的所有信息</li>
+  <li>所有线程的上下文和调用栈记录</li>
+  <li>整个设备的完整模块，进程，线程列表</li>
+  <li>出错时候指令指针（IP，Instruction Pointer）前后的2048字节数据</li>
+  <li>出错时候当前进程的全局变量<br />
+完整dump物理内存的大小加上至少64KB- 上下文dump中的所有信息</li>
+  <li>所有使用内存的完整映像</li>
+</ul>
+
+<p>Windows CE的错误报告体系结构如图所示。整个错误报告系统分为四个模块：错误报告生成模块，错误报告传输驱动程序，错误报告上传客户端和错误报告控制面板插件。</p>
+
+<p><a href="http://images.blogcn.com/2005/7/1/8/omale,20050701155823.jpg" target="_blank"><img src="http://images.blogcn.com/2005/7/1/8/omale,20050701155823.jpg" border="0" />&lt;/img&gt;</a><br />
+图：错误报告的结构<br />
+用户可以在控制面板中通过错误报告控制面板插件来对错误报告系统进行配置。当有用户未捕捉的错误发生时，首先，错误报告生成模块可以捕捉到这个错误，然后通过错误报告生成模块生成dump文件，接着，通过错误报告驱动程序把错误报告保存为文件系统上的一个文件，最后，根据用户的选择，把错误报告发送到微软的服务器上。</p>
+
+  </div>
+
+  <a class="u-url" href="/windows-cexia-de-cuo-wu-bao-gao.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

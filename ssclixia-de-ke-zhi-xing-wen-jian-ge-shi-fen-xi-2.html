@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SSCLI下的可执行文件格式分析（2） | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="SSCLI下的可执行文件格式分析（2）" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ä¸é¢ï¼æä»¬å°±å¼å§åææ¿å¨äººå¿çMetaDataäºã é¦åï¼æ¯å¨IMAGE_COR20_HEADERä¸­æ ¹æ®åä¸ºMetaDataçIMAGE_DATA_DIRECTORYé¡¹æ¥æ¾MetaDataè¡¨çä½ç½®ï¼è®¡ç®æ¹æ³è·ä¸ææå°çæ¾COM Headerä½ç½®çæ¹æ³æ¯ä¸æ ·çï¼æä»¬å¯ä»¥ç®å¾ï¼MetaDataè¡¨çä½ç½®æ¯ï¼0x00002148 – 0x00002000 + 0x00000200 = 0x00000348ã" />
+<meta property="og:description" content="ä¸é¢ï¼æä»¬å°±å¼å§åææ¿å¨äººå¿çMetaDataäºã é¦åï¼æ¯å¨IMAGE_COR20_HEADERä¸­æ ¹æ®åä¸ºMetaDataçIMAGE_DATA_DIRECTORYé¡¹æ¥æ¾MetaDataè¡¨çä½ç½®ï¼è®¡ç®æ¹æ³è·ä¸ææå°çæ¾COM Headerä½ç½®çæ¹æ³æ¯ä¸æ ·çï¼æä»¬å¯ä»¥ç®å¾ï¼MetaDataè¡¨çä½ç½®æ¯ï¼0x00002148 – 0x00002000 + 0x00000200 = 0x00000348ã" />
+<link rel="canonical" href="https://www.hezongjian.com/ssclixia-de-ke-zhi-xing-wen-jian-ge-shi-fen-xi-2.html" />
+<meta property="og:url" content="https://www.hezongjian.com/ssclixia-de-ke-zhi-xing-wen-jian-ge-shi-fen-xi-2.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2005-02-04T06:48:18-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SSCLI下的可执行文件格式分析（2）" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-02-04T06:48:18-05:00","datePublished":"2005-02-04T06:48:18-05:00","description":"ä¸é¢ï¼æä»¬å°±å¼å§åææ¿å¨äººå¿çMetaDataäºã é¦åï¼æ¯å¨IMAGE_COR20_HEADERä¸­æ ¹æ®åä¸ºMetaDataçIMAGE_DATA_DIRECTORYé¡¹æ¥æ¾MetaDataè¡¨çä½ç½®ï¼è®¡ç®æ¹æ³è·ä¸ææå°çæ¾COM Headerä½ç½®çæ¹æ³æ¯ä¸æ ·çï¼æä»¬å¯ä»¥ç®å¾ï¼MetaDataè¡¨çä½ç½®æ¯ï¼0x00002148 – 0x00002000 + 0x00000200 = 0x00000348ã","headline":"SSCLI下的可执行文件格式分析（2）","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/ssclixia-de-ke-zhi-xing-wen-jian-ge-shi-fen-xi-2.html"},"url":"https://www.hezongjian.com/ssclixia-de-ke-zhi-xing-wen-jian-ge-shi-fen-xi-2.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">SSCLI下的可执行文件格式分析（2）</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2005-02-04T06:48:18-05:00" itemprop="datePublished">
+        February 4, 2005
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>ä¸é¢ï¼æä»¬å°±å¼å§åææ¿å¨äººå¿çMetaDataäºã<br />
+é¦åï¼æ¯å¨IMAGE_COR20_HEADERä¸­æ ¹æ®åä¸ºMetaDataçIMAGE_DATA_DIRECTORYé¡¹æ¥æ¾MetaDataè¡¨çä½ç½®ï¼è®¡ç®æ¹æ³è·ä¸ææå°çæ¾COM Headerä½ç½®çæ¹æ³æ¯ä¸æ ·çï¼æä»¬å¯ä»¥ç®å¾ï¼MetaDataè¡¨çä½ç½®æ¯ï¼0x00002148 – 0x00002000 + 0x00000200 = 0x00000348ã</p>
+
+<p>MetaDataçåºæ¬è®¾è®¡æ¹æ³æ¯éç¨äºç®åçå¤åææ¡£ï¼Compound documentï¼ãåºæ¬çç»ç»ç»æå¦ä¸ï¼<br />
+//  +——————-+<br />
+//  | Signature         |<br />
+//  +——————-+<br />
+//  | Stream 1, 2, []   |<br />
+//  +——————-+<br />
+//  | STORAGEHEADER     |<br />
+//  |   Extra data      |<br />
+//  |   STORAGESTREAM[] |<br />
+//  +——————-+<br />
+//  | offset            |<br />
+//  +——————-+</p>
+
+<p>å¨clr\src\md\inc\MdFileFormat.hä¸­ï¼å®ä¹å¦ä¸ï¼</p>
+
+<p>struct STORAGESIGNATURE<br />
+{<br />
+public:<br />
+    //Ingored many getter and setter function<br />
+private:<br />
+    ULONG       m_lSignature;             // “Magic” signature.0x424a5342<br />
+    USHORT      m_iMajorVer;              // Major file version.0x0001<br />
+    USHORT      m_iMinorVer;              // Minor file version.0x0001<br />
+    ULONG       m_lExtraData;             // Offset to next structure of information 0x0<br />
+    ULONG       m_lVersionStringLength;   // Length of version string0x00000008<br />
+    BYTE        m_pVersion[0];            // Version string”v1.0.0″<br />
+};</p>
+
+<p>struct STORAGEHEADER<br />
+{<br />
+    BYTE        fFlags;                 // STGHDR_xxx flags.0x00<br />
+    BYTE        pad;0x00<br />
+    USHORT      iStreams;               // How many streams are there.0x0005<br />
+    // function ignored<br />
+};<br />
+å¶ä¸­fFlagsçå«ä¹å¦ä¸ï¼<br />
+enum<br />
+{<br />
+    STGHDR_NORMAL           = 0x00,     // Normal default flags.<br />
+    STGHDR_EXTRADATA        = 0x01,     // Additional data exists after header.<br />
+};</p>
+
+<p>ç´§æ¥çSTORAGEHEADERä¸é¢æ¯STORAGESTREAMå­å¨æµçä¿¡æ¯ï¼ä»å¤´é¨æä»¬ç¥éæäºä¸ªæµï¼SSCLIä¸­å®ä¹äºå¸­é¢çå½æ°æ¥å¾å°æµï¼</p>
+
+<p>STORAGESTREAM *MDFormat::GetFirstStream(// Return pointer to the first stream.<br />
+    STORAGEHEADER *pHeader,             // Return copy of header struct.<br />
+    const void *pvMd)                   // Pointer to the full file.<br />
+{<br />
+    const BYTE  *pbMd;              // Working pointer.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Header data starts after signature.  
+pbMd = (const BYTE *) pvMd;  
+pbMd += sizeof(STORAGESIGNATURE);  
+pbMd += ((STORAGESIGNATURE*)pvMd)-&gt;VersionStringLength();  
+STORAGEHEADER \*pHdr = (STORAGEHEADER \*) pbMd;  
+\*pHeader = \*pHdr;  
+pbMd += sizeof(STORAGEHEADER);
+
+// If there is extra data, skip over it.  
+if (pHdr-&gt;fFlags &amp; STGHDR_EXTRADATA)  
+    pbMd = pbMd + sizeof(ULONG) + VAL32(\*(ULONG \*) pbMd);
+
+// The pointer is now at the first stream in the list.  
+return ((STORAGESTREAM *) pbMd);   }
+
+inline STORAGESTREAM *NextStream()  
+{  
+    int         iLen = (int)(strlen(rcName) + 1);  
+    iLen = ALIGN4BYTE(iLen);  
+    return ((STORAGESTREAM \*) (((BYTE\*)this) + (sizeof(ULONG) * 2) + iLen));  
+}   Metadata Streamæäºç§å¸¸è§ç±»åï¼#String,  #Blob, #Guid,  #US(User String)å#~æµï¼æ¯ç§ç±»åæµæå¤åªè½åºç°ä¸æ¬¡ï¼#USå#Blobæµå¯çç¥ãä¸é¢ä»¥æ­¤ä»ç»æ¯ä¸ä¸ªæµï¼å ä¸º~#æµæå¤æï¼å æ­¤æ¾å¨æåä»ç»ã
+</code></pre></div></div>
+
+<p>#Stringsæµå#USæµï¼<br />
+struct STORAGESTREAM<br />
+{<br />
+    ULONG       ulOffset;               // Offset in file for this stream.0x000001D0<br />
+    ULONG       ulSize;                 // Size of the file.0x000000CC<br />
+    char        rcName[MAXSTREAMNAME];  // Start of name, null terminated.”#Strings”<br />
+};</p>
+
+<p>struct&amp;nbsp</p>
+
+<p>;STORAGESTREAM<br />
+{<br />
+    ULONG       ulOffset;               // Offset in file for this stream.0x0000029C<br />
+    ULONG       ulSize;                 // Size of the file.0x00000044<br />
+    char        rcName[MAXSTREAMNAME];  // Start of name, null terminated.”#US”<br />
+};</p>
+
+<p>è¿ä¸¤ä¸ªæµå­æ¾çé½æ¯å­ç¬¦ä¸²ã#Stringæµå­å¨çæ¯å­ç¬¦ä¸²ï¼ä»£ç ä¸­çä¸åæè¿°ç¬¦å­ç¬¦ä¸²é½ä¿å­å¨</p>
+
+<p>è¿éãä»¥#0å­ç¬¦åéãæµçå¼å§æ»æä¸ä¸ª\0å­ç¬¦ä»£è¡¨ä¸ä¸ªç©ºå­ç¬¦ä¸²ã#USæµå­å¨çæ¯ç¨æ·å®ä¹çå­ç¬¦ä¸²ï¼å­ç¬¦ä¸²ä»¥UTF8ç¼ç ä¿å­ãå¨è®¿é®Streamä¸­çå­ç¬¦ä¸²æ¶ï¼mdtStringçRIDä»£è¡¨çä¸æ¯è¡å·ï¼èæ¯å­ç¬¦å¨Streamä¸­çåç§»ãæä»¬ä¸¾ä¸¤ä¸ªä¾å­ççï¼<br />
+ä½¿ç¨ILDASMå·¥å·åæ±ç¼Hello.exeï¼ç¶åéæ©âæ¾ç¤ºæ è®°å¼âå°±å¯ä»¥çå°ææçTokenäºï¼æä»¬éä¾¿æ¾å°ä¸¤ä¸ªå­ç¬¦ä¸²Tokenï¼åå«æ¯0x70000017å0x7000002Fï¼ç¶åçå®ä»¬æä»£è¡¨çå¼ãé¦åï¼æä»¬è¦ç®åº#USçé¦å°åï¼è½å¨åæ±ç¼éæ¾å°çTokenè¯å®æ¯ç¨æ·å®ä¹çå­ç¬¦ä¸²ï¼ç³»ç»ç¨çæ¯ä¸ä¼è®©æä»¬çå°çãï¼ï¼è®¡ç®å¬å¼æ¯æµçé¦å°åå ä¸åç§» = 0x00000348 + 0x0000029C = 0x000005E4ãç¶ååå«å ä¸ä¸¤ä¸ªå­ç¬¦ä¸²çé¦å°ååç§»é0x17å0x2Fï¼å°±æ¯ä¸¤ä¸ªå­ç¬¦ä¸²çåç§»ï¼0x000005FBå0x00000613ãæä»¬å¯ä»¥ä»¥çå°ï¼å®ä»¬åå«æ¯ï¼âHello WorldâåâEcho: {0}âï¼æ­£æ¯æä»¬ç¨åºä¸­åºç°çå­ç¬¦ã</p>
+
+<p>#GUIDæµï¼<br />
+struct STORAGESTREAM<br />
+{<br />
+    ULONG       ulOffset;               // Offset in file for this stream.0x000002E0<br />
+    ULONG       ulSize;                 // Size of the file.0x00000010<br />
+    char        rcName[MAXSTREAMNAME];  // Start of name, null terminated.”#GUID”<br />
+}; <br />
+GUIDæµå°±æ¯ä¸ä¸ªGUIDçæ°ç»ï¼æ°ç»ä¸­åç´ çä¸ªæ°å°±æ¯ï¼STORAGESTREAM.ulSize / sizeof(GUID)ãå¦æè¿ç¯æç« è¯»èè½ä»ç»çå°è¿éï¼é£ä¹ä½ ä¸å®å¯¹GUIDè³çè½è¯¦ï¼å®ä¹å¦ä¸ï¼<br />
+typedef struct _GUID <br />
+{<br />
+    ULONG   Data1;    // NOTE: diff from Win32, for LP64<br />
+    USHORT  Data2;<br />
+    USHORT  Data3;<br />
+    UCHAR   Data4[ 8 ];<br />
+} GUID;<br />
+å¯¹äºæ¬æä»¶ä¸­çGUIDï¼æä»¬å¯ä»¥çå°ï¼å¶èµ·å§ä½ç½® = 0x00000348  + 0x000002E0 = 0x00000628ãæ°ç»ä¸­åªæä¸ä¸ªGUIDï¼å ä¸º 0x10 / sizeof(GUID) = 1ãå¶å¼ä¸ºï¼{6BE151AB-E2FF-3D10-5CA8-7B77DA98426C}</p>
+
+<p>#Blobæµï¼<br />
+struct STORAGESTREAM<br />
+{<br />
+    ULONG       ulOffset;               // Offset in file for this stream.0x000002F0<br />
+    ULONG       ulSize;                 // Size of the file.0x00000040<br />
+    char        rcName[MAXSTREAMNAME];  // Start of name, null terminated.”#Blob”<br />
+};<br />
+BLOB æ¯äºè¿å¶å¤§å¯¹è±¡ï¼binary large objectï¼çé¦å­æ¯ç¼©åï¼é¡¾åæä¹#Blobæµå­æ¾çæ¯å¤§å®çäºè¿å¶æ°æ®ãæ¬ä¾ä¸­ï¼èµ·å§ä½ç½® = 0x00000348  + 0x000002F0 = 0x00000638ã</p>
+
+<p>#~æµï¼<br />
+struct STORAGESTREAM<br />
+{<br />
+    ULONG       ulOffset;               // Offset in file for this stream.0x00000068<br />
+    ULONG       ulSize;                 // Size of the file.0x00000168<br />
+    char        rcName[MAXSTREAMNAME];  // Start of name, null terminated.”#~”<br />
+};<br />
+#~æµæ¯å­æ¾MetaDataçå°æ¹ãè¯¥Assemblyä¸­å ä¹ææçæè¿°ä¿¡æ¯é½æ¾å¨è¿éï¼å æ­¤ï¼è¿æ¯å ä¸ªæµä¸­æéè¦çä¸ä¸ªãMetaDataé½æ¯ä»¥è¡¨çå½¢å¼å­æ¾çãæµçèµ·å§ä½ç½® = 0x00000348 + 0x00000068 = 0x000003B0ãæ­¤å¤èµ·è¿ç»­å­æ¾çCMiniMdSchemaBaseç±»åCMiniMdSchemaç±»ï¼å®ä¹å¨clr\src\md\inc\Metamodel.hä¸­ï¼ãæ¾å¾æå¥½è¦å¥½è¦å:â( ä½è¿æ¯ç»ææåºæ¥äº:-ï¼ã</p>
+
+<p>class CMiniMdSchemaBase<br />
+{<br />
+public:<br />
+    ULONG       m_ulReserved;       // Reserved, must be zero.0x00000000<br />
+    BYTE        m_major;            // Version numbers.0x01<br />
+    BYTE        m_minor;0x00<br />
+    BYTE        m_heaps;            // Bits for heap sizes.0x00<br />
+    BYTE        m_rid;              // log-base-2 of largest rid.0x01<br />
+    unsigned __int64    m_maskvalid;// Bit mask of present table counts.0x9`01a21557<br />
+    unsigned __int64    m_sorted;   // Bit mask of sorted tables.0x200`3301fa00   <br />
+};</p>
+
+<p>class CMiniMdSchema : public CMiniMdSchemaBase<br />
+{<br />
+public:<br />
+    ULONG       m_cRecs[TBL_COUNT];     // Counts of various tables.<br />
+    ULONG       m_ulExtra;            &amp;nb</p>
+
+<p>sp; // Extra data, only persisted if non-zero.<br />
+};</p>
+
+<p>å¶ä¸­TBL_COUNTæ¯ä¸ä¸ªæä¸¾ï¼åè¯æä»¬å¨MetaDataä¸­ä¸å±æå¤å°ç§è¡¨ï¼è¡¨æ¯Metadataä¸­ç¸å½éè¦çä¸ä¸ªæ¦å¿µï¼æä»¬å¨ä¸æä¸­ä¼è¯¦ç»æ¢è®¨ãè¯¥æä¸¾å®ä¹å¨clr\src\inc\metamodelpub.hä¸­ï¼åå®ä¹æä¸ªå®ï¼å±å¼åæ¯è¿æ ·çãå æ­¤æä»¬å¯ä»¥ç¥éTBL_COUNTå¨SSCLIä¸­çå®éå¼æ¯42ãæä»¬ä¹å¯ä»¥çå°ï¼è¿ä¸ªæä¸¾å¶å®æ¯ä¸æååºçCorTokenTypeæä¸¾çè¶éã</p>
+
+<p>enum <br />
+{<br />
+TBL_Module, // 0<br />
+TBL_TypeRef, <br />
+TBL_TypeDef,<br />
+TBL_FieldPtr,<br />
+TBL_Field, <br />
+TBL_MethodPtr,<br />
+TBL_Method,<br />
+TBL_ParamPtr,<br />
+TBL_Param,<br />
+TBL_InterfaceImpl,<br />
+TBL_MemberRef,// 10<br />
+TBL_Constant,<br />
+TBL_CustomAttribute,<br />
+TBL_FieldMarshal,<br />
+TBL_DeclSecurity,<br />
+TBL_ClassLayout,<br />
+TBL_FieldLayout,<br />
+TBL_StandAloneSig,<br />
+TBL_EventMap,<br />
+TBL_EventPtr,<br />
+TBL_Event,// 20<br />
+TBL_PropertyMap,<br />
+TBL_PropertyPtr,<br />
+TBL_Property,<br />
+TBL_MethodSemantics,<br />
+TBL_MethodImpl,<br />
+TBL_ModuleRef,<br />
+TBL_TypeSpec,<br />
+TBL_ImplMap,<br />
+TBL_FieldRVA,<br />
+TBL_ENCLog,// 30<br />
+TBL_ENCMap,<br />
+TBL_Assembly,<br />
+TBL_AssemblyProcessor,<br />
+TBL_AssemblyOS,<br />
+TBL_AssemblyRef,<br />
+TBL_AssemblyRefProcessor,<br />
+TBL_AssemblyRefOS,<br />
+TBL_File,<br />
+TBL_ExportedType,<br />
+TBL_ManifestResource,<br />
+TBL_NestedClass,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TBL_COUNT// 42   };   CMiniMdSchemaBase ä¸­m_heapsæ¯ä¸ä¸ªä½å¾ï¼è¡¨ç¤ºæåæä¸ªå çç´¢å¼çé¿åº¦ãç¬¬ä¸ä½è¡¨ç¤º#Stringsæµï¼   ç¬¬äºä½è¡¨ç¤º#Guidæµï¼ç¬¬ä¸ä½æ²¡ç¨ï¼ç¬¬åä½è¡¨ç¤º#Blobæµãå¦ç¸åºä½è®¾ç½
+</code></pre></div></div>
+
+<p>®ä¸º1ï¼åè¡¨ç¤ºå¯¹åºæµç¨4å­èç´¢å¼ãæ¬ä¾ä¸­ï¼m_heapsä¸º0ï¼è¡¨ç¤ºææçæµåç¨2å­èç´¢å¼ãä»£ç å¨clr\src\md\runtime\metamodel.cppçCMiniMdBase::SchemaPopulate2ä¸­ï¼å¦ä¸ï¼<br />
+    m_iStringsMask = (m_Schema.m_heaps &amp; CMiniMdSchema::HEAP_STRING_4) ? 0xffffffff : 0xffff;<br />
+    m_iGuidsMask = (m_Schema.m_heaps &amp; CMiniMdSchema::HEAP_GUID_4) ? 0xffffffff : 0xffff;<br />
+    m_iBlobsMask = (m_Schema.m_heaps &amp; CMiniMdSchema::HEAP_BLOB_4) ? 0xffffffff : 0xffff;<br />
+CMiniMdSchemaBase ä¸­çm_maskvalidåm_sortedæ¯ä¸¤ä¸ª64bitçä½å¾ãç¨æ¥æ è¯ç¸å¯¹åºçä½çè¡¨çç¶æï¼å¶ä¸­m_maskvalidè¡¨ç¤ºè¡¨è¡¨æ¯å¦å­å¨ï¼m_sortedè¡¨ç¤ºè¡¨æ¯å¦æåºãä¾å¦m_maskvalidçæä½ä½ä¸º1è¡¨ç¤ºTBL_Moduleè¡¨å­å¨ãm_sortedç¬¬10ä½ä¸º0è¡¨ç¤ºTBL_MemberRefè¡¨æ²¡ææåºãè¿éå¼å¾ä¸æçæ¯CMiniMdSchemaç±»ä¸­çå®ä¹m_cRecs[TBL_COUNT];åªæ¯åå­ä¸­çéåï¼å¨PEæä»¶ä¸­ä¸ºäºèçç©ºé´ï¼å½ç¶è¦èçç©ºé´ï¼Assemblyè®¾è®¡çå¯æ¯å¯ä»¥éè¿ç½ç»å³æ¶ä¸è½½çï¼å¸¦å®½åâ¦â¦ï¼ï¼å¹¶æ²¡æå®éå­æ¾42ä¸ªULONGï¼èåªæ¯å­æ¾å­å¨çULONGãæ¯ä¸ªULONGè¡¨ç¤ºå¯¹åºçè¡¨æå è¡ãå¨clr\src\md\runtime\Metamodel.cppä¸­çCMiniMdSchema::LoadFromä¸­ï¼å è½½m_cRecsçä»£ç æ¯ä¸é¢çæ ·å­ï¼</p>
+
+<p>unsigned __int64 maskvalid = m_maskvalid;<br />
+    for (iSrc=0, iDst=0; iDst&lt;TBL_COUNT; ++iDst, maskvalid »= 1)<br />
+    {<br />
+        if (maskvalid &amp; 1)<br />
+        {<br />
+            m_cRecs[iDst] = VAL32(pSource-&gt;m_cRecs[iSrc++]);<br />
+        }<br />
+    }<br />
+è¿æ®µä»£ç å©ç¨m_maskvalidåä¸­çä½å¾ï¼æå­å¨è¡¨é¡¹å è½½å°äºç¸åºçåå­æ°ç»ä¸­ãå¨æ¬ä¾ä¸­ï¼m_maskvalidçå¼ä¸º0x901a21557ï¼åå«27ä¸ª1ï¼å æ­¤å¨PEæä»¶ä¸­ï¼m_cRecså¤åªå­å¨14ä¸ªULONGãæ ¹æ®m_maskvalidï¼0x901a21557è½¬æäºè¿å¶ä¸º100100000001101000100001010101010111ï¼æä»¬ç¥éä»ä»¬çå¼åå«æ¯ï¼<br />
+//   Module        –    0x00000001<br />
+//   TypeRef       –    0x00000004<br />
+//   TypeDef       –    0x00000003<br />
+//   Field         –    0x00000001<br />
+//   Method        –    0x00000006<br />
+//   Param         –    0x00000002<br />
+//   MemberRef     –    0x00000004<br />
+//   CustomAttribute-   0x00000001<br />
+//   StandAloneSig –    0x00000002<br />
+//   PropertyMap   –    0x00000001<br />
+//   Property      –    0x00000001<br />
+//   MethodSemantic-    0x00000002<br />
+//   Assembly      –    0x00000001<br />
+//   AssemblyRef   –    0x00000001</p>
+
+<p>ç´§æ¥çä¸é¢æ¯éå æ°æ®ï¼å¯¹åºçæ¯CMiniMdSchemaä¸­çm_ulExtraãä½æ¯è¯¥åä¸ä¸å®å­å¨ï¼å¤æ­æ¯å¦æéå æ°æ®æ¯çCMiniMdSchemaBaseçm_heapsçç¬¬7ä¸ªbitæ¯å¦ä¸º1ãå¨æ¬ä¾ä¸­ï¼m_heapsä¸º0ï¼æä»¥ä¸å­å¨éå æ°æ®ãSSCLIä¸­å¯¹åºçä»£ç ä¹å¨CMiniMdSchema::LoadFromä¸­ï¼å¦ä¸ï¼<br />
+enum <br />
+{<br />
+        EXTRA_DATA      =   0x40,       // If set, schema persists an extra 4 bytes of data.<br />
+}<br />
+// Retrieve the extra data.<br />
+    if (m_heaps &amp; EXTRA_DATA)<br />
+    {<br />
+        m_ulExtra = (VAL32(*reinterpret_cast&lt;const ULONG*&gt;(&amp;pSource-&gt;m_cRecs[iSrc])));<br />
+        ulData += sizeof(ULONG);<br />
+    }</p>
+
+<p>ç´§æ¥çéå æ°æ®çå°±æ¯åæ°æ®è¡¨ï¼Metadata Tableï¼ãè¯»èå¦æçæå³ç³»åæ°æ®åºçè®ºï¼ä¼åç°è¿éçåæ°æ®è¡¨ä¸å³ç³»åæ°æ®åºä¸­çè¡¨éå¸¸ç¸ä¼¼ï¼æ¯ä¸ªè¡¨ç±è¥å¹²è¡è¥å¹²åææï¼æ¯ä¸è¡è¡¨ç¤ºä¸ä¸ªè®°å½ï¼æ¯ä¸ …</p>
+
+  </div>
+
+  <a class="u-url" href="/ssclixia-de-ke-zhi-xing-wen-jian-ge-shi-fen-xi-2.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

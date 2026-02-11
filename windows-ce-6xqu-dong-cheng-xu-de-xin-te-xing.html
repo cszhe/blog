@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windows CE 6.x驱动程序的新特性 | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Windows CE 6.x驱动程序的新特性" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="好久又没有更新博客了。这次发表一篇古文，当然不是古典文言文，只是已经在我的硬盘上放了很长时间的文章，介绍Windows CE 6的驱动程序跟以前相比的新特性。" />
+<meta property="og:description" content="好久又没有更新博客了。这次发表一篇古文，当然不是古典文言文，只是已经在我的硬盘上放了很长时间的文章，介绍Windows CE 6的驱动程序跟以前相比的新特性。" />
+<link rel="canonical" href="https://www.hezongjian.com/windows-ce-6xqu-dong-cheng-xu-de-xin-te-xing.html" />
+<meta property="og:url" content="https://www.hezongjian.com/windows-ce-6xqu-dong-cheng-xu-de-xin-te-xing.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-10-20T20:41:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windows CE 6.x驱动程序的新特性" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2008-10-20T20:41:00-04:00","datePublished":"2008-10-20T20:41:00-04:00","description":"好久又没有更新博客了。这次发表一篇古文，当然不是古典文言文，只是已经在我的硬盘上放了很长时间的文章，介绍Windows CE 6的驱动程序跟以前相比的新特性。","headline":"Windows CE 6.x驱动程序的新特性","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/windows-ce-6xqu-dong-cheng-xu-de-xin-te-xing.html"},"url":"https://www.hezongjian.com/windows-ce-6xqu-dong-cheng-xu-de-xin-te-xing.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Windows CE 6.x驱动程序的新特性</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2008-10-20T20:41:00-04:00" itemprop="datePublished">
+        October 20, 2008
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h3 style="margin-top:13.0pt;margin-right:0cm;margin-bottom:13.0pt;margin-left:
+60.0pt;text-align:justify;text-justify:inter-ideograph;text-indent:-40.0pt;
+mso-pagination:lines-together;page-break-after:avoid;mso-list:l0 level3 lfo2;
+tab-stops:list 60.0pt;mso-layout-grid-align:none;vertical-align:baseline">
+  <span class="Apple-style-span" style="font-family: 'Times New Roman'; font-size: 14px; font-weight: normal;">好久又没有更新博客了。这次发表一篇古文，当然不是古典文言文，只是已经在我的硬盘上放了很长时间的文章，介绍Windows CE 6的驱动程序跟以前相比的新特性。</span>
+</h3>
+
+<h3 style="margin-top:13.0pt;margin-right:0cm;margin-bottom:13.0pt;margin-left:
+60.0pt;text-align:justify;text-justify:inter-ideograph;text-indent:-40.0pt;
+mso-pagination:lines-together;page-break-after:avoid;mso-list:l0 level3 lfo2;
+tab-stops:list 60.0pt;mso-layout-grid-align:none;vertical-align:baseline">
+  <span class="Apple-style-span" style="font-family: 'Times New Roman'; font-size: 14px; font-weight: normal;"><br /></span>
+</h3>
+
+<h3 style="margin-top:13.0pt;margin-right:0cm;margin-bottom:13.0pt;margin-left:
+60.0pt;text-align:justify;text-justify:inter-ideograph;text-indent:-40.0pt;
+mso-pagination:lines-together;page-break-after:avoid;mso-list:l0 level3 lfo2;
+tab-stops:list 60.0pt;mso-layout-grid-align:none;vertical-align:baseline">
+  <a name="_Toc168642703"><span lang="EN-US" style="font-size:
+10.5pt;mso-bidi-font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;font-weight:
+normal;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">1<span style="font:7.0pt &quot;Times New Roman&quot;">           <br /> </span></span></span><span style="font-size:10.5pt;mso-bidi-font-size:
+16.0pt;font-family:黑体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;
+font-weight:normal;mso-bidi-font-weight:bold">访问检查</span></a><span style="mso-bookmark:_Toc168642703"></span><span lang="EN-US" style="font-size:
+10.5pt;mso-bidi-font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:黑体;mso-font-kerning:1.0pt;font-weight:normal;
+mso-bidi-font-weight:bold"><o:p></o:p></span>
+</h3>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">访问检查是用来检查函数的调用者是否有足够的权限去访问传递给这个函数的内存。访问检查是很必要的，它可以防止恶意的应用程序利用驱动程序去完成需要特权才能访问的资源。设备驱动程序由于在</span><span lang="EN-US">Windows Embedded CE 6.0</span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">中处于内核空间所以是一种特权程序，可以访问很多系统的资源。而工作在用户态的应用程序却不是。如果一个应用程序利用设备驱动程序去读写系统的内存，那么设备驱动程序实际上就相当于是授予了这个应用程序高的访问权限。所以在设备驱动程序中进行访问检查可以保护操作系统的内存不受恶意应用程序的破坏。</span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span lang="EN-US"><o:p> </o:p></span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">在</span><span lang="EN-US">Windows CE 5.0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">中，设备驱动程序是通过</span><span lang="EN-US">MapCallerPtr API</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">来对指针参数和嵌套的指针参数进行访问检查的。</span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:blue;mso-font-kerning:0pt;
+mso-no-proof:yes">struct</span><span lang="EN-US" style="font-size:9.0pt;
+font-family:新宋体;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt;
+mso-no-proof:yes"> MyStruct { UCHAR *pEmbedded; DWORD dwSize; };<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt;mso-no-proof:yes"><o:p> </o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// Windows CE 5.0 and prior versions<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// In XXX_IOControl&#8230;<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt;mso-no-proof:yes"><o:p> </o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt;mso-no-proof:yes">MyStuct<br /> *p = ( MyStruct*) pInput;<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt;mso-no-proof:yes">g_pMappedEmbedded<br /> = MapCallerPtr(p-&gt;pEmbedded);<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// Fail if g_pMappedEmbedded == NULL &#8230;<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">在</span><span lang="EN-US">Windows Embedded CE 6.0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">中，设备驱动程序只需要检查嵌套的指针参数是否有效就可以了。所不同的是在</span><span lang="EN-US">Windows<br /> Embedded CE 6.0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">中需要使用</span><span lang="EN-US">CeOpenCallerBuffer</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">这个</span><span lang="EN-US">API</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">来检查是否对于某一段内存，调用进程是否有访问权限。</span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// Now in the New CE Version<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// In XXX_IOControl&#8230;<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt;mso-no-proof:yes"><o:p> </o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt;mso-no-proof:yes">hr<br /> = CeOpenCallerBuffer((PVOID*)&amp;g_pMappedEmbedded, pInput-&gt;pEmbedded,<br /> pInput-&gt;dwSize, ARG_I_PTR, FALSE);<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// Fail if FAILED(hr) == true<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes"><o:p> </o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// When done with pointer&#8230;<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="mso-font-kerning:0pt;mso-no-proof:
+yes">hr = CeCloseCallerBuffer((PVOID)g_pMappedEmbedded, pInput-&gt;pEmbedded,<br /> pInput-&gt;dwSize, ARG_I_PTR );<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt;mso-no-proof:yes"><o:p> </o:p></span>
+</p>
+
+<h3 style="margin-top:13.0pt;margin-right:0cm;margin-bottom:13.0pt;margin-left:
+60.0pt;text-align:justify;text-justify:inter-ideograph;text-indent:-40.0pt;
+mso-pagination:lines-together;page-break-after:avoid;mso-list:l0 level3 lfo2;
+tab-stops:list 60.0pt;mso-layout-grid-align:none;vertical-align:baseline">
+  <a name="_Toc168642704"><span lang="EN-US" style="font-size:
+10.5pt;mso-bidi-font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;font-weight:
+normal;mso-bidi-font-weight:bold"><span style="mso-list:Ignore">2<span style="font:7.0pt &quot;Times New Roman&quot;">           <br /> </span></span></span><span lang="EN-US" style="font-size:10.5pt;
+mso-bidi-font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:
+黑体;mso-font-kerning:1.0pt;font-weight:normal;mso-bidi-font-weight:bold">Marshalling</span></a><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:16.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:黑体;mso-font-kerning:1.0pt;font-weight:normal;
+mso-bidi-font-weight:bold"><o:p></o:p></span>
+</h3>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">处于内核态的线程对位于用户空间的内存的访问可以分为两种方式。同步访问（</span><span lang="EN-US">Synchronous<br /> Access</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">）和异步访问（</span><span lang="EN-US">Asynchronous<br /> Access</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">）。同步访问是指，当访问这块内存区域时，处于内核态的线程是在调用者的上下文环境内。而异步访问正好相反，设备驱动程序所拥有的一个线程要访问的一块内存区域，而该区域正位于其他进程的地址空间中，那么这就是异步访问。</span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">举个异步访问的例子，比如应用程序通过</span><span lang="EN-US">WriteFile API</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">来向设备</span><span lang="EN-US">SD</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">卡中写入一段数据，最后写的请求会通过操作系统内核发送到</span><span lang="EN-US">SD</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">卡的设备驱动中，由设备驱动程序来写入数据。但是</span><span lang="EN-US">I/O</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">操作是一个很慢的操作，为了使</span><span lang="EN-US">CPU</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">达到高的利用率，内核往往会在这时重新调度一个线程开始执行，这样用户空间就可能发生了一次切换。这里说可能，是因为如果被调度的线程和当前的应用程序（也就是当前进程）处于同一进程空间的话，那么就不发生进程的切换，并且要写入的这段数据由于还是位于当前进程空间中，所以就是对于这块数据的访问就是同步的。反之，如果被调度的线程不处于当前进程的空间，那么就会发生一次进程的切换，新的进程会替换老的进程，这时要写入的这块数据区域对于设备驱动程序中的线程来说就是无效的，这也称为异步访问。</span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span lang="EN-US"><o:p> </o:p></span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">对于异步访问必须采用一种叫</span><span lang="EN-US">Marshalling</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">的技术来处理被访问的数据区域。</span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">在</span><span lang="EN-US">Windows CE 5.0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">中，所有的用户态进程共享底部的虚拟地址。所以当</span><span lang="EN-US">Slot 0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">中被替换为不同进程时，由于所有的进程的虚拟地址空间对于设备驱动程序来说都可见，只需要对指向数据块首地址的指针做一次偏移，就可以得到这块数据。</span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">在</span><span lang="EN-US">Windows Embedded CE 6.0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">中，每个用户态的进程都有自己独有的虚拟地址空间，每个进程的虚拟地址空间都是受到保护的。所以对一块内存做</span><span lang="EN-US">Marshall</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">不再是简单的将指针进行偏移。这时可以采用两种方法来对一块内存做</span><span lang="EN-US">Marshall</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，一种方法是将这块内存拷贝一份这样就可以安全的访问，这种方法称为复制。另一种方法是用一个新的虚拟地址去引用所对应的物理，这样一来这块数据就分别被两个指针分别引用，这种方法称为别名。</span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span lang="EN-US"><o:p> </o:p></span>
+</p>
+
+<p class="MsoNormal" style="text-indent:19.95pt;mso-char-indent-count:1.9">
+  <span lang="EN-US">Marshall</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">一块内存区域需要区分同步访问和异步访问。在</span><span lang="EN-US">Windows CE 5.0</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">中，对于同步访问来说，不需要做多余的工作，只需要调用</span><span lang="EN-US">MapCallerPtr API</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">来</span><span lang="EN-US">Marshall</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">嵌套指针所指的地址即可。对于异步访问，线程对于每个</span><span lang="EN-US">Slot</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">都有一定的访问权限，所以需要通过调用</span><span lang="EN-US">SetProcPermissions</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">来先获得调用进程</span><span lang="EN-US">Slot</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的访问权限，然后调用</span><span lang="EN-US">MapCallerPtr</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">来</span><span lang="EN-US">Marshall</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">所要异步访问的内存。</span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// Windows CE 5.0 and prior versions<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes"><o:p> </o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes">// In XXX_IOControl&#8230;<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal" align="left" style="text-align:left;background:silver;
+text-autospace:none">
+  <span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;
+mso-hansi-font-family:&quot;Times New Roman&quot;;color:green;mso-font-kerning:0pt;
+mso-no-proof:yes"><span style="mso-spacerun:yes">  </span></span><span lang="EN-US" style="font-size:9.0pt;font-family:新宋体;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:0pt;mso-no-proof:yes">&lt;span style="mso-spacerun:yes" ... &lt;/p&gt;
+</span></p>
+
+  </div>
+
+  <a class="u-url" href="/windows-ce-6xqu-dong-cheng-xu-de-xin-te-xing.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

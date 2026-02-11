@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windows CE下访问物理内存的方法 | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Windows CE下访问物理内存的方法" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。 Windows CE的有些函数中需要用到物理内存结构体PHYSICAL_ADDRESS， Windows CE在ceddk.h中定义了PHYSICAL_ADDRESS，它其实是LARGE_INTEGER类型，其定义如下： // in ceddk.h typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS; // in winnt.h typedef union _LARGE_INTEGER{ struct { DWORD LowPart; LONG HighPart; }; LONGLONG QuadPart; } LARGE_INTEGER; 可见，Windows CE中用64个Bit来代表物理地址，对于大多数32位的CPU而言，只需要把它的HighPart设置为0就可以了。 如果要直接访问某一个地址的物理内存，Windows CE提供了VirtualAlloc()和VirtualCopy()函数，VirtualAlloc负责在虚拟内存空间内保留一段虚拟内存，而VirtualCopy负责把一段物理内存和虚拟内存绑定，这样，最终对物理内存的访问还是通过虚拟地址进行。它们的声明如下： // 申请虚拟内存 LPVOID VirtualAlloc( LPVOID lpAddress, // 希望的虚拟内存起始地址 DWORD dwSize, // 以字节为单位的大小 DWORD flAllocationType, // 申请类型，分为Reserve和Commit DWORD flProtect // 访问权限 ); // 把物理内存绑定到虚拟地址空间 BOOL VirtualCopy( LPVOID lpvDest, // 虚拟内存的目标地址 LPVOID lpvSrc, // 物理内存地址 DWORD cbSize, // 要绑定的大小 DWORD fdwProtect // 访问权限 ); VirtualAlloc对虚拟内存的申请分为两步，保留MEM_RESERVE和提交MEM_COMMIT。其中MEM_RESERVE只是在进程的虚拟地址空间内保留一段，并不分配实际的物理内存，因此保留的虚拟内存并不能被应用程序直接使用。MEM_COMMIT阶段才真正的为虚拟内存分配物理内存。 下面的代码显示了如何使用VirtualAlloc和VirtualCopy来访问物理内存。因为VirtualCopy负责把一段物理内存和虚拟内存绑定，所以VirtualAlloc的时候只需要对内存保留，没有必要提交。 FpDriverGlobals = (PDRIVER_GLOBALS) VirtualAlloc( 0, DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, MEM_RESERVE, PAGE_NOACCESS); if (FpDriverGlobals == NULL) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8221; VirtualAlloc failed!\r\n&#8221;))); return; } else { if (!VirtualCopy( (PVOID)FpDriverGlobals, (PVOID)(DRIVER_GLOBALS_PHYSICAL_MEMORY_START), DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, (PAGE_READWRITE | PAGE_NOCACHE))) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8220;VirtualCopy failed!\r\n&#8221;))); return; } } CEDDK还提供了函数MmMapIoSpace用来把一段物理内存直接映射到虚拟内存。用MmMapIoSpace申请的内存要用MmUnmapIoSpace释放，此函数的原形如下： PVOID MmMapIoSpace( PHYSICAL_ADDRESS PhysicalAddress, // 起始物理地址 ULONG NumberOfBytes, // 要映射的字节数 BOOLEAN CacheEnable // 是否缓存 );" />
+<meta property="og:description" content="嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。 Windows CE的有些函数中需要用到物理内存结构体PHYSICAL_ADDRESS， Windows CE在ceddk.h中定义了PHYSICAL_ADDRESS，它其实是LARGE_INTEGER类型，其定义如下： // in ceddk.h typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS; // in winnt.h typedef union _LARGE_INTEGER{ struct { DWORD LowPart; LONG HighPart; }; LONGLONG QuadPart; } LARGE_INTEGER; 可见，Windows CE中用64个Bit来代表物理地址，对于大多数32位的CPU而言，只需要把它的HighPart设置为0就可以了。 如果要直接访问某一个地址的物理内存，Windows CE提供了VirtualAlloc()和VirtualCopy()函数，VirtualAlloc负责在虚拟内存空间内保留一段虚拟内存，而VirtualCopy负责把一段物理内存和虚拟内存绑定，这样，最终对物理内存的访问还是通过虚拟地址进行。它们的声明如下： // 申请虚拟内存 LPVOID VirtualAlloc( LPVOID lpAddress, // 希望的虚拟内存起始地址 DWORD dwSize, // 以字节为单位的大小 DWORD flAllocationType, // 申请类型，分为Reserve和Commit DWORD flProtect // 访问权限 ); // 把物理内存绑定到虚拟地址空间 BOOL VirtualCopy( LPVOID lpvDest, // 虚拟内存的目标地址 LPVOID lpvSrc, // 物理内存地址 DWORD cbSize, // 要绑定的大小 DWORD fdwProtect // 访问权限 ); VirtualAlloc对虚拟内存的申请分为两步，保留MEM_RESERVE和提交MEM_COMMIT。其中MEM_RESERVE只是在进程的虚拟地址空间内保留一段，并不分配实际的物理内存，因此保留的虚拟内存并不能被应用程序直接使用。MEM_COMMIT阶段才真正的为虚拟内存分配物理内存。 下面的代码显示了如何使用VirtualAlloc和VirtualCopy来访问物理内存。因为VirtualCopy负责把一段物理内存和虚拟内存绑定，所以VirtualAlloc的时候只需要对内存保留，没有必要提交。 FpDriverGlobals = (PDRIVER_GLOBALS) VirtualAlloc( 0, DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, MEM_RESERVE, PAGE_NOACCESS); if (FpDriverGlobals == NULL) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8221; VirtualAlloc failed!\r\n&#8221;))); return; } else { if (!VirtualCopy( (PVOID)FpDriverGlobals, (PVOID)(DRIVER_GLOBALS_PHYSICAL_MEMORY_START), DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, (PAGE_READWRITE | PAGE_NOCACHE))) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8220;VirtualCopy failed!\r\n&#8221;))); return; } } CEDDK还提供了函数MmMapIoSpace用来把一段物理内存直接映射到虚拟内存。用MmMapIoSpace申请的内存要用MmUnmapIoSpace释放，此函数的原形如下： PVOID MmMapIoSpace( PHYSICAL_ADDRESS PhysicalAddress, // 起始物理地址 ULONG NumberOfBytes, // 要映射的字节数 BOOLEAN CacheEnable // 是否缓存 );" />
+<link rel="canonical" href="https://www.hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa.html" />
+<meta property="og:url" content="https://www.hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2005-06-23T17:19:32-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windows CE下访问物理内存的方法" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-06-23T17:19:32-04:00","datePublished":"2005-06-23T17:19:32-04:00","description":"嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。 Windows CE的有些函数中需要用到物理内存结构体PHYSICAL_ADDRESS， Windows CE在ceddk.h中定义了PHYSICAL_ADDRESS，它其实是LARGE_INTEGER类型，其定义如下： // in ceddk.h typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS; // in winnt.h typedef union _LARGE_INTEGER{ struct { DWORD LowPart; LONG HighPart; }; LONGLONG QuadPart; } LARGE_INTEGER; 可见，Windows CE中用64个Bit来代表物理地址，对于大多数32位的CPU而言，只需要把它的HighPart设置为0就可以了。 如果要直接访问某一个地址的物理内存，Windows CE提供了VirtualAlloc()和VirtualCopy()函数，VirtualAlloc负责在虚拟内存空间内保留一段虚拟内存，而VirtualCopy负责把一段物理内存和虚拟内存绑定，这样，最终对物理内存的访问还是通过虚拟地址进行。它们的声明如下： // 申请虚拟内存 LPVOID VirtualAlloc( LPVOID lpAddress, // 希望的虚拟内存起始地址 DWORD dwSize, // 以字节为单位的大小 DWORD flAllocationType, // 申请类型，分为Reserve和Commit DWORD flProtect // 访问权限 ); // 把物理内存绑定到虚拟地址空间 BOOL VirtualCopy( LPVOID lpvDest, // 虚拟内存的目标地址 LPVOID lpvSrc, // 物理内存地址 DWORD cbSize, // 要绑定的大小 DWORD fdwProtect // 访问权限 ); VirtualAlloc对虚拟内存的申请分为两步，保留MEM_RESERVE和提交MEM_COMMIT。其中MEM_RESERVE只是在进程的虚拟地址空间内保留一段，并不分配实际的物理内存，因此保留的虚拟内存并不能被应用程序直接使用。MEM_COMMIT阶段才真正的为虚拟内存分配物理内存。 下面的代码显示了如何使用VirtualAlloc和VirtualCopy来访问物理内存。因为VirtualCopy负责把一段物理内存和虚拟内存绑定，所以VirtualAlloc的时候只需要对内存保留，没有必要提交。 FpDriverGlobals = (PDRIVER_GLOBALS) VirtualAlloc( 0, DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, MEM_RESERVE, PAGE_NOACCESS); if (FpDriverGlobals == NULL) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8221; VirtualAlloc failed!\\r\\n&#8221;))); return; } else { if (!VirtualCopy( (PVOID)FpDriverGlobals, (PVOID)(DRIVER_GLOBALS_PHYSICAL_MEMORY_START), DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, (PAGE_READWRITE | PAGE_NOCACHE))) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8220;VirtualCopy failed!\\r\\n&#8221;))); return; } } CEDDK还提供了函数MmMapIoSpace用来把一段物理内存直接映射到虚拟内存。用MmMapIoSpace申请的内存要用MmUnmapIoSpace释放，此函数的原形如下： PVOID MmMapIoSpace( PHYSICAL_ADDRESS PhysicalAddress, // 起始物理地址 ULONG NumberOfBytes, // 要映射的字节数 BOOLEAN CacheEnable // 是否缓存 );","headline":"Windows CE下访问物理内存的方法","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa.html"},"url":"https://www.hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Windows CE下访问物理内存的方法</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2005-06-23T17:19:32-04:00" itemprop="datePublished">
+        June 23, 2005
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。<br />
+Windows CE的有些函数中需要用到物理内存结构体PHYSICAL_ADDRESS， Windows CE在ceddk.h中定义了PHYSICAL_ADDRESS，它其实是LARGE_INTEGER类型，其定义如下：</p>
+<font color="#008000">// in ceddk.h</font>
+<font color="#0000ff">typedef</font>
+<p>LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS;</p>
+<font color="#008000">// in winnt.h</font>
+<font color="#0000ff">typedef</font>
+<font color="#0000ff">union</font>
+<p>_LARGE_INTEGER{</p>
+<font color="#0000ff">struct</font>
+<p>{<br />
+    DWORD LowPart;<br />
+    <font color="#0000ff">LONG</font> HighPart;<br />
+  };<br />
+  LONGLONG QuadPart;<br />
+} LARGE_INTEGER;<br />
+可见，Windows CE中用64个Bit来代表物理地址，对于大多数32位的CPU而言，只需要把它的HighPart设置为0就可以了。<br />
+如果要直接访问某一个地址的物理内存，Windows CE提供了VirtualAlloc()和VirtualCopy()函数，VirtualAlloc负责在虚拟内存空间内保留一段虚拟内存，而VirtualCopy负责把一段物理内存和虚拟内存绑定，这样，最终对物理内存的访问还是通过虚拟地址进行。它们的声明如下：</p>
+<font color="#008000">// 申请虚拟内存</font>
+<p>LPVOID VirtualAlloc(<br />
+  LPVOID lpAddress,         <font color="#008000">// 希望的虚拟内存起始地址</font><br />
+  DWORD dwSize,                 <font color="#008000">// 以字节为单位的大小</font><br />
+  DWORD flAllocationType,     <font color="#008000">// 申请类型，分为Reserve和Commit</font><br />
+  DWORD flProtect             <font color="#008000">// 访问权限</font><br />
+);</p>
+<font color="#008000">// 把物理内存绑定到虚拟地址空间</font>
+<font color="#0000ff">BOOL</font>
+<p>VirtualCopy( <br />
+  LPVOID lpvDest,             <font color="#008000">// 虚拟内存的目标地址</font><br />
+  LPVOID lpvSrc,             <font color="#008000">// 物理内存地址</font><br />
+  DWORD cbSize,                 <font color="#008000">// 要绑定的大小</font><br />
+  DWORD fdwProtect             <font color="#008000">// 访问权限</font><br />
+);<br />
+VirtualAlloc对虚拟内存的申请分为两步，保留MEM_RESERVE和提交MEM_COMMIT。其中MEM_RESERVE只是在进程的虚拟地址空间内保留一段，并不分配实际的物理内存，因此保留的虚拟内存并不能被应用程序直接使用。MEM_COMMIT阶段才真正的为虚拟内存分配物理内存。<br />
+下面的代码显示了如何使用VirtualAlloc和VirtualCopy来访问物理内存。因为VirtualCopy负责把一段物理内存和虚拟内存绑定，所以VirtualAlloc的时候只需要对内存保留，没有必要提交。<br />
+FpDriverGlobals = <br />
+(PDRIVER_GLOBALS) VirtualAlloc(<br />
+    0, <br />
+    DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, <br />
+    MEM_RESERVE, <br />
+    PAGE_NOACCESS);</p>
+<font color="#0000ff">if</font>
+<p>(FpDriverGlobals == NULL) {<br />
+    ERRORMSG(DRIVER_ERROR_MSG, (TEXT(<font color="#ff00ff">&#8221; VirtualAlloc failed!\r\n&#8221;</font>)));<br />
+    <font color="#0000ff">return</font>;<br />
+ }</p>
+<font color="#0000ff">else</font>
+<p>{<br />
+    <font color="#0000ff">if</font> (!VirtualCopy(<br />
+    (PVOID)FpDriverGlobals, <br />
+    (PVOID)(DRIVER_GLOBALS_PHYSICAL_MEMORY_START), <br />
+    DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, <br />
+    (PAGE_READWRITE | PAGE_NOCACHE))) {<br />
+       ERRORMSG(DRIVER_ERROR_MSG, (TEXT(<font color="#ff00ff">&#8220;VirtualCopy failed!\r\n&#8221;</font>)));<br />
+       <font color="#0000ff">return</font>;<br />
+    }<br />
+ }<br />
+CEDDK还提供了函数MmMapIoSpace用来把一段物理内存直接映射到虚拟内存。用MmMapIoSpace申请的内存要用MmUnmapIoSpace释放，此函数的原形如下：<br />
+PVOID MmMapIoSpace( <br />
+  PHYSICAL_ADDRESS PhysicalAddress,     <font color="#008000">// 起始物理地址</font><br />
+  ULONG NumberOfBytes,                     <font color="#008000">// 要映射的字节数</font><br />
+  BOOLEAN CacheEnable                     <font color="#008000">// 是否缓存</font><br />
+);</p>
+
+<font color="#0000ff">VOID</font>
+<p>MmUnmapIoSpace( <br />
+  PVOID BaseAddress,                     <font color="#008000">// MmMapIoSpace返回的起始虚拟地址</font><br />
+  ULONG NumberOfBytes                     <font color="#008000">// </font><br />
+);<br />
+其实，MmMapIoSpace函数内部也是调用VirtualAlloc和VirtualCopy函数来实现物理地址到虚拟地址的映射的。MmMapIoSpace函数的原代码是公开的，我们可以从%_WINCEROOT%&lt;font color=’#0000ff’ &gt;PUBLIC&lt;/font&gt;\COMMON\OAK\DRIVERS\CEDDK\DDK_MAP\ddk_map.c得到。从MmMapIoSpace的实现我们也可以看出VirtualAlloc和VirtualCopy的用法：<br />
+PVOID MmMapIoSpace (<br />
+    <font color="#0000ff">IN</font> PHYSICAL_ADDRESS PhysicalAddress,<br />
+    <font color="#0000ff">IN</font> ULONG NumberOfBytes,<br />
+    <font color="#0000ff">IN</font> BOOLEAN CacheEnable<br />
+    )<br />
+{<br />
+PVOID pVirtualAddress; ULONGLONG SourcePhys; <br />
+ULONG SourceSize; <font color="#0000ff">BOOL</font> bSuccess;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SourcePhys = PhysicalAddress.QuadPart &amp; ~(PAGE_SIZE &amp;#8211; 1);  
+SourceSize = NumberOfBytes + (PhysicalAddress.LowPart &amp; (PAGE_SIZE &amp;#8211; 1));
+
+pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);  
+&lt;font color='#0000ff' &gt;if&lt;/font&gt; (pVirtualAddress != NULL)  
+{  
+    bSuccess = VirtualCopy(
+  
+  
+        pVirtualAddress, (PVOID)(SourcePhys &gt;&gt; 8
+</code></pre></div></div>
+
+<p>), SourceSize,<br />
+            PAGE_PHYSICAL | PAGE_READWRITE | (CacheEnable ? 0 : PAGE_NOCACHE));</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &lt;font color='#0000ff' &gt;if&lt;/font&gt; (bSuccess) {  
+        (ULONG)pVirtualAddress += PhysicalAddress.LowPart &amp; (PAGE_SIZE &amp;#8211; 1);  
+    }  
+    &lt;font color='#0000ff' &gt;else&lt;/font&gt; {  
+        VirtualFree(pVirtualAddress, 0, MEM_RELEASE);  
+        pVirtualAddress = NULL;  
+    }  
+}  
+&lt;font color='#0000ff' &gt;return&lt;/font&gt; pVirtualAddress;   }   此外，Windows CE还供了AllocPhysMem函数和FreePhysMem函数，用来申请和释放一段连续的物理内存。函数可以保证申请的物理内存是连续的，如果函数成功，会返回虚拟内存的句柄和物理内存的起始地址。这对于DMA设备尤为有用。在这里就不详细介绍了，读者可以参考Windows CE的联机文档。
+</code></pre></div></div>
+
+  </div>
+
+  <a class="u-url" href="/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>

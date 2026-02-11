@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>关于COM教学的一些想法 | Zongjian’s blog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="关于COM教学的一些想法" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。" />
+<meta property="og:description" content="有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。" />
+<link rel="canonical" href="https://www.hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa.html" />
+<meta property="og:url" content="https://www.hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa.html" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2005-07-13T20:08:06-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="关于COM教学的一些想法" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-07-13T20:08:06-04:00","datePublished":"2005-07-13T20:08:06-04:00","description":"有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。","headline":"关于COM教学的一些想法","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa.html"},"url":"https://www.hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link id="main-stylesheet" rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://www.hezongjian.com/feed.xml" title="Zongjian&apos;s blog" />
+</head>
+<body><header class="site-header" role="banner">
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Zongjian&#39;s blog</a>
+
+    <nav class="site-nav">
+      <a class="page-link" href="/">Home</a>
+      <a class="page-link" href="/categories/">Categories</a>
+      <a class="page-link" href="/tags/">Tags</a>
+      <a class="page-link" href="/archive/">Archive</a>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">关于COM教学的一些想法</h1>
+    <div class="post-meta">
+      <time class="dt-published" datetime="2005-07-13T20:08:06-04:00" itemprop="datePublished">
+        July 13, 2005
+      </time></div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。</p>
+
+<p>我就想对COM的认识是不是也可以从感性到理性，就像我们不懂得进城线程，虚存，MMU，调度算法，一样用Windows操作系统用的也挺好。不懂得POP3，SMTP协议，整天也在网上发邮件一样，可不可以讲COM不从C++将起，用vb6，用ATL，甚至用当年的Visual J++都可以先写几个COM先用起来，或者就干脆用VB用人家写的COM，例如DX和ADO什么的。然后慢慢的理解基于COM的一些技术，例如ActiveX，DirectX，OLE等等，最后在讲COM的原理，COM的优劣，COM与C++的异同等等。我觉得不一定非得彻底了解了IClassFactory，AddRef, Release, QI，IDispatch, CoCreateInstanceEx, IMoniker，SysAllocString……才叫会COM，就像我们会j2SE, j2ee，但是不知道java的垃圾回收是不是Mark&amp;Sweep算法，也不知道java的对象的内存布局，也不知道java的.class文件里的metadata到底是怎么描述每个class和到底如何Reflection的。</p>
+
+  </div>
+
+  <a class="u-url" href="/guan-yu-comjiao-xue-de-yi-xie-xiang-fa.html" hidden></a>
+</article>
+
+
+      </div>
+    </main><link id="fa-stylesheet" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css">
+
+<footer class="site-footer h-card">
+  <data class="u-url" value="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <ul class="contact-list">
+          <li class="p-name">Zongjian He</li>
+          <li><a class="u-email" href="mailto:"></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Personal blog of Zongjian He</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list">
+  <li>
+    <a href="https://www.hezongjian.com/feed.xml" target="_blank" title="Subscribe to syndication feed">
+      <svg class="svg-icon grey" viewbox="0 0 16 16">
+        <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
+          11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0
+          13.806c0-1.21.983-2.195 2.194-2.195zM10.606
+          16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"
+        />
+      </svg>
+    </a>
+  </li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
