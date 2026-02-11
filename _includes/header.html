@@ -1,13 +1,11 @@
-<header class="site-header" role="banner">
+<header class="site-header">
   <div class="wrapper">
-    {%- assign page_paths = site.page_paths | default: site.html_pages | map: "path" -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-
+    <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     <nav class="site-nav">
-      <a class="page-link" href="/">Home</a>
-      <a class="page-link" href="{{ "/categories/" | relative_url }}">Categories</a>
-      <a class="page-link" href="{{ "/tags/" | relative_url }}">Tags</a>
-      <a class="page-link" href="{{ "/archive/" | relative_url }}">Archive</a>
+      <a href="/">Home</a>
+      <a href="{{ "/categories/" | relative_url }}">Categories</a>
+      <a href="{{ "/tags/" | relative_url }}">Tags</a>
+      <a href="{{ "/archive/" | relative_url }}">Archive</a>
     </nav>
   </div>
 </header>

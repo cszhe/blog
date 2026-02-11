@@ -11,7 +11,6 @@ timezone: Pacific/Auckland
 
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
 
 exclude:
   - "Gemfile"
@@ -36,14 +35,5 @@ permalink: /:slug.html
 include:
   - "uploads"
 
-# Minima theme via remote theme
-remote_theme: jekyll/minima
-
-# Minima theme settings
-minima:
-  date_format: "%B %-d, %Y"
-  show_excerpts: true
-
-# Pagination settings
-paginate: 10
-paginate_path: "/page/:num/"
+# Slate theme
+remote_theme: pages-themes/slate@v0.2.0
