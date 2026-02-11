@@ -8,11 +8,9 @@ author:
 
 timezone: America/New_York
 
-markdown: kramdown
-highlighter: rouge
-
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 exclude:
   - "Gemfile"
@@ -41,6 +39,15 @@ slugify: ascii
 # Keep uploads in root directory
 include:
   - "uploads"
+
+# Minima theme via remote theme
+remote_theme: jekyll/minima
+
+# Minima theme settings
+minima:
+  skin: dark
+  date_format: "%B %-d, %Y"
+  show_excerpts: true
 
 # Pagination settings
 paginate: 10

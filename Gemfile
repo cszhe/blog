@@ -4,10 +4,8 @@ gem "jekyll", "~> 4.3"
 gem "webrick", "~> 1.8"
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed", "~> 0.17"
+  gem "jekyll-seo-tag"
+  gem "jekyll-paginate"
+  gem "jekyll-remote-theme"
 end
-
-group :development, :test do
-  gem "jekyll-remote-theme", "~> 0.4"
-end
-gem "jekyll-paginate"
