@@ -2,21 +2,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- seo -%}
-  <link id="main-stylesheet" rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   {%- feed_meta -%}
-  
-  <!-- MathJax for math formulas -->
-  <script src="//polyfill-fastly.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  
-  <!-- Logging script -->
-  <script type="text/javascript">
-    var href = new URL(window.location.href);
-    var page = href.pathname;
-    var xhr = new XMLHttpRequest();
-    var url = `https://gw.hezongjian.com/logger/access?page=${page}`;
-    xhr.open('GET', url, false);
-    xhr.send();
-  </script>
 </head>
