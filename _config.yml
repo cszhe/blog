@@ -27,13 +27,16 @@ exclude:
   - ".jekyll-cache"
   - "vendor"
 
-# Preserve old Pelican URLs - use slug field from frontmatter
-# For future posts: add 'slug: your-slug-here' to frontmatter
 permalink: /:slug.html
 
-# Keep uploads in root directory
 include:
   - "uploads"
 
-# Slate theme
-remote_theme: pages-themes/slate@v0.2.0
+theme: minima
+
+minima:
+  date_format: "%B %-d, %Y"
+  show_excerpts: true
+
+paginate: 10
+paginate_path: "/page/:num/"
