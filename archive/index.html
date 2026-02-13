@@ -206,6 +206,28 @@
 
 
   <script>
+  // Theme toggle functionality
+  (function() {
+    var toggle = document.getElementById('mode-toggle');
+    // Set initial theme based on saved preference or system preference
+    var savedTheme = localStorage.getItem('theme');
+    if (!savedTheme) {
+      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-mode', savedTheme);
+    
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+        var newTheme = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-mode', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+  })();
+  </script>
+
+  <script>
   (function() {
     var loggerUrl = 'https://gw.hezongjian.com/logger/access';
     var data = {
