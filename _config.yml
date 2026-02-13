@@ -1,5 +1,4 @@
-# For GitHub Pages, use older Chirpy version compatible with Jekyll 3.x
-remote_theme: cotes2020/jekyll-theme-chirpy@v5.5.3
+# For local development using copied theme files
 theme_name: jekyll-theme-chirpy
 title: Zongjian's blog
 tagline: Personal blog of Zongjian He
