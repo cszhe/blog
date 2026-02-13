@@ -116,9 +116,7 @@
   
 
   <!-- Scripts -->
-
-  <script src="/assets/js/dist/theme.min.js"></script>
-  <script src="https://chirpy-img.netlify.app/assets/js/dist/theme.min.js" onerror="this.onerror=null;this.remove();"></script>
+  <script src="https://chirpy-img.netlify.app/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -199,9 +197,7 @@
 
 
 
-<!-- Use CDN fallback if local JS not built -->
-<script defer src="/assets/js/dist/home.min.js"></script>
-<script defer src="https://chirpy-img.netlify.app/assets/js/dist/home.min.js" onerror="this.onerror=null;this.remove();"></script>
+<script defer src="https://chirpy-img.netlify.app/assets/js/dist/home.min.js"></script>
 
 
 
@@ -238,21 +234,23 @@
 
   <script>
   (function() {
-    var loggerUrl = 'https://gw.hezongjian.com/logger/access';
-    var data = {
-      url: window.location.href,
-      referrer: document.referrer,
-      userAgent: navigator.userAgent,
-      timestamp: new Date().toISOString()
-    };
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      console.log('Logger (dev mode):', loggerUrl, data);
-    } else {
-      var img = document.createElement('img');
-      img.src = loggerUrl + '?url=' + encodeURIComponent(data.url) + '&referrer=' + encodeURIComponent(data.referrer) + '&ua=' + encodeURIComponent(data.userAgent) + '&t=' + encodeURIComponent(data.timestamp);
-      img.style.display = 'none';
-      document.body.appendChild(img);
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var loggerUrl = 'https://gw.hezongjian.com/logger/access';
+      var data = {
+        url: window.location.href,
+        referrer: document.referrer,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString()
+      };
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('Logger (dev mode):', loggerUrl, data);
+      } else {
+        var img = document.createElement('img');
+        img.src = loggerUrl + '?url=' + encodeURIComponent(data.url) + '&referrer=' + encodeURIComponent(data.referrer) + '&ua=' + encodeURIComponent(data.userAgent) + '&t=' + encodeURIComponent(data.timestamp);
+        img.style.display = 'none';
+        document.body.appendChild(img);
+      }
+    });
   })();
   </script>
 </head>
