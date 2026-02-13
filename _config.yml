@@ -1,4 +1,5 @@
-# Theme name for CSS (not using Jekyll theme gem, using copied files)
+# For GitHub Pages, use remote_theme
+remote_theme: cotes2020/jekyll-theme-chirpy
 theme_name: jekyll-theme-chirpy
 title: Zongjian's blog
 tagline: Personal blog of Zongjian He
@@ -73,19 +74,10 @@ exclude:
   - purgecss.js
   - rollup.config.js
   - "package*.json"
-
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
+  - _themes
 
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-remote-theme
-  - jekyll-archives
