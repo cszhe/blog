@@ -92,3 +92,5 @@ plugins:
   - jekyll-remote-theme
   - jekyll-archives
   - jekyll-sitemap
+  - jekyll-include-cache
+  - jekyll-redirect-from
