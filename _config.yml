@@ -39,6 +39,7 @@ defaults:
       layout: post
       comments: true
       toc: true
+      math: true
       permalink: /posts/:title/
   - scope:
       path: _drafts
