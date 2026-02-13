@@ -1,0 +1,5470 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- `site.alt_lang` can specify a language different from the UI -->
+<html lang="en" >
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+  ><!-- Setup Open Graph image -->
+
+  
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Windows Mobile 5手机使用经历——两天三刷" />
+<meta name="author" content="omale" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="看了标题不用吃惊。你搞Windows CE的人，怎么才用了两月Windows Mobile？别着急，慢慢道来。这篇文章不是技术贴，只是自己的一些故事。权当休闲看。 其实呢，我用基于Windows CE的手机用的是很早的。我2003年的时候就买了基于Windows CE 4.2的smartphone多普达515，当时花了将近4000大洋。多普达515是国内能找到的第一款smartphone手机了，现在早就停产了。所以自己也算是中国第一批吃螃蟹的人了。正是应了嵌入式系统的一大特性——更新换代慢——我的多普达515安然无恙的运行了4年（期间还经历了一次手机掉到厕所里，寒；还有一次充电器线掉到水里短路烧掉，还好有备用）。终于，4月15号彻底不工作了。现象是每次系统boot起来进入主界面之后大概10秒钟之后，键盘就不再响应任何操作了，只能拔电池。怀疑是GWES挂了。经过了一次恢复出厂设置，问题依然存在。后来经过我反复拔电池reboot，终于导致手机彻底歇菜。连boot都boot不起来了。肯定是硬件的损害。虽然对偶的515还有深深的感情，但是现在的smartphone早就步入了6.0时代，我还在使用4.2时代的产品，实在落伍。干脆一咬牙，换！ 其实自己心里早就有了心仪的对象，水货577w，因为不但支持WM 5.0，而且还带wifi。说道这个wifi，上次在南方周末上看了一篇文章，说这个叫“技术爱国主义”。因为国内的规定，同一款设备上，有wifi就不能有电话模块，有电话模块就不能有wifi。原因是：1，国内前几年在推与WiFi竞争的标准WiMax，现在WiMax已经基本挂了，wimax挂了，也不能给wifi好眼色看。2，担心大家都用wifi打网络电话，导致运营商少赚钱，或者遭到国外运营商的竞争。所以国外手机从正规渠道进入国内市场，都必须先把wifi阉割掉。这反而给了水货可乘之机，这样一来，水货不但价格便宜，而且功能还比行货好，哎。 4月16号冒雨去了火车站附近的不夜城，那里是上海水货手机的总集散地。只能用一个字形容——乱。场地的布置乱，交易的流程乱，卖的东西乱，来往的人也乱，全都是怎一个乱字形容。在一派混乱之中，我随便找了一家，花了1900大洋，买了577w，走人。 没想到回去之后的两天之内，就刷了三次机。 所谓刷机，其实只不过是使用loader更新flash中的OS映像。没什么技术含量，只要按照网上的教程一步步走，绝对不会有错。真正的技术含量都在loader里。（如果说刷机，其实当年在老板那里开发Elastos手机的时候，哪天不得刷机几十次……只不过那个手机只是个裸板。这个可是自己花了将近2000大洋买来的。）刷机使用的工具叫ROM Update Utility，在网上很好找。 第一次刷机：为了尝鲜，把默认的老旧ROM换掉，装了个微软雅黑字体的ROM，雅黑是Vista里面才有的字体，号称超级漂亮。结果尝鲜之后，感觉虽然比宋体舒服不少，但是占系统空间太厉害。这个时候我还没有mini SD卡呢，所有东西都要装在本机flash上，所以为了那可怜的空间，换宋体。 第二次刷机：就是刷宋体ROM，刷完之后，果然发现机器本身的存储宽裕了不少。恩，欣慰。结果又是为了尝鲜，装了某些好事者从刚发布的Windows Mobile 6模拟器ROM里面提取出来的Windows Live Messenger软件（哎，不得不佩服这些家伙了，人家发布一个nk.bin，居然可以写个工具，从bin里面提文件出来。而且还把提出来的东西自己再打包成新的bin，就有了到处流传的xxx版ROM）。这次，实在不知道微软怎么想的，居然Windows Live Mobile登录的时候，会把你MSN里的联系人一古脑给添加到手机通讯录里。可怜我的MSN联系人从来不清理，累积了几百个不认识的人。一下子就搞得我的通讯录暴涨，速度变得很慢。一个个删除是不可能的，没有提供回滚方法。只好走到了下一步。 第三次刷机：其实这次只是为了把Windows Live Mobile私自添加的联系人除掉。本来不要刷机，只要恢复出厂设置就好，只不过我被气的抓狂了，不分青红皂白就刷了。目的也打到了。那些碍眼的联系人终于没了。 就这样，相安无事的使用了一段时间。又有一些感想： Wifi超级耗电。不过速度比GPRS快很多，在参加无聊会议的时候，用wifi上网解闷也不错。 QVGA的屏幕导致好多老版本SP下设计不精良的软件使用起来别扭，无法全屏。哈哈，偶在上课的时候一直强调UI分辨率的设计的。:-) 第三方厂商和爱好者自编的软件越来越多了，质量也不断提高。想当年Smartphone刚出炉的时候，偶写个连连看游戏都可以骗下载量的日子一去不复返了。这就是平台标准化和开放化的恐怖。" />
+<meta property="og:description" content="看了标题不用吃惊。你搞Windows CE的人，怎么才用了两月Windows Mobile？别着急，慢慢道来。这篇文章不是技术贴，只是自己的一些故事。权当休闲看。 其实呢，我用基于Windows CE的手机用的是很早的。我2003年的时候就买了基于Windows CE 4.2的smartphone多普达515，当时花了将近4000大洋。多普达515是国内能找到的第一款smartphone手机了，现在早就停产了。所以自己也算是中国第一批吃螃蟹的人了。正是应了嵌入式系统的一大特性——更新换代慢——我的多普达515安然无恙的运行了4年（期间还经历了一次手机掉到厕所里，寒；还有一次充电器线掉到水里短路烧掉，还好有备用）。终于，4月15号彻底不工作了。现象是每次系统boot起来进入主界面之后大概10秒钟之后，键盘就不再响应任何操作了，只能拔电池。怀疑是GWES挂了。经过了一次恢复出厂设置，问题依然存在。后来经过我反复拔电池reboot，终于导致手机彻底歇菜。连boot都boot不起来了。肯定是硬件的损害。虽然对偶的515还有深深的感情，但是现在的smartphone早就步入了6.0时代，我还在使用4.2时代的产品，实在落伍。干脆一咬牙，换！ 其实自己心里早就有了心仪的对象，水货577w，因为不但支持WM 5.0，而且还带wifi。说道这个wifi，上次在南方周末上看了一篇文章，说这个叫“技术爱国主义”。因为国内的规定，同一款设备上，有wifi就不能有电话模块，有电话模块就不能有wifi。原因是：1，国内前几年在推与WiFi竞争的标准WiMax，现在WiMax已经基本挂了，wimax挂了，也不能给wifi好眼色看。2，担心大家都用wifi打网络电话，导致运营商少赚钱，或者遭到国外运营商的竞争。所以国外手机从正规渠道进入国内市场，都必须先把wifi阉割掉。这反而给了水货可乘之机，这样一来，水货不但价格便宜，而且功能还比行货好，哎。 4月16号冒雨去了火车站附近的不夜城，那里是上海水货手机的总集散地。只能用一个字形容——乱。场地的布置乱，交易的流程乱，卖的东西乱，来往的人也乱，全都是怎一个乱字形容。在一派混乱之中，我随便找了一家，花了1900大洋，买了577w，走人。 没想到回去之后的两天之内，就刷了三次机。 所谓刷机，其实只不过是使用loader更新flash中的OS映像。没什么技术含量，只要按照网上的教程一步步走，绝对不会有错。真正的技术含量都在loader里。（如果说刷机，其实当年在老板那里开发Elastos手机的时候，哪天不得刷机几十次……只不过那个手机只是个裸板。这个可是自己花了将近2000大洋买来的。）刷机使用的工具叫ROM Update Utility，在网上很好找。 第一次刷机：为了尝鲜，把默认的老旧ROM换掉，装了个微软雅黑字体的ROM，雅黑是Vista里面才有的字体，号称超级漂亮。结果尝鲜之后，感觉虽然比宋体舒服不少，但是占系统空间太厉害。这个时候我还没有mini SD卡呢，所有东西都要装在本机flash上，所以为了那可怜的空间，换宋体。 第二次刷机：就是刷宋体ROM，刷完之后，果然发现机器本身的存储宽裕了不少。恩，欣慰。结果又是为了尝鲜，装了某些好事者从刚发布的Windows Mobile 6模拟器ROM里面提取出来的Windows Live Messenger软件（哎，不得不佩服这些家伙了，人家发布一个nk.bin，居然可以写个工具，从bin里面提文件出来。而且还把提出来的东西自己再打包成新的bin，就有了到处流传的xxx版ROM）。这次，实在不知道微软怎么想的，居然Windows Live Mobile登录的时候，会把你MSN里的联系人一古脑给添加到手机通讯录里。可怜我的MSN联系人从来不清理，累积了几百个不认识的人。一下子就搞得我的通讯录暴涨，速度变得很慢。一个个删除是不可能的，没有提供回滚方法。只好走到了下一步。 第三次刷机：其实这次只是为了把Windows Live Mobile私自添加的联系人除掉。本来不要刷机，只要恢复出厂设置就好，只不过我被气的抓狂了，不分青红皂白就刷了。目的也打到了。那些碍眼的联系人终于没了。 就这样，相安无事的使用了一段时间。又有一些感想： Wifi超级耗电。不过速度比GPRS快很多，在参加无聊会议的时候，用wifi上网解闷也不错。 QVGA的屏幕导致好多老版本SP下设计不精良的软件使用起来别扭，无法全屏。哈哈，偶在上课的时候一直强调UI分辨率的设计的。:-) 第三方厂商和爱好者自编的软件越来越多了，质量也不断提高。想当年Smartphone刚出炉的时候，偶写个连连看游戏都可以骗下载量的日子一去不复返了。这就是平台标准化和开放化的恐怖。" />
+<link rel="canonical" href="https://gh.hezongjian.com/posts/windows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua/" />
+<meta property="og:url" content="https://gh.hezongjian.com/posts/windows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua/" />
+<meta property="og:site_name" content="Zongjian’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-06-12T14:32:00+12:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windows Mobile 5手机使用经历——两天三刷" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2007-06-12T14:32:00+12:00","datePublished":"2007-06-12T14:32:00+12:00","description":"看了标题不用吃惊。你搞Windows CE的人，怎么才用了两月Windows Mobile？别着急，慢慢道来。这篇文章不是技术贴，只是自己的一些故事。权当休闲看。 其实呢，我用基于Windows CE的手机用的是很早的。我2003年的时候就买了基于Windows CE 4.2的smartphone多普达515，当时花了将近4000大洋。多普达515是国内能找到的第一款smartphone手机了，现在早就停产了。所以自己也算是中国第一批吃螃蟹的人了。正是应了嵌入式系统的一大特性——更新换代慢——我的多普达515安然无恙的运行了4年（期间还经历了一次手机掉到厕所里，寒；还有一次充电器线掉到水里短路烧掉，还好有备用）。终于，4月15号彻底不工作了。现象是每次系统boot起来进入主界面之后大概10秒钟之后，键盘就不再响应任何操作了，只能拔电池。怀疑是GWES挂了。经过了一次恢复出厂设置，问题依然存在。后来经过我反复拔电池reboot，终于导致手机彻底歇菜。连boot都boot不起来了。肯定是硬件的损害。虽然对偶的515还有深深的感情，但是现在的smartphone早就步入了6.0时代，我还在使用4.2时代的产品，实在落伍。干脆一咬牙，换！ 其实自己心里早就有了心仪的对象，水货577w，因为不但支持WM 5.0，而且还带wifi。说道这个wifi，上次在南方周末上看了一篇文章，说这个叫“技术爱国主义”。因为国内的规定，同一款设备上，有wifi就不能有电话模块，有电话模块就不能有wifi。原因是：1，国内前几年在推与WiFi竞争的标准WiMax，现在WiMax已经基本挂了，wimax挂了，也不能给wifi好眼色看。2，担心大家都用wifi打网络电话，导致运营商少赚钱，或者遭到国外运营商的竞争。所以国外手机从正规渠道进入国内市场，都必须先把wifi阉割掉。这反而给了水货可乘之机，这样一来，水货不但价格便宜，而且功能还比行货好，哎。 4月16号冒雨去了火车站附近的不夜城，那里是上海水货手机的总集散地。只能用一个字形容——乱。场地的布置乱，交易的流程乱，卖的东西乱，来往的人也乱，全都是怎一个乱字形容。在一派混乱之中，我随便找了一家，花了1900大洋，买了577w，走人。 没想到回去之后的两天之内，就刷了三次机。 所谓刷机，其实只不过是使用loader更新flash中的OS映像。没什么技术含量，只要按照网上的教程一步步走，绝对不会有错。真正的技术含量都在loader里。（如果说刷机，其实当年在老板那里开发Elastos手机的时候，哪天不得刷机几十次……只不过那个手机只是个裸板。这个可是自己花了将近2000大洋买来的。）刷机使用的工具叫ROM Update Utility，在网上很好找。 第一次刷机：为了尝鲜，把默认的老旧ROM换掉，装了个微软雅黑字体的ROM，雅黑是Vista里面才有的字体，号称超级漂亮。结果尝鲜之后，感觉虽然比宋体舒服不少，但是占系统空间太厉害。这个时候我还没有mini SD卡呢，所有东西都要装在本机flash上，所以为了那可怜的空间，换宋体。 第二次刷机：就是刷宋体ROM，刷完之后，果然发现机器本身的存储宽裕了不少。恩，欣慰。结果又是为了尝鲜，装了某些好事者从刚发布的Windows Mobile 6模拟器ROM里面提取出来的Windows Live Messenger软件（哎，不得不佩服这些家伙了，人家发布一个nk.bin，居然可以写个工具，从bin里面提文件出来。而且还把提出来的东西自己再打包成新的bin，就有了到处流传的xxx版ROM）。这次，实在不知道微软怎么想的，居然Windows Live Mobile登录的时候，会把你MSN里的联系人一古脑给添加到手机通讯录里。可怜我的MSN联系人从来不清理，累积了几百个不认识的人。一下子就搞得我的通讯录暴涨，速度变得很慢。一个个删除是不可能的，没有提供回滚方法。只好走到了下一步。 第三次刷机：其实这次只是为了把Windows Live Mobile私自添加的联系人除掉。本来不要刷机，只要恢复出厂设置就好，只不过我被气的抓狂了，不分青红皂白就刷了。目的也打到了。那些碍眼的联系人终于没了。 就这样，相安无事的使用了一段时间。又有一些感想： Wifi超级耗电。不过速度比GPRS快很多，在参加无聊会议的时候，用wifi上网解闷也不错。 QVGA的屏幕导致好多老版本SP下设计不精良的软件使用起来别扭，无法全屏。哈哈，偶在上课的时候一直强调UI分辨率的设计的。:-) 第三方厂商和爱好者自编的软件越来越多了，质量也不断提高。想当年Smartphone刚出炉的时候，偶写个连连看游戏都可以骗下载量的日子一去不复返了。这就是平台标准化和开放化的恐怖。","headline":"Windows Mobile 5手机使用经历——两天三刷","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/posts/windows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua/"},"url":"https://gh.hezongjian.com/posts/windows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <title>Windows Mobile 5手机使用经历——两天三刷 | Zongjian's blog
+  </title>
+
+  <!--
+  The Favicons for Web, Android, Microsoft, and iOS (iPhone and iPad) Apps
+  Generated by: https://realfavicongenerator.net/
+-->
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+
+<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Zongjian's blog">
+<meta name="application-name" content="Zongjian's blog">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+  <!-- Resource Hints -->
+  
+    
+      
+        <link rel="preconnect" href="https://fonts.googleapis.com" >
+      
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" >
+      
+    
+      
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" >
+      
+    
+      
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" >
+      
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" >
+      
+    
+  
+
+  <!-- Bootstrap -->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/assets/css/jekyll-theme-chirpy.css">
+
+  <!-- Web Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.1/css/all.min.css">
+
+  <!-- 3rd-party Dependencies -->
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
+  
+
+  <!-- Scripts -->
+
+  <script src="/assets/js/dist/theme.min.js"></script>
+  <script src="https://chirpy-img.netlify.app/assets/js/dist/theme.min.js" onerror="this.onerror=null;this.remove();"></script>
+
+  <!-- JS selector for site. -->
+
+<!-- commons -->
+
+
+
+<!-- layout specified -->
+
+
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+
+
+
+
+
+
+<!-- Use CDN fallback if local JS not built -->
+<script defer src="/assets/js/dist/post.min.js"></script>
+<script defer src="https://chirpy-img.netlify.app/assets/js/dist/post.min.js" onerror="this.onerror=null;this.remove();"></script>
+
+
+
+<!-- Pageviews -->
+
+  
+
+  
+
+
+
+  
+
+  <!-- A placeholder to allow defining custom metadata -->
+
+
+  <script>
+  (function() {
+    var loggerUrl = 'https://gw.hezongjian.com/logger/access';
+    var data = {
+      url: window.location.href,
+      referrer: document.referrer,
+      userAgent: navigator.userAgent,
+      timestamp: new Date().toISOString()
+    };
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      console.log('Logger (dev mode):', loggerUrl, data);
+    } else {
+      var img = document.createElement('img');
+      img.src = loggerUrl + '?url=' + encodeURIComponent(data.url) + '&referrer=' + encodeURIComponent(data.referrer) + '&ua=' + encodeURIComponent(data.userAgent) + '&t=' + encodeURIComponent(data.timestamp);
+      img.style.display = 'none';
+      document.body.appendChild(img);
+    }
+  })();
+  </script>
+</head>
+
+
+  <body>
+    <!-- The Side Bar -->
+
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="/" id="avatar" class="rounded-circle"><img src="https://chirpy-img.netlify.app/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+
+    <a class="site-title d-block" href="/">Zongjian's blog</a>
+    <p class="site-subtitle fst-italic mb-0">Personal blog of Zongjian He</p>
+  </header>
+  <!-- .profile-wrapper -->
+
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- home -->
+      <li class="nav-item">
+        <a href="/" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>HOME</span>
+        </a>
+      </li>
+      <!-- the real tabs -->
+      
+        <li class="nav-item">
+          <a href="/categories/" class="nav-link">
+            <i class="fa-fw fas fa-stream"></i>
+            
+
+            <span>CATEGORIES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/tags/" class="nav-link">
+            <i class="fa-fw fas fa-tags"></i>
+            
+
+            <span>TAGS</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/archives/" class="nav-link">
+            <i class="fa-fw fas fa-archive"></i>
+            
+
+            <span>ARCHIVES</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+        <li class="nav-item">
+          <a href="/about/" class="nav-link">
+            <i class="fa-fw fas fa-info-circle"></i>
+            
+
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <!-- .nav-item -->
+      
+    </ul>
+  </nav>
+
+  <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
+    
+      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      
+        <span class="icon-border"></span>
+      
+    
+
+    
+      
+
+      
+        <a
+          href="https://github.com/"
+          aria-label="github"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href="https://twitter.com/"
+          aria-label="twitter"
+          
+
+          
+            target="_blank"
+            
+          
+
+          
+
+          
+            rel="noopener noreferrer"
+          
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          aria-label="email"
+          
+
+          
+
+          
+
+          
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
+      
+    
+      
+
+      
+        <a
+          href="/feed.xml"
+          aria-label="rss"
+          
+
+          
+
+          
+
+          
+        >
+          <i class="fas fa-rss"></i>
+        </a>
+      
+    
+  </div>
+  <!-- .sidebar-bottom -->
+</aside>
+<!-- #sidebar -->
+
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        <!-- The Top Bar -->
+
+<header id="topbar-wrapper" aria-label="Top Bar">
+  <div
+    id="topbar"
+    class="d-flex align-items-center justify-content-between px-lg-3 h-100"
+  >
+    <nav id="breadcrumb" aria-label="Breadcrumb">
+      
+
+      
+        
+          
+            <span>
+              <a href="/">Home</a>
+            </span>
+
+          
+        
+          
+        
+          
+            
+              <span>Windows Mobile 5手机使用经历——两天三刷</span>
+            
+
+          
+        
+      
+    </nav>
+    <!-- endof #breadcrumb -->
+
+    <button type="button" id="sidebar-trigger" class="btn btn-link">
+      <i class="fas fa-bars fa-fw"></i>
+    </button>
+
+    <div id="topbar-title">
+      Post
+    </div>
+
+    <button type="button" id="search-trigger" class="btn btn-link">
+      <i class="fas fa-search fa-fw"></i>
+    </button>
+
+    <search id="search" class="align-items-center ms-3 ms-lg-0">
+      <i class="fas fa-search fa-fw"></i>
+      <input
+        class="form-control"
+        id="search-input"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="Search..."
+      >
+    </search>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
+  </div>
+</header>
+
+
+        <div class="row flex-grow-1">
+          <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              <!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+
+
+
+<article class="px-1" data-toc="false">
+  <header>
+    <h1 data-toc-skip>Windows Mobile 5手机使用经历——两天三刷</h1>
+    
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1181615520"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Jun 12, 2007
+</time>
+
+      </span>
+
+      <!-- lastmod date -->
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              
+                
+                
+              
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="1612 words"
+>
+  <em>8 min</em> read</span>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+  <div class="content">
+    <div>
+  <div>
+    看了标题不用吃惊。你搞Windows CE的人，怎么才用了两月Windows Mobile？别着急，慢慢道来。这篇文章不是技术贴，只是自己的一些故事。权当休闲看。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    其实呢，我用基于Windows CE的手机用的是很早的。我2003年的时候就买了基于Windows CE 4.2的smartphone多普达515，当时花了将近4000大洋。多普达515是国内能找到的第一款smartphone手机了，现在早就停产了。所以自己也算是中国第一批吃螃蟹的人了。正是应了嵌入式系统的一大特性——更新换代慢——我的多普达515安然无恙的运行了4年（期间还经历了一次手机掉到厕所里，寒；还有一次充电器线掉到水里短路烧掉，还好有备用）。终于，4月15号彻底不工作了。现象是每次系统boot起来进入主界面之后大概10秒钟之后，键盘就不再响应任何操作了，只能拔电池。怀疑是GWES挂了。经过了一次恢复出厂设置，问题依然存在。后来经过我反复拔电池reboot，终于导致手机彻底歇菜。连boot都boot不起来了。肯定是硬件的损害。虽然对偶的515还有深深的感情，但是现在的smartphone早就步入了6.0时代，我还在使用4.2时代的产品，实在落伍。干脆一咬牙，换！
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    其实自己心里早就有了心仪的对象，水货577w，因为不但支持WM 5.0，而且还带wifi。说道这个wifi，上次在南方周末上看了一篇文章，说这个叫“技术爱国主义”。因为国内的规定，同一款设备上，有wifi就不能有电话模块，有电话模块就不能有wifi。原因是：1，国内前几年在推与WiFi竞争的标准WiMax，现在WiMax已经基本挂了，wimax挂了，也不能给wifi好眼色看。2，担心大家都用wifi打网络电话，导致运营商少赚钱，或者遭到国外运营商的竞争。所以国外手机从正规渠道进入国内市场，都必须先把wifi阉割掉。这反而给了水货可乘之机，这样一来，水货不但价格便宜，而且功能还比行货好，哎。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    4月16号冒雨去了火车站附近的不夜城，那里是上海水货手机的总集散地。只能用一个字形容——乱。场地的布置乱，交易的流程乱，卖的东西乱，来往的人也乱，全都是怎一个乱字形容。在一派混乱之中，我随便找了一家，花了1900大洋，买了577w，走人。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    没想到回去之后的两天之内，就刷了三次机。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    所谓刷机，其实只不过是使用loader更新flash中的OS映像。没什么技术含量，只要按照网上的教程一步步走，绝对不会有错。真正的技术含量都在loader里。（如果说刷机，其实当年在老板那里开发Elastos手机的时候，哪天不得刷机几十次……只不过那个手机只是个裸板。这个可是自己花了将近2000大洋买来的。）刷机使用的工具叫ROM Update Utility，在网上很好找。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    <a href="http://images.blogcn.com/2007/6/12/2/omale,20070612023211143.JPG" class="popup img-link  shimmer"><img height="358" src="http://images.blogcn.com/2007/6/12/2/omale,20070612023211143.JPG" width="560" border="0" loading="lazy"></a>
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    第一次刷机：为了尝鲜，把默认的老旧ROM换掉，装了个微软雅黑字体的ROM，雅黑是Vista里面才有的字体，号称超级漂亮。结果尝鲜之后，感觉虽然比宋体舒服不少，但是占系统空间太厉害。这个时候我还没有mini SD卡呢，所有东西都要装在本机flash上，所以为了那可怜的空间，换宋体。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    第二次刷机：就是刷宋体ROM，刷完之后，果然发现机器本身的存储宽裕了不少。恩，欣慰。结果又是为了尝鲜，装了某些好事者从刚发布的Windows Mobile 6模拟器ROM里面提取出来的Windows Live Messenger软件（哎，不得不佩服这些家伙了，人家发布一个nk.bin，居然可以写个工具，从bin里面提文件出来。而且还把提出来的东西自己再打包成新的bin，就有了到处流传的xxx版ROM）。这次，实在不知道微软怎么想的，居然Windows Live Mobile登录的时候，会把你MSN里的联系人一古脑给添加到手机通讯录里。可怜我的MSN联系人从来不清理，累积了几百个不认识的人。一下子就搞得我的通讯录暴涨，速度变得很慢。一个个删除是不可能的，没有提供回滚方法。只好走到了下一步。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    第三次刷机：其实这次只是为了把Windows Live Mobile私自添加的联系人除掉。本来不要刷机，只要恢复出厂设置就好，只不过我被气的抓狂了，不分青红皂白就刷了。目的也打到了。那些碍眼的联系人终于没了。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+    就这样，相安无事的使用了一段时间。又有一些感想：
+  </div>
+  
+  <div>
+    Wifi超级耗电。不过速度比GPRS快很多，在参加无聊会议的时候，用wifi上网解闷也不错。
+  </div>
+  
+  <div>
+    QVGA的屏幕导致好多老版本SP下设计不精良的软件使用起来别扭，无法全屏。哈哈，偶在上课的时候一直强调UI分辨率的设计的。:-)
+  </div>
+  
+  <div>
+    第三方厂商和爱好者自编的软件越来越多了，质量也不断提高。想当年Smartphone刚出炉的时候，偶写个连连看游戏都可以骗下载量的日子一去不复返了。这就是平台标准化和开放化的恐怖。
+  </div>
+  
+  <div>
+     
+  </div>
+  
+  <div>
+     
+  </div>
+</div>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/windows-ce/"
+            class="post-tag no-text-decoration"
+          >Windows CE</a>
+        
+          <a
+            href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"
+            class="post-tag no-text-decoration"
+          >嵌入式</a>
+        
+          <a
+            href="/tags/%E8%BD%AF%E4%BB%B6/"
+            class="post-tag no-text-decoration"
+          >软件</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=Windows%20Mobile%205%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8%E7%BB%8F%E5%8E%86%E2%80%94%E2%80%94%E4%B8%A4%E5%A4%A9%E4%B8%89%E5%88%B7%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fposts%2Fwindows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
+      </a>
+    
+
+      
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Windows%20Mobile%205%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8%E7%BB%8F%E5%8E%86%E2%80%94%E2%80%94%E4%B8%A4%E5%A4%A9%E4%B8%89%E5%88%B7%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fposts%2Fwindows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+
+      
+
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fposts%2Fwindows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua%2F&text=Windows%20Mobile%205%E6%89%8B%E6%9C%BA%E4%BD%BF%E7%94%A8%E7%BB%8F%E5%8E%86%E2%80%94%E2%80%94%E4%B8%A4%E5%A4%A9%E4%B8%89%E5%88%B7%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
+</div>
+
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
+</article>
+
+
+            
+          </main>
+
+          <!-- panel -->
+          <aside aria-label="Panel" id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
+            <div class="access">
+              <!-- Get 5 last posted/updated posts -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="access-lastmod">
+    <h2 class="panel-heading">Recently Updated</h2>
+    <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/dao-di-shui-zai-chi-la-ji/">到底谁在吃垃圾</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/7nian-liao-zhong-yu-hui-guo-yi-tang/">7年了, 终于回国一趟</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+    </ul>
+  </section>
+  <!-- #access-lastmod -->
+
+
+              <!-- The trending tags list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%90%8C%E6%B5%8E/">同济</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/">程序员</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/google/">Google</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E6%B5%B7%E5%A4%96%E7%BB%8F%E5%8E%86/">海外经历</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E6%95%99%E8%82%B2/">教育</a>
+      
+    </div>
+  </section>
+
+
+            </div>
+
+            
+              
+              
+
+
+
+
+
+
+
+            
+          </aside>
+        </div>
+
+        <div class="row">
+          <!-- tail -->
+          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/zui-jin-wo-zai-gan-shi-yao/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1251342700"
+  data-df="ll"
+  
+>
+  Aug 27, 2009
+</time>
+
+              <h4 class="pt-0 my-2">最近我在干什么？</h4>
+              <div class="text-muted">
+                <p>有网友反映，好久没有看到我在写关于嵌入式的技术贴了。是不是技术已经荒废了？
+
+呵呵，最近事情的确比较多，只是抽空写一些比较短的blog，今天么，下午睡觉睡多了，晚上睡不着了。就写一些跟技术相关的东西吧。有些东西暂时处于保密阶段，就无法写的很详细了。
+
+最近我在干什么呢？现在山寨举国横行肆虐，在“农业学大寨，工业学山寨”的号召下，俺也开始了山寨之旅。俺现在在做一个山寨版的软件，山寨的是某hu公...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/xue-yuan-sheng-ming-liao-ge-ren-ye-sheng-ming-yi-xia-ba/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1216401060"
+  data-df="ll"
+  
+>
+  Jul 19, 2008
+</time>
+
+              <h4 class="pt-0 my-2">学院声明了，个人也声明一下吧</h4>
+              <div class="text-muted">
+                <p>学院针对某事件做了声明，如下： 个人也声明一下吧： 声 明 近年来，社会上有个别机构和个人，非法冒用俺个人的名义办嵌入式培训班。为此，俺个人声明如下： 俺是同济大学软件学院的教职工，从事软件工程专业本科课程教育和研究生课程教育。目前俺个人上课情况如下：《Windows CE嵌入式系统》课程及实验，本科生，研究生。《面向对象程序设计》课程，研究生。《大型数据库设计与应用》课程，研究生。 除上述...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/lian-zai-6cong-xue-sheng-dao-jiao-shi/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1211723400"
+  data-df="ll"
+  
+>
+  May 26, 2008
+</time>
+
+              <h4 class="pt-0 my-2">连载6：从学生到教师</h4>
+              <div class="text-muted">
+                <p>“林间新绿一重重，小蕾深藏数点红”——初次登上讲台 虽然我07年6月才正式到学院工作，但是初次登上学院的讲台却是在三年前。记得是在04年夏天吧。微软与同济大学联合成立了移动与嵌入式中心，并且希望资助我们学院开设Windows Embedded系列课程。但是Windows Embedded的课程老师很难找，因为整个国内的Windows Embedded都刚刚处于起步阶段。而恰巧我在做的汽车学院...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/guan-yu-bai-nian-xiao-qing/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>关于百年校庆</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/zhong-guo-yi-dong-gprs-cmnetce-shi-bao-gao/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>中国移动GPRS cmnet测试报告</p>
+    </a>
+  
+</nav>
+
+            
+
+            <!-- The Footer -->
+
+<footer
+  aria-label="Site Info"
+  class="
+    d-flex flex-column justify-content-center text-muted
+    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
+  "
+>
+  <p>©
+    <time>2026</time>
+
+    
+      <em class="fst-normal"></em>.
+    
+
+    
+      <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+      >Some rights reserved.</span>
+    
+  </p>
+
+  <p>Using the <a
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="v"
+        href="https://github.com/cotes2020/jekyll-theme-chirpy"
+        target="_blank"
+        rel="noopener"
+      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+  </p>
+</footer>
+
+          </div>
+        </div>
+
+        <!-- The Search results -->
+
+<div id="search-result-wrapper" class="d-flex justify-content-center d-none">
+  <div class="col-11 content">
+    <div id="search-hints">
+      <!-- The trending tags list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+
+
+  <section>
+    <h2 class="panel-heading">Trending Tags</h2>
+    <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%90%8C%E6%B5%8E/">同济</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/">程序员</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/google/">Google</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E6%B5%B7%E5%A4%96%E7%BB%8F%E5%8E%86/">海外经历</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E6%95%99%E8%82%B2/">教育</a>
+      
+    </div>
+  </section>
+
+
+    </div>
+    <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+  </div>
+</div>
+
+      </div>
+
+      <aside aria-label="Scroll to Top">
+        <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+          <i class="fas fa-angle-up"></i>
+        </button>
+      </aside>
+    </div>
+
+    <div id="mask" class="d-none position-fixed w-100 h-100 z-1"></div>
+
+    
+
+    <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
+
+    
+
+    <!--
+  Jekyll Simple Search loader
+  See: <https://github.com/christian-fei/Simple-Jekyll-Search>
+-->
+
+
+
+
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('search-results'),
+      json: '/assets/js/data/search.json',
+      searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
+      noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+      templateMiddleware: function(prop, value, template) {
+        if (prop === 'categories') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+          }
+        }
+
+        if (prop === 'tags') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+          }
+        }
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>
+

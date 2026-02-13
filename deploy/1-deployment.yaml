@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hzj-deployment
+  labels:
+    app: hzj-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hzj-nginx
+  template:
+    metadata:
+      labels:
+        app: hzj-nginx
+    spec:
+      containers:
+      - name: hzj-nginx
+        image: hezongjian/blog:latest
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80
+            name: http
+            protocol: TCP
