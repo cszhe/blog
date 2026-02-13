@@ -60,11 +60,9 @@
     {% assign js = 'commons' %}
 {% endcase %}
 
-{% capture script %}/assets/js/dist/{{ js }}.min.js{% endcapture %}
+{% capture script %}https://chirpy-img.netlify.app/assets/js/dist/{{ js }}.min.js{% endcapture %}
 
-<!-- Use CDN fallback if local JS not built -->
-<script defer src="{{ script | relative_url }}"></script>
-<script defer src="https://chirpy-img.netlify.app/assets/js/dist/{{ js }}.min.js" onerror="this.onerror=null;this.remove();"></script>
+<script defer src="{{ script }}"></script>
 
 {% if page.math %}
   <!-- MathJax -->
