@@ -212,24 +212,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -560,61 +561,6 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/posts/lian-zai-1cong-xue-sheng-dao-jiao-shi/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">连载1：从学生到教师</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>这是我给软件学院院刊写的文章，原文没有名字，只有内容。blog的标题一栏看来是不允许null的，所以自己随便配了个名字。慢慢贴吧。 【序】 时光飞逝，岁月如梭。回首2002年作为学院的第一批转专业学生加入同济大学软件学院，到现在成为学院的教师，已经六年有余了。其间经历了太多值得记忆的事情，也经历了太多的难忘。提笔却不知道该从何写起，还是把这六年生活中的点滴摘录出来，以飨各位，同时自勉。 “蜀...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1208877000"
-  data-df="ll"
-  
->
-  Apr 23, 2008
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      未分类
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/yao-cheng-jia-liao/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1129,6 +1075,63 @@ http://msevents.microsoft.com/CUI/WebCastEventDetails.aspx?culture=en-US&amp;amp
   
 >
   Sep 28, 2007
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      未分类
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/ao-yun-men-piao-shen-gou-cheng-gong/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">奥运门票申购成功</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>今天出差去了趟常州，去了Shinco公司做Trainning，回来之后打开自己的Gmail信箱，居然惊奇的发现了北京奥运票务中心的邮件，原来是自己很久以前在网上申购的奥运门票居然成功了！总共申购成功了4张门票，篮球和羽毛球。篮球是我喜欢的运动，羽毛球是她喜欢的运动，我对羽毛球完全白痴。篮球，哈哈，密切关注奥运篮球日程，希望偶买的这场比赛能看到梦之队或者中国队，那就圆满了。
+
+本来对于申购已经...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1188345900"
+  data-df="ll"
+  
+>
+  Aug 29, 2007
 </time>
 
 
@@ -1688,13 +1691,6 @@ http://msevents.microsoft.com/CUI/WebCastEventDetails.aspx?culture=en-US&amp;amp
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1717,6 +1713,13 @@ http://msevents.microsoft.com/CUI/WebCastEventDetails.aspx?culture=en-US&amp;amp
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

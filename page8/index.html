@@ -212,24 +212,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -560,64 +561,6 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/posts/huai-nian-wo-de-ye-ye/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">怀念我的爷爷</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>今日晚间无事，于是早早的洗漱，到Hall里的自习室看书。忽然间，没来由的脑子里冒出一个名称–爷爷。接着我的脑子对我说，你再也见不到这个人了。我抗拒道：只要我回山东去，我就能看见爷爷。脑子说：你再也见不到他了，他去了，去了。我不信：只要我回去，就能看到爷爷坐在门前喝茶晒太阳，一如既往的，一定的，一定的。但是理智让我想起，爷爷真的走了，油灯芯，寿衣，殡仪馆，墓地，这些是我3天前的经历。
-
-
-  ...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1315010711"
-  data-df="ll"
-  
->
-  Sep  3, 2011
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      工作和学习
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/gu-ge-shou-gou-mo-tuo-qian-ru-shi-san-bu-zou-you-ying-yan-liao/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1142,6 +1085,67 @@
                   <span class="categories">
                     
                       未分类
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/wang-luo-gong-kai-ke-tong-ji-wei-shi-yao-bu-ke-yi/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">网络公开课，同济为什么不可以?</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>这几天，复旦大学在网易上开设网络公开课的消息吸引了不少眼球，从网友评论来看，顶的比踩的要多不少。
+
+http://tech.163.com/11/0407/03/710PUN8R000915BF.html
+
+不管课程质量怎么样，敢在国内做第一个吃螃蟹的，其勇气也不得不令人称赞。作为同行，为啥同济就不行呢？
+
+其实不是没尝试过，是推动不下去。08年我受邀去美国参加苹果WWDC的时候，同时还受邀...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1302211229"
+  data-df="ll"
+  
+>
+  Apr  8, 2011
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      工作和学习
                   </span>
                 
               </div>
@@ -1692,13 +1696,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1721,6 +1718,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

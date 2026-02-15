@@ -212,24 +212,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -560,65 +561,6 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/posts/zhong-yu-zhi-dao-gu-ge-wei-sha-hui-tui-chu-zhong-guo-liao/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">终于知道谷歌为啥会退出中国了</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>Update1建立财务关系手续：
-
-昨天终于把所有验证同济财务帐户的手续都办全了，同济在谷歌赞助的所有高校中是最后一个提交材料的，终于得了个第一，不过是倒数的。从提交申请，到手续办完，整整一个月啊。
-
-免责申明：本人系文盲，下文多数字不认识，多数词不明白其含义，打字行为纯粹是身体缺乏营养，倒置肌肉神经抽搐，被动随手敲击键盘所致，并不意味本人同意、支持、反对，或了解、知晓文中描述内容，故本人不...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1273917000"
-  data-df="ll"
-  
->
-  May 15, 2010
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      工作和学习
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/visual-studio-2010-on-windows-7-x64ti-yan-zhong/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1126,6 +1068,67 @@ Android分层：Har...</p>
                   <span class="categories">
                     
                       嵌入式
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/hello-world/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">Hello world!</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!
+
+——————————— 上面是WordPress自己打出来的——————
+
+买了国外的域名和空间，玩了一个周末，弄好了wordpress, gallery 3还有mediawiki，以后不出意外就用这个博客了。
+
+博客...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1269119292"
+  data-df="ll"
+  
+>
+  Mar 21, 2010
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      未分类
                   </span>
                 
               </div>
@@ -1676,13 +1679,6 @@ Android分层：Har...</p>
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1705,6 +1701,13 @@ Android分层：Har...</p>
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

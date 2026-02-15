@@ -250,24 +250,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -835,13 +836,6 @@ Mode之后Slot之间的界限就解除了，就像所有的32个进程其实是�
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -864,6 +858,13 @@ Mode之后Slot之间的界限就解除了，就像所有的32个进程其实是�
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

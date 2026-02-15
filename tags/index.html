@@ -38,11 +38,11 @@
 <meta property="og:url" content="https://gh.hezongjian.com/tags/" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-02-13T14:50:46+13:00" />
+<meta property="article:published_time" content="2026-02-16T10:56:40+13:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Tags" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-13T14:50:46+13:00","datePublished":"2026-02-13T14:50:46+13:00","description":"Personal blog of Zongjian He","headline":"Tags","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/tags/"},"url":"https://gh.hezongjian.com/tags/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-16T10:56:40+13:00","datePublished":"2026-02-16T10:56:40+13:00","description":"Personal blog of Zongjian He","headline":"Tags","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/tags/"},"url":"https://gh.hezongjian.com/tags/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -170,24 +170,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -702,13 +703,6 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -731,6 +725,13 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

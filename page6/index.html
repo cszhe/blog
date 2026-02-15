@@ -212,24 +212,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -560,69 +561,6 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/posts/wo-de-zhe-20nian/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">我的这20年</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>从1994年初中入学到现在，整整20年了，这几天群里聊得火热。最近的节奏是每个人写一段文字。介绍一下自己的过去。难得有机会回忆过去，就把初中到现在的经历写一下吧。
-
-** 初中（1994-1997）
-
-共同生活的日子，你们都懂，略。
-
-** 高中（1997-2000）
-
-高中选了理科，当时分在了8班。跟初中三年相比，高中三年是非常枯燥、无味的三年。除了学习就是学习。三年，1000多天时间，其...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1390782025"
-  data-df="ll"
-  
->
-  Jan 27, 2014
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      未分类
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/sheng-ri-25/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1134,6 +1072,68 @@ PS：由于关系太错综复杂，用Visio的自动排版，试验了各种排�
                   <span class="categories">
                     
                       工作和学习
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/rip-windows-ce/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">R.I.P, Windows CE</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>RIP
+
+
+
+
+想到要写这篇文章的时候，心情还是有些沉重的。毕竟自己曾经在这个平台上付出了很多精力与汗水。可以说见证Windows CE的成长，CE也见证了我的成长。但是现在，到了说再见的时候了。
+
+严格来想，第一次见到Windows CE应该是在2000年左右见到世嘉的Dreamcast游戏机。Windows CE 2.x，当然，Windows CE在DC而言，很好的扮演了嵌入式操作系统的...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1331049628"
+  data-df="ll"
+  
+>
+  Mar  7, 2012
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      嵌入式
                   </span>
                 
               </div>
@@ -1684,13 +1684,6 @@ PS：由于关系太错综复杂，用Visio的自动排版，试验了各种排�
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1713,6 +1706,13 @@ PS：由于关系太错综复杂，用Visio的自动排版，试验了各种排�
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

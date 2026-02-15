@@ -212,24 +212,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -560,65 +561,6 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/posts/ndscheng-xu-she-ji-san/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">NDS程序设计（三）</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>3.1开发环境杂谈
-
-要想给NDS开发程序，最好的选择当然是买任天堂公司提供的开发套件了，任天堂的套件非常好，开发调试一条龙俱全（我没见过）。但是这个东西相当贵不说，它也不是有钱就卖的。还必须跟任天堂搞好关系才可以。所以呢一般的平民百姓想玩是不可能了，除非练好身手加入Konami，Namoco……开发工具的网址是：http://www.warioworld.com
-
-当御林军当不成，就只好当...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1147172420"
-  data-df="ll"
-  
->
-  May  9, 2006
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      未分类
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/ndscheng-xu-she-ji-er/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1184,6 +1126,70 @@ http://sse.tongji.edu.cn/jpkc
       </a>
     </article>
   
+    <article class="card-wrapper card">
+      <a href="/posts/you-bie-liao-ta-de-yi-dong-ying-pan/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">又别了，她的移动硬盘</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>又一个不小心，移动硬盘就又离开了我。
+又一年的积蓄，40G的数据全都付诸东流。
+又痛苦啊，又伤心啊，又后悔啊。
+但是，丢的东西就是丢了，永远也不可能再找回来了，只有从新开始。
+又况且，
+又丢掉的是过去，留下的是积淀。
+以前写的代码又丢掉了，模式，架构，思想，方法永远留在了我的脑海中；
+以前拍的照片又丢掉了，我依然生活在照片中的人们之间；
+以前写的简历又丢掉了，我的人生阅历依然在不断丰富；
+以...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1132099200"
+  data-df="ll"
+  
+>
+  Nov 16, 2005
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      未分类
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
 </div>
 <!-- #post-list -->
 
@@ -1721,13 +1727,6 @@ http://sse.tongji.edu.cn/jpkc
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1750,6 +1749,13 @@ http://sse.tongji.edu.cn/jpkc
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

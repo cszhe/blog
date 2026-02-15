@@ -212,24 +212,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -560,55 +561,6 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/posts/%E4%B8%AD%E5%B9%B4%E4%BA%BA%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E8%8B%B1%E8%AF%AD-2/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">中年人如何提高英语 #2</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>英语的听跟说是大多数中国人的弱项，无论是考试还是实践。这两个跟之前一篇文章探讨的词汇不一样，关键是多练习。关于练习，中国人有个很不好的习惯，就是爱扎堆，全球建China town把自己封闭起来，跟以前洋人在中国建的租界一样。据说美国China town里面有人从出生到去世，一辈子就在China town那两条街上生活，也不需要掌握英文。在奥克兰中文也是随处可听得到。奥克兰大学的校园里经常能听...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1528027200"
-  data-df="ll"
-  
->
-  Jun  4, 2018
-</time>
-
-
-                <!-- categories -->
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/%E4%B8%AD%E5%B9%B4%E4%BA%BA%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E8%8B%B1%E8%AF%AD-1/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1122,6 +1074,61 @@ tags:
   
 >
   Apr  8, 2017
+</time>
+
+
+                <!-- categories -->
+                
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    
+                      新西兰生活
+                  </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/xin-xi-lan-chu-ti-yan-1-zi-ran-pian/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">新西兰初体验-#-1-自然篇</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>因为谦要上学，我们也不能远游，只在奥克兰周边转了一下，但国家不大，奥克兰周边，基本也四分之一个国家了。这个国家给人的第一印象就是环境非常好，各种媒体上经常看到的一个术语叫100%纯净新西兰。到处绿草如茵，每天都是蓝天白云。新西兰本土导演Peter Jackson的《指环王》跟《霍比特人》中的中土大陆就是在新西兰取景。我观察了一下AQI，奥克兰应该是全国污染最严重的地区了，基本常年在10几。其...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1491430800"
+  data-df="ll"
+  
+>
+  Apr  6, 2017
 </time>
 
 
@@ -1681,13 +1688,6 @@ tags:
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1710,6 +1710,13 @@ tags:
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

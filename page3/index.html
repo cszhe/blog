@@ -212,24 +212,25 @@
 
 
   <script>
-  // Theme toggle functionality
   (function() {
-    var toggle = document.getElementById('mode-toggle');
-    // Set initial theme based on saved preference or system preference
-    var savedTheme = localStorage.getItem('theme');
-    if (!savedTheme) {
-      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-mode', savedTheme);
-    
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
-        var newTheme = isDark ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-mode', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('mode-toggle');
+      // Set initial theme based on saved preference or system preference
+      var savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-mode', savedTheme);
+      
+      if (toggle) {
+        toggle.addEventListener('click', function() {
+          var isDark = document.documentElement.getAttribute('data-mode') === 'dark';
+          var newTheme = isDark ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-mode', newTheme);
+          localStorage.setItem('theme', newTheme);
+        });
+      }
+    });
   })();
   </script>
 
@@ -560,63 +561,6 @@
 
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  
-    <article class="card-wrapper card">
-      <a href="/posts/wo-zai-xin-xi-lan-dang-guo-nong/" class="post-preview row g-0 flex-md-row-reverse">
-        
-
-        
-
-        <div class="col-md-12">
-          <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">我在新西兰当果农</h1>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>序
-
-2020真是不平凡的一年, 没想到新冠会席卷全球, 改变了每一个人的生活. 新西兰虽然对疫情的防控算是比较成功的, 在世界上也受到了不少的称赞, 普通老百姓来说, 除了一个月多点的封城, 没什么大的影响, 但是毕竟疫情是全球性的, 只要有几个国家不靠谱, 就不能放人进来, 国门关闭了, 只允许本国公民和居民入境. 这对新西兰的影响是相当大的. 不像中国, 地大物博, 几千年来都在内循环...</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1607422800"
-  data-df="ll"
-  
->
-  Dec  8, 2020
-</time>
-
-
-                <!-- categories -->
-                
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    
-                      新西兰生活
-                  </span>
-                
-              </div>
-
-              
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
-        </div>
-      </a>
-    </article>
   
     <article class="card-wrapper card">
       <a href="/posts/why-the-book-of-perfectly-perilous-math-is-the-best-book-ever/" class="post-preview row g-0 flex-md-row-reverse">
@@ -1118,6 +1062,55 @@ tags:
                     
                       新西兰生活
                   </span>
+                
+              </div>
+
+              
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  
+    <article class="card-wrapper card">
+      <a href="/posts/%E4%B8%AD%E5%B9%B4%E4%BA%BA%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E8%8B%B1%E8%AF%AD-2/" class="post-preview row g-0 flex-md-row-reverse">
+        
+
+        
+
+        <div class="col-md-12">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">中年人如何提高英语 #2</h1>
+
+            <div class="card-text content mt-0 mb-3">
+              <p>英语的听跟说是大多数中国人的弱项，无论是考试还是实践。这两个跟之前一篇文章探讨的词汇不一样，关键是多练习。关于练习，中国人有个很不好的习惯，就是爱扎堆，全球建China town把自己封闭起来，跟以前洋人在中国建的租界一样。据说美国China town里面有人从出生到去世，一辈子就在China town那两条街上生活，也不需要掌握英文。在奥克兰中文也是随处可听得到。奥克兰大学的校园里经常能听...</p>
+            </div>
+
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1528027200"
+  data-df="ll"
+  
+>
+  Jun  4, 2018
+</time>
+
+
+                <!-- categories -->
                 
               </div>
 
@@ -1662,13 +1655,6 @@ tags:
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/welcome-to-chirpy/">Welcome to Chirpy Blog</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1691,6 +1677,13 @@ tags:
         
         <li class="text-truncate lh-lg">
           <a href="/posts/xu-shou-ji-40ge-fang-kuai-you-duo-nan/">续: 收集40个方块有多难</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/shou-ji-108zhang-qia-pian-you-duo-nan/">收集108张卡片有多难</a>
         </li>
       
     </ul>

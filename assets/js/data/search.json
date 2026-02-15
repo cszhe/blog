@@ -1,23 +1,6 @@
 [
   
   {
-    "title": "Welcome to Chirpy Blog",
-    "url": "/posts/welcome-to-chirpy/",
-    "categories": "",
-    "tags": "",
-    "date": "2026-02-13 00:00:00 +1300",
-    
-
-
-
-
-
-    
-    "snippet": "This is your first post with the chirpy theme!Features tested:  ✅ Remote theme installation  ✅ Custom logging JavaScript in header  ✅ 2-column layout configuration  ✅ Pagination settingsTesting the...",
-    "content": "This is your first post with the chirpy theme!Features tested:  ✅ Remote theme installation  ✅ Custom logging JavaScript in header  ✅ 2-column layout configuration  ✅ Pagination settingsTesting the logging scriptThe logging JavaScript should execute on page load and send your page URL to the logging service provided.CustomizationsFeel free to edit this post to customize your blog further!"
-  },
-  
-  {
     "title": "T4重生记：折腾魔改电脑",
     "url": "/posts/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao/",
     "categories": "工作和学习",
