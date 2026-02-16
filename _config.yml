@@ -1,8 +1,8 @@
 # For local development using copied theme files
 theme_name: jekyll-theme-chirpy
 title: Zongjian's blog
-tagline: Personal blog of Zongjian He
-description: Personal blog of Zongjian He
+tagline: Personal blog of Zongjian He, since 2002
+description: Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.
 
 url: "https://gh.hezongjian.com"
 baseurl: ""
@@ -12,7 +12,7 @@ lang: en
 paginate: 10
 paginate_path: "/page:num/"
 
-avatar: "https://chirpy-img.netlify.app/commons/avatar.jpg"
+avatar: "https://1.gravatar.com/avatar/5f743b2eda598af99b60f5af10812c8e1ac4ec2bcd44facde75e3a9c1f43a97f?s=256"
 
 toc: true
 
