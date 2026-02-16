@@ -1,4 +1,4 @@
-# gemini recommended to use this encoding
+# gemini recommended to use this encoding to avoid build failure
 encoding: utf-8
 
 # For local development using copied theme files
