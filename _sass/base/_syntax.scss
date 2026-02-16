@@ -27,6 +27,12 @@
     word-wrap: normal; /* Fixed Safari overflow-x */
   }
 
+  > code {
+    display: block;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
   table {
     td {
       &:first-child {

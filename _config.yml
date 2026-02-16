@@ -40,7 +40,7 @@ defaults:
       comments: true
       toc: true
       math: true
-      permalink: /posts/:title/
+      permalink: /:title
   - scope:
       path: _drafts
     values:
@@ -63,6 +63,7 @@ compress_html:
   blanklines: false
   ignore:
     envs: [development]
+    tags: [pre, code]
 
 jekyll-archives:
   enabled: [categories, tags]
