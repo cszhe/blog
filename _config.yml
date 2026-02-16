@@ -1,3 +1,6 @@
+# gemini recommended to use this encoding
+encoding: utf-8
+
 # For local development using copied theme files
 theme_name: jekyll-theme-chirpy
 title: Zongjian's blog
