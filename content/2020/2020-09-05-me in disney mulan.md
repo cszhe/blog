@@ -1,11 +1,8 @@
 ---
-title: Me in Disney Mulan
-date: 2020-09-05 20:20
-category: 新西兰生活
-tags:   海外经历
+layout: post
+tags:
+  - 海外经历
 ---
-
-
 These are all the screenshots from Disney Mulan that include me.
 
 <video controls width="640" height="360" poster="/uploads/2020/mulan/me.png">

@@ -1,0 +1,97 @@
+# For local development using copied theme files
+theme_name: jekyll-theme-chirpy
+title: Zongjian's blog
+tagline: Personal blog of Zongjian He, since 2002
+description: Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.
+
+url: "https://gh.hezongjian.com"
+baseurl: ""
+timezone: Pacific/Auckland
+lang: en
+
+paginate: 10
+paginate_path: "/page:num/"
+
+avatar: "https://1.gravatar.com/avatar/5f743b2eda598af99b60f5af10812c8e1ac4ec2bcd44facde75e3a9c1f43a97f?s=256"
+
+toc: true
+
+comments:
+  provider:
+
+theme_mode:
+
+pwa:
+  enabled: false
+  cache:
+    enabled: false
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      math: true
+      permalink: /:title
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+    tags: [pre, code]
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - rollup.config.js
+  - "package*.json"
+  - _themes
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-include-cache
+  - jekyll-redirect-from

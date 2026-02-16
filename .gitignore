@@ -109,3 +109,6 @@ output/
 # vendor
 vendor/
 
+ # Jekyll
+_site/
+vendor/
