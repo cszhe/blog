@@ -1,12 +1,12 @@
 ---
-Title: 博客搬家-CloudFlare试用
-Date: 2023-10-01 20:24:00
-Modified: 2023-10-04 20:06:00
-Category: 工作和学习
-author: omale
-tags: Geek, CloudFlare
+layout: post
+title: 博客搬家-CloudFlare试用
+date: 2023-10-01 20:24:00 +00:00
+category: 工作和学习
+tags:
+  - Geek
+  - CloudFlare
 ---
-
 博客已经开了20年了. 期间搬家了无数次, 好在数据没丢. 最早是用国内的所谓Blog service provider, 那个时候网络管理还不是那么严格. 有很多博客大巴, blogcn之类的网站可以让你开个账号就写文章. 但是这些网站都是免费的, 也不知道什么时候就会关门, 我最早用的博客大巴就关门了. 好在博客搬家功能不错, 数据都没丢.
 
 后来我就开始自己搭建博客. 最早的时候是用的是Wordpress, 需要花钱买个域名和虚拟主机. 所谓的虚拟主机, 就是在一台服务器上划分出来的一块空间, 你可以在上面安装自己的wordpress博客. 后来我才知道wordpress简直是维护的噩梦, Bug超多, 经常被攻击. 而且早期的wordpress还不支持Unicode, 所有写到wordpress里面的文章都成了乱码. 而且由于是共享IP, 你不知道什么时候你的网站就被GFW墙了, 不一定是你发的文章有问题, 也可能是你的邻居(同一个虚拟主机上的其它用户)发的文章有问题, 你就跟着一起倒霉了.

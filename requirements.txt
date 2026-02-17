@@ -1,6 +1,0 @@
-python-slugify
-pelican
-markdown
-Jinja2
-beautifulsoup4
-

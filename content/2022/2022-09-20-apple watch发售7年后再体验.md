@@ -1,10 +1,11 @@
-Title: Apple Watch发售7年后再体验
-Date: 2022-09-20 10:20
-Category: Apple
-tags: Apple
-
-# 前言
-
+---
+layout: post
+title: Apple Watch发售7年后再体验
+date: 2022-09-20 10:20
+category: Apple
+tags:
+  - Apple
+---
 时光飞逝, 岁月如梭, 转眼Apple Watch第8代都发售了. 在2015年Apple Watch第一代发售的时候, 曾经写过一篇Apple Watch第一代的使用体验. 如下文:
 
 [Apple Watch三天体验](https://www.hezongjian.com/apple-watchsan-tian-ti-yan.html)
