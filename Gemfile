@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 gem "jekyll"
+gem "csv"
+gem "base64"
+gem "json"
 gem "jekyll-paginate"
 gem "jekyll-remote-theme"
 gem "jekyll-seo-tag"
