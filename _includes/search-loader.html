@@ -72,12 +72,19 @@
           console.log('[DEBUG] Input event dispatched');
           console.log('[DEBUG] Results container innerHTML:', resultsContainer.innerHTML.substring(0, 200));
           
-          // Show results wrapper
+          // Show results wrapper - use d-block instead of removing d-none
           const resultWrapper = document.getElementById('search-result-wrapper');
-          console.log('[DEBUG] resultWrapper:', resultWrapper);
-          console.log('[DEBUG] resultWrapper classes:', resultWrapper.className);
+          console.log('[DEBUG] resultWrapper classes before:', resultWrapper.className);
           resultWrapper.classList.remove('d-none');
+          resultWrapper.classList.add('d-block');
           console.log('[DEBUG] resultWrapper classes after:', resultWrapper.className);
+          
+          // Also show main content area
+          const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+          console.log('[DEBUG] mainWrapper:', mainWrapper);
+          if (mainWrapper) {
+            mainWrapper.classList.add('d-none');
+          }
         }
       });
     } catch (e) {
