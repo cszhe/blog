@@ -19,77 +19,73 @@
 {% capture not_found %}<p class="mt-5">{{ site.data.locales[include.lang].search.no_results }}</p>{% endcapture %}
 
 <script>
-  {% comment %} Note: dependent library will be loaded in `js-selector.html` {% endcomment %}
-  console.log('[DEBUG] Search loader starting...');
-  
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
   function initSearch() {
-    console.log('[DEBUG] initSearch called, SimpleJekyllSearch:', typeof SimpleJekyllSearch);
     if (typeof SimpleJekyllSearch === 'undefined') {
-      console.log('[DEBUG] SimpleJekyllSearch not loaded yet, retrying...');
       setTimeout(initSearch, 100);
       return;
     }
-    console.log('[DEBUG] Initializing SimpleJekyllSearch...');
-    try {
-      const searchInput = document.getElementById('search-input');
-      const resultsContainer = document.getElementById('search-results');
-      console.log('[DEBUG] searchInput:', searchInput);
-      console.log('[DEBUG] resultsContainer:', resultsContainer);
-      console.log('[DEBUG] json path: /assets/js/data/search.json');
-      
-      SimpleJekyllSearch({
-        searchInput: searchInput,
-        resultsContainer: resultsContainer,
-        json: '/assets/js/data/search.json',
-        searchResultTemplate: '{{ result_elem | strip_newlines }}',
-        noResultsText: '{{ not_found }}',
-        templateMiddleware: function(prop, value, template) {
-          if (prop === 'categories') {
-            if (value === '') {
-              return `${value}`;
-            } else {
-              return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
-            }
-          }
 
-          if (prop === 'tags') {
-            if (value === '') {
-              return `${value}`;
-            } else {
-              return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
-            }
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
+    SimpleJekyllSearch({
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
+      json: '/assets/js/data/search.json',
+      searchResultTemplate: '{{ result_elem | strip_newlines }}',
+      noResultsText: '{{ not_found }}',
+      templateMiddleware: function(prop, value, template) {
+        if (prop === 'categories') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
           }
         }
-      });
-      console.log('[DEBUG] SimpleJekyllSearch initialized successfully');
-      
-      // Add Enter key listener - manually trigger search
-      searchInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-          console.log('[DEBUG] Enter key pressed, triggering search for:', searchInput.value);
-          e.preventDefault();
-          searchInput.dispatchEvent(new Event('input'));
-          console.log('[DEBUG] Input event dispatched');
-          console.log('[DEBUG] Results container innerHTML:', resultsContainer.innerHTML.substring(0, 200));
-          
-          // Show results wrapper - use d-block instead of removing d-none
-          const resultWrapper = document.getElementById('search-result-wrapper');
-          console.log('[DEBUG] resultWrapper classes before:', resultWrapper.className);
-          resultWrapper.classList.remove('d-none');
-          resultWrapper.classList.add('d-block');
-          console.log('[DEBUG] resultWrapper classes after:', resultWrapper.className);
-          
-          // Also show main content area
-          const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
-          console.log('[DEBUG] mainWrapper:', mainWrapper);
-          if (mainWrapper) {
-            mainWrapper.classList.add('d-none');
+
+        if (prop === 'tags') {
+          if (value === '') {
+            return `${value}`;
+          } else {
+            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
           }
         }
-      });
-    } catch (e) {
-      console.error('[DEBUG] Error initializing SimpleJekyllSearch:', e);
-    }
+      }
+    });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
   }
+
   initSearch();
 </script>
