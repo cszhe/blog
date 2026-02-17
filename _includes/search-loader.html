@@ -31,10 +31,16 @@
     }
     console.log('[DEBUG] Initializing SimpleJekyllSearch...');
     try {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('search-results');
+      console.log('[DEBUG] searchInput:', searchInput);
+      console.log('[DEBUG] resultsContainer:', resultsContainer);
+      console.log('[DEBUG] json path: /assets/js/data/search.json');
+      
       SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('search-results'),
-        json: '{{ '/assets/js/data/search.json' | relative_url }}',
+        searchInput: searchInput,
+        resultsContainer: resultsContainer,
+        json: '/assets/js/data/search.json',
         searchResultTemplate: '{{ result_elem | strip_newlines }}',
         noResultsText: '{{ not_found }}',
         templateMiddleware: function(prop, value, template) {
@@ -58,13 +64,13 @@
       console.log('[DEBUG] SimpleJekyllSearch initialized successfully');
       
       // Add Enter key listener - manually trigger search
-      const searchInput = document.getElementById('search-input');
       searchInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
           console.log('[DEBUG] Enter key pressed, triggering search for:', searchInput.value);
-          // Manually trigger SimpleJekyllSearch
+          e.preventDefault();
           searchInput.dispatchEvent(new Event('input'));
           console.log('[DEBUG] Input event dispatched');
+          console.log('[DEBUG] Results container innerHTML:', resultsContainer.innerHTML.substring(0, 200));
         }
       });
     } catch (e) {
