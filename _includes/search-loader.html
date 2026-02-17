@@ -20,30 +20,76 @@
 
 <script>
   {% comment %} Note: dependent library will be loaded in `js-selector.html` {% endcomment %}
-  document.addEventListener('DOMContentLoaded', () => {
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '{{ '/assets/js/data/search.json' | relative_url }}',
-      searchResultTemplate: '{{ result_elem | strip_newlines }}',
-      noResultsText: '{{ not_found }}',
-      templateMiddleware: function(prop, value, template) {
-        if (prop === 'categories') {
-          if (value === '') {
-            return `${value}`;
-          } else {
-            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+  console.log('[DEBUG] Search loader starting...');
+  
+  function initSearch() {
+    console.log('[DEBUG] initSearch called, SimpleJekyllSearch:', typeof SimpleJekyllSearch);
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      console.log('[DEBUG] SimpleJekyllSearch not loaded yet, retrying...');
+      setTimeout(initSearch, 100);
+      return;
+    }
+    console.log('[DEBUG] Initializing SimpleJekyllSearch...');
+    try {
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('search-results');
+      console.log('[DEBUG] searchInput:', searchInput);
+      console.log('[DEBUG] resultsContainer:', resultsContainer);
+      console.log('[DEBUG] json path: /assets/js/data/search.json');
+      
+      SimpleJekyllSearch({
+        searchInput: searchInput,
+        resultsContainer: resultsContainer,
+        json: '/assets/js/data/search.json',
+        searchResultTemplate: '{{ result_elem | strip_newlines }}',
+        noResultsText: '{{ not_found }}',
+        templateMiddleware: function(prop, value, template) {
+          if (prop === 'categories') {
+            if (value === '') {
+              return `${value}`;
+            } else {
+              return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+            }
           }
-        }
 
-        if (prop === 'tags') {
-          if (value === '') {
-            return `${value}`;
-          } else {
-            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+          if (prop === 'tags') {
+            if (value === '') {
+              return `${value}`;
+            } else {
+              return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+            }
           }
         }
-      }
-    });
-  });
+      });
+      console.log('[DEBUG] SimpleJekyllSearch initialized successfully');
+      
+      // Add Enter key listener - manually trigger search
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          console.log('[DEBUG] Enter key pressed, triggering search for:', searchInput.value);
+          e.preventDefault();
+          searchInput.dispatchEvent(new Event('input'));
+          console.log('[DEBUG] Input event dispatched');
+          console.log('[DEBUG] Results container innerHTML:', resultsContainer.innerHTML.substring(0, 200));
+          
+          // Show results wrapper - use d-block instead of removing d-none
+          const resultWrapper = document.getElementById('search-result-wrapper');
+          console.log('[DEBUG] resultWrapper classes before:', resultWrapper.className);
+          resultWrapper.classList.remove('d-none');
+          resultWrapper.classList.add('d-block');
+          console.log('[DEBUG] resultWrapper classes after:', resultWrapper.className);
+          
+          // Also show main content area
+          const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+          console.log('[DEBUG] mainWrapper:', mainWrapper);
+          if (mainWrapper) {
+            mainWrapper.classList.add('d-none');
+          }
+        }
+      });
+    } catch (e) {
+      console.error('[DEBUG] Error initializing SimpleJekyllSearch:', e);
+    }
+  }
+  initSearch();
 </script>
