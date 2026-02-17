@@ -1,4 +1,4 @@
 FROM nginx:alpine
 MAINTAINER Jason He
 
-COPY output /usr/share/nginx/html
+COPY _site /usr/share/nginx/html

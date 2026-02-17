@@ -7,29 +7,21 @@ on:
 
 jobs:
   buildx:
-    runs-on: ubuntu-22.04
-    strategy:
-      max-parallel: 1
-      matrix:
-        ruby-version: ['3.2']
-
+    runs-on: ubuntu-24.04
     steps:
     - name: Checkout source code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
+      uses: docker/setup-qemu-action@v3
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+      uses: docker/setup-buildx-action@v3
+
+    - name: Set up Ruby
+      uses: actions/setup-ruby@v1
       with:
-        buildkitd-flags: --debug
-        platforms: linux/amd64, linux/aarch64
-      
-    - name: Set up Ruby ${{ matrix.ruby-version }}
-      uses: actions/setup-python@v4
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
+        ruby-version: '3.2'
     
     - name: Install dependencies
       run: |
@@ -41,15 +33,16 @@ jobs:
         bundle exec jekyll build
     
     - name: Login to Docker Hub
-      uses: docker/login-action@v2
+      uses: docker/login-action@v3
       with:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
         
     - name: Build and push
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v5
       with:
         context: .
+        file: ./Dockerfile
         push: true
         tags: hezongjian/blog:latest
         platforms: linux/amd64, linux/aarch64
