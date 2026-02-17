@@ -20,7 +20,11 @@
 
 <script>
   {% comment %} Note: dependent library will be loaded in `js-selector.html` {% endcomment %}
-  document.addEventListener('DOMContentLoaded', () => {
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
     SimpleJekyllSearch({
       searchInput: document.getElementById('search-input'),
       resultsContainer: document.getElementById('search-results'),
@@ -45,5 +49,6 @@
         }
       }
     });
-  });
+  }
+  initSearch();
 </script>

@@ -95,6 +95,8 @@ PLATFORMS
   aarch64-linux-gnu
 
 DEPENDENCIES
+  base64
+  csv
   jekyll
   jekyll-archives
   jekyll-feed
@@ -104,6 +106,7 @@ DEPENDENCIES
   jekyll-remote-theme
   jekyll-seo-tag
   jekyll-sitemap
+  json
   webrick
 
 CHECKSUMS
