@@ -56,6 +56,14 @@
         }
       });
       console.log('[DEBUG] SimpleJekyllSearch initialized successfully');
+      
+      // Add Enter key listener
+      const searchInput = document.getElementById('search-input');
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          console.log('[DEBUG] Enter key pressed, triggering search for:', searchInput.value);
+        }
+      });
     } catch (e) {
       console.error('[DEBUG] Error initializing SimpleJekyllSearch:', e);
     }
