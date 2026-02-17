@@ -20,35 +20,45 @@
 
 <script>
   {% comment %} Note: dependent library will be loaded in `js-selector.html` {% endcomment %}
+  console.log('[DEBUG] Search loader starting...');
+  
   function initSearch() {
+    console.log('[DEBUG] initSearch called, SimpleJekyllSearch:', typeof SimpleJekyllSearch);
     if (typeof SimpleJekyllSearch === 'undefined') {
+      console.log('[DEBUG] SimpleJekyllSearch not loaded yet, retrying...');
       setTimeout(initSearch, 100);
       return;
     }
-    SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '{{ '/assets/js/data/search.json' | relative_url }}',
-      searchResultTemplate: '{{ result_elem | strip_newlines }}',
-      noResultsText: '{{ not_found }}',
-      templateMiddleware: function(prop, value, template) {
-        if (prop === 'categories') {
-          if (value === '') {
-            return `${value}`;
-          } else {
-            return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+    console.log('[DEBUG] Initializing SimpleJekyllSearch...');
+    try {
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '{{ '/assets/js/data/search.json' | relative_url }}',
+        searchResultTemplate: '{{ result_elem | strip_newlines }}',
+        noResultsText: '{{ not_found }}',
+        templateMiddleware: function(prop, value, template) {
+          if (prop === 'categories') {
+            if (value === '') {
+              return `${value}`;
+            } else {
+              return `<div class="me-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`;
+            }
           }
-        }
 
-        if (prop === 'tags') {
-          if (value === '') {
-            return `${value}`;
-          } else {
-            return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+          if (prop === 'tags') {
+            if (value === '') {
+              return `${value}`;
+            } else {
+              return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`;
+            }
           }
         }
-      }
-    });
+      });
+      console.log('[DEBUG] SimpleJekyllSearch initialized successfully');
+    } catch (e) {
+      console.error('[DEBUG] Error initializing SimpleJekyllSearch:', e);
+    }
   }
   initSearch();
 </script>
