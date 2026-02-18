@@ -33,5 +33,4 @@ jobs:
           PROJECT_ID: zhe-dev
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
         with:
-          args: deploy --only hosting
-          strip_components: 1
+          args: deploy --only hosting --public _site
