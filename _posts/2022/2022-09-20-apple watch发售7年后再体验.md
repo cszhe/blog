@@ -9,9 +9,9 @@ slug: apple-watchfa-shou-7nian-hou-zai-ti-yan
 ---
 时光飞逝, 岁月如梭, 转眼Apple Watch第8代都发售了. 在2015年Apple Watch第一代发售的时候, 曾经写过一篇Apple Watch第一代的使用体验. 如下文:
 
-[Apple Watch三天体验](https://www.hezongjian.com/apple-watchsan-tian-ti-yan.html)
+[Apple Watch三天体验](https://www.hezongjian.com/apple-watchsan-tian-ti-yan/)
 
-[Apple Watch三天体验]({filename}2015-04-27-apple watch三天体验.md)
+[Apple Watch三天体验]({% post_url 2015/2015-04-27-apple watch三天体验 %})
 
 
 7年转瞬即逝. 我记得当年Apple Watch发售还得抢, 我当年为了能抢得到, 还专门去了陆家嘴的Apple Store, 连Apple Store里的苹果公司网络, 以获取网络优势, 才勉强抢到了首发. 现在在新西兰就一个好, 物资丰富什么都不用抢. Apple Watch发售当年我去苹果官网, 直接买, 根本不会发生网站打不开, 付款失败, 秒没什么之类的幺蛾子. 并且新西兰还有时区优势. 每次新产品发布, 都是第一批拿到货的. 譬如下面这种类似新闻每次苹果发新东西都会有:
