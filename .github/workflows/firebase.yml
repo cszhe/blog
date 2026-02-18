@@ -1,0 +1,37 @@
+name: Build and Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          bundle install
+
+      - name: Build Jekyll
+        run: |
+          bundle exec jekyll build
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v13.0.1
+        env:
+          PROJECT_ID: zhe-dev
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        with:
+          args: deploy --only hosting
+          strip_components: 1
