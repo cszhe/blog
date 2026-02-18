@@ -108,7 +108,7 @@ Sent: 2004年2月20日 18:06
 To: Kai Fa; GTEC Dev DSV Team  
 Subject: RE: farewell
 
-Thank you for your contribution during your internship. Feel free let me know if you want back 
+Thank you for your contribution during your internship. Feel free to let me know if you want to come back. 
 
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;
 

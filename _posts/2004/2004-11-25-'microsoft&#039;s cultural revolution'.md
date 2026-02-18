@@ -39,11 +39,11 @@ Chen is leading the campaign to befriend top Chinese companies. He cut out layer
 
 Yet even top Redmond executives are now sounding almost Confucian, certainly more patient than their norm, about profit in China. Kevin Johnson, Microsoft's group vice president of worldwide sales, cites a Chinese fable in which an old woman makes a needle from an iron rod by rolling it back and forth on a rock, even though her neighbors tell her she is crazy. "We also recognize this is a long journey," says Johnson. He cites the cases of Taiwan and South Korea, where piracy rates fell as incomes rose and the governments began fighting pirates as their domestic software firms grew. Both countries are now profitable for Microsoft. And with 10 billion in annual profits worldwide, Microsoft can afford to roll the iron rod in China. 
 
-看完之后，不禁对中国的软件产业又一次担心起来（或许是我吓担心，一个穷学生担心啥）。文中对中国政府的描述&ldquo;一方面与linux亲密接触，一方面对盗版姑息养奸，还一方面对微软的垄断大加指责&rdquo;，被外国人看了，会对中国政府和中国的软件市场产生什么样的想法呢？文章还说到MS这样的印钞机，在中国居然都赚不到钱。如果外企软件公司老板看到这些描述，会是什么想法呢？
+看完之后，不禁对中国的软件产业又一次担心起来（或许是我瞎担心，一个穷学生担心啥）。文中对中国政府的描述&ldquo;一方面与linux亲密接触，一方面对盗版姑息养奸，还一方面对微软的垄断大加指责&rdquo;，被外国人看了，会对中国政府和中国的软件市场产生什么样的想法呢？文章还说到MS这样的印钞机，在中国居然都赚不到钱。如果外企软件公司老板看到这些描述，会是什么想法呢？
 
-本来我对外国软件企业在中国的部门就颇有微词，觉得他们雇用了中国最好的软件工程师，作的却是最垃圾的活，而且从事外包的多，美其名曰&ldquo;IT Service&rdquo;。硬是要把软件产业搞成&ldquo;三产&rdquo;，代表的公司有&ldquo;PH, BMI，Orable&hellip;&hellip;在中国设立的所谓研发中心&rdquo;。如果我是外企IT的executive office，看到这样的对中国软件市场的报道。在中国投资的话，肯定也是弄这么一个利用中国廉价劳动力又可以保证收入的&ldquo;研发中心&rdquo;。
+本来我对外国软件企业在中国的部门就颇有微词，觉得他们雇用了中国最好的软件工程师，做的却是最垃圾的活，而且从事外包的多，美其名曰&ldquo;IT Service&rdquo;。硬是要把软件产业搞成&ldquo;三产&rdquo;，代表的公司有&ldquo;PH, BMI，Orable&hellip;&hellip;在中国设立的所谓研发中心&rdquo;。如果我是外企IT的executive office，看到这样的对中国软件市场的报道。在中国投资的话，肯定也是弄这么一个利用中国廉价劳动力又可以保证收入的&ldquo;研发中心&rdquo;。
 
-如此一来，一方面，中国最好的软件工程师都到了外企所谓的研发中心作体力劳动，拿还过得去的薪水，当然，软件工程师门追求高薪无可厚非，而另一方面，真正开发中国核心技术和民族软件的软件工程师，确得不到最好的待遇和对待，例如几乎每台计算机上都安装的金山词霸，其开发人员的薪水却不如外企高。就其原因，两个字：&ldquo;D版&rdquo;。每台机器上几乎都安装金山词霸，但是� ��问有几个人是真的按照&ldquo;最终用户许可协议&rdquo;的licesne使用的正版呢？利润都流进了D版商的腰包，造成这样的局面是在所难免的了。
+如此一来，一方面，中国最好的软件工程师都到了外企所谓的研发中心作体力劳动，拿还过得去的薪水，当然，软件工程师们追求高薪无可厚非，而另一方面，真正开发中国核心技术和民族软件的软件工程师，却得不到最好的待遇和对待，例如几乎每台计算机上都安装的金山词霸，其开发人员的薪水却不如外企高。究其原因，两个字：&ldquo;D版&rdquo;。每台机器上几乎都安装金山词霸，但是� ��问有几个人是真的按照&ldquo;最终用户许可协议&rdquo;的license使用的正版呢？利润都流进了D版商的腰包，造成这样的局面是在所难免的了。
 
 所以，D版最终害的是谁？这个问题值得考虑。Microsoft在中国市场损失了大量银子，没错，但是这样不会让Microsoft死掉。MS照样可以在US在台湾在韩国赚钱,照样活得很滋润。但是对于国产软件呢？金山词霸被盗版，金山公司从哪里获得利润呢？仅有的本土市场的利润都得不到保证，难怪国产软件产业软件公司老是长不大。
 

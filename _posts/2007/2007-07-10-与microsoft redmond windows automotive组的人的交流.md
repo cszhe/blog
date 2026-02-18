@@ -82,7 +82,7 @@ slug: yu-microsoft-redmond-windows-automotivezu-de-ren-de-jiao-liu
 </div>
 
 <div>
-  CE Team：我们很忙的，CE 6进度催的也紧，Windows Mobile 6那边还等着用CE 5.2，那把代码给你们，你们自己改好了，不要来烦我拉。
+  CE Team：我们很忙的，CE 6进度催的也紧，Windows Mobile 6那边还等着用CE 5.2，那把代码给你们，你们自己改好了，不要来烦我啦。
 </div>
 
 <div>
