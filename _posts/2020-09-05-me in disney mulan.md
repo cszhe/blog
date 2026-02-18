@@ -1,7 +1,9 @@
 ---
 layout: post
+title: Me in Disney Mulan
 tags:
   - 海外经历
+slug: me-in-disney-mulan
 ---
 These are all the screenshots from Disney Mulan that include me.
 
