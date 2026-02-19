@@ -64,11 +64,9 @@ function setCodeClipboard() {
     return;
   }
 
-  // Initial the clipboard.js object
   const clipboard = new ClipboardJS(clipboardSelector, {
     target: (trigger) => {
       const codeBlock = trigger.parentNode.nextElementSibling;
-      // Handle both: with line numbers (.rouge-code) and without (just code)
       return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
     }
   });
