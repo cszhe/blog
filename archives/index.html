@@ -38,12 +38,12 @@
 <meta property="og:url" content="https://hezongjian.com/archives/" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-02-19T23:03:41+13:00" />
+<meta property="article:published_time" content="2026-02-20T10:31:41+13:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Archives" />
 <meta name="twitter:site" content="@hezongjian" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-19T23:03:41+13:00","datePublished":"2026-02-19T23:03:41+13:00","description":"Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.","headline":"Archives","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/archives/"},"url":"https://hezongjian.com/archives/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-02-20T10:31:41+13:00","datePublished":"2026-02-20T10:31:41+13:00","description":"Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.","headline":"Archives","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/archives/"},"url":"https://hezongjian.com/archives/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -192,6 +192,87 @@
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/misc.min.js"></script>
+
+<script>
+  // Fallback initialization when theme JS from CDN fails to load (404 errors)
+  document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for deferred CDN scripts to potentially load
+    setTimeout(function() {
+      initSidebarFallback();
+      initTopbarFallback();
+      initBasicFallback();
+    }, 100);
+  });
+
+  // Sidebar toggle (hamburger menu)
+  function initSidebarFallback() {
+    var sidebar = document.getElementById('sidebar');
+    var trigger = document.getElementById('sidebar-trigger');
+    var mask = document.getElementById('mask');
+    
+    if (!sidebar || !trigger || !mask) return;
+    
+    var isExpanded = false;
+    
+    function toggle() {
+      isExpanded = !isExpanded;
+      document.body.toggleAttribute('sidebar-display', isExpanded);
+      sidebar.classList.toggle('z-2', isExpanded);
+      mask.classList.toggle('d-none', !isExpanded);
+    }
+    
+    trigger.addEventListener('click', toggle);
+    mask.addEventListener('click', toggle);
+  }
+
+  // Topbar search trigger
+  function initTopbarFallback() {
+    var searchTrigger = document.getElementById('search-trigger');
+    var search = document.getElementById('search');
+    var searchCancel = document.getElementById('search-cancel');
+    var searchInput = document.getElementById('search-input');
+    
+    if (!searchTrigger || !search) return;
+    
+    searchTrigger.addEventListener('click', function() {
+      search.classList.add('show');
+      searchTrigger.classList.add('d-none');
+      if (searchInput) searchInput.focus();
+    });
+    
+    if (searchCancel) {
+      searchCancel.addEventListener('click', function() {
+        search.classList.remove('show');
+        searchTrigger.classList.remove('d-none');
+      });
+    }
+  }
+
+  // Basic functions: dark mode, back-to-top, tooltips
+  function initBasicFallback() {
+    // Back to top
+    var back2top = document.getElementById('back-to-top');
+    if (back2top) {
+      window.addEventListener('scroll', function() {
+        back2top.classList.toggle('d-none', window.scrollY < 50);
+      });
+      back2top.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Dark mode toggle
+    var modeToggle = document.getElementById('mode-toggle');
+    if (modeToggle) {
+      modeToggle.addEventListener('click', function() {
+        var html = document.documentElement;
+        var isDark = html.getAttribute('data-mode') === 'dark';
+        html.setAttribute('data-mode', isDark ? 'light' : 'dark');
+        localStorage.setItem('mode', isDark ? 'light' : 'dark');
+      });
+    }
+  }
+</script>
 
 
 
