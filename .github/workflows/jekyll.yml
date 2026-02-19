@@ -2,7 +2,8 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [convert-to-jekyll]
+    branches:
+      - master
 
 permissions:
   contents: write
