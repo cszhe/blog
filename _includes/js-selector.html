@@ -64,6 +64,39 @@
 
 <script defer src="{{ script }}"></script>
 
+{% if page.layout == 'post' %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+{% endif %}
+
 {% if page.math %}
   <!-- MathJax -->
   <script>

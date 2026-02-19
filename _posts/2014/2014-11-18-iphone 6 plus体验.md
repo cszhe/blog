@@ -32,7 +32,7 @@ slug: iphone-6-plusti-yan
           <span style="font-family: SimSun; font-size: 11.0pt; font-weight: normal; font-style: normal;">手感非常好。圆滑的边缘。从左边划过来的那个后退手势，从边缘划过，一气呵成。感觉太棒了。</span>
         </li>
         <li style="margin-top: 0; margin-bottom: 0; vertical-align: middle;">
-          <span lang="zh-CN" style="font-family: SimSun; font-size: 11.0pt;">电池很给力，基本上可以两三天冲一次电。当然，我把那些花哨的功能，</span><span lang="en-US" style="font-family: Calibri; font-size: 11.0pt;">handoff</span><span lang="zh-CN" style="font-family: SimSun; font-size: 11.0pt;">，</span><span lang="en-US" style="font-family: Calibri; font-size: 11.0pt;">Siri</span><span lang="zh-CN" style="font-family: SimSun; font-size: 11.0pt;">什么的关掉了。</span>
+          <span lang="zh-CN" style="font-family: SimSun; font-size: 11.0pt;">电池很给力，基本上可以两三天充一次电。当然，我把那些花哨的功能，</span><span lang="en-US" style="font-family: Calibri; font-size: 11.0pt;">handoff</span><span lang="zh-CN" style="font-family: SimSun; font-size: 11.0pt;">，</span><span lang="en-US" style="font-family: Calibri; font-size: 11.0pt;">Siri</span><span lang="zh-CN" style="font-family: SimSun; font-size: 11.0pt;">什么的关掉了。</span>
         </li>
       </ol>
       

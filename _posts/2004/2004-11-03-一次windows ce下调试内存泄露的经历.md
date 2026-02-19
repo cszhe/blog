@@ -11,13 +11,13 @@ slug: yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li
 ---
 上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。
 	  
-这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。
+这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油量，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。
 	  
 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。
 	  
 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。
 	  
-走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？
+走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsoft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？
 	  
 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：
 
@@ -187,9 +187,9 @@ int nWidth;
 	  
 MemBitmap.CreateCompatibleBitmap(pDC,nWidth,nHeight);
 	  
-也就是说，创建的Bitmap没有被释放掉。但是，这段代码的最后面，的确有MemBitmap.DeleteObject();来释放bitmap阿。我打开Windows CE的MSDN，查找CreaeteCompatibleBitmap和DeleteObject的解释，一会儿，我的目光锁定在了DeleteObject的解释上：Zero indicates that the specified handle is not valid or that the handle is currently selected into a device context. 对！会不会是DeleteObject失败了呢？我把那句话改成了BOOL fRet = MemBitmap.DeleteObject(); 果然，返回值是0！再仔细查看一下上面的代码，我发现这个时候MemBitmap的确被MemDC占用！好，既然是这样，在
+也就是说，创建的Bitmap没有被释放掉。但是，这段代码的最后面，的确有MemBitmap.DeleteObject();来释放bitmap阿。我打开Windows CE的MSDN，查找CreateCompatibleBitmap和DeleteObject的解释，一会儿，我的目光锁定在了DeleteObject的解释上：Zero indicates that the specified handle is not valid or that the handle is currently selected into a device context. 对！会不会是DeleteObject失败了呢？我把那句话改成了BOOL fRet = MemBitmap.DeleteObject(); 果然，返回值是0！再仔细查看一下上面的代码，我发现这个时候MemBitmap的确被MemDC占用！好，既然是这样，在
 	  
-pDC->BitBlt(0,0,nW idth,nHeight,&MemDC,0,0,SRCCOPY);
+pDC->BitBlt(0,0,nWidth,nHeight,&MemDC,0,0,SRCCOPY);
 	  
 pWnd->ReleaseDC (pDC);
 	  
