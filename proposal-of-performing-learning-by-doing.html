@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="知道自己英语不咋地，花了三个晚上把中文硬生生翻译成英文。等着被英语专家们批斗了。" />
 <meta property="og:description" content="知道自己英语不咋地，花了三个晚上把中文硬生生翻译成英文。等着被英语专家们批斗了。" />
-<link rel="canonical" href="https://gh.hezongjian.com/proposal-of-performing-learning-by-doing" />
-<meta property="og:url" content="https://gh.hezongjian.com/proposal-of-performing-learning-by-doing" />
+<link rel="canonical" href="https://hezongjian.com/proposal-of-performing-learning-by-doing" />
+<meta property="og:url" content="https://hezongjian.com/proposal-of-performing-learning-by-doing" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2005-05-23T13:02:14+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Proposal of performing “Learning by doing”" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-05-23T13:02:14+12:00","datePublished":"2005-05-23T13:02:14+12:00","description":"知道自己英语不咋地，花了三个晚上把中文硬生生翻译成英文。等着被英语专家们批斗了。","headline":"Proposal of performing “Learning by doing”","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/proposal-of-performing-learning-by-doing"},"url":"https://gh.hezongjian.com/proposal-of-performing-learning-by-doing"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-05-23T13:02:14+12:00","datePublished":"2005-05-23T13:02:14+12:00","description":"知道自己英语不咋地，花了三个晚上把中文硬生生翻译成英文。等着被英语专家们批斗了。","headline":"Proposal of performing “Learning by doing”","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/proposal-of-performing-learning-by-doing"},"url":"https://hezongjian.com/proposal-of-performing-learning-by-doing"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -824,35 +859,35 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fproposal-of-performing-learning-by-doing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fproposal-of-performing-learning-by-doing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fproposal-of-performing-learning-by-doing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fproposal-of-performing-learning-by-doing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fproposal-of-performing-learning-by-doing&text=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fproposal-of-performing-learning-by-doing&text=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fproposal-of-performing-learning-by-doing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fproposal-of-performing-learning-by-doing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fproposal-of-performing-learning-by-doing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=Proposal%20of%20performing%20%E2%80%9CLearning%20by%20doing%E2%80%9D%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fproposal-of-performing-learning-by-doing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -907,6 +942,13 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -929,13 +971,6 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1124,130 +1159,6 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1397,173 +1308,10 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1803,6 +1551,70 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1847,6 +1659,279 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2001,10 +2086,20 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -3011,6 +3106,18 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -3094,7 +3201,7 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
         </article>
       
         <article class="col">
-          <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao" class="post-preview card h-100">
+          <a href="/qu-gan-ai-agent-dang-niu-ma" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3106,18 +3213,18 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
 
 <time
   
-  data-ts="1769202900"
+  data-ts="1771362900"
   data-df="ll"
   
 >
-  Jan 24, 2026
+  Feb 18, 2026
 </time>
 
-              <h4 class="pt-0 my-2">T4重生记：折腾魔改电脑</h4>
+              <h4 class="pt-0 my-2">驱赶AI Agent当牛马</h4>
               <div class="text-muted">
-                <p>去年圣诞节回国的时候，谦花了大概4000块钱，自己买各种零件，组装了一台自己的台式机电脑，这一年下来，他用得还不错，完全满足了他学习和娱乐的需求，甚至有的时候还来跑跑各种AI模型，还用来学习Python编程。
+                <p>前言
 
-今年圣诞节他回国之前，正好我有一台机器的T4显卡坏了, 谦告诉我说国内有人会修T4显卡，他想把这块T4显卡修好，然后装到他的电脑里面去，也正好用来跑AI模型，虽然T4的内存只有16G...</p>
+三年前GPT刚出来, 我写过一篇文章, 叫ChatGPT编写俄罗斯方块. 当年还没有什么Agent, 只能让ChatGPT写代码, 然后自己把代码复制到IDE里运行. 但是这几年AI的发展真是日新月异, 现在已经有了很多Agent了. 这些Agent可以自己去搜索资料, 可以自己去写代码, 不会了还可以自己去搜索，自己去看文档, 甚至可以自己去运行代码, 看结果, 然后根据结果继续修...</p>
               </div>
             </div>
           </a>
@@ -3172,7 +3279,7 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -3384,130 +3491,6 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3657,173 +3640,10 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4063,6 +3883,70 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4107,6 +3991,279 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4261,10 +4418,20 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4491,11 +4658,32 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -4517,7 +4705,28 @@ Give some funds from “Microsoft-Tongji Windows Mobile and Embedded Technology 
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

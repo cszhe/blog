@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。" />
 <meta property="og:description" content="有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。" />
-<link rel="canonical" href="https://gh.hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa" />
-<meta property="og:url" content="https://gh.hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa" />
+<link rel="canonical" href="https://hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa" />
+<meta property="og:url" content="https://hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2005-07-14T12:08:06+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="关于COM教学的一些想法" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-07-14T12:08:06+12:00","datePublished":"2005-07-14T12:08:06+12:00","description":"有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。","headline":"关于COM教学的一些想法","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa"},"url":"https://gh.hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-07-14T12:08:06+12:00","datePublished":"2005-07-14T12:08:06+12:00","description":"有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。","headline":"关于COM教学的一些想法","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa"},"url":"https://hezongjian.com/guan-yu-comjiao-xue-de-yi-xie-xiang-fa"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -695,7 +730,7 @@
   <div class="content">
     <p>有时候我一直就在想，COM相关的技术我们整天都在用（不用怀疑，Windows就是COM插起来的，VB6，ASP，JScript等下面都是COM），但是很多人都觉得COM难学，我觉得是不是对COM的教学走了歪路了。C++有C++的对象模型，COM有COM的对象模型，.net 和java都有自己的对象模型（当然.net跟java的对象模型对用程序员来说是透明的，MS跟sun不需要也不想让程序员了解）。只是因为COM的对象模型的部分特征看起来跟C++的对象模型比较相似，所以大多数教材都在用C++讲述COM的原理，（《COM本质论》，《COM技术内幕》是“罪魁祸首”），原理固然挺重要，但是这样一来搞得COM的起点相对很高，一定要深入理解C++的内部机制和对象模型才可以看得懂那些书写的是什么意思，而且看懂了之后，让自己动手写个能用的COM组件，还是很多人写不出来。</p>
 
-<p>我就想对COM的认识是不是也可以从感性到理性，就像我们不懂得进城线程，虚存，MMU，调度算法，一样用Windows操作系统用的也挺好。不懂得POP3，SMTP协议，整天也在网上发邮件一样，可不可以讲COM不从C++将起，用vb6，用ATL，甚至用当年的Visual J++都可以先写几个COM先用起来，或者就干脆用VB用人家写的COM，例如DX和ADO什么的。然后慢慢的理解基于COM的一些技术，例如ActiveX，DirectX，OLE等等，最后在讲COM的原理，COM的优劣，COM与C++的异同等等。我觉得不一定非得彻底了解了IClassFactory，AddRef, Release, QI，IDispatch, CoCreateInstanceEx, IMoniker，SysAllocString……才叫会COM，就像我们会j2SE, j2ee，但是不知道java的垃圾回收是不是Mark&amp;Sweep算法，也不知道java的对象的内存布局，也不知道java的.class文件里的metadata到底是怎么描述每个class和到底如何Reflection的。</p>
+<p>我就想对COM的认识是不是也可以从感性到理性，就像我们不懂得进程线程，虚存，MMU，调度算法，一样用Windows操作系统用的也挺好。不懂得POP3，SMTP协议，整天也在网上发邮件一样，可不可以讲COM不从C++讲起，用vb6，用ATL，甚至用当年的Visual J++都可以先写几个COM先用起来，或者就干脆用VB用人家写的COM，例如DX和ADO什么的。然后慢慢的理解基于COM的一些技术，例如ActiveX，DirectX，OLE等等，最后在讲COM的原理，COM的优劣，COM与C++的异同等等。我觉得不一定非得彻底了解了IClassFactory，AddRef, Release, QI，IDispatch, CoCreateInstanceEx, IMoniker，SysAllocString……才叫会COM，就像我们会j2SE, j2ee，但是不知道java的垃圾回收是不是Mark&amp;Sweep算法，也不知道java的对象的内存布局，也不知道java的.class文件里的metadata到底是怎么描述每个class和到底如何Reflection的。</p>
 
   </div>
 
@@ -758,35 +793,35 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa&text=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa&text=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=%E5%85%B3%E4%BA%8ECOM%E6%95%99%E5%AD%A6%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fguan-yu-comjiao-xue-de-yi-xie-xiang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -841,6 +876,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -863,13 +905,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1058,130 +1093,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1331,173 +1242,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1737,6 +1485,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1781,6 +1593,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1935,10 +2020,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -3485,6 +3580,18 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -3646,7 +3753,7 @@ Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微�
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -3858,130 +3965,6 @@ Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4131,173 +4114,10 @@ Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4537,6 +4357,70 @@ Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4581,6 +4465,279 @@ Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4735,10 +4892,20 @@ Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微�
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4965,11 +5132,32 @@ Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微�
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -4991,7 +5179,28 @@ Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微�
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

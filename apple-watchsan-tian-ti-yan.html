@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Apple Watch首发当天4月24号下午一点拿到了Apple Watch。我的是42mm的sports蓝色款。马上就跟iPhone配对使用。到今天为止，正好三天，写一点自己的体会吧。" />
 <meta property="og:description" content="Apple Watch首发当天4月24号下午一点拿到了Apple Watch。我的是42mm的sports蓝色款。马上就跟iPhone配对使用。到今天为止，正好三天，写一点自己的体会吧。" />
-<link rel="canonical" href="https://gh.hezongjian.com/apple-watchsan-tian-ti-yan" />
-<meta property="og:url" content="https://gh.hezongjian.com/apple-watchsan-tian-ti-yan" />
+<link rel="canonical" href="https://hezongjian.com/apple-watchsan-tian-ti-yan" />
+<meta property="og:url" content="https://hezongjian.com/apple-watchsan-tian-ti-yan" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-04-28T00:03:19+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Apple Watch三天体验" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2015-04-28T00:03:19+12:00","datePublished":"2015-04-28T00:03:19+12:00","description":"Apple Watch首发当天4月24号下午一点拿到了Apple Watch。我的是42mm的sports蓝色款。马上就跟iPhone配对使用。到今天为止，正好三天，写一点自己的体会吧。","headline":"Apple Watch三天体验","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/apple-watchsan-tian-ti-yan"},"url":"https://gh.hezongjian.com/apple-watchsan-tian-ti-yan"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2015-04-28T00:03:19+12:00","datePublished":"2015-04-28T00:03:19+12:00","description":"Apple Watch首发当天4月24号下午一点拿到了Apple Watch。我的是42mm的sports蓝色款。马上就跟iPhone配对使用。到今天为止，正好三天，写一点自己的体会吧。","headline":"Apple Watch三天体验","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/apple-watchsan-tian-ti-yan"},"url":"https://hezongjian.com/apple-watchsan-tian-ti-yan"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -880,7 +915,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2932 words"
+  title="2931 words"
 >
   <em>16 min</em> read</span>
 
@@ -896,7 +931,7 @@
 
 <p><strong>第一次设置：</strong></p>
 
-<p>与iPhone配对很简单，只要打开Apple Watch应用，摄像头对准Apple Watch即可，看上去Watch屏幕上显示的一堆乱七八糟的东西，其实应该是有隐藏了一些信息的。设置也很简单，选择带的手，以及运动习惯，还有iPhone上现在已经安装的应用就可以了。整个过程非常简单。</p>
+<p>与iPhone配对很简单，只要打开Apple Watch应用，摄像头对准Apple Watch即可，看上去Watch屏幕上显示的一堆乱七八糟的东西，其实应该是有隐藏了一些信息的。设置也很简单，选择戴的手，以及运动习惯，还有iPhone上现在已经安装的应用就可以了。整个过程非常简单。</p>
 
 <p><a href="/uploads/2015/04/2015-04-24-132847.jpg" class="popup img-link  shimmer"><img src="/uploads/2015/04/2015-04-24-132847.jpg" alt="图1：第一次设置时候的屏幕，右上角是无线充电的听诊器" loading="lazy"></a>
 图1：第一次设置时候的屏幕，右上角是无线充电的听诊器</p>
@@ -930,7 +965,7 @@
 
 <p>另外一个健身是运动之前要打开的。可以选择是室内室外跑步啊走路骑车啊等等，然后运动之前设置一个目标，比方多少卡路里，或者跑多远。然后手表会在运动的时候不断的提示你的进度，还给你鼓励。</p>
 
-<p>我拿到手表当晚就到楼下跑了5K实际了一下。以前跑步的时候拿着iPhone，用iPhone上的Nike Plus，虽然也有每公里语音提示，但是还是需要经常点亮屏幕看当前进度。有了手表就简单了，一抬手，就告诉你跑了多久多远，消耗了多少卡路里，手机可以完全绑在胳膊上不用动了，当然完全不带据说也行，就是距离测不准，毕竟手表没有GPS，这个我没测试过。还有一个就是心率。Apple Watch是持续监测心率的。因为本人经常长跑，所以静止的时候基本上心率在50-60左右。跑步的时候，Apple Watch会告诉我大概在150左右。我尝试狂奔，看心率最高上升到了160多。都还是安全范围。不知道不经常锻炼的人，狂奔超过心率安全值，手表会不会提醒悠着点。如果真这样，可能每年马拉松比赛可以避免不少杯具。</p>
+<p>我拿到手表当晚就到楼下跑了5K试了一下。以前跑步的时候拿着iPhone，用iPhone上的Nike Plus，虽然也有每公里语音提示，但是还是需要经常点亮屏幕看当前进度。有了手表就简单了，一抬手，就告诉你跑了多久多远，消耗了多少卡路里，手机可以完全绑在胳膊上不用动了，当然完全不带据说也行，就是距离测不准，毕竟手表没有GPS，这个我没测试过。还有一个就是心率。Apple Watch是持续监测心率的。因为本人经常长跑，所以静止的时候基本上心率在50-60左右。跑步的时候，Apple Watch会告诉我大概在150左右。我尝试狂奔，看心率最高上升到了160多。都还是安全范围。不知道不经常锻炼的人，狂奔超过心率安全值，手表会不会提醒悠着点。如果真这样，可能每年马拉松比赛可以避免不少杯具。</p>
 
 <p>有了Apple Watch，iOS上的Health应用就越来越有意思了。刚买iPhone的时候，健康里面只有计步器跟怕楼层两个数据，现在数据源越来越多了，生态圈慢慢凸显。我现在手机里有Jawbone Up手环，Nike Plus，Apple Watch三个数据源。检测健身的硬件就三个，各有交集：iPhone检测步数跟楼层。Jawbone手环检测步数跟睡眠。Apple Watch检测步数跟心率。目前还一个都扔不掉，楼层只能iPhone检测，心率只能Watch检测，睡眠只能Jawbone检测。只能左手手表，右手手环，裤兜手机。有点小纠结。</p>
 
@@ -1001,35 +1036,35 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fapple-watchsan-tian-ti-yan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fapple-watchsan-tian-ti-yan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fapple-watchsan-tian-ti-yan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fapple-watchsan-tian-ti-yan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fapple-watchsan-tian-ti-yan&text=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fapple-watchsan-tian-ti-yan&text=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fapple-watchsan-tian-ti-yan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fapple-watchsan-tian-ti-yan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fapple-watchsan-tian-ti-yan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=Apple%20Watch%E4%B8%89%E5%A4%A9%E4%BD%93%E9%AA%8C%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fapple-watchsan-tian-ti-yan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -1084,6 +1119,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1106,13 +1148,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1301,130 +1336,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1574,173 +1485,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1980,6 +1728,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2024,6 +1836,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2178,10 +2263,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4523,7 +4618,7 @@ Apple Watch三天体验
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -4735,130 +4830,6 @@ Apple Watch三天体验
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5008,173 +4979,10 @@ Apple Watch三天体验
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5414,6 +5222,70 @@ Apple Watch三天体验
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5458,6 +5330,279 @@ Apple Watch三天体验
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5612,10 +5757,20 @@ Apple Watch三天体验
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -5842,11 +5997,32 @@ Apple Watch三天体验
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -5868,7 +6044,28 @@ Apple Watch三天体验
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

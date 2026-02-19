@@ -30,23 +30,24 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Me in disney mulan" />
+<meta property="og:title" content="Me in Disney Mulan" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="These are all the screenshots from Disney Mulan that include me." />
 <meta property="og:description" content="These are all the screenshots from Disney Mulan that include me." />
-<link rel="canonical" href="https://gh.hezongjian.com/me-in-disney-mulan" />
-<meta property="og:url" content="https://gh.hezongjian.com/me-in-disney-mulan" />
+<link rel="canonical" href="https://hezongjian.com/me-in-disney-mulan" />
+<meta property="og:url" content="https://hezongjian.com/me-in-disney-mulan" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-09-05T00:00:00+12:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Me in disney mulan" />
+<meta property="twitter:title" content="Me in Disney Mulan" />
+<meta name="twitter:site" content="@hezongjian" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-09-05T00:00:00+12:00","datePublished":"2020-09-05T00:00:00+12:00","description":"These are all the screenshots from Disney Mulan that include me.","headline":"Me in disney mulan","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/me-in-disney-mulan"},"url":"https://gh.hezongjian.com/me-in-disney-mulan"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2020-09-05T00:00:00+12:00","datePublished":"2020-09-05T00:00:00+12:00","description":"These are all the screenshots from Disney Mulan that include me.","headline":"Me in Disney Mulan","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/me-in-disney-mulan"},"url":"https://hezongjian.com/me-in-disney-mulan"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Me in disney mulan | Zongjian's blog
+  <title>Me in Disney Mulan | Zongjian's blog
   </title>
 
   <!--
@@ -127,7 +128,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -225,7 +226,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -383,7 +417,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -406,7 +440,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -429,7 +463,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -490,7 +524,7 @@
         
           
             
-              <span>Me in disney mulan</span>
+              <span>Me in Disney Mulan</span>
             
 
           
@@ -1371,7 +1405,7 @@
 
 <article class="px-1" data-toc="false">
   <header>
-    <h1 data-toc-skip>Me in disney mulan</h1>
+    <h1 data-toc-skip>Me in Disney Mulan</h1>
     
 
     <div class="post-meta text-muted">
@@ -1413,7 +1447,7 @@
 
           <em>
             
-              <a href=""></a>
+              <a href="https://twitter.com/hezongjian">Zongjian He</a>
             
           </em>
         </span>
@@ -1536,35 +1570,35 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Me%20in%20disney%20mulan%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fme-in-disney-mulan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Me%20in%20Disney%20Mulan%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fme-in-disney-mulan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Me%20in%20disney%20mulan%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fme-in-disney-mulan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Me%20in%20Disney%20Mulan%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fme-in-disney-mulan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fme-in-disney-mulan&text=Me%20in%20disney%20mulan%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fme-in-disney-mulan&text=Me%20in%20Disney%20Mulan%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=Me%20in%20disney%20mulan%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fme-in-disney-mulan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=Me%20in%20Disney%20Mulan%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fme-in-disney-mulan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=Me%20in%20disney%20mulan%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fme-in-disney-mulan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=Me%20in%20Disney%20Mulan%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fme-in-disney-mulan" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -1619,6 +1653,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1641,13 +1682,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1836,130 +1870,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2109,173 +2019,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2515,6 +2262,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2559,6 +2370,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2713,10 +2797,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -3038,7 +3132,67 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -3138,7 +3292,7 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/wo-zai-xin-xi-lan-pao-long-tao-3" class="post-preview card h-100">
+          <a href="/he-shi-qian-de-man-hua" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -3150,50 +3304,16 @@
 
 <time
   
-  data-ts="1599366180"
+  data-ts="1582838400"
   data-df="ll"
   
 >
-  Sep  6, 2020
+  Feb 28, 2020
 </time>
 
-              <h4 class="pt-0 my-2">我在新西兰跑龙套-3</h4>
+              <h4 class="pt-0 my-2">何事谦的漫画</h4>
               <div class="text-muted">
-                <p>那些人
-
-大家可能最感兴趣的就是那些耳熟能详的明星们。但其实明星没什么好写，因为群演不允许跟明星们聊天，也不能围观要签名(可能就算允许我也不会去要, 毕竟我之前以为刘亦菲叫刘亦雯)。所以跟他们的接触并不多。
-
-第一天见刘亦菲的时候，她妆化得像日本艺妓，再加上我这近视还不准戴眼镜的眼睛，一幕都拍完了我还没找到花木兰是哪个。中间休息的时候，问边上人别人，哪个是刘亦菲，别人说那个大花脸就是。后来拍...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/wo-zai-xin-xi-lan-pao-long-tao-2" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1599366120"
-  data-df="ll"
-  
->
-  Sep  6, 2020
-</time>
-
-              <h4 class="pt-0 my-2">我在新西兰跑龙套-2</h4>
-              <div class="text-muted">
-                <p>村民的面试安排在一个阳光明媚的午后。我再次驱车赶到K影视基地。发现他们正在把一块牧场铲平，修成停车场。看来是真要有大动作的样子。剧组在影视基地门口搭建了一个帐篷，所有的村民都要先到帐篷报到。进入帐篷之前的第一件事，又是签保密协议。签完保密协议之后，每个人领到了两个东西，一个是正式的契约合同，一个是拍摄须知，这两个是要带回家去仔细阅读的。
-
-我目测了一下，帐篷里面大概有50人左右，大家初次见面...</p>
+                <p>最近几天谦同学每天晚上都在画画, 不知道他在画什么, 昨天看了一下, 他居然开始创作漫画了, 感觉还挺像样子的. 经过他同意后会在这里继续更新.</p>
               </div>
             </div>
           </a>
@@ -3229,6 +3349,38 @@
           </a>
         </article>
       
+        <article class="col">
+          <a href="/guan-yu-ke-lai-si-te-qie-qi-xiang-dao-de" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1552697220"
+  data-df="ll"
+  
+>
+  Mar 16, 2019
+</time>
+
+              <h4 class="pt-0 my-2">关于克莱斯特切奇想到的</h4>
+              <div class="text-muted">
+                <p>序
+
+315对大多数中国人来说是一年一度的消费者权益保护日, 但今年新西兰3月15日,在新西兰历史上注定是一个会被记住的日子, 也注定会改变新西兰. 事件过去已经一天了, 跟很多周围的人一样, 我的心情一直很沉重, 想说点什么, 但是思绪又十分的乱, 就记录在这里吧, 不知道公共媒体能不能发出去, 不要给他们惹麻烦了, 就发在自己博客里吧, 本来就没有备案.
+
+南岛最大的城市Christch...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -3244,7 +3396,7 @@
 
   
     <a
-      href="/%E8%87%AA%E5%88%B6%E5%8D%A1%E7%89%87"
+      href="/zi-zhi-qia-pian"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
@@ -3278,7 +3430,7 @@
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -3490,130 +3642,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3763,173 +3791,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4169,6 +4034,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4213,6 +4142,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4367,10 +4569,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4597,11 +4809,32 @@
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -4623,7 +4856,28 @@
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

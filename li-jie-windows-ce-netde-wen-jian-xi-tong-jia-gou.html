@@ -33,17 +33,19 @@
 <meta property="og:title" content="理解Windows CE .NET的文件系统架构" />
 <meta name="author" content="omale" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。 如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关与文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。 Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中，驱动器被挂接为根目录下的文件夹。因此，一个新添加到系统中的存储卡被以类似“\Storage Card”这样的名字挂接到根目录树下。 FileSys.exe包括一些组件： ·ROM文件系统 ·存储管理器 ·对象存储 对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册标在一些Windows CE设备中是必需的。在Windows CE 4.0之前，它总是位于对象存储中。从Windows CE .NET开始，它可以作为一个文件存在与外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。 基于RAM的文件系统通常直接连接到文件系统的唯一的根。也就是说，一个文件“\MyFile.txt”位于系统的根目录，也是基于RAM的文件系统的根。基于ROM的文件系统通常被连接到唯一的文件系统的“\Windows”目录。也就是说在ROM里面的所有文件都是”\Windows”目录下的只读文件。 存储管理器是Windows CE .NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理其主要负责四件事： ·存储驱动程序. 这是物理存储介质的设备驱动程序。有时候也被叫做“块设备”因为它们提供对块数据的随机地址访问。 ·分区驱动程序. 它管理一个存储设备上的多个分区。Windows CE .NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相通的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。 ·文件系统驱动程序. 这些驱动程序把存储设备上的数据组织成文件和文件夹。Windows CE .NET内建对一些文件不同文件系统的支持，包括为CD和DVD准备的UDFS，还有FATFS（包括对FAT32的支持）。4.2版本之后又引入了新的文件系统叫做事务安全的FAT文件系统（TFAT）。（我们在以后的文章中有可能会讨论这个，如果你有兴趣，请告诉我们） ·文件系统过滤器. 文件系统过滤器在对文件系统的调用接触到文件系统之前事先处理它们。这样就允许一些特殊的处理，访问加密、压缩的数据或使用统计监视器。 就像谚语说的，百闻不如一见，所以下面的图就描述了文件系统中各种组件的关系。" />
-<meta property="og:description" content="概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。 如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关与文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。 Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中，驱动器被挂接为根目录下的文件夹。因此，一个新添加到系统中的存储卡被以类似“\Storage Card”这样的名字挂接到根目录树下。 FileSys.exe包括一些组件： ·ROM文件系统 ·存储管理器 ·对象存储 对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册标在一些Windows CE设备中是必需的。在Windows CE 4.0之前，它总是位于对象存储中。从Windows CE .NET开始，它可以作为一个文件存在与外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。 基于RAM的文件系统通常直接连接到文件系统的唯一的根。也就是说，一个文件“\MyFile.txt”位于系统的根目录，也是基于RAM的文件系统的根。基于ROM的文件系统通常被连接到唯一的文件系统的“\Windows”目录。也就是说在ROM里面的所有文件都是”\Windows”目录下的只读文件。 存储管理器是Windows CE .NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理其主要负责四件事： ·存储驱动程序. 这是物理存储介质的设备驱动程序。有时候也被叫做“块设备”因为它们提供对块数据的随机地址访问。 ·分区驱动程序. 它管理一个存储设备上的多个分区。Windows CE .NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相通的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。 ·文件系统驱动程序. 这些驱动程序把存储设备上的数据组织成文件和文件夹。Windows CE .NET内建对一些文件不同文件系统的支持，包括为CD和DVD准备的UDFS，还有FATFS（包括对FAT32的支持）。4.2版本之后又引入了新的文件系统叫做事务安全的FAT文件系统（TFAT）。（我们在以后的文章中有可能会讨论这个，如果你有兴趣，请告诉我们） ·文件系统过滤器. 文件系统过滤器在对文件系统的调用接触到文件系统之前事先处理它们。这样就允许一些特殊的处理，访问加密、压缩的数据或使用统计监视器。 就像谚语说的，百闻不如一见，所以下面的图就描述了文件系统中各种组件的关系。" />
-<link rel="canonical" href="https://gh.hezongjian.com/li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" />
-<meta property="og:url" content="https://gh.hezongjian.com/li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" />
+<meta name="description" content="概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。 如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。 Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中，驱动器被挂接为根目录下的文件夹。因此，一个新添加到系统中的存储卡被以类似“\Storage Card”这样的名字挂接到根目录树下。 FileSys.exe包括一些组件： ·ROM文件系统 ·存储管理器 ·对象存储 对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册表在一些Windows CE设备中是必需的。在Windows CE 4.0之前，它总是位于对象存储中。从Windows CE .NET开始，它可以作为一个文件存在于外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。 基于RAM的文件系统通常直接连接到文件系统的唯一的根。也就是说，一个文件“\MyFile.txt”位于系统的根目录，也是基于RAM的文件系统的根。基于ROM的文件系统通常被连接到唯一的文件系统的“\Windows”目录。也就是说在ROM里面的所有文件都是”\Windows”目录下的只读文件。 存储管理器是Windows CE .NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理器主要负责四件事： ·存储驱动程序. 这是物理存储介质的设备驱动程序。有时候也被叫做“块设备”因为它们提供对块数据的随机地址访问。 ·分区驱动程序. 它管理一个存储设备上的多个分区。Windows CE .NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相同的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。 ·文件系统驱动程序. 这些驱动程序把存储设备上的数据组织成文件和文件夹。Windows CE .NET内建对一些文件不同文件系统的支持，包括为CD和DVD准备的UDFS，还有FATFS（包括对FAT32的支持）。4.2版本之后又引入了新的文件系统叫做事务安全的FAT文件系统（TFAT）。（我们在以后的文章中有可能会讨论这个，如果你有兴趣，请告诉我们） ·文件系统过滤器. 文件系统过滤器在对文件系统的调用接触到文件系统之前事先处理它们。这样就允许一些特殊的处理，访问加密、压缩的数据或使用统计监视器。 就像谚语说的，百闻不如一见，所以下面的图就描述了文件系统中各种组件的关系。" />
+<meta property="og:description" content="概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。 如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。 Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中，驱动器被挂接为根目录下的文件夹。因此，一个新添加到系统中的存储卡被以类似“\Storage Card”这样的名字挂接到根目录树下。 FileSys.exe包括一些组件： ·ROM文件系统 ·存储管理器 ·对象存储 对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册表在一些Windows CE设备中是必需的。在Windows CE 4.0之前，它总是位于对象存储中。从Windows CE .NET开始，它可以作为一个文件存在于外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。 基于RAM的文件系统通常直接连接到文件系统的唯一的根。也就是说，一个文件“\MyFile.txt”位于系统的根目录，也是基于RAM的文件系统的根。基于ROM的文件系统通常被连接到唯一的文件系统的“\Windows”目录。也就是说在ROM里面的所有文件都是”\Windows”目录下的只读文件。 存储管理器是Windows CE .NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理器主要负责四件事： ·存储驱动程序. 这是物理存储介质的设备驱动程序。有时候也被叫做“块设备”因为它们提供对块数据的随机地址访问。 ·分区驱动程序. 它管理一个存储设备上的多个分区。Windows CE .NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相同的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。 ·文件系统驱动程序. 这些驱动程序把存储设备上的数据组织成文件和文件夹。Windows CE .NET内建对一些文件不同文件系统的支持，包括为CD和DVD准备的UDFS，还有FATFS（包括对FAT32的支持）。4.2版本之后又引入了新的文件系统叫做事务安全的FAT文件系统（TFAT）。（我们在以后的文章中有可能会讨论这个，如果你有兴趣，请告诉我们） ·文件系统过滤器. 文件系统过滤器在对文件系统的调用接触到文件系统之前事先处理它们。这样就允许一些特殊的处理，访问加密、压缩的数据或使用统计监视器。 就像谚语说的，百闻不如一见，所以下面的图就描述了文件系统中各种组件的关系。" />
+<link rel="canonical" href="https://hezongjian.com/li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" />
+<meta property="og:url" content="https://hezongjian.com/li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2004-08-21T11:21:37+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="理解Windows CE .NET的文件系统架构" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2004-08-21T11:21:37+12:00","datePublished":"2004-08-21T11:21:37+12:00","description":"概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。 如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关与文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。 Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中，驱动器被挂接为根目录下的文件夹。因此，一个新添加到系统中的存储卡被以类似“\\Storage Card”这样的名字挂接到根目录树下。 FileSys.exe包括一些组件： ·ROM文件系统 ·存储管理器 ·对象存储 对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册标在一些Windows CE设备中是必需的。在Windows CE 4.0之前，它总是位于对象存储中。从Windows CE .NET开始，它可以作为一个文件存在与外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。 基于RAM的文件系统通常直接连接到文件系统的唯一的根。也就是说，一个文件“\\MyFile.txt”位于系统的根目录，也是基于RAM的文件系统的根。基于ROM的文件系统通常被连接到唯一的文件系统的“\\Windows”目录。也就是说在ROM里面的所有文件都是”\\Windows”目录下的只读文件。 存储管理器是Windows CE .NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理其主要负责四件事： ·存储驱动程序. 这是物理存储介质的设备驱动程序。有时候也被叫做“块设备”因为它们提供对块数据的随机地址访问。 ·分区驱动程序. 它管理一个存储设备上的多个分区。Windows CE .NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相通的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。 ·文件系统驱动程序. 这些驱动程序把存储设备上的数据组织成文件和文件夹。Windows CE .NET内建对一些文件不同文件系统的支持，包括为CD和DVD准备的UDFS，还有FATFS（包括对FAT32的支持）。4.2版本之后又引入了新的文件系统叫做事务安全的FAT文件系统（TFAT）。（我们在以后的文章中有可能会讨论这个，如果你有兴趣，请告诉我们） ·文件系统过滤器. 文件系统过滤器在对文件系统的调用接触到文件系统之前事先处理它们。这样就允许一些特殊的处理，访问加密、压缩的数据或使用统计监视器。 就像谚语说的，百闻不如一见，所以下面的图就描述了文件系统中各种组件的关系。","headline":"理解Windows CE .NET的文件系统架构","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou"},"url":"https://gh.hezongjian.com/li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2004-08-21T11:21:37+12:00","datePublished":"2004-08-21T11:21:37+12:00","description":"概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。 如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。 Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中，驱动器被挂接为根目录下的文件夹。因此，一个新添加到系统中的存储卡被以类似“\\Storage Card”这样的名字挂接到根目录树下。 FileSys.exe包括一些组件： ·ROM文件系统 ·存储管理器 ·对象存储 对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册表在一些Windows CE设备中是必需的。在Windows CE 4.0之前，它总是位于对象存储中。从Windows CE .NET开始，它可以作为一个文件存在于外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。 基于RAM的文件系统通常直接连接到文件系统的唯一的根。也就是说，一个文件“\\MyFile.txt”位于系统的根目录，也是基于RAM的文件系统的根。基于ROM的文件系统通常被连接到唯一的文件系统的“\\Windows”目录。也就是说在ROM里面的所有文件都是”\\Windows”目录下的只读文件。 存储管理器是Windows CE .NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理器主要负责四件事： ·存储驱动程序. 这是物理存储介质的设备驱动程序。有时候也被叫做“块设备”因为它们提供对块数据的随机地址访问。 ·分区驱动程序. 它管理一个存储设备上的多个分区。Windows CE .NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相同的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。 ·文件系统驱动程序. 这些驱动程序把存储设备上的数据组织成文件和文件夹。Windows CE .NET内建对一些文件不同文件系统的支持，包括为CD和DVD准备的UDFS，还有FATFS（包括对FAT32的支持）。4.2版本之后又引入了新的文件系统叫做事务安全的FAT文件系统（TFAT）。（我们在以后的文章中有可能会讨论这个，如果你有兴趣，请告诉我们） ·文件系统过滤器. 文件系统过滤器在对文件系统的调用接触到文件系统之前事先处理它们。这样就允许一些特殊的处理，访问加密、压缩的数据或使用统计监视器。 就像谚语说的，百闻不如一见，所以下面的图就描述了文件系统中各种组件的关系。","headline":"理解Windows CE .NET的文件系统架构","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou"},"url":"https://hezongjian.com/li-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -833,7 +868,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3992 words"
+  title="3991 words"
 >
   <em>22 min</em> read</span>
 
@@ -847,7 +882,7 @@
   <div class="content">
     <p>概述: 在本月的文章中，我们来看一下Windows CE .NET的文件系统，它的组件，以及如何扩展文件系统。</p>
 
-<p>如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关与文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。</p>
+<p>如果你是微软Windows CE .NET的新闻组的常客，你会发现反复有关文件系统，尤其是关于基于蜂箱（hive-based）的注册表的问题（如果你不经常阅读那些新闻组，鄙视你！）。本月的文章中，我们将深入到与这些特性的实现相关的系统的不同部分中。首先，我们看一下Windows CE .NET的文件系统结构，因为它是我们要研究的其他特性的基础。在剩下的文章中，我们会讨论对象存储和系统注册表示如何工作的。</p>
 
 <p>Windows CE .NET文件系统是灵活的模块化设计的，它允许自定义的文件系统，过滤器，和大量不同的块设备。文件系统和所有文件系统相关的API都在FileSys.exe进程的管理下。这个模块实现了对象存储和存储管理器（一会我们就稍微研究一下对象存储）并把所有的文件系统统一为在一个根下的单一的系统，“\”。在Windows CE .NET中，所有的文件和文件系统存在于一个以“\”作为根开始的单一命名空间内。所有的文件都以从根开始的树形层次结构的单一路径来确定。这与桌面版的Windows很相近，除了没有驱动器名。在Windows CE中，驱动器被挂接为根目录下的文件夹。因此，一个新添加到系统中的存储卡被以类似“\Storage Card”这样的名字挂接到根目录树下。</p>
 
@@ -859,15 +894,15 @@
 
 <p>·对象存储</p>
 
-<p>对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册标在一些Windows CE设备中是必需的。在Windows CE 4.0之前，它总是位于对象存储中。从Windows CE .NET开始，它可以作为一个文件存在与外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。</p>
+<p>对象存储是一个被FileSys.exe控制的内存堆。对象存储包括RAM系统注册表，RAM文件系统，和属性数据库。每一个模块都是FileSys.exe的可选组件。RAM文件系统和属性数据库是完全可选的或许在某些系统中完全不存在。注册表在一些Windows CE设备中是必需的。在Windows CE 4.0之前，它总是位于对象存储中。从Windows CE .NET开始，它可以作为一个文件存在于外部挂接的文件系统上，例如硬盘。我们一会就去看看这是如何做到的。</p>
 
 <p>基于RAM的文件系统通常直接连接到文件系统的唯一的根。也就是说，一个文件“\MyFile.txt”位于系统的根目录，也是基于RAM的文件系统的根。基于ROM的文件系统通常被连接到唯一的文件系统的“\Windows”目录。也就是说在ROM里面的所有文件都是”\Windows”目录下的只读文件。</p>
 
-<p>存储管理器是Windows CE .NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理其主要负责四件事：</p>
+<p>存储管理器是Windows CE .NET中的新事物。就像它的名字所暗示的，它负责管理系统中的存储设备和文件系统的访问。存储管理器主要负责四件事：</p>
 
 <p>·存储驱动程序. 这是物理存储介质的设备驱动程序。有时候也被叫做“块设备”因为它们提供对块数据的随机地址访问。</p>
 
-<p>·分区驱动程序. 它管理一个存储设备上的多个分区。Windows CE .NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相通的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。</p>
+<p>·分区驱动程序. 它管理一个存储设备上的多个分区。Windows CE .NET允许一个物理的磁盘包括多个格式化成不同文件系统的分区。分区驱动程序是存储驱动程序的有效翻译者。它暴露相同的存储驱动程序接口，把分区的块地址翻译成存储设备上的真实块地址。然后，它把调用转给存储驱动程序。</p>
 
 <p>·文件系统驱动程序. 这些驱动程序把存储设备上的数据组织成文件和文件夹。Windows CE .NET内建对一些文件不同文件系统的支持，包括为CD和DVD准备的UDFS，还有FATFS（包括对FAT32的支持）。4.2版本之后又引入了新的文件系统叫做事务安全的FAT文件系统（TFAT）。（我们在以后的文章中有可能会讨论这个，如果你有兴趣，请告诉我们）</p>
 
@@ -895,9 +930,9 @@
 
 <p>存储管理器读取关于设备分区驱动程序的信息然后加载合适的驱动程序。（微软提供了一个叫做“mspart”的分区驱动程序，通过标准的硬盘分区通过磁盘主引导记录上的分区表进行分区，当然你也可以自由的建立你自己的分区，或者什么都不用。）</p>
 
-<p>一旦分区驱动程序被加载，存储管理器就请求分区驱动程序枚举磁盘上的分区并识别分区上的文件系统。分区驱动程序从主引导纪录（MBR）上读取分区和文件系统信息，然后把它提供给存储管理器。存储管理器使用它为每个分区加载文件系统驱动程序然后把文件系统挂接到统一文件系统的根目录。虽然这看起来步骤繁多，但是这也增加了让网络重定向器，FATFS和DVD ROMs在同一个框架内的灵活性。</p>
+<p>一旦分区驱动程序被加载，存储管理器就请求分区驱动程序枚举磁盘上的分区并识别分区上的文件系统。分区驱动程序从主引导记录（MBR）上读取分区和文件系统信息，然后把它提供给存储管理器。存储管理器使用它为每个分区加载文件系统驱动程序然后把文件系统挂接到统一文件系统的根目录。虽然这看起来步骤繁多，但是这也增加了让网络重定向器，FATFS和DVD ROMs在同一个框架内的灵活性。</p>
 
-<p>现在我们已经理解了FileSys.exe如何一步步把各种组件加载起来的，现在我们来仔细看看文件系统驱动程序和文件系统驱动程序管理器（FSDMG R）所扮演的角色。FSDMGR是存储管理器的一部分（在以前版本的操作系统中他是设备管理器的一部分），负责为文件系统驱动程序提供服务。因为文件系统不需要知道数据是来自磁盘上的分区还是直接来自磁盘，FSDMGR封装文件系统驱动程序，为驱动程序的上下边提供接口。下图显示了这是如何工作的。</p>
+<p>现在我们已经理解了FileSys.exe如何一步步把各种组件加载起来的，现在我们来仔细看看文件系统驱动程序和文件系统驱动程序管理器（FSDMG R）所扮演的角色。FSDMGR是存储管理器的一部分（在以前版本的操作系统中它是设备管理器的一部分），负责为文件系统驱动程序提供服务。因为文件系统不需要知道数据是来自磁盘上的分区还是直接来自磁盘，FSDMGR封装文件系统驱动程序，为驱动程序的上下边提供接口。下图显示了这是如何工作的。</p>
 
 <p><a href="http://msdn.microsoft.com/library/en-us/dnembedded/html/embedded06172003_fig3.gif" target="_blank"
           class="img-link shimmer"
@@ -907,7 +942,7 @@
 
 <p>存储管理器调用文件系统驱动程序（FSD），然后FSD使用FSDMGR_API来从设备接收数据。像对CD这种没有分区的设备来说，设备通过FSDMGR与块驱动交流。如果是个有多个分区的硬盘，它就以同样的方式使用FSDMGR_API。然而，FSDMGR把工作转给合适的分区驱动程序。</p>
 
-<p>我们已经看了存储管理器，FSDMGR，FSDs，分区驱动程序和块设备是如何交户和协作的。让我们返回到他们是如何加载的，然后看看注册表中的描述信息细节。一个描述信息，像前面所提到的，就是定义关于块设备和应该如何使用它们的一系列注册表值。描述信息位于：HKEY_LOCAL_MACHINE\System\StorageManager\Profiles。</p>
+<p>我们已经看了存储管理器，FSDMGR，FSDs，分区驱动程序和块设备是如何交互和协作的。让我们返回到他们是如何加载的，然后看看注册表中的描述信息细节。一个描述信息，像前面所提到的，就是定义关于块设备和应该如何使用它们的一系列注册表值。描述信息位于：HKEY_LOCAL_MACHINE\System\StorageManager\Profiles。</p>
 
 <p>每一个描述信息都是位于基本描述信息键下面的键。例如，如果我们的Windows CE .NET设备里面有一个硬盘，并且它确定使用硬盘描述信息，那么描述信息位于：HKEY_LOCAL_MACHINE\System\StorageManager\Profiles\Hard Disk。所有的描述信息都是profile键下的名字和值。各种各样的名字和它们的作用如下表所示：</p>
 
@@ -1058,35 +1093,35 @@ return FALSE;
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou&text=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou&text=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=%E7%90%86%E8%A7%A3Windows%20CE%20.NET%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fli-jie-windows-ce-netde-wen-jian-xi-tong-jia-gou" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -1141,6 +1176,13 @@ return FALSE;
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1163,13 +1205,6 @@ return FALSE;
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1358,130 +1393,6 @@ return FALSE;
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1631,173 +1542,10 @@ return FALSE;
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2037,6 +1785,70 @@ return FALSE;
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2081,6 +1893,279 @@ return FALSE;
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2235,10 +2320,20 @@ return FALSE;
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4842,7 +4937,7 @@ return FALSE;
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -5054,130 +5149,6 @@ return FALSE;
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5327,173 +5298,10 @@ return FALSE;
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5733,6 +5541,70 @@ return FALSE;
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5777,6 +5649,279 @@ return FALSE;
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5931,10 +6076,20 @@ return FALSE;
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -6161,11 +6316,32 @@ return FALSE;
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -6187,7 +6363,28 @@ return FALSE;
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

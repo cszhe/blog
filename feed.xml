@@ -1,995 +1,181 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://gh.hezongjian.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gh.hezongjian.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-02-16T14:44:21+13:00</updated><id>https://gh.hezongjian.com/feed.xml</id><title type="html">Zongjian’s blog</title><subtitle>Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.</subtitle><entry><title type="html">T4重生记：折腾魔改电脑</title><link href="https://gh.hezongjian.com/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao" rel="alternate" type="text/html" title="T4重生记：折腾魔改电脑" /><published>2026-01-24T10:15:00+13:00</published><updated>2026-01-24T10:15:00+13:00</updated><id>https://gh.hezongjian.com/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao</id><content type="html" xml:base="https://gh.hezongjian.com/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao"><![CDATA[<p>去年圣诞节回国的时候，谦花了大概4000块钱，自己买各种零件，组装了一台自己的台式机电脑，这一年下来，他用得还不错，完全满足了他学习和娱乐的需求，甚至有的时候还来跑跑各种AI模型，还用来学习Python编程。</p>
 
-<p>今年圣诞节他回国之前，正好我有一台机器的T4显卡坏了, 谦告诉我说国内有人会修T4显卡，他想把这块T4显卡修好，然后装到他的电脑里面去，也正好用来跑AI模型，虽然T4的内存只有16G，但是有了T4显卡，比他本来的游戏显卡3080用来跑AI还要强多了。我问他，你显卡修完了，那到底有没有修好你也不知道阿，因为你不可能把台式机再带回过去。他跟我信誓旦旦地说，他可以再组装一台电脑，成本只要几百块钱，就可以测试显卡有没有修好。思路就是垃圾佬，买各种二手，三手零件，甚至是魔改的零件，组装一台勉强能用的电脑，然后测试显卡。听起来很有道理的样子。</p>
 
-<p>在这个过程中，他经历了各种各样的折腾，比去年都买全新零件组装起来要麻烦多了，不过最后终于成功了。下面就来讲讲他折腾魔改电脑的经过。我们基本上回家四周, 大概过程如下:</p>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://hezongjian.com/</id>
+  <title>Zongjian's blog</title>
+  <subtitle>Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.</subtitle>
+  <updated>2026-02-19T22:53:21+13:00</updated>
+  <author>
+    <name>Zongjian He</name>
+    <uri>https://hezongjian.com/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="https://hezongjian.com/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="https://hezongjian.com/"/>
+  <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
+  <rights> © 2026 Zongjian He </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>驱赶AI Agent当牛马</title>
+    <link href="https://hezongjian.com/qu-gan-ai-agent-dang-niu-ma" rel="alternate" type="text/html" title="驱赶AI Agent当牛马" />
+    <published>2026-02-18T10:15:00+13:00</published>
+  
+    <updated>2026-02-18T10:15:00+13:00</updated>
+  
+    <id>https://hezongjian.com/qu-gan-ai-agent-dang-niu-ma</id>
+    <content type="text/html" src="https://hezongjian.com/qu-gan-ai-agent-dang-niu-ma" />
+    <author>
+      <name>Zongjian He</name>
+    </author>
+
+  
+    
+    <category term="工作和学习" />
+    
+  
+
+  <summary>前言
+
+三年前GPT刚出来, 我写过一篇文章, 叫ChatGPT编写俄罗斯方块. 当年还没有什么Agent, 只能让ChatGPT写代码, 然后自己把代码复制到IDE里运行. 但是这几年AI的发展真是日新月异, 现在已经有了很多Agent了. 这些Agent可以自己去搜索资料, 可以自己去写代码, 不会了还可以自己去搜索，自己去看文档, 甚至可以自己去运行代码, 看结果, 然后根据结果继续修改代码. 这就好像是有了一个AI的助理一样, 你让它帮你做一些事情, 它就会自己去完成. 这对广大于程序员来说, 真的是一个巨大的福音. 因为可以把一些重复性的工作交给AI来做, 然后就可以专注于一些更有创造性的工作了 (我不觉得AI能替代码农).
+
+顺便吐槽一下中文翻译，Agent翻译成“智能体”，听起来就很高达上，但是到底是干什么的呢？我觉得“智能体”这个名字太抽象了，不太好理解。但是Agen...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>T4重生记：折腾魔改电脑</title>
+    <link href="https://hezongjian.com/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao" rel="alternate" type="text/html" title="T4重生记：折腾魔改电脑" />
+    <published>2026-01-24T10:15:00+13:00</published>
+  
+    <updated>2026-01-24T10:15:00+13:00</updated>
+  
+    <id>https://hezongjian.com/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao</id>
+    <content type="text/html" src="https://hezongjian.com/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao" />
+    <author>
+      <name>Zongjian He</name>
+    </author>
+
+  
+    
+    <category term="工作和学习" />
+    
+  
+
+  <summary>去年圣诞节回国的时候，谦花了大概4000块钱，自己买各种零件，组装了一台自己的台式机电脑，这一年下来，他用得还不错，完全满足了他学习和娱乐的需求，甚至有的时候还来跑跑各种AI模型，还用来学习Python编程。
+
+今年圣诞节他回国之前，正好我有一台机器的T4显卡坏了, 谦告诉我说国内有人会修T4显卡，他想把这块T4显卡修好，然后装到他的电脑里面去，也正好用来跑AI模型，虽然T4的内存只有16G，但是有了T4显卡，比他本来的游戏显卡3080用来跑AI还要强多了。我问他，你显卡修完了，那到底有没有修好你也不知道阿，因为你不可能把台式机再带回过去。他跟我信誓旦旦地说，他可以再组装一台电脑，成本只要几百块钱，就可以测试显卡有没有修好。思路就是垃圾佬，买各种二手，三手零件，甚至是魔改的零件，组装一台勉强能用的电脑，然后测试显卡。听起来很有道理的样子。
+
+在这个过程中，他经历了各种各样的折腾，比去...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>到底谁在吃垃圾</title>
+    <link href="https://hezongjian.com/dao-di-shui-zai-chi-la-ji" rel="alternate" type="text/html" title="到底谁在吃垃圾" />
+    <published>2025-09-17T17:06:00+12:00</published>
+  
+    <updated>2025-09-17T17:06:00+12:00</updated>
+  
+    <id>https://hezongjian.com/dao-di-shui-zai-chi-la-ji</id>
+    <content type="text/html" src="https://hezongjian.com/dao-di-shui-zai-chi-la-ji" />
+    <author>
+      <name>Zongjian He</name>
+    </author>
+
+  
+    
+    <category term="工作和学习" />
+    
+  
+
+  <summary>之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了.
+
+#!/usr/bin/env python3
+from cerebras.cloud.sdk import Cerebras
+import os
+import logging
+from logging.handlers import RotatingFileHandler
+from flask import Flask, request
+from pathvalidate import sanitize_filename
+import dotenv
+dotenv.load_dotenv()
 
-<ol>
-  <li>GPU送修 (1周)</li>
-  <li>调试, 配置电脑 (2周)</li>
-  <li>T4测试 (1周)</li>
-</ol>
+client = Cerebras(
+  api_key=os.environ.get(&amp;quot;CEREBRAS_API_KEY&amp;quot;),
+)
 
-<h2 id="gpu送修">GPU送修</h2>
+app = Flask(__name__)
 
-<p>我们这次回国刚一落地，他就开始马不停蹄地折腾起来，先是GPU送修，他在YouTube上找到一个专门修显卡的账号，名字叫<a href="https://www.youtube.com/@Computerraphics">电脑显卡维修</a>，国内自然是打不开的，也不知道这哥们是怎么把他休显卡的过程都上传到YouTube上的。</p>
+os.makedirs(&amp;quot;h...</summary>
 
-<p>这个修显卡挺有意思, 修不好不要钱. 显卡寄给这哥们之后, 很快, 他就回复说“掉电”, “掉件”了. 我没听懂, 视频如下, 大家自己听吧. 反正经过他一番修理, 大概也就半个小时? 换了两个电阻, 说搞定了, 要220块钱. 谦同学很激动, 说再给80块钱红包吧. 所以总共付了300块钱修显卡.</p>
+  </entry>
 
-<video controls="" width="360" height="640" class="center">
-    <source src="/uploads/2026/26.mp4" type="video/mp4" />
-</video>
+  
+  <entry>
+    <title>7年了, 终于回国一趟</title>
+    <link href="https://hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang" rel="alternate" type="text/html" title="7年了, 终于回国一趟" />
+    <published>2025-03-12T14:06:00+13:00</published>
+  
+    <updated>2025-03-12T14:06:00+13:00</updated>
+  
+    <id>https://hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang</id>
+    <content type="text/html" src="https://hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang" />
+    <author>
+      <name>Zongjian He</name>
+    </author>
 
-<p>后来我看这哥们还发朋友圈, 说去年一年发了2000多个顺丰快递, 是他们村子第一名. 我粗略算了一下, 就算有一半修好的, 一天修3个, 那也有30万块钱的收入了, 这生意还挺不错. 看来只要有个手艺, 吃饭还是没问题的.</p>
+  
+    
+    <category term="新西兰生活" />
+    
+  
 
-<p>我后来Youtube上看了他其他修显卡的视频, 发现他修的显卡还真不少, 也挺有意思的. 基本上都是一些外围元器件坏了, 换个电容, 电阻, 清清灰之类, 还有换显存的, 如果核心坏了, 就那2纳米, 3纳米的制程工艺, 估计让Jensen Huang都修不好. 然后大多数是一些使用严重的矿卡, 还有一些贪便宜到闲鱼上买的假显卡, 相比之下, 修我们这个T4显卡那绝对是初级入门水平. 可惜就这初级入门水平, 在新西兰也没人修.</p>
+  <summary>自从全家搬到新西兰, 我上一次回国还要追溯到新冠之前的2018年. 之所以这么久才回国, 一是因为我2018年回去的感受相当方便, 机票极为便宜, 感觉就跟在中国另外一个城市工作, 你坐绿皮火车回家差不多, 晃悠12个小时就到家了. 另外一个原因是新冠疫情, 由于中国当时严格的新冠管理政策, 我一直也没搞懂, 到底怎么才能顺利的坐上回国班机, 号称要“三天两检”, 然后到了之后还要隔离, 一直让我望而却步. 不管怎么说, 现在疫情虽然没结束, 但是防疫结束了, 机票也便宜了, 于是我就决定回国了.
 
-<h2 id="配置魔改电脑">配置魔改电脑</h2>
+谦经常说Reverse culture shock, 意思是在外乡呆久了, 回到故乡, 却感觉到了水土不服. 我虽然没有水土不服那么夸张, 但是的的确确的感受到, 好久不回国, 偶尔回去一趟, 不知道算不算得上culture shock, 但很多东西都很震撼.
 
-<p>显卡已经就绪了, 第二步就是配电脑. 谦的思路是买个可以刷魔改BIOS的主板, 然后买一堆魔改的零件, 组装起来, 测试显卡. 大概是这样的思路:</p>
+行程概括
 
-<p>主板: 技嘉Z170-HD3 DDR3, 可刷魔改的BIOS, 刷了之后, 本来只能用Intel 6代7代的CPU, 可以用到8代9代的CPU. 本来只能用Intel的内存, 刷了之后, 可以用AMD的专用内存. 本来只能用台式机的CPU, 刷了之后, 可以用笔记本的CPU. 这样就可以大大降低成本.</p>
+由于我的假期...</summary>
 
-<p>CPU: Xeon E-2176M, 6核12线程, 性能还不错, 价格也不贵. 看着带个M, 那自然是Mobile平台, 笔记本CPU. 是没法直接用到台式机上的. 但是那些魔改的人有才, 给它外面加个针脚的座子, 然后就可以插到台式机主板上用了.</p>
+  </entry>
 
-<p>内存: AMD专用内存, 8G x 4, 刷了魔改BIOS之后, 可以用在Intel主板上了.</p>
+  
+  <entry>
+    <title>续: 收集40个方块有多难</title>
+    <link href="https://hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan" rel="alternate" type="text/html" title="续: 收集40个方块有多难" />
+    <published>2025-03-10T14:06:00+13:00</published>
+  
+    <updated>2025-03-10T14:06:00+13:00</updated>
+  
+    <id>https://hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan</id>
+    <content type="text/html" src="https://hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan" />
+    <author>
+      <name>Zongjian He</name>
+    </author>
 
-<p>我一开始觉得神奇, 后来网上查了一下, 原来这些技术上也不是不可能的事, 基本上都是改BIOS源代码, 然后重编译, 把一些原本的限制去掉, 或者增加一些代码, 来支持更多的硬件. 当然, 干这种事的, 大多都是一些国外的爱好者, 他们有兴趣, 有时间, 有技术, 譬如何事谦用的这个<a href="https://github.com/supermarsx/other-clevo-modded-bios">dsanke</a>, 在魔改届赫赫有名. 国内码农么, 忙着996, 谁有时间去干这种事啊. 但是淘宝商家可以把这些东西做成产业, 买它的主板, 它送魔改BIOS, 送刷机攻略, 送各种教程. 这样就可以吸引一大批想省钱的DIY爱好者了. 当然, 这种魔改也有风险, 万一刷坏了, 那就只能当废铁卖掉了. (谦说不会坏, 现代主板都有双BIOS, 只要做好备份, 万一坏了, 还可以切换到另一个BIOS再次复活, 所以风险不大)</p>
+  
+    
+    <category term="工作和学习" />
+    
+  
 
-<p>刷BIOS之前, 还需要一个能用的CPU来启动主板, 这样才能刷BIOS. 于是谦就买了个超便宜的G3930 (双核, 2线程), 还买了两条4GB的内存, 就是用来刷BIOS用的, 刷完之后, 再换上魔改的高级CPU和高级RAM. 买CPU的时候还有个小插曲, 本来是买CPU的, 结果卖家发快递发错了, 发来一块电池. 我一开始以为上当了, 瞬间想到了买显卡收到砖头, 买苹果手机收到苹果的例子. 后来联系卖家, 卖家说那个买电池的哥们估计收到了CPU, 然后又给我们补发了一块CPU. 这倒是挺有意思的经历. 不过闲鱼上买东西, 拆快递的时候居然要求录视频, 谦为此还买了一个把手机可以固定在头上的支架, 这样可以拍第一人称视频. 还真是挺搞笑的, 诚信体系建设, 从我做起啊.</p>
+  <summary>时隔一年, Woolworth超市又推出了买东西集卡片活动. 上次是迪士尼, 这次是Minecraft. 依然是让小朋友们着迷的东西. 这次花30块钱可以拿到一包minecraft的Cubeez, 拆开后可以自己拼装成一个小方块, 很符合Minecraft的风格. 总共有40种小方块, 然后官方还有个盒子, 放在盒子里, 很漂亮.
 
-<p><img src="/uploads/2026/wrong-delivery.jpg" alt="发错快递" class="half" /></p>
+谦曾经是Minecraft的忠实粉丝, 在国内的时候我就给他买了一套, 然后他建造各种地图, 甚至还把自己建造的地图发给视频博主, 让博主玩他建造的地图. 后来他还玩Minecraft Dungeon, 是一个类似于大菠萝的游戏, 不过人物全都是MC里面的人物.
 
-<p>但是在这里, 卡了他很久. 因为用便宜CPU和内存, 主板点不亮. 屏幕上也没有任何输出信息. 所以就一头雾水, 不知道原因在哪里, 任何东西坏了都有可能, 主板本身有问题, CPU有问题, 内存有问题, 甚至显示器有问题. 反正就是点不亮.</p>
+还是套用上次的公式, 看一下收集到40个方块的数学期待是需要花多少钱.
 
-<p>为了解决这个问题, 他又买了另外一块便宜的主板, 梅捷H110. 结果在这个主板上, 用同样的CPU和内存, 居然点亮了. 一切都正常, 我还帮他弄了个Linux的USB, 都可以进系统上网( 当然, 只能用有线网络, 他买的USB WiFi没Linux驱动 ), 虽然速度巨慢, 然后双核的赛扬, 刚进图形界面, 什么都没干呢, CPU就已经50%了, 稍微干点啥CPU就100%了.</p>
+假设你已经收集了$n$个方块, 那么你下一次收集到一张新方块的概率是$\frac{40-n} {40}$. 所以你下一...</summary>
 
-<p>这就说明问题出在技嘉主板上了。但是不知道问题在哪里, 还是没有调试手段. 于是他又买了个debug小喇叭, 这样主板在启动的时候, 会发出一些蜂鸣声, 通过这些蜂鸣声的组合, 可以判断出是哪部分硬件有问题. 我终于算知道了, 大概20多年前我们刚接触电脑的时候, 每次开机都会听到短促的“嘟”的声音, 那原来是debug小喇叭在工作。一声短促的“嘟”, 说明一切正常, 哈哈, 也解决了我多年的疑惑. 当然, 还有些主板上有LED灯, 也可以通过LED灯的闪烁来判断问题所在. 可惜谦买的技嘉主板没有这个功能。</p>
+  </entry>
 
-<p>有了这个小喇叭之后, 他终于发现问题所在了. 原来是CPU不兼容, 大概是小喇叭发出了“嘟嘟嘟嘟”四声短促的蜂鸣声, 说明是CPU问题. 他去问卖家, 卖家也说, 你得用6代CPU才行, 于是他又买了个6代的CPU, 结果换上之后, 主板终于点亮了. 这下总算可以刷BIOS了. 说来挺有意思, 那些六代七代的赛扬CPU, 现在居然真已经便宜到了白菜价, 几块钱就可以买到. 回想我们当年买CPU的时候, 虽然是低端, 但是也要不少钱, 真是感慨时代的变迁啊.</p>
-
-<p>刷BIOS的过程很简单, 就是把魔改固件放在优盘里, 然后进BIOS界面, 选择从优盘刷机就行了. 刷完之后, 关机, 换上魔改的CPU和内存, 然后开机. 结果点亮了! 这下总算成功了. 然后进了Linux系统, 一切正常. 当然, 这只是第一步, 还没完呢.</p>
-
-<p>接下来谦说要用Windows来测试显卡, 因为主板过老, 所以只能装Windows 10, 虽然Windows 10已经过了官方支持期, 但是还能用. 装上之后, 我发现他那个主板居然有个TPM的槽, 这就很神奇了, 因为TPM是Win11的必备条件, 原来这玩意还能后期装, 我以为安全模块, 只能是作死在主板上呢. 于是他又买了个TPM模块, 插上之后, Win10可以识别到TPM了, 所以我们就直接升级到Win11了. 当然, 我们没序列号, 后来我发现就算没有序列号, 也可以无限期的使用Win11, 只是桌面右下角会有个水印而已, 只要你不介意这个水印, 那就没问题. 看来几十年前的操作系统之争的确已经结束了, 微软也不靠卖Windows序列号赚钱了.</p>
-
-<h2 id="t4测试">T4测试</h2>
-
-<p>测试T4显卡的过程也很简单, 就是把显卡插上去, 装好驱动, 然后跑个测试程序就行了. 结果一切正常, 显卡修好了. 谦同学很开心, 说终于可以用T4来跑AI模型了.</p>
-
-<p>然后他发现问题, T4显卡是典型的数据中心显卡, 体积很小, 除了跟主板连接的PCI-e之外, 没有任何的接口. 也没有风扇. 散热全依赖于服务器里面的外部风扇散热. 这样的话, 显卡就很容易过热. 他跑个本地模型, 问GPT-OSS一个问题, 如果打开思考, 让GPT-OSS多想一会儿, 显卡温度就飙升到90度以上, 随时可能会挂. 于是他又买了个T4专用的风扇, 给T4显卡降温用的. 不过这个风扇不能直接装, 要把显卡一边给拆开, 然后把风扇装上去, 再把显卡装回去. 这个过程也挺麻烦的, 我都佩服谦同学动手能力强. 这两个风扇装上去, 效果立竿见影, 显卡温度稳定在60度左右, 再也不会失控了. 这样就可以安心跑模型了. 哎, 物理学家们, 啥时候高温超导才能有突破啊, 那就彻底解决散热问题了.</p>
-
-<p><img src="/uploads/2026/gpu-fan.jpg" alt="T4显卡风扇" class="half" /></p>
-
-<p>然后就是跑各种语言模型, 测试显卡性能了. 其实我对T4能干啥基本知道, 但是谦不知道, 跑本地GPT模型的时候, 他直呼快得飞起, 比他原来的3080显卡快多了. 哈哈, 不知道他之前拿他自己的3080跑模型都经历了些什么.</p>
-
-<p>然后他装了个ComfyUI, 用来跑各种文生图, 图生视频模型. 这个对我来说倒是挺新鲜的. 我以前也没接触过这些东西. 跟他学了不少东西. 后来回新西兰之后, 我就用ComfyUI在学校的更强的显卡上跑了不少模型, 也挺有意思的.</p>
-
-<p>至此, 他回国折腾魔改电脑的故事就告一段落了. 总结一下, 这个过程虽然麻烦, 但是也挺有意思的. 通过这个过程, 他学到了不少东西, 也锻炼了他的动手能力, 我都跟着学了不少东西.</p>
-
-<h2 id="插曲-信息安全">插曲, 信息安全:</h2>
-
-<p>这中间还有个小插曲, 给谦上了生动的一课信息安全. 我们在新西兰的时候, 政府每年有一次免费的大垃圾收集, 可以把家里平时不让扔的大垃圾集体清理, 比如旧家具, 旧电器之类的 (还是社会主义好啊, 这些旧东西, 在中国可是可以卖了换钱的, 资本主义还要花钱请别人收集). 我们片区大垃圾收集日, 谦发现好几台笔记本电脑在垃圾收集处, 于是他就捡回家了, 名副其实的“垃圾佬”. 这些电脑都开不了机, 谦就从上面拆零件, 弄了个内存跟SSD下来, 笔记本内存当然用不到台式机上, 毕竟接口不一样. 但是SSD倒是可以用的, 他就把SSD装到他魔改电脑上用了. 结果装上之后, 他发现SSD里面居然有数据, 那说明之前主人扔电脑之前没做任何的数据销毁. 这就很危险了, 因为SSD里面可能有个人隐私信息, 比如照片, 文件之类的(像当年的陈冠希修电脑). 更神奇的是, 里面还有个Windows系统, 还能直接进系统. 密码当然他不知道, 但是可以用一些工具, 直接把密码重置掉, 然后就能进系统了. 我跟他说这是别人隐私, 你不能看, 他倒是很听话, 直接把SSD格式化掉了, 就当数据盘用。早知道把那个Windows的序列号给拷贝下来, 说不定还能用来激活他的Win11系统呢 (估计不行, 人家那个是品牌机OEM序列号)。</p>
-
-<p>其实Windows系统本身有个BitLocker加密功能, 可以把整个磁盘加密, 这样即使电脑丢了, 也没人能看到里面的数据. 可惜大多数人都不懂这个东西. 何况还有新闻说BitLocker把电脑主人给锁在外面了, 自己的数据都看不了, 搜索“bitlocker locked me out”, 各种各样的惨痛经历都有. 所以大多数电脑都没有开启这个功能, 结果就导致隐私泄露了.</p>
-
-<p>这也给谦上了生动的一课, 以后扔电脑之前, 一定要做好数据销毁工作, 不能随便扔掉. 这种活生生的案例, 比课堂上老师讲什么理论都管用.</p>
-
-<h2 id="总结开销">总结开销</h2>
-
-<p>总计下来, 这台魔改电脑的成本大概是837块人民币, 具体如下:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>项目</th>
-      <th>价格 (RMB)</th>
-      <th>备注</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>主板 (技嘉Z170-HD3 DDR3)</td>
-      <td>192</td>
-      <td>可魔改刷BIOS</td>
-    </tr>
-    <tr>
-      <td>CPU (Intel Xeon E-2176M  CPU @ 2.70GHz)</td>
-      <td>222</td>
-      <td>笔记本CPU魔改</td>
-    </tr>
-    <tr>
-      <td>CPU风扇</td>
-      <td>8</td>
-      <td>二手</td>
-    </tr>
-    <tr>
-      <td>内存 (8G x 4)</td>
-      <td>90</td>
-      <td>AMD专用条，魔改后可用</td>
-    </tr>
-    <tr>
-      <td>电源 (昂达 1650W)</td>
-      <td>84</td>
-      <td>矿机电源</td>
-    </tr>
-    <tr>
-      <td>显示器 (21.5寸 VGA)</td>
-      <td>92</td>
-      <td>杂牌子</td>
-    </tr>
-    <tr>
-      <td>硬盘 (256G Intel SSD)</td>
-      <td>0</td>
-      <td>从别人淘汰笔记本拆机取出</td>
-    </tr>
-    <tr>
-      <td>硬盘2 (500G Intel SSD)</td>
-      <td>0</td>
-      <td>从服务器拆机取出</td>
-    </tr>
-    <tr>
-      <td>TPM模块</td>
-      <td>47.53</td>
-      <td>Win11必备</td>
-    </tr>
-    <tr>
-      <td>机箱</td>
-      <td>60</td>
-      <td>二手，15新西兰币</td>
-    </tr>
-    <tr>
-      <td>无线网卡</td>
-      <td>13.5</td>
-      <td>跟蓝牙一体</td>
-    </tr>
-    <tr>
-      <td>小喇叭 (Debug Speaker)</td>
-      <td>1.9</td>
-      <td>帮助排查故障</td>
-    </tr>
-    <tr>
-      <td>螺丝刀</td>
-      <td>3.9</td>
-      <td>勉强够用，最后被机场安检没收</td>
-    </tr>
-    <tr>
-      <td>T4风扇</td>
-      <td>22</td>
-      <td>给T4降温用</td>
-    </tr>
-    <tr>
-      <td><strong>合计</strong></td>
-      <td><strong>836.83</strong></td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>其它一些是调试用的工具和配件，没算在内。大概列一下吧：</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>项目</th>
-      <th>价格 (RMB)</th>
-      <th>备注</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>刷机用CPU（G3930）x 2</td>
-      <td>14</td>
-      <td>超便宜，超垃圾</td>
-    </tr>
-    <tr>
-      <td>240水冷散热</td>
-      <td>35</td>
-      <td>就是玩具</td>
-    </tr>
-    <tr>
-      <td>金士顿4G x 2 DDR3</td>
-      <td>30</td>
-      <td>刷机用</td>
-    </tr>
-    <tr>
-      <td>USB无线网卡</td>
-      <td>29.07</td>
-      <td>只有Windows下能用</td>
-    </tr>
-    <tr>
-      <td>T4维修费</td>
-      <td>300</td>
-      <td>其中有80块是谦给的红包</td>
-    </tr>
-    <tr>
-      <td><strong>合计</strong></td>
-      <td><strong>408.07</strong></td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>虽然总共花了1000多块钱, 但是能用上T4显卡, 跑AI模型, 还是挺值的. 谦同学也很开心, 关键是他学到了不少东西, 也锻炼了他的动手能力. 这才是最重要的, 可能1000块钱买不到的东西.</p>
-
-<p>回新西兰之后, 他把T4给拿走了, 装到了他的主力机上. 剩下的一堆零件, 他不要了. 反正就是用来验证显卡能不能用的. 这些不要的东西, 被我捡来了, 因为我不需要显卡, 我又不打游戏, 我又不在本地跑模型. 后来我Facebook marketplace上买了一个机箱, 把这些零件装起来, 再也不是谦口中的天地机箱了. 我打算把它当成我在家办公的主力机器, 反正就是视频会议, 日常办公什么的, 用我现在学校给配的MacBook Pro简直是浪费.</p>
-
-<p><img src="/uploads/2026/final-view.jpg" alt="魔改电脑全家福" class="half" /></p>
-
-<p>最后来一张这电脑的全景, 也就是我以后的在家办公环境了. 我还挺喜欢的. 谢谢谦同学的折腾, 让我学到了不少东西.</p>]]></content><author><name></name></author><category term="工作和学习" /><category term="人工智能" /><category term="装机" /><category term="Geek" /><summary type="html"><![CDATA[去年圣诞节回国的时候，谦花了大概4000块钱，自己买各种零件，组装了一台自己的台式机电脑，这一年下来，他用得还不错，完全满足了他学习和娱乐的需求，甚至有的时候还来跑跑各种AI模型，还用来学习Python编程。]]></summary></entry><entry><title type="html">到底谁在吃垃圾</title><link href="https://gh.hezongjian.com/dao-di-shui-zai-chi-la-ji" rel="alternate" type="text/html" title="到底谁在吃垃圾" /><published>2025-09-17T17:06:00+12:00</published><updated>2025-09-17T17:06:00+12:00</updated><id>https://gh.hezongjian.com/dao-di-shui-zai-chi-la-ji</id><content type="html" xml:base="https://gh.hezongjian.com/dao-di-shui-zai-chi-la-ji"><![CDATA[<p>之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
-</span><span class="kn">from</span> <span class="n">cerebras.cloud.sdk</span> <span class="kn">import</span> <span class="n">Cerebras</span>
-<span class="kn">import</span> <span class="n">os</span>
-<span class="kn">import</span> <span class="n">logging</span>
-<span class="kn">from</span> <span class="n">logging.handlers</span> <span class="kn">import</span> <span class="n">RotatingFileHandler</span>
-<span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
-<span class="kn">from</span> <span class="n">pathvalidate</span> <span class="kn">import</span> <span class="n">sanitize_filename</span>
-<span class="kn">import</span> <span class="n">dotenv</span>
-<span class="n">dotenv</span><span class="p">.</span><span class="nf">load_dotenv</span><span class="p">()</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="nc">Cerebras</span><span class="p">(</span>
-  <span class="n">api_key</span><span class="o">=</span><span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">CEREBRAS_API_KEY</span><span class="sh">"</span><span class="p">),</span>
-<span class="p">)</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-
-<span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="sh">"</span><span class="s">html</span><span class="sh">"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="sh">"</span><span class="s">logs</span><span class="sh">"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="c1"># Configure logging: console + rotating file
-</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="sh">"</span><span class="s">ai_server</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">Formatter</span><span class="p">(</span><span class="sh">"</span><span class="s">%(asctime)s %(levelname)s %(message)s</span><span class="sh">"</span><span class="p">)</span>
-
-<span class="n">console_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">StreamHandler</span><span class="p">()</span>
-<span class="n">console_handler</span><span class="p">.</span><span class="nf">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
-
-<span class="n">file_handler</span> <span class="o">=</span> <span class="nc">RotatingFileHandler</span><span class="p">(</span><span class="sh">"</span><span class="s">logs/requests.log</span><span class="sh">"</span><span class="p">,</span> <span class="n">maxBytes</span><span class="o">=</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">file_handler</span><span class="p">.</span><span class="nf">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span>
-
-<span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">path</span><span class="sh">'</span><span class="p">:</span> <span class="sh">''</span><span class="p">},</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">GET</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">POST</span><span class="sh">'</span><span class="p">])</span>
-<span class="nd">@app.route</span><span class="p">(</span><span class="sh">'</span><span class="s">/&lt;path:path&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="sh">'</span><span class="s">GET</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">POST</span><span class="sh">'</span><span class="p">])</span>
-<span class="k">def</span> <span class="nf">catch_all</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="c1"># Log incoming request
-</span>    <span class="n">req_path</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">full_path</span><span class="p">.</span><span class="nf">strip</span><span class="p">(</span><span class="sh">"</span><span class="s">?</span><span class="sh">"</span><span class="p">)</span>
-    <span class="n">client_ip</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">remote_addr</span> <span class="ow">or</span> <span class="sh">"</span><span class="s">-</span><span class="sh">"</span>
-    <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Incoming request: method=%s path=%s client=%s UA=%s</span><span class="sh">"</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span><span class="p">,</span> <span class="n">req_path</span><span class="p">,</span> <span class="n">client_ip</span><span class="p">,</span> <span class="n">request</span><span class="p">.</span><span class="n">headers</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">User-Agent</span><span class="sh">"</span><span class="p">))</span>
-
-    <span class="n">path</span> <span class="o">=</span> <span class="n">req_path</span>
-    <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">html/</span><span class="sh">"</span> <span class="o">+</span> <span class="nf">sanitize_filename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">+</span> <span class="sh">"</span><span class="s">.html</span><span class="sh">"</span>
-    <span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-        <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
-            <span class="c1"># logger.info("Serving cached file=%s size=%d", filename, len(content))
-</span>            <span class="k">return</span> <span class="n">content</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># Build and send prompt to the model
-</span>        <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">chat</span><span class="p">.</span><span class="n">completions</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span>
-            <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
-                <span class="p">{</span><span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">user</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">content</span><span class="sh">"</span><span class="p">:</span> <span class="sa">f</span><span class="sh">"""</span><span class="s">You are a web server. A request has just come in on the path </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s">.
-                    Respond with HTML/CSS/JS that is appropriate for that path.
-                    Only return the HTML/CSS/JS, nothing else.
-                    Do not include any comments or explanations.
-                    Try to make the web page as beautiful and functional as possible.
-                    Don</span><span class="sh">'</span><span class="s">t mention that this is a simulation, make it as realistic as possible.
-                    You can add relative links if appropriate, but if the user follows a relative link, you</span><span class="sh">'</span><span class="s">ll have to handle that too, so be sure to pass enough context for yourself to understand what you</span><span class="sh">'</span><span class="s">re doing in the URL.
-                </span><span class="sh">"""</span>
-            <span class="p">}],</span>
-            <span class="n">model</span><span class="o">=</span><span class="sh">"</span><span class="s">gpt-oss-120b</span><span class="sh">"</span><span class="p">,</span>
-        <span class="p">).</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">message</span><span class="p">.</span><span class="n">content</span>
-    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">logger</span><span class="p">.</span><span class="nf">exception</span><span class="p">(</span><span class="sh">"</span><span class="s">Model request failed for path=%s</span><span class="sh">"</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-        <span class="nf">return </span><span class="p">(</span><span class="sh">"</span><span class="s">&lt;h1&gt;Internal Server Error&lt;/h1&gt;</span><span class="sh">"</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
-
-    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="p">{</span><span class="sh">"</span><span class="s">Content-Type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">text/html</span><span class="sh">"</span><span class="p">}</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
-    <span class="n">app</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">7890</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>这段代码就是接受一个任意的URL请求, 然后把请求的路径发给LLM, 让LLM生成一个网页返回给用户. 我把它host在我自己的服务器上, https://wario.hezongjian.com/ 譬如你访问 https://wario.hezongjian.com/training, 它就会把路径/training发给LLM, 让LLM生成一个网页返回给你. 感觉这是一个培训网站, AI生成的网页大概是这样的:</p>
-
-<p><img src="/uploads/2025/AInternet/training.png" alt="图 training" /></p>
-
-<p>免费版, 生不成图, 所以图片看不了, 但是其它的东西都还行. 当然, 这个网页是AI生成的, 肯定东西是不存在的. 反正这种创作性东西, 可以胡编乱造, AI还是很擅长的, 有Hallucination也没关系, 又不是让AI给你看病, 看错了会出人命. 或者让AI给你投资, 投错了会亏钱. 这种东西, 让AI胡编乱造, 也没什么大不了的.</p>
-
-<p>最初只是我自己的一个娱乐项目, 它生成的网页有好多我觉得都还挺有那么回事, 譬如举几个例子:</p>
-
-<p>中文的:</p>
-
-<ul>
-  <li><a href="https://wario.hezongjian.com/上海地铁">上海地铁</a></li>
-  <li><a href="https://wario.hezongjian.com/东方明珠">东方明珠</a></li>
-</ul>
-
-<p>英文的:</p>
-
-<ul>
-  <li><a href="https://wario.hezongjian.com/universityofauckland">University of Auckland</a></li>
-  <li><a href="https://wario.hezongjian.com/newzealand">New Zealand</a></li>
-</ul>
-
-<p>过了几天, 我发现它生成的网页还真能用. 譬如:</p>
-
-<ul>
-  <li><a href="https://wario.hezongjian.com/passwordgenerator">Password Generator</a></li>
-</ul>
-
-<p>这个是一个密码生成器, 还挺好用的. 你可以选择密码的强度等, 它就自动帮你生成一个密码. 完全到了可用的程度了. 怪不得有人说AI可以顶个初级程序员. 这没几年HTML+JS的编程经验, 普通程序员还真不一定写得出来.</p>
-
-<p>后来发现, 这个东西真是黑客之友, 因为网上有无数的script boys在用各种黑客工具扫描你的网站, 看看你有没有把管理员什么打开, 他们的做法就是拼命扫描一些常见的路径. 譬如 /admin, /login, /wp-admin, /user, /cpanel, /config, /setup, /test, /debug, /.env, /.git, /backup, /old, /data等等等. 你的网站如果有这些路径的话, 他们就会尝试攻击你的网站. 但是如果你的网站没有这些路径, 他们就会放弃. 因为我这个网站是AI生成的, 对所有路径请求来者不拒, 而且会生成一个貌似是你要访问的网页, 所以黑客感觉得手了, 譬如这个:</p>
-
-<ul>
-  <li><a href="https://wario.hezongjian.com/admin">Admin</a></li>
-</ul>
-
-<p>然后它会返回你这个页面:</p>
-
-<p><img src="/uploads/2025/AInternet/admin.png" alt="图 admin" /></p>
-
-<p>简直惟妙惟肖. 你看这个页面, 乍一看还真像是进入了网站后台, 连财务收入数据都能看到, 狂喜! 当然这个页面是假的.</p>
-
-<h2 id="失控">失控</h2>
-
-<p>我把这个网页放了一段时间后, 有一天, 我自己请求的时候, 发现这个网页返回了 too many requests. 居然把免费的token给用完了. 其实我最开始用的是谷歌云上的Gemini模型, 但是谷歌云的速度不够快, 我换成了Cerebras的模型, 速度快多了. 它可是号称一天有14,400个请求, 一共1,000,000的token呢. 谁知道半天就给用完了. 我到html目录下去看, 果然生成了大量的网页. 这才不到半个月, 给我生成了200多MB的HTML网页, 这个可是纯粹的HTML网页啊, 没有任何图, 任何多媒体.</p>
-
-<p>但是, 问题是不知道是谁在请求. 所以我给我的网页加上了日志功能, 记录每次请求的IP地址和User-Agent, 然后把这些请求记录下来, 以便于分析. 然后, 又过了半个月….</p>
-
-<h2 id="分析">分析</h2>
-
-<p>我们来看一下日期请求, 都不用专业的工具, 眼睛看就很容易就发现, 来源主要三个:</p>
-
-<ul>
-  <li>compatible; Googlebot/2.1; +http://www.google.com/bot.html</li>
-  <li>compatible; GPTBot/1.2; +https://openai.com/gptbot</li>
-  <li>compatible; SemrushBot/7~bl; +http://www.semrush.com/bot.html</li>
-</ul>
-
-<p>我们分别来看一下他们都在干啥:</p>
-
-<h3 id="googlebot">Googlebot</h3>
-
-<p>这个是谷歌的爬虫, 不用说了, 爬下来数据不是用来谷歌搜索, 就是用来训练他们自家的Gemini模型的. 谷歌的爬虫是很有名的, 他们爬取了全世界绝大部分的网页, 但是我这个小网站, 谷歌爬虫很搞笑, 它把我这个网站当成了一个科技论坛, 然后就拼命的爬取各种论坛的常见路径, 诸如 /forum, /thread, /post, /reply, /topic, /viewtopic, /viewforum等等等. 你看它爬取的路径:</p>
-
-<ul>
-  <li>/community/forums/storage/cloud-storage-alternatives</li>
-  <li>/topic/emerging-tech/ai-automation</li>
-  <li>/posts/restful-api-design</li>
-</ul>
-
-<p>更有甚者, 它还把它当成了微软的官方文档MSDN, 然后就拼命的爬取MSDN的常见路径:</p>
-
-<ul>
-  <li>/msdn/documentation/azure/networking/network-interfaces/</li>
-  <li>/msdn/learn/azure/cognitive-services-path</li>
-  <li>/msdn/tutorials/azure-functions-serverless/http-trigger</li>
-</ul>
-
-<p>那自然, AI就给它生成了这些网页, 让它爬取. 自然, 这些网页都是假的. 但这个就很严重, 因为MSDN是微软的官方文档, 按理说是很权威的, 但是AI生成的MSDN文档, 可能是错误的, 甚至是误导性的. 这就很危险了. 你想想, 如果谷歌把这些错误的MSDN文档给索引了, 然后有程序员去搜索MSDN, 结果看到的是AI生成的错误文档, 那岂不是害人害己?</p>
-
-<h3 id="gptbot">GPTBot</h3>
-
-<p>这个是OpenAI的爬虫, 主要用来收集数据, 以便于训练他们的GPT模型. 比较搞笑的是, 我这个网站, 现在就是用GPT OSS模型来生成的数据, 所以, 他自己也不知道他生成的数据又被喂给了自己么? 自己生成的数据又喂给了自己来训练, 这也是另一种unsupervised learning吧. 前一阵子, “蒸馏”(distillation)这个词很火, 说得好听一点是学习致敬, 说得不好听一点就是窃. 其实这也是一种蒸馏, 让模型自己给自己喂数据, 然后自己给自己学习, 自己把自己都骗了, 以为自己很能打, 颇有点马保国的意思.</p>
-
-<p>OpenAI涉猎比较广泛, 它会爬取一些貌似是知识库的路径, 例如/kb等:</p>
-
-<ul>
-  <li>/kb/guides/managing-storage/file-systems</li>
-  <li>/docs/sdks/javascript</li>
-  <li>/solutions/iot/security</li>
-</ul>
-
-<p>一会儿又把这个网站当成个事件通知网站:</p>
-
-<ul>
-  <li>/events/cloud-native-summit</li>
-  <li>/sports/motorsports/wec</li>
-</ul>
-
-<p>看, 这个貌似是云原生峰会, 还挺高大上, 但是你自己想去参会, 结果发现根本没有这个峰会, 这就很尴尬了.</p>
-
-<h3 id="semrushbot">SemrushBot</h3>
-
-<p>这个是Semrush的爬虫, Semrush这个公司不像前面两个公司那么有名. 这个公司主要是做SEO(搜索引擎优化)相关的业务, 主要用来收集SEO相关的数据, 以便于提供更好的SEO服务.</p>
-
-<p>它非常专一, 专一到一直把这个网站当成微软的MSDN文档来爬取, 你看它爬取的路径:</p>
-
-<ul>
-  <li>/msdn/documentation/windows/drivers/kernel-mode-drivers/memory-management/</li>
-  <li>/msdn/documentation/net/apis/System/Linq</li>
-  <li>/msdn/documentation/windows/api-reference/networking/winsock/introduction/</li>
-  <li>/msdn/documentation/azure/tutorials/ai-ml/mlops-azureml/ml-governance</li>
-</ul>
-
-<p>我不知道为啥谷歌的bot会和Semrush的bot都把我这个网站当成MSDN文档来爬取. 我深度怀疑这两者背后在互通数据, 狼狈为奸, 当然我没有其它证据.</p>
-
-<h2 id="后记">后记</h2>
-
-<p>我最终决定把这个网页关掉了. 因为觉得它浪费资源, 浪费电力是一方面, 另一方面最主要的是没有正面意义, 在污染互联网. 一个LLM生成的东西, 被另一个LLM给吸收了, 成了训练集. 这就像是一个人不停地自言自语, 说一些不着边际的话, 然后另一个人把它听进去, 以为这是有意义的对话. 其实并没有. 最终的结果, 就会导致垃圾进垃圾出 (Garbage In, Garbage Out). 所以我觉得这个网页还是关掉的好. 也算是对互联网的一种保护吧.</p>]]></content><author><name></name></author><category term="工作和学习" /><category term="人工智能" /><category term="LLM" /><summary type="html"><![CDATA[之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了.]]></summary></entry><entry><title type="html">7年了, 终于回国一趟</title><link href="https://gh.hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang" rel="alternate" type="text/html" title="7年了, 终于回国一趟" /><published>2025-03-12T14:06:00+13:00</published><updated>2025-03-12T14:06:00+13:00</updated><id>https://gh.hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang</id><content type="html" xml:base="https://gh.hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang"><![CDATA[<p>自从全家搬到新西兰, 我上一次回国还要追溯到新冠之前的2018年. 之所以这么久才回国, 一是因为我2018年回去的感受相当方便, 机票极为便宜, 感觉就跟在中国另外一个城市工作, 你坐绿皮火车回家差不多, 晃悠12个小时就到家了. 另外一个原因是新冠疫情, 由于中国当时严格的新冠管理政策, 我一直也没搞懂, 到底怎么才能顺利的坐上回国班机, 号称要“三天两检”, 然后到了之后还要隔离, 一直让我望而却步. 不管怎么说, 现在疫情虽然没结束, 但是防疫结束了, 机票也便宜了, 于是我就决定回国了.</p>
-
-<p>谦经常说Reverse culture shock, 意思是在外乡呆久了, 回到故乡, 却感觉到了水土不服. 我虽然没有水土不服那么夸张, 但是的的确确的感受到, 好久不回国, 偶尔回去一趟, 不知道算不算得上culture shock, 但很多东西都很震撼.</p>
-
-<h2 id="行程概括">行程概括</h2>
-
-<p>由于我的假期丰富, 所以我领着谦先回国了. 谦妈就比较惨, 在我们回国之后的2周才自己一个人回国. 所以我们的行程大概是这样的:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>奥克兰 -&gt; 浦东机场 -&gt; 临沂谦爸老家 -&gt; (谦妈回来)苏州谦妈老家 -&gt; 临沂谦爸老家 -&gt; 北京谦大姨家 -&gt; 苏州谦妈老家 -&gt; 浦东机场 -&gt; 奥克兰
-</code></pre></div></div>
-
-<p>除了从谦妈家到浦东机场, 我们网上订了一辆网约车之外, 其它所有的国内行程全都是高铁. 这次最大的感受就是高铁十分便捷且便宜. 我特别有感受的是我当年在上海上学, 回家坐12个小时的火车, 才到江苏连云港, 然后还要我爸爸开车去连云港接我. 现在直接高铁, 算上中间转车, 4个小时就从上海到家了. 如果当年有这么方便的高铁, 我都可以每周回家. 当然, 如果真这样的话, 学习估计学不好.</p>
-
-<p>我回来之后跟我同事说中国的高速列车, 无论是美国人还是欧洲人, 还是新西兰本地人, 都羡慕得不行. 估计在新西兰坐高速列车, 这辈子是没戏了. 国家本来就小, 从最南边到最北边, 高铁也开不了几个小时. 其次, 新西兰的优美风景, 真的适合慢慢去欣赏. 这里有号称世界最美的铁路, 如果是高铁的话, 太快了就没风景看了.</p>
-
-<h2 id="感受">感受</h2>
-
-<h3 id="空气">空气</h3>
-
-<p>我下飞机的第一感受就是空气特别好, 尤其是天特别蓝. 印象中我在上海十多年时间, 从来都没有见过那么蓝的天. 相反, 那个时候雾霾是常态, 谦小的时候经常咳嗽, 然后我们带他去医院, 然后医院里面全是同龄的小孩子, 都在咳嗽, 医生也没什么好的办法. 雾霾, 医生也治不了. 然后我下飞机之后拖着行李坐了磁悬浮, 毕竟这个世界上有的国家可不多. 然后坐地铁的时候特意带他到陆家嘴站停了一下, 去了一趟陆家嘴, 作为上海出生的身份证号码310的孩子, 居然对陆家嘴没什么印象, 那是十分不应该的. 陆家嘴的天气也很好, 而且开放、包容. 圣诞的气氛挺浓. 在国外的时候听说国内反对过洋节, 亲眼看了陆家嘴的圣诞装饰之后, 我觉得反对洋节的说法, 真的有点无稽之谈.</p>
-
-<p>后来我们去了我老家临沂, 去了北京, 去了苏州. 天气都非常好, 空气也很好. 虽然我前几天有些喉咙痛, 但可能跟空气也没关系, 有可能暖气房里待久了. 不多说了, 上图 (左上临沂, 右上苏州, 左下上海, 右下北京):</p>
-
-<p><img src="/uploads/2025/bluesky.png" alt="蓝天" /></p>
-
-<p>所以我回新西兰之后, 所有同事朋友问我回国感受怎么样, 我都说: “空气真好, 天真蓝.” 别人问我原因, 我也不知道什么原因, 毕竟没一步步的看着它变好. 我只能告诉他们可能的原因:</p>
-
-<ul>
-  <li>新能源车多了, 汽油污染少了</li>
-  <li>贸易战把污染企业打到越南和印度了</li>
-  <li>太阳能, 风能发电多了, 煤发电少了</li>
-  <li>国家的政策, 淘汰高污染企业</li>
-</ul>
-
-<p>当然, 还有可能性就是毕竟只在国内呆了一个多月, 采样不足. 如果我在国内呆久了, 也会觉得空气不好. 但是我觉得在新西兰这么久, 见了这么多从国内来的人, 从来都没有听别人说国内的空气改良了这么多, 所以我觉得跟国内有点脱节了. 虽然你经常关注国内新闻啥的, 但是如果不亲身经历, 你永远不知道一个地方的变化有多大.</p>
-
-<h3 id="科技和人文">科技和人文</h3>
-
-<p>另外一大感受就是科技的日新月异, 我经常说我对中国科技的理解大概还在2011年, 因为我2011年去香港读书, 然后毕业之后没多久就去了新西兰. 所以我对大陆的科技发展, 真的没什么概念. 这一趟, 学会了很多新名词, 比如说: 你扫我还是我扫你(二维码支付). 刷脸支付, 共享单车, 看广告充电, 网约车. 虽然有些东西新西兰也有, 譬如网约车(Uber), 共享单车 (Lime, 其实是scooter, 不是自行车). 但是其实我在新西兰也没尝试过. 这次基本上把所有的新东西都尝试了一遍, 也慢慢理解, 为什么国人会有手机瘾. 因为这几乎所有的操作, 都离不开手机, 网约车要手机叫, 共享单车要手机扫码, 连坐地铁现在也可以刷手机二维码进站. 而这里面好多应用, 要不然就是没有网页版, 要不然就是网页版的功能非常受限(譬如淘宝, 很多售后等都只能在手机端完成). 然后逼你去用手机版. 可能用手机版能够更加方便的知道你很多网页版无法获取的个人信息吧, 譬如你的大概地理位置(GPS), 你的大概经济实力(手机型号)等等.</p>
-
-<p>然后就是AI的应用, 商场里的支付宝刷脸支付是我第一个见到的应用. 其次在我家还看到了带蔬菜识别的AI秤, 虽然那个秤的识别率有待提高, 但是能给你列出几种商品, 让你在一个小列表中选, 也比在所有商品中挑要好多了. 可以想像, 那个AI秤的调教是false positive适量允许, false negative绝对不能发生, 否则发生漏报那还真是不如不带AI.</p>
-
-<p><img src="/uploads/2025/ai.png" alt="AI" /></p>
+</feed>
 
-<p>然后就是无人驾驶的快递车. 真的是无人驾驶, 连方向盘和驾驶室都没有. 当然, 这个快递车做不到用户门到门的快递, 只能帮你快递到附近的便利店去(后来我才知道叫“菜鸟驿站”, 虽然我觉得叫驿站不是很精确, 古代的驿站不是干这个用的), 然后给你发消息让你自己去拿. 其实新西兰的NZ post也跟就近的药房合作, 不过药房只负责收件, NZ Post不会派件到药房, 让客户自己去药房拿. 不过由于国内物流成本极低(可怜了快递小哥), 好多便利店基本上主业都不做了, 几乎全职在帮着快递公司收件发件.</p>
 
-<p>好多同学都开着新能源车, 但是无人驾驶的家庭轿车我还没见过. 这个比较危险, 不像快递车出事故危险性小, 所以更容易普及吧.</p>
-
-<p>其实我觉得中国没必要部署无人驾驶快递车和出租车. 因为人力资源非常便宜, 而且很多时候是失业人员的救命稻草, 想想如果所有快递外卖小哥都被无人机/无人驾驶替代了, 那这些失业人员是很大的社会问题. 技术上可以发展, 但是实际部署运营么, 可以弄到新西兰这种地广人稀, 人力成本很贵的地方来运营.</p>
-
-<p>太阳能光伏是另外一个主题, 这几年海外看新闻, 西方经常说中国光伏产能过剩, 过剩到新西兰有些农场要建篱笆, 一算账, 还不如从中国进口一批光伏板来当篱笆. 不并网, 不发电, 就竖在那里当篱笆, 都划算. 这次回去, 发现光伏果然到处都是. 我父母新盖的公寓楼上, 太阳能都是标配, 每家一个小太阳能. 然后我听我同学说好多农民家里都有光伏发电, 但是由于主干电网容量已经爆满, 只能在用电的高峰期才允许他们并网发电, 其它时候不需要了, 搞得一些并网的老农们意见很大, 感觉被忽悠了. 还有就是很多人拼命的让新能源车淘汰, 目的是从上面拆电池下来, 光伏发了电先存在电池里, 然后用电峰值的时候给放出去. 还有就是我一个同学在水力发电站水库附近工作, 说那个水库, 用电峰值的时候发电, 然后半夜了再用水泵把水给抽回去, 直接把水库变成了充电宝. 我之前听我德国同事说, 他们德国会在半夜用电谷值的时候把一些大铁块给升得很高. 然后用电峰值的时候把大铁块给降下来, 带着发电机发电. 跟水库充电宝异曲同工.</p>
-
-<p>人际关系么, 就是感觉无论到银行或政府部门办事, 无论办成办不成, 人都超级客气, 态度都很好. 完全不像之前我对国内某些部门的印象. 不知道为什么会这样, 因为他们依然是对上负责而不是对下负责, 所以理论上依然没必要对办事的老百姓客气. 当然, 依然可能是因为我采样不足, 如果我呆得足够久, 可能想法会变.</p>
-
-<p>路上的交通依然很乱, 而且司机彼此不让. 或者有不为人知的让行规则 (我就遇上过直行的停下车来让我们拐弯的先走). 我妈妈到新西兰来之后觉得新西兰人开车都很快, 非常危险. 我当时不是很理解, 因为新西兰城市道路限速50公里每小时, 远远比国内的60要低. 这次回国我终于明白她的意思了. 国内路上太乱了, 你车想跑得快也不可能, 到处都是电瓶车, 乱停车, 行人等等, 你开车要随时小心, 不敢太快, 不像新西兰, 你只要在主路上直行, 什么都不用管, 只管往前开. 这种状况, 一方面是市民的素质要提高, 像新西兰的司机一样彼此谦让, 都不好意思自己先走; 另一方面我觉得中国的交规也有问题, 右转随时可以转, 所以就会发生你在人行道上, 边上突然过来一辆车, 因为他是右拐, 他不看灯, 挺吓人. 此外, 电瓶车我觉得也是一大害, 我跟谦妈说, 要是苏州没有电瓶车, 完全可以列入世界文明城市. 但是电瓶车, 我发现他们汽车道也开, 自行车道也开, 人行道也开, 步道也开, 而且正着也开, 逆着也开. 似乎完全没有章法. 就是主打一个随心所欲. 当然估计政府也很难把电瓶车禁止掉, 因为这是很多低收入人群的主要出行方式.</p>
-
-<h3 id="美食">美食</h3>
-
-<p>谦回国之前就跟我说, 不用介意健康不健康, 美食一定要好好吃. 所以我们回国之后, 几乎每天都到外面吃, 我统计着呢, 一共回去30天, 总共在外面吃了30顿, 毫不夸张. 下面是统计信息. 把人物隐藏了, 只列出时间地点.</p>
-
-<ol>
-  <li>1210 临沂 晚饭</li>
-  <li>1212 临沂 晚饭</li>
-  <li>1214 临沂 午饭</li>
-  <li>1215 临沂 午饭</li>
-  <li>1215 临沂 晚饭</li>
-  <li>1217 临沂 午饭</li>
-  <li>1219 临沂 晚饭</li>
-  <li>1220 临沂 晚饭</li>
-  <li>1221 临沂 早餐</li>
-  <li>1221 临沂 午饭</li>
-  <li>1221 临沂 晚饭</li>
-  <li>1222 临沂 午饭</li>
-  <li>1224 苏州 晚饭</li>
-  <li>1225 苏州 晚饭</li>
-  <li>1227 临沂 晚饭</li>
-  <li>1228 临沂 午饭</li>
-  <li>1229 临沂 午饭</li>
-  <li>1231 北京 早饭</li>
-  <li>1231 北京 晚饭</li>
-  <li>0101 北京 午饭</li>
-  <li>0102 北京 午饭</li>
-  <li>0102 北京 晚饭</li>
-  <li>0103 北京 午饭</li>
-  <li>0104 北京 午饭</li>
-  <li>0105 苏州 午饭</li>
-  <li>0105 苏州 晚饭</li>
-  <li>0107 苏州 晚饭</li>
-  <li>0108 苏州 午饭</li>
-  <li>0109 苏州 午饭</li>
-  <li>0109 苏州 晚饭</li>
-</ol>
-
-<p>在国内的时候秤了一下体重, 发现谦胖了3斤, 我还暗暗高兴. 结果回新西兰之后秤了一下, 发现一点也没胖. 估计是国内冬天衣服穿的太厚了.</p>
-
-<p>我之所以同学请客啥的一直带着他, 也是想让他接触一下国内的风土人情, 锻炼锻炼中文. 学语言其实真的需要环境, 他当初来新西兰的时候, 我把他的小学语文课本从2年级到6年级全都买了, 全都带到新西兰来了, 结果他只翻了不多于五次, 就扔在那里成了废纸. 我跟他说让他学, 他就一直回我学了没用, 我也没办法强制他学. 这次回国据他自己说, 刚回国的时候, 我跟同学饭局上聊天, 他能听懂70%, 一个月之后, 回新西兰的时候, 他说他能听懂80%-90%了, 看来有这个环境, 中文还是进步很快的. 以后要多带他回去. 还有就是淘宝, 他想买东西, 电脑配件啥的, 我就让他自己想办法认识中文, 然后决定买啥, 反正我不给翻译. 我发现他无所不用其极. 打字不会打就用翻译软件, 打英文, 然后翻译成中文再贴进去, 更有甚者, 我发现他还用日文输入法打日文, 然后日语里面也有很多中文汉字, 不知道他怎么打出来的, 他把那个汉字再粘贴到淘宝里.</p>
-
-<h3 id="gfw">GFW</h3>
-
-<p>这又是一个敏感的话题, 但是长期旅居海外回国, 又不得不面对的问题. 2023年底的时候谦跟着他妈妈回国一个月, 我忘了告诉他国内有墙了, 结果他回去之后他所有的社交媒体, 通讯软件都不能用了. 然后他同学找他都找不到, 都以为他失踪了…</p>
-
-<p>翻墙倒不是需要访问“反动”网站, 浏览“不良”信息. 这么多年在墙外, 早司空见惯了. 只是单纯的习惯了这么多年, 听着YouTube上一个讲天文的哥们或者讲苹果产品评测的哥们入睡, 英文本来就不是母语, 听着相当催眠.</p>
-
-<p>这次回去. 我首先想到的是用我新西兰的手机号码国际漫游. 这是最简单, 最方便的翻墙方式, 除了贵, 没毛病. 当年扎克伯格在天安门前跑步的那篇Facebook, 据说就是这么发出来的, 只要开个国际漫游, 你就在墙外. 其实反之亦然. 我还记得当年跟同事在加拿大, 户外的时候紧急需要谷歌地图导航, 然后紧急开通了中国移动国际漫游, 结果发现还是连不上谷歌地图. 我入境的前三天, 都还是在用国际漫游, 体验极好, 后来发现太贵了, 然后就考虑别的东西.</p>
-
-<p>其实学校是有VPN的, 而且我们每个人的电脑上都有, 可以直接连. 我发现有两个问题, 第一: 貌似国内不同地区, 不同运营商对VPN的封锁是不一样的. 学校的VPN有时候能连上, 有时候连不上, 有时候连上会断, 有时候连上, 但是速度慢的要命. 看这张ping, 这是连上学校VPN之后ping学校的另外一台机器, 10秒的延时, 居然还能通, 我真是服了. 第二: 虽然用了VPN, 但是你访问外网还是在你自己的电脑或者手机上, 如果被强行查水表, 你的浏览记录, 你的历史, 证据确凿, 没用的. 所以我不太敢用VPN.</p>
-
-<p><img src="/uploads/2025/ping.png" alt="GFW" /></p>
-
-<p>第三个办法是远程连接到另外一台机器上, 上网. 这个最安全, 毕竟浏览记录什么的都不在你本机上, 严格意义上说, 你也没在国内翻墙. 你只是利用合法信道, 远程控制了一台国外的机器, 而所有的互联网访问, 都发生在那台本来就没有墙的机器上. 我发现不同时段, 连接的速度还不一样. 如果是半夜(中国时间)上网, 那速度相当可以, 远程连接甚至可以把声音给你漂洋过海带过来.</p>
-
-<p>还有就是跟墙没关系, 也是网络监控. 因为平时我跟谦妈都用苹果的iMessage跟FaceTime联系. 我刚到苏州, 就跟谦妈用FaceTime视频通话, 说我们到了. 结果通话结束后没几分钟, 就接到了公安局的电话. 警察叔叔说监控到你用FaceTime, 小心诈骗, 等等. 我解释说我跟我爱人视频通话, 就让她帮我远程开楼道的门. 警察叔叔也没怎么追究, 还说建议用微信….后来我们又FaceTime了几次, 但是没有收到警察叔叔的电话, 估计把我们两个人加入白名单了…</p>
-
-<h2 id="后记">后记</h2>
-
-<p>这次回国, 总体来说我感觉相当好, 虽然经历了疫情防控, 虽然经历了房产泡沫破裂, 一些人一些家庭受了损失. 但是我觉得中国很多地方还是在进步. 估计以后疫情控制没有了, 我会回去得更频繁吧.</p>]]></content><author><name></name></author><category term="新西兰生活" /><category term="Geek" /><summary type="html"><![CDATA[自从全家搬到新西兰, 我上一次回国还要追溯到新冠之前的2018年. 之所以这么久才回国, 一是因为我2018年回去的感受相当方便, 机票极为便宜, 感觉就跟在中国另外一个城市工作, 你坐绿皮火车回家差不多, 晃悠12个小时就到家了. 另外一个原因是新冠疫情, 由于中国当时严格的新冠管理政策, 我一直也没搞懂, 到底怎么才能顺利的坐上回国班机, 号称要“三天两检”, 然后到了之后还要隔离, 一直让我望而却步. 不管怎么说, 现在疫情虽然没结束, 但是防疫结束了, 机票也便宜了, 于是我就决定回国了.]]></summary></entry><entry><title type="html">续: 收集40个方块有多难</title><link href="https://gh.hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan" rel="alternate" type="text/html" title="续: 收集40个方块有多难" /><published>2025-03-10T14:06:00+13:00</published><updated>2025-03-10T14:06:00+13:00</updated><id>https://gh.hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan</id><content type="html" xml:base="https://gh.hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan"><![CDATA[<p>时隔一年, Woolworth超市又推出了买东西集卡片活动. 上次是迪士尼, 这次是Minecraft. 依然是让小朋友们着迷的东西. 这次花30块钱可以拿到一包minecraft的Cubeez, 拆开后可以自己拼装成一个小方块, 很符合Minecraft的风格. 总共有40种小方块, 然后官方还有个盒子, 放在盒子里, 很漂亮.</p>
-
-<p>谦曾经是Minecraft的忠实粉丝, 在国内的时候我就给他买了一套, 然后他建造各种地图, 甚至还把自己建造的地图发给视频博主, 让博主玩他建造的地图. 后来他还玩Minecraft Dungeon, 是一个类似于大菠萝的游戏, 不过人物全都是MC里面的人物.</p>
-
-<p>还是套用上次的公式, 看一下收集到40个方块的数学期待是需要花多少钱.</p>
-
-<p>假设你已经收集了$n$个方块, 那么你下一次收集到一张新方块的概率是$\frac{40-n} {40}$. 所以你下一次收集到一张新方块的期望是$\frac{40} {40-n}$. 所以你收集到所有卡片的期望是:</p>
-
-\[\sum_{n=0} ^{39} \frac{40} {40-n} = 40 \sum_{n=1} ^{40} \frac{1} {n} \approx 171.14\]
-
-<p>看着有点熟悉是吧, 这就是调和级数(harmonic numbers), 我记得还是有近似解的. 当然谦的高中教材是不会教这个的, 但是这也不妨碍他自己推导出来.</p>
-
-<p>也就是说, 平均而言, 你只要肯在Woolworths超市花$171.14 \times 30 = 5134.2$刀, 你就能收集到所有方块. 问题解决.</p>
-
-<p>照例也展示一下收集齐的结果:</p>
-
-<p><img src="uploads/2025/cubeez.jpg" alt="终于集齐了" /></p>
-
-<p>当然, 我们没有真的在超市花5000多刀. 还是在facebook的一个群组上跟别人换的, 加上同事知道我在收集, 送给我们的. 估计实际花了也就100刀左右.</p>
-
-<p>最后吐槽一下Minecraft的中文翻译. 不知道为啥要翻译成“我的世界”, 明明人家本来的英文意思凸显了这个游戏的精髓: 挖矿和建造. 网上找到一篇文章, 可能解释了一些原因吧:</p>
-
-<p><a href="https://www.163.com/dy/article/FBT6CO09054450UT.html">为什么《Minecraft》译名叫“我的世界”</a></p>]]></content><author><name></name></author><category term="工作和学习" /><category term="Geek" /><summary type="html"><![CDATA[时隔一年, Woolworth超市又推出了买东西集卡片活动. 上次是迪士尼, 这次是Minecraft. 依然是让小朋友们着迷的东西. 这次花30块钱可以拿到一包minecraft的Cubeez, 拆开后可以自己拼装成一个小方块, 很符合Minecraft的风格. 总共有40种小方块, 然后官方还有个盒子, 放在盒子里, 很漂亮.]]></summary></entry><entry><title type="html">收集108张卡片有多难</title><link href="https://gh.hezongjian.com/shou-ji-108zhang-qia-pian-you-duo-nan" rel="alternate" type="text/html" title="收集108张卡片有多难" /><published>2024-09-17T14:06:00+12:00</published><updated>2024-09-17T14:06:00+12:00</updated><id>https://gh.hezongjian.com/shou-ji-108zhang-qia-pian-you-duo-nan</id><content type="html" xml:base="https://gh.hezongjian.com/shou-ji-108zhang-qia-pian-you-duo-nan"><![CDATA[<p>小时候的小浣熊干脆面里面的水浒108将卡片估计是很多人的痛. 我知道很多小朋友为了收集全108张卡片, 各显神通, 甚至有些小朋友干脆面都扔了, 只留卡片. 但是, 我从来没听说有小朋友真的把108张卡片收集全了. 为什么呢? 我私下认为有些卡片他们根本就没印刷, 至少这些卡片不是均匀分布的. 当然, 这只是我的阴谋论, 没有任何依据.</p>
-
-<p>没想到, 时隔二三十年, 在南半球, 又开始了一次集卡片之旅. Woolworth超市推出了个叫Disney Worlds of Wonder的活动. 每购物满30刀, 就可以拿一包卡片. 每包卡片里面有3张卡片. 同样一共有108张卡片(不知道大家为什么对108这么痴迷). 并且还推出了一个专门的卡片收集册. 这108张卡来自迪斯尼公司的经典人物, 并且迪斯尼当家四大花旦全部出马: 迪斯尼, 皮克斯, 漫威, 星球大战. 这对小朋友的杀伤力简直是无与伦比的. 所以家长们就惨了, 不断地被小朋友们逼着到超市去买东西, 为的就是拿卡片.</p>
-
-<p><img src="/uploads/2024/disney.png" alt="Disney Cards" /></p>
-
-<h2 id="谦的答案">谦的答案</h2>
-
-<p>何事谦总体来说已经过了对这些东西疯狂迷恋的年纪, 但是因为他周围不少同学朋友都在收集, 所以他也被卷进来了, 我们去超市购物的频率也上来了. 但是对于一个已经15岁的高中生, 收集不能白收集. 得让他学点东西. 我经常跟他说, 一定学好数学, 生活中的很多东西, 例如彩票, 如果你数学好, 你就不会上套. 这就是一个很好的机会看看他的数学. 我的第一个问题, 假设所有的卡都是均匀分布的, 你平均要在超市花多少钱, 你才能收集全108张卡片?</p>
-
-<p>其实这个问题并不是很麻烦. 并不需要很高深的数学知识. 谦的高中水平完全可以解答. 假设你已经收集了$n$张卡片, 那么你下一次收集到一张新卡片的概率是$\frac{108-n} {108}$. 所以你下一次收集到一张新卡片的期望是$\frac{108} {108-n}$. 所以你收集到所有卡片的期望是:</p>
-
-\[\sum_{n=0} ^{107} \frac{108} {108-n} = 108\sum_{n=1} ^{108} \frac{1} {n} \approx 568.5\]
-
-<p>看着有点熟悉是吧, 这就是调和级数(harmonic numbers), 我记得还是有近似解的. 当然谦的高中教材是不会教这个的, 但是这也不妨碍他自己推导出来.</p>
-
-<p>也就是说, 平均而言, 你只要肯在Woolworths超市花5,685刀 (因为购物30刀送3张卡, 平均10刀一张), 你就能收集到所有的卡片. 问题解决.</p>
-
-<h2 id="实际情况">实际情况</h2>
-
-<p>等一下, 虽然谦的这个计算没什么大问题, 但是其实是不精确的. 为啥呢? 因为跟小浣熊干脆面水浒卡不一样:</p>
-
-<ul>
-  <li>这个卡是三张一包, 虽然平均每张卡是消费10刀没错, 但是它还有一个隐藏条件, 就是包内的三张卡是绝对不会重复的. 譬如最简单的例子, 你想拿到三张不重复的迪斯尼卡, 那花30块钱, 概率是100%. 但是拿到三张小浣熊卡, 吃三包干脆面, 概率并不是100%, 因为有可能三包干脆面里面的卡片是重复的, 完全不重复的概率不是100%, 而是$\frac{108-3} {108}$. 这会导致计算结果比实际结果要大.</li>
-  <li>还有就是这个卡片是一包3张一起的, 你不能花10刀, 拿1张, 然后就拿到我想要的了, 就停了. 这会导致计算结果比实际结果要小.</li>
-</ul>
-
-<p>所以, 要精确计算, 还得用复杂的概率知识. 但是, 这个问题就有点太复杂了, 我是不会给出解析解了, 有兴趣的朋友可以自己试试.</p>
-
-<p>但是这不妨碍我们用暴力蒙特卡罗方法来解决这个问题. 也就是说, 我们随机模拟一大堆人, 每个人都在超市花钱买卡片, 看看平均要花多少钱才能收集全108张卡片. 我写了一个简单的Python程序来模拟这个过程:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
-
-
-<span class="k">def</span> <span class="nf">complete_card</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">num_pack</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">my_card</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
-
-    <span class="k">while</span> <span class="nf">len</span><span class="p">(</span><span class="n">my_card</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">108</span><span class="p">:</span>
-        <span class="n">new_pack</span> <span class="o">=</span> <span class="nf">set</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">sample</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">109</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
-        <span class="n">num_pack</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">my_card</span> <span class="o">|=</span> <span class="n">new_pack</span>
-    <span class="k">return</span> <span class="n">num_pack</span>
-
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Disney Worlds of wonder Simulation via Monte Carlo</span><span class="sh">"</span><span class="p">)</span>
-
-    <span class="n">TOTAL_SIMULATIONS</span> <span class="o">=</span> <span class="mi">50000</span>
-    <span class="n">total_packs</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">TOTAL_SIMULATIONS</span><span class="p">):</span>
-        <span class="n">num_pack</span> <span class="o">=</span> <span class="nf">complete_card</span><span class="p">()</span>
-        <span class="n">total_packs</span> <span class="o">+=</span> <span class="n">num_pack</span>
-
-    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Average amount of spend: </span><span class="si">{</span><span class="mi">30</span> <span class="o">*</span> <span class="n">total_packs</span> <span class="o">/</span> <span class="n">TOTAL_SIMULATIONS</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-
-
-<span class="nf">main</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>运行一下, 结果大概是5635刀, 你才能收集到所有的卡片. 略小于谦的计算.</p>
-
-<h2 id="引申问题">引申问题</h2>
-
-<p>这个问题还可以引申出很多问题. 例如, 如果你有n张卡片, 你还需要开多少包, 花多少钱, 你才能收集到所有的卡片?</p>
-
-<p>一个真实的问题是为了收集齐, 我几乎每个周末都会去超市门口蹲点, 期望能跟别人交换手里没有的卡片, 有一个周末, 一个小朋友为了拿我手里的1张卡, 把他刚刚卖萌从超市拿到的6包没开封的, 都给我了. 因为他还缺那张. 我回家之后, 我说我欺负小朋友了. 但是谦说wait, 我帮你算算那个小朋友手里还差几张, 他才会心甘情愿用6包没开的跟你换1张他没有的. 他算了半天, 告诉我那个小朋友手里大概有大于102张卡. 也就是说, 他还差6张. 但是他给了我6包. 我验算了一下, 大概没错. 但是我绝对不相信那个小朋友是通过数学演算来得出这个结论的. 因为按新西兰的数学水平, 他估计连数到十都困难. 前几天我还看到新闻, 讨论五岁的小孩该不该学习数到10:</p>
-
-<p><a href="https://www.rnz.co.nz/news/what-you-need-to-know/527256/what-you-need-to-know-about-the-draft-english-and-maths-curriculums">Should a five-year-old be able to count to 10</a></p>
-
-<p>所以他跟我换完全是凭直觉.</p>
-
-<h2 id="结语">结语</h2>
-
-<p>我终于人生第一次把108张卡都收集全了. 当然, 最后是通过了跟别人Trade, 其实facebook上有个group, 很多人在里面互通有无, 我跟一个五星级酒店的员工, 用2张她需要的卡, 换了最后20张我需要的卡. 展示一下吧:</p>
-
-<p><img src="/uploads/2024/disney_final_small.png" alt="Disney Cards" /></p>
-
-<p>当然这个纯属是收藏, 集齐了之后没有任何好处. 只是自己的一种成就感.</p>
-
-<p>最后再提一下那个小浣熊干脆面. 据说108张都收集齐之后, 可以找厂商领1000块钱的奖励. 现在网上很难找到证据, 这里算一个吧, 也是别人的博客, 不一定有权威性</p>
-
-<p><a href="https://go1980.org/童年回忆之小当家水浒卡">童年回忆之小当家水浒卡</a></p>
-
-<p>那么问题来了, 如果当年的小浣熊水浒卡真的是均匀分布, 那么根据大谦之前的计算, 一块钱一包的干脆面数学期待只要568.5包, 也就是花568.5块钱, 就能收集齐, 然后去换1000块钱, 从数学上来说那厂商简直是在做慈善, 大家白捡钱. 遇上这种好事就应该破釜沉舟all in. 还好我当年只是小学生, 还不会算概率, 所以没冲动. 当然, 人家小浣熊厂商也从来没说108张卡是均匀分布. 甚至你都不知道他们是不是真的印了108种… 迪斯尼这个因为没任何奖励, 所以很容易集齐.</p>]]></content><author><name></name></author><category term="工作和学习" /><category term="Geek" /><summary type="html"><![CDATA[小时候的小浣熊干脆面里面的水浒108将卡片估计是很多人的痛. 我知道很多小朋友为了收集全108张卡片, 各显神通, 甚至有些小朋友干脆面都扔了, 只留卡片. 但是, 我从来没听说有小朋友真的把108张卡片收集全了. 为什么呢? 我私下认为有些卡片他们根本就没印刷, 至少这些卡片不是均匀分布的. 当然, 这只是我的阴谋论, 没有任何依据.]]></summary></entry><entry><title type="html">Mini Linux发行版</title><link href="https://gh.hezongjian.com/mini-linuxfa-xing-ban" rel="alternate" type="text/html" title="Mini Linux发行版" /><published>2024-01-10T18:06:00+13:00</published><updated>2024-01-10T18:06:00+13:00</updated><id>https://gh.hezongjian.com/mini-linuxfa-xing-ban</id><content type="html" xml:base="https://gh.hezongjian.com/mini-linuxfa-xing-ban"><![CDATA[<p>发行版跟内核比, 复杂多了. 你得有个安装程序, 有个包管理器, 有个软件仓库, 有个GUI, 有个桌面, 有个窗口管理器, 有个登录管理器, 有个网络管理器, 有个音频管理器, 有个电源管理器, 有个文件管理器, 有个文本编辑器, 有个终端模拟器, 有个浏览器, 有个邮件客户端, 有个音乐播放器, 有个视频播放器, 有个图片查看器, 有个PDF阅读器, 有个打印机管理器, 有个截图工具, 有个录屏工具, 有个截屏工具, 有个系统监控工具, 有个系统设置工具, 有个系统日志工具, 有个系统更新工具, 有个系统备份工具, 有个系统还原工具…… 但是核心的东西其实就三块:</p>
-
-<ul>
-  <li>Boot loader</li>
-  <li>Kernel</li>
-  <li>用户态程序</li>
-</ul>
-
-<p>把这三个弄齐了, 你就可以号称有发行版了. 所以我们现在开始吧, 所有操作都是在一台Ubuntu 22.04的虚拟机上完成的.</p>
-
-<h2 id="1-install-prerequisite">1. install prerequisite</h2>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>build-essential flex libncurses5-dev bc libelf-dev bison libssl-dev
-</code></pre></div></div>
-
-<p>这些包待会编译的时候都用得到.</p>
-
-<h2 id="2-build-the-source">2. build the source</h2>
-
-<p>内核编译反倒比较简单, 且这20年几乎没变过. 不过源代码可以直接互联网上check out了, 不用从光盘拷贝了.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">--depth</span><span class="o">=</span>1 https://github.com/torvalds/linux.git
-
-make menuconfig
-make <span class="nt">-j</span> 32
-</code></pre></div></div>
-
-<p>我这台虚拟机有32个vCPU, 所以启动32个并行进程编译. 一般来说, 你的CPU有多少个核, 就启动多少个并行进程. 不得不说, 计算机的发展还是可以看得见的, 基本上10几分钟就编译完了. 我基本上是默认设置, 就是禁用了两个配置</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@jason-builder:/data/linux# ./scripts/config <span class="nt">--disable</span> SYSTEM_TRUSTED_KEYS
-root@jason-builder:/data/linux# ./scripts/config <span class="nt">--disable</span> SYSTEM_REVOCATION_KEYS
-</code></pre></div></div>
-
-<h2 id="3-build-busybox">3. build busybox</h2>
-
-<p>有了内核, 还要有用户态程序, 一般来说就是shell, 我选了busybox, 因为它的功能很全, 而且体积很小. 你可以把它当成一个超级shell, 里面有很多命令. 以前嵌入式Linux都用它. 我就改了一个配置, 把它编译成了静态链接的可执行文件, 这样就不用担心依赖问题了.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone <span class="nt">--depth</span><span class="o">=</span>1 https://git.busybox.net/busybox/
-make <span class="nt">-j</span> 32
-<span class="nb">mkdir</span> /data/boot/initramfs
-make <span class="nv">CONFIG_PREFIX</span><span class="o">=</span>/data/boot/initramfs <span class="nb">install
-cd</span> /data/boot/initramfs
-vi init <span class="c"># add shebang</span>
-<span class="nb">chmod</span> +x init
-<span class="nb">rm </span>linuxrc
-/data/boot/initramfs# find | cpio <span class="nt">-o</span> <span class="nt">-H</span> newc <span class="o">&gt;</span> ../init.cpio
-</code></pre></div></div>
-
-<h2 id="4-boot-loader">4. boot loader</h2>
-
-<p>最后, 你得有个引导程序来启动你的内核. 当年我们的引导程序是LILO, 现在基本已经挂了, 都用GRUB. 我们自己的发行版用不到那么高大上, 用最简单的引导程序syslinux就可以了.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt <span class="nb">install </span>syslinux
-<span class="nb">dd </span><span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>boot <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>50
-mkfs.fat boot
-syslinux boot
-<span class="nb">mkdir </span>m
-mount boot m
-<span class="nb">cp </span>bzImage init.cpio ./m/
-umount m
-</code></pre></div></div>
-
-<p>这样启动的话, 会失败, 需要手工输入内核和initramfs的路径. 为了方便, 我们可以用syslinux的配置文件来启动. syslinux.cfg的内容如下:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEFAULT linux
-LABEL linux
-    KERNEL bzImage
-    APPEND initrd=init.cpio
-</code></pre></div></div>
-
-<h2 id="5-boot">5. boot</h2>
-
-<p>启动的话, 必须要用个有图形界面的虚拟机, 用VMWare, VirtualBox都可以. 用qemu也行. 我就用的是macos上的QEMU. 直接输入指令:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qemu-system-x86_64 boot
-</code></pre></div></div>
-
-<p>然后系统就会跳出图形界面, 然后你就可以看到你自己的Linux启动了.</p>
-
-<p><img src="/uploads/2024/linuxdistribution1.png" alt="mini-linux" /></p>
-
-<p><img src="/uploads/2024/linuxdistribution2.png" alt="mini-linux-2" /></p>
-
-<p>可以看到, 是最新的内核. 也可以运行一些简单的命令跟shell脚本. 但是网络是没有的, 所以没法ssh进去. 好了, 这基本上就是发行版的第一步了. 一些Raspberry Pi的发行版就是这么做的. 但是这样的发行版太简单了, 你连个网络都没有, 包管理器都没有, 你连个软件都装不上. 没人会用.</p>]]></content><author><name></name></author><category term="工作和学习" /><category term="Geek" /><category term="Linux" /><summary type="html"><![CDATA[发行版跟内核比, 复杂多了. 你得有个安装程序, 有个包管理器, 有个软件仓库, 有个GUI, 有个桌面, 有个窗口管理器, 有个登录管理器, 有个网络管理器, 有个音频管理器, 有个电源管理器, 有个文件管理器, 有个文本编辑器, 有个终端模拟器, 有个浏览器, 有个邮件客户端, 有个音乐播放器, 有个视频播放器, 有个图片查看器, 有个PDF阅读器, 有个打印机管理器, 有个截图工具, 有个录屏工具, 有个截屏工具, 有个系统监控工具, 有个系统设置工具, 有个系统日志工具, 有个系统更新工具, 有个系统备份工具, 有个系统还原工具…… 但是核心的东西其实就三块:]]></summary></entry><entry><title type="html">Oakland Slide</title><link href="https://gh.hezongjian.com/oakland-slide" rel="alternate" type="text/html" title="Oakland Slide" /><published>2023-12-12T18:06:00+13:00</published><updated>2023-12-12T18:06:00+13:00</updated><id>https://gh.hezongjian.com/oakland-slide</id><content type="html" xml:base="https://gh.hezongjian.com/oakland-slide"><![CDATA[<p>这文章放在他们学校的归档集里面, 可以公开访问, 所以我就直接放在这里了. 他们学校的归档集里面还有很多有趣的东西, 譬如一百年前的校报. 有兴趣的可以去看看.</p>
-
-<p><a href="https://ags.recollect.co.nz/nodes/view/10408">Auckland Grammar School Archive</a></p>
-
-<p>图片版:</p>
-
-<p style="text-align: center;">
-  <a href="/uploads/2023/OaklandSlide_1.png"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_1.png" width="1024" height="768" /></a><br />
-</p>
-
-<p style="text-align: center;">
-  <a href="/uploads/2023/OaklandSlide_2.png"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_2.png" width="1024" height="768" /></a><br />
-</p>
-
-<p style="text-align: center;">
-  <a href="/uploads/2023/OaklandSlide_3.png"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_3.png" width="1024" height="768" /></a><br />
-</p>
-
-<hr />
-
-<p>PDF版</p>
-
-<p>
-<object data="/uploads/2023/OaklandSlide.pdf" type="application/pdf" width="1024" height="768">
-    <embed src="/uploads/2023/OaklandSlide.pdf" />
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/uploads/2023/OaklandSlide.pdf">Download PDF</a></p>
-    &lt;/embed&gt;
-</object>
-</p>]]></content><author><name></name></author><category term="何事谦" /><category term="何事谦" /><summary type="html"><![CDATA[这文章放在他们学校的归档集里面, 可以公开访问, 所以我就直接放在这里了. 他们学校的归档集里面还有很多有趣的东西, 譬如一百年前的校报. 有兴趣的可以去看看.]]></summary></entry><entry><title type="html">博客访问记录</title><link href="https://gh.hezongjian.com/bo-ke-fang-wen-ji-lu" rel="alternate" type="text/html" title="博客访问记录" /><published>2023-11-07T09:26:00+13:00</published><updated>2023-11-07T09:26:00+13:00</updated><id>https://gh.hezongjian.com/bo-ke-fang-wen-ji-lu</id><content type="html" xml:base="https://gh.hezongjian.com/bo-ke-fang-wen-ji-lu"><![CDATA[<h2 id="序言">序言</h2>
-
-<p>看自己写博客已经20多年了, 生活了半辈子都在写博客. 有了微博和微信之后, 博客的频率有些下降, 不过也好. 博客可以写一些长篇大论和深入的东西, 而微博和微信更适合写一些短小精悍的东西.</p>
-
-<p>自从把博客改成了静态网页之后, 好处自然是一堆html文件随便放, 但缺点是所有需要服务端程序配合的功能都做不了, 譬如评论, 访问记录等等. 评论可以用第三方的评论系统, 访问记录可以用第三方的访问记录, 但是这些都不是自己的, 也不是很方便. 譬如CloudFlare自己就有自己的访问记录, 但是数据不是很全, 很难导出, 而且只能保留一段时间. 于是就想自己写一个访问记录的功能, 用来记录博客的访问记录.</p>
-
-<h2 id="方法">方法</h2>
-
-<p>我最初用CloudFlare的worker功能写了个Serverless的访问记录程序, 把数据存在CloudFlare的SQLite数据库里. 但我后来发现CloudFlare的worker功能被GFW给墙了. 整个域名 (*.workers.dev) 没法在国内访问, 不知道为啥, 是不是有人用来翻墙. 于是我就放弃了CloudFlare的worker功能, 转而用自己的程序来记录访问记录.</p>
-
-<p>我用Python写了一个简单的访问记录程序, 用来记录博客的访问记录. 并且把它放在GitHub上开源了:</p>
-
-<p><a href="https://github.com/cszhe/cszhe-logger">Logger</a></p>
-
-<p>程序很简单, 就是一个URL, host在oracle免费的虚拟机上, 然后把这个URL内签到博客的模板里. 它会把访问这个URL的IP用ipinfo.io的API获取更多信息(譬如国家, 所在地, 经纬度, 网络提供商等)放在MariaDB数据库里. 然后用Grafana来展示这些数据.</p>
-
-<p>其实这样统计不是非常科学. 主要有两个问题:</p>
-
-<ul>
-  <li>False Negative (漏报): 如果客户端禁用了JavaScript, 或者JS不正常, 那么访问记录就记不下来, 这对很多爬虫来说是很正常的.</li>
-  <li>False Positive (误报): 如果你直接访问那个URL, 那么也会被记录, 但是这个URL是没有意义的, 也不是博客的内容.</li>
-</ul>
-
-<p>总之大差不差吧, 有些数据总比没有好.</p>
-
-<h2 id="结果">结果</h2>
-
-<p>我用Grafana来展示这些数据, 主要从3个方面来看:</p>
-
-<h3 id="概要">概要</h3>
-
-<p><img src="/uploads/2023/logger-daily.png" alt="图 daily" /></p>
-
-<p>一个月一共6000个访问量, 200个访问量每天. 感觉还不错, 但是其实爬虫有相当的数量, 我们之后再分析. 从这个图可以看出, 有些天访问量很高, 有些天访问量很低, 多的有1000多个每天, 少的时候只有10来个访问量每天. 这是正常的, 有些天我可能写了一篇文章, 很多天我可能都没写.</p>
-
-<p><img src="/uploads/2023/logger-page.png" alt="图 page" /></p>
-
-<p>这个图是按网页访问的记录. 访问最多的是首页. 这个也是正常的, 因为首页是默认打开的, 有些人可能就看了首页就走了. 其次是博客的文章, 文章访问量最多的居然是我大概10年前写的一篇文章,</p>
-
-<p><a href="{filename}2015-08-31-普林斯顿大学参观记.md">普林斯顿大学参观记</a></p>
-
-<p>这篇文章是我之前在美国参会的时候去普林斯顿大学参观写的. 之所以访问量高, 是因为这篇文章被Google给索引了, 如果你谷歌用中文搜索“普林斯顿参观”, 这篇文章的排名挺靠前的. 我估计有很多人都是通过谷歌搜索来访问的, 然后把这篇文章当攻略看了. 早知道我好好写写, 防止误导了别人.</p>
-
-<p><img src="/uploads/2023/logger-princeton.png" alt="图 google search" /></p>
-
-<p>图: 谷歌搜索的结果</p>
-
-<h3 id="地理信息">地理信息</h3>
-
-<p>第二项是访问的地理信息. 根据IP地址来反推经纬度地理位置已经很成熟了. 所以用Grafana把所有的访问展示在世界地图上是很容易的事情, 还挺壮观的. 如下图:</p>
-
-<p><img src="/uploads/2023/logger-geo.png" alt="图 Geolocation" /></p>
-
-<p>这个图, 基本上体现出来世界互联网发达程度了: 北美几乎连成了一片(主要是谷歌的数据中心吧), 东亚也不错, 欧洲也还行(我怀疑欧洲有几个国家是VPN翻墙或者是Web代理的出口, 并不是用户真正的IP), 但是南美和非洲就没有访问量了. 大洋洲网络并不发达, 但是因为我写了很多新西兰的文章, 所以也有一些访问量.</p>
-
-<p>如果要分析具体的数据, 那就看这个图吧: 左面是去重复的IP, 右面是不去重复的IP. 访问前5名是: 美国, 中国, 新西兰, 澳大利亚和加拿大.</p>
-
-<p><img src="/uploads/2023/logger-country.png" alt="图 country" /></p>
-
-<p>无论从独立IP还是重复IP来看, 美国访问量都是最多的. 其次是中国和新西兰, 一个重复访问量第二, 一个独立访问量第二. 然后接下来几个国家要么华人多, 要么跟新西兰地理接近.</p>
-
-<h3 id="客户端信息">客户端信息</h3>
-
-<p>客户端信息是通过解析User Agent数据. 当然这个也是不准的. 因为客户端可以随意伪造User Agent字符串来骗服务器. 我之前就猜到有很多爬虫, 但是没有具体的统计, 直到解析了客户端的User-Agent才知道具体的数据. 如图所示:</p>
-
-<p><img src="/uploads/2023/logger-ua.png" alt="图 UA" /></p>
-
-<p>Python的那个library汇报说有30%的是BOT, 但是我觉得可能不止. 因为Bot可以完全隐闭成普通用户的访问, 所以仅供参考. 按Bot的来源:</p>
-
-<ul>
-  <li>Google: 1707</li>
-  <li>Bing:  11</li>
-  <li>Baidu:  7</li>
-  <li>Apple:  2</li>
-  <li>Yisou:  1</li>
-  <li>Yandex:  1</li>
-</ul>
-
-<p>谷歌搜索怪不得强, 网站都给捅成了筛子. 国内的搜索引擎都不怎么样, 估计是因为我没有备案, 所以属于非法境外网站, 不给收录. 奇葩的是还有一个来自俄罗斯搜索引擎的访问.</p>
-
-<h2 id="结束语">结束语</h2>
-
-<p>好几次想把博客关了, 估计没人看, 维护还要花钱, 主要是域名等. 看来你不经意的一些事情都在潜移默化的影响别人, 譬如那篇普林斯顿大学参观文章. 我没想到这么多人看, 看来保留博客还是有必要的. 也算对自己的一些鞭策吧.</p>
-
-<h2 id="更新-2024-08-14">更新: 2024-08-14</h2>
-
-<p>大概半年之后, 终于所有的洲都有了数据. 看着这个地图, 感觉还是挺壮观的.</p>
-
-<p><img src="/uploads/2023/logger-geo2.png" alt="图 Geolocation" /></p>]]></content><author><name></name></author><category term="工作和学习" /><category term="Geek" /><category term="CloudFlare" /><summary type="html"><![CDATA[序言]]></summary></entry><entry><title type="html">与流氓软件的斗争</title><link href="https://gh.hezongjian.com/yu-liu-mang-ruan-jian-de-dou-zheng" rel="alternate" type="text/html" title="与流氓软件的斗争" /><published>2023-10-27T09:26:00+13:00</published><updated>2023-10-27T09:26:00+13:00</updated><id>https://gh.hezongjian.com/yu-liu-mang-ruan-jian-de-dou-zheng</id><content type="html" xml:base="https://gh.hezongjian.com/yu-liu-mang-ruan-jian-de-dou-zheng"><![CDATA[<h2 id="序言">序言</h2>
-
-<p>掐指一算, 从2000年高考结束有了第一台电脑, 我接触计算机已经23年了. 大概前1/3的时间在用Windows (我用过的最后一台Windows是Windows 7), 后面2/3的时间都在用macOS, macOS基本上没什么流氓软件. 所以, 也十多年没用过Windows了, 对Windows的新东西有些生疏 (可怜我当年还是微软的MVP, 当年在微软实习的时候每天打印MSDN背Windows API, 在同济还教了好几年的《Windows程序设计》. 感觉有点对不起微软). 谦谦的笔记本是微软的Surface, 因为我一直给他用普通账户登陆, 又加了家长控制. 所以3-5年了, 一直没有流氓软件. 今年中给我父亲买了台Windows笔记本电脑, 结果忘了跟他说日常用普通用户登陆, 不要用管理员. 结果, 他一直用管理员登陆, 据说借给别的小朋友用了一次, 结果就莫名其妙装了一堆流氓软件. 各种弹窗, 各种自动安装, 各种为你好帮你扫描. 删也删不掉. 我远程指导他删除了一次, 但是删除了又回来了, 一般人真很难删掉.</p>
-
-<p>最近疫情不那么紧张了, 我父母又来了新西兰, 也把他的电脑顺便拿过来, 他希望我帮他重装系统. 但是我还是觉得能不重装就别重装, 我想把流氓软件都卸载了, 系统就正常了. 顺便我也看看流氓软件的招式. 涨涨见识. 毕竟好多年没用Windows了. 接下来就是我与流氓软件的斗争史.</p>
-
-<h2 id="卸载的套路">卸载的套路</h2>
-
-<p>首先想到的当然是通过Windows的控制面板(或者新的设置)的删除软件功能, 来正当卸载. 但是你是正人君子, 流氓软件可不正人君子. 我慢慢发现了卸载里面的套路. 比较基础的就是卸载按钮藏的很深, 让你不仔细根本发现不了, 更有甚者, 把卸载按钮藏在一堆安装按钮之间, 你一不留神点错了, 不但没卸载, 还安装了更多的流氓软件. 这个是基本套路, 网上还有篇文章, 说外国网友被流氓软件骚扰的例子:</p>
-
-<p><a href="https://cloud.tencent.com/developer/article/1962755?areaId=106001">笑哭了！日本网友求助如何卸载360浏览器，过程堪比“ 拆弹 ”…</a></p>
-
-<p>再无耻一点的就是各种撒泼卖萌. 例如这个:</p>
-
-<p><img src="/uploads/2023/malware-uninstall.png" alt="图 uninstall" /></p>
-
-<p>图: 这个流氓软件的卸载界面, 你看它多可爱, 你舍得卸载么?</p>
-
-<p>再无耻一点的, 根本没有卸载功能. 你在控制面板里面点卸载, 它直接告诉你不能卸载. 还有的是主程序卸载掉了, 但是还留着一个服务, 不知不觉它又把自己装回来了.</p>
-
-<p>其实这都怪Windows给了开发者太大的权限, 让他们可以自定义安装, 卸载界面. 如果开发者自觉一点, 其实可以造福用户. 但是这个功能被滥用了, 用来套路用户. 如果像macOS一样, 安装就是把程序拖到某个文件夹里, 卸载就是把这个文件夹拖到回收站里, 程序也没权限写这个文件夹之外的东西. 那开发者就没机会套路用户了.</p>
-
-<h2 id="自动启动">自动启动</h2>
-
-<p>这个也是流氓软件常规套路, 开机自动启动. 但是现在Windows做的比较好了, 用户可以很容易的就把自动启动的程序关掉. (在任务管理器里面, 或者设置里面, 具体我就不说了). 但是流氓软件也不是省油的灯, 他们也想到了新的办法. 做成Windows服务, 这样程序依然可以开机启动, 又不在自动启动列表里. 我们看下一项:</p>
-
-<h2 id="windows服务">Windows服务</h2>
-
-<p>服务本来是设计给应该常驻后台, 又不需要跟用户交互的一些程序用的, 譬如网络自动校准时间的程序. 但流氓软件却用它来常驻系统后台. 更有甚者, 有些流氓软件还会把自己的服务名起得跟Windows自带的服务一样, 以便于混淆视听. 或者就起个高深的名字, 吓唬用户, 例如叫: kernel, 叫driver, 叫system之类的. 如果不会看服务程序的数字签名的话, 很容易被蒙骗. 而且服务的另一大问题是它不像其它Windows程序一样有标准的删除方法, 一般用户不知道怎么删除服务 (改注册表或者用sc.exe). 所以, 服务是流氓软件的另一个套路.</p>
-
-<p>更有甚者, 有些流氓软件的服务根本没有实现标准的停止方法. 在服务控制台里面停不掉它. 我第一次清除完了各种流氓软件后, 发现有些软件又回来了, 就是因为服务没删掉.</p>
-
-<p>关于如何删除服务, 可以参考微软的网站:</p>
-
-<p><a href="https://learn.microsoft.com/zh-cn/windows-server/administration/windows-commands/sc-delete">sc.exe delete</a></p>
-
-<h2 id="任务计划程序">任务计划程序</h2>
-
-<p>任务计划程序本来是用来定时在系统里面运行某些特定程序用的, 像Unix / Linux系统里面的cron. 还是挺有用的, 但是流氓软件也会把自己弄成一个任务计划程序. 用它来弹广告, 或者安装自己. 这个一般人想不到, 但是如果想到了, 清除起来还是很容易的. 直接在任务计划程序库中删除就可以了.</p>
-
-<h2 id="浏览器收藏夹和主页">浏览器收藏夹和主页</h2>
-
-<p>这又是一个老生常谈的问题, IE时代就有的问题. 不知不觉IE首页就被改了. 现在微软的IE完了, 浏览器换成了Chrome内核, 但是问题还是一样的. 流氓软件会把浏览器的收藏夹和主页改成自己的网站. 这个问题也不是很难解决, 但是对于一般用户来说, 还是挺麻烦的.</p>
-
-<p>最简单的更改自然是在你的收藏夹里面加入一大堆假的链接, 告诉你是百度官网, 其实是链接到了不知道什么网站, 然后给你安装更多的流氓软件. 这个直接删除即可.</p>
-
-<p>再那个一点的是直接把浏览器的首页给改了, 你每次打开之后, 就会看到流氓软件的网站. 这个也不难解决, 毕竟是明的, 直接在浏览器的设置里面改回来就可以了. 接下来就有暗的了.</p>
-
-<p>简单一点的, 在桌面上给你建立个快捷方式. 是Edge的图标, 然后你点击的时候, 其实执行的是 “msedge.exe http://liumang.com”, 然后就打开了流氓软件的网站. 这个需要重新建立一个新的Edge纯净的快捷方式.</p>
-
-<p>再隐蔽一点的, 会给你装一堆浏览器插件, Edge好像可以用chrome的插件, 这些插件会把浏览器的首页改成流氓软件的网站. 这个就比较难解决了, 你需要把插件都删掉, 然后把浏览器的首页改回来. 估计有些人不知道怎么删插件.</p>
-
-<p>还有隐蔽一点的, 会启动一个后台进程, 然后这个进程在内存里去改浏览器的首页. (金山软件, 就是这个套路, 哎, 难得你还是雷总之前的公司, 没想到这么下作了, 我宁可相信这是山寨的金山软件) 你如果查看edge的设置, 没有任何异常, 但是每次打开edge还是会打开流氓网站, 就是这么来的, 我不知道它用了什么API, 不过既然金山公司都有金山游侠可以改游戏内存, 那改edge的内存改首页也是简单的事情. 这个需要把这个进程杀掉, 然后看看这个进程是怎么启动的, 然后把它连根删掉.</p>
-
-<p>最阴险的, 会使用组策略来安装流氓软件. 如果你打开Edge, 显示“您的浏览器由您的组织管理”, 但是你这台是个人电脑, 并没有登陆公司的账号. 那十有八九就是中招了. 组策略一般是会把一些流氓软件插件添加到允许安装列表里面. 这个需要删除注册表的键. 最简单的做法就是在注册表里面搜索相应的键值, 然后删除.</p>
-
-<p><img src="/uploads/2023/malware-edge.png" alt="图 edge" /></p>
-
-<h2 id="后记">后记</h2>
-
-<p>计算机早期发展的时候, 没人知道它后来能发展成人手一台, 算上智能手机手表等, 甚至人手无数台. 所以早期计算机就是在几个大学里面联网, 大家君子之约, 不作恶, 很多安全的东西就像新西兰的门锁, 90%都是防君子不防小人. 但是现在时代变了, 之前的很多所谓的安全机制, 隐私保护都很脆弱. Windows因为其历史原因, 一直在兼容性和向后兼容性上面做文章, 但是这也给了流氓软件可乘之机.</p>
-
-<p>之前我在同济的时候, 一直觉得得给计算机的学生加一门课, 叫《计算机伦理》. 教育学生们不要当黑客, 不要去写病毒, 不要去写流氓软件, 不要去作恶. 但是后来想想, 这个课没人上, 也没人教. 也没人愿意上. 也没人愿意教. 毕竟温饱没解决, 饿着肚子, 老板让你干啥, 你就干啥. 你不干, 别人干了, 你就没饭吃了. 劣币驱逐良币. 所以与流氓软件的斗争, 估计还要长期存在.</p>]]></content><author><name></name></author><category term="新西兰生活" /><category term="软件" /><category term="Windows" /><summary type="html"><![CDATA[序言]]></summary></entry><entry><title type="html">新西兰特色的MMP介绍</title><link href="https://gh.hezongjian.com/xin-xi-lan-te-se-de-mmpjie-shao" rel="alternate" type="text/html" title="新西兰特色的MMP介绍" /><published>2023-10-15T10:57:00+13:00</published><updated>2023-10-15T10:57:00+13:00</updated><id>https://gh.hezongjian.com/xin-xi-lan-te-se-de-mmpjie-shao</id><content type="html" xml:base="https://gh.hezongjian.com/xin-xi-lan-te-se-de-mmpjie-shao"><![CDATA[<blockquote>
-  <p>更新: 这篇文章基本写在大选之前, 现在大选已经尘埃落定, 我最担心的King maker决定谁上台的情况没有出现. 让我对新西兰的MMP制度有了更多的信心.</p>
-</blockquote>
-
-<h2 id="规则">规则</h2>
-
-<p>德国果然是个出思想家的地方, 现在世界上很多社会制度都起源于德国. 共产主义/社会主义起源于德国的马克思. 新西兰的政治制度也起源于德国. (纳粹也起源于德国, 好歹没有在全世界普及开来. ) 江总书记在访问美国的时候指出: “美国有美国特色的民主, 跟generally speaking的民主有不同. 百闻不如一见.” 的确如此, 各国的民主制度虽然都是投票, 但是具体实现差距非常大. 新西兰也有新西兰特色的民主, 也就是MMP制度. 我就我这两次参加新西兰的选举, 也算是“百闻不如一见”了, 就我的所见所闻, 聊聊MMP制度.</p>
-
-<p>江总书记提到的美式民主是两党竞选. 在两党竞选体制下, 再想自己创立一个小党 基本上没有生存的机会, 因为根本不可能胜出. 而两个大党也必然地走向了中间偏左和偏右(川普的共和党偏右, 拜登的民主党偏左), 也只有这样才能迎合绝大多数选民. MMP制度就是为了解决这个问题而生的. MMP的全称是Mixed Member Proportional. 不知道中文是什么. 但是基本的思想就是提高小党派的话语权. 怎么提高呢? 就是鼓励几个党合作, 组织联合政府. 我们上学的时候都读过毛主席的《论联合政府》. 但我觉得国内没啥联合政府的土壤. 卖别墅的广告说得好, “独享, 所以尊贵.” 谁想跟你联合? 但是在新西兰, 联合政府是很常见的. MMP制度要求一个党, 或者多个党联合把得票加起来, 如果能超过所有投票的50%, 那么就能组织政府了. 在新西兰的历史上, 只有2020年如日中天的阿登姐一党得票超过50%, 不需要跟别的党联合即可执政. 其它时候都是得多个党合作, 一起组织联合政府. 所以新西兰的党派特别多, 今年的大选有17个党派参加, 各个党派的介绍就好几页纸. 有些各种奇葩的党, 譬如大麻合法化党, 譬如动物权利党, 女权党等等, 上一届还有个叫互联网党, 但是这届没了. 可能是正如其名, 互联亡党了, 其实我觉得这个党还不错, 互联网肯定代表未来么. 虽然党派多, 但是想进入议会还是很难的. 一般都是得票超过5%才能进入议会. 所以也不是自己随便组织个什么党都能进入议会的, 只有进入议会了, 才有资格跟别的党合作, 才有机会组织联合政府. 总而言之一句话, 就是MMP制度鼓励党派合作, 以提高小党派的话语权.</p>
-
-<p>当然, 其实MMP每次选举每个人都有两票, 一票是党票, 相当于是在三权分立(还是应该说“三权鼎立”)里面选行政票; 一票是议员票, 相当于在三权分立里面选立法票, 或者选人大代表. 我们今天只讨论党票. 新西兰的议员票我觉得问题也不少, 如果有机会, 改天再聊. 今天暂且按下不表.</p>
-
-<h2 id="问题">问题</h2>
-
-<p>这种鼓励多党合作看似设计得很好, 但有什么问题呢? 我觉得最大的问题就在于多党合作的过程. 以2017年大选为例, 2017年虽然我在新西兰, 但是由于居住不满1年, 没有选举权. 所以我只能在旁边看热闹. 2017年的大选结果是这样的:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">党</th>
-      <th style="text-align: right">得票百分比</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">National Party (中间偏右)</td>
-      <td style="text-align: right">44.4%</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Labour Party (中间偏左)</td>
-      <td style="text-align: right">36.9%</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">New Zealand First Party (?)</td>
-      <td style="text-align: right">7.2%</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Green Party (极左)</td>
-      <td style="text-align: right">6.3%</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">ACT New Zealand (极右)</td>
-      <td style="text-align: right">0.5%</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">…. (以下小党省略)</td>
-      <td style="text-align: right">…</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>表: 新西兰2017年大选, 来源: <a href="https://elections.nz/media-and-news/2017/new-zealand-2017-general-election-official-results/">New Zealand 2017 General Election - Official Results</a></p>
-
-<p>我把每个党的得票率, 跟他们的政治光谱列在上面一张表上, 以便于大家理解. 从这张表上可以看出, 左派的Labour Party和Green Party加起来, 有43.2%的选票, 右派的National Party和ACT New Zealand加起来, 有44.9%的选票. 两个大党都没有超过50%, 所以必须跟别的党合作才能组织政府. 那能怎么合作呢? 左派的党不太可能跟右派的党合作, 因为他们的政治光谱相差太远. 不能想象National把Green拉过去攒50%组联合政府, 所以就僵在那里了. 大家的目光都放在了NZ First党身上. 因为它跟哪派合作, 哪派就可以执政. 基本相当于“钦点当下任”.</p>
-
-<p>NZ First给我的印象是一言难尽. 它的政策很难用政治光谱来衡量是做还是右. 我就不评论了. 基本上是党魁Winston Peters一人党.</p>
-
-<p>为什么要吐槽这个呢? 因为这个多党联合的过程, 是完全不透明的. 你不知道Winston Peters为什么会选择跟哪个党合作. 也不知道中间到底出卖了多少利益, 所以坊间各种小道传闻. 看来全世界都一样, 只要不透明, 就有小道消息传播的土壤.</p>
-
-<p>总结一下, 我对MMP最不满的是两点: 第一, 可能的合作选项非常少, 一般都是一个大党加一个小党, 如果左右势均力敌(按统计这是大概率事件), 那就容易出现一人或一党决定谁当下任的造王者(King maker). 第二, 合作的过程完全不透明, 你不知道中间出卖了多少利益. 也不知道它们是怎么合作的.</p>
-
-<p><img src="/uploads/2023/mmp-kingmaker.png" alt="图 king maker" /></p>
-
-<p>图: 今年大选之前媒体估计又会有造王者.</p>
-
-<h2 id="起源">起源</h2>
-
-<p>都说新西兰的MMP起源于德国, 那德国有没有这样的问题呢? 我们来看看MMP诞生国度德国的情况. 某天中午跟德国的同事一起吃饭, 聊起来说新西兰的MMP选举制度起源于德国. 你们德国搞得怎么样啊? 老百姓资词不资词啊? 德国同事说, 当然资词啦. 我们经常是最大的两个党联合起来组织政府执政. 我一听, what? 立马惊呆了. 你们德国的两个大党联合起来执政? 竞选之前剑拔弩张、互相攻击, 竞选之后居然在一起了, 这不是玩选民么? 你们德国的选民不会生气么? 他说, 挺好的啊, 看默克尔干了这么久, 一直干到自己不想干了.</p>
-
-<p>后来我调查了一下, 发现还真是各有国情在此. 德国的大选结果跟新西兰的差距很大: 首先, 德国的党派众多, 且普遍可以获得民众的支持, 能进入国会的不在少数. 我们看一下德国2021年的大选结果:</p>
-
-<p><img src="/uploads/2023/mmp-german.png" alt="图 2 德国2021大选" /></p>
-
-<p>图: 德国的大选结果, 最大的两个党结合起来也不够半数.</p>
-
-<p>的确是就算最大的两个党加起来, 也没有够半数. 还是需要跟别的党合作才能组织政府. 而由于他们的选举结果, 他们的联合政府也是很多种可能的. 我们看一下德国的可能的联合结果:</p>
-
-<p><img src="/uploads/2023/mmp-possibilities.png" alt="图 3 coalation" /></p>
-
-<p>图: 德国可能的联合结果</p>
-
-<p>他们联合政府的可能性非常多, 选择也非常多. 这张图是媒体在大选之后列出的可能性. 正因为这样, 德国才可能出现最大的两个党联合起来执政的情况. 想想也可以理解.</p>
-
-<p>那我们再来看看新西兰, 能达到5%下限的基本上就四五个党. 而且其中必定是中间偏左, 中间偏右的两个大党, 再加上极左极右的两个小党. 所以谁能上台就看NZ First跟谁联合.</p>
-
-<p><img src="/uploads/2023/mmp-normal.png" alt="图 1 正态分布" /></p>
-
-<p>图: 正态分布, 红色基本是新西兰的线, 蓝色基本是德国的线.</p>
-
-<p>其实, 新西兰和德国的投票结果在统计意义上来说, 都是正常的. 一个正常的社会对一些问题的看法, 应该符合统计意义上的正态分布. 大多数人都是中间偏左或者中间偏右, 少部分的极左极右. 符合正态分布曲线. 只不过正态分布曲线是有参数的: mean和vairance. mean代表均值, 是社会的整体左右. 我觉得新西兰社会的均值偏左倾. 也就是说右派都有些左. 像川普那种标准的右派不太能找得到. vairance代表方差, 是社会的整体左右的分布. 我觉得新西兰社会的方差比较小, 也就是说大家都差不多. 所以中间偏左中间偏右的大党拿下40%的选票都是正常, 甚至会有2020年一党拿下50%的情况. 而德国社会的方差比较大, 也就是说大家都不太一样. 投票分散的就比较开, 导致两个大党加起来也不够半数. 也保证了联合政府的多样性.</p>
-
-<h2 id="总结">总结</h2>
-
-<p>看来各国都有自己的国情是颠扑不破的真理.</p>
-
-<p><img src="/uploads/2023/mmp-guoqing.jpg" alt="图 国情" /></p>
-
-<p>把别的国家的制度照搬过来, 也不一定能适合自己. 因为每种政治制度都有自己的适用范围, 和一定的假设. 如果不能满足这种假设, 那很有可能就会走样. MMP制度要政党和选民多样性才能玩得起来. 也就是说选民的正态分布的variance足够大. 但是新西兰的政党和选民都不够多样化, 所以某些时候, MMP制度就会走样.</p>
-
-<p>看到介绍, MMP的诞生国德国也在不断的对自己的MMP进行完善, 2023年升级到了<a href="https://en.wikipedia.org/wiki/Additional-member_system">AMS</a>. 希望新西兰的政治制度能够不断完善, 能够更好地服务于新西兰的国情.</p>]]></content><author><name></name></author><category term="新西兰生活" /><category term="海外经历" /><summary type="html"><![CDATA[更新: 这篇文章基本写在大选之前, 现在大选已经尘埃落定, 我最担心的King maker决定谁上台的情况没有出现. 让我对新西兰的MMP制度有了更多的信心.]]></summary></entry></feed>

@@ -34,15 +34,16 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="前面两篇文章的打赏金额接近500块了，真是出乎意料。我是不是应该改行去干网络写手这个很有前途的职业去？" />
 <meta property="og:description" content="前面两篇文章的打赏金额接近500块了，真是出乎意料。我是不是应该改行去干网络写手这个很有前途的职业去？" />
-<link rel="canonical" href="https://gh.hezongjian.com/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" />
-<meta property="og:url" content="https://gh.hezongjian.com/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" />
+<link rel="canonical" href="https://hezongjian.com/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" />
+<meta property="og:url" content="https://hezongjian.com/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-04-10T10:20:00+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="新西兰初体验-#-3-风土人情" />
+<meta name="twitter:site" content="@hezongjian" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2017-04-10T10:20:00+12:00","datePublished":"2017-04-10T10:20:00+12:00","description":"前面两篇文章的打赏金额接近500块了，真是出乎意料。我是不是应该改行去干网络写手这个很有前途的职业去？","headline":"新西兰初体验-#-3-风土人情","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing"},"url":"https://gh.hezongjian.com/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2017-04-10T10:20:00+12:00","datePublished":"2017-04-10T10:20:00+12:00","description":"前面两篇文章的打赏金额接近500块了，真是出乎意料。我是不是应该改行去干网络写手这个很有前途的职业去？","headline":"新西兰初体验-#-3-风土人情","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing"},"url":"https://hezongjian.com/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -127,7 +128,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -225,7 +226,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -383,7 +417,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -406,7 +440,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -429,7 +463,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -1035,7 +1069,7 @@
 
           <em>
             
-              <a href=""></a>
+              <a href="https://twitter.com/hezongjian">Zongjian He</a>
             
           </em>
         </span>
@@ -1065,7 +1099,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="3325 words"
+  title="3324 words"
 >
   <em>18 min</em> read</span>
 
@@ -1099,7 +1133,7 @@
 
 <p><a href="/uploads/2017/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing-md.2.png" class="popup img-link  shimmer"><img src="/uploads/2017/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing-md.2.png" alt="基维鸟和蛋" loading="lazy"></a></p>
 
-<p>跟基维鸟的慢动作一样，新西兰人的生活节奏也很慢。拿医疗来说，虽然看病不花钱，但是要注册家庭医生，我来刚来新西兰就注册了家庭医生，结果生效要三个月。看医生虽然免费，但是要排队等，慢性病的话，个把月也算是快的。办个银行卡要十天寄到家里，申请税号要半个月才能激活，驾照算快的，也要一个星期。一切都是慢动作。</p>
+<p>跟基维鸟的慢动作一样，新西兰人的生活节奏也很慢。拿医疗来说，虽然看病不花钱，但是要注册家庭医生，我刚来新西兰就注册了家庭医生，结果生效要三个月。看医生虽然免费，但是要排队等，慢性病的话，个把月也算是快的。办个银行卡要十天寄到家里，申请税号要半个月才能激活，驾照算快的，也要一个星期。一切都是慢动作。</p>
 
 <p>人跟人之间的信任还是挺足的，你说啥别人都信。我一直觉得国内医生老师这样的咨询行业难做，主要是信任感缺失，别人说啥你都以为别人想忽悠你，那就麻烦了。在这我认识一个哥们，图书馆借了一本书不见了，到图书馆说我还了，管理员二话不说就把这本书给消了。结果几天后在床底下又找到了，再去还的时候十分尴尬。</p>
 
@@ -1115,7 +1149,7 @@
 
 <p>也正是因为贫富差距太小，社会阶层不明显，导致的问题就是整个社会缺乏打拼意识跟动力。个人不拜金，国家没发展。美国很拜金，中国也很拜金，所以GDP一个第一，一个第二。不服不行。</p>
 
-<p>国内看新闻，经常看到本土土豪的报到，马云马化腾，王健林王思聪的事迹鼓舞着国人不断奋斗。新西兰呢？我看了半天，媒体上最喜欢说的新西兰土豪就三个，一个是彼得蒂尔，是硅谷大佬paypal创始人，加入了新西兰籍。一个是靠mega uploader盗版集中营起家的胖子Kim Dotcom，德国出生，香港创业。还有一个是我国“百名红通人员”的第五号人物中国伟哥之父闫永明，这哥们自觉回国交代问题的时候国内媒体还大量报到过，没想到交代完问题居然放回奥克兰来了。榜样的力量是无穷无尽的，结果新西兰这三大土豪榜样没一个是土生土长的kiwi，让人觉得作为新西兰人，再怎么奋斗也白搭。所以干脆不奋斗了。</p>
+<p>国内看新闻，经常看到本土土豪的报道，马云马化腾，王健林王思聪的事迹鼓舞着国人不断奋斗。新西兰呢？我看了半天，媒体上最喜欢说的新西兰土豪就三个，一个是彼得蒂尔，是硅谷大佬paypal创始人，加入了新西兰籍。一个是靠mega uploader盗版集中营起家的胖子Kim Dotcom，德国出生，香港创业。还有一个是我国“百名红通人员”的第五号人物中国伟哥之父闫永明，这哥们自觉回国交代问题的时候国内媒体还大量报到过，没想到交代完问题居然放回奥克兰来了。榜样的力量是无穷无尽的，结果新西兰这三大土豪榜样没一个是土生土长的kiwi，让人觉得作为新西兰人，再怎么奋斗也白搭。所以干脆不奋斗了。</p>
 
 <p><a href="/uploads/2017/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing-md.4.png" class="popup img-link  shimmer"><img src="/uploads/2017/xin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing-md.4.png" alt="新西兰人眼中的三大土豪" loading="lazy"></a></p>
 
@@ -1175,35 +1209,35 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing&text=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing&text=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=%E6%96%B0%E8%A5%BF%E5%85%B0%E5%88%9D%E4%BD%93%E9%AA%8C-#-3-%E9%A3%8E%E5%9C%9F%E4%BA%BA%E6%83%85%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fxin-xi-lan-chu-ti-yan-3-feng-tu-ren-qing" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -1258,6 +1292,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1280,13 +1321,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1475,130 +1509,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1748,173 +1658,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2154,6 +1901,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2198,6 +2009,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2352,10 +2436,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -2786,6 +2880,30 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2799,66 +2917,6 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/wo-zai-xin-xi-lan-pao-long-tao-2" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1599366120"
-  data-df="ll"
-  
->
-  Sep  6, 2020
-</time>
-
-              <h4 class="pt-0 my-2">我在新西兰跑龙套-2</h4>
-              <div class="text-muted">
-                <p>村民的面试安排在一个阳光明媚的午后。我再次驱车赶到K影视基地。发现他们正在把一块牧场铲平，修成停车场。看来是真要有大动作的样子。剧组在影视基地门口搭建了一个帐篷，所有的村民都要先到帐篷报到。进入帐篷之前的第一件事，又是签保密协议。签完保密协议之后，每个人领到了两个东西，一个是正式的契约合同，一个是拍摄须知，这两个是要带回家去仔细阅读的。
-
-我目测了一下，帐篷里面大概有50人左右，大家初次见面...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/la-ji-fen-lei-ji-chou-xiang" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1562084400"
-  data-df="ll"
-  
->
-  Jul  3, 2019
-</time>
-
-              <h4 class="pt-0 my-2">垃圾分类及抽象</h4>
-              <div class="text-muted">
-                <p>上海的垃圾分类七月一号实施了. 最近在网上看了各种帖子, 有支持有调侃有吐槽. 从垃圾不分类, 到建议分类, 到强制分类,肯定要改变以前固有的一些生活习惯, 短时间的不便是肯定的. 我不是垃圾分类的专家, 只想根据自己的感受, 写写这些年我扔垃圾的这些事. 以及自己的一些想法.
-
-首先, 垃圾分类本来就是不同国家要根据各自国情做的事情. 一个国家的经验教训搬到另一个国家不一定能适用. 中国是...</p>
-              </div>
-            </div>
-          </a>
-        </article>
       
         <article class="col">
           <a href="/guan-yu-ke-lai-si-te-qie-qi-xiang-dao-de" class="post-preview card h-100">
@@ -2887,6 +2945,69 @@
 315对大多数中国人来说是一年一度的消费者权益保护日, 但今年新西兰3月15日,在新西兰历史上注定是一个会被记住的日子, 也注定会改变新西兰. 事件过去已经一天了, 跟很多周围的人一样, 我的心情一直很沉重, 想说点什么, 但是思绪又十分的乱, 就记录在这里吧, 不知道公共媒体能不能发出去, 不要给他们惹麻烦了, 就发在自己博客里吧, 本来就没有备案.
 
 南岛最大的城市Christch...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/zhong-nian-ren-ru-he-ti-gao-ying-yu-1" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1525731600"
+  data-df="ll"
+  
+>
+  May  8, 2018
+</time>
+
+              <h4 class="pt-0 my-2">中年人如何提高英语</h4>
+              <div class="text-muted">
+                <p>虽然新西兰官方语言是英语跟毛利语，很多标语告示牌等都是英毛双语。但是日常生活中几乎听不到毛利语，基本算个纯英语国家吧。奥克兰华人很多，其实日常生活几乎不用说英语：买菜去华人超市，出去吃饭去中餐馆，出行自己开车可以用中文导航，再找几个在这留学或者工作的中国人当房客收租，就是不少中年华人的日常生活。但我不想过这种生活，还是想多体验一些乐趣的，有语言障碍会导致少很多乐趣。所以还是要好好学英语的。
+...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/he-shi-qian-qiu-xue-ji-2" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1522621200"
+  data-df="ll"
+  
+>
+  Apr  2, 2018
+</time>
+
+              <h4 class="pt-0 my-2">何事谦求学记</h4>
+              <div class="text-muted">
+                <p>序
+
+2015年9月，上海，谦的小学生涯开始约一个月后的某天上课前，某小学的传达室。
+
+“你是家长，要对孩子的学习负起责任来！孩子每天跟老师在一起的时间只有6个小时，剩下的3/4都是跟家长在一起，家庭教育比学校教育更重要！你也是老师，这点道理应该懂！如果现在跟不上，后面马上就开始学生字，二年级就是阅读，三年级就是作文，你能行么？！”
+
+我被语文老师连珠炮似的发问问得插不进话，谦也站着一动不动...</p>
               </div>
             </div>
           </a>
@@ -2941,7 +3062,7 @@
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -3153,130 +3274,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3426,173 +3423,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3832,6 +3666,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3876,6 +3774,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4030,10 +4201,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4260,11 +4441,32 @@
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -4286,7 +4488,28 @@
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

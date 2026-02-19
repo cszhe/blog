@@ -33,17 +33,19 @@
 <meta property="og:title" content="一次Windows CE下调试内存泄露的经历" />
 <meta name="author" content="omale" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：" />
-<meta property="og:description" content="上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：" />
-<link rel="canonical" href="https://gh.hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" />
-<meta property="og:url" content="https://gh.hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" />
+<meta name="description" content="上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油量，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsoft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：" />
+<meta property="og:description" content="上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油量，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsoft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：" />
+<link rel="canonical" href="https://hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" />
+<meta property="og:url" content="https://hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2004-11-03T13:41:00+13:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="一次Windows CE下调试内存泄露的经历" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2004-11-03T13:41:00+13:00","datePublished":"2004-11-03T13:41:00+13:00","description":"上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：","headline":"一次Windows CE下调试内存泄露的经历","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li"},"url":"https://gh.hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2004-11-03T13:41:00+13:00","datePublished":"2004-11-03T13:41:00+13:00","description":"上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。 这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油量，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。 我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。 但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。 走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsoft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？ 我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：","headline":"一次Windows CE下调试内存泄露的经历","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li"},"url":"https://hezongjian.com/yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -681,7 +716,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1660 words"
+  title="1659 words"
 >
   <em>9 min</em> read</span>
 
@@ -695,13 +730,13 @@
   <div class="content">
     <p>上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。</p>
 
-<p>这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油亮，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。</p>
+<p>这是一个电子仪表程序，代码从串口读取汽车数据，包括车速，油量，车轮转速等等，然后解析数据，并把数据显示在屏幕上。在研华7230的开发板上运行，结果不出10秒钟就弹出对话框，Out of Memory! Win CE这个小嵌入式系统，每个进程只有32M的虚拟地址空间。他那个程序本身就有4M的样子（因为有太多的图片）。</p>
 
 <p>我首先想到的是把这个程序在Windows上重新编译运行，因为毕竟这段代码没有用到什么Windows CE特有的函数，全是通用的Win32 API。而且在Windows下调试内存泄露还有大量的工具和经验可以利用。说干就干，打开VC6，新建一个工程，Copy文件，编译，几个小Error拦不住我，马上一个Executable File就出来了。下面安装在GTEC时候常用的LeakDiag和Numega的BoundsChecker。但是，出乎我意料的是，这个程序无论是用LeakDiag还是BoundsChecker，都没有检测到大规模的内存泄露，只有一个HBRUSH的HANDLE没有释放，这个不可能成为Out Of Memory的原因。而且使用Windows的任务管理器和Performance Monitor查看，进程的物理内存，虚拟内存和GDI句柄数都很稳定，没有上升。第一次尝试失败了。</p>
 
 <p>但是，这个程序在Windows CE开发板上跑，的确是会内存泄露的。下面，我想到既然在Windows下面不会泄露，那么会不会是研华提供的BSP的显示驱动程序有内存泄露呢？这个主意马上被我否决了。如果是显示驱动有内存泄露，根本不用等到跑这个程序才会Out of Memory。单单跑Windows CE就足以让整个系统Crash了。</p>
 
-<p>走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？</p>
+<p>走到这步，内存泄漏的原因我也说不清了。那就先看看到底是哪些代码在泄。好在Microsoft为Windows CE提供了Remote Performance Monitor工具，通过ActiveSync，我们可以在PC机上远程查看Windows CE上的一些信息。这样，通过查看那个程序的Heap Memory使用情况，不就可以找到内存泄露的地方了么？</p>
 
 <p>我打开Platform Builder，使用研华的BSP重新编译了一个支持ActiveSync的平台，然后在这个平台上跑了一下那个程序，泄漏依旧。打开EVC，终于，现在可以借助ActiveSync一步一步地在远程开发板上调试了。首先启动应用程序，然后再打开Remote Performance Monitor监测进程的Heap Memory。经过几个回合的查找，我终于找到是在这个程序的计时器重画的时候，有五个函数导致内存泄露，五个函数的代码差不多，大致都像下面一样：</p>
 
@@ -855,9 +890,9 @@ CWnd* pWnd=GetDlgItem(nPicture);
 
 <p>MemBitmap.CreateCompatibleBitmap(pDC,nWidth,nHeight);</p>
 
-<p>也就是说，创建的Bitmap没有被释放掉。但是，这段代码的最后面，的确有MemBitmap.DeleteObject();来释放bitmap阿。我打开Windows CE的MSDN，查找CreaeteCompatibleBitmap和DeleteObject的解释，一会儿，我的目光锁定在了DeleteObject的解释上：Zero indicates that the specified handle is not valid or that the handle is currently selected into a device context. 对！会不会是DeleteObject失败了呢？我把那句话改成了BOOL fRet = MemBitmap.DeleteObject(); 果然，返回值是0！再仔细查看一下上面的代码，我发现这个时候MemBitmap的确被MemDC占用！好，既然是这样，在</p>
+<p>也就是说，创建的Bitmap没有被释放掉。但是，这段代码的最后面，的确有MemBitmap.DeleteObject();来释放bitmap阿。我打开Windows CE的MSDN，查找CreateCompatibleBitmap和DeleteObject的解释，一会儿，我的目光锁定在了DeleteObject的解释上：Zero indicates that the specified handle is not valid or that the handle is currently selected into a device context. 对！会不会是DeleteObject失败了呢？我把那句话改成了BOOL fRet = MemBitmap.DeleteObject(); 果然，返回值是0！再仔细查看一下上面的代码，我发现这个时候MemBitmap的确被MemDC占用！好，既然是这样，在</p>
 
-<p>pDC-&gt;BitBlt(0,0,nW idth,nHeight,&amp;MemDC,0,0,SRCCOPY);</p>
+<p>pDC-&gt;BitBlt(0,0,nWidth,nHeight,&amp;MemDC,0,0,SRCCOPY);</p>
 
 <p>pWnd-&gt;ReleaseDC (pDC);</p>
 
@@ -936,35 +971,35 @@ CWnd* pWnd=GetDlgItem(nPicture);
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li&text=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li&text=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=%E4%B8%80%E6%AC%A1Windows%20CE%E4%B8%8B%E8%B0%83%E8%AF%95%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E7%BB%8F%E5%8E%86%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fyi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -1019,6 +1054,13 @@ CWnd* pWnd=GetDlgItem(nPicture);
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1041,13 +1083,6 @@ CWnd* pWnd=GetDlgItem(nPicture);
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1236,130 +1271,6 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1509,173 +1420,10 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1915,6 +1663,70 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1959,6 +1771,279 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2113,10 +2198,20 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4867,7 +4962,7 @@ CWnd* pWnd=GetDlgItem(nPicture);
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -5079,130 +5174,6 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5352,173 +5323,10 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5758,6 +5566,70 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5802,6 +5674,279 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5956,10 +6101,20 @@ CWnd* pWnd=GetDlgItem(nPicture);
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -6186,11 +6341,32 @@ CWnd* pWnd=GetDlgItem(nPicture);
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -6212,7 +6388,28 @@ CWnd* pWnd=GetDlgItem(nPicture);
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

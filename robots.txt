@@ -2,4 +2,4 @@ User-agent: *
 
 Disallow: /norobots/
 
-Sitemap: https://gh.hezongjian.com/sitemap.xml
+Sitemap: https://hezongjian.com/sitemap.xml

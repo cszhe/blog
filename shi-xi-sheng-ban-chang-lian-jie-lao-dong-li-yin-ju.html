@@ -33,17 +33,19 @@
 <meta property="og:title" content="实习生？班长？廉价劳动力？隐居？" />
 <meta name="author" content="omale" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，造就融入了Microsoft这个团体。Microsoft Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。" />
-<meta property="og:description" content="快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，造就融入了Microsoft这个团体。Microsoft Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。" />
-<link rel="canonical" href="https://gh.hezongjian.com/shi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" />
-<meta property="og:url" content="https://gh.hezongjian.com/shi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" />
+<meta name="description" content="快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，早就融入了Microsoft这个团体。Microsoft Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。" />
+<meta property="og:description" content="快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，早就融入了Microsoft这个团体。Microsoft Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。" />
+<link rel="canonical" href="https://hezongjian.com/shi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" />
+<meta property="og:url" content="https://hezongjian.com/shi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2003-12-28T13:00:00+13:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="实习生？班长？廉价劳动力？隐居？" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2003-12-28T13:00:00+13:00","datePublished":"2003-12-28T13:00:00+13:00","description":"快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，造就融入了Microsoft这个团体。Microsoft Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。","headline":"实习生？班长？廉价劳动力？隐居？","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/shi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju"},"url":"https://gh.hezongjian.com/shi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2003-12-28T13:00:00+13:00","datePublished":"2003-12-28T13:00:00+13:00","description":"快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，早就融入了Microsoft这个团体。Microsoft Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。","headline":"实习生？班长？廉价劳动力？隐居？","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/shi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju"},"url":"https://hezongjian.com/shi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -693,13 +728,13 @@
   
 
   <div class="content">
-    <p>快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，造就融入了Microsoft这个团体。Microsoft Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。</p>
+    <p>快过年了。下个学期就要考试了。微软的实习还在继续。感觉在微软工作了半年，早就融入了Microsoft这个团体。Microsoft Guys那层神秘的光环早已退去。继续实习下去，似乎也学不到什么东西，不禁萌生了退意。</p>
 
-<p>晚上葛老师找我谈话，说2+2的工作非常难做。同学们都在外面实习。每人作班级工作。将要毕业的班级像一盘散沙一样。希望我出来挑大梁。我却没有心理准备。</p>
+<p>晚上葛老师找我谈话，说2+2的工作非常难做。同学们都在外面实习。没人作班级工作。将要毕业的班级像一盘散沙一样。希望我出来挑大梁。我却没有心理准备。</p>
 
-<p>万老师终于在这个周末找我正是谈话了，内容就是到陈榕的公司实习，他的公司据说非常缺人。去了以后，必然又是廉价劳动力。</p>
+<p>万老师终于在这个周末找我正式谈话了，内容就是到陈榕的公司实习，他的公司据说非常缺人。去了以后，必然又是廉价劳动力。</p>
 
-<p>至于我自己。已经早出晚归的实习了半年，现在身心都非常的疲惫。我真的很想找个安静的地方。好好看看书，把拉下的东西补一补。再锻炼锻炼被实习和程序折磨得脆弱不堪的身体。</p>
+<p>至于我自己。已经早出晚归的实习了半年，现在身心都非常的疲惫。我真的很想找个安静的地方。好好看看书，把落下的东西补一补。再锻炼锻炼被实习和程序折磨得脆弱不堪的身体。</p>
 
 <p>到底要干什么才好？？&lt;table width=68% align=right&gt; &lt;td align=right&gt;&lt;font color=#666666&gt;<font class="skin_line">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</font>&lt;/font&gt;</p>
 
@@ -767,35 +802,35 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju&text=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju&text=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=%E5%AE%9E%E4%B9%A0%E7%94%9F%EF%BC%9F%E7%8F%AD%E9%95%BF%EF%BC%9F%E5%BB%89%E4%BB%B7%E5%8A%B3%E5%8A%A8%E5%8A%9B%EF%BC%9F%E9%9A%90%E5%B1%85%EF%BC%9F%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fshi-xi-sheng-ban-chang-lian-jie-lao-dong-li-yin-ju" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -850,6 +885,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -872,13 +914,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1067,130 +1102,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1340,173 +1251,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1746,6 +1494,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1790,6 +1602,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1944,10 +2029,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4785,7 +4880,7 @@
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -4997,130 +5092,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5270,173 +5241,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5676,6 +5484,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5720,6 +5592,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5874,10 +6019,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -6104,11 +6259,32 @@
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -6130,7 +6306,28 @@
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="本学期《移动应用开发》课程接近尾声，正如课程考核要求，课程项目必须全球发布，接受全球Android用户的考验。至今，十几个课程项目已经基本进入Market。推荐大家猛烈下载。" />
 <meta property="og:description" content="本学期《移动应用开发》课程接近尾声，正如课程考核要求，课程项目必须全球发布，接受全球Android用户的考验。至今，十几个课程项目已经基本进入Market。推荐大家猛烈下载。" />
-<link rel="canonical" href="https://gh.hezongjian.com/tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" />
-<meta property="og:url" content="https://gh.hezongjian.com/tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" />
+<link rel="canonical" href="https://hezongjian.com/tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" />
+<meta property="og:url" content="https://hezongjian.com/tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2011-06-17T10:58:35+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="推荐本人课上进入Android Market的作品" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2011-06-17T10:58:35+12:00","datePublished":"2011-06-17T10:58:35+12:00","description":"本学期《移动应用开发》课程接近尾声，正如课程考核要求，课程项目必须全球发布，接受全球Android用户的考验。至今，十几个课程项目已经基本进入Market。推荐大家猛烈下载。","headline":"推荐本人课上进入Android Market的作品","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin"},"url":"https://gh.hezongjian.com/tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2011-06-17T10:58:35+12:00","datePublished":"2011-06-17T10:58:35+12:00","description":"本学期《移动应用开发》课程接近尾声，正如课程考核要求，课程项目必须全球发布，接受全球Android用户的考验。至今，十几个课程项目已经基本进入Market。推荐大家猛烈下载。","headline":"推荐本人课上进入Android Market的作品","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin"},"url":"https://hezongjian.com/tui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -863,35 +898,35 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin&text=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin&text=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=%E6%8E%A8%E8%8D%90%E6%9C%AC%E4%BA%BA%E8%AF%BE%E4%B8%8A%E8%BF%9B%E5%85%A5Android%20Market%E7%9A%84%E4%BD%9C%E5%93%81%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Ftui-jian-ben-ren-ke-shang-jin-ru-android-marketde-zuo-pin" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -946,6 +981,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -968,13 +1010,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1163,130 +1198,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1436,173 +1347,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1842,6 +1590,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1886,6 +1698,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2040,10 +2125,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4081,6 +4176,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -4289,7 +4396,41 @@
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
-          <a href="/%E4%BD%95%E4%BA%8B%E8%B0%A6%E6%B1%82%E5%AD%A6%E8%AE%B0-1" class="post-preview card h-100">
+          <a href="/he-shi-qian-qiu-xue-ji-2" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1522621200"
+  data-df="ll"
+  
+>
+  Apr  2, 2018
+</time>
+
+              <h4 class="pt-0 my-2">何事谦求学记</h4>
+              <div class="text-muted">
+                <p>序
+
+2015年9月，上海，谦的小学生涯开始约一个月后的某天上课前，某小学的传达室。
+
+“你是家长，要对孩子的学习负起责任来！孩子每天跟老师在一起的时间只有6个小时，剩下的3/4都是跟家长在一起，家庭教育比学校教育更重要！你也是老师，这点道理应该懂！如果现在跟不上，后面马上就开始学生字，二年级就是阅读，三年级就是作文，你能行么？！”
+
+我被语文老师连珠炮似的发问问得插不进话，谦也站着一动不动...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/he-shi-qian-qiu-xue-ji-1" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -4308,7 +4449,7 @@
   Jan  1, 2018
 </time>
 
-              <h4 class="pt-0 my-2">何事谦求学记 #1</h4>
+              <h4 class="pt-0 my-2">何事谦求学记</h4>
               <div class="text-muted">
                 <p>序
 
@@ -4341,34 +4482,6 @@
               <h4 class="pt-0 my-2">我们为什么要做研究</h4>
               <div class="text-muted">
                 <p>一个好的research项目，一篇好的paper，首先要well justify你的研究的motivation。如果动机不充分，或者动机不纯，那即使你的solution跟results吹上天，欣赏的人估计也不会很多。现在很多人选择做research，无论是读研究生，还是在高校或研究所从事研究工作，都算选择做research的道路。但是有没有仔细想过，做研究这件事情本身，它的motivatio...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/zhen-jia-xue-fen-zhi" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1350684951"
-  data-df="ll"
-  
->
-  Oct 20, 2012
-</time>
-
-              <h4 class="pt-0 my-2">真假学分制</h4>
-              <div class="text-muted">
-                <p>话说09年10年的时候我在到处找地方读PhD，鉴于软件学院跟瑞典Uppsala大学的良好合作关系，我半公半私去”考察”一趟乌普萨拉，看看那边有啥PhD的机会可以读。后来当然没在那读，两个原因，第一，那地方太憋屈了。号称瑞典第四大城市，结果整个市区面积跟同济嘉定校区差不多大，半个小时就兜一圈。路上几乎没人，跟刚刚被原子弹炸过一样，号称还有极夜极昼。而且最高的建筑是教堂，一看就知道这典型就是自维...</p>
               </div>
             </div>
           </a>
@@ -4423,7 +4536,7 @@
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -4635,130 +4748,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4908,173 +4897,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5314,6 +5140,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5358,6 +5248,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5512,10 +5675,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -5742,11 +5915,32 @@
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -5768,7 +5962,28 @@
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="作为高年级的学生，很高兴与大家相聚在同济大学软件学院。C语言是我们软件学院的第一门专业基础课。一个刚刚接触程序设计的人，肯定会有各种各样的疑惑。近来，有很多大一的同学问我如何学好C语言，在这里我结合自己的学习经历谈谈个人的一些看法，希望大家能够从中受到启发，这是我最大的心愿！也欢迎大家与我多交流沟通。" />
 <meta property="og:description" content="作为高年级的学生，很高兴与大家相聚在同济大学软件学院。C语言是我们软件学院的第一门专业基础课。一个刚刚接触程序设计的人，肯定会有各种各样的疑惑。近来，有很多大一的同学问我如何学好C语言，在这里我结合自己的学习经历谈谈个人的一些看法，希望大家能够从中受到启发，这是我最大的心愿！也欢迎大家与我多交流沟通。" />
-<link rel="canonical" href="https://gh.hezongjian.com/zhi-cru-men-zhe-de-hua" />
-<meta property="og:url" content="https://gh.hezongjian.com/zhi-cru-men-zhe-de-hua" />
+<link rel="canonical" href="https://hezongjian.com/zhi-cru-men-zhe-de-hua" />
+<meta property="og:url" content="https://hezongjian.com/zhi-cru-men-zhe-de-hua" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2003-12-29T10:35:40+13:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="致C入门者的话" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2003-12-29T10:35:40+13:00","datePublished":"2003-12-29T10:35:40+13:00","description":"作为高年级的学生，很高兴与大家相聚在同济大学软件学院。C语言是我们软件学院的第一门专业基础课。一个刚刚接触程序设计的人，肯定会有各种各样的疑惑。近来，有很多大一的同学问我如何学好C语言，在这里我结合自己的学习经历谈谈个人的一些看法，希望大家能够从中受到启发，这是我最大的心愿！也欢迎大家与我多交流沟通。","headline":"致C入门者的话","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/zhi-cru-men-zhe-de-hua"},"url":"https://gh.hezongjian.com/zhi-cru-men-zhe-de-hua"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2003-12-29T10:35:40+13:00","datePublished":"2003-12-29T10:35:40+13:00","description":"作为高年级的学生，很高兴与大家相聚在同济大学软件学院。C语言是我们软件学院的第一门专业基础课。一个刚刚接触程序设计的人，肯定会有各种各样的疑惑。近来，有很多大一的同学问我如何学好C语言，在这里我结合自己的学习经历谈谈个人的一些看法，希望大家能够从中受到启发，这是我最大的心愿！也欢迎大家与我多交流沟通。","headline":"致C入门者的话","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/zhi-cru-men-zhe-de-hua"},"url":"https://hezongjian.com/zhi-cru-men-zhe-de-hua"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -715,7 +750,7 @@
 作为初学一门语言的人，熟练的使用一些工具，有利于提高我们编程的效率，达到事半功倍的效果。请大家关注两样东西，一个是MSDN，还有一个是VC++集成环境的调试功能。<br />
 MSDN是我们写程序的函数参考大全。当我们函数参数记不清楚，可以通过MSDN迅速的找到答案。<br />
 VC++的调试功能可以帮助我们更好的了解代码到底是如何运行的。学会使用调试器，有时候可以很快的找出我们的程序为什么不能正确的运行。既节省时间，又让我们明白了一些程序运行的逻辑。<br />
-当然，使用工具并不能过分依赖工具。就相练武功，学会了使用十八般兵器，并不是说就不要再扎马步。</p>
+当然，使用工具并不能过分依赖工具。就像练武功，学会了使用十八般兵器，并不是说就不要再扎马步。</p>
 
 <p>五、积水成渊，蛟龙生焉<br />
 学习是个长期的过程，要不断的积累，并且总结经验，我们学习就怕不能持之以恒。关于这点大家比我更清楚。一旦我们学会了它，其他的语言就可以触类旁通了，例如：C++，C#，JAVA，VB，DELPHI……这些学起来就会比那些C语言基础不扎实的人要轻松许多。</p>
@@ -803,35 +838,35 @@ l我调用fopen(), malloc()时到底发生了什么？C语言是如何跟操作�
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fzhi-cru-men-zhe-de-hua" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fzhi-cru-men-zhe-de-hua" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fzhi-cru-men-zhe-de-hua" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fzhi-cru-men-zhe-de-hua" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fzhi-cru-men-zhe-de-hua&text=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fzhi-cru-men-zhe-de-hua&text=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fzhi-cru-men-zhe-de-hua" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fzhi-cru-men-zhe-de-hua" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fzhi-cru-men-zhe-de-hua" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=%E8%87%B4C%E5%85%A5%E9%97%A8%E8%80%85%E7%9A%84%E8%AF%9D%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fzhi-cru-men-zhe-de-hua" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -886,6 +921,13 @@ l我调用fopen(), malloc()时到底发生了什么？C语言是如何跟操作�
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -908,13 +950,6 @@ l我调用fopen(), malloc()时到底发生了什么？C语言是如何跟操作�
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1103,130 +1138,6 @@ l我调用fopen(), malloc()时到底发生了什么？C语言是如何跟操作�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1376,173 +1287,10 @@ l我调用fopen(), malloc()时到底发生了什么？C语言是如何跟操作�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1782,6 +1530,70 @@ l我调用fopen(), malloc()时到底发生了什么？C语言是如何跟操作�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1826,6 +1638,279 @@ l我调用fopen(), malloc()时到底发生了什么？C语言是如何跟操作�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1980,10 +2065,20 @@ l我调用fopen(), malloc()时到底发生了什么？C语言是如何跟操作�
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4888,7 +4983,7 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -5100,130 +5195,6 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5373,173 +5344,10 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5779,6 +5587,70 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5823,6 +5695,279 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5977,10 +6122,20 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -6207,11 +6362,32 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -6233,7 +6409,28 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

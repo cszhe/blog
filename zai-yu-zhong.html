@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="今天晚上有事要回宿舍，因此下班之后听完公司的讲座就坐上大桥五线启程回宿舍。路上玩玩手机游戏，时间过得也挺快，可恶这游戏耗电太厉害，居然把电池的两格电给玩光了。" />
 <meta property="og:description" content="今天晚上有事要回宿舍，因此下班之后听完公司的讲座就坐上大桥五线启程回宿舍。路上玩玩手机游戏，时间过得也挺快，可恶这游戏耗电太厉害，居然把电池的两格电给玩光了。" />
-<link rel="canonical" href="https://gh.hezongjian.com/zai-yu-zhong" />
-<meta property="og:url" content="https://gh.hezongjian.com/zai-yu-zhong" />
+<link rel="canonical" href="https://hezongjian.com/zai-yu-zhong" />
+<meta property="og:url" content="https://hezongjian.com/zai-yu-zhong" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2005-08-18T11:57:34+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="在雨中" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-08-18T11:57:34+12:00","datePublished":"2005-08-18T11:57:34+12:00","description":"今天晚上有事要回宿舍，因此下班之后听完公司的讲座就坐上大桥五线启程回宿舍。路上玩玩手机游戏，时间过得也挺快，可恶这游戏耗电太厉害，居然把电池的两格电给玩光了。","headline":"在雨中","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/zai-yu-zhong"},"url":"https://gh.hezongjian.com/zai-yu-zhong"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-08-18T11:57:34+12:00","datePublished":"2005-08-18T11:57:34+12:00","description":"今天晚上有事要回宿舍，因此下班之后听完公司的讲座就坐上大桥五线启程回宿舍。路上玩玩手机游戏，时间过得也挺快，可恶这游戏耗电太厉害，居然把电池的两格电给玩光了。","headline":"在雨中","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/zai-yu-zhong"},"url":"https://hezongjian.com/zai-yu-zhong"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -709,7 +744,7 @@
 
 <p>继续开了一回，偶看见突然间前面一辆车钻到地下去了，但是偶脑子运算还不慢，迅速计算出了原因，原来前面的桥断了！！交通堵塞了，不幸，但不幸中的万幸在桥上的车不是偶这辆99路。警察叔叔来的也快，1分钟就赶到了现场。拦住后面的车，还用高音喇叭喊，所有的车掉头，前面有危险……司机师傅这个时候也着急了，99路公交这种庞然大物，没法倒车。看不到车屁股后面有没有别的小车（偶突然想起了软院的那个“车载信息系统”中在车屁股后面装摄像头的创意，哈哈，看来在某些情况下还是有用的。）。司机师傅也急了。这个时候，偶奋勇的站了出来，“师傅，我帮您看着后面的情况，您来倒车。偶不管怎么说也是有驾照的人，虽然到了上海就没摸过车。”，司机师傅说，“好，就靠你了。”。偶冲到车的后面，对着后面的出租做了一个专业级手势“后退，我们倒车”。那的哥居然还真听我口令，乖乖闪开了。司机师傅水平高倒车很顺利（想起了自己一年前练习倒车的时候N次撞断标志杆的情形），偶们终于离开了“断桥残雨”。</p>
 
-<p>经过这个有惊无险的风波，欧跟司机更熟悉了，他问我哪个大学，我说同济，他说同济好啊，你们校长去教育部当副部长了，学计算机好啊，你们的饭碗也都有了，只不过是毕业之后月薪是5千还是8千还是1万的问题（社会民众显然不了解程序员疾苦，以为搞电脑的都是比尔盖茨。刚刚看统计上海程序员平均月薪才4000 RMB多一点），我开公交一个月就才一千多一点，加上奖金两千块，还要养活老婆孩子，都怪我年轻不好好读书啊，87年初中毕业，就不想上学了，现在都快40岁了，哪怕是读个高中也不至于落魄至此啊。我是过来人了，小伙子，听我说，你一定要好好把书读下去啊（他怎么知道我不想读了？），将来赚了钱花不完，也赞助99路一下，买几辆新的公交让我开开……<br />
+<p>经过这个有惊无险的风波，偶跟司机更熟悉了，他问我哪个大学，我说同济，他说同济好啊，你们校长去教育部当副部长了，学计算机好啊，你们的饭碗也都有了，只不过是毕业之后月薪是5千还是8千还是1万的问题（社会民众显然不了解程序员疾苦，以为搞电脑的都是比尔盖茨。刚刚看统计上海程序员平均月薪才4000 RMB多一点），我开公交一个月就才一千多一点，加上奖金两千块，还要养活老婆孩子，都怪我年轻不好好读书啊，87年初中毕业，就不想上学了，现在都快40岁了，哪怕是读个高中也不至于落魄至此啊。我是过来人了，小伙子，听我说，你一定要好好把书读下去啊（他怎么知道我不想读了？），将来赚了钱花不完，也赞助99路一下，买几辆新的公交让我开开……<br />
 一会儿，车到了，雨也停了，一路上都没有第二个乘客。偶下了车，对着司机师傅说“谨遵您的教诲，一定把革命进行到底，拿到硕士学历，走出学校，混到社会上，胡搅蛮缠，弄个公司在纳斯达克上市，圈他个几十亿USD，然后用美国股民的钱给您买公交车。”（后面一段属于YY……）</p>
 
 <p>将近11点，终于回到了宿舍，给手机通电，收到了三条短消息。看来前面“孤身一人独处异乡”的说法应该改一改了。</p>
@@ -779,35 +814,35 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fzai-yu-zhong" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fzai-yu-zhong" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fzai-yu-zhong" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fzai-yu-zhong" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fzai-yu-zhong&text=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fzai-yu-zhong&text=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fzai-yu-zhong" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fzai-yu-zhong" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fzai-yu-zhong" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=%E5%9C%A8%E9%9B%A8%E4%B8%AD%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fzai-yu-zhong" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -862,6 +897,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -884,13 +926,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1079,130 +1114,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1352,173 +1263,10 @@
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1758,6 +1506,70 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1802,6 +1614,279 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1956,10 +2041,20 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4536,7 +4631,7 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -4748,130 +4843,6 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5021,173 +4992,10 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5427,6 +5235,70 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5471,6 +5343,279 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -5625,10 +5770,20 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -5855,11 +6010,32 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -5881,7 +6057,28 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

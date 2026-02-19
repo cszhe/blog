@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。 Windows CE的有些函数中需要用到物理内存结构体PHYSICAL_ADDRESS， Windows CE在ceddk.h中定义了PHYSICAL_ADDRESS，它其实是LARGE_INTEGER类型，其定义如下： // in ceddk.h typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS; // in winnt.h typedef union _LARGE_INTEGER{ struct { DWORD LowPart; LONG HighPart; }; LONGLONG QuadPart; } LARGE_INTEGER; 可见，Windows CE中用64个Bit来代表物理地址，对于大多数32位的CPU而言，只需要把它的HighPart设置为0就可以了。 如果要直接访问某一个地址的物理内存，Windows CE提供了VirtualAlloc()和VirtualCopy()函数，VirtualAlloc负责在虚拟内存空间内保留一段虚拟内存，而VirtualCopy负责把一段物理内存和虚拟内存绑定，这样，最终对物理内存的访问还是通过虚拟地址进行。它们的声明如下： // 申请虚拟内存 LPVOID VirtualAlloc( LPVOID lpAddress, // 希望的虚拟内存起始地址 DWORD dwSize, // 以字节为单位的大小 DWORD flAllocationType, // 申请类型，分为Reserve和Commit DWORD flProtect // 访问权限 ); // 把物理内存绑定到虚拟地址空间 BOOL VirtualCopy( LPVOID lpvDest, // 虚拟内存的目标地址 LPVOID lpvSrc, // 物理内存地址 DWORD cbSize, // 要绑定的大小 DWORD fdwProtect // 访问权限 ); VirtualAlloc对虚拟内存的申请分为两步，保留MEM_RESERVE和提交MEM_COMMIT。其中MEM_RESERVE只是在进程的虚拟地址空间内保留一段，并不分配实际的物理内存，因此保留的虚拟内存并不能被应用程序直接使用。MEM_COMMIT阶段才真正的为虚拟内存分配物理内存。 下面的代码显示了如何使用VirtualAlloc和VirtualCopy来访问物理内存。因为VirtualCopy负责把一段物理内存和虚拟内存绑定，所以VirtualAlloc的时候只需要对内存保留，没有必要提交。 FpDriverGlobals = (PDRIVER_GLOBALS) VirtualAlloc( 0, DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, MEM_RESERVE, PAGE_NOACCESS); if (FpDriverGlobals == NULL) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8221; VirtualAlloc failed!\r\n&#8221;))); return; } else { if (!VirtualCopy( (PVOID)FpDriverGlobals, (PVOID)(DRIVER_GLOBALS_PHYSICAL_MEMORY_START), DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, (PAGE_READWRITE | PAGE_NOCACHE))) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8220;VirtualCopy failed!\r\n&#8221;))); return; } } CEDDK还提供了函数MmMapIoSpace用来把一段物理内存直接映射到虚拟内存。用MmMapIoSpace申请的内存要用MmUnmapIoSpace释放，此函数的原形如下： PVOID MmMapIoSpace( PHYSICAL_ADDRESS PhysicalAddress, // 起始物理地址 ULONG NumberOfBytes, // 要映射的字节数 BOOLEAN CacheEnable // 是否缓存 );" />
 <meta property="og:description" content="嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。 Windows CE的有些函数中需要用到物理内存结构体PHYSICAL_ADDRESS， Windows CE在ceddk.h中定义了PHYSICAL_ADDRESS，它其实是LARGE_INTEGER类型，其定义如下： // in ceddk.h typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS; // in winnt.h typedef union _LARGE_INTEGER{ struct { DWORD LowPart; LONG HighPart; }; LONGLONG QuadPart; } LARGE_INTEGER; 可见，Windows CE中用64个Bit来代表物理地址，对于大多数32位的CPU而言，只需要把它的HighPart设置为0就可以了。 如果要直接访问某一个地址的物理内存，Windows CE提供了VirtualAlloc()和VirtualCopy()函数，VirtualAlloc负责在虚拟内存空间内保留一段虚拟内存，而VirtualCopy负责把一段物理内存和虚拟内存绑定，这样，最终对物理内存的访问还是通过虚拟地址进行。它们的声明如下： // 申请虚拟内存 LPVOID VirtualAlloc( LPVOID lpAddress, // 希望的虚拟内存起始地址 DWORD dwSize, // 以字节为单位的大小 DWORD flAllocationType, // 申请类型，分为Reserve和Commit DWORD flProtect // 访问权限 ); // 把物理内存绑定到虚拟地址空间 BOOL VirtualCopy( LPVOID lpvDest, // 虚拟内存的目标地址 LPVOID lpvSrc, // 物理内存地址 DWORD cbSize, // 要绑定的大小 DWORD fdwProtect // 访问权限 ); VirtualAlloc对虚拟内存的申请分为两步，保留MEM_RESERVE和提交MEM_COMMIT。其中MEM_RESERVE只是在进程的虚拟地址空间内保留一段，并不分配实际的物理内存，因此保留的虚拟内存并不能被应用程序直接使用。MEM_COMMIT阶段才真正的为虚拟内存分配物理内存。 下面的代码显示了如何使用VirtualAlloc和VirtualCopy来访问物理内存。因为VirtualCopy负责把一段物理内存和虚拟内存绑定，所以VirtualAlloc的时候只需要对内存保留，没有必要提交。 FpDriverGlobals = (PDRIVER_GLOBALS) VirtualAlloc( 0, DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, MEM_RESERVE, PAGE_NOACCESS); if (FpDriverGlobals == NULL) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8221; VirtualAlloc failed!\r\n&#8221;))); return; } else { if (!VirtualCopy( (PVOID)FpDriverGlobals, (PVOID)(DRIVER_GLOBALS_PHYSICAL_MEMORY_START), DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, (PAGE_READWRITE | PAGE_NOCACHE))) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8220;VirtualCopy failed!\r\n&#8221;))); return; } } CEDDK还提供了函数MmMapIoSpace用来把一段物理内存直接映射到虚拟内存。用MmMapIoSpace申请的内存要用MmUnmapIoSpace释放，此函数的原形如下： PVOID MmMapIoSpace( PHYSICAL_ADDRESS PhysicalAddress, // 起始物理地址 ULONG NumberOfBytes, // 要映射的字节数 BOOLEAN CacheEnable // 是否缓存 );" />
-<link rel="canonical" href="https://gh.hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" />
-<meta property="og:url" content="https://gh.hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" />
+<link rel="canonical" href="https://hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" />
+<meta property="og:url" content="https://hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2005-06-24T09:19:32+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Windows CE下访问物理内存的方法" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-06-24T09:19:32+12:00","datePublished":"2005-06-24T09:19:32+12:00","description":"嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。 Windows CE的有些函数中需要用到物理内存结构体PHYSICAL_ADDRESS， Windows CE在ceddk.h中定义了PHYSICAL_ADDRESS，它其实是LARGE_INTEGER类型，其定义如下： // in ceddk.h typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS; // in winnt.h typedef union _LARGE_INTEGER{ struct { DWORD LowPart; LONG HighPart; }; LONGLONG QuadPart; } LARGE_INTEGER; 可见，Windows CE中用64个Bit来代表物理地址，对于大多数32位的CPU而言，只需要把它的HighPart设置为0就可以了。 如果要直接访问某一个地址的物理内存，Windows CE提供了VirtualAlloc()和VirtualCopy()函数，VirtualAlloc负责在虚拟内存空间内保留一段虚拟内存，而VirtualCopy负责把一段物理内存和虚拟内存绑定，这样，最终对物理内存的访问还是通过虚拟地址进行。它们的声明如下： // 申请虚拟内存 LPVOID VirtualAlloc( LPVOID lpAddress, // 希望的虚拟内存起始地址 DWORD dwSize, // 以字节为单位的大小 DWORD flAllocationType, // 申请类型，分为Reserve和Commit DWORD flProtect // 访问权限 ); // 把物理内存绑定到虚拟地址空间 BOOL VirtualCopy( LPVOID lpvDest, // 虚拟内存的目标地址 LPVOID lpvSrc, // 物理内存地址 DWORD cbSize, // 要绑定的大小 DWORD fdwProtect // 访问权限 ); VirtualAlloc对虚拟内存的申请分为两步，保留MEM_RESERVE和提交MEM_COMMIT。其中MEM_RESERVE只是在进程的虚拟地址空间内保留一段，并不分配实际的物理内存，因此保留的虚拟内存并不能被应用程序直接使用。MEM_COMMIT阶段才真正的为虚拟内存分配物理内存。 下面的代码显示了如何使用VirtualAlloc和VirtualCopy来访问物理内存。因为VirtualCopy负责把一段物理内存和虚拟内存绑定，所以VirtualAlloc的时候只需要对内存保留，没有必要提交。 FpDriverGlobals = (PDRIVER_GLOBALS) VirtualAlloc( 0, DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, MEM_RESERVE, PAGE_NOACCESS); if (FpDriverGlobals == NULL) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8221; VirtualAlloc failed!\\r\\n&#8221;))); return; } else { if (!VirtualCopy( (PVOID)FpDriverGlobals, (PVOID)(DRIVER_GLOBALS_PHYSICAL_MEMORY_START), DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, (PAGE_READWRITE | PAGE_NOCACHE))) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8220;VirtualCopy failed!\\r\\n&#8221;))); return; } } CEDDK还提供了函数MmMapIoSpace用来把一段物理内存直接映射到虚拟内存。用MmMapIoSpace申请的内存要用MmUnmapIoSpace释放，此函数的原形如下： PVOID MmMapIoSpace( PHYSICAL_ADDRESS PhysicalAddress, // 起始物理地址 ULONG NumberOfBytes, // 要映射的字节数 BOOLEAN CacheEnable // 是否缓存 );","headline":"Windows CE下访问物理内存的方法","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa"},"url":"https://gh.hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-06-24T09:19:32+12:00","datePublished":"2005-06-24T09:19:32+12:00","description":"嵌入式设备与桌面PC的一个显著不同是它的应用程序中通常需要直接访问某一段物理内存，这在驱动程序中对物理内存的访问尤为重要，尤其是像ARM体系结构下，I/O端口也被映射成某一个物理内存地址。因此，与桌面版本Windows相比，Windows CE提供了相对简单的物理内存访问方式。无论是驱动程序还是应用程序都可以通过API访问某一段物理内存。 Windows CE的有些函数中需要用到物理内存结构体PHYSICAL_ADDRESS， Windows CE在ceddk.h中定义了PHYSICAL_ADDRESS，它其实是LARGE_INTEGER类型，其定义如下： // in ceddk.h typedef LARGE_INTEGER PHYSICAL_ADDRESS, *PPHYSICAL_ADDRESS; // in winnt.h typedef union _LARGE_INTEGER{ struct { DWORD LowPart; LONG HighPart; }; LONGLONG QuadPart; } LARGE_INTEGER; 可见，Windows CE中用64个Bit来代表物理地址，对于大多数32位的CPU而言，只需要把它的HighPart设置为0就可以了。 如果要直接访问某一个地址的物理内存，Windows CE提供了VirtualAlloc()和VirtualCopy()函数，VirtualAlloc负责在虚拟内存空间内保留一段虚拟内存，而VirtualCopy负责把一段物理内存和虚拟内存绑定，这样，最终对物理内存的访问还是通过虚拟地址进行。它们的声明如下： // 申请虚拟内存 LPVOID VirtualAlloc( LPVOID lpAddress, // 希望的虚拟内存起始地址 DWORD dwSize, // 以字节为单位的大小 DWORD flAllocationType, // 申请类型，分为Reserve和Commit DWORD flProtect // 访问权限 ); // 把物理内存绑定到虚拟地址空间 BOOL VirtualCopy( LPVOID lpvDest, // 虚拟内存的目标地址 LPVOID lpvSrc, // 物理内存地址 DWORD cbSize, // 要绑定的大小 DWORD fdwProtect // 访问权限 ); VirtualAlloc对虚拟内存的申请分为两步，保留MEM_RESERVE和提交MEM_COMMIT。其中MEM_RESERVE只是在进程的虚拟地址空间内保留一段，并不分配实际的物理内存，因此保留的虚拟内存并不能被应用程序直接使用。MEM_COMMIT阶段才真正的为虚拟内存分配物理内存。 下面的代码显示了如何使用VirtualAlloc和VirtualCopy来访问物理内存。因为VirtualCopy负责把一段物理内存和虚拟内存绑定，所以VirtualAlloc的时候只需要对内存保留，没有必要提交。 FpDriverGlobals = (PDRIVER_GLOBALS) VirtualAlloc( 0, DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, MEM_RESERVE, PAGE_NOACCESS); if (FpDriverGlobals == NULL) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8221; VirtualAlloc failed!\\r\\n&#8221;))); return; } else { if (!VirtualCopy( (PVOID)FpDriverGlobals, (PVOID)(DRIVER_GLOBALS_PHYSICAL_MEMORY_START), DRIVER_GLOBALS_PHYSICAL_MEMORY_SIZE, (PAGE_READWRITE | PAGE_NOCACHE))) { ERRORMSG(DRIVER_ERROR_MSG, (TEXT(&#8220;VirtualCopy failed!\\r\\n&#8221;))); return; } } CEDDK还提供了函数MmMapIoSpace用来把一段物理内存直接映射到虚拟内存。用MmMapIoSpace申请的内存要用MmUnmapIoSpace释放，此函数的原形如下： PVOID MmMapIoSpace( PHYSICAL_ADDRESS PhysicalAddress, // 起始物理地址 ULONG NumberOfBytes, // 要映射的字节数 BOOLEAN CacheEnable // 是否缓存 );","headline":"Windows CE下访问物理内存的方法","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa"},"url":"https://hezongjian.com/windows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -863,35 +898,35 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa&text=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa&text=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=Windows%20CE%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%89%A9%E7%90%86%E5%86%85%E5%AD%98%E7%9A%84%E6%96%B9%E6%B3%95%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-fang-wen-wu-li-nei-cun-de-fang-fa" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -946,6 +981,13 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -968,13 +1010,6 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1163,130 +1198,6 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1436,173 +1347,10 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1842,6 +1590,70 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1886,6 +1698,279 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2040,10 +2125,20 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -3453,7 +3548,7 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -3665,130 +3760,6 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3938,173 +3909,10 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4344,6 +4152,70 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4388,6 +4260,279 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4542,10 +4687,20 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4772,11 +4927,32 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -4798,7 +4974,28 @@ pVirtualAddress = VirtualAlloc(0, SourceSize, MEM\_RESERVE, PAGE\_NOACCESS);
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

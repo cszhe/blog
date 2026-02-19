@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="1 makefile入门 Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微软的软件和驱动开发包中都会包含Nmake工具。因此，这里有必要介绍一下makefile和Nmake工具。 1.1 makefile简介 对于许多Windows下的程序员来说，makefile可能还是个陌生的名词。因为Windows下的许多集成开发环境（例如：Microsoft Visual Studio和Borland C++ Builder等）可以帮助开发人员完成makefile需要完成的功能。通常只需要在集成开发环境中按个按钮，工具就可自动帮助我们编译、链接整个项目。想象如果没有了集成开发环境，那么就需要有另外一种方式来管理对项目的构建。 简单的来说，makefile负责帮助开发人员简化代码的编译、链接等构建工作。对于只包含几个文件的简单的项目，开发人员完全可以通过手动控制编译器、链接器来完成对项目的构建。但是想象一下对于一个拥有几百个、甚至几千个文件的大型项目，如果每次构建都是通过手动完成，那消耗的工作量和复杂程度是不可想象的。在这种情况下，makefile就有了它的用武之地。 makefile关系到了整个工程的编译规则。一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个自动化脚本一样，其中也可以执行操作系统的命令。 makefile带来的最大的好处是“自动化构建”。写好makefile之后，在编译的时候只需要一个命令，整个工程完全自动编译、链接，极大的提高了软件开发的效率。 makefile本质上只是一个文本文件，本身并不能运行。在运行makefile的时候还是需要外部程序来对makefile进行解释执行。NMake.exe就是用来解析并执行makefile的工具。 当用户输入nmake命令后，首先nmake会读取makefile，然后解析makefile，并根据makefile的规则来确定要编译哪些代码。然后nmake会调用编译器、链接器等一些开发工具，完成对代码的编译链接。最终会生成可执行文件。 图：makefile的工作流程 值得一提的是makefile既不是Windows CE特有的工具也不是微软的发明创造。makefile是一种通用的自动化构建手段。在UNIX/Linux平台下有着广泛而众多的应用。许多开发工具都会提供NMake类似的工具。比如：Delphi的make，Visual C++的nmake，Linux下GNU的make等等。 1.2 makefile的编 写规则 makefile是由一个个推导和规则构成的，在NMake中这也被叫做描述块（Description Blocks）。一个最基本的推导规则的语法如下。" />
 <meta property="og:description" content="1 makefile入门 Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微软的软件和驱动开发包中都会包含Nmake工具。因此，这里有必要介绍一下makefile和Nmake工具。 1.1 makefile简介 对于许多Windows下的程序员来说，makefile可能还是个陌生的名词。因为Windows下的许多集成开发环境（例如：Microsoft Visual Studio和Borland C++ Builder等）可以帮助开发人员完成makefile需要完成的功能。通常只需要在集成开发环境中按个按钮，工具就可自动帮助我们编译、链接整个项目。想象如果没有了集成开发环境，那么就需要有另外一种方式来管理对项目的构建。 简单的来说，makefile负责帮助开发人员简化代码的编译、链接等构建工作。对于只包含几个文件的简单的项目，开发人员完全可以通过手动控制编译器、链接器来完成对项目的构建。但是想象一下对于一个拥有几百个、甚至几千个文件的大型项目，如果每次构建都是通过手动完成，那消耗的工作量和复杂程度是不可想象的。在这种情况下，makefile就有了它的用武之地。 makefile关系到了整个工程的编译规则。一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个自动化脚本一样，其中也可以执行操作系统的命令。 makefile带来的最大的好处是“自动化构建”。写好makefile之后，在编译的时候只需要一个命令，整个工程完全自动编译、链接，极大的提高了软件开发的效率。 makefile本质上只是一个文本文件，本身并不能运行。在运行makefile的时候还是需要外部程序来对makefile进行解释执行。NMake.exe就是用来解析并执行makefile的工具。 当用户输入nmake命令后，首先nmake会读取makefile，然后解析makefile，并根据makefile的规则来确定要编译哪些代码。然后nmake会调用编译器、链接器等一些开发工具，完成对代码的编译链接。最终会生成可执行文件。 图：makefile的工作流程 值得一提的是makefile既不是Windows CE特有的工具也不是微软的发明创造。makefile是一种通用的自动化构建手段。在UNIX/Linux平台下有着广泛而众多的应用。许多开发工具都会提供NMake类似的工具。比如：Delphi的make，Visual C++的nmake，Linux下GNU的make等等。 1.2 makefile的编 写规则 makefile是由一个个推导和规则构成的，在NMake中这也被叫做描述块（Description Blocks）。一个最基本的推导规则的语法如下。" />
-<link rel="canonical" href="https://gh.hezongjian.com/makefileru-men" />
-<meta property="og:url" content="https://gh.hezongjian.com/makefileru-men" />
+<link rel="canonical" href="https://hezongjian.com/makefileru-men" />
+<meta property="og:url" content="https://hezongjian.com/makefileru-men" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2006-05-29T12:00:00+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="makefile入门" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2006-05-29T12:00:00+12:00","datePublished":"2006-05-29T12:00:00+12:00","description":"1 makefile入门 Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微软的软件和驱动开发包中都会包含Nmake工具。因此，这里有必要介绍一下makefile和Nmake工具。 1.1 makefile简介 对于许多Windows下的程序员来说，makefile可能还是个陌生的名词。因为Windows下的许多集成开发环境（例如：Microsoft Visual Studio和Borland C++ Builder等）可以帮助开发人员完成makefile需要完成的功能。通常只需要在集成开发环境中按个按钮，工具就可自动帮助我们编译、链接整个项目。想象如果没有了集成开发环境，那么就需要有另外一种方式来管理对项目的构建。 简单的来说，makefile负责帮助开发人员简化代码的编译、链接等构建工作。对于只包含几个文件的简单的项目，开发人员完全可以通过手动控制编译器、链接器来完成对项目的构建。但是想象一下对于一个拥有几百个、甚至几千个文件的大型项目，如果每次构建都是通过手动完成，那消耗的工作量和复杂程度是不可想象的。在这种情况下，makefile就有了它的用武之地。 makefile关系到了整个工程的编译规则。一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个自动化脚本一样，其中也可以执行操作系统的命令。 makefile带来的最大的好处是“自动化构建”。写好makefile之后，在编译的时候只需要一个命令，整个工程完全自动编译、链接，极大的提高了软件开发的效率。 makefile本质上只是一个文本文件，本身并不能运行。在运行makefile的时候还是需要外部程序来对makefile进行解释执行。NMake.exe就是用来解析并执行makefile的工具。 当用户输入nmake命令后，首先nmake会读取makefile，然后解析makefile，并根据makefile的规则来确定要编译哪些代码。然后nmake会调用编译器、链接器等一些开发工具，完成对代码的编译链接。最终会生成可执行文件。 图：makefile的工作流程 值得一提的是makefile既不是Windows CE特有的工具也不是微软的发明创造。makefile是一种通用的自动化构建手段。在UNIX/Linux平台下有着广泛而众多的应用。许多开发工具都会提供NMake类似的工具。比如：Delphi的make，Visual C++的nmake，Linux下GNU的make等等。 1.2 makefile的编 写规则 makefile是由一个个推导和规则构成的，在NMake中这也被叫做描述块（Description Blocks）。一个最基本的推导规则的语法如下。","headline":"makefile入门","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/makefileru-men"},"url":"https://gh.hezongjian.com/makefileru-men"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2006-05-29T12:00:00+12:00","datePublished":"2006-05-29T12:00:00+12:00","description":"1 makefile入门 Windows CE的构建系统大量使用了Nmake工具和makfile。在大多数微软的软件和驱动开发包中都会包含Nmake工具。因此，这里有必要介绍一下makefile和Nmake工具。 1.1 makefile简介 对于许多Windows下的程序员来说，makefile可能还是个陌生的名词。因为Windows下的许多集成开发环境（例如：Microsoft Visual Studio和Borland C++ Builder等）可以帮助开发人员完成makefile需要完成的功能。通常只需要在集成开发环境中按个按钮，工具就可自动帮助我们编译、链接整个项目。想象如果没有了集成开发环境，那么就需要有另外一种方式来管理对项目的构建。 简单的来说，makefile负责帮助开发人员简化代码的编译、链接等构建工作。对于只包含几个文件的简单的项目，开发人员完全可以通过手动控制编译器、链接器来完成对项目的构建。但是想象一下对于一个拥有几百个、甚至几千个文件的大型项目，如果每次构建都是通过手动完成，那消耗的工作量和复杂程度是不可想象的。在这种情况下，makefile就有了它的用武之地。 makefile关系到了整个工程的编译规则。一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个自动化脚本一样，其中也可以执行操作系统的命令。 makefile带来的最大的好处是“自动化构建”。写好makefile之后，在编译的时候只需要一个命令，整个工程完全自动编译、链接，极大的提高了软件开发的效率。 makefile本质上只是一个文本文件，本身并不能运行。在运行makefile的时候还是需要外部程序来对makefile进行解释执行。NMake.exe就是用来解析并执行makefile的工具。 当用户输入nmake命令后，首先nmake会读取makefile，然后解析makefile，并根据makefile的规则来确定要编译哪些代码。然后nmake会调用编译器、链接器等一些开发工具，完成对代码的编译链接。最终会生成可执行文件。 图：makefile的工作流程 值得一提的是makefile既不是Windows CE特有的工具也不是微软的发明创造。makefile是一种通用的自动化构建手段。在UNIX/Linux平台下有着广泛而众多的应用。许多开发工具都会提供NMake类似的工具。比如：Delphi的make，Visual C++的nmake，Linux下GNU的make等等。 1.2 makefile的编 写规则 makefile是由一个个推导和规则构成的，在NMake中这也被叫做描述块（Description Blocks）。一个最基本的推导规则的语法如下。","headline":"makefile入门","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/makefileru-men"},"url":"https://hezongjian.com/makefileru-men"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -1229,35 +1264,35 @@ cl -nologo -c -I. -IE:WINCE500publiccommonsdkinc -DUNICODE -D\_UNICODE -DUNDER\_
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fmakefileru-men" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fmakefileru-men" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fmakefileru-men" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fmakefileru-men" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fmakefileru-men&text=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fmakefileru-men&text=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fmakefileru-men" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fmakefileru-men" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fmakefileru-men" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=makefile%E5%85%A5%E9%97%A8%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fmakefileru-men" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -1312,6 +1347,13 @@ cl -nologo -c -I. -IE:WINCE500publiccommonsdkinc -DUNICODE -D\_UNICODE -DUNDER\_
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -1334,13 +1376,6 @@ cl -nologo -c -I. -IE:WINCE500publiccommonsdkinc -DUNICODE -D\_UNICODE -DUNDER\_
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1529,130 +1564,6 @@ cl -nologo -c -I. -IE:WINCE500publiccommonsdkinc -DUNICODE -D\_UNICODE -DUNDER\_
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1802,173 +1713,10 @@ cl -nologo -c -I. -IE:WINCE500publiccommonsdkinc -DUNICODE -D\_UNICODE -DUNDER\_
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2208,6 +1956,70 @@ cl -nologo -c -I. -IE:WINCE500publiccommonsdkinc -DUNICODE -D\_UNICODE -DUNDER\_
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2252,6 +2064,279 @@ cl -nologo -c -I. -IE:WINCE500publiccommonsdkinc -DUNICODE -D\_UNICODE -DUNDER\_
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2406,10 +2491,20 @@ cl -nologo -c -I. -IE:WINCE500publiccommonsdkinc -DUNICODE -D\_UNICODE -DUNDER\_
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -5342,7 +5437,7 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -5554,130 +5649,6 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5827,173 +5798,10 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -6233,6 +6041,70 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -6277,6 +6149,279 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -6431,10 +6576,20 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -6661,11 +6816,32 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -6687,7 +6863,28 @@ C++作为一种编程语言，从其诞生之日至今，已经在软件业的�
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>

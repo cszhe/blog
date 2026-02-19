@@ -35,15 +35,17 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="与桌面Windows一样，Windows CE也使用注册表（Registry）来保存应用程序、驱动程序和用户的设定以及其他一些配置信息。Windows CE注册表也采用树形结构来管理配置信息，由于Windows CE注册表的结构和功能与桌面Windows几乎一样，在这里就不详细介绍了，读者可以参考其它关于注册表的资料。 Windows CE支持四个根键，描述如下： 键名描述 HKEY_LOCAL_MACHINE硬件和驱动配置数据 HKEY_CURRENT_USER用户配置数据 HKEY_CLASSES_ROOTOLE和文件类型匹配配置数据 HKEY_USERS适用于所有用户的数据 由于嵌入式系统的特点，一些嵌入式设备是没有外存的。因此Windows CE的注册表提供了两种实现方式：基于RAM的注册表（RAM-Based Registry）和基于Hive的注册表（Hive-Based Registry）。我们可以选择在Windows CE中使用任何一种注册表，注册表类型对于用户和应用程序来说是透明的。 基于RAM的注册表 正如其名，基于RAM的注册表把整个注册表作为一个对象存储堆存放在系统的内存中。这意味着如果对系统进行冷启动或者系统断电，对注册表的所有改动都会丢失。 如果使用基于RAM的注册表，对注册表的读写访问操作会变得非常高效。因此基于RAM的注册表比较适用于没有外部存储，而且有电池保存内存数据（battery-backed RAM）的设备。如果有外存且经常冷启动的设备采用基于RAM的注册表，则需要在系统断电的时候对注册表进行保存，等系统再次启动时对保存的注册表进行还原。 Windows CE提供了两种方法用来断电保存基于RAM的注册表： Windows CE提供了两个系统API用来保存和还原整个注册表，它们的原形如下： BOOL RegCopyFile( LPCWSTR lpszFile // 保存注册表信息的文件的名字 ); BOOL RegRestoreFile( LPCWSTR lpszFile // 保存注册表信息的文件的名字 ); 如果要保存和恢复注册表，我们只需要在系统断电的时候调用RegCopyFile函数将整个注册表保存为外存上的一个文件。当系统重新启动时，我们再调用RegRestoreFile函数将文件全部读出RAM中，然后再热启动系统，我们保存得注册表就可以生效了。值得注意的是这次热启动是必须的，因为只有在系统启动的时候才会去检测RegRestoreFile放在RAM里的注册表信息。这种方法的优点是完全可以使用应用程序来实现基于RAM的注册表的保存，而且这种方法相对简单。但是此方法的缺点是需要两次启动。因此效率相对比较低。 第二种方法需要OEM的参与，OEM可以在BSP的OAL层中实现WriteRegistryToOEM和ReadRegistryFromOEM两个函数，它们的声明为： DWORD ReadRegistryFromOEM( DWORD dwFlags, // 参数， REG_READ_BYTES_START表示读新的注册表 LPBYTE lpData, // 指向注册表数据的缓冲区，由OS分配 DWORD cbData // 缓冲区的大小 ); BOOL WriteRegistryToOEM( DWORD dwFlags, // 参数，REG_WRITE_BYTES_START表示写新的注册表 LPBYTE lpData, // 指向注册表数据的缓冲区，由OS分配 DWORD cbData // 缓冲区的大小，0表示到达注册表尾部 ); Windows CE会在系统启动和关闭的时候调用这两个函数来保存和恢复注册表。此种方法虽然可以避免两次启动，但是困难的地方是ReadRegistryFromOEM函数的实现比较困难，因为在系统启动的时候，块设备驱动和文件系统的驱动都还没有加载，因此不能使用CreateFile，ReadFile这样的文件系统API来实现ReadRegistryFromOEM函数，只能使用一些更底层的操作来实现。 基于Hive的注册表 自从Windows CE 4.0之后，Windows CE提供了基于Hive的注册表。基于Hive的注册表把注册表数据存放在文件系统的文件上，这种文件被称作蜂箱Hive。这就意味着不再需要在系统断电和启动时进行保存恢复注册表操作。 Hive是注册表中的一组键，子键和值。Hive是文件系统上表现为单个文件。Windows CE中有三种Hive。 类型文件描述 Boot hiveROM中的Boot.hvHKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS中的所有数据。只在启动时使用。 System hive由OEM决定 （通常是System.hv）HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS中的所有数据。包含设备范围内不随着用户改变而改变的数据。 User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设置，每个用户都有一个单独的User.hv。 基于Hive的注册表适用于对于有永久存储并且需要经常冷启动的设备。我们也可以看到，基于Hive的注册表把系统数据和用户数据分开存放，这就意味着基于Hive的注册表还提供多用户支持。对于每一个用户，可以提供不同的User.hv，当用户登录时加载相应的User.hv，从而达到多用户目的。" />
 <meta property="og:description" content="与桌面Windows一样，Windows CE也使用注册表（Registry）来保存应用程序、驱动程序和用户的设定以及其他一些配置信息。Windows CE注册表也采用树形结构来管理配置信息，由于Windows CE注册表的结构和功能与桌面Windows几乎一样，在这里就不详细介绍了，读者可以参考其它关于注册表的资料。 Windows CE支持四个根键，描述如下： 键名描述 HKEY_LOCAL_MACHINE硬件和驱动配置数据 HKEY_CURRENT_USER用户配置数据 HKEY_CLASSES_ROOTOLE和文件类型匹配配置数据 HKEY_USERS适用于所有用户的数据 由于嵌入式系统的特点，一些嵌入式设备是没有外存的。因此Windows CE的注册表提供了两种实现方式：基于RAM的注册表（RAM-Based Registry）和基于Hive的注册表（Hive-Based Registry）。我们可以选择在Windows CE中使用任何一种注册表，注册表类型对于用户和应用程序来说是透明的。 基于RAM的注册表 正如其名，基于RAM的注册表把整个注册表作为一个对象存储堆存放在系统的内存中。这意味着如果对系统进行冷启动或者系统断电，对注册表的所有改动都会丢失。 如果使用基于RAM的注册表，对注册表的读写访问操作会变得非常高效。因此基于RAM的注册表比较适用于没有外部存储，而且有电池保存内存数据（battery-backed RAM）的设备。如果有外存且经常冷启动的设备采用基于RAM的注册表，则需要在系统断电的时候对注册表进行保存，等系统再次启动时对保存的注册表进行还原。 Windows CE提供了两种方法用来断电保存基于RAM的注册表： Windows CE提供了两个系统API用来保存和还原整个注册表，它们的原形如下： BOOL RegCopyFile( LPCWSTR lpszFile // 保存注册表信息的文件的名字 ); BOOL RegRestoreFile( LPCWSTR lpszFile // 保存注册表信息的文件的名字 ); 如果要保存和恢复注册表，我们只需要在系统断电的时候调用RegCopyFile函数将整个注册表保存为外存上的一个文件。当系统重新启动时，我们再调用RegRestoreFile函数将文件全部读出RAM中，然后再热启动系统，我们保存得注册表就可以生效了。值得注意的是这次热启动是必须的，因为只有在系统启动的时候才会去检测RegRestoreFile放在RAM里的注册表信息。这种方法的优点是完全可以使用应用程序来实现基于RAM的注册表的保存，而且这种方法相对简单。但是此方法的缺点是需要两次启动。因此效率相对比较低。 第二种方法需要OEM的参与，OEM可以在BSP的OAL层中实现WriteRegistryToOEM和ReadRegistryFromOEM两个函数，它们的声明为： DWORD ReadRegistryFromOEM( DWORD dwFlags, // 参数， REG_READ_BYTES_START表示读新的注册表 LPBYTE lpData, // 指向注册表数据的缓冲区，由OS分配 DWORD cbData // 缓冲区的大小 ); BOOL WriteRegistryToOEM( DWORD dwFlags, // 参数，REG_WRITE_BYTES_START表示写新的注册表 LPBYTE lpData, // 指向注册表数据的缓冲区，由OS分配 DWORD cbData // 缓冲区的大小，0表示到达注册表尾部 ); Windows CE会在系统启动和关闭的时候调用这两个函数来保存和恢复注册表。此种方法虽然可以避免两次启动，但是困难的地方是ReadRegistryFromOEM函数的实现比较困难，因为在系统启动的时候，块设备驱动和文件系统的驱动都还没有加载，因此不能使用CreateFile，ReadFile这样的文件系统API来实现ReadRegistryFromOEM函数，只能使用一些更底层的操作来实现。 基于Hive的注册表 自从Windows CE 4.0之后，Windows CE提供了基于Hive的注册表。基于Hive的注册表把注册表数据存放在文件系统的文件上，这种文件被称作蜂箱Hive。这就意味着不再需要在系统断电和启动时进行保存恢复注册表操作。 Hive是注册表中的一组键，子键和值。Hive是文件系统上表现为单个文件。Windows CE中有三种Hive。 类型文件描述 Boot hiveROM中的Boot.hvHKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS中的所有数据。只在启动时使用。 System hive由OEM决定 （通常是System.hv）HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS中的所有数据。包含设备范围内不随着用户改变而改变的数据。 User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设置，每个用户都有一个单独的User.hv。 基于Hive的注册表适用于对于有永久存储并且需要经常冷启动的设备。我们也可以看到，基于Hive的注册表把系统数据和用户数据分开存放，这就意味着基于Hive的注册表还提供多用户支持。对于每一个用户，可以提供不同的User.hv，当用户登录时加载相应的User.hv，从而达到多用户目的。" />
-<link rel="canonical" href="https://gh.hezongjian.com/windows-cexia-de-zhu-ce-biao" />
-<meta property="og:url" content="https://gh.hezongjian.com/windows-cexia-de-zhu-ce-biao" />
+<link rel="canonical" href="https://hezongjian.com/windows-cexia-de-zhu-ce-biao" />
+<meta property="og:url" content="https://hezongjian.com/windows-cexia-de-zhu-ce-biao" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2005-06-30T06:22:56+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Windows CE下的注册表" />
+<meta name="twitter:site" content="@hezongjian" />
+<meta name="twitter:creator" content="@omale" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-06-30T06:22:56+12:00","datePublished":"2005-06-30T06:22:56+12:00","description":"与桌面Windows一样，Windows CE也使用注册表（Registry）来保存应用程序、驱动程序和用户的设定以及其他一些配置信息。Windows CE注册表也采用树形结构来管理配置信息，由于Windows CE注册表的结构和功能与桌面Windows几乎一样，在这里就不详细介绍了，读者可以参考其它关于注册表的资料。 Windows CE支持四个根键，描述如下： 键名描述 HKEY_LOCAL_MACHINE硬件和驱动配置数据 HKEY_CURRENT_USER用户配置数据 HKEY_CLASSES_ROOTOLE和文件类型匹配配置数据 HKEY_USERS适用于所有用户的数据 由于嵌入式系统的特点，一些嵌入式设备是没有外存的。因此Windows CE的注册表提供了两种实现方式：基于RAM的注册表（RAM-Based Registry）和基于Hive的注册表（Hive-Based Registry）。我们可以选择在Windows CE中使用任何一种注册表，注册表类型对于用户和应用程序来说是透明的。 基于RAM的注册表 正如其名，基于RAM的注册表把整个注册表作为一个对象存储堆存放在系统的内存中。这意味着如果对系统进行冷启动或者系统断电，对注册表的所有改动都会丢失。 如果使用基于RAM的注册表，对注册表的读写访问操作会变得非常高效。因此基于RAM的注册表比较适用于没有外部存储，而且有电池保存内存数据（battery-backed RAM）的设备。如果有外存且经常冷启动的设备采用基于RAM的注册表，则需要在系统断电的时候对注册表进行保存，等系统再次启动时对保存的注册表进行还原。 Windows CE提供了两种方法用来断电保存基于RAM的注册表： Windows CE提供了两个系统API用来保存和还原整个注册表，它们的原形如下： BOOL RegCopyFile( LPCWSTR lpszFile // 保存注册表信息的文件的名字 ); BOOL RegRestoreFile( LPCWSTR lpszFile // 保存注册表信息的文件的名字 ); 如果要保存和恢复注册表，我们只需要在系统断电的时候调用RegCopyFile函数将整个注册表保存为外存上的一个文件。当系统重新启动时，我们再调用RegRestoreFile函数将文件全部读出RAM中，然后再热启动系统，我们保存得注册表就可以生效了。值得注意的是这次热启动是必须的，因为只有在系统启动的时候才会去检测RegRestoreFile放在RAM里的注册表信息。这种方法的优点是完全可以使用应用程序来实现基于RAM的注册表的保存，而且这种方法相对简单。但是此方法的缺点是需要两次启动。因此效率相对比较低。 第二种方法需要OEM的参与，OEM可以在BSP的OAL层中实现WriteRegistryToOEM和ReadRegistryFromOEM两个函数，它们的声明为： DWORD ReadRegistryFromOEM( DWORD dwFlags, // 参数， REG_READ_BYTES_START表示读新的注册表 LPBYTE lpData, // 指向注册表数据的缓冲区，由OS分配 DWORD cbData // 缓冲区的大小 ); BOOL WriteRegistryToOEM( DWORD dwFlags, // 参数，REG_WRITE_BYTES_START表示写新的注册表 LPBYTE lpData, // 指向注册表数据的缓冲区，由OS分配 DWORD cbData // 缓冲区的大小，0表示到达注册表尾部 ); Windows CE会在系统启动和关闭的时候调用这两个函数来保存和恢复注册表。此种方法虽然可以避免两次启动，但是困难的地方是ReadRegistryFromOEM函数的实现比较困难，因为在系统启动的时候，块设备驱动和文件系统的驱动都还没有加载，因此不能使用CreateFile，ReadFile这样的文件系统API来实现ReadRegistryFromOEM函数，只能使用一些更底层的操作来实现。 基于Hive的注册表 自从Windows CE 4.0之后，Windows CE提供了基于Hive的注册表。基于Hive的注册表把注册表数据存放在文件系统的文件上，这种文件被称作蜂箱Hive。这就意味着不再需要在系统断电和启动时进行保存恢复注册表操作。 Hive是注册表中的一组键，子键和值。Hive是文件系统上表现为单个文件。Windows CE中有三种Hive。 类型文件描述 Boot hiveROM中的Boot.hvHKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS中的所有数据。只在启动时使用。 System hive由OEM决定 （通常是System.hv）HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS中的所有数据。包含设备范围内不随着用户改变而改变的数据。 User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设置，每个用户都有一个单独的User.hv。 基于Hive的注册表适用于对于有永久存储并且需要经常冷启动的设备。我们也可以看到，基于Hive的注册表把系统数据和用户数据分开存放，这就意味着基于Hive的注册表还提供多用户支持。对于每一个用户，可以提供不同的User.hv，当用户登录时加载相应的User.hv，从而达到多用户目的。","headline":"Windows CE下的注册表","mainEntityOfPage":{"@type":"WebPage","@id":"https://gh.hezongjian.com/windows-cexia-de-zhu-ce-biao"},"url":"https://gh.hezongjian.com/windows-cexia-de-zhu-ce-biao"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2005-06-30T06:22:56+12:00","datePublished":"2005-06-30T06:22:56+12:00","description":"与桌面Windows一样，Windows CE也使用注册表（Registry）来保存应用程序、驱动程序和用户的设定以及其他一些配置信息。Windows CE注册表也采用树形结构来管理配置信息，由于Windows CE注册表的结构和功能与桌面Windows几乎一样，在这里就不详细介绍了，读者可以参考其它关于注册表的资料。 Windows CE支持四个根键，描述如下： 键名描述 HKEY_LOCAL_MACHINE硬件和驱动配置数据 HKEY_CURRENT_USER用户配置数据 HKEY_CLASSES_ROOTOLE和文件类型匹配配置数据 HKEY_USERS适用于所有用户的数据 由于嵌入式系统的特点，一些嵌入式设备是没有外存的。因此Windows CE的注册表提供了两种实现方式：基于RAM的注册表（RAM-Based Registry）和基于Hive的注册表（Hive-Based Registry）。我们可以选择在Windows CE中使用任何一种注册表，注册表类型对于用户和应用程序来说是透明的。 基于RAM的注册表 正如其名，基于RAM的注册表把整个注册表作为一个对象存储堆存放在系统的内存中。这意味着如果对系统进行冷启动或者系统断电，对注册表的所有改动都会丢失。 如果使用基于RAM的注册表，对注册表的读写访问操作会变得非常高效。因此基于RAM的注册表比较适用于没有外部存储，而且有电池保存内存数据（battery-backed RAM）的设备。如果有外存且经常冷启动的设备采用基于RAM的注册表，则需要在系统断电的时候对注册表进行保存，等系统再次启动时对保存的注册表进行还原。 Windows CE提供了两种方法用来断电保存基于RAM的注册表： Windows CE提供了两个系统API用来保存和还原整个注册表，它们的原形如下： BOOL RegCopyFile( LPCWSTR lpszFile // 保存注册表信息的文件的名字 ); BOOL RegRestoreFile( LPCWSTR lpszFile // 保存注册表信息的文件的名字 ); 如果要保存和恢复注册表，我们只需要在系统断电的时候调用RegCopyFile函数将整个注册表保存为外存上的一个文件。当系统重新启动时，我们再调用RegRestoreFile函数将文件全部读出RAM中，然后再热启动系统，我们保存得注册表就可以生效了。值得注意的是这次热启动是必须的，因为只有在系统启动的时候才会去检测RegRestoreFile放在RAM里的注册表信息。这种方法的优点是完全可以使用应用程序来实现基于RAM的注册表的保存，而且这种方法相对简单。但是此方法的缺点是需要两次启动。因此效率相对比较低。 第二种方法需要OEM的参与，OEM可以在BSP的OAL层中实现WriteRegistryToOEM和ReadRegistryFromOEM两个函数，它们的声明为： DWORD ReadRegistryFromOEM( DWORD dwFlags, // 参数， REG_READ_BYTES_START表示读新的注册表 LPBYTE lpData, // 指向注册表数据的缓冲区，由OS分配 DWORD cbData // 缓冲区的大小 ); BOOL WriteRegistryToOEM( DWORD dwFlags, // 参数，REG_WRITE_BYTES_START表示写新的注册表 LPBYTE lpData, // 指向注册表数据的缓冲区，由OS分配 DWORD cbData // 缓冲区的大小，0表示到达注册表尾部 ); Windows CE会在系统启动和关闭的时候调用这两个函数来保存和恢复注册表。此种方法虽然可以避免两次启动，但是困难的地方是ReadRegistryFromOEM函数的实现比较困难，因为在系统启动的时候，块设备驱动和文件系统的驱动都还没有加载，因此不能使用CreateFile，ReadFile这样的文件系统API来实现ReadRegistryFromOEM函数，只能使用一些更底层的操作来实现。 基于Hive的注册表 自从Windows CE 4.0之后，Windows CE提供了基于Hive的注册表。基于Hive的注册表把注册表数据存放在文件系统的文件上，这种文件被称作蜂箱Hive。这就意味着不再需要在系统断电和启动时进行保存恢复注册表操作。 Hive是注册表中的一组键，子键和值。Hive是文件系统上表现为单个文件。Windows CE中有三种Hive。 类型文件描述 Boot hiveROM中的Boot.hvHKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS中的所有数据。只在启动时使用。 System hive由OEM决定 （通常是System.hv）HKEY_LOCAL_MACHINE, HKEY_CLASSES_ROOT, HKEY_USERS中的所有数据。包含设备范围内不随着用户改变而改变的数据。 User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设置，每个用户都有一个单独的User.hv。 基于Hive的注册表适用于对于有永久存储并且需要经常冷启动的设备。我们也可以看到，基于Hive的注册表把系统数据和用户数据分开存放，这就意味着基于Hive的注册表还提供多用户支持。对于每一个用户，可以提供不同的User.hv，当用户登录时加载相应的User.hv，从而达到多用户目的。","headline":"Windows CE下的注册表","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/windows-cexia-de-zhu-ce-biao"},"url":"https://hezongjian.com/windows-cexia-de-zhu-ce-biao"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -128,7 +130,7 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/theme.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -226,7 +228,40 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipboardSelector = '.code-header>button';
+    var clipboardList = document.querySelectorAll(clipboardSelector);
+    
+    if (clipboardList.length === 0 || typeof ClipboardJS === 'undefined') {
+      return;
+    }
+    
+    var clipboard = new ClipboardJS(clipboardSelector, {
+      target: function(trigger) {
+        var codeBlock = trigger.parentNode.nextElementSibling;
+        return codeBlock.querySelector('code .rouge-code') || codeBlock.querySelector('code');
+      }
+    });
+    
+    clipboard.on('success', function(e) {
+      var trigger = e.trigger;
+      e.clearSelection();
+      
+      var icon = trigger.children[0];
+      if (icon) {
+        icon.setAttribute('class', 'fas fa-check');
+        setTimeout(function() {
+          icon.setAttribute('class', 'far fa-clipboard');
+        }, 2000);
+      }
+    });
+  });
+</script>
+
 
 
   <!-- MathJax -->
@@ -384,7 +419,7 @@
 
       
         <a
-          href="https://github.com/"
+          href="https://github.com/cszhe"
           aria-label="github"
           
 
@@ -407,7 +442,7 @@
 
       
         <a
-          href="https://twitter.com/"
+          href="https://twitter.com/hezongjian"
           aria-label="twitter"
           
 
@@ -430,7 +465,7 @@
 
       
         <a
-          href="javascript:location.href = 'mailto:' + ['',''].join('@')"
+          href="javascript:location.href = 'mailto:' + ['spam.receiver','icloud.com'].join('@')"
           aria-label="email"
           
 
@@ -798,35 +833,35 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-de-zhu-ce-biao" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-de-zhu-ce-biao" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog&u=https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-de-zhu-ce-biao" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog&u=https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-de-zhu-ce-biao" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-de-zhu-ce-biao&text=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-de-zhu-ce-biao&text=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
 
       
 
-      <a href="https://service.weibo.com/share/share.php?title=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog&url=https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-de-zhu-ce-biao" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
+      <a href="https://service.weibo.com/share/share.php?title=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog&url=https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-de-zhu-ce-biao" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Weibo" aria-label="Weibo">
         <i class="fa-fw fab fa-weibo"></i>
       </a>
     
 
       
 
-      <a href="https://www.threads.net/intent/post?text=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog%20https%3A%2F%2Fgh.hezongjian.com%2Fwindows-cexia-de-zhu-ce-biao" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
+      <a href="https://www.threads.net/intent/post?text=Windows%20CE%E4%B8%8B%E7%9A%84%E6%B3%A8%E5%86%8C%E8%A1%A8%20-%20Zongjian's%20blog%20https%3A%2F%2Fhezongjian.com%2Fwindows-cexia-de-zhu-ce-biao" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Threads" aria-label="Threads">
         <i class="fa-fw fa-brands fa-square-threads"></i>
       </a>
     
@@ -881,6 +916,13 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
         
         
         <li class="text-truncate lh-lg">
+          <a href="/qu-gan-ai-agent-dang-niu-ma">驱赶AI Agent当牛马</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
         </li>
       
@@ -903,13 +945,6 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
         
         <li class="text-truncate lh-lg">
           <a href="/xu-shou-ji-40ge-fang-kuai-you-duo-nan">续: 收集40个方块有多难</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/shou-ji-108zhang-qia-pian-you-duo-nan">收集108张卡片有多难</a>
         </li>
       
     </ul>
@@ -1098,130 +1133,6 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1371,173 +1282,10 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1777,6 +1525,70 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1821,6 +1633,279 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -1975,10 +2060,20 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -3388,7 +3483,7 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     <time>2026</time>
 
     
-      <em class="fst-normal"></em>.
+      <a href="https://twitter.com/hezongjian">Zongjian He</a>.
     
 
     
@@ -3600,130 +3695,6 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3873,173 +3844,10 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4279,6 +4087,70 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4323,6 +4195,279 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4477,10 +4622,20 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
+  
+    
+    
+    
+    
   
     
     
@@ -4707,11 +4862,32 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
 
 
 <script>
-  
-  document.addEventListener('DOMContentLoaded', () => {
+  /*
+   * Local workaround for search functionality.
+   *
+   * The Chirpy theme's search-display.js (which handles UI toggling for search results)
+   * is not included in the CDN version of theme.min.js (jekyll-theme-chirpy@7.4.1).
+   * This code replicates the missing functionality:
+   * - Initializes SimpleJekyllSearch
+   * - Handles Enter key to trigger search
+   * - Toggles visibility of search results wrapper and main content
+   *
+   * If the theme's JS is ever properly bundled and loaded, this workaround can be removed
+   * and the theme's built-in search-display.js can be used instead.
+   */
+
+  function initSearch() {
+    if (typeof SimpleJekyllSearch === 'undefined') {
+      setTimeout(initSearch, 100);
+      return;
+    }
+
+    const searchInput = document.getElementById('search-input');
+    const resultsContainer = document.getElementById('search-results');
+
     SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
       noResultsText: '<p class="mt-5">Oops! No results found.</p>',
@@ -4733,7 +4909,28 @@ User hiveUser.hvHKEY_CURRENT_USER下的所有数据。 包含用户特有的设�
         }
       }
     });
-  });
+
+    // Handle Enter key to trigger search and show results
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchInput.dispatchEvent(new Event('input'));
+
+        // Show results wrapper
+        const resultWrapper = document.getElementById('search-result-wrapper');
+        resultWrapper.classList.remove('d-none');
+        resultWrapper.classList.add('d-block');
+
+        // Hide main content to make room for results
+        const mainWrapper = document.querySelector('#main-wrapper > .container > .row');
+        if (mainWrapper) {
+          mainWrapper.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  initSearch();
 </script>
 
   </body>
