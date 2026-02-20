@@ -119,7 +119,7 @@
     }
   }
 
-  // Basic functions: dark mode, back-to-top, tooltips
+  // Basic functions: back-to-top only (dark mode handled by theme)
   function initBasicFallback() {
     // Back to top
     var back2top = document.getElementById('back-to-top');
@@ -129,17 +129,6 @@
       });
       back2top.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-
-    // Dark mode toggle
-    var modeToggle = document.getElementById('mode-toggle');
-    if (modeToggle) {
-      modeToggle.addEventListener('click', function() {
-        var html = document.documentElement;
-        var isDark = html.getAttribute('data-mode') === 'dark';
-        html.setAttribute('data-mode', isDark ? 'light' : 'dark');
-        localStorage.setItem('mode', isDark ? 'light' : 'dark');
       });
     }
   }
