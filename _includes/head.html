@@ -104,7 +104,6 @@
   {% endif %}
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   {% include js-selector.html lang=lang %}
 
@@ -166,7 +165,7 @@
         console.log('Logger (dev mode):', loggerUrl, data);
       } else {
         var img = document.createElement('img');
-        img.src = loggerUrl + '?url=' + encodeURIComponent(data.url) + '&referrer=' + encodeURIComponent(data.referrer) + '&ua=' + encodeURIComponent(data.userAgent) + '&t=' + encodeURIComponent(data.timestamp);
+        img.src = loggerUrl + '?page=' + encodeURIComponent(data.url);
         img.style.display = 'none';
         document.body.appendChild(img);
       }
