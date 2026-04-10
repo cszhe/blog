@@ -28,11 +28,6 @@ jobs:
         gem install bundler
         bundle install
     
-    - name: Build JavaScript assets
-      run: |
-        npm install
-        npm run build
-    
     - name: Generate HTML
       run: |
         bundle exec jekyll build
