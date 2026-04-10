@@ -128,7 +128,6 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -233,7 +232,7 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/post.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/post.min.js"></script>
 
 <script>
   // Fallback initialization when theme JS from CDN fails to load (404 errors)
@@ -402,7 +401,7 @@
         console.log('Logger (dev mode):', loggerUrl, data);
       } else {
         var img = document.createElement('img');
-        img.src = loggerUrl + '?url=' + encodeURIComponent(data.url) + '&referrer=' + encodeURIComponent(data.referrer) + '&ua=' + encodeURIComponent(data.userAgent) + '&t=' + encodeURIComponent(data.timestamp);
+        img.src = loggerUrl + '?page=' + encodeURIComponent(data.url);
         img.style.display = 'none';
         document.body.appendChild(img);
       }

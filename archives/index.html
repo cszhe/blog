@@ -38,12 +38,12 @@
 <meta property="og:url" content="https://hezongjian.com/archives/" />
 <meta property="og:site_name" content="Zongjian’s blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-04-10T23:12:52+12:00" />
+<meta property="article:published_time" content="2026-04-10T23:43:09+12:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Archives" />
 <meta name="twitter:site" content="@hezongjian" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-10T23:12:52+12:00","datePublished":"2026-04-10T23:12:52+12:00","description":"Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.","headline":"Archives","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/archives/"},"url":"https://hezongjian.com/archives/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-04-10T23:43:09+12:00","datePublished":"2026-04-10T23:43:09+12:00","description":"Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.","headline":"Archives","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/archives/"},"url":"https://hezongjian.com/archives/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -121,7 +121,6 @@
   
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/theme.min.js"></script>
 
   <!-- JS selector for site. -->
 
@@ -191,7 +190,7 @@
 
 
 
-<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@7.4.1/assets/js/dist/misc.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/jekyll-theme-chirpy@5.3.21/assets/js/dist/misc.min.js"></script>
 
 <script>
   // Fallback initialization when theme JS from CDN fails to load (404 errors)
@@ -313,7 +312,7 @@
         console.log('Logger (dev mode):', loggerUrl, data);
       } else {
         var img = document.createElement('img');
-        img.src = loggerUrl + '?url=' + encodeURIComponent(data.url) + '&referrer=' + encodeURIComponent(data.referrer) + '&ua=' + encodeURIComponent(data.userAgent) + '&t=' + encodeURIComponent(data.timestamp);
+        img.src = loggerUrl + '?page=' + encodeURIComponent(data.url);
         img.style.display = 'none';
         document.body.appendChild(img);
       }
