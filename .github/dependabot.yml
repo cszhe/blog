@@ -1,0 +1,12 @@
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "18:00"
+      timezone: "Pacific/Auckland"
+    open-pull-requests-limit: 10
+    target-branch: "beta"
