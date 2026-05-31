@@ -28,7 +28,7 @@ jobs:
           bundle exec jekyll build
 
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v15.18.0
+        uses: w9jds/firebase-action@v15.19.0
         with:
           args: deploy --only hosting --public _site --project zhe-dev
         env:
