@@ -4,7 +4,7 @@
   <id>https://hezongjian.com/</id>
   <title>Zongjian's blog</title>
   <subtitle>Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.</subtitle>
-  <updated>2026-06-26T06:40:17+12:00</updated>
+  <updated>2026-06-27T12:58:18+12:00</updated>
   <author>
     <name>Zongjian He</name>
     <uri>https://hezongjian.com/</uri>
@@ -17,6 +17,40 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>大语言模型推理从入门到放弃</title>
+    <link href="https://hezongjian.com/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi" rel="alternate" type="text/html" title="大语言模型推理从入门到放弃" />
+    <published>2026-06-27T10:15:00+12:00</published>
+  
+    <updated>2026-06-27T10:15:00+12:00</updated>
+  
+    <id>https://hezongjian.com/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi</id>
+    <content type="text/html" src="https://hezongjian.com/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi" />
+    <author>
+      <name>Zongjian He</name>
+    </author>
+
+  
+    
+    <category term="工作和学习" />
+    
+  
+
+  <summary>缘起
+
+大概二十年前，我在同济读本科的时候，算是个不务正业的学生——头两年在学会计，第三年才转到软件工程。有次课间跟一位老师闲聊，他说：不要学人工智能。现在连人脑是怎么工作的都不清楚，就想让电脑去模拟人脑，肯定不靠谱。
+
+我当时没太在意这句话，但不知怎么的，这么多年一直记在心上。
+
+后来去香港读计算机博士，大概是15年前，接触了 Neural Networks，但也仅限于最基础的东西 —— 几十个神经元的那种小网络，自己手写过训练和推理。再后来十多年，工作、移民、带娃，基本跟 AI 没什么交集了。直到最近几年 AI 大爆发，才重新开始关注这个领域。
+
+但心里总有个疙瘩：这些大语言模型，到底是真的在”理解”语言，还是纯粹在根据统计概率瞎猜？网上一堆文章说 LLM 就是”下一个词预测器”，可光靠”猜下一个词”就能解数学题、写代码？这跟猴子打字打出莎士比亚文集有什么区别？
+
+年初的时候，戴...</summary>
+
+  </entry>
 
   
   <entry>
@@ -143,36 +177,6 @@ os.makedirs(&amp;quot;h...</summary>
 行程概括
 
 由于我的假期...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>续: 收集40个方块有多难</title>
-    <link href="https://hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan" rel="alternate" type="text/html" title="续: 收集40个方块有多难" />
-    <published>2025-03-10T14:06:00+13:00</published>
-  
-    <updated>2025-03-10T14:06:00+13:00</updated>
-  
-    <id>https://hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan</id>
-    <content type="text/html" src="https://hezongjian.com/xu-shou-ji-40ge-fang-kuai-you-duo-nan" />
-    <author>
-      <name>Zongjian He</name>
-    </author>
-
-  
-    
-    <category term="工作和学习" />
-    
-  
-
-  <summary>时隔一年, Woolworth超市又推出了买东西集卡片活动. 上次是迪士尼, 这次是Minecraft. 依然是让小朋友们着迷的东西. 这次花30块钱可以拿到一包minecraft的Cubeez, 拆开后可以自己拼装成一个小方块, 很符合Minecraft的风格. 总共有40种小方块, 然后官方还有个盒子, 放在盒子里, 很漂亮.
-
-谦曾经是Minecraft的忠实粉丝, 在国内的时候我就给他买了一套, 然后他建造各种地图, 甚至还把自己建造的地图发给视频博主, 让博主玩他建造的地图. 后来他还玩Minecraft Dungeon, 是一个类似于大菠萝的游戏, 不过人物全都是MC里面的人物.
-
-还是套用上次的公式, 看一下收集到40个方块的数学期待是需要花多少钱.
-
-假设你已经收集了$n$个方块, 那么你下一次收集到一张新方块的概率是$\frac{40-n} {40}$. 所以你下一...</summary>
 
   </entry>
 
