@@ -1,5 +1,6 @@
 ---
 title: Windows CE .NET 高级内存管理
+lang: zh-CN
 date: 2004-03-31T22:26:19+00:00
 author: omale
 layout: post
@@ -9,6 +10,7 @@ tags:
   - 嵌入式
   - 程序员
 slug: windows-ce-net-gao-ji-nei-cun-guan-li
+translation: /windows-ce-net-advanced-memory-management
 ---
 Windows CE .NET 高级内存管理
 	  

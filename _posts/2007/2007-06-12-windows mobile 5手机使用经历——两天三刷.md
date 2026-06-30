@@ -1,5 +1,6 @@
 ---
 title: Windows Mobile 5手机使用经历——两天三刷
+lang: zh-CN
 date: 2007-06-12T02:32:00+00:00
 author: omale
 layout: post
@@ -9,6 +10,7 @@ tags:
   - 嵌入式
   - 软件
 slug: windows-mobile-5shou-ji-shi-yong-jing-li-liang-tian-san-shua
+translation: /windows-mobile-5-three-flashes-in-two-days
 ---
 <div>
   <div>

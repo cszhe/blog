@@ -1,5 +1,6 @@
 ---
 title: 在boot loader中加入启动画面及插值算法
+lang: zh-CN
 date: 2007-10-24T10:13:00+00:00
 author: omale
 layout: post
@@ -8,6 +9,7 @@ tags:
   - Windows CE
   - 软件
 slug: zai-boot-loaderzhong-jia-ru-qi-dong-hua-mian-ji-cha-zhi-suan-fa
+translation: /boot-screen-interpolation-in-boot-loader
 ---
 最近有个朋友希望我帮忙给他的一块板子加一个启动画面。板子是用烂了的三星2410处理器。 不同之处就在于他的板子是640 x 480 VGA输出，而不是通常的240 x 320的LCD。
 

@@ -1,5 +1,6 @@
 ---
 title: Microsoft Robotics Studio与LEGO机器人
+lang: zh-CN
 date: 2007-12-07T16:04:00+00:00
 author: omale
 layout: post
@@ -9,6 +10,7 @@ tags:
   - 程序员
   - 软件
 slug: microsoft-robotics-studioyu-legoji-qi-ren
+translation: /microsoft-robotics-studio-and-lego-robots
 ---
 盖主席（Bill Gates）20年前发表过一篇语录，说：&ldquo;要让每个家庭的桌子上都有一台PC机，每个PC上都跑的是Windows操作系统&rdquo;。经过广大无产阶级革命群众二十年的艰苦奋斗之后，现在再回头看，语录的内容虽然没完全实现但是也差不多了。
 

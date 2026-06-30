@@ -1,5 +1,6 @@
 ---
 title: Programming Microsoft Windows Embedded CE中文版面世！
+lang: zh-CN
 date: 2009-04-22T18:58:42+00:00
 author: omale
 layout: post
@@ -9,6 +10,7 @@ tags:
   - 嵌入式
   - 软件
 slug: programming-microsoft-windows-embedded-cezhong-wen-ban-mian-shi
+translation: /programming-microsoft-windows-embedded-ce-chinese-edition-released
 ---
 在同济大学软件学院Windows CE俱乐部同学们的大力支持下，在微软马丹同学的协助下，这本书经过一年的努力，终于出版了！！这是本人参与翻译的第一本书。
 

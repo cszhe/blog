@@ -1,5 +1,6 @@
 ---
 title: 与Microsoft Redmond Windows Automotive组的人的交流
+lang: zh-CN
 date: 2007-07-10T17:40:33+00:00
 author: omale
 layout: post
@@ -8,6 +9,7 @@ tags:
   - Windows CE
   - 嵌入式
 slug: yu-microsoft-redmond-windows-automotivezu-de-ren-de-jiao-liu
+translation: /exchange-with-microsoft-automotive-group
 ---
 <meta content="MSHTML 6.00.6000.16481" name=GENERATOR>
 

@@ -50,6 +50,14 @@
 
   {{ seo_tags }}
 
+  {% if page.translation %}
+    <link rel="alternate" hreflang="zh-CN" href="{{ page.url | absolute_url }}">
+    <link rel="alternate" hreflang="en" href="{{ page.translation | absolute_url }}">
+  {% elsif page.original %}
+    <link rel="alternate" hreflang="en" href="{{ page.url | absolute_url }}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ page.original | absolute_url }}">
+  {% endif %}
+
   <title>
     {%- unless page.layout == 'home' -%}
       {{ page.title | append: ' | ' }}

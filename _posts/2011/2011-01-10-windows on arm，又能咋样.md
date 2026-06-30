@@ -1,5 +1,6 @@
 ---
 title: Windows on ARM，又能咋样
+lang: zh-CN
 date: 2011-01-10T12:33:48+00:00
 layout: post
 category:   嵌入式  
@@ -10,6 +11,7 @@ tags:
   - 微软
 
 slug: windows-on-armyou-neng-zha-yang
+translation: /windows-on-arm-so-what
 ---
 年前天MVP的内部讨论组里面就在疯传Windows for ARM已经就绪了，马上就来了。Windows CE的末日到了。
 

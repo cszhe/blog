@@ -1,10 +1,12 @@
 ---
 title: iphone V.S. Windows Mobile V.S. Symbian（续）
+lang: zh-CN
 date: 2008-06-11T05:48:00+00:00
 author: omale
 layout: post
 category:   嵌入式  
 slug: iphone-vs-windows-mobile-vs-symbianxu
+translation: /iphone-vs-windows-mobile-vs-symbian-continued
 ---
 二、开发技术和语言：
 

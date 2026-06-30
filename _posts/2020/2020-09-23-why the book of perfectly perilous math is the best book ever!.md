@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why the Book of Perfectly Perilous Math is the best book ever!
+lang: en
 date: 2020-09-23 10:20 +00:00
 category: 何事谦
 tags:

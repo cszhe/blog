@@ -10,7 +10,8 @@ description: Personal blog of Zongjian He,since 2002. Sharing my thoughts and ex
 url: "https://hezongjian.com"
 baseurl: ""
 timezone: Pacific/Auckland
-lang: en
+lang: zh-CN
+alt_lang: en
 
 paginate: 10
 paginate_path: "/page:num/"

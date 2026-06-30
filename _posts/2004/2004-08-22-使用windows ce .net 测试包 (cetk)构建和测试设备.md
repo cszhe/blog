@@ -1,5 +1,6 @@
 ---
 title: 使用Windows CE .NET 测试包 (CETK)构建和测试设备
+lang: zh-CN
 date: 2004-08-22T12:10:02+00:00
 author: omale
 layout: post
@@ -9,6 +10,7 @@ tags:
   - 嵌入式
   - 软件
 slug: shi-yong-windows-ce-net-ce-shi-bao-cetkgou-jian-he-ce-shi-she-bei
+translation: /using-cetk-to-build-and-test-devices
 ---
 James Zwygart
 	  

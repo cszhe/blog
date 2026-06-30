@@ -1,5 +1,6 @@
 ---
 title: Windows CE下的Flat Virtual Address space
+lang: zh-CN
 date: 2005-06-13T09:08:54+00:00
 author: omale
 layout: post
@@ -8,6 +9,7 @@ tags:
   - Windows CE
   - 嵌入式
 slug: windows-cexia-de-flat-virtual-address-space
+translation: /flat-virtual-address-space-windows-ce
 ---
 On 6/10/05, song titan  wrote:  
 >  
