@@ -29,8 +29,24 @@ jobs:
 
       - name: Deploy to Firebase
         run: |
+          # Preserve the firebase-tools exit status when the output is piped through tee.
+          set -o pipefail
           echo "$GCP_SA_KEY" | base64 -d > /tmp/gcp_key.json
-          GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_key.json npx firebase-tools deploy --only hosting --project zhe-dev
+          deploy_log=$(mktemp /tmp/firebase-deploy.XXXXXX.log)
+          if GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_key.json npx firebase-tools deploy --only hosting --project zhe-dev 2>&1 | tee "$deploy_log"; then
+            rm -f "$deploy_log"
+            exit 0
+          fi
+
+          # Firebase Hosting returns this release error when the uploaded version is already live.
+          if grep -Eq "Can't release to .*current active version" "$deploy_log"; then
+            echo "Firebase Hosting already serves this version; treating deploy as successful."
+            rm -f "$deploy_log"
+            exit 0
+          fi
+
+          rm -f "$deploy_log"
+          exit 1
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
 
