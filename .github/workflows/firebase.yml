@@ -28,8 +28,9 @@ jobs:
           bundle exec jekyll build
 
       - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v15.22.0
-        with:
-          args: deploy --only hosting --public _site --project zhe-dev
+        run: |
+          npm install -g firebase-tools
+          echo "$GCP_SA_KEY" | base64 -d > /tmp/gcp_key.json
+          GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_key.json firebase deploy --only hosting --project zhe-dev
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
