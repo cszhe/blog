@@ -65,6 +65,20 @@ refactor: true
   {% endif %}
 </div>
 
+{% if current_lang == 'en' %}
+  <div class="text-center mb-4">
+    <a href="{{ '/en/archives/' | relative_url }}" class="btn btn-outline-secondary btn-sm me-2">
+      <i class="fa-solid fa-archive"></i> Archives
+    </a>
+    <a href="{{ '/en/categories/' | relative_url }}" class="btn btn-outline-secondary btn-sm me-2">
+      <i class="fa-solid fa-stream"></i> Categories
+    </a>
+    <a href="{{ '/en/tags/' | relative_url }}" class="btn btn-outline-secondary btn-sm">
+      <i class="fa-solid fa-tags"></i> Tags
+    </a>
+  </div>
+{% endif %}
+
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
     <article class="card-wrapper card">

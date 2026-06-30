@@ -3,19 +3,37 @@ layout: page
 # All the Tags of posts.
 ---
 
+{% assign current_lang = page.lang | default: site.lang %}
+
+<div class="lang-switcher-index text-center mb-4">
+  {% if current_lang == 'zh-CN' %}
+    <a href="{{ '/en/tags/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> English Version
+    </a>
+  {% else %}
+    <a href="{{ '/tags/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> 中文版
+    </a>
+  {% endif %}
+</div>
+
 <div id="tags" class="d-flex flex-wrap mx-xl-2">
   {% assign tags = '' | split: '' %}
   {% for t in site.tags %}
-    {% assign tags = tags | push: t[0] %}
+    {% assign tag_posts = t[1] | where: 'lang', current_lang %}
+    {% if tag_posts.size > 0 %}
+      {% assign tags = tags | push: t[0] %}
+    {% endif %}
   {% endfor %}
 
   {% assign sorted_tags = tags | sort_natural %}
 
   {% for t in sorted_tags %}
+    {% assign tag_posts = site.tags[t] | where: 'lang', current_lang %}
     <div>
       <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
         {{ t -}}
-        <span class="text-muted">{{ site.tags[t].size }}</span>
+        <span class="text-muted">{{ tag_posts.size }}</span>
       </a>
     </div>
   {% endfor %}

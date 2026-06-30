@@ -9,12 +9,26 @@ layout: page
 {% assign LIST_PREFIX = 'l_' %}
 
 {% assign group_index = 0 %}
+{% assign current_lang = page.lang | default: site.lang %}
+
+<div class="lang-switcher-index text-center mb-4">
+  {% if current_lang == 'zh-CN' %}
+    <a href="{{ '/en/categories/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> English Version
+    </a>
+  {% else %}
+    <a href="{{ '/categories/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> 中文版
+    </a>
+  {% endif %}
+</div>
 
 {% assign sort_categories = site.categories | sort %}
 
 {% for category in sort_categories %}
   {% assign category_name = category | first %}
-  {% assign posts_of_category = category | last %}
+  {% assign all_posts = category | last %}
+  {% assign posts_of_category = all_posts | where: 'lang', current_lang %}
   {% assign first_post = posts_of_category | first %}
 
   {% if category_name == first_post.categories[0] %}
@@ -45,7 +59,7 @@ layout: page
           <a href="{{ _category_url | relative_url }}" class="mx-2">{{ category_name }}</a>
 
           <!-- content count -->
-          {% assign top_posts_size = site.categories[category_name] | size %}
+          {% assign top_posts_size = site.categories[category_name] | where: 'lang', current_lang | size %}
           <span class="text-muted small font-weight-light">
             {% if sub_categories_size > 0 %}
               {{ sub_categories_size }}
@@ -109,7 +123,7 @@ layout: page
                 {% capture _sub_ctg_url %}/categories/{{ sub_category | slugify | url_encode }}/{% endcapture %}
                 <a href="{{ _sub_ctg_url | relative_url }}" class="mx-2">{{ sub_category }}</a>
 
-                {% assign posts_size = site.categories[sub_category] | size %}
+                {% assign posts_size = site.categories[sub_category] | where: 'lang', current_lang | size %}
                 <span class="text-muted small font-weight-light">
                   {{ posts_size }}
 
