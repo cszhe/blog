@@ -5,47 +5,65 @@ refactor: true
 
 {% include lang.html %}
 
-{% assign all_pinned = site.posts | where: 'pin', 'true' %}
-{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+{% assign current_lang = page.lang | default: site.lang %}
+
+{% assign all_pinned = site.posts | where: 'pin', 'true' | where: 'lang', current_lang %}
+{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' | where: 'lang', current_lang %}
 
 {% assign posts = '' | split: '' %}
 
-<!-- Get pinned posts on current page -->
+{% if paginator %}
+  {% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
+  {% assign visible_end = visible_start | plus: paginator.per_page %}
 
-{% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign visible_end = visible_start | plus: paginator.per_page %}
+  {% if all_pinned.size > visible_start %}
+    {% if all_pinned.size > visible_end %}
+      {% assign pinned_size = paginator.per_page %}
+    {% else %}
+      {% assign pinned_size = all_pinned.size | minus: visible_start %}
+    {% endif %}
 
-{% if all_pinned.size > visible_start %}
-  {% if all_pinned.size > visible_end %}
-    {% assign pinned_size = paginator.per_page %}
+    {% for i in (visible_start..all_pinned.size) limit: pinned_size %}
+      {% assign posts = posts | push: all_pinned[i] %}
+    {% endfor %}
   {% else %}
-    {% assign pinned_size = all_pinned.size | minus: visible_start %}
+    {% assign pinned_size = 0 %}
   {% endif %}
 
-  {% for i in (visible_start..all_pinned.size) limit: pinned_size %}
-    {% assign posts = posts | push: all_pinned[i] %}
-  {% endfor %}
+  {% assign normal_size = paginator.posts | size | minus: pinned_size %}
+
+  {% if normal_size > 0 %}
+    {% if pinned_size > 0 %}
+      {% assign normal_start = 0 %}
+    {% else %}
+      {% assign normal_start = visible_start | minus: all_pinned.size %}
+    {% endif %}
+
+    {% assign normal_end = normal_start | plus: normal_size | minus: 1 %}
+
+    {% if normal_end >= all_normal.size %}
+      {% assign normal_end = all_normal.size | minus: 1 %}
+    {% endif %}
+
+    {% for i in (normal_start..normal_end) %}
+      {% assign posts = posts | push: all_normal[i] %}
+    {% endfor %}
+  {% endif %}
 {% else %}
-  {% assign pinned_size = 0 %}
+  {% assign posts = all_pinned | concat: all_normal %}
 {% endif %}
 
-<!-- Get normal posts on current page -->
-
-{% assign normal_size = paginator.posts | size | minus: pinned_size %}
-
-{% if normal_size > 0 %}
-  {% if pinned_size > 0 %}
-    {% assign normal_start = 0 %}
+<div class="lang-switcher-index text-center mb-4">
+  {% if current_lang == 'zh-CN' %}
+    <a href="{{ '/en/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> English Version
+    </a>
   {% else %}
-    {% assign normal_start = visible_start | minus: all_pinned.size %}
+    <a href="{{ '/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> 中文版
+    </a>
   {% endif %}
-
-  {% assign normal_end = normal_start | plus: normal_size | minus: 1 %}
-
-  {% for i in (normal_start..normal_end) %}
-    {% assign posts = posts | push: all_normal[i] %}
-  {% endfor %}
-{% endif %}
+</div>
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
@@ -117,6 +135,6 @@ refactor: true
 </div>
 <!-- #post-list -->
 
-{% if paginator.total_pages > 1 %}
+{% if paginator and paginator.total_pages > 1 %}
   {% include post-paginator.html %}
 {% endif %}
