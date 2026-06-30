@@ -8,8 +8,23 @@ layout: page
 {% assign df_strftime_m = site.data.locales[lang].df.archives.strftime | default: '/ %m' %}
 {% assign df_dayjs_m = site.data.locales[lang].df.archives.dayjs | default: '/ MM' %}
 
+{% assign current_lang = page.lang | default: site.lang %}
+{% assign posts = site.posts | where: 'lang', current_lang %}
+
+<div class="lang-switcher-index text-center mb-4">
+  {% if current_lang == 'zh-CN' %}
+    <a href="{{ '/en/archives/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> English Version
+    </a>
+  {% else %}
+    <a href="{{ '/archives/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> 中文版
+    </a>
+  {% endif %}
+</div>
+
 <div id="archives" class="pl-xl-3">
-  {% for post in site.posts %}
+  {% for post in posts %}
     {% assign cur_year = post.date | date: '%Y' %}
 
     {% if cur_year != last_year %}

@@ -1,5 +1,6 @@
 ---
 title: Windows CE、Windows Mobile升级的杂谈
+lang: zh-CN
 date: 2007-04-15T13:21:32+00:00
 author: omale
 layout: post
@@ -7,6 +8,7 @@ category:   嵌入式
 tags:
   - Windows CE
 slug: windows-ce-windows-mobilesheng-ji-de-za-tan
+translation: /windows-ce-windows-mobile-upgrade-thoughts
 ---
 <meta content="MSHTML 6.00.6000.16414" name=GENERATOR>
 

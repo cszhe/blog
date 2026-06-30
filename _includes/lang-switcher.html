@@ -1,0 +1,11 @@
+<div class="lang-switcher mb-4 d-flex justify-content-center">
+  {% if page.lang == 'zh-CN' and page.translation %}
+    <a href="{{ page.translation | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> English Version
+    </a>
+  {% elsif page.lang == 'en' and page.original %}
+    <a href="{{ page.original | relative_url }}" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> 中文版
+    </a>
+  {% endif %}
+</div>

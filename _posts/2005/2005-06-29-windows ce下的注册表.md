@@ -1,5 +1,6 @@
 ---
 title: Windows CE下的注册表
+lang: zh-CN
 date: 2005-06-29T18:22:56+00:00
 author: omale
 layout: post
@@ -8,6 +9,7 @@ tags:
   - Windows CE
   - 嵌入式
 slug: windows-cexia-de-zhu-ce-biao
+translation: /windows-ce-registry
 ---
 与桌面Windows一样，Windows CE也使用注册表（Registry）来保存应用程序、驱动程序和用户的设定以及其他一些配置信息。Windows CE注册表也采用树形结构来管理配置信息，由于Windows CE注册表的结构和功能与桌面Windows几乎一样，在这里就不详细介绍了，读者可以参考其它关于注册表的资料。  
 Windows CE支持四个根键，描述如下：  

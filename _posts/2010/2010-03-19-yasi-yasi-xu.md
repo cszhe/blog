@@ -1,5 +1,6 @@
 ---
 title: 雅思，雅思[续]
+lang: zh-CN
 date: 2010-03-19T12:40:03+00:00
 author: omale
 layout: post
@@ -7,6 +8,7 @@ category:   工作和学习
 tags:
   - 雅思
 slug: ya-si-ya-si-xu
+translation: /ielts-ielts-sequel
 ---
 10个工作日过去了，今天终于可以查成绩了。怀揣小鹿打开教育部考试中心IELTS网站，当结果映入眼帘的时候，还是石化了&#8230;
 

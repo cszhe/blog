@@ -1,5 +1,6 @@
 ---
 title: iPhone vs Android vs Windows Phone（续）
+lang: zh-CN
 date: 2012-01-15T19:49:01+00:00
 author: omale
 layout: post
@@ -9,6 +10,7 @@ slider_hidetitle:
   - 'off'
 category:   未分类
 slug: iphone-vs-android-vs-windows-phonexu
+translation: /iphone-vs-android-vs-windows-phone-part-2
 ---
 杯具啊！！这部分本来都写完了，不小心按了backspace，退到以前的页面去了，东西都木有了，欲哭无泪啊，我还是应该在word里面写完再贴上来。这一部分稍显简略，因为我不想再打一遍，就一切从简了，精彩程度肯定要打折扣了。
 

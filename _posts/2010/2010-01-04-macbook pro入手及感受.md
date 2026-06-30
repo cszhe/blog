@@ -1,5 +1,6 @@
 ---
 title: MacBook Pro入手及感受
+lang: zh-CN
 date: 2010-01-04T15:02:22+00:00
 author: omale
 layout: post
@@ -8,6 +9,7 @@ tags:
   - 微软
   - 软件
 slug: macbook-proru-shou-ji-gan-shou
+translation: /macbook-pro-first-impressions
 ---
 学院的苹果俱乐部如火如荼很多年，对于技术的爱好者，这么多年一直没能玩一下Mac，实属遗憾。几年前曾经下来了一个&ldquo;Hackintosh&rdquo;，但是自己机器太差，连这个也装不起来。惭愧，本人从未用过带独立显卡的电脑。
 

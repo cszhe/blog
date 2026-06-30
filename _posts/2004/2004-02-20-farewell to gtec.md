@@ -1,5 +1,6 @@
 ---
 title: Farewell to GTEC
+lang: zh-CN
 date: 2004-02-20T00:00:00+00:00
 author: omale
 layout: post
@@ -7,6 +8,7 @@ category:   未分类
 tags:
   - 微软
 slug: farewell-to-gtec
+translation: /farewell-to-gtec-2
 ---
 依依不舍的告别了微软全球技术中心，开始了我新的生活。八个月充实又充满激情的工作就这么告一段落了。把同事们对我的鼓励，放在这里，作为永远激励我前进的动力。
 

@@ -1,12 +1,14 @@
 ---
 layout: post
 title: Mini Linux发行版
+lang: zh-CN
 date: 2024-01-10 18:06
 category: 工作和学习
 tags:
   - Geek
   - Linux
 slug: mini-linuxfa-xing-ban
+translation: /mini-linux-distribution
 ---
 
 大概20多年前, 在大学宿舍里, 跟一群同学买了一套Linux的光盘 (有可能是Red Hat或者是Mandrake, 后者已经不存在了), 那时候买Linux光盘不但送安装光盘, 还送源代码光盘. 我们几个同学在宿舍里没事, 就编译Linux的源代码, 编内核. 那时候的Linux内核还不是那么复杂, 但是机器差, 所以编译也很花时间. 编译好之后, 就可以启动自己编译的Linux内核了. 一晃20多年过去了, 内核版本从2.4到了6.x. 最近新年回来开始上班, 没什么事干. 想到那时候的事情, 想再回味一下. 不过编译个内核再替换掉有点太无聊了, 20年干的事情. 这次要玩就玩大的, 直接搞个跟Ubuntu, Debian, Red Hat, Fedora一样的发行版.

@@ -1,5 +1,6 @@
 ---
 title: Windows CE 嵌入式系统
+lang: zh-CN
 date: 2006-09-07T17:32:41+00:00
 author: omale
 layout: post
@@ -9,6 +10,7 @@ tags:
   - 嵌入式
   - 软件
 slug: windows-ce-qian-ru-shi-xi-tong
+translation: /windows-ce-embedded-system
 ---
 [后来加上去的]  
 这个是China-pub上面的书籍信息连接：  

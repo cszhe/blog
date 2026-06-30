@@ -1,5 +1,6 @@
 ---
 title: My Experience inside Microsoft
+lang: en
 date: 2005-06-12T18:11:54+00:00
 author: omale
 layout: post

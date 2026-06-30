@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Me in Disney Mulan
+lang: en
 tags:
   - 海外经历
 slug: me-in-disney-mulan

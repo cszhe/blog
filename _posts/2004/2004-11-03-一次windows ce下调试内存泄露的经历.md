@@ -1,5 +1,6 @@
 ---
 title: 一次Windows CE下调试内存泄露的经历
+lang: zh-CN
 date: 2004-11-03T00:41:00+00:00
 author: omale
 layout: post
@@ -8,6 +9,7 @@ tags:
   - Windows CE
   - 嵌入式
 slug: yi-ci-windows-cexia-diao-shi-nei-cun-xie-lu-de-jing-li
+translation: /debugging-windows-ce-memory-leak
 ---
 上周二，软院的万老师打电话告诉我，说汽车学院以前写的一个Windows CE程序内存泄露比较严重。想让我帮忙调试一下。结果上一周都没有时间，昨天周一到软院上课的时候，听王老师说那个泄露程序已经惊动了同济大学校长万钢，因为他要拿那个程序给领导演示，不能再拖了。偶颇有点临危受命的感觉。晚上下了课，就一头扎到研发中心的机器前，开始工作。
 	  

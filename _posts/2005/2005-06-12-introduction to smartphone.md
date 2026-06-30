@@ -1,5 +1,6 @@
 ---
 title: Introduction to Smartphone
+lang: en
 date: 2005-06-12T18:08:45+00:00
 author: omale
 layout: post

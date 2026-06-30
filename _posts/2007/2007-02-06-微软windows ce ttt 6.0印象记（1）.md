@@ -1,5 +1,6 @@
 ---
 title: 微软Windows CE TTT 6.0印象记（1）
+lang: zh-CN
 date: 2007-02-06T00:10:24+00:00
 author: omale
 layout: post
@@ -8,6 +9,7 @@ tags:
   - Google
   - Windows CE
 slug: wei-ruan-windows-ce-ttt-60yin-xiang-ji-1
+translation: /microsoft-windows-ce-ttt-6-impressions-1
 ---
 <meta content="MSHTML 6.00.5730.11" name=GENERATOR>
 

@@ -1,0 +1,12 @@
+{% if page.ai_translated %}
+<div class="alert alert-info mt-3 mb-4" role="alert">
+  <i class="fa-solid fa-robot me-2"></i>
+  {% if page.lang == 'en' %}
+    This post was translated from Chinese by AI. The original post is
+    <a href="{{ page.original | relative_url }}" class="alert-link">available here</a>.
+  {% else %}
+    此文章由AI从中文翻译成英文。
+    <a href="{{ page.original | relative_url }}" class="alert-link">查看原文</a>.
+  {% endif %}
+</div>
+{% endif %}
