@@ -37,7 +37,7 @@ jobs:
             exit 0
           fi
 
-          if grep -q "is the current active version" "$deploy_log"; then
+          if grep -q "current active version" "$deploy_log"; then
             echo "Firebase Hosting already serves this version; treating deploy as successful."
             rm -f "$deploy_log"
             exit 0
