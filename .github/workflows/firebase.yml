@@ -29,8 +29,11 @@ jobs:
 
       - name: Deploy to Firebase
         run: |
-          npm install -g firebase-tools
           echo "$GCP_SA_KEY" | base64 -d > /tmp/gcp_key.json
-          GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_key.json firebase deploy --only hosting --project zhe-dev
+          GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcp_key.json npx firebase-tools deploy --only hosting --project zhe-dev
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Clean up credentials
+        if: always()
+        run: rm -f /tmp/gcp_key.json
