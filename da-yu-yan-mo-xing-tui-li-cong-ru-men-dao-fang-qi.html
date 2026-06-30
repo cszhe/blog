@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" >
+<html lang="zh-CN" >
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -31,7 +31,7 @@
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="大语言模型推理从入门到放弃" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh_CN" />
 <meta name="description" content="缘起" />
 <meta property="og:description" content="缘起" />
 <link rel="canonical" href="https://hezongjian.com/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi" />
@@ -46,6 +46,11 @@
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-27T10:15:00+12:00","datePublished":"2026-06-27T10:15:00+12:00","description":"缘起","headline":"大语言模型推理从入门到放弃","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi"},"url":"https://hezongjian.com/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi"}</script>
 <!-- End Jekyll SEO tag -->
 
+
+  
+    <link rel="alternate" hreflang="zh-CN" href="https://hezongjian.com/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi">
+    <link rel="alternate" hreflang="en" href="https://hezongjian.com/llm-inference-from-beginner-to-quitting">
+  
 
   <title>大语言模型推理从入门到放弃 | Zongjian's blog
   </title>
@@ -224,7 +229,7 @@
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/zh.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js,npm/tocbot@4.32.2/dist/tocbot.min.js"></script>
 
 
 
@@ -415,6 +420,9 @@
     <!-- The Side Bar -->
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  
+  
+
   <header class="profile-wrapper">
     <a href="/" id="avatar" class="rounded-circle"><img src="https://1.gravatar.com/avatar/5f743b2eda598af99b60f5af10812c8e1ac4ec2bcd44facde75e3a9c1f43a97f?s=256" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
@@ -429,47 +437,63 @@
       <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
-          <span>HOME</span>
+          <span>首页</span>
         </a>
       </li>
       <!-- the real tabs -->
       
+        
+        
+        
+        
         <li class="nav-item">
           <a href="/categories/" class="nav-link">
             <i class="fa-fw fas fa-stream"></i>
             
 
-            <span>CATEGORIES</span>
+            <span>分类</span>
           </a>
         </li>
         <!-- .nav-item -->
       
+        
+        
+        
+        
         <li class="nav-item">
           <a href="/tags/" class="nav-link">
             <i class="fa-fw fas fa-tags"></i>
             
 
-            <span>TAGS</span>
+            <span>标签</span>
           </a>
         </li>
         <!-- .nav-item -->
       
+        
+        
+        
+        
         <li class="nav-item">
           <a href="/archives/" class="nav-link">
             <i class="fa-fw fas fa-archive"></i>
             
 
-            <span>ARCHIVES</span>
+            <span>归档</span>
           </a>
         </li>
         <!-- .nav-item -->
       
+        
+        
+        
+        
         <li class="nav-item">
           <a href="/about/" class="nav-link">
             <i class="fa-fw fas fa-info-circle"></i>
             
 
-            <span>ABOUT</span>
+            <span>关于</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -593,7 +617,7 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">首页</a>
             </span>
 
           
@@ -614,7 +638,7 @@
     </button>
 
     <div id="topbar-title">
-      Post
+      文章
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -629,10 +653,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="Search..."
+        placeholder="搜索..."
       >
     </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">取消</button>
   </div>
 </header>
 
@@ -862,7 +886,7 @@
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
-        Posted
+        发表于
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -874,12 +898,12 @@
 <time
   
   data-ts="1782512100"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jun 27, 2026
+  2026/06/27
 </time>
 
       </span>
@@ -894,7 +918,7 @@
         <span>
           
 
-          By
+          作者
 
           <em>
             
@@ -928,9 +952,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="5176 words"
+  title="5176 字"
 >
-  <em>28 min</em> read</span>
+  <em>28 分钟</em>阅读</span>
 
         </div>
       </div>
@@ -946,7 +970,7 @@
     </div>
 
     <button id="toc-solo-trigger" type="button" class="toc-trigger btn btn-outline-secondary btn-sm">
-      <span class="label ps-2 pe-1">Contents</span>
+      <span class="label ps-2 pe-1">文章内容</span>
       <i class="fa-solid fa-angle-right fa-fw"></i>
     </button>
 
@@ -960,6 +984,18 @@
       <div id="toc-popup-content" class="px-4 py-3 pb-4"></div>
     </dialog>
   
+
+  <div class="lang-switcher mb-4 d-flex justify-content-center">
+  
+    <a href="/llm-inference-from-beginner-to-quitting" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> English Version
+    </a>
+  
+</div>
+
+
+  
+
 
   <div class="content">
     <h2 id="缘起"><span class="me-2">缘起</span><a href="#缘起" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -990,7 +1026,7 @@
 
 <div class="language-json highlighter-rouge"><div class="code-header">
         <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="p">{</span><span class="w">
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"hidden_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">576</span><span class="p">,</span><span class="w">
   </span><span class="nl">"num_attention_heads"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
   </span><span class="nl">"num_key_value_heads"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -1012,7 +1048,7 @@
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="n">Q</span> <span class="o">=</span> <span class="n">x_norm</span> <span class="o">@</span> <span class="n">q_weight</span><span class="p">.</span><span class="n">T</span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="n">Q</span> <span class="o">=</span> <span class="n">x_norm</span> <span class="o">@</span> <span class="n">q_weight</span><span class="p">.</span><span class="n">T</span>
 <span class="n">K</span> <span class="o">=</span> <span class="n">x_norm</span> <span class="o">@</span> <span class="n">k_weight</span><span class="p">.</span><span class="n">T</span>
 <span class="n">V</span> <span class="o">=</span> <span class="n">x_norm</span> <span class="o">@</span> <span class="n">v_weight</span><span class="p">.</span><span class="n">T</span>
 </code></div></div>
@@ -1031,7 +1067,7 @@
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="c1"># 旋转后的结果 = 原始值 * cos(旋转角度) + rotate_half(原始值) * sin(旋转角度)
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="c1"># 旋转后的结果 = 原始值 * cos(旋转角度) + rotate_half(原始值) * sin(旋转角度)
 </span><span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">cos</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nf">rotate_half</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">sin</span><span class="p">)</span>
 </code></div></div>
 
@@ -1047,7 +1083,7 @@
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="n">scores</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">@</span> <span class="n">K</span><span class="p">.</span><span class="n">T</span> <span class="o">/</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">head_dim</span><span class="p">)</span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="n">scores</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">@</span> <span class="n">K</span><span class="p">.</span><span class="n">T</span> <span class="o">/</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">head_dim</span><span class="p">)</span>
 </code></div></div>
 
 <p>然后加一个因果掩码（Causal Mask），保证此时正在生成的 token 不能偷偷去看未来的 token——这相当于考试的时候不能让你偷看后面的答案。掩码就是一个上三角全是 <code class="language-plaintext highlighter-rouge">-∞</code> 的矩阵，加到分数上去，Softmax 之后那些位置的注意力就会变成 0。</p>
@@ -1062,7 +1098,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="nv">$ </span>python <span class="nt">-m</span> ellm2.main
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="nv">$ </span>python <span class="nt">-m</span> ellm2.main
 Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶...
 </code></div></div>
 
@@ -1076,7 +1112,7 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>Generated output: 而所所所所所所所……
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>Generated output: 而所所所所所所所……
 </code></div></div>
 
 <p>有一次更离谱——模型跑起来了不会停。SmolLM2 的 EOS（结束）token ID 是 2，但我在代码里只检查了是不是 0。结果它就一直在那生成，直到吐完我设的最大 token 数才停下，像一台坏掉的电报机。</p>
@@ -1089,7 +1125,7 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>"What is the sky blue? The sky appears blue due to a phenomenon called Rayleigh scattering. When sunlight……"
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>"What is the sky blue? The sky appears blue due to a phenomenon called Rayleigh scattering. When sunlight……"
 </code></div></div>
 
 <p>它说人话了。</p>
@@ -1104,7 +1140,7 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="k">try</span><span class="p">:</span>
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="n">cupy</span> <span class="k">as</span> <span class="n">np</span>
 <span class="k">except</span> <span class="nb">ImportError</span><span class="p">:</span>
     <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
@@ -1134,7 +1170,7 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>- [ ] Implement temperature, top-k, and top-p sampling
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>- [ ] Implement temperature, top-k, and top-p sampling
 - [ ] Run Google's Gemma model
 - [ ] Implement KV caching
 - [ ] Offer a simple API
@@ -1163,7 +1199,7 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>这个是我的博客，你可以读AGENTS.md来了解它的组织架构。
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>这个是我的博客，你可以读AGENTS.md来了解它的组织架构。
 我想写一篇新博客，题目叫《大语言模型推理从入门到放弃》。是关于我自己从0开始编写一个基于Python的LLM Inference Engine的。这个Engine的代码在~/dev/eLLM2目录。
 你可以看一下这个目录的结构和文件内容，然后也可以看一下git log来了解代码的演变过程。
 我想这篇博客主要讲述我在开发这个LLM Inference Engine的过程中遇到的挑战、解决方案以及一些有趣的技术细节。最好不要太技术，省得大多数人看不懂。最好能写得戏剧化一点。
@@ -1237,18 +1273,18 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
         
           
 
-          This post is licensed under 
+          本文由作者按照 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
-         by the author.
+         进行授权
         
       </div>
 
       <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted">Share</span>
+  <span class="share-label text-muted">分享</span>
   <span class="share-icons">
     
     
@@ -1297,8 +1333,8 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
       class="btn small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="Copy link"
-      data-title-succeed="Link copied successfully!"
+      title="分享链接"
+      data-title-succeed="链接已复制！"
     >
       <i class="fa-fw fas fa-link pe-none fs-6"></i>
     </button>
@@ -1334,14 +1370,28 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
 
   <section id="access-lastmod">
-    <h2 class="panel-heading">Recently Updated</h2>
+    <h2 class="panel-heading">最近更新</h2>
     <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
       
         
         
         
         <li class="text-truncate lh-lg">
+          <a href="/llm-inference-from-beginner-to-quitting">LLM Inference: From Beginner to Quitting</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi">大语言模型推理从入门到放弃</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/driving-ai-agents-like-cattle">Driving AI Agents Like Cattle</a>
         </li>
       
         
@@ -1355,21 +1405,7 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
         
         
         <li class="text-truncate lh-lg">
-          <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/dao-di-shui-zai-chi-la-ji">到底谁在吃垃圾</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/7nian-liao-zhong-yu-hui-guo-yi-tang">7年了, 终于回国一趟</a>
+          <a href="/t4-rebirth-modding-adventure">T4 Reborn: A Modding Computer Adventure</a>
         </li>
       
     </ul>
@@ -1573,229 +1609,6 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1880,135 +1693,6 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2312,104 +1996,6 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2529,6 +2115,1116 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2576,38 +3272,38 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">热门标签</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E5%90%8C%E6%B5%8E/">同济</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/software/">Software</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/">程序员</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/google/">Google</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E6%B5%B7%E5%A4%96%E7%BB%8F%E5%8E%86/">海外经历</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/geek/">Geek</a>
       
     </div>
   </section>
@@ -2626,7 +3322,7 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
   <div class="toc-border-cover z-3"></div>
   <section id="toc-wrapper" class="invisible position-sticky ps-0 pe-4 pb-4">
-    <h2 class="panel-heading ps-3 pb-2 mb-0">Contents</h2>
+    <h2 class="panel-heading ps-3 pb-2 mb-0">文章内容</h2>
     <nav id="toc"></nav>
   </section>
 
@@ -3471,6 +4167,546 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
 
 
@@ -3483,8 +4719,38 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 
 
   <aside id="related-posts" aria-labelledby="related-label">
-    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <h3 class="mb-4" id="related-label">相关文章</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/llm-inference-from-beginner-to-quitting" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1782512100"
+  data-df="YYYY/MM/DD"
+  
+>
+  2026/06/27
+</time>
+
+              <h4 class="pt-0 my-2">LLM Inference: From Beginner to Quitting</h4>
+              <div class="text-muted">
+                <p>Origin Story
+
+About twenty years ago, when I was an undergrad at Tongji University, I was a bit of a misfit — spent my first two years studying accounting, then switched to software engineering in ...</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/qu-gan-ai-agent-dang-niu-ma" class="post-preview card h-100">
@@ -3500,10 +4766,10 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 <time
   
   data-ts="1771362900"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
 >
-  Feb 18, 2026
+  2026/02/18
 </time>
 
               <h4 class="pt-0 my-2">驱赶AI Agent当牛马</h4>
@@ -3530,10 +4796,10 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
 <time
   
   data-ts="1769202900"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
 >
-  Jan 24, 2026
+  2026/01/24
 </time>
 
               <h4 class="pt-0 my-2">T4重生记：折腾魔改电脑</h4>
@@ -3541,41 +4807,6 @@ Generated output: 中关所所所所所所所所所所所厶厶厶厶厶厶厶..
                 <p>去年圣诞节回国的时候，谦花了大概4000块钱，自己买各种零件，组装了一台自己的台式机电脑，这一年下来，他用得还不错，完全满足了他学习和娱乐的需求，甚至有的时候还来跑跑各种AI模型，还用来学习Python编程。
 
 今年圣诞节他回国之前，正好我有一台机器的T4显卡坏了, 谦告诉我说国内有人会修T4显卡，他想把这块T4显卡修好，然后装到他的电脑里面去，也正好用来跑AI模型，虽然T4的内存只有16G...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/dao-di-shui-zai-chi-la-ji" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1758085560"
-  data-df="ll"
-  
->
-  Sep 17, 2025
-</time>
-
-              <h4 class="pt-0 my-2">到底谁在吃垃圾</h4>
-              <div class="text-muted">
-                <p>之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了.
-
-#!/usr/bin/env python3
-from cerebras.cloud.sdk import Cerebras
-import os
-import logging
-from logging.handlers import RotatingFileHandler
-from flask import...</p>
               </div>
             </div>
           </a>
@@ -3596,16 +4827,16 @@ from flask import...</p>
 
   
     <a
-      href="/qu-gan-ai-agent-dang-niu-ma"
+      href="/llm-inference-from-beginner-to-quitting"
       class="btn btn-outline-primary"
-      aria-label="Older"
+      aria-label="上一篇"
     >
-      <p>驱赶AI Agent当牛马</p>
+      <p>LLM Inference: From Beginner to Quitting</p>
     </a>
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+    <div class="btn btn-outline-primary disabled" aria-label="下一篇">
       <p>-</p>
     </div>
   
@@ -3633,19 +4864,19 @@ from flask import...</p>
       <span
         data-bs-toggle="tooltip"
         data-bs-placement="top"
-        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
-      >Some rights reserved.</span>
+        title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
+      >保留部分权利。</span>
     
   </p>
 
-  <p>Using the <a
+  <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="v"
         href="https://github.com/cotes2020/jekyll-theme-chirpy"
         target="_blank"
         rel="noopener"
-      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+      >Chirpy</a>
   </p>
 </footer>
 
@@ -3853,229 +5084,6 @@ from flask import...</p>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4160,135 +5168,6 @@ from flask import...</p>
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -4592,104 +5471,6 @@ from flask import...</p>
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4809,6 +5590,1116 @@ from flask import...</p>
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -4856,38 +6747,38 @@ from flask import...</p>
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">热门标签</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E5%90%8C%E6%B5%8E/">同济</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/software/">Software</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/">程序员</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/google/">Google</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E6%B5%B7%E5%A4%96%E7%BB%8F%E5%8E%86/">海外经历</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/geek/">Geek</a>
       
     </div>
   </section>
@@ -4958,7 +6849,7 @@ from flask import...</p>
       resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-      noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+      noResultsText: '<p class="mt-5">搜索结果为空</p>',
       templateMiddleware: function(prop, value, template) {
         if (prop === 'categories') {
           if (value === '') {

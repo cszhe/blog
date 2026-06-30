@@ -4,7 +4,7 @@
   <id>https://hezongjian.com/</id>
   <title>Zongjian's blog</title>
   <subtitle>Personal blog of Zongjian He,since 2002. Sharing my thoughts and experiences on programming, technology, and life.</subtitle>
-  <updated>2026-06-30T15:30:46+12:00</updated>
+  <updated>2026-07-01T10:52:46+12:00</updated>
   <author>
     <name>Zongjian He</name>
     <uri>https://hezongjian.com/</uri>
@@ -54,6 +54,32 @@
 
   
   <entry>
+    <title>LLM Inference: From Beginner to Quitting</title>
+    <link href="https://hezongjian.com/llm-inference-from-beginner-to-quitting" rel="alternate" type="text/html" title="LLM Inference: From Beginner to Quitting" />
+    <published>2026-06-27T10:15:00+12:00</published>
+  
+    <updated>2026-06-27T10:15:00+12:00</updated>
+  
+    <id>https://hezongjian.com/llm-inference-from-beginner-to-quitting</id>
+    <content type="text/html" src="https://hezongjian.com/llm-inference-from-beginner-to-quitting" />
+    <author>
+      <name>Zongjian He</name>
+    </author>
+
+  
+    
+    <category term="Work and Study" />
+    
+  
+
+  <summary>Origin Story
+
+About twenty years ago, when I was an undergrad at Tongji University, I was a bit of a misfit — spent my first two years studying accounting, then switched to software engineering in my third year. During a break between classes, I was chatting with a professor who said: “Don’t study artificial intelligence. We don’t even understand how the human brain works yet, and you want comp...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>驱赶AI Agent当牛马</title>
     <link href="https://hezongjian.com/qu-gan-ai-agent-dang-niu-ma" rel="alternate" type="text/html" title="驱赶AI Agent当牛马" />
     <published>2026-02-18T10:15:00+13:00</published>
@@ -82,6 +108,32 @@
 
   
   <entry>
+    <title>Driving AI Agents Like Cattle</title>
+    <link href="https://hezongjian.com/driving-ai-agents-like-cattle" rel="alternate" type="text/html" title="Driving AI Agents Like Cattle" />
+    <published>2026-02-18T10:15:00+13:00</published>
+  
+    <updated>2026-02-18T10:15:00+13:00</updated>
+  
+    <id>https://hezongjian.com/driving-ai-agents-like-cattle</id>
+    <content type="text/html" src="https://hezongjian.com/driving-ai-agents-like-cattle" />
+    <author>
+      <name>Zongjian He</name>
+    </author>
+
+  
+    
+    <category term="Work and Study" />
+    
+  
+
+  <summary>Preface
+
+Three years ago when GPT first came out, I wrote a post called ChatGPT Writes Tetris. Back then there were no Agents — you could only ask ChatGPT to write code, then copy it into an IDE yourself. But AI has evolved incredibly fast. Now we have all kinds of Agents that can search for information, write code, look up documentation when stuck, run code, check results, and iteratively fix ...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>T4重生记：折腾魔改电脑</title>
     <link href="https://hezongjian.com/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao" rel="alternate" type="text/html" title="T4重生记：折腾魔改电脑" />
     <published>2026-01-24T10:15:00+13:00</published>
@@ -105,78 +157,6 @@
 今年圣诞节他回国之前，正好我有一台机器的T4显卡坏了, 谦告诉我说国内有人会修T4显卡，他想把这块T4显卡修好，然后装到他的电脑里面去，也正好用来跑AI模型，虽然T4的内存只有16G，但是有了T4显卡，比他本来的游戏显卡3080用来跑AI还要强多了。我问他，你显卡修完了，那到底有没有修好你也不知道阿，因为你不可能把台式机再带回过去。他跟我信誓旦旦地说，他可以再组装一台电脑，成本只要几百块钱，就可以测试显卡有没有修好。思路就是垃圾佬，买各种二手，三手零件，甚至是魔改的零件，组装一台勉强能用的电脑，然后测试显卡。听起来很有道理的样子。
 
 在这个过程中，他经历了各种各样的折腾，比去...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>到底谁在吃垃圾</title>
-    <link href="https://hezongjian.com/dao-di-shui-zai-chi-la-ji" rel="alternate" type="text/html" title="到底谁在吃垃圾" />
-    <published>2025-09-17T17:06:00+12:00</published>
-  
-    <updated>2025-09-17T17:06:00+12:00</updated>
-  
-    <id>https://hezongjian.com/dao-di-shui-zai-chi-la-ji</id>
-    <content type="text/html" src="https://hezongjian.com/dao-di-shui-zai-chi-la-ji" />
-    <author>
-      <name>Zongjian He</name>
-    </author>
-
-  
-    
-    <category term="工作和学习" />
-    
-  
-
-  <summary>之前弄了个小玩具, 用LLM来响应网页的请求. 因为代码很短, 直接就贴在这里了.
-
-#!/usr/bin/env python3
-from cerebras.cloud.sdk import Cerebras
-import os
-import logging
-from logging.handlers import RotatingFileHandler
-from flask import Flask, request
-from pathvalidate import sanitize_filename
-import dotenv
-dotenv.load_dotenv()
-
-client = Cerebras(
-  api_key=os.environ.get(&amp;quot;CEREBRAS_API_KEY&amp;quot;),
-)
-
-app = Flask(__name__)
-
-os.makedirs(&amp;quot;h...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>7年了, 终于回国一趟</title>
-    <link href="https://hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang" rel="alternate" type="text/html" title="7年了, 终于回国一趟" />
-    <published>2025-03-12T14:06:00+13:00</published>
-  
-    <updated>2025-03-12T14:06:00+13:00</updated>
-  
-    <id>https://hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang</id>
-    <content type="text/html" src="https://hezongjian.com/7nian-liao-zhong-yu-hui-guo-yi-tang" />
-    <author>
-      <name>Zongjian He</name>
-    </author>
-
-  
-    
-    <category term="新西兰生活" />
-    
-  
-
-  <summary>自从全家搬到新西兰, 我上一次回国还要追溯到新冠之前的2018年. 之所以这么久才回国, 一是因为我2018年回去的感受相当方便, 机票极为便宜, 感觉就跟在中国另外一个城市工作, 你坐绿皮火车回家差不多, 晃悠12个小时就到家了. 另外一个原因是新冠疫情, 由于中国当时严格的新冠管理政策, 我一直也没搞懂, 到底怎么才能顺利的坐上回国班机, 号称要“三天两检”, 然后到了之后还要隔离, 一直让我望而却步. 不管怎么说, 现在疫情虽然没结束, 但是防疫结束了, 机票也便宜了, 于是我就决定回国了.
-
-谦经常说Reverse culture shock, 意思是在外乡呆久了, 回到故乡, 却感觉到了水土不服. 我虽然没有水土不服那么夸张, 但是的的确确的感受到, 好久不回国, 偶尔回去一趟, 不知道算不算得上culture shock, 但很多东西都很震撼.
-
-行程概括
-
-由于我的假期...</summary>
 
   </entry>
 

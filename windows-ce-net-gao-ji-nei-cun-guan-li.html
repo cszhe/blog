@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" >
+<html lang="zh-CN" >
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -32,7 +32,7 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Windows CE .NET 高级内存管理" />
 <meta name="author" content="omale" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh_CN" />
 <meta name="description" content="Windows CE .NET 高级内存管理 Douglas Boling, 嵌入式 Windows MVP Boling Consulting 2002年八月 适用于: Microsoft&amp;reg; Windows&amp;reg; CE .NET Microsoft Windows CE 3.0 Pocket PC 2002 内容 摘要 在盒子里生活 动态连接库（DLL）加载问题 摘要 Microsoft Windows CE的优势之一是它支持Win32 应用程序接口(API)。 成千上万的windows程序员就可以利用他们的Win32 API和MFC知识而几乎没有困难的转移到Windows CE上来。Windows CE实现了Win32 API的一个子集，但是程序员不应该忘记Windows CE与Windows XP是完全不同的两个操作系统，他们有着不同的需求和实现。知道Windows CE如何实现与Win32的兼容性有利于我们在设计应用程序和诊断问题时对两者区别对待。 内存管理的实现在Windows CE 和Windows XP上有比较明显的不同之处。尽管Windows CE支持几乎所有的Win32内存管理函数，除了已经舍弃的全局堆函数，这些内存管理API的实现是完全不同的。这些不同有可能会阻碍不了解Windows CE和Windows桌面版本的细微不同的人。为了了解问题的所在，你必须首先了解Windows CE是如何对内存进行管理的。 系统内存映射图 Windows XP和Windows CE都是32位的操作系统，因此支持4GB的虚拟地址空间。Windows XP把这些地址空间分成两个2GB的区域。上面的一半地址空间是为系统保留的。下面的一半地址空间复制给每个正在运行的应用程序。 图 1. Windows XP 虚拟内存空间 乍看之下，Windows CE的虚拟地址空间是以同样的方式组织的，一个系统保留区和一个应用程序区。图2显示了Windows CE的地址空间。在这种情况下，上面的2GB地址空间同样是系统保留区。下面的一半地址空间被分成多个区域。这块范围的主要部分，几乎是一半的空间，被定义为大内存区（Large Memory Area）。这个区域被用来分配大块内存空间。典型的应用是内存映射文件。 在大内存区下面是另外一块大区域，在这张图里被标为保留（Reserved）。保留区之下的非常低的地址空间是一块64兆（MB）的区域。这64MB区域就，更精确地说，最低的32M区域，是为每一个运行的应用程序准备的。" />
 <meta property="og:description" content="Windows CE .NET 高级内存管理 Douglas Boling, 嵌入式 Windows MVP Boling Consulting 2002年八月 适用于: Microsoft&amp;reg; Windows&amp;reg; CE .NET Microsoft Windows CE 3.0 Pocket PC 2002 内容 摘要 在盒子里生活 动态连接库（DLL）加载问题 摘要 Microsoft Windows CE的优势之一是它支持Win32 应用程序接口(API)。 成千上万的windows程序员就可以利用他们的Win32 API和MFC知识而几乎没有困难的转移到Windows CE上来。Windows CE实现了Win32 API的一个子集，但是程序员不应该忘记Windows CE与Windows XP是完全不同的两个操作系统，他们有着不同的需求和实现。知道Windows CE如何实现与Win32的兼容性有利于我们在设计应用程序和诊断问题时对两者区别对待。 内存管理的实现在Windows CE 和Windows XP上有比较明显的不同之处。尽管Windows CE支持几乎所有的Win32内存管理函数，除了已经舍弃的全局堆函数，这些内存管理API的实现是完全不同的。这些不同有可能会阻碍不了解Windows CE和Windows桌面版本的细微不同的人。为了了解问题的所在，你必须首先了解Windows CE是如何对内存进行管理的。 系统内存映射图 Windows XP和Windows CE都是32位的操作系统，因此支持4GB的虚拟地址空间。Windows XP把这些地址空间分成两个2GB的区域。上面的一半地址空间是为系统保留的。下面的一半地址空间复制给每个正在运行的应用程序。 图 1. Windows XP 虚拟内存空间 乍看之下，Windows CE的虚拟地址空间是以同样的方式组织的，一个系统保留区和一个应用程序区。图2显示了Windows CE的地址空间。在这种情况下，上面的2GB地址空间同样是系统保留区。下面的一半地址空间被分成多个区域。这块范围的主要部分，几乎是一半的空间，被定义为大内存区（Large Memory Area）。这个区域被用来分配大块内存空间。典型的应用是内存映射文件。 在大内存区下面是另外一块大区域，在这张图里被标为保留（Reserved）。保留区之下的非常低的地址空间是一块64兆（MB）的区域。这64MB区域就，更精确地说，最低的32M区域，是为每一个运行的应用程序准备的。" />
 <link rel="canonical" href="https://hezongjian.com/windows-ce-net-gao-ji-nei-cun-guan-li" />
@@ -48,6 +48,11 @@
 {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"omale"},"dateModified":"2004-04-01T10:26:19+12:00","datePublished":"2004-04-01T10:26:19+12:00","description":"Windows CE .NET 高级内存管理 Douglas Boling, 嵌入式 Windows MVP Boling Consulting 2002年八月 适用于: Microsoft&amp;reg; Windows&amp;reg; CE .NET Microsoft Windows CE 3.0 Pocket PC 2002 内容 摘要 在盒子里生活 动态连接库（DLL）加载问题 摘要 Microsoft Windows CE的优势之一是它支持Win32 应用程序接口(API)。 成千上万的windows程序员就可以利用他们的Win32 API和MFC知识而几乎没有困难的转移到Windows CE上来。Windows CE实现了Win32 API的一个子集，但是程序员不应该忘记Windows CE与Windows XP是完全不同的两个操作系统，他们有着不同的需求和实现。知道Windows CE如何实现与Win32的兼容性有利于我们在设计应用程序和诊断问题时对两者区别对待。 内存管理的实现在Windows CE 和Windows XP上有比较明显的不同之处。尽管Windows CE支持几乎所有的Win32内存管理函数，除了已经舍弃的全局堆函数，这些内存管理API的实现是完全不同的。这些不同有可能会阻碍不了解Windows CE和Windows桌面版本的细微不同的人。为了了解问题的所在，你必须首先了解Windows CE是如何对内存进行管理的。 系统内存映射图 Windows XP和Windows CE都是32位的操作系统，因此支持4GB的虚拟地址空间。Windows XP把这些地址空间分成两个2GB的区域。上面的一半地址空间是为系统保留的。下面的一半地址空间复制给每个正在运行的应用程序。 图 1. Windows XP 虚拟内存空间 乍看之下，Windows CE的虚拟地址空间是以同样的方式组织的，一个系统保留区和一个应用程序区。图2显示了Windows CE的地址空间。在这种情况下，上面的2GB地址空间同样是系统保留区。下面的一半地址空间被分成多个区域。这块范围的主要部分，几乎是一半的空间，被定义为大内存区（Large Memory Area）。这个区域被用来分配大块内存空间。典型的应用是内存映射文件。 在大内存区下面是另外一块大区域，在这张图里被标为保留（Reserved）。保留区之下的非常低的地址空间是一块64兆（MB）的区域。这64MB区域就，更精确地说，最低的32M区域，是为每一个运行的应用程序准备的。","headline":"Windows CE .NET 高级内存管理","mainEntityOfPage":{"@type":"WebPage","@id":"https://hezongjian.com/windows-ce-net-gao-ji-nei-cun-guan-li"},"url":"https://hezongjian.com/windows-ce-net-gao-ji-nei-cun-guan-li"}</script>
 <!-- End Jekyll SEO tag -->
 
+
+  
+    <link rel="alternate" hreflang="zh-CN" href="https://hezongjian.com/windows-ce-net-gao-ji-nei-cun-guan-li">
+    <link rel="alternate" hreflang="en" href="https://hezongjian.com/windows-ce-net-advanced-memory-management">
+  
 
   <title>Windows CE .NET 高级内存管理 | Zongjian's blog
   </title>
@@ -219,7 +224,7 @@
 
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/zh.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
 
 
 
@@ -410,6 +415,9 @@
     <!-- The Side Bar -->
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  
+  
+
   <header class="profile-wrapper">
     <a href="/" id="avatar" class="rounded-circle"><img src="https://1.gravatar.com/avatar/5f743b2eda598af99b60f5af10812c8e1ac4ec2bcd44facde75e3a9c1f43a97f?s=256" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
@@ -424,47 +432,63 @@
       <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
-          <span>HOME</span>
+          <span>首页</span>
         </a>
       </li>
       <!-- the real tabs -->
       
+        
+        
+        
+        
         <li class="nav-item">
           <a href="/categories/" class="nav-link">
             <i class="fa-fw fas fa-stream"></i>
             
 
-            <span>CATEGORIES</span>
+            <span>分类</span>
           </a>
         </li>
         <!-- .nav-item -->
       
+        
+        
+        
+        
         <li class="nav-item">
           <a href="/tags/" class="nav-link">
             <i class="fa-fw fas fa-tags"></i>
             
 
-            <span>TAGS</span>
+            <span>标签</span>
           </a>
         </li>
         <!-- .nav-item -->
       
+        
+        
+        
+        
         <li class="nav-item">
           <a href="/archives/" class="nav-link">
             <i class="fa-fw fas fa-archive"></i>
             
 
-            <span>ARCHIVES</span>
+            <span>归档</span>
           </a>
         </li>
         <!-- .nav-item -->
       
+        
+        
+        
+        
         <li class="nav-item">
           <a href="/about/" class="nav-link">
             <i class="fa-fw fas fa-info-circle"></i>
             
 
-            <span>ABOUT</span>
+            <span>关于</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -588,7 +612,7 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">首页</a>
             </span>
 
           
@@ -609,7 +633,7 @@
     </button>
 
     <div id="topbar-title">
-      Post
+      文章
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -624,10 +648,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="Search..."
+        placeholder="搜索..."
       >
     </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">取消</button>
   </div>
 </header>
 
@@ -1010,7 +1034,7 @@
     <div class="post-meta text-muted">
       <!-- published date -->
       <span>
-        Posted
+        发表于
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -1022,12 +1046,12 @@
 <time
   
   data-ts="1080771979"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Apr  1, 2004
+  2004/04/01
 </time>
 
       </span>
@@ -1042,7 +1066,7 @@
         <span>
           
 
-          By
+          作者
 
           <em>
             
@@ -1079,9 +1103,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="6501 words"
+  title="6501 字"
 >
-  <em>36 min</em> read</span>
+  <em>36 分钟</em>阅读</span>
 
         </div>
       </div>
@@ -1089,6 +1113,18 @@
   </header>
 
   
+
+  <div class="lang-switcher mb-4 d-flex justify-content-center">
+  
+    <a href="/windows-ce-net-advanced-memory-management" class="btn btn-outline-primary btn-sm">
+      <i class="fa-solid fa-language"></i> English Version
+    </a>
+  
+</div>
+
+
+  
+
 
   <div class="content">
     <p>Windows CE .NET 高级内存管理</p>
@@ -1103,7 +1139,7 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>Microsoft&amp;reg; Windows&amp;reg; CE .NET
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>Microsoft&amp;reg; Windows&amp;reg; CE .NET
   
 Microsoft Windows CE 3.0
   
@@ -1168,7 +1204,7 @@ Pocket PC 2002
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                 DWORD flAllocationType,
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                 DWORD flAllocationType,
   
                  DWORD flProtect);
 </code></div></div>
@@ -1198,7 +1234,7 @@ Pocket PC 2002
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                       PAGE_READWRITE);
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                       PAGE_READWRITE);
 </code></div></div>
 
 <p>}</p>
@@ -1221,7 +1257,7 @@ Pocket PC 2002
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                       MEM\_COMMIT, PAGE\_READWRITE);
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                       MEM\_COMMIT, PAGE\_READWRITE);
 </code></div></div>
 
 <p>}</p>
@@ -1240,7 +1276,7 @@ Pocket PC 2002
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                    PAGE_NOACCESS);
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                    PAGE_NOACCESS);
 </code></div></div>
 
 <p>if (!ptrVirt) return 0;</p>
@@ -1249,14 +1285,14 @@ Pocket PC 2002
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                      4096, MEM\_COMMIT, PAGE\_READWRITE);
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>                      4096, MEM\_COMMIT, PAGE\_READWRITE);
 </code></div></div>
 
 <p>if (!ptrMem) {</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>  VirtualFree (ptr, 0, MEM_RELEASE);
+      <button aria-label="copy" data-title-succeed="已复制！"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code>  VirtualFree (ptr, 0, MEM_RELEASE);
   
   return 0;
 </code></div></div>
@@ -1386,18 +1422,18 @@ Pocket PC 2002
         
           
 
-          This post is licensed under 
+          本文由作者按照 
         <a href="https://creativecommons.org/licenses/by/4.0/">
           CC BY 4.0
         </a>
-         by the author.
+         进行授权
         
       </div>
 
       <!-- Post sharing snippet -->
 
 <div class="share-wrapper d-flex align-items-center">
-  <span class="share-label text-muted">Share</span>
+  <span class="share-label text-muted">分享</span>
   <span class="share-icons">
     
     
@@ -1446,8 +1482,8 @@ Pocket PC 2002
       class="btn small"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="Copy link"
-      data-title-succeed="Link copied successfully!"
+      title="分享链接"
+      data-title-succeed="链接已复制！"
     >
       <i class="fa-fw fas fa-link pe-none fs-6"></i>
     </button>
@@ -1483,14 +1519,28 @@ Pocket PC 2002
 
 
   <section id="access-lastmod">
-    <h2 class="panel-heading">Recently Updated</h2>
+    <h2 class="panel-heading">最近更新</h2>
     <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
       
         
         
         
         <li class="text-truncate lh-lg">
+          <a href="/llm-inference-from-beginner-to-quitting">LLM Inference: From Beginner to Quitting</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/da-yu-yan-mo-xing-tui-li-cong-ru-men-dao-fang-qi">大语言模型推理从入门到放弃</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/driving-ai-agents-like-cattle">Driving AI Agents Like Cattle</a>
         </li>
       
         
@@ -1504,21 +1554,7 @@ Pocket PC 2002
         
         
         <li class="text-truncate lh-lg">
-          <a href="/t4zhong-sheng-ji-zhe-teng-mo-gai-dian-nao">T4重生记：折腾魔改电脑</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/dao-di-shui-zai-chi-la-ji">到底谁在吃垃圾</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/7nian-liao-zhong-yu-hui-guo-yi-tang">7年了, 终于回国一趟</a>
+          <a href="/t4-rebirth-modding-adventure">T4 Reborn: A Modding Computer Adventure</a>
         </li>
       
     </ul>
@@ -1722,229 +1758,6 @@ Pocket PC 2002
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2029,135 +1842,6 @@ Pocket PC 2002
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -2461,104 +2145,6 @@ Pocket PC 2002
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2678,6 +2264,1116 @@ Pocket PC 2002
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -2725,38 +3421,38 @@ Pocket PC 2002
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">热门标签</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E5%90%8C%E6%B5%8E/">同济</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/software/">Software</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/">程序员</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/google/">Google</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E6%B5%B7%E5%A4%96%E7%BB%8F%E5%8E%86/">海外经历</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/geek/">Geek</a>
       
     </div>
   </section>
@@ -3446,7 +4142,787 @@ Pocket PC 2002
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
@@ -4130,7 +5606,7 @@ Pocket PC 2002
 
 
   <aside id="related-posts" aria-labelledby="related-label">
-    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <h3 class="mb-4" id="related-label">相关文章</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
       
         <article class="col">
@@ -4147,15 +5623,45 @@ Pocket PC 2002
 <time
   
   data-ts="1211723400"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
 >
-  May 26, 2008
+  2008/05/26
 </time>
 
               <h4 class="pt-0 my-2">连载6：从学生到教师</h4>
               <div class="text-muted">
                 <p>“林间新绿一重重，小蕾深藏数点红”——初次登上讲台 虽然我07年6月才正式到学院工作，但是初次登上学院的讲台却是在三年前。记得是在04年夏天吧。微软与同济大学联合成立了移动与嵌入式中心，并且希望资助我们学院开设Windows Embedded系列课程。但是Windows Embedded的课程老师很难找，因为整个国内的Windows Embedded都刚刚处于起步阶段。而恰巧我在做的汽车学院...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/from-student-to-teacher-part-6" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1211723400"
+  data-df="YYYY/MM/DD"
+  
+>
+  2008/05/26
+</time>
+
+              <h4 class="pt-0 my-2">Series 6: From Student to Teacher</h4>
+              <div class="text-muted">
+                <p>“Fresh green layers in the forest, a few red dots hidden in buds” — First time at the podium
+
+Although I officially started at the school in June 2007, my first time at the podium was three years e...</p>
               </div>
             </div>
           </a>
@@ -4175,52 +5681,15 @@ Pocket PC 2002
 <time
   
   data-ts="1211428860"
-  data-df="ll"
+  data-df="YYYY/MM/DD"
   
 >
-  May 22, 2008
+  2008/05/22
 </time>
 
               <h4 class="pt-0 my-2">连载5：从学生到教师</h4>
               <div class="text-muted">
                 <p>“青山一道同云雨，明月何曾是两乡”——读书、毕业与就业 短暂的两年在软院的学习时间很快就结束了。04年6月，首届软件学院毕业典礼在沪西的会议中心隆重举行，学院邀请了所有毕业生的家长一起出席。从万老师的报告中我们得知，首届毕业生取得了就业率100%的成绩，并且平均月薪比其它专业要高出很多。周兴铭院士为我们每个人颁发了学位证书并且合影留念，这后来也成了我们毕业典礼的传统。 我们毕业之后，软件学院...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/net-micro-frameworkyong-bao-kai-yuan" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1258971938"
-  data-df="ll"
-  
->
-  Nov 23, 2009
-</time>
-
-              <h4 class="pt-0 my-2">.net Micro Framework拥抱开源</h4>
-              <div class="text-muted">
-                <p>首先引新浪：
-
-&amp;lt;/p&amp;gt;
-
-
-  &amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8211;
-
-
-
-  11月16日消息，据国外媒体报道，微软今日在洛杉矶微软专业开发者大会(PDC)上发布了.NET Micro Framework 4.0版本，这款产品是开源...</p>
               </div>
             </div>
           </a>
@@ -4241,21 +5710,21 @@ Pocket PC 2002
 
   
     <a
-      href="/jing-dian-yu-lu"
+      href="/windows-ce-net-advanced-memory-management"
       class="btn btn-outline-primary"
-      aria-label="Older"
+      aria-label="上一篇"
     >
-      <p>经典语录</p>
+      <p>Windows CE .NET Advanced Memory Management</p>
     </a>
   
 
   
     <a
-      href="/bu-de-bu-shuo-guan-yu-ti-wen"
+      href="/about-asking-questions"
       class="btn btn-outline-primary"
-      aria-label="Newer"
+      aria-label="下一篇"
     >
-      <p>不得不说，关于提问</p>
+      <p>Must Be Said — About Asking Questions</p>
     </a>
   
 </nav>
@@ -4282,19 +5751,19 @@ Pocket PC 2002
       <span
         data-bs-toggle="tooltip"
         data-bs-placement="top"
-        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
-      >Some rights reserved.</span>
+        title="除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。"
+      >保留部分权利。</span>
     
   </p>
 
-  <p>Using the <a
+  <p>本站采用 <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> 主题 <a
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="v"
         href="https://github.com/cotes2020/jekyll-theme-chirpy"
         target="_blank"
         rel="noopener"
-      >Chirpy</a> theme for <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>.
+      >Chirpy</a>
   </p>
 </footer>
 
@@ -4502,229 +5971,6 @@ Pocket PC 2002
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4809,135 +6055,6 @@ Pocket PC 2002
     
     
     
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
   
     
     
@@ -5241,104 +6358,6 @@ Pocket PC 2002
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -5458,6 +6477,1116 @@ Pocket PC 2002
         
         
 
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -5505,38 +7634,38 @@ Pocket PC 2002
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">热门标签</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E8%BD%AF%E4%BB%B6/">软件</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E5%90%8C%E6%B5%8E/">同济</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/c/">C++</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/software/">Software</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/%E5%BE%AE%E8%BD%AF/">微软</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/">程序员</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/windows-ce/">Windows CE</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/google/">Google</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/%E6%B5%B7%E5%A4%96%E7%BB%8F%E5%8E%86/">海外经历</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/geek/">Geek</a>
       
     </div>
   </section>
@@ -5607,7 +7736,7 @@ Pocket PC 2002
       resultsContainer: resultsContainer,
       json: '/assets/js/data/search.json',
       searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-      noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+      noResultsText: '<p class="mt-5">搜索结果为空</p>',
       templateMiddleware: function(prop, value, template) {
         if (prop === 'categories') {
           if (value === '') {
