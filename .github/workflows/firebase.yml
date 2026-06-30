@@ -27,9 +27,27 @@ jobs:
         run: |
           bundle exec jekyll build
 
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@v15.22.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          args: deploy --only hosting --public _site --project zhe-dev
+          node-version: '20'
+
+      - name: Prepare Firebase credentials
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        run: |
+          KEY_FILE="$RUNNER_TEMP/gcp-key.json"
+          if echo "$GCP_SA_KEY" | jq -e . >/dev/null 2>&1; then
+            printf '%s' "$GCP_SA_KEY" > "$KEY_FILE"
+          else
+            echo "$GCP_SA_KEY" | base64 --decode > "$KEY_FILE"
+          fi
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$KEY_FILE" >> "$GITHUB_ENV"
+
+      - name: Install Firebase CLI
+        run: |
+          npm install --global firebase-tools
+
+      - name: Deploy to Firebase
+        run: |
+          firebase deploy --only hosting --public _site --project zhe-dev --non-interactive
