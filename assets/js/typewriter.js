@@ -6,12 +6,12 @@ permalink: /assets/js/typewriter.js
   'use strict';
 
   var SPEED = 40;
-  var BATCH = 3;
   var SKIP_DELAY = 3000;
-  var CJK_RE = /[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/;
+  var WORDS_PER_CHUNK = 15;
+  var MIN_CHUNKS = 20;
 
   var state = {
-    words: [],
+    chunks: [],
     timerId: null,
     idx: 0,
     active: false,
@@ -21,62 +21,104 @@ permalink: /assets/js/typewriter.js
   var toggleBtn = null;
   var skipBtn = null;
 
-  function tokenize(text) {
-    var tokens = text.match(/\S+\s*/g) || [];
-    var result = [];
-    for (var i = 0; i < tokens.length; i++) {
-      var token = tokens[i];
-      if (CJK_RE.test(token)) {
-        var body = token.replace(/\s+$/, '');
-        var ws = token.slice(body.length);
-        for (var j = 0; j < body.length; j++) {
-          result.push(j === body.length - 1 && ws ? body[j] + ws : body[j]);
-        }
-      } else {
-        result.push(token);
-      }
-    }
-    return result;
-  }
-
-  function walkNode(node, words) {
+  function countWords(node) {
     if (node.nodeType === Node.TEXT_NODE) {
-      var tokens = tokenize(node.textContent);
-      if (!tokens.length) return;
-      var frag = document.createDocumentFragment();
-      for (var i = 0; i < tokens.length; i++) {
-        var span = document.createElement('span');
-        span.className = 'tw-word';
-        span.textContent = tokens[i];
-        frag.appendChild(span);
-        words.push(span);
+      var m = node.textContent.match(/\S+/g);
+      return m ? m.length : 0;
+    }
+    if (node.nodeType !== Node.ELEMENT_NODE) return 0;
+    if (node.tagName === 'PRE') return 0;
+    var n = 0;
+    for (var i = 0; i < node.childNodes.length; i++) {
+      n += countWords(node.childNodes[i]);
+    }
+    return n;
+  }
+
+  function buildChunks(content) {
+    var totalWords = countWords(content);
+    var numChunks = Math.max(MIN_CHUNKS, Math.ceil(totalWords / WORDS_PER_CHUNK));
+    var children = Array.from(content.childNodes);
+    var wordBudget = Math.ceil(totalWords / numChunks);
+
+    var chunks = [];
+    var currentDiv = null;
+    var currentWords = 0;
+
+    function flush() {
+      if (currentDiv && currentDiv.childNodes.length > 0) {
+        chunks.push(currentDiv);
       }
-      node.parentNode.replaceChild(frag, node);
-    } else if (node.nodeType === Node.ELEMENT_NODE) {
-      if (node.tagName === 'PRE' || /^H[2-5]$/.test(node.tagName)) return;
-      var children = Array.from(node.childNodes);
-      for (var j = 0; j < children.length; j++) {
-        walkNode(children[j], words);
+      currentDiv = null;
+      currentWords = 0;
+    }
+
+    function appendToChunk(node) {
+      if (!currentDiv) {
+        currentDiv = document.createElement('div');
+        currentDiv.className = 'tw-chunk';
+      }
+      currentDiv.appendChild(node);
+    }
+
+    function processNode(node) {
+      if (currentWords >= wordBudget) {
+        flush();
+      }
+
+      if (node.nodeType === Node.TEXT_NODE) {
+        var wc = (node.textContent.match(/\S+/g) || []).length;
+        if (wc === 0) {
+          appendToChunk(node);
+          return;
+        }
+        if (currentWords > 0 && currentWords + wc > wordBudget) {
+          flush();
+        }
+        appendToChunk(node);
+        currentWords += wc;
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        if (node.tagName === 'PRE') {
+          flush();
+          appendToChunk(node);
+          flush();
+          return;
+        }
+        if (/^H[1-6]$/.test(node.tagName)) {
+          flush();
+          appendToChunk(node);
+          flush();
+          return;
+        }
+        var wc = countWords(node);
+        if (wc === 0) {
+          appendToChunk(node);
+          return;
+        }
+        if (currentWords > 0 && currentWords + wc > wordBudget * 2) {
+          flush();
+        }
+        appendToChunk(node);
+        currentWords += wc;
       }
     }
+
+    for (var i = 0; i < children.length; i++) {
+      processNode(children[i]);
+    }
+    flush();
+
+    return chunks;
   }
 
-  function processWords(root) {
-    var words = [];
-    walkNode(root, words);
-    return words;
-  }
-
-  function revealBatch() {
-    if (!state.active || state.idx >= state.words.length) {
+  function revealNext() {
+    if (!state.active || state.idx >= state.chunks.length) {
       finish();
       return;
     }
-    for (var i = 0; i < BATCH && state.idx < state.words.length; i++) {
-      state.words[state.idx].classList.add('revealed');
-      state.idx++;
-    }
-    state.timerId = setTimeout(revealBatch, SPEED);
+    state.chunks[state.idx].classList.add('revealed');
+    state.idx++;
+    state.timerId = setTimeout(revealNext, SPEED);
   }
 
   function finish() {
@@ -107,8 +149,8 @@ permalink: /assets/js/typewriter.js
   }
 
   function skip() {
-    for (var i = state.idx; i < state.words.length; i++) {
-      state.words[i].classList.add('revealed');
+    for (var i = state.idx; i < state.chunks.length; i++) {
+      state.chunks[i].classList.add('revealed');
     }
     var content = document.querySelector('.content');
     if (content) content.classList.remove('tw-active');
@@ -130,14 +172,20 @@ permalink: /assets/js/typewriter.js
       state.sourceHTML = content.innerHTML;
     }
 
-    state.words = processWords(content);
+    var chunks = buildChunks(content);
+    content.innerHTML = '';
+    for (var i = 0; i < chunks.length; i++) {
+      content.appendChild(chunks[i]);
+    }
+
+    state.chunks = chunks;
     content.classList.add('tw-active');
     state.active = true;
     state.idx = 0;
     toggleBtn.innerHTML = '<i class="fa-solid fa-stop"></i> Stop';
     toggleBtn.classList.add('active');
 
-    revealBatch();
+    revealNext();
 
     setTimeout(function () {
       if (state.active) showSkipBtn();

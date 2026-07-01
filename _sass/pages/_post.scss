@@ -504,14 +504,14 @@ h4 {
   }
 }
 
-/* --- Typewriter word-by-word streaming effect --- */
+/* --- Typewriter chunk-based streaming effect --- */
 
-.content.tw-active .tw-word {
+.content.tw-active .tw-chunk {
   opacity: 0;
   content-visibility: hidden;
 }
 
-.content.tw-active .tw-word.revealed {
+.content.tw-active .tw-chunk.revealed {
   opacity: 1;
   content-visibility: visible;
   animation: tw-fade-in 0.15s ease;
