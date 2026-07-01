@@ -87,7 +87,7 @@ permalink: /assets/js/typewriter.js
       skipBtn = null;
     }
     if (toggleBtn) {
-      toggleBtn.innerHTML = '<i class="fa-solid fa-play"></i> Typewriter';
+      toggleBtn.innerHTML = '<i class="fa-solid fa-robot"></i> BlogGPT';
       toggleBtn.classList.remove('active');
     }
   }
@@ -145,7 +145,7 @@ permalink: /assets/js/typewriter.js
 
     toggleBtn = document.createElement('button');
     toggleBtn.className = 'tw-toggle';
-    toggleBtn.innerHTML = '<i class="fa-solid fa-play"></i> Typewriter';
+    toggleBtn.innerHTML = '<i class="fa-solid fa-robot"></i> BlogGPT';
     toggleBtn.addEventListener('click', toggle);
 
     wrapper.appendChild(toggleBtn);
@@ -155,6 +155,7 @@ permalink: /assets/js/typewriter.js
   document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector('.content')) {
       createToggleBtn();
+      setTimeout(toggle, 100);
     }
   });
 })();
