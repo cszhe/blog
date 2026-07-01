@@ -6,8 +6,7 @@ import {
   initLocaleDatetime,
   initClipboard,
   initToc,
-  loadMermaid,
-  initTypewriter
+  loadMermaid
 } from './modules/components';
 
 loadImg();
@@ -18,5 +17,4 @@ initLocaleDatetime();
 initClipboard();
 initTopbar();
 loadMermaid();
-initTypewriter();
 basic();
