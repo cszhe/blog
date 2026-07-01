@@ -6,6 +6,7 @@ permalink: /assets/js/typewriter.js
   'use strict';
 
   var SPEED = 40;
+  var BATCH = 3;
   var SKIP_DELAY = 3000;
   var CJK_RE = /[\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]/;
 
@@ -66,14 +67,16 @@ permalink: /assets/js/typewriter.js
     return words;
   }
 
-  function revealNext() {
+  function revealBatch() {
     if (!state.active || state.idx >= state.words.length) {
       finish();
       return;
     }
-    state.words[state.idx].classList.add('revealed');
-    state.idx++;
-    state.timerId = setTimeout(revealNext, SPEED);
+    for (var i = 0; i < BATCH && state.idx < state.words.length; i++) {
+      state.words[state.idx].classList.add('revealed');
+      state.idx++;
+    }
+    state.timerId = setTimeout(revealBatch, SPEED);
   }
 
   function finish() {
@@ -82,6 +85,8 @@ permalink: /assets/js/typewriter.js
       clearTimeout(state.timerId);
       state.timerId = null;
     }
+    var content = document.querySelector('.content');
+    if (content) content.classList.remove('tw-active');
     if (skipBtn) {
       skipBtn.remove();
       skipBtn = null;
@@ -105,6 +110,8 @@ permalink: /assets/js/typewriter.js
     for (var i = state.idx; i < state.words.length; i++) {
       state.words[i].classList.add('revealed');
     }
+    var content = document.querySelector('.content');
+    if (content) content.classList.remove('tw-active');
     finish();
   }
 
@@ -124,12 +131,13 @@ permalink: /assets/js/typewriter.js
     }
 
     state.words = processWords(content);
+    content.classList.add('tw-active');
     state.active = true;
     state.idx = 0;
     toggleBtn.innerHTML = '<i class="fa-solid fa-stop"></i> Stop';
     toggleBtn.classList.add('active');
 
-    revealNext();
+    revealBatch();
 
     setTimeout(function () {
       if (state.active) showSkipBtn();
