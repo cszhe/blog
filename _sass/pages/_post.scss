@@ -508,10 +508,12 @@ h4 {
 
 .content.tw-active .tw-word {
   opacity: 0;
+  content-visibility: hidden;
 }
 
 .content.tw-active .tw-word.revealed {
   opacity: 1;
+  content-visibility: visible;
   animation: tw-fade-in 0.15s ease;
 }
 
