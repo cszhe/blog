@@ -21,7 +21,7 @@ permalink: /assets/js/typewriter.js
    *   - Skip is O(blocks), not O(words)
    */
 
-  var BLOCK_DELAY = 120;  /* ms between block reveals */
+  var BLOCK_DELAY = 300;  /* ms between block reveals */
   var SKIP_DELAY  = 2500; /* ms before skip button appears */
 
   /*
