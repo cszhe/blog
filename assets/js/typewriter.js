@@ -14,10 +14,9 @@ permalink: /assets/js/typewriter.js
    * one character at a time. Once a block is fully revealed, we
    * restore its original innerHTML so inline formatting (links, bold,
    * code) reappears.
-   *
-   * Only one block is being "typed" at any moment — the previous
-   * blocks are already at their final innerHTML state, and future
-   * blocks are hidden with opacity:0.
+*
+ *    Only one block is being "typed" at any moment — the previous
+ *    blocks are already at their final innerHTML state.
    *
    * Performance:
    *   - O(blocks × characters) textContent writes, zero DOM tree mutations
@@ -76,9 +75,7 @@ permalink: /assets/js/typewriter.js
     var pos   = state.charIdx;
 
     if (pos >= full.length) {
-      /* Block fully typed — restore original innerHTML, move to next block. */
       block.el.innerHTML = block.innerHTML;
-      block.el.classList.add('tw-revealed');
       state.blockIdx++;
       state.charIdx = 0;
 
@@ -120,9 +117,7 @@ permalink: /assets/js/typewriter.js
     clearTimeout(state.timerId);
     state.timerId = null;
     for (var i = state.blockIdx; i < state.blocks.length; i++) {
-      var b = state.blocks[i];
-      b.el.innerHTML = b.innerHTML;
-      b.el.classList.add('tw-revealed');
+      state.blocks[i].el.innerHTML = state.blocks[i].innerHTML;
     }
     var content = document.querySelector('.content');
     if (content) content.classList.remove('tw-active');
@@ -151,9 +146,8 @@ permalink: /assets/js/typewriter.js
       };
     });
 
-    /* Hide all blocks, clear their content to start typing from empty. */
+    /* Clear block content to start typing from empty. */
     state.blocks.forEach(function(b) {
-      b.el.classList.add('tw-block');
       b.el.textContent = '';
     });
 
@@ -179,9 +173,6 @@ permalink: /assets/js/typewriter.js
 
     /* Reset from any previous run. */
     content.classList.remove('tw-active');
-    content.querySelectorAll('.tw-block').forEach(function(el) {
-      el.classList.remove('tw-block', 'tw-revealed');
-    });
 
     if (state.sourceHTML) {
       content.innerHTML = state.sourceHTML;
