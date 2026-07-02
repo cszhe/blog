@@ -504,21 +504,27 @@ h4 {
   }
 }
 
-/* --- Block-level streaming reveal effect (BlogGPT) ---
- *
- * Each block element (.tw-block) fades in individually.
- * Using only `opacity` transition: it runs entirely on the GPU compositor
- * thread — no layout, no paint — and is the lightest possible animation
- * on low-powered devices like iPhones.
- */
+/* --- Typewriter word-by-word streaming effect (BlogGPT) --- */
 
-.content.tw-active .tw-block {
+.content.tw-active .tw-word {
   opacity: 0;
-  transition: opacity 0.4s ease;
+  content-visibility: hidden;
 }
 
-.content.tw-active .tw-block.tw-revealed {
+.content.tw-active .tw-word.revealed {
   opacity: 1;
+  content-visibility: visible;
+  animation: tw-fade-in 0.15s ease;
+}
+
+@-webkit-keyframes tw-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes tw-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .tw-wrapper {
