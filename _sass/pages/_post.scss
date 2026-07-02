@@ -504,17 +504,15 @@ h4 {
   }
 }
 
-/* --- Typewriter word-by-word streaming effect (BlogGPT) --- */
+/* --- Typewriter character-by-character streaming effect (BlogGPT) --- */
 
-.content.tw-active .tw-word {
+.content.tw-active .tw-block {
   opacity: 0;
-  content-visibility: hidden;
 }
 
-.content.tw-active .tw-word.revealed {
+.content.tw-active .tw-block.tw-revealed {
   opacity: 1;
-  content-visibility: visible;
-  animation: tw-fade-in 0.15s ease;
+  animation: tw-fade-in 0.2s ease;
 }
 
 @-webkit-keyframes tw-fade-in {
