@@ -13,7 +13,7 @@ geo_public:
 category:   工作和学习  
 tags:
   - 教育
-slug: problem-formulation
+slug: problem-formulation-en
 original: /problem-formulation
 ai_translated: true
 ---

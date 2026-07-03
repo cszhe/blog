@@ -5,7 +5,7 @@ date: 2012-03-06T16:00:28+00:00
 author: omale
 layout: post
 category:   嵌入式  
-slug: rip-windows-ce
+slug: rip-windows-ce-en
 original: /rip-windows-ce
 ai_translated: true
 ---

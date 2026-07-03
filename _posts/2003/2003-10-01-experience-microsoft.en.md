@@ -7,7 +7,7 @@ category: Work and Study
 tags:
   - Microsoft
   - Software
-slug: experience-microsoft
+slug: experience-microsoft-en
 original: /experience-microsoft
 ai_translated: true
 ---
