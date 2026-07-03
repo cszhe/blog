@@ -597,3 +597,35 @@ h4 {
     transform: translateY(0);
   }
 }
+
+/* GPU acceleration and containment for typewriter effect */
+.content.tw-active {
+  contain: layout style paint;
+  will-change: contents;
+}
+
+.content.tw-active [data-tw-typing] {
+  contain: layout style;
+  will-change: contents;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Blinking caret animation */
+.content.tw-active [data-tw-typing]::after {
+  content: '|';
+  color: var(--text-muted-color);
+  animation: tw-caret-blink 1s step-end infinite;
+}
+
+@keyframes tw-caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
