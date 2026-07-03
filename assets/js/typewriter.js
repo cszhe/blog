@@ -26,7 +26,7 @@ permalink: /assets/js/typewriter.js
    *   - Skip restores all innerHTML instantly
    */
 
-  var CHAR_DELAY = 30;
+  var CHAR_DELAY = 80;
   var SKIP_DELAY  = 3000;
   var FRAME_BUDGET_MS = 12;  /* Leave 4ms headroom for 60fps (16.67ms/frame) */
   var DEBUG_PERF = false;
@@ -83,46 +83,35 @@ permalink: /assets/js/typewriter.js
       return false;
     }
 
-    var frameStart = performance.now();
-    var workDone = false;
+    var block = state.blocks[state.blockIdx];
+    var full  = block.fullText;
 
-    /* Process multiple blocks within frame budget */
-    while (state.blockIdx < state.blocks.length) {
-      var block = state.blocks[state.blockIdx];
-      var full  = block.fullText;
+    if (state.charIdx >= full.length) {
+      /* Block complete - restore HTML and move to next */
+      block.el.removeAttribute('data-tw-typing');
+      block.el.innerHTML = block.innerHTML;
+      state.blockIdx++;
+      state.charIdx = 0;
 
-      if (state.charIdx >= full.length) {
-        /* Block complete - restore HTML and move to next */
-        block.el.removeAttribute('data-tw-typing');
-        block.el.innerHTML = block.innerHTML;
-        state.blockIdx++;
-        state.charIdx = 0;
-        continue;
-      }
-
-      /* Mark block as actively typing for GPU layering */
-      if (!block.el.hasAttribute('data-tw-typing')) {
-        block.el.setAttribute('data-tw-typing', '');
-      }
-
-      /* Type 3-6 characters per tick for natural streaming pace */
-      var end = Math.min(state.charIdx + 5, full.length);
-      block.el.textContent = full.substring(0, end);
-      state.charIdx = end;
-      workDone = true;
-
-      if (DEBUG_PERF) {
-        perfStats.totalChars += (end - state.charIdx + 5);
-      }
-
-      /* Check frame budget - defer remaining work to next frame */
-      var frameElapsed = performance.now() - frameStart;
-      if (frameElapsed > FRAME_BUDGET_MS) {
-        break;
-      }
+      /* If we just finished a block, don't start the next one yet */
+      return true;
     }
 
-    return workDone;
+    /* Mark block as actively typing for GPU layering */
+    if (!block.el.hasAttribute('data-tw-typing')) {
+      block.el.setAttribute('data-tw-typing', '');
+    }
+
+    /* Type 1 character per tick for natural typewriter pace */
+    var end = Math.min(state.charIdx + 1, full.length);
+    block.el.textContent = full.substring(0, end);
+    state.charIdx = end;
+
+    if (DEBUG_PERF) {
+      perfStats.totalChars++;
+    }
+
+    return true;
   }
 
   function revealLoop(timestamp) {
@@ -139,7 +128,7 @@ permalink: /assets/js/typewriter.js
     state.accumulatedTime += elapsed;
 
     /* Only update when accumulated time exceeds CHAR_DELAY */
-    while (state.accumulatedTime >= CHAR_DELAY) {
+    if (state.accumulatedTime >= CHAR_DELAY) {
       state.accumulatedTime -= CHAR_DELAY;
       revealTick();
     }
