@@ -5,7 +5,7 @@ date: 2011-07-22T16:24:01+00:00
 author: omale
 layout: post
 category:   工作和学习  
-slug: write-once-run-everywhere-everywhere
+slug: write-once-run-everywhere-everywhere-en
 original: /write-once-run-everywhere-everywhere
 ai_translated: true
 ---

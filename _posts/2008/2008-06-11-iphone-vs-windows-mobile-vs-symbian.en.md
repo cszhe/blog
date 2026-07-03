@@ -5,7 +5,7 @@ date: 2008-06-11T05:33:00+00:00
 author: omale
 layout: post
 category:   嵌入式  
-slug: iphone-vs-windows-mobile-vs-symbian
+slug: iphone-vs-windows-mobile-vs-symbian-en
 original: /iphone-vs-windows-mobile-vs-symbian
 ai_translated: true
 ---

@@ -8,7 +8,7 @@ category:   嵌入式
 tags:
   - Apple
   - Android
-slug: iphone-vs-android-vs-windows-phone
+slug: iphone-vs-android-vs-windows-phone-en
 original: /iphone-vs-android-vs-windows-phone
 ai_translated: true
 ---

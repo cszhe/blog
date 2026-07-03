@@ -6,7 +6,7 @@ date: 2023-12-12 18:06
 category: Qian's Corner
 tags:
   - Qian
-slug: oakland-slide
+slug: oakland-slide-en
 original: /oakland-slide
 ai_translated: true
 ---

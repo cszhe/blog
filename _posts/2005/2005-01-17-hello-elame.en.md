@@ -7,7 +7,7 @@ layout: post
 category: uncategorized
 tags:
   - Software
-slug: hello-elame
+slug: hello-elame-en
 original: /2005-01-17-hello elame
 ai_translated: true
 ---

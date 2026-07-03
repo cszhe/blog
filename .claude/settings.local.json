@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(brew list *)",
+      "Bash(ruby --version)",
+      "Bash(brew install *)",
+      "Bash(curl -s http://localhost:4000)",
+      "Bash(awk '{print $8}')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4000)",
+      "Bash(pkill *)"
+    ]
+  }
+}

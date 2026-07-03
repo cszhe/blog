@@ -7,7 +7,7 @@ layout: post
 category:   未分类  
 tags:
   - Google
-slug: how-do-you-like-your-eggs-steak-cooked
+slug: how-do-you-like-your-eggs-steak-cooked-en
 original: /how-do-you-like-your-eggs-steak-cooked
 ai_translated: true
 ---

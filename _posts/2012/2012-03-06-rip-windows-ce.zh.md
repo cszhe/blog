@@ -8,7 +8,7 @@ if_slider_image:
   - ""
 category:   嵌入式  
 slug: rip-windows-ce
-translation: /rip-windows-ce
+translation: /rip-windows-ce-en
 ---
 <p style="text-align: center;">
   RIP

@@ -7,7 +7,7 @@ layout: post
 category: uncategorized
 tags:
   - Microsoft
-slug: shared-source-cli
+slug: shared-source-cli-en
 original: /2005-01-19-shared source cli
 ai_translated: true
 ---
