@@ -16,7 +16,7 @@ ai_translated: true
 
 ## Token Freedom
 
-For a long time, I didn't have any expensive AI subscriptions. To experiment with AI, I relied entirely on school's Dell DGX Spark (a mini beast equipped with 128GB unified memory and an NVIDIA GB10 GPU) alongside local L4 graphics cards to run local open-weight models. The biggest perk of local models is sheer speed—tokens stream out so fast your eyes can barely keep up. However, the downside was equally obvious: local model sizes were relatively small, capping their intelligence, and they would instantly give up when faced with slightly complex reasoning tasks.
+For a long time, I didn't have any expensive AI subscriptions. To experiment with AI, I relied entirely on school resources—a Dell DGX Spark (a mini beast equipped with 128GB unified memory and an NVIDIA GB10 GPU) alongside an L4 GPU in a school virtual machine to run local open-weight models. The biggest perk of local models is sheer speed—tokens stream out so fast your eyes can barely keep up. However, the downside was equally obvious: local model sizes were relatively small, capping their intelligence, and they would instantly give up when faced with slightly complex reasoning tasks.
 
 Recently, though, happiness arrived all too suddenly—I achieved **Token Freedom** overnight!
 
@@ -30,7 +30,7 @@ Sitting on a mountain of Token reserves from top commercial and open-source mode
 
 ## Breaking the Barriers
 
-Recently, I began tinkering with [Herdr](https://github.com/herdr/herdr) in the terminal, a tool dubbed "Tmux for the Agentic Era." Simply put, not only can it manage multiple terminal panes running different AI Agents, but it also allows different Agents to message and communicate with each other directly!
+Recently, I began tinkering with [Herdr](https://herdr.dev) in the terminal, a tool dubbed "Tmux for the Agentic Era." Simply put, not only can it manage multiple terminal panes running different AI Agents, but it also allows different Agents to message and communicate with each other directly!
 
 Having Agents chat with one another opened up a whole new world of fun. Here's a hilarious example: once, I asked an Agent to visit a website, but I accidentally mistyped a letter in the URL, so it naturally failed to load. In the past, the Agent would have just thrown an error and quit. Instead, like a confused human, this Agent messaged another Agent in the adjacent Herdr pane: *"Bro, why can't I open this website? Could you try it for me?"*
 
@@ -70,6 +70,8 @@ Watching the endless spinner on screen, I could literally feel my wallet burning
 To stop the financial bleed, I tried instructing it in the prompt: "Limit your thinking time to no more than 3 minutes per move!"
 However, I quickly learned a hard lesson: **LLMs have zero concept of physical time!**
 To an LLM, there are only input and output tokens; they cannot perceive the flow of real-world time. Asking them to "say one word per second" or "think for 60 seconds before answering" is completely impossible—purely talking to a brick wall. In the end, we had to enforce strict timeout cutoffs in the judge helper scripts and backend API (auto-forfeiting if a valid move wasn't returned in time) to save my wallet.
+4. **Context Window as the "Kill Line"**:
+   I noticed another fascinating phenomenon during the matches—the Context Window is effectively an LLM's "kill line." Models with 1M+ context windows can handle extensive thinking without ever exhausting their capacity during a single game. However, for models with smaller 200K context windows, once the match reaches the late mid-game and the context window gets nearly full—triggering context compaction—their intelligence drops off a cliff, leading to sudden blunders and rapid losses. What's puzzling is that the judge agent includes the full move history in the prompt for every single step, which theoretically allows the model to reconstruct the full board state from scratch. Yet, as soon as context compaction occurs, reasoning quality degrades drastically anyway.
 
 ## Reinventing the Wheel
 

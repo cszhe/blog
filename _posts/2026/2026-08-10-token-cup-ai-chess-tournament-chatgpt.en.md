@@ -18,7 +18,7 @@ ai_translated: true
 
 My old relationship with AI was fairly simple: no subscription, so build it myself.
 
-The L4 and DGX Spark at home took turns running local models. They worked hard, and so did the fans. But the models were usually small, with the intelligence of a very well-read intern who occasionally puts their shoes on the wrong feet. They could chat and write a little code; for anything complicated, a human still needed to stand nearby with a safety rail.
+The L4 in a school virtual machine and the DGX Spark took turns running local models. They worked hard, and so did the fans. But the models were usually small, with the intelligence of a very well-read intern who occasionally puts their shoes on the wrong feet. They could chat and write a little code; for anything complicated, a human still needed to stand nearby with a safety rail.
 
 Then, quite suddenly, I achieved token freedom.
 
@@ -30,7 +30,7 @@ It used to be, “Is this question worth spending one prompt on?” Now it is, �
 
 ## Breaking Down the Walls
 
-Recently I started using [Herdr](https://herdr.sh/), advertised as tmux for the age of agents. That sounds grand, but its most entertaining feature is simple: different agents can send messages to one another.
+Recently I started using [Herdr](https://herdr.dev), advertised as tmux for the age of agents. That sounds grand, but its most entertaining feature is simple: different agents can send messages to one another.
 
 Once that happens, they become oddly human. One agent mistyped a URL and, naturally, could not open it. Instead of quietly giving up, it asked another agent: “Why can't I open this website? Can you try it for me?” Looking at the screen, I was briefly back in an office. Except these colleagues neither drink coffee nor collect salaries; they bill by the token.
 
@@ -57,6 +57,8 @@ The models also share a special talent: thinking forever.
 I once naively wanted to tell them, “Do not think for more than three minutes per move.” It sounds reasonable, but implementing it is like explaining time zones to a goldfish. A language model does not really have a sense of time. Ask it to say one word per second and it cannot. Ask it to finish in three minutes and it will not look at a clock. It will simply keep generating tokens, increasingly like a student kept after class who has decided to write an entire encyclopedia.
 
 ![ChatGPT seems stuck in an infinite loop while my wallet burns](/uploads/2026/tokencup/InfiniteThinking.png)
+
+There was one more discovery I only remembered later: a model's context window seems to be its "killing line." Models with a 1M context window generally do not run out of context during a single game, no matter how long they think. But with models around 200K, once the context window gets close to full and compaction is triggered, their playing strength drops sharply, and they tend to lose soon afterwards. The strange part is that the judge sends the complete move history from every previous step to the model each time. In principle, the model should be able to reconstruct the entire game from that history, rather than losing track of the position because its context was compacted. I still do not understand exactly why this happens.
 
 That is why the tournament needs timeouts. Not because the players are cheating, but because even a good chess player should not leave their opponent, the judge, and my wallet waiting beside the board.
 
