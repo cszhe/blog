@@ -4,7 +4,7 @@ lang: en
 date: 2004-02-20T00:00:00+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - Microsoft
 slug: farewell-to-gtec-2

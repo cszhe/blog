@@ -4,7 +4,7 @@ lang: en
 date: 2005-01-19T11:30:19+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - Microsoft
 slug: shared-source-cli-en

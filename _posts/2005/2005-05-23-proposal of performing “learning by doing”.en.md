@@ -4,7 +4,7 @@ lang: en
 date: 2005-05-23T01:02:14+00:00
 author: omale
 layout: post
-category: work-and-study
+category: Work and Study
 tags:
   - Tongji
   - Windows CE

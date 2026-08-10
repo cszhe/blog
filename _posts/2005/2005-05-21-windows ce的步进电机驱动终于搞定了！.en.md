@@ -4,7 +4,7 @@ lang: en
 date: 2005-05-21T13:26:28+00:00
 author: omale
 layout: post
-category: embedded
+category: Embedded
 tags:
   - Windows CE
 slug: stepper-motor-driver-on-windows-ce

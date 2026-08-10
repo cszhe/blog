@@ -112,3 +112,6 @@ vendor/
  # Jekyll
 _site/
 vendor/
+.claude/
+.gemini/
+.jekyll-metadata

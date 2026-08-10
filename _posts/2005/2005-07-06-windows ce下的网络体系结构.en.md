@@ -4,7 +4,7 @@ lang: en
 date: 2005-07-06T23:56:29+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - Windows CE
 slug: windows-ce-network-architecture

@@ -4,7 +4,7 @@ lang: en
 date: 2005-02-21T14:30:25+00:00
 author: omale
 layout: post
-category: embedded
+category: Embedded
 tags:
   - Google
   - Software

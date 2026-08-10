@@ -10,6 +10,15 @@ zongjian_he:
   name: Zongjian He
   url: https://hezongjian.com/
 
+ChatGPT:
+  name: ChatGPT
+
+Claude:
+  name: Claude
+
+Gemini:
+  name: Gemini
+
 # sille_bille:
 #   name: Dinesh Prasanth Moluguwan Krishnamoorthy
 #   twitter: dinesh_MKD

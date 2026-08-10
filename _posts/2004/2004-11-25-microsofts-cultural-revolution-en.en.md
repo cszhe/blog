@@ -4,7 +4,7 @@ lang: en
 date: 2004-11-25T20:02:02+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - Microsoft
   - Software

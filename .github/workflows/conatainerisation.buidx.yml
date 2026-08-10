@@ -11,6 +11,10 @@ jobs:
     steps:
     - name: Checkout source code
       uses: actions/checkout@v7
+      with:
+        # Full history: _plugins/posts-lastmod-hook.rb derives each post's
+        # last-modified date from git log, which a shallow clone cannot provide.
+        fetch-depth: 0
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v4
@@ -31,6 +35,8 @@ jobs:
     - name: Generate HTML
       run: |
         bundle exec jekyll build
+      env:
+        JEKYLL_ENV: production
     
     - name: Login to Docker Hub
       uses: docker/login-action@v4

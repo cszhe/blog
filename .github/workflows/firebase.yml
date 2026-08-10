@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v7
+        with:
+          # Full history: _plugins/posts-lastmod-hook.rb derives each post's
+          # last-modified date from git log, which a shallow clone cannot provide.
+          fetch-depth: 0
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -26,6 +30,8 @@ jobs:
       - name: Build Jekyll
         run: |
           bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
 
       - name: Deploy to Firebase
         run: |

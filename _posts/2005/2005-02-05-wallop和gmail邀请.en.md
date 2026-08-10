@@ -4,7 +4,7 @@ lang: en
 date: 2005-02-05T21:47:23+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - Software
 slug: wallop-and-gmail-invites
