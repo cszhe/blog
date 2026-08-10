@@ -4,7 +4,7 @@ lang: en
 date: 2005-02-15T01:42:38+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - Programmer
 slug: terrarium-and-free-aspnet-hosting

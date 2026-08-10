@@ -4,7 +4,7 @@ lang: en
 date: 2005-06-27T23:52:55+00:00
 author: omale
 layout: post
-category: work-and-study
+category: Work and Study
 tags:
   - Tongji
   - Embedded

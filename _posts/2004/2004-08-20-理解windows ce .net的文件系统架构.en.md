@@ -4,7 +4,7 @@ lang: en
 date: 2004-08-20T17:38:35+00:00
 author: omale
 layout: post
-category: embedded
+category: Embedded
 tags:
   - Windows CE
 slug: understanding-windows-ce-net-file-system-architecture

@@ -4,7 +4,7 @@ lang: en
 date: 2004-11-03T00:41:00+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - Windows CE
   - Embedded

@@ -4,7 +4,7 @@ lang: en
 date: 2005-07-01T16:10:08+00:00
 author: omale
 layout: post
-category: embedded
+category: Embedded
 tags:
   - Windows CE
 slug: windows-ce-error-reporting

@@ -4,7 +4,7 @@ lang: en
 date: 2005-08-19T16:04:53+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - Tongji
   - Embedded

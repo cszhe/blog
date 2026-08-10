@@ -4,7 +4,7 @@ lang: en
 date: 2005-08-01T18:31:38+00:00
 author: omale
 layout: post
-category: uncategorized
+category: Uncategorized
 tags:
   - C++
   - Microsoft
