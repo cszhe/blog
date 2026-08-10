@@ -114,3 +114,4 @@ _site/
 vendor/
 .claude/
 .gemini/
+.jekyll-metadata
