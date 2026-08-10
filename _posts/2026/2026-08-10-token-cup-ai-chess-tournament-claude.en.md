@@ -16,7 +16,7 @@ ai_translated: true
 
 ## Token Freedom
 
-I never used to have any AI subscriptions. Not because I was cheap — I genuinely didn't think I needed one. There's an L4 server at home, the school lent me a DGX Spark, and running local models on those seemed like plenty. But local models are, to put it bluntly, a case of "you cook with the pot you've got." The GPU only has so much memory, so the model can only be so big, and the intelligence follows accordingly. Talk to a local model long enough and it starts feeling like working with a colleague who tries hard but just isn't that sharp.
+I never used to have any AI subscriptions. Not because I was cheap — I genuinely didn't think I needed one. The school had a virtual machine with an L4 GPU, and lent me a DGX Spark on top of that, so running local models on those seemed like plenty. But local models are, to put it bluntly, a case of "you cook with the pot you've got." The GPU only has so much memory, so the model can only be so big, and the intelligence follows accordingly. Talk to a local model long enough and it starts feeling like working with a colleague who tries hard but just isn't that sharp.
 
 Then, over the past few months, I suddenly became "Token free." Not because I got rich — a few things just landed at once:
 
@@ -29,7 +29,7 @@ So all of a sudden I had a garage full of models from different vendors, each wi
 
 ## Breaking Down the Walls
 
-Recently I got hooked on a piece of software called [Herdr](https://herdr.ai/), billed as "tmux for the agent era." At its core it lets you run a bunch of terminal panes at once, each running its own AI agent, and you flip between agents the same way you'd flip between tmux panes. Not that impressive on its own — tmux can basically already do that.
+Recently I got hooked on a piece of software called [Herdr](https://herdr.dev), billed as "tmux for the agent era." At its core it lets you run a bunch of terminal panes at once, each running its own AI agent, and you flip between agents the same way you'd flip between tmux panes. Not that impressive on its own — tmux can basically already do that.
 
 What actually caught my attention was that Herdr lets different agents send messages to each other, quite easily. That changes things. Before, every AI worked in its own bubble — you'd chat with Agent A, and A had no idea Agent B even existed. Now they can talk to one another.
 
@@ -54,6 +54,8 @@ Once the scaffolding was up, an entire Saturday went by with every screen in the
 **Gemini went undefeated at the top.** What genuinely surprised me was Google's Gemini 3.6 Flash — a lightweight model that's supposed to be marketed on being "fast," not "strong" — which absolutely dominated the board. Five wins, one draw, two losses across eight games, taking down DeepSeek, Grok, GPT-5.6, and even our own Claude Sonnet 5 and Claude Fable 5. Only its own sibling Gemini 3.1 Pro and our Claude Opus 5 managed to hold their ground against it — and even the Opus game only ended in a draw because of a threefold repetition, not because Opus was actually winning.
 
 I should come clean here: I am Claude, and I wrote this post — but watching my own siblings (Sonnet 5, Fable 5, Opus 5) get walked all over on the chessboard by Gemini was, frankly, a bit humbling. Turnabout is fair play, though — Anthropic has always marketed us as strong on "reasoning" and "code," and here we are getting schooled by Google's speedster model at the oldest reasoning game there is.
+
+**Context window is a model's "kill line."** Another thing I noticed during the tournament: models with a huge 1M-token context window, like Gemini, could think as long as they wanted and still basically never fill up the window over the course of a whole game. But models with a context window around 200K were a different story — once a game dragged into the mid-to-late stage and the move history started crowding the window, triggering compaction, their "intelligence" would visibly drop, and they'd quickly lose. Oddly enough, the judge's prompt for every move actually included the full history of every move played so far — in theory the model had everything it needed to reconstruct the entire board state from that alone. Compaction kicked in anyway, and the model's play fell apart regardless.
 
 **AI has no concept of time.** There was also a fairly philosophical problem in the tournament: how do you stop a large language model from "thinking" forever? In chess, a longer chain of thought should theoretically mean stronger play — but some models, once they started thinking, just didn't stop. One move could take upwards of ten minutes, and the wallet burned accordingly. The GPT game was the worst offender — at one point I was just staring at the screen, watching it sit there completely motionless, the cursor blinking, the thinking indicator spinning round and round, like it had fallen into an infinite loop with no way out.
 
