@@ -22,7 +22,7 @@
    *   - Skip restores all innerHTML instantly
    */
 
-  var CHAR_DELAY = 80;
+  var CHAR_DELAY = 40;  /* ms per character (~25 chars/sec) */
   var SKIP_DELAY  = 3000;
   var FRAME_BUDGET_MS = 12;  /* Leave 4ms headroom for 60fps (16.67ms/frame) */
   var DEBUG_PERF = false;
