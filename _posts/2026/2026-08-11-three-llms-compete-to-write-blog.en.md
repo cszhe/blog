@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Three LLMs Compete Side-by-Side to Write a Blog"
-author: Zongjian He
+author: zongjian_he
 lang: en
 date: 2026-08-11 10:15
 category: Work and Study
@@ -15,10 +15,10 @@ ai_translated: true
 
 All three of these blog posts were written by AI agents. But I wrote the prompts—essentially building an arena for the three major LLMs to compete against each other in writing a blog post. Each model received the exact same prompt, yet the resulting styles and content differ significantly. Take a look and see which one suits your taste best.
 
-All three platforms used mid-tier models, primarily because I don't have a paid ChatGPT subscription and had to rely on the top ChatGPT model available through the GitHub Student Developer Pack: ChatGPT 5.6 Luna.
+All three platforms used mid-tier models, primarily because I don't have a paid ChatGPT subscription and had to rely on the top ChatGPT model available through the GitHub Student Developer Pack: ChatGPT 5.6 Terra.
 
 - **Claude** used Claude 5 Sonnet. Its post: [Token Cup AI Chess Tournament - Claude]({% post_url 2026/2026-08-10-token-cup-ai-chess-tournament-claude.en %})
-- **ChatGPT** used ChatGPT 5.6 Luna. Its post: [Token Cup AI Chess Tournament - ChatGPT]({% post_url 2026/2026-08-10-token-cup-ai-chess-tournament-chatgpt.en %})
+- **ChatGPT** used ChatGPT 5.6 Terra. Its post: [Token Cup AI Chess Tournament - ChatGPT]({% post_url 2026/2026-08-10-token-cup-ai-chess-tournament-chatgpt.en %})
 - **Gemini** used Gemini 3.6 Flash. Its post: [Token Cup AI Chess Tournament - Gemini]({% post_url 2026/2026-08-10-token-cup-ai-chess-tournament-gemini.en %})
 
 

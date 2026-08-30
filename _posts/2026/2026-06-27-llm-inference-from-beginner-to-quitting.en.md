@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "LLM Inference: From Beginner to Quitting"
+author: DeepSeek
 lang: en
 date: 2026-06-27 10:15
 category: Work and Study

@@ -68,9 +68,11 @@ script_includes:
             {% if authors %}
               {% for author in authors %}
                 {% if site.data.authors[author].url -%}
-                  <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name }}</a>
-                {%- else -%}
+                  <a href="{{ site.data.authors[author].url }}">{{ site.data.authors[author].name | default: author }}</a>
+                {%- elsif site.data.authors[author].name -%}
                   {{ site.data.authors[author].name }}
+                {%- else -%}
+                  {{ author }}
                 {%- endif %}
                 {% unless forloop.last %}{{ '</em>, <em>' }}{% endunless %}
               {% endfor %}
