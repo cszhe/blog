@@ -303,7 +303,6 @@ permalink: /assets/js/typewriter.js
   document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.content')) {
       createToggleBtn();
-      setTimeout(toggle, 100);
     }
   });
 })();
