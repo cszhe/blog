@@ -299,7 +299,6 @@
   document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.content')) {
       createToggleBtn();
-      setTimeout(toggle, 100);
     }
   });
 })();
