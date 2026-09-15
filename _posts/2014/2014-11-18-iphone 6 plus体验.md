@@ -15,9 +15,9 @@ translation: /iphone-6-plus-review
   <span lang="zh-CN" style="font-family: SimSun;">为了犒劳自己，买了一个</span><span lang="en-US" style="font-family: Calibri;">iPhone 6 Plus</span><span lang="zh-CN" style="font-family: SimSun;">。银色，我自己最喜欢的颜色。土豪金太俗了，不喜欢。黑色的太老气了，不喜欢。我最喜欢的还是浅色系。</span>
 </p>
 
-![iphone6](/uploads/2014/11/iphone6.jpg)
+![iphone6](/uploads/2014/11/iphone6.webp)
 
-![iphone6-2](/uploads/2014/11/iphone6.2.jpg)
+![iphone6-2](/uploads/2014/11/iphone6.2.webp)
   
   <p style="margin: 0in; font-size: 11.0pt;">
     <p style="margin: 0in; font-size: 11.0pt;">

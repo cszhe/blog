@@ -46,10 +46,10 @@ Some people easily carry past experiences into their current lives. But when the
 
 I forgot to turn off GitHub Copilot while writing this. It tried to help write the article. As always, the grammar was fine but the logic was... creative.
 
-![AI 1](/uploads/2023/copilot1.jpg)
+![AI 1](/uploads/2023/copilot1.webp)
 
 Figure 1: Turns out AI is a bleeding heart too.
 
-![AI 2](/uploads/2023/copilot2.jpg)
+![AI 2](/uploads/2023/copilot2.webp)
 
 Figure 2: This is brilliant — blaming the British colonists for rising egg prices. You have a future in politics.

@@ -53,7 +53,7 @@ Before flashing the modded BIOS, you need a working CPU just to boot the board. 
 
 There was a funny incident — the seller shipped the wrong item. Instead of a CPU, they sent a battery. I immediately thought we'd been scammed — buying a GPU and getting a brick, buying an iPhone and getting an apple. Turns out the seller had mixed up orders and later resent the correct CPU. Quite the experience. Also, buying on Xianyu apparently requires you to film yourself unboxing — Qian bought a head-mounted phone holder for first-person POV videos. Gotta love modern trust-building measures.
 
-<img src="/uploads/2026/wrong-delivery.jpg" alt="Wrong delivery" class="half" />
+<img src="/uploads/2026/wrong-delivery.webp" alt="Wrong delivery" class="half" />
 
 But then he hit a wall. With the cheap CPU and RAM, the board wouldn't POST — no video output at all. Zero clue what was wrong. Could be the board, the CPU, the RAM, even the monitor. Just... nothing.
 
@@ -73,7 +73,7 @@ Testing the T4 was simple: plug it in, install drivers, run a test. Everything w
 
 But then came the heat problem. The T4 is a typical datacenter GPU: tiny, no video outputs except PCIe, no fan. It relies entirely on server chassis airflow. Running a local model, even asking GPT-OSS one question with reasoning enabled would push the temperature over 90°C. So he bought a dedicated T4 fan kit. Installation required disassembling the card, mounting the fan, and reassembling it. I was impressed by his动手能力. The fans worked — temperature stabilized around 60°C. When will physicists finally crack high-temperature superconductivity and solve cooling forever?
 
-<img src="/uploads/2026/gpu-fan.jpg" alt="T4 GPU fan" class="half" />
+<img src="/uploads/2026/gpu-fan.webp" alt="T4 GPU fan" class="half" />
 
 Then came the real fun — running models and benchmarking. I already knew what the T4 could do, but Qian was blown away. "It's so much faster than my 3080!" he kept saying. I dread to think what his experience running models on the 3080 was like.
 
@@ -128,6 +128,6 @@ All in, about 1200 RMB for a working T4-powered AI rig. Totally worth it. Qian l
 
 Back in New Zealand, he took the T4 for his main rig. The test bench parts? He didn't need them anymore. So I claimed them. I don't game or run local models, so I didn't need a GPU. I bought a case on Facebook Marketplace, assembled everything, and now it's a respectable desktop — no longer the "bare chassis" Qian called it. I plan to use it for my work-from-home setup. My work-issued MacBook Pro is overkill for video calls and office tasks.
 
-<img src="/uploads/2026/final-view.jpg" alt="Modded PC family photo" class="half" />
+<img src="/uploads/2026/final-view.webp" alt="Modded PC family photo" class="half" />
 
 Here's the final build — my new WFH battlestation. Thanks, Qian, for all the tinkering. I learned a lot too.

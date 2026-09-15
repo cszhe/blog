@@ -30,11 +30,11 @@ I bought the Apple Watch SE 2 (44mm), not the Ultra or Series 8. It's a few hund
 Pictured below. 7 years on, Apple Watch bands are still backward compatible. Impressive. The casing now comes in different colors besides silver, though the luxury gold edition is gone. My first-gen had a blue sports loop — loved that color. No idea why Apple discontinued blue bands, leaving pink, black, and rainbow — none my style. So I reluctantly spent an extra $100 on a Milanese loop (available since the first generation). Black band with black case — a nice dark theme. The Milanese loop attaches with magnets but holds firmly, comfortable and not heavy. No real flaws. 7 years later, despite Apple's fancy new bands like the braided solo loop, the Milanese still looks great. One downside: hair pulling. Keep it away from any hair.
 
 <p style="text-align: center;">
-  <a href="/uploads/2015/04/2015-04-24-132847.jpg"><img class="aligncenter" src="/uploads/2015/04/2015-04-24-132847-300x225.jpg" width="300" height="225"  /></a><br /> Figure 1: 2015 Apple Watch first generation
+  <a href="/uploads/2015/04/2015-04-24-132847.webp"><img class="aligncenter" src="/uploads/2015/04/2015-04-24-132847.webp" width="300" height="225"  /></a><br /> Figure 1: 2015 Apple Watch first generation
 </p>
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/apple_watch_se_2.jpg"><img class="aligncenter" src="/uploads/2022/apple_watch_se_2.jpg" width="300" height="225" /></a><br /> Figure 2: 2022 Apple Watch SE 2
+  <a href="/uploads/2022/apple_watch_se_2.webp"><img class="aligncenter" src="/uploads/2022/apple_watch_se_2.webp" width="300" height="225" /></a><br /> Figure 2: 2022 Apple Watch SE 2
 </p>
 
 ## Fitness

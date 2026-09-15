@@ -11,4 +11,4 @@ ai_translated: true
 ---
 A few days ago I took some photos at the college's poster board. These hot industry players have sunk their tentacles deep into universities. Very deep. Is this good or bad?
 
-[<img class="aligncenter size-medium wp-image-10454" height="200" src="/uploads/2010/09/Google-Apple-300x200.jpg" title="Google Apple" width="300" />](/uploads/2010/09/Google-Apple.jpg)
+[<img class="aligncenter size-medium wp-image-10454" height="200" src="/uploads/2010/09/Google-Apple-300x200.webp" title="Google Apple" width="300" />](/uploads/2010/09/Google-Apple.webp)

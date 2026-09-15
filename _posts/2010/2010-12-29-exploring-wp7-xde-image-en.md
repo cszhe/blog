@@ -23,7 +23,7 @@ But it provides very little information. Almost nothing useful. The old Device E
 
 XDE's default installation directory is C:\Program Files (x86)\Microsoft XDE\1.0. Looks familiar? Just like the old Device Emulator. Even the "1.0" folder name is the same. Device Emulator v3.0 still had a "1.0" folder. Confusing. If you're rebuilding the emulator, this should have been changed long ago. Let's compare the help of both emulators.
 
-[<img class="aligncenter size-medium wp-image-10541" height="214" src="/uploads/2010/12/help-300x214.png" title="emulator help" width="300" />](/uploads/2010/12/help.png)
+[<img class="aligncenter size-medium wp-image-10541" height="214" src="/uploads/2010/12/help-300x214.webp" title="emulator help" width="300" />](/uploads/2010/12/help.webp)
 
 Left is XDE.exe's help, right is Device Emulator's help. Clearly, 80% is identical. The only change is simulating different ARM processor versions (v4, v5, v6). So XDE is also an ARM-based emulator? Could it be an improved version of the traditional Device Emulator? If you think that, Microsoft has fooled you. Launch XDE from the command line: "xde.exe [image name]" to start the emulator. Try some parameters: /c, /z, etc. are completely invalid. Ha! It's just hanging a sheep's head but selling dog meat. Fooling the innocent.
 
@@ -37,7 +37,7 @@ The emulator's ROM is at C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.
 
 Let's try it ourselves, using official tools, not unofficial ones. Open the bin file directly in VS2005 with PB extension. Unpack successful! <span style="color:#f00;"><strong>This proves WP7 still uses the standard CE bin file format</strong></span>. Real devices probably use nb0 or nbh format. Ah, Microsoft, this bin format has been studied inside out by bad actors. No wonder the emulator got unlocked just days after release.
 
-[<img class="aligncenter size-medium wp-image-10546" height="187" src="/uploads/2010/12/bin-300x187.png" title="rom content" width="300" />](/uploads/2010/12/bin.png)
+[<img class="aligncenter size-medium wp-image-10546" height="187" src="/uploads/2010/12/bin-300x187.webp" title="rom content" width="300" />](/uploads/2010/12/bin.webp)
 
 From the ROM content, it's a typical CE OS. Let's see what's interesting in the registry.
 
@@ -45,7 +45,7 @@ First, HKEY_LOCAL_MACHINE\Drivers\BuiltIn. All the drivers are for the emulator 
 
 Let's check the startup items, HKEY_LOCAL_MACHINE\init:
 
-[<img class="aligncenter size-medium wp-image-10547" height="237" src="/uploads/2010/12/boot-300x237.png" title="boot" width="300" />](/uploads/2010/12/boot.png)
+[<img class="aligncenter size-medium wp-image-10547" height="237" src="/uploads/2010/12/boot-300x237.webp" title="boot" width="300" />](/uploads/2010/12/boot.webp)
 
 This is WP7's startup sequence. gwes.dll, device.dll are standard components. The familiar explorer.exe is not there, obviously. Otherwise you'd get a standard Windows desktop. I'd guess the main WP7 UI is called telshell.exe. Could be wrong without a real device. The last loaded item is interesting: k.mscoree3_7.dll. Things starting with "k." are in the kernel. Has Microsoft finally put the .NET VM into the OS kernel? This could solve problems NETCF couldn't address before.
 

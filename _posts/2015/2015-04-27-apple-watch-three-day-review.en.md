@@ -17,7 +17,7 @@ I picked up my Apple Watch at 1 PM on launch day, April 24th. Mine is the 42mm s
 
 Pairing with the iPhone is straightforward — just open the Apple Watch app and point the camera at the watch. Despite the seemingly chaotic display on the watch screen, it actually contains hidden information. Setup is also simple: choose which wrist you wear it on, your exercise habits, and which apps from your iPhone you want installed. The whole process is very easy.
 
-![Figure 1: The screen during initial setup, with the wireless charging stethoscope in the top right corner](/uploads/2015/04/2015-04-24-132847.jpg)
+![Figure 1: The screen during initial setup, with the wireless charging stethoscope in the top right corner](/uploads/2015/04/2015-04-24-132847.webp)
 
 **Innovation:**
 
@@ -39,7 +39,7 @@ Notifications essentially move some iPhone alerts to the watch. Simple notificat
 
 The first-party apps are solid. I tried making phone calls twice — tell Siri who to call, and it dials. Audio quality is acceptable. Incoming calls are a different story — all five of my Apple devices (iMac, MacBook Pro, iPad, iPhone, Apple Watch) ring simultaneously, and I can never decide which one to answer on. There's also a camera app that pairs with the iPhone for taking selfies without help. Place your iPhone somewhere, and the watch shows the preview. Then fold your hands over your stomach and silently press the shutter on your watch — the classic leader pose, which apes apparently love. I'm not into music at all, so I didn't test the music app. Third-party apps are lacking. I installed NetEase News, WeChat, Nike Plus, and Alipay. NetEase News is purely entertainment — who would read news on that tiny screen? Though the breaking news push notifications are interesting, just not very accurate, with lots of gossip wasting time. WeChat lets you browse moments and read messages, but it's a bit laggy. Replying isn't great either. I haven't tried Nike Plus or Alipay.
 
-![Figure 2: All five devices ringing at once — quite a sight](/uploads/2015/04/2015-04-24-140644.jpg)
+![Figure 2: All five devices ringing at once — quite a sight](/uploads/2015/04/2015-04-24-140644.webp)
 
 **Fitness**
 
@@ -51,7 +51,7 @@ The night I got the watch, I went downstairs and ran 5K to test it. Previously, 
 
 With the Apple Watch, iOS's Health app becomes increasingly interesting. When I first got my iPhone, Health only had pedometer and floor-climbing data. Now there are more data sources, and the ecosystem is taking shape. I currently have three data sources: Jawbone Up band, Nike Plus, and Apple Watch. Three fitness tracking devices, each with overlap: iPhone tracks steps and floors, Jawbone tracks steps and sleep, Apple Watch tracks steps and heart rate. I can't ditch any of them yet — only the iPhone measures floors, only the Watch measures heart rate, and only the Jawbone measures sleep. So it's left wrist Watch, right wrist band, phone in pocket. A bit annoying.
 
-![Figure 3: Heart rate test](/uploads/2015/04/2015-04-24-141656.jpg)
+![Figure 3: Heart rate test](/uploads/2015/04/2015-04-24-141656.webp)
 
 **Battery Life**
 

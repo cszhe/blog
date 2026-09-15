@@ -17,16 +17,16 @@ Here's my birthday this year in full. Happy and memorable.
 
 My parents sent blessings via WeChat early in the morning. Why is there Pacific Insurance? Clearly spam ads…
 
-[<img class="aligncenter size-medium wp-image-10905" alt="wp_ss_20131120_0001" src="/uploads/2013/11/wp_ss_20131120_0001-180x300.png" width="180" height="300"  />](/uploads/2013/11/wp_ss_20131120_0001.png)
+[<img class="aligncenter size-medium wp-image-10905" alt="wp_ss_20131120_0001" src="/uploads/2013/11/wp_ss_20131120_0001-180x300.webp" width="180" height="300"  />](/uploads/2013/11/wp_ss_20131120_0001.webp)
 
 My wife hand-drew a birthday gift. It took a Senior Manager several evenings — counted as overtime, this gift isn't light.
 
-[<img class="aligncenter size-medium wp-image-10901" alt="image3" src="/uploads/2013/11/image3-300x225.jpeg" width="300" height="225"  />](/uploads/2013/11/image3.jpeg)
+[<img class="aligncenter size-medium wp-image-10901" alt="image3" src="/uploads/2013/11/image3-300x225.webp" width="300" height="225"  />](/uploads/2013/11/image3.webp)
 
 Thanks, friends.
 
-[<img class="aligncenter size-medium wp-image-10903" alt="WP_20131120_006" src="/uploads/2013/11/WP_20131120_006-169x300.jpg" width="169" height="300"  />](/uploads/2013/11/WP_20131120_006.jpg)
+[<img class="aligncenter size-medium wp-image-10903" alt="WP_20131120_006" src="/uploads/2013/11/WP_20131120_006-169x300.webp" width="169" height="300"  />](/uploads/2013/11/WP_20131120_006.webp)
 
 Thanks, advisor. If I can't submit a satisfactory paper rebuttal before midnight, I'll be fired. No growth without磨砺.
 
-[<img class="aligncenter size-medium wp-image-10904" alt="WP_20131120_003" src="/uploads/2013/11/WP_20131120_003-169x300.jpg" width="169" height="300"  />](/uploads/2013/11/WP_20131120_003.jpg)
+[<img class="aligncenter size-medium wp-image-10904" alt="WP_20131120_003" src="/uploads/2013/11/WP_20131120_003-169x300.webp" width="169" height="300"  />](/uploads/2013/11/WP_20131120_003.webp)

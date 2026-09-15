@@ -28,7 +28,7 @@ Now the problem formulation begins. Denote each怪现状 (absurd situation) as a
 
 The diagram below is just a small part. If I showed everything, someone would come after me. As for why cycles form—Rome wasn't built in a day. Let's not go there.
 
-[<img class="aligncenter size-medium wp-image-10790" title="xsq" src="/uploads/2012/08/xsq-300x268.png" width="300" height="268"  />](/uploads/2012/08/xsq.png)
+[<img class="aligncenter size-medium wp-image-10790" title="xsq" src="/uploads/2012/08/xsq-300x268.webp" width="300" height="268"  />](/uploads/2012/08/xsq.webp)
 
 Another lesson from research: if a problem can be reduced or transformed into a known problem, solving it becomes much easier. What known problem can this be reduced to? In通俗 (layman's) terms, it's a **deadlock detection** problem. A bunch of processes holding resources in their bowls while wanting resources in the pot—they lock each other out. Anyone in CS knows this, so I won't repeat it.
 

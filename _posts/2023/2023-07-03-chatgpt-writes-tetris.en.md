@@ -400,7 +400,7 @@ I skimmed it — uses the pygame library. Saved it as a .py file and ran it. It 
 
 But problems showed up fast. When a row was filled and cleared, the blocks above didn't fall down — they just hovered in mid-air.
 
-![V1](/uploads/2023/v1.png)
+![V1](/uploads/2023/v1.webp)
 
 ## Fixing It
 
@@ -439,7 +439,7 @@ def clear_rows(grid, locked):
 
 Still didn't read the code. Replaced the function and ran it. Worse. The cleared row turned into garbage.
 
-![V2](/uploads/2023/v2.png)
+![V2](/uploads/2023/v2.webp)
 
 Kept at it. ChatGPT gave several more versions — some crashed, some had weird issues. Here's version 5:
 
@@ -510,7 +510,7 @@ def clear_rows(grid, locked):
 
 Now it was playable. But still buggy — a full row wouldn't clear, it'd just keep stacking up.
 
-![V3](/uploads/2023/v3.png)
+![V3](/uploads/2023/v3.webp)
 
 After 5 versions wasting a lot of time, I gave up on ChatGPT fixing it. Finally read the code myself.
 
@@ -533,4 +533,4 @@ But using its output directly for work or homework? That'd be tough. Too many is
 
 Copilot knows its kind well. While I was writing this, it pointed out all the flaws in ChatGPT's code.
 
-![Copilot](/uploads/2023/tetris-copilot.png)
+![Copilot](/uploads/2023/tetris-copilot.webp)

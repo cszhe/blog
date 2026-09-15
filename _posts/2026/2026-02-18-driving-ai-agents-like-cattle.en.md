@@ -85,7 +85,7 @@ I want to migrate it to Jekyll, which is another static site generator based on 
 
 The Agent's response to the first instruction surprised me. It didn't just start working. Instead, it analyzed the command, thought about migration steps, wrote a TODO list, analyzed what each step required, and only then started working. That's better than many junior programmers — when I started coding decades ago, I'd open the IDE and start typing immediately, often getting stuck halfway and having to rewrite everything. This Agent plans before it acts.
 
-![todolist](/uploads/2026/agent/todolist.png)
+![todolist](/uploads/2026/agent/todolist.webp)
 
 The first wave took about half an hour, then it reported completion. I wasn't watching the whole time but glanced occasionally. What impressed me was that it wrote small Python scripts to automate the migration — converting Pelican config files to Jekyll format, transforming metadata formats. It didn't manually edit each file one by one. Writing a script is more token-efficient and faster. This reminded me of when I migrated from WordPress to Pelican 10 years ago — I also wrote several Python scripts to extract posts from the WordPress database and convert them. Pretty clever.
 

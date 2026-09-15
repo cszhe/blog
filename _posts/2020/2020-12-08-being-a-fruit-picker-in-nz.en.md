@@ -21,7 +21,7 @@ Due to the pandemic, I had extra holidays — all of December off. And these are
 
 My family supported the idea. I found picknz, a fruit-picking job site. The place most desperate for workers was Bay of Plenty — somewhere I'd never been.
 
-<img alt="Demand" src="/{static}/uploads/2020/orchard/demand.png" style="height:500px" >
+<img alt="Demand" src="/{static}/uploads/2020/orchard/demand.webp" style="height:500px" >
 
 I initially looked for fruit-picking jobs. This season only had blueberries and avocados. Blueberries require constant bending, so I went for avocados. Submitted my regular resume to two companies — didn't want to write a new one. Both were ignored. Probably overqualified — you don't need a PhD and dozens of publications to pick fruit.
 
@@ -29,13 +29,13 @@ Getting anxious, I tried kiwifruit orchards. One person replied: Harry. He asked
 
 Finally, on the last day of November, I bought a box of instant noodles and drove to Tauranga. Only 200 km from Auckland — 2.5 hours, easy drive. Arrived at the hostel around 3 PM. I'd booked a 4-bed room, but due to COVID, the hostel was nearly empty — some rooms had just one person. The owner was Argentinian. I expressed condolences about Maradona. "Not a fan. I only love gaming." Then he showed me around. Shared showers and kitchen, very clean. The kitchen was fully equipped — I saw someone making pizza from scratch, including homemade sauce.
 
-<img alt="Room" src="/{static}/uploads/2020/orchard/hostel.jpg" style="height:400px" >
+<img alt="Room" src="/{static}/uploads/2020/orchard/hostel.webp" style="height:400px" >
 
 Figure. Hostel exterior
 
 My roommate was already there: Marc, a Black German guy. He worked for the same company and had been there a week. We spent the next week together and became good friends.
 
-<img alt="Room" src="/{static}/uploads/2020/orchard/hostelroom.jpg" style="height:400px" >
+<img alt="Room" src="/{static}/uploads/2020/orchard/hostelroom.webp" style="height:400px" >
 
 Figure. Hostel room
 
@@ -45,11 +45,11 @@ At 8 PM, I got a text about the next day: start at 5:50 AM. Exciting farm work w
 
 Orchards are in remote areas. My first orchard was 30 km from town — a 30-minute drive. I arrived 10 minutes early. Nobody there. It was overcast. People trickled in. An Indian guy arrived — our supervisor. He handed me a contract: "Go to the car, read carefully, sign." Hourly wage: $19.50 NZD, slightly above minimum wage. I didn't read anything else. Bad habit — in a society governed by law, I should read contracts.
 
-<img alt="Contract" src="/{static}/uploads/2020/orchard/contract.jpg" style="height:400px" >
+<img alt="Contract" src="/{static}/uploads/2020/orchard/contract.webp" style="height:400px" >
 
 After signing, the supervisor gave me a safety briefing: "What to do in an earthquake." Open farmland — who's afraid of earthquakes? But they're thorough. Then I got two tools: a lopper and secateurs — for cutting branches. Start.
 
-<img alt="Tools" src="/{static}/uploads/2020/orchard/tools.png" style="height:300px" >
+<img alt="Tools" src="/{static}/uploads/2020/orchard/tools.webp" style="height:300px" >
 
 I was amazed to discover kiwifruit doesn't grow on trees — it's a vine, like grapes. Lived in NZ all these years, this famous fruit, and I had no idea. "Can't tell wheat from chaff." The first day's work: cut long branches short, only the last segment. I had no idea what the "last segment" was. Probably made countless mistakes. Nobody checked — they trusted you. Just work your row.
 
@@ -63,7 +63,7 @@ Looking back at my week as a fruit picker, the most valuable experience was meet
 
 The work was highly repetitive, so we talked a lot. Nobody was a native English speaker, but we got along great.
 
-<img alt="Team" src="/{static}/uploads/2020/orchard/team.jpg" style="height:500px" >
+<img alt="Team" src="/{static}/uploads/2020/orchard/team.webp" style="height:500px" >
 
 This is from my last day — a coworker's birthday celebration at the pub. Clockwise from me: Zongjian He (China), Loustic (France), Louis (France), Jamie (UK), Bruno (Croatia), Khalid (Saudi), Marc (Germany), Geoele (Italy), and his girlfriend (Italy).
 
@@ -93,7 +93,7 @@ Italian, from Genoa. Dreadlocks, very cool. Arrived last year with his girlfrien
 
 Being from pizza's homeland, he said NZ pizza is all garbage. He recommended "real Italian pizza" — it was called Greek pizza. Maybe Greek and Roman are connected. The only downside: he's vegetarian, so the pizza was all vegetables.
 
-<img alt="Pizza" src="/{static}/uploads/2020/orchard/pizza.jpg" style="height:400px" >
+<img alt="Pizza" src="/{static}/uploads/2020/orchard/pizza.webp" style="height:400px" >
 
 ## Khalid
 
@@ -117,7 +117,7 @@ The orchard was huge. We often ran into other crews. One memorable group: Filipi
 
 It was December — no kiwifruit picking. The fruit had just appeared on vines, still hard and inedible. Harvest is March when it cools down.
 
-<img alt="Kiwifruit" src="/{static}/uploads/2020/orchard/kiwifruit.png" style="height:400px" >
+<img alt="Kiwifruit" src="/{static}/uploads/2020/orchard/kiwifruit.webp" style="height:400px" >
 
 But there was still work. My week involved:
 
@@ -129,7 +129,7 @@ Cut the male kiwifruit vines bare. Kiwifruit is dioecious — male and female pl
 
 Both gold and green have this. My least favorite. Cut branches without fruit, or the last branch segment after fruit, so nutrients go to the fruit, not new branches.
 
-<img alt="Cutting" src="/{static}/uploads/2020/orchard/lastshoot.jpg" style="height:400px" >
+<img alt="Cutting" src="/{static}/uploads/2020/orchard/lastshoot.webp" style="height:400px" >
 
 Why I hated it: following each long branch to find the last segment is tedious. Being tall, I had to constantly bend and look up, giving me neck pain. Also purely technical, no exercise benefit. Pruning at least requires some brute force.
 
@@ -137,7 +137,7 @@ Why I hated it: following each long branch to find the last segment is tedious. 
 
 Gold kiwifruit only. Each branch has a fruiting lifespan; old branches get replaced with new ones. This job cultivates new branches. They insert tall poles, hang strings from trellises, and we help new gold vines climb. Carry a ladder, find gaps in dense vines, climb up, and wrap long branches around the string. Just start them; they'll climb on their own.
 
-<img alt="Stringing" src="/{static}/uploads/2020/orchard/stringing.jpg" style="height:400px" >
+<img alt="Stringing" src="/{static}/uploads/2020/orchard/stringing.webp" style="height:400px" >
 
 Direction matters. Plants grow toward the sun: Northern hemisphere has east-south-west sun, Southern has north-east-west. So vine-wrapping direction differs. NZ: clockwise. China: counter-clockwise. Wrong direction, and the vine unwinds and falls. Experts can wrap in seconds — just twirl the vine clockwise a few times. Beginners like me had to re-wrap constantly.
 
@@ -151,7 +151,7 @@ My employer was a contractor. They owned no orchards but took contracts from nea
 
 The boss was an Indian guy named Harry (probably not his real name). He employed a bunch of Indian supervisors — likely relatives — forming a family company. They spoke Hindi with each other, which made the Europeans uncomfortable: "Unprofessional. They could be scheming behind our backs." He also ran an Indian restaurant in Tauranga, selling Westernized Indian food like butter chicken. I thought he was decent — his appearance at the orchard meant free time. He'd bring free drinks, or sharpen our secateurs: "Dull blades mean more effort."
 
-<img alt="Harry" src="/{static}/uploads/2020/orchard/harry.jpg" style="height:400px" >
+<img alt="Harry" src="/{static}/uploads/2020/orchard/harry.webp" style="height:400px" >
 
 Figure: Harry in blue.
 
@@ -173,11 +173,11 @@ One day, working in a gold orchard, I noticed no male plants. "How do they polli
 
 One week flew by. I worked 6 days, 7 AM to 7 PM. "776." Guess I'm not old yet — can handle it. Maybe 996 in China would be fine too. Pre-tax income: $960 NZD. The company got my tax code wrong, so I'll need to file extra next year — after tax, about $643.
 
-<img alt="Pay" src="/{static}/uploads/2020/orchard/pay.png" style="height:500px" >
+<img alt="Pay" src="/{static}/uploads/2020/orchard/pay.webp" style="height:500px" >
 
 All my expenses for the week.
 
-<img alt="Expenses" src="/{static}/uploads/2020/orchard/expense.png" style="height:500px" >
+<img alt="Expenses" src="/{static}/uploads/2020/orchard/expense.webp" style="height:500px" >
 
 After expenses: $182 net profit. About half a month's groceries for our family of three. My main job puts me in a high tax bracket. Normal working holiday makers pay 10% — they'd net about $400-500 per week, ~2000 RMB. Not a way to get rich.
 

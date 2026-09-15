@@ -18,15 +18,15 @@ This article is in the school's archive collection, publicly accessible, so I've
 Image version:
 
 <p style="text-align: center;">
-  <a href="/uploads/2023/OaklandSlide_1.png"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_1.png" width="1024" height="768" /></a><br />
+  <a href="/uploads/2023/OaklandSlide_1.webp"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_1.webp" width="1024" height="768" /></a><br />
 </p>
 
 <p style="text-align: center;">
-  <a href="/uploads/2023/OaklandSlide_2.png"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_2.png" width="1024" height="768" /></a><br />
+  <a href="/uploads/2023/OaklandSlide_2.webp"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_2.webp" width="1024" height="768" /></a><br />
 </p>
 
 <p style="text-align: center;">
-  <a href="/uploads/2023/OaklandSlide_3.png"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_3.png" width="1024" height="768" /></a><br />
+  <a href="/uploads/2023/OaklandSlide_3.webp"><img class="aligncenter size-medium" src="/uploads/2023/OaklandSlide_3.webp" width="1024" height="768" /></a><br />
 </p>
 
 ----

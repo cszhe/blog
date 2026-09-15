@@ -13,7 +13,7 @@ I've always thought Gmail was quite clean. Sure, there are ads on the right side
 
 This morning when I logged into Gmail, I found a new ad bar below my emails, as shown:
 
-[<img class="aligncenter size-medium wp-image-10528" height="147" src="/uploads/2010/12/Text_ads_below_emails-300x147.jpg" title="Text_ads_below_emails" width="300" />](/uploads/2010/12/Text_ads_below_emails.jpg)
+[<img class="aligncenter size-medium wp-image-10528" height="147" src="/uploads/2010/12/Text_ads_below_emails-300x147.webp" title="Text_ads_below_emails" width="300" />](/uploads/2010/12/Text_ads_below_emails.webp)
 
 Suddenly felt like my emails were surrounded by ads. Can't avoid them. The more I looked, the more uncomfortable I felt. Then I remembered reading about Chrome extensions that inject JavaScript into websites. Why not do it myself and remove Gmail ads? So I got to work. Started with the Hello World tutorial and wrote a manifest.json:
 

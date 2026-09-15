@@ -14,11 +14,11 @@ I spent a week writing Java code for the Hong Kong MTR. What a pain. No wonder J
 
 That said, I did make some progress. After writing the code, I packaged it into a JAR to send to the customer. Before sending the email, out of curiosity, I hopped out of the VM, double-clicked my program on my Mac, and — aside from the sluggish startup — it actually ran. Charts, tables, Derby database — all worked fine. For a moment, I could feel Java's supposed advantage.
 
-[<img class="aligncenter size-medium wp-image-10650" height="218" src="/uploads/2011/07/java-300x218.png" title="java" width="300"  />](/uploads/2011/07/java.png)
+[<img class="aligncenter size-medium wp-image-10650" height="218" src="/uploads/2011/07/java-300x218.webp" title="java" width="300"  />](/uploads/2011/07/java.webp)
 
 This is Java's famous "run everywhere" promise. Of course, we all know it's just marketing to fool the uninitiated. I once saw a C textbook that claimed C's advantage was good portability and cross-platform support — compared to assembly language. Java's VM can abstract away some OS differences, but not all. For example, this UI:
 
-[<img class="aligncenter size-medium wp-image-10651" height="212" src="/uploads/2011/07/COM-300x212.png" title="COM" width="300" />](/uploads/2011/07/COM.png)
+[<img class="aligncenter size-medium wp-image-10651" height="212" src="/uploads/2011/07/COM-300x212.webp" title="COM" width="300" />](/uploads/2011/07/COM.webp)
 
 Our wireless sensor data comes through a USB-to-serial adapter. On the Mac, I was dumbfounded — no COM port. You have to use the *nix-style /dev/ttyUSB* instead.
 

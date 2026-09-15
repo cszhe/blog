@@ -25,7 +25,7 @@ I set up Drupal, creating a beautiful page in 20 minutes. Powerful and great (I'
 
 Second, I ported a 3D game engine to Windows CE &#8212; probably the first decent game engine on CE (or should I call it EC). Hope it's useful to others. Here's a screenshot using a Quake 3 map, demonstrating lighting, particle systems, etc.
 
-[<img class="aligncenter size-medium wp-image-10436" height="300" src="/uploads/2010/09/aa-223x300.png" title="GameEngine" width="223" />](/uploads/2010/09/aa.png)
+[<img class="aligncenter size-medium wp-image-10436" height="300" src="/uploads/2010/09/aa-223x300.webp" title="GameEngine" width="223" />](/uploads/2010/09/aa.webp)
 
 Through this project, I systematically learned about 3D development on embedded devices and its current state. Microsoft's Direct3D Mobile is quite tragic. Almost nobody uses it on embedded devices, probably due to its host OS relationship. D3D is practically standard on desktops, thanks to Microsoft colluding with graphics card and game companies. But this doesn't work on mobile. OpenGL ES 1.x and 2.0 sweep across embedded devices because embedded graphics chip companies collude with OpenGL ES instead. Naturally, we use it too. APIs tightly coupled to hardware must evolve with hardware. If the API can't keep up with powerful hardware, it's tragic. D3DM is exactly that kind of tragedy. But you can't be too ahead either &#8212; you can't directly port desktop interfaces to embedded devices, which are still resource-constrained.
 

@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
 The code accepts any URL path, sends it to the LLM, and returns a generated web page. I host it at https://wario.hezongjian.com/. Visit https://wario.hezongjian.com/training, and it sends the path /training to the LLM, which generates a page. Looks something like this:
 
-![training](/uploads/2025/AInternet/training.png)
+![training](/uploads/2025/AInternet/training.webp)
 
 Free tier can't generate images, so those are broken, but everything else works. The content is entirely made up — that's fine for creative stuff. Hallucination is a feature, not a bug, when you're generating fake web pages. It's not diagnosing your illness or managing your investments.
 
@@ -110,7 +110,7 @@ Then I realized: this thing is a honeypot for hackers. There are countless scrip
 
 It returns this:
 
-![admin](/uploads/2025/AInternet/admin.png)
+![admin](/uploads/2025/AInternet/admin.webp)
 
 Pretty convincing, right? It looks like a real admin dashboard, complete with financial data. Of course, it's all fake.
 

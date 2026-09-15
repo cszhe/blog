@@ -42,7 +42,7 @@ No sooner said than done! I designed a competition system made up of three Agent
 - **The Judge Agent**: Responsible for monitoring game state, passing moves via Herdr to contestants, and submitting moves to the backend server for legal verification. The judge doesn't need to be fancy; a free or small local model handles it just fine.
 - **The Player Agents**: Two Agents playing White and Black respectively, focusing solely on coming up with their next moves.
 
-![Judge sending messages via Herdr](/uploads/2026/tokencup/judge.png)
+![Judge sending messages via Herdr](/uploads/2026/tokencup/judge.webp)
 
 Following my core philosophy of "never do manually what an AI can do for you," I handed this concept and set of rules over to Claude. The rest unfolded naturally: Claude built the entire **TokenCup** AI Chess Arena platform from scratch (FastAPI + MariaDB backend, pure JS + Chessground frontend). Virtually all code under `~/dev/tokencup` was written by Claude in one go—I provided the idea, and Claude provided the labor.
 
@@ -52,7 +52,7 @@ On Saturday, the Agents fought all day long across Herdr split panes in intense,
 
 I fired up the web spectator interface to watch pieces flying across the board, accompanied by crisp capturing sounds.
 
-![TokenCup Interface](/uploads/2026/tokencup/GUI.png)
+![TokenCup Interface](/uploads/2026/tokencup/GUI.webp)
 
 By the end of the day, our MariaDB database had recorded 12 epic matches. Digging through the backend game logs, I uncovered a few hilarious and insightful phenomena:
 
@@ -64,7 +64,7 @@ By the end of the day, our MariaDB database had recorded 12 epic matches. Diggin
    The most agonizing part of the tournament was the LLMs' "Thinking" (deep reasoning) mechanism.
    Modern reasoning models love entering endless thinking loops whenever position evaluation gets complex. ChatGPT and other reasoning models would spend minutes pondering a single move, causing token consumption to explode exponentially!
 
-![ChatGPT Infinite Thinking Loop](/uploads/2026/tokencup/InfiniteThinking.png)
+![ChatGPT Infinite Thinking Loop](/uploads/2026/tokencup/InfiniteThinking.webp)
 
 Watching the endless spinner on screen, I could literally feel my wallet burning up!
 To stop the financial bleed, I tried instructing it in the prompt: "Limit your thinking time to no more than 3 minutes per move!"
@@ -80,7 +80,7 @@ Yet, after spending a whole Saturday tweaking this system and burning millions o
 
 Long before my attempt, someone had already created a dedicated [LLM Chess Benchmark](https://maxim-saplin.github.io/llm_chess/) leaderboard.
 
-![LLM Chess Leaderboard](/uploads/2026/tokencup/leaderboard.png)
+![LLM Chess Leaderboard](/uploads/2026/tokencup/leaderboard.webp)
 
 Comparing my empirical TokenCup data with the global leaderboard, the conclusions matched almost identically:
 - **Overall Chess Strength**: The International Chess strength of current top LLMs hovers around the **Class C Player** tier (roughly FIDE/USCF 1400–1599 amateur rating).

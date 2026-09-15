@@ -58,7 +58,7 @@ Why is this frustrating? The coalition negotiation process is completely opaque.
 
 In summary, my two biggest complaints about MMP: First, coalition options are very limited — usually one major plus one minor party. When left and right are evenly matched (statistically likely), one person or party becomes the King maker. Second, the negotiation process is entirely non-transparent.
 
-![King maker](/uploads/2023/mmp-kingmaker.png)
+![King maker](/uploads/2023/mmp-kingmaker.webp)
 
 Figure: Media predictions before this year's election suggested another King maker scenario.
 
@@ -76,17 +76,17 @@ I looked into it and found different national conditions indeed.
 
 First, German election results differ greatly from NZ's. Many parties gain popular support and enter parliament. Here's Germany's 2021 election:
 
-![German 2021 Election](/uploads/2023/mmp-german.png)
+![German 2021 Election](/uploads/2023/mmp-german.webp)
 
 Even the two largest parties combined didn't reach a majority. They still needed more partners. But with more parties represented, many coalition combinations were possible:
 
-![Coalition possibilities](/uploads/2023/mmp-possibilities.png)
+![Coalition possibilities](/uploads/2023/mmp-possibilities.webp)
 
 Many possibilities, many choices. That's why Germany could even have its two largest parties coalition. Makes sense.
 
 In NZ, usually only 4-5 parties hit the 5% threshold: one centre-left, one centre-right, one far-left, one far-right. So everything depends on NZ First.
 
-![Normal distribution](/uploads/2023/mmp-normal.png)
+![Normal distribution](/uploads/2023/mmp-normal.webp)
 
 Both NZ and German voting patterns are statistically normal. A healthy society's political views follow a normal distribution: most people are centre-left or centre-right, with a few extremes. But the normal distribution has parameters: mean and variance.
 
@@ -100,7 +100,7 @@ Germany's variance is larger — people are more diverse. Votes are more spread 
 
 "Different national conditions" is indeed an eternal truth.
 
-![National conditions](/uploads/2023/mmp-guoqing.jpg)
+![National conditions](/uploads/2023/mmp-guoqing.webp)
 
 Copying another country's system wholesale doesn't guarantee it'll work for you. Every political system has its assumptions and適用範圍. If those assumptions aren't met, the system distorts.
 

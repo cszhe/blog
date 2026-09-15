@@ -26,7 +26,7 @@ Speaking of reading, WP7 has another problem: screen rotation can't be locked. S
 
 WP7 doesn't even have a screenshot function, so I can only share an original image from the market.
 
-[<img class="aligncenter size-medium wp-image-10714" title="best-windows-phone-7-apps-3" src="/uploads/2012/01/best-windows-phone-7-apps-31-180x300.jpg" width="180" height="300" />](/uploads/2012/01/best-windows-phone-7-apps-31.jpg)
+[<img class="aligncenter size-medium wp-image-10714" title="best-windows-phone-7-apps-3" src="/uploads/2012/01/best-windows-phone-7-apps-31-180x300.webp" width="180" height="300" />](/uploads/2012/01/best-windows-phone-7-apps-31.webp)
 
 Caption: PDFs with one or two pages are okay, but beyond that, it can't hold up.
 

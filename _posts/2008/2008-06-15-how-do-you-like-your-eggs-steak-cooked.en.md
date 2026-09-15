@@ -35,22 +35,22 @@ We know the words, but still don't know what they look like! Thank God for Googl
 
 Poached — what we call "he bao dan" (pouched egg)
 
-[<img class="aligncenter size-medium wp-image-10302" height="225" src="/uploads/2008/06/poached-300x225.jpg" title="poached" width="300" />](/uploads/2008/06/poached.jpg)
+[<img class="aligncenter size-medium wp-image-10302" height="225" src="/uploads/2008/06/poached-300x225.webp" title="poached" width="300" />](/uploads/2008/06/poached.webp)
 
 Scrambled — eggs beaten into a mess.
 
-[<img class="aligncenter size-medium wp-image-10303" height="300" src="/uploads/2008/06/scrambled-275x300.jpg" title="scrambled" width="275" />](/uploads/2008/06/scrambled.jpg)
+[<img class="aligncenter size-medium wp-image-10303" height="300" src="/uploads/2008/06/scrambled-275x300.webp" title="scrambled" width="275" />](/uploads/2008/06/scrambled.webp)
 
 Omelet style — egg roll.
 
-[<img class="aligncenter size-medium wp-image-10304" height="211" src="/uploads/2008/06/omelet-300x211.jpg" title="omelet" width="300" />](/uploads/2008/06/omelet.jpg)
+[<img class="aligncenter size-medium wp-image-10304" height="211" src="/uploads/2008/06/omelet-300x211.webp" title="omelet" width="300" />](/uploads/2008/06/omelet.webp)
 
 Fried egg — sunny side up.
 
-[<img class="aligncenter size-full wp-image-10305" height="250" src="/uploads/2008/06/fried.jpg" title="fried" width="249" />](/uploads/2008/06/fried.jpg)
+[<img class="aligncenter size-full wp-image-10305" height="250" src="/uploads/2008/06/fried.webp" title="fried" width="249" />](/uploads/2008/06/fried.webp)
 
 Boiled egg — boiled egg.
 
-[<img class="aligncenter size-medium wp-image-10306" height="199" src="/uploads/2008/06/boiled-300x199.jpg" title="boiled" width="300" />](/uploads/2008/06/boiled.jpg)
+[<img class="aligncenter size-medium wp-image-10306" height="199" src="/uploads/2008/06/boiled-300x199.webp" title="boiled" width="300" />](/uploads/2008/06/boiled.webp)
 
 Finally, if God gave me another chance, I'd say to the egg waitress: "Scrambled with mushrooms and onions, topped with pepper jack cheese."

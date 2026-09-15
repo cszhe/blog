@@ -38,11 +38,11 @@ And remarrying isn't simple either — it involves booking, registration, tax re
 
 Another thing Hong Kong does well is how they record marital status. In mainland China, every form gives you two options: married or unmarried. Get married → married. Get divorced → unmarried. Hong Kong is different: their forms have four options — unmarried, married, divorced, widowed. Think about this — it's brilliant. "Unmarried" is a state you can only be in once in your life. Once you leave it, you can never go back. Last semester I studied stochastic processes, so I drew two state diagrams — it's一目了然.
 
-![fun](/uploads/2014/12/fun.png)
+![fun](/uploads/2014/12/fun.webp)
 
 Mainland China's model is simple: two states, switch back and forth. Hong Kong's is different: everyone starts unmarried. Once you get married, you become "married," and you can never go back. If divorced, you become "divorced." If you remarry, back to "married." If your spouse dies, you become "widowed." If you remarry, back to "married." In rigorous mathematical terms, "single" is a null recurrent state. The formal definition:
 
-![png](/uploads/2014/12/png.png)
+![png](/uploads/2014/12/png.webp)
 
 In plain language: once you leave the "unmarried" state, no matter what you do, you can never return to being single. This gives unmarried people an important lesson: marriage is risky, registration requires caution. Don't get hot-headed and steal the family户口簿 to register with someone while your parents are away.
 

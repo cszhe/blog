@@ -11,7 +11,7 @@ ai_translated: true
 ---
 After a night of effort, I finally got Android running on some company's board. As shown below:
 
-[<img class="aligncenter size-medium wp-image-10512" height="209" src="/uploads/2010/12/android-300x209.jpg" title="android" width="300" />](/uploads/2010/12/android.jpg)
+[<img class="aligncenter size-medium wp-image-10512" height="209" src="/uploads/2010/12/android-300x209.webp" title="android" width="300" />](/uploads/2010/12/android.webp)
 
 Since I started learning Android development this year, I've been preparing for next semester's Android course. I've learned and built a lot of application-level stuff. But as an embedded person, not being able to touch the底层, just doing上层 Java development, hasn't felt very rewarding. I've heard that Android modified both Linux and Java significantly, but had no way to verify it. That's how application development works: the platform is already built, you just write against the API docs. Java doesn't involve much deep technology. Being able to call a C library feels pretty advanced. Of course, if you build a large enough, impressive enough, creative enough application, you can still leverage your advantages.
 

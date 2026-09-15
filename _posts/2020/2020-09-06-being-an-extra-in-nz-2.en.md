@@ -21,7 +21,7 @@ One incident stood out. A Chinese mother brought her mixed-race daughter to audi
 
 The main event was touring the tulou (earthen building) village. You've seen it in the film — Mulan's hometown. The crew built a massive three-story circular tulou at the studio. I'd never seen a real tulou in China, so I can't compare, but the set was breathtaking. Given NZ's construction speed, it must have cost millions and taken years. Surrounding the tulou were enormous trees, completely hiding it from outside.
 
-![Figure 1. The tulou village](/uploads/2020/longtao/3.png)
+![Figure 1. The tulou village](/uploads/2020/longtao/3.webp)
 
 Figure 1. The tulou village. Only one was real; the other was a CGI copy. The farmland was also CGI.
 
@@ -37,7 +37,7 @@ Makeup test had two parts: wardrobe and hair/makeup. Wardrobe was simple — str
 
 Hair was fascinating. My hair was too short — ancient Chinese didn't have crew cuts — so I needed a wig. A "360-degree" full wig. I thought putting on a wig was a one-second job. Far from it. First, clips in your hair. Then put on the wig, pin it to the clips. Finally, glue the wig to your head. Then style the wig and put on the hat. Once the hat was on, not much wig was visible anyway. Maybe big productions just have money to burn... The whole process took 1-2 hours, repeated every filming day. Removing the glue with alcohol was painful.
 
-![Figure 2. Wig](/uploads/2020/mulan/8.png)
+![Figure 2. Wig](/uploads/2020/mulan/8.webp)
 
 Figure 2. My wig in the matchmaking scene. Only my ears are real — everything else is costume. The 2-hour daily makeup was worth it — no obvious anachronisms.
 
@@ -63,6 +63,6 @@ The next two weeks of filming were fascinating. Meeting the Emperor's guard, kne
 
 My performance was faithfully captured. Looking back, it's somewhat overacted. I remember wanting to do a hand-over-heart gesture but finding it too dramatic — my hand stopped halfway. That was recorded too. And my turning around — the director taught us to show terror by looking at each other. But when I turned, nobody was there to mirror me. That's my first-ever film shot.
 
-<video controls width="640" height="360" poster="/uploads/2020/mulan/me.png">
+<video controls width="640" height="360" poster="/uploads/2020/mulan/me.webp">
     <source src="/uploads/2020/mulan/me.mp4" type="video/mp4">
 </video>

@@ -63,10 +63,10 @@ After studying software engineering for years, one of the key maxims is "Don't r
 
 A few screenshots—please embed them in appropriate sections of the post:
 
-`uploads/2026/tokencup/GUI.png` TokenCup Interface
-`uploads/2026/tokencup/InfiniteThinking.png` ChatGPT stuck in an infinite thinking loop, wallet burning
-`uploads/2026/tokencup/judge.png` Judge sending messages to players via Herdr
-`uploads/2026/tokencup/leaderboard.png` LLM Chess Leaderboard
+`uploads/2026/tokencup/GUI.webp` TokenCup Interface
+`uploads/2026/tokencup/InfiniteThinking.webp` ChatGPT stuck in an infinite thinking loop, wallet burning
+`uploads/2026/tokencup/judge.webp` Judge sending messages to players via Herdr
+`uploads/2026/tokencup/leaderboard.webp` LLM Chess Leaderboard
 
 Once finished, please translate the article into English so that, like other posts on the blog, both Chinese and English versions are available.
 

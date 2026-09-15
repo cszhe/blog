@@ -41,11 +41,11 @@ I use Grafana to display data from three perspectives:
 
 ### Overview
 
-![Daily](/uploads/2023/logger-daily.png)
+![Daily](/uploads/2023/logger-daily.webp)
 
 About 6,000 visits per month, 200 per day. Not bad. But a good number are crawlers — more on that later. Some days have high traffic (1,000+), some very low (10-ish). That's normal — some days I post articles, most days I don't.
 
-![Page](/uploads/2023/logger-page.png)
+![Page](/uploads/2023/logger-page.webp)
 
 This shows page-level traffic. Most visited is the homepage — expected, since it's the default landing page. Next are individual articles. The most-visited article is one I wrote about 10 years ago:
 
@@ -53,19 +53,19 @@ This shows page-level traffic. Most visited is the homepage — expected, since 
 
 I wrote this when I visited Princeton during a US conference. It ranks high on Google for Chinese searches related to Princeton visits. Many people probably find it through Google and use it as a guide. I wish I'd written it better, to avoid misleading anyone.
 
-![Google Search](/uploads/2023/logger-princeton.png)
+![Google Search](/uploads/2023/logger-princeton.webp)
 
 ### Geographic Information
 
 The second view is geographic. Reverse geolocation from IP addresses is very mature. Plotting all visits on a world map in Grafana is easy and quite impressive:
 
-![Geolocation](/uploads/2023/logger-geo.png)
+![Geolocation](/uploads/2023/logger-geo.webp)
 
 This basically reflects global internet development: North America is lit up (mostly Google data centers), East Asia is good, Europe is decent (some European countries might be VPNs or web proxies, not real user IPs). South America and Africa have no traffic. Oceania's internet isn't great, but I write a lot about New Zealand, so there's some traffic.
 
 For concrete data: unique IPs on the left, total visits on the right. Top 5: USA, China, New Zealand, Australia, Canada.
 
-![Country](/uploads/2023/logger-country.png)
+![Country](/uploads/2023/logger-country.webp)
 
 Whether unique or total, the US leads. China and NZ follow — one higher on total visits, the other on unique IPs. The remaining countries are either places with large Chinese diaspora or geographically close to NZ.
 
@@ -73,7 +73,7 @@ Whether unique or total, the US leads. China and NZ follow — one higher on tot
 
 Client info is parsed from User-Agent strings. Again, not perfectly accurate — clients can fake User-Agent strings. I knew there were many crawlers but didn't have specific numbers until I parsed User-Agent data:
 
-![UA](/uploads/2023/logger-ua.png)
+![UA](/uploads/2023/logger-ua.webp)
 
 The Python library reported 30% as bots, but I think it's higher — bots can disguise themselves as regular users. For reference, bot sources:
 - Google: 1707
@@ -93,4 +93,4 @@ I've thought about shutting down the blog many times. Probably nobody reads it, 
 
 About half a year later, every continent finally has data. Looking at this map, it's quite impressive.
 
-![Geolocation](/uploads/2023/logger-geo2.png)
+![Geolocation](/uploads/2023/logger-geo2.webp)

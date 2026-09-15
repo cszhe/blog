@@ -12,4 +12,4 @@ ai_translated: true
 
 Qian has recently gotten into making his own cards. He used to play Yu-Gi-Oh and Pokémon cards, but now finds those boring — he wants to create his own.
 
-![Original materials](/uploads/2020/card1.jpg)
+![Original materials](/uploads/2020/card1.webp)

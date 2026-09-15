@@ -14,7 +14,7 @@ ai_translated: true
   RIP
 </p>
 
-[<img class="aligncenter size-medium wp-image-10750" title="windowsmcefuneral" src="/uploads/2012/03/windowsmcefuneral-300x140.jpg" width="300" height="140" />](/uploads/2012/03/windowsmcefuneral.jpg)
+[<img class="aligncenter size-medium wp-image-10750" title="windowsmcefuneral" src="/uploads/2012/03/windowsmcefuneral-300x140.webp" width="300" height="140" />](/uploads/2012/03/windowsmcefuneral.webp)
 
 I feel quite heavy-hearted writing this article. After all, I invested so much energy and sweat into this platform. You could say I witnessed Windows CE's growth, and CE witnessed mine. But now, it's time to say goodbye.
 
@@ -34,7 +34,7 @@ From 2007 to 2010, I was a Microsoft Windows CE MVP for four years. I voluntaril
 
 ——————————————————
 
-[<img title="history_timeline" src="/uploads/2012/03/history_timeline-300x120.jpg" width="300" height="120" />](/uploads/2012/03/history_timeline.jpg)
+[<img title="history_timeline" src="/uploads/2012/03/history_timeline-300x120.webp" width="300" height="120" />](/uploads/2012/03/history_timeline.webp)
 
 Windows CE has come a long way since 1996—16 years. Version numbers went from 1.0 to 7.0, and according to an unnamed Microsoft employee, version 8.0 is in development. But Windows CE's glory days are long gone.
 

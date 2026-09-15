@@ -9,7 +9,7 @@ slug: calling-a-deer-a-horse
 original: /zhi-lu-wei-ma
 ai_translated: true
 ---
-[<img class="aligncenter size-full wp-image-10446" height="287" src="/uploads/2010/09/612531_184244805.jpg" title="Color Blindness" width="283" />](/uploads/2010/09/612531_184244805.jpg)
+[<img class="aligncenter size-full wp-image-10446" height="287" src="/uploads/2010/09/612531_184244805.webp" title="Color Blindness" width="283" />](/uploads/2010/09/612531_184244805.webp)
 
 Legend has it that during the Qin Dynasty, Zhao Gao wanted to usurp the throne. To test which ministers would go along with him, he presented a deer to the Second Emperor of Qin and called it a horse. When the Emperor didn't believe him, Zhao Gao asked the ministers. Those who dared not defy Zhao Gao said it was a horse. Those who dared to oppose him said it was a deer. Zhao Gao later had all the "deer-sayers" killed.
 
