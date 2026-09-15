@@ -17,7 +17,7 @@ The Mobile Application Development course is nearing its end this semester. As p
 
 All the projects are shown below — all free.
 
-[<img class="aligncenter size-medium wp-image-10628" height="300" src="/uploads/2011/06/market-224x300.png" title="market" width="224"  />](/uploads/2011/06/market.png)
+[<img class="aligncenter size-medium wp-image-10628" height="300" src="/uploads/2011/06/market-224x300.webp" title="market" width="224"  />](/uploads/2011/06/market.webp)
 
 Some apps have been hotlinked by unscrupulous domestic pirate forums. They cracked the APKs and posted them on their own forums for download, skewing the Market download counts.
 

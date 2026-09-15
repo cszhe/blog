@@ -15,7 +15,7 @@ The collectible cards from the Water Margin series inside Xiaowanxiong crispy no
 
 Fast forward 20-30 years, and I'm on the other side of the planet starting another card collection journey. Woolworths launched a promotion called "Disney Worlds of Wonder." Spend $30, get a pack of 3 cards. 108 cards total (why is everyone so obsessed with 108?). There's even a special collector's album. The cards feature classic Disney characters from all four major franchises: Disney, Pixar, Marvel, and Star Wars. Kids went absolutely crazy. Parents were forced to shop at Woolworths constantly.
 
-![Disney Cards](/uploads/2024/disney.png)
+![Disney Cards](/uploads/2024/disney.webp)
 
 ## Qian's Answer
 
@@ -88,7 +88,7 @@ The kid traded purely on intuition.
 
 For the first time in my life, I completed a 108-card collection. Through trading — there's a Facebook group where people swap cards. I traded 2 cards a hotel staffer needed for the last 20 I needed. Here's the final result:
 
-![Disney Cards](/uploads/2024/disney_final_small.png)
+![Disney Cards](/uploads/2024/disney_final_small.webp)
 
 Purely for collection's sake. No reward at the end — just the satisfaction of completion.
 

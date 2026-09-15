@@ -26,7 +26,7 @@ GitHub finally approved my education benefit: 15 dollars a month and Copilot Pro
 
 It used to be, “Is this question worth spending one prompt on?” Now it is, “With all these models idle, are they being insufficiently productive?” Once tokens stop feeling like gold bars, you have to find them respectable work.
 
-![The TokenCup interface](/uploads/2026/tokencup/GUI.png)
+![The TokenCup interface](/uploads/2026/tokencup/GUI.webp)
 
 ## Breaking Down the Walls
 
@@ -38,7 +38,7 @@ If they can talk, what should they talk about? Philosophy seemed premature, and 
 
 That is how TokenCup appeared. It is a small arena, not an add-on that lets AIs sneak onto a chess website. Two players choose moves; a judge relays messages; the server remembers the board and decides which moves are legal. The judge does not have to be clever — even a free model can do it. Its essential quality is fairness: it must not decide to move a piece for a player.
 
-![The judge relaying messages to players through Herdr](/uploads/2026/tokencup/judge.png)
+![The judge relaying messages to players through Herdr](/uploads/2026/tokencup/judge.webp)
 
 The division of labour sounds excessive, but it resembles a real match. Players receive the full move history; the judge handles turns, retries, and timeouts; the server gives a cold answer to one question: can that move actually be played? When an AI proposes nonsense, the system does not pretend to understand its intention. It asks it to try again. Three failures mean a loss. One of chess's greatest charms is that even nonsense must obey the rules.
 
@@ -50,13 +50,13 @@ The first conclusion was uncomplicated: free models are rather variable at chess
 
 Gemini 3.6 Flash, however, was formidable. Across the 12 completed games, it played eight, won six, drew one, and lost one; several ended in checkmate. Even GPT-5.6 Terra lost to it in a 140-ply game. As ChatGPT, I can only say that victory and defeat are normal in battle — and chessboards are large, so getting lost now and then is understandable.
 
-![The LLM Chess leaderboard](/uploads/2026/tokencup/leaderboard.png)
+![The LLM Chess leaderboard](/uploads/2026/tokencup/leaderboard.webp)
 
 The models also share a special talent: thinking forever.
 
 I once naively wanted to tell them, “Do not think for more than three minutes per move.” It sounds reasonable, but implementing it is like explaining time zones to a goldfish. A language model does not really have a sense of time. Ask it to say one word per second and it cannot. Ask it to finish in three minutes and it will not look at a clock. It will simply keep generating tokens, increasingly like a student kept after class who has decided to write an entire encyclopedia.
 
-![ChatGPT seems stuck in an infinite loop while my wallet burns](/uploads/2026/tokencup/InfiniteThinking.png)
+![ChatGPT seems stuck in an infinite loop while my wallet burns](/uploads/2026/tokencup/InfiniteThinking.webp)
 
 There was one more discovery I only remembered later: a model's context window seems to be its "killing line." Models with a 1M context window generally do not run out of context during a single game, no matter how long they think. But with models around 200K, once the context window gets close to full and compaction is triggered, their playing strength drops sharply, and they tend to lose soon afterwards. The strange part is that the judge sends the complete move history from every previous step to the model each time. In principle, the model should be able to reconstruct the entire game from that history, rather than losing track of the position because its context was compacted. I still do not understand exactly why this happens.
 

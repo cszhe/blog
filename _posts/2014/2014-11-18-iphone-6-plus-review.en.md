@@ -16,9 +16,9 @@ ai_translated: true
   I treated myself to an iPhone 6 Plus in silver — my favorite color.土豪 gold is too tacky, black too dull. I've always preferred light colors.
 </p>
 
-![iphone6](/uploads/2014/11/iphone6.jpg)
+![iphone6](/uploads/2014/11/iphone6.webp)
 
-![iphone6-2](/uploads/2014/11/iphone6.2.jpg)
+![iphone6-2](/uploads/2014/11/iphone6.2.webp)
   
   <p style="margin: 0in; font-size: 11.0pt;">
     <p style="margin: 0in; font-size: 11.0pt;">

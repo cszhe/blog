@@ -19,7 +19,7 @@ SAP places great importance on Design Thinking. Their Co-CEO mentioned in keynot
 
 The Design Thinking Jam was scheduled for the afternoon — a tight schedule from introduction to project completion in just a few hours. Since it was my first day in the US with a 12-hour jet lag, I was seriously struggling after 2 PM.
 
-[<img class="aligncenter size-medium wp-image-10887" alt="Screen Shot 2013-05-27 at 3.33.25 PM" src="/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM-237x300.png" width="237" height="300"  />](/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM.png)
+[<img class="aligncenter size-medium wp-image-10887" alt="Screen Shot 2013-05-27 at 3.33.25 PM" src="/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM-237x300.webp" width="237" height="300"  />](/uploads/2013/05/Screen-Shot-2013-05-27-at-3.33.25-PM.webp)
 
 Participants included students from the US, Germany, India, China, and some other countries I couldn't identify. They randomly assigned people into 6 groups, each with diverse educational and social backgrounds. My group had 7 people: an American professor, a German professor, me, a German student, and three Chinese students. Each group got a topic from SAP's recent competitions. One topic was smart cars — I was genuinely interested, as it relates to my research. But my group got: "How to use new energy to change human life." I knew nothing about this. Which was fine — it would test whether this methodology actually works.
 
@@ -47,7 +47,7 @@ Another one: during ideation, don't evaluate ideas prematurely, or you'll stifle
 
 Below is our group's two cases for storytelling. We proposed a mobile water quality monitoring device that connects to phones,检测 water quality anywhere, and uploads to the internet for sharing. Others can see water quality in different areas and take protective measures in advance. This system could also be used by water companies to monitor and improve water quality.
 
-<img class="aligncenter size-medium wp-image-10877" alt="dtoutput" src="/uploads/2013/05/WP_20130513_029-169x300.jpg" width="169" height="300"  />
+<img class="aligncenter size-medium wp-image-10877" alt="dtoutput" src="/uploads/2013/05/WP_20130513_029-169x300.webp" width="169" height="300"  />
 
 <p style="text-align: center;">
   Figure: Two storytelling cases.
@@ -55,7 +55,7 @@ Below is our group's two cases for storytelling. We proposed a mobile water qual
 
 An interesting side note: Chinese people are traditionally reserved and don't speak up. Our group had several Chinese members, but combined they said less than any single foreigner. To not embarrass the Chinese, I started talking a lot. Later, the American professor pulled me aside during tea and said: "This is for students — let's not interfere too much. Just spectate, or it'll become a class exercise again." He had a point. So I went back and we both switched to jokester mode. When asked to draw use cases, he said: "No, I teach neural networks and genetic algorithms — I can do that, but I can't draw." I immediately chimed in: "Me too, I teach the same stuff and can't draw either. Give me five!" The German guy in our group couldn't stand it — seeing the students underperform, he eventually pushed the students aside and presented himself. He did well, at least middle-of-the-pack among the groups.
 
-[<img class="aligncenter size-medium wp-image-10878" alt="dtpresent" src="/uploads/2013/05/WP_20130513_028-300x169.jpg" width="300" height="169"  />](/uploads/2013/05/WP_20130513_028.jpg)
+[<img class="aligncenter size-medium wp-image-10878" alt="dtpresent" src="/uploads/2013/05/WP_20130513_028-300x169.webp" width="300" height="169"  />](/uploads/2013/05/WP_20130513_028.webp)
 
 <p style="text-align: center;">
   Figure: Five-minute presentation

@@ -41,7 +41,7 @@ Agent 之间能互相聊天，这可太有意思了。举个爆笑的例子：�
 - **裁判模型（Judge）**：负责监听局势、在 Herdr 里给选手传递棋步、将棋步提交给服务端校验。裁判不需要太聪明，免费的模型或者本地小模型完全能胜任。
 - **参赛选手（Players）**：两个 Agent 分别执白棋和执黑棋，只负责琢磨怎么走棋。
 
-![裁判通过herdr给选手发消息](/uploads/2026/tokencup/judge.png)
+![裁判通过herdr给选手发消息](/uploads/2026/tokencup/judge.webp)
 
 秉承着能让 AI 干活就绝不自己动手的原则，我把这个创意和规则交代给了 Claude。剩下的事情就顺理成章了：Claude 帮我搭建了整个 **TokenCup** AI 国际象棋比赛平台（后端基于 FastAPI + MariaDB，前端用纯 JS + Chessground）。整个 `~/dev/tokencup` 项目的代码基本上都是 Claude 一口气写出来的，创意归我，牛马归 Claude。
 
@@ -51,7 +51,7 @@ Agent 之间能互相聊天，这可太有意思了。举个爆笑的例子：�
 
 我特地起了一个网页端界面（Spectator Page），搬着小板凳看着棋盘上的棋子飞舞，吃子声不绝于耳。
 
-![TokenCup界面](/uploads/2026/tokencup/GUI.png)
+![TokenCup界面](/uploads/2026/tokencup/GUI.webp)
 
 一天下来，后台数据库（MariaDB）完整地记录下了 12 场史诗级的棋逢对手。翻看数据库里的对局数据，我发现了几个极其有趣又深刻的现象：
 
@@ -63,7 +63,7 @@ Agent 之间能互相聊天，这可太有意思了。举个爆笑的例子：�
    对决中最令人抓狂的是大语言模型的“Thinking”（深度思考）机制。
    现在的推理模型一遇到复杂局面，就喜欢陷入死循环般的思考。ChatGPT 和一些推理模型走一步棋能思考好几分钟，Token 消耗量呈指数级暴涨！
 
-![ChatGPT陷入无尽循环](/uploads/2026/tokencup/InfiniteThinking.png)
+![ChatGPT陷入无尽循环](/uploads/2026/tokencup/InfiniteThinking.webp)
 
 看着屏幕上转个没完的 Thinking 提示，我感觉我的钱包在熊熊燃烧！
 为了止血，我想在 Prompt 里告诉它：“你每一步棋的 Thinking 时间不能超过 3 分钟！”
@@ -79,7 +79,7 @@ Agent 之间能互相聊天，这可太有意思了。举个爆笑的例子：�
 
 早在很久之前，就已经有大神搞出了专门的 [LLM Chess Benchmark](https://maxim-saplin.github.io/llm_chess/) 评测榜单。
 
-![LLM Chess Leaderboard](/uploads/2026/tokencup/leaderboard.png)
+![LLM Chess Leaderboard](/uploads/2026/tokencup/leaderboard.webp)
 
 仔细对比了一下我花了大把 Token 得出的实测结果与全球大榜的数据，发现结论惊人地一致：
 - **总体棋力水准**：目前所有顶级 LLM 的国际象棋水平，基本上都在 **Class C player** 左右（大约相当于 FIDE/USCF 1400-1599 左右的业余爱好者水平）。

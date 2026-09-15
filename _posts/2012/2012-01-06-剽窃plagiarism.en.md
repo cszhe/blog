@@ -14,7 +14,7 @@ The "Research Ethics" course this semester is coming to an end, with two assignm
 
 Here's what happened. Our group of 8 was tasked with creating a booklet on the topic of "shanzhai" (copycat) culture, introducing its origins, definition, and ethical violations. The final result is shown below:
 
-[<img class="aligncenter size-medium wp-image-10689" height="180" src="/uploads/2012/01/BOOKLET-300x180.jpg" title="BOOKLET" width="300"  />](/uploads/2012/01/BOOKLET.jpg)
+[<img class="aligncenter size-medium wp-image-10689" height="180" src="/uploads/2012/01/BOOKLET-300x180.webp" title="BOOKLET" width="300"  />](/uploads/2012/01/BOOKLET.webp)
 
 The group consisted of 8 people, with Riccardo from Italy as team leader, plus 5 mainland Chinese and 2 Hong Kong Chinese. We 7 Chinese were divided into three groups, each working on different sections. I was responsible for finding cases—shanzhai buildings (copycat White House), shanzhai animations (High-Speed Rail Man), shanzhai software (Facebook), shanzhai everyday items (KFG laundry detergent), etc. Don't call me a traitor—these things really do exist in China. Two issues arose:
 
@@ -24,7 +24,7 @@ There was also a minor incident during the meeting. A Hong Kong student forgot a
 
 The second assignment was to write an individual paper discussing ethical issues related to our own field. I wrote about ethical issues in流氓软件 (rogue software). Everyone's paper had to pass through an online anti-plagiarism system to check similarity. Although definitions of plagiarism vary, the system flags any sequence of 7 consecutive words that match another source, regardless of citation. By strict definition, even cited material has length limits. The system is very strict.
 
-[<img class="size-medium wp-image-10686" height="191" src="/uploads/2012/01/copycat-300x191.png" title="copycat" width="300"  />](/uploads/2012/01/copycat.png)
+[<img class="size-medium wp-image-10686" height="191" src="/uploads/2012/01/copycat-300x191.webp" title="copycat" width="300"  />](/uploads/2012/01/copycat.webp)
 
 After submitting my paper, the system reported 8% similarity. That 8% was somewhat unfair—some matches were in the references section, where my paper and another paper cited the same reference. The red parts in the image (click for full size) were not unfair though. I had quoted a definition from Wikipedia—barely half a sentence—and the system caught it. Marked in red, requiring revision and resubmission.
 

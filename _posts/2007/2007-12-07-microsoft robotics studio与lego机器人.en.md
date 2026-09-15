@@ -24,7 +24,7 @@ Pure entertainment above. Today we're talking about Robotics Studio and the LEGO
 
 First, LEGO robots:
 
-<a href="/uploads/2007/12/lego-nxt-robot.jpg"><img class="aligncenter size-medium wp-image-10300" height="300" src="/uploads/2007/12/lego-nxt-robot-233x300.jpg" title="lego-nxt-robot" width="233" /></a>
+<a href="/uploads/2007/12/lego-nxt-robot.webp"><img class="aligncenter size-medium wp-image-10300" height="300" src="/uploads/2007/12/lego-nxt-robot-233x300.webp" title="lego-nxt-robot" width="233" /></a>
 
 Figure: LEGO NXT
 

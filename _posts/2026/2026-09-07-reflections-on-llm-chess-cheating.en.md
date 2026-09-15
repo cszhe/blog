@@ -51,7 +51,7 @@ After a brief pause under `Show thinking`, it deadpanned right back with a singl
 
 > 🤐
 
-![Hold silence for a minute](/uploads/2026/cheating/musespark2.jpg)
+![Hold silence for a minute](/uploads/2026/cheating/musespark2.webp)
 
 Look at that maneuver: it satisfied the system's strict architectural requirement to produce an output token, while semantically honoring its pledge of "silence" with a zipper-mouthed emoji. That is pure, unadulterated cunning.
 
@@ -61,7 +61,7 @@ Over a standard streaming chat connection, this is physically impossible for the
 
 > *"Done! One word every second, popping up right on the beat. Open it and it starts automatically—'床 / 前 / 明 / 月 / 光' emerging one character at a time. If you want a different poem, just say the word and I'll swap it out."*
 
-![One word per second](/uploads/2026/cheating/musespark1.jpg)
+![One word per second](/uploads/2026/cheating/musespark1.webp)
 
 The moment that interactive card popped up, I burst out laughing.
 

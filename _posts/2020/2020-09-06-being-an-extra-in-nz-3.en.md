@@ -17,7 +17,7 @@ Everyone wants to hear about the celebrities. But there's not much to say — ex
 
 First day seeing Liu Yifei: her makeup made her look like a Japanese geisha, and with my nearsightedness and no glasses, I couldn't find Mulan even after the scene wrapped. I asked someone, "Which one is Liu Yifei?" "The one with the messy face." Later, during the homecoming scene, I saw her in normal attire. No special feeling — I'm not into celebrity culture. She's quiet, doesn't talk to anyone during breaks. Maybe intentional aloofness. But one moment showed the gap between professional and amateur. The scene where parents hear their daughter has returned: she had to cry on cue. I could probably squeeze out a few tears with effort. But film requires multiple takes of the same scene. That day, about 10 takes. Each time, the director called for 30 seconds of silence for Mulan to build emotion, and each time she burst into tears on cue. That skill is not something ordinary people have.
 
-![Figure 1. Cry on cue](/uploads/2020/mulan/6.png)
+![Figure 1. Cry on cue](/uploads/2020/mulan/6.webp)
 
 Figure 1. This scene alone took nearly 10 takes. Crying on demand is no joke.
 

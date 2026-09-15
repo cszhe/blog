@@ -31,13 +31,13 @@ Looking back, the scam had so many red flags. I was too young and naive. A Beiji
 
 This is the one everyone wants to hear about. It was 2016, before Trump, during the中美 honeymoon period. We were issuing 10-year visas then — mine's valid until 2026. Who knows if I can still use it now. I was in Philadelphia, America's founding capital, for an academic conference. The conference itself was boring, so let's skip to the last day.
 
-![Figure 1 Presenting](/uploads/2023/rob1.jpg)
+![Figure 1 Presenting](/uploads/2023/rob1.webp)
 
 Everyone knows America has a tipping culture — tip for everything. (I personally hate tipping culture; it feels like moral blackmail. Thankfully China and New Zealand don't have it.) By the last day of the conference, I'd spent most of my cash. That evening I went to the hotel restaurant — meals were included, so I only needed my room key. I emptied my wallet, leaving maybe a few dozen dollars on the bed, and went to eat unencumbered.
 
 When I came back, the room had been cleaned. And the money on my bed was gone. I instantly understood — the cleaner had taken it as a tip and accepted gratefully. I couldn't bring myself to ask for it back. As a Chinese person abroad, I had to maintain face. Asking for it back would make Chinese people look cheap. Anyway, I had an early morning flight and didn't need cash anymore. Consider it their tip.
 
-![Figure 2 Tip](/uploads/2023/rob2.jpg)
+![Figure 2 Tip](/uploads/2023/rob2.webp)
 
 The next morning I got up before dawn to catch my flight. Philadelphia, being a major city and former capital, has a metro that starts early and goes straight to the airport. I dragged my suitcase into the subway.
 
@@ -73,14 +73,14 @@ Ever since, Qian's mom has associated Hell Pizza with that experience. Every tim
 
 I wanted to write more about New Zealand, but this is getting long. Maybe next time. Copilot was enabled while writing this — AI storytelling is incredibly powerful. I had to stop several times to read the stories it generated. Some were pretty entertaining.
 
-![Figure 3 AI stories](/uploads/2023/rob-copilot1.png)
-![Figure 4 AI stories](/uploads/2023/rob-copilot2.png)
-![Figure 5 AI stories](/uploads/2023/rob-copilot3.png)
-![Figure 6 AI stories](/uploads/2023/rob-copilot4.png)
-![Figure 7 AI stories](/uploads/2023/rob-copilot5.png)
-![Figure 8 AI stories](/uploads/2023/rob-copilot6.png)
-![Figure 9 AI stories](/uploads/2023/rob-copilot7.png)
-![Figure 10 AI stories](/uploads/2023/rob-copilot8.png)
-![Figure 11 AI stories](/uploads/2023/rob-copilot9.png)
-![Figure 12 AI stories](/uploads/2023/rob-copilot10.png)
-![Figure 13 AI stories](/uploads/2023/rob-copilot11.png)
+![Figure 3 AI stories](/uploads/2023/rob-copilot1.webp)
+![Figure 4 AI stories](/uploads/2023/rob-copilot2.webp)
+![Figure 5 AI stories](/uploads/2023/rob-copilot3.webp)
+![Figure 6 AI stories](/uploads/2023/rob-copilot4.webp)
+![Figure 7 AI stories](/uploads/2023/rob-copilot5.webp)
+![Figure 8 AI stories](/uploads/2023/rob-copilot6.webp)
+![Figure 9 AI stories](/uploads/2023/rob-copilot7.webp)
+![Figure 10 AI stories](/uploads/2023/rob-copilot8.webp)
+![Figure 11 AI stories](/uploads/2023/rob-copilot9.webp)
+![Figure 12 AI stories](/uploads/2023/rob-copilot10.webp)
+![Figure 13 AI stories](/uploads/2023/rob-copilot11.webp)

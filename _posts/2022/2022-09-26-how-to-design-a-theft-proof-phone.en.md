@@ -14,7 +14,7 @@ ai_translated: true
 Back in 2011, I led a group of Tongji students to Apple's WWDC 2011 in the US. We witnessed Steve Jobs' last public appearance before his death, where he introduced iCloud.
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/wwdc2011.jpg"><img class="aligncenter size-medium" src="/uploads/2022/wwdc2011.jpg" width="600" height="400" /></a><br /> Jobs' last public appearance at WWDC 2011, photo by me
+  <a href="/uploads/2022/wwdc2011.webp"><img class="aligncenter size-medium" src="/uploads/2022/wwdc2011.webp" width="600" height="400" /></a><br /> Jobs' last public appearance at WWDC 2011, photo by me
 </p>
 
 I won't go into the conference itself — I'm not an iPhone developer and didn't understand most of it. My mission was to chaperone students. But many memorable things happened. One was queuing — so many people wanted to see Jobs that the line wrapped around the venue multiple times. Two armed police officers came by and warned us: "Watch your iPhones. We've had several theft reports already." Criminals knew where Apple developers gathered.
@@ -31,7 +31,7 @@ Over a decade later, T9 input is built into iPhones, and third-party keyboards a
 First, what does a thief do with a stolen phone? They fence it. A $1000 iPhone sold as second-hand at 70% = $700. For that to work, the buyer must be able to use it. How does iPhone prevent this? With high-strength 3D Face ID — sampling many facial points, latest version can't even be fooled by twins. The passcode? 6 digits, 10 attempts — one in a hundred thousand chance. Otherwise:
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/wrongpwd.jpg"><img class="aligncenter size-medium" src="/uploads/2022/wrongpwd.jpg" width="600" height="400" /></a><br /> iPhone is disabled
+  <a href="/uploads/2022/wrongpwd.webp"><img class="aligncenter size-medium" src="/uploads/2022/wrongpwd.webp" width="600" height="400" /></a><br /> iPhone is disabled
 </p>
 
 What about bypassing the lock by factory resetting? Blocked — must unlock first. What about DFU restore? Need the iCloud password. Both dead ends.
@@ -39,7 +39,7 @@ What about bypassing the lock by factory resetting? Blocked — must unlock firs
 OK, selling the whole phone won't work. What about selling parts? iPhone parts are valuable — $1000 phone might yield $300 in parts: motherboard, screen, camera, battery (some "original" iPhone batteries on Taobao allegedly come from stolen phones), even storage (iPhone 6 16GB modded to 128GB). How to block this? Since last year, Apple serializes all components. If serial numbers don't match, the device may malfunction or refuse to boot:
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/parts.jpg"><img class="aligncenter size-medium" src="/uploads/2022/parts.jpg" width="600" height="400" /></a><br /> iPhone components
+  <a href="/uploads/2022/parts.webp"><img class="aligncenter size-medium" src="/uploads/2022/parts.webp" width="600" height="400" /></a><br /> iPhone components
 </p>
 
 This is a double-edged sword — prevents thieves from selling parts, but also blocks DIY repairs. Many see this as Apple's money grab. Apple's compromise: the Self Service Repair program, letting you order parts directly.
@@ -69,5 +69,5 @@ But real-world problems are more complex than technical ones. Two forum posts do
 At first, it feels unfair. But maybe that's the price of "The wind may enter, the rain may enter, but the king may not."
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/quote.jpg"><img class="aligncenter size-medium" src="/uploads/2022/quote.jpg" width="600" height="400" /></a><br /> The wind may enter, the rain may enter, but the king may not
+  <a href="/uploads/2022/quote.webp"><img class="aligncenter size-medium" src="/uploads/2022/quote.webp" width="600" height="400" /></a><br /> The wind may enter, the rain may enter, but the king may not
 </p>

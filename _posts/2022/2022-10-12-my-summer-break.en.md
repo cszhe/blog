@@ -16,11 +16,11 @@ He was dictating and I was typing. It's clear he was speaking stream-of-consciou
 Image version:
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/summer1.png"><img class="aligncenter size-medium" src="/uploads/2022/summer1.png" width="1024" height="768" /></a><br />
+  <a href="/uploads/2022/summer1.webp"><img class="aligncenter size-medium" src="/uploads/2022/summer1.webp" width="1024" height="768" /></a><br />
 </p>
 
 <p style="text-align: center;">
-  <a href="/uploads/2022/summer2.png"><img class="aligncenter size-medium" src="/uploads/2022/summer2.png" width="1024" height="768" /></a><br />
+  <a href="/uploads/2022/summer2.webp"><img class="aligncenter size-medium" src="/uploads/2022/summer2.webp" width="1024" height="768" /></a><br />
 </p>
 
 ----

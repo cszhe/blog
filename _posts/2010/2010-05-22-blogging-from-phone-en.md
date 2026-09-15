@@ -15,6 +15,6 @@ slug: blogging-from-phone
 original: /shou-ji-xie-bo-ke
 ai_translated: true
 ---
-<img style="display:block;margin-right:auto;margin-left:auto;" alt="He Shiquan in Assassin's Creed cosplay" src="/uploads/2010/05/wpid-IMAG0011.jpg" />
+<img style="display:block;margin-right:auto;margin-left:auto;" alt="He Shiquan in Assassin's Creed cosplay" src="/uploads/2010/05/wpid-IMAG0011.webp" />
 
 Installed a WordPress client on my Android. First impressions: pretty good. Can also add pictures. Here's He Shiquan doing his Assassin's Creed cosplay.

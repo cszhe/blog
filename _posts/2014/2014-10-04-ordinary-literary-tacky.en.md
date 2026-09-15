@@ -11,37 +11,37 @@ ai_translated: true
 ---
 ## Ordinary Activity
 
-![Ordinary Activity](/uploads/2014/10/wallstreet.jpg)
+![Ordinary Activity](/uploads/2014/10/wallstreet.webp)
 
 ## Tacky Activity
 
-![Tacky Activity](/uploads/2014/10/shenzhen.jpg)
+![Tacky Activity](/uploads/2014/10/shenzhen.webp)
 
 ## Literary Activity:
 
 The same sentence written in multiple languages:
 
-![poster](/uploads/2014/10/poster.jpg)
+![poster](/uploads/2014/10/poster.webp)
 
 A wall covered in small stickers:
 
-![sticker](/uploads/2014/10/sticker.jpg)
+![sticker](/uploads/2014/10/sticker.webp)
 
 Immaculate floors, complete with垃圾分类:
 
-![garbage](/uploads/2014/10/garbage.jpg)
+![garbage](/uploads/2014/10/garbage.webp)
 
 Unlimited自助 cookies and drinking water:
 
-![food](/uploads/2014/10/food.jpg)
+![food](/uploads/2014/10/food.webp)
 
 Umbrellas in various colors:
 
-![umbrella1](/uploads/2014/10/umbrella1.jpg)
+![umbrella1](/uploads/2014/10/umbrella1.webp)
 
 Umbrellas forming a small tent:
 
-![umbrella2](/uploads/2014/10/umbrella2.jpg)
+![umbrella2](/uploads/2014/10/umbrella2.webp)
 
 Feels like a student dorm or class-organized outdoor activity. Indie, artsy. Of course, I don't condone breaking the law.
 

@@ -37,7 +37,7 @@ After landing, I took the maglev — not many countries have those. On the subwa
 
 We visited Linyi (my hometown), Beijing, and Suzhou. Great weather, clean air everywhere. My throat was a bit sore the first few days, but that might've been from the heated indoors, not the air. Pictures (clockwise from top-left: Linyi, Suzhou, Shanghai, Beijing):
 
-![Blue skies](/uploads/2025/bluesky.png)
+![Blue skies](/uploads/2025/bluesky.webp)
 
 Back in New Zealand, whenever colleagues asked how my trip was, I just said: "The air was great, the sky was so blue." They asked why, and I honestly don't know the exact reasons. My guesses:
 
@@ -54,7 +54,7 @@ The pace of technological change was stunning. I often joke that my understandin
 
 AI applications were everywhere. Alipay's face-scan payment was my first encounter. Then I saw an AI-powered weighing scale at the grocery store that identifies vegetables. Its accuracy could use improvement, but being able to pick from a short list of suggestions beats scrolling through hundreds of items. I imagine the tuning philosophy is: false positives are okay, but false negatives are absolutely not — if it can't identify something, it's worse than having no AI at all.
 
-![AI](/uploads/2025/ai.png)
+![AI](/uploads/2025/ai.webp)
 
 Then there were autonomous delivery vehicles. Truly driverless — no steering wheel, no cabin. They don't deliver door-to-door; they deliver to a nearby convenience store (I later learned these are called "Cainiao Stations," though "station" seems like a stretch — ancient Chinese stations served a different purpose). Then you get a message to pick up your package. NZ Post partners with local pharmacies for the same purpose, but they only receive parcels, don't deliver to them. Since China's logistics costs are incredibly low (at the expense of delivery workers), many convenience stores have essentially abandoned their main business to focus entirely on package handling.
 

@@ -21,7 +21,7 @@ Since Stinger, I've been following Microsoft's moves in the mobile space and bel
 
 A few days ago, an e-book called "Programming Windows Phone 7 Series" appeared in my inbox, written by the "godfather" Charles Petzold. Most probably don't know him, so here's a photo. The cover image is on his chest.
 
-[<img class="alignnone size-medium wp-image-10242" title="petzold" src="/uploads/2010/03/petzold-251x300.jpg" width="251" height="300" />](/uploads/2010/03/petzold.jpg)
+[<img class="alignnone size-medium wp-image-10242" title="petzold" src="/uploads/2010/03/petzold-251x300.webp" width="251" height="300" />](/uploads/2010/03/petzold.webp)
 
 After downloading and reading the table of contents, the earth-shattering changes were confirmed. Traditional Windows Mobile programming involves introducing CE OS, Win32 API, and .NET Compact Framework. This book is completely different &#8212; starting with Hello World, then Silverlight, then XNA. For a die-hard Windows Mobile developer, these two "main courses" &#8212; Silverlight and XNA &#8212; might be terms they've never even heard of. That's a shock.
 

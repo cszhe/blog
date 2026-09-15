@@ -17,7 +17,7 @@ Yesterday I bought Google's third son, the Galaxy Nexus, for 4500 HKD. After usi
 
 The other day I saw a phone showcase feature on Xiaomi's website and spent some time making this image (click for full size).
 
-[<img class="aligncenter size-medium wp-image-10698" height="228" src="/uploads/2012/01/myphones-300x228.jpg" title="myphones" width="300" />](/uploads/2012/01/myphones.jpg)
+[<img class="aligncenter size-medium wp-image-10698" height="228" src="/uploads/2012/01/myphones-300x228.webp" title="myphones" width="300" />](/uploads/2012/01/myphones.webp)
 
 Over a decade, I've used this many phones. Apart from the first Motorola which was a so-called feature phone, the rest could all be considered smartphones. The vast majority of them ran Windows CE. Of course, this has something to do with my four years as a Microsoft Windows CE MVP. My journey in mobile computing also started with Windows CE. In recent years, though, I've played more with Android. As for the research side, that's beyond the scope of this article.
 
@@ -51,7 +51,7 @@ From a technical perspective, I personally appreciate Android the most. Of cours
 
 Let's take just one issue: dialog boxes. The MessageBox API is heavily used on desktops, but on phones, too many dialogs aren't a good thing. There should be other ways to notify users besides dialogs. On Android, popping up a traditional Windows-like dialog takes about 10 lines of code. On iOS I don't know, but on Windows Phone, it takes just one line. Is one line for a feature a good thing? Not necessarily—it easily leads to abuse. So in Windows Phone apps, you frequently see dialogs: on exit, "Are you sure you want to exit, dear?" on save, "Are you sure you want to save, dear?" on send, "Are you sure you want to send, dear?" Of course I want to exit, of course I want to save, of course I want to send—so annoying, stop treating me like an idiot. But then they put a search button that, if accidentally touched, opens the browser to Bing. Why don't you pop up a dialog asking "Do you want to search?" No, I don't want to search, and even if I did, I wouldn't use Bing—but that stupid search button gets pressed by accident. Shit! And who designed this—on WP7, the dialog box appears at the top of the screen. When one-handing the phone, reaching up to tap yes/no requires such stretching that people with short fingers struggle. Much more annoying than iPhone and Android's centered dialogs. On Android, while various dialogs exist, they're fewer because coders can use Toast, which only needs one line and is much less annoying. iOS—I don't know much about it, but iOS 5 copied Android's pull-down notification panel. Even Apple realizes too many dialog alerts are bad.
 
-[<img class="aligncenter size-medium wp-image-10705" height="300" src="/uploads/2012/01/Emulator_Running_File_Demand-158x300.jpg" title="Emulator_Running_File_Demand" width="158" />](/uploads/2012/01/Emulator_Running_File_Demand.jpg)
+[<img class="aligncenter size-medium wp-image-10705" height="300" src="/uploads/2012/01/Emulator_Running_File_Demand-158x300.webp" title="Emulator_Running_File_Demand" width="158" />](/uploads/2012/01/Emulator_Running_File_Demand.webp)
 
 Caption: Of course I want to replay—why else would I press the replay button? And why put OK so far away? Who has fingers that long?
 

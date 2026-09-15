@@ -97,9 +97,9 @@ qemu-system-x86_64 boot
 
 然后系统就会跳出图形界面, 然后你就可以看到你自己的Linux启动了.
 
-![mini-linux](/uploads/2024/linuxdistribution1.png)
+![mini-linux](/uploads/2024/linuxdistribution1.webp)
 
-![mini-linux-2](/uploads/2024/linuxdistribution2.png)
+![mini-linux-2](/uploads/2024/linuxdistribution2.webp)
 
 可以看到, 是最新的内核. 也可以运行一些简单的命令跟shell脚本. 但是网络是没有的, 所以没法ssh进去. 好了, 这基本上就是发行版的第一步了. 一些Raspberry Pi的发行版就是这么做的. 但是这样的发行版太简单了, 你连个网络都没有, 包管理器都没有, 你连个软件都装不上. 没人会用.
 

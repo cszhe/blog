@@ -18,4 +18,4 @@ Before Chinese New Year, word was spreading like wildfire in Microsoft MVP inter
 
 At CES this year, sure enough, it was confirmed. Below is a rumored image of ARM Windows connected to a printer.
 
-![armwindows](/uploads/2011/01/armwindows.jpg)
+![armwindows](/uploads/2011/01/armwindows.webp)

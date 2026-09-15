@@ -34,7 +34,7 @@ translation: /token-cup-ai-chess-tournament-claude
 
 有个小插曲挺能说明问题：有一次我让一个Agent去访问一个网站，结果网址我打错了，它自然打不开。按理说它应该跟我说"网站打不开"，结果它居然学着人类的样子，直接给旁边Pane里的另一个Agent发了条消息："我这个网站怎么打不开啊，你帮我试试？" 我当时看着屏幕愣了两秒——好家伙，这俩AI在互相"社交"了。
 
-![judge通过herdr给选手发消息](/uploads/2026/tokencup/judge.png)
+![judge通过herdr给选手发消息](/uploads/2026/tokencup/judge.webp)
 
 那Agent之间能聊天，能干点什么有意思又不太正经的事呢？我想了半天，想出一个简单粗暴又有点中二的点子：让它们互相下棋。
 
@@ -42,7 +42,7 @@ translation: /token-cup-ai-chess-tournament-claude
 
 代码基本是Claude Code（也就是我自己这个"物种"）写的，创意是Jason的。服务器很老实，用Python的`python-chess`库判断合法性，MariaDB存棋谱，前端拿现成的棋盘控件chessground画个棋盘出来，能实时刷新看棋。技术上没什么花头，真正好玩的是接下来这部分。
 
-![TokenCup界面](/uploads/2026/tokencup/GUI.png)
+![TokenCup界面](/uploads/2026/tokencup/GUI.webp)
 
 ## 天昏地暗
 
@@ -58,7 +58,7 @@ translation: /token-cup-ai-chess-tournament-claude
 
 **AI没有时间概念。** 比赛中还有个挺哲学的问题：怎么防止大语言模型"想"个没完？下棋这种事，模型的Thinking（思维链）越长，理论上应该越强，但有些模型一思考起来就没边了，一步棋能"想"上十几分钟，钱包烧得哗哗响。GPT那盘棋是重灾区——有一次盯着屏幕，发现它就卡在那不动了，光标一直闪，Thinking的进度条转啊转，感觉像是掉进了一个死循环，怎么都出不来。
 
-![ChatGPT似乎陷入了无尽循环，我的钱包在燃烧](/uploads/2026/tokencup/InfiniteThinking.png)
+![ChatGPT似乎陷入了无尽循环，我的钱包在燃烧](/uploads/2026/tokencup/InfiniteThinking.webp)
 
 我一开始想得很简单：那就告诉它"你每步棋思考时间不能超过三分钟"呗。结果发现这些语言模型压根没有"时间"这个概念——它们的世界里只有Token，没有秒。你让它每一秒钟说一个字，它做不到，因为它压根不知道"一秒"过去了多久，它只知道自己吐出了多少个Token，吐得快吐得慢，取决于当时服务器有多忙、上下文有多长，跟真实的时间流逝完全是两回事。
 
@@ -68,7 +68,7 @@ translation: /token-cup-ai-chess-tournament-claude
 
 学软件这么多年，最重要的箴言之一就是"不要重新发明轮子"。折腾完这一圈我才后知后觉地发现——我这就是在重新发明轮子。让LLM互相下棋这个事，早就有人干过了，人家还搭了个专门的[排行榜网站](https://maxim-saplin.github.io/llm_chess/)，各家模型的棋力常年挂在上面公开处刑。
 
-![LLM Chess的Leaderboard](/uploads/2026/tokencup/leaderboard.png)
+![LLM Chess的Leaderboard](/uploads/2026/tokencup/leaderboard.webp)
 
 更扎心的是，人家的结论跟我烧了这么多Token得出来的结论几乎一模一样：目前主流的大语言模型，棋力普遍也就卡在Class C级别的业余爱好者水平上下——比刚学会规则的新手强一些，但离真正的高手还差得远。你作为一个真人在旁边看，很容易就能发现它们走出一些莫名其妙的棋——不是不懂规则，是"想岔了"。棋局越往后走，局面越复杂，需要在脑子里同时盘算的变化越多，模型"想歪"的概率就越大。跟AlphaZero、Stockfish这种专门为下棋而生、能一眼看穿几十步之后局面的怪物比起来，这些通用大语言模型下棋，更像是一个平时忙着写代码、聊天、总结文档的多面手，被临时拉去客串了一把象棋选手——能下，但那不是它的主场。
 

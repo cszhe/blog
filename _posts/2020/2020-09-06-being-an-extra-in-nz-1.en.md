@@ -45,11 +45,11 @@ At 8 AM sharp, the crew arrived. First thing: sign NDAs. Each person held their 
 
 The audition was fun. We lined up in three rows and were taught boxing, staff techniques, sword techniques, and archery — all by copying the foreign stunt coordinator's movements. Each routine had a dozen moves, much harder than the 8th set of广播体操. The morning was tiring. The chubby Singaporean kid next to me (who later played a drummer in the conscription scene) was sweating profusely despite the winter cold, stripping down to a vest. Now I only remember the boxing routine; the rest are long forgotten. Kind of funny: my first Chinese martial arts routine was taught by a foreigner, overseas.
 
-![Figure 1. Learning boxing](/uploads/2020/longtao/1.png)
+![Figure 1. Learning boxing](/uploads/2020/longtao/1.webp)
 
 Figure 1. Learning boxing
 
-![Figure 2. The drummer soldier](/uploads/2020/longtao/2.png)
+![Figure 2. The drummer soldier](/uploads/2020/longtao/2.webp)
 
 Figure 2. The drummer soldier
 

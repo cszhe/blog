@@ -17,7 +17,7 @@ translation: /windows-on-arm-so-what
 
 这次的CES上，果不其然，验证了。下面这张是传说的ARM Windows还可以连接打印机进行打印的图。
 
-![armwindows](/uploads/2011/01/armwindows.jpg)
+![armwindows](/uploads/2011/01/armwindows.webp)
 
 就算能跑，又能怎么样呢？
 

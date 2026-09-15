@@ -100,8 +100,8 @@ qemu-system-x86_64 boot
 
 The graphical interface pops up, and you see your very own Linux booting.
 
-![mini-linux](/uploads/2024/linuxdistribution1.png)
+![mini-linux](/uploads/2024/linuxdistribution1.webp)
 
-![mini-linux-2](/uploads/2024/linuxdistribution2.png)
+![mini-linux-2](/uploads/2024/linuxdistribution2.webp)
 
 It's running the latest kernel. You can run simple commands and shell scripts. But there's no network, so no SSH. This is essentially the first step of building a distribution. Some Raspberry Pi distributions are made this way. But it's too simple — no network, no package manager, no way to install software. Nobody would use it.
