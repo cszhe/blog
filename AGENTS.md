@@ -120,6 +120,37 @@ All three workflows use Ruby 3.2 and run `bundle install` + `bundle exec jekyll 
 
 The Chirpy theme files are copied locally into `_themes/chirpy/` (excluded from the Jekyll build via `_config.yml`). Customisations are made directly to `_layouts/`, `_includes/`, `_sass/`, and `_javascript/` in the repository root, which override the remote theme.
 
+## Media conventions
+
+Raster images under `uploads/` are stored as **WebP** wherever that is smaller
+than the original, capped at **1600 px on the longest edge** (the content column
+is 1250 px). Photographic images (including anything JPEG-encoded) use lossy
+quality 82; flat graphics and screenshots use whichever of lossless / quality 90
+encodes smaller. EXIF metadata is stripped, with orientation baked into the pixels.
+
+The optimizer deliberately leaves a few files in their original format: animated
+GIFs, files where WebP would not be smaller (e.g. `uploads/2010/11/beidoushenquan.jpg`),
+and non-raster media such as video. Do not convert these by hand.
+
+When adding new media, run the optimizer before committing:
+
+```bash
+pip install Pillow
+python3 tools/optimize-media.py            # dry run, reports what it would do
+python3 tools/optimize-media.py --apply    # converts, deletes orphans, rewrites references
+```
+
+It rewrites every reference across `_posts/`, `_tabs/`, `_includes/`, `_layouts/`,
+`_data/`, `en/` and `assets/`, and is safe to re-run — already-optimal, animated
+and non-raster files are left alone. It also deletes upload files that no source
+file references, so check its dry-run output before applying.
+
+Videos are not handled by the script. Encode them by hand and keep them modest:
+
+```bash
+ffmpeg -i in.mp4 -c:v libx264 -crf 26 -preset slow -pix_fmt yuv420p -movflags +faststart out.mp4
+```
+
 ## Docker image
 
 The `Dockerfile` is a two-step process: Jekyll builds the site to `_site/`, then the CI workflow copies `_site/` and `nginx.conf` into an `nginx:alpine` image. The image is published as `hezongjian/blog:latest` and supports `linux/amd64` and `linux/aarch64`.
