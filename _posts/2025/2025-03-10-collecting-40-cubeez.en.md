@@ -27,7 +27,7 @@ So on average, you'd need to spend $171.14 \times 30 = 5134.20 NZD at Woolworths
 
 Here's the final collection:
 
-![Finally complete](uploads/2025/cubeez.jpg)
+![Finally complete](uploads/2025/cubeez.webp)
 
 Of course, we didn't actually spend $5000+ at the supermarket. We traded on a Facebook group, and colleagues who knew we were collecting gave us some. Total actual cost: about $100.
 

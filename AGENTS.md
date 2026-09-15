@@ -122,10 +122,15 @@ The Chirpy theme files are copied locally into `_themes/chirpy/` (excluded from 
 
 ## Media conventions
 
-All images under `uploads/` are **WebP**, capped at **1600 px on the longest edge**
-(the content column is 1250 px). Photographic images use lossy quality 82; flat
-graphics and screenshots use whichever of lossless / quality 90 encodes smaller.
-EXIF metadata is stripped, with orientation baked into the pixels.
+Raster images under `uploads/` are stored as **WebP** wherever that is smaller
+than the original, capped at **1600 px on the longest edge** (the content column
+is 1250 px). Photographic images (including anything JPEG-encoded) use lossy
+quality 82; flat graphics and screenshots use whichever of lossless / quality 90
+encodes smaller. EXIF metadata is stripped, with orientation baked into the pixels.
+
+The optimizer deliberately leaves a few files in their original format: animated
+GIFs, files where WebP would not be smaller (e.g. `uploads/2010/11/beidoushenquan.jpg`),
+and non-raster media such as video. Do not convert these by hand.
 
 When adding new media, run the optimizer before committing:
 

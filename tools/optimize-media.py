@@ -71,7 +71,10 @@ def encode(path):
     except Exception as e:
         return None, f"unreadable ({e.__class__.__name__})"
 
-    if getattr(im, "n_frames", 1) > 1:
+    fmt = im.format
+    # Only GIF/APNG multi-frame files are animations. A JPEG in MPO form (iPhone
+    # depth-map photos) also reports two frames, but the second is not content.
+    if fmt in ("GIF", "PNG") and getattr(im, "n_frames", 1) > 1:
         return None, "animated"
 
     # Bake in EXIF rotation before we discard metadata, or phone photos come out sideways.
@@ -94,8 +97,10 @@ def encode(path):
             im = im.convert("RGB")
             has_alpha = False
 
+    # A JPEG source is already lossy, so lossless re-encoding cannot win even
+    # when the palette is small; treat it as photographic regardless of colours.
     colors = im.convert("RGB").getcolors(maxcolors=COLOR_CUTOFF)
-    photographic = colors is None
+    photographic = fmt in ("JPEG", "MPO") or colors is None
 
     cands = []
     if photographic:
