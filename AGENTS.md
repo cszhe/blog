@@ -106,7 +106,7 @@ The three deploy workflows use Ruby 3.2 and run `bundle install` + `bundle exec 
 | `REGISTRY_USERNAME` / `REGISTRY_PASSWORD` | Docker Hub login (containerisation workflow) |
 | `GCP_SA_KEY` | Firebase deployment |
 | `GITHUB_TOKEN` | GitHub Pages deployment (provided automatically) |
-| `ANTHROPIC_API_KEY` | Claude Code workflow (`claude.yml`); also requires the [Claude GitHub App](https://github.com/apps/claude) installed on the repo |
+| `CLAUDE_CODE_OAUTH_TOKEN` | Claude Code workflow (`claude.yml`); a Claude subscription token from `claude setup-token`. Also requires the [Claude GitHub App](https://github.com/apps/claude) installed on the repo |
 
 ## Jekyll plugins used
 
