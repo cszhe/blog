@@ -96,6 +96,7 @@ Posts are written in Markdown and may be in English or Chinese (or both). The ti
 | `firebase.yml` | Push to `master` | Builds with Jekyll → deploys to Firebase Hosting (`fb.hezongjian.com`) |
 | `conatainerisation.buidx.yml` | Push to `master` | Builds Jekyll site → builds multi-arch Docker image → pushes to Docker Hub |
 | `claude.yml` | `@claude` mention in an issue, PR comment, or review | Runs [Claude Code](https://github.com/anthropics/claude-code-action) to answer questions or implement the request, with Ruby set up so it can run `bundle exec jekyll build`. Uses Opus 5.5 by default; include `/fable` or `/sonnet` in the comment to use Fable 5.1 or Sonnet 5 instead |
+| `antigravity.yml` | `@antigravity` or `@gemini` mention in a PR comment | Runs Antigravity agent (`agy`) to assist on pull requests, implement changes, build/verify with Jekyll, post replies, and commit changes |
 
 The three deploy workflows use Ruby 3.2 and run `bundle install` + `bundle exec jekyll build`.
 
@@ -107,6 +108,7 @@ The three deploy workflows use Ruby 3.2 and run `bundle install` + `bundle exec 
 | `GCP_SA_KEY` | Firebase deployment |
 | `GITHUB_TOKEN` | GitHub Pages deployment (provided automatically) |
 | `CLAUDE_CODE_OAUTH_TOKEN` | Claude Code workflow (`claude.yml`); a Claude subscription token from `claude setup-token`. Also requires the [Claude GitHub App](https://github.com/apps/claude) installed on the repo |
+| `GEMINI_API_KEY` | Antigravity PR Assistant workflow (`antigravity.yml`); Google Gemini API key (or `ANTIGRAVITY_API_KEY`) |
 
 ## Jekyll plugins used
 
