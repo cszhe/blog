@@ -57,7 +57,7 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Install Antigravity CLI
+      - name: Install and configure Antigravity CLI
         run: |
           # Install official Antigravity CLI native binary
           curl -fsSL https://antigravity.google/cli/install.sh | bash
@@ -66,10 +66,19 @@ jobs:
           # Install official Antigravity Python SDK
           pip install google-antigravity
 
+          # Configure agy to authenticate via GEMINI_API_KEY instead of interactive OAuth
+          mkdir -p "$HOME/.gemini/antigravity-cli"
+          cat << 'EOF' > "$HOME/.gemini/antigravity-cli/settings.json"
+          {
+            "modelProvider": "gemini"
+          }
+          EOF
+
       - name: Run Antigravity Agent
         id: run-agent
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || secrets.ANTIGRAVITY_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY || secrets.ANTIGRAVITY_API_KEY }}
           ANTIGRAVITY_API_KEY: ${{ secrets.ANTIGRAVITY_API_KEY || secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TEXT: ${{ github.event.comment.body || github.event.review.body || github.event.issue.body }}
