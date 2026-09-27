@@ -70,7 +70,8 @@ jobs:
           mkdir -p "$HOME/.gemini/antigravity-cli"
           cat << 'EOF' > "$HOME/.gemini/antigravity-cli/settings.json"
           {
-            "modelProvider": "gemini"
+            "modelProvider": "gemini",
+            "model": "gemini-3.8-flash-high"
           }
           EOF
 
@@ -83,14 +84,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TEXT: ${{ github.event.comment.body || github.event.review.body || github.event.issue.body }}
         run: |
-          # Extract user instruction safely
-          PROMPT=$(echo "$TEXT" | sed -E 's/@(antigravity|gemini)//gi' | sed 's/^[[:space:]]*//')
+          # Extract user instruction safely (strip @antigravity, @gemini, and any repeated @ prefixes)
+          PROMPT=$(echo "$TEXT" | sed -E 's/@+(antigravity|gemini)//gi' | sed -E 's/^[[:space:]@]+//')
+
+          # Model selection: Gemini 3.8 Flash by default, or Pro if requested
+          case "${TEXT,,}" in
+            */pro*)  MODEL="gemini-3.1-pro-high" ;;
+            *)       MODEL="gemini-3.8-flash-high" ;;
+          esac
+
+          echo "Using model: $MODEL"
           echo "Executing instruction: $PROMPT"
 
           # Run agy headlessly with tool execution
           # Note: --dangerously-skip-permissions enables non-interactive tool/shell execution in CI
           set -o pipefail
-          agy --prompt "$PROMPT" --dangerously-skip-permissions 2>&1 | tee agent_output.txt
+          agy --model "$MODEL" --prompt "$PROMPT" --dangerously-skip-permissions 2>&1 | tee agent_output.txt
 
       - name: Post comment
         if: always() && steps.run-agent.outcome == 'success'
