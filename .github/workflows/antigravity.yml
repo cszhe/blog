@@ -96,10 +96,43 @@ jobs:
           echo "Using model: $MODEL"
           echo "Executing instruction: $PROMPT"
 
-          # Run agy headlessly with tool execution
-          # Note: --dangerously-skip-permissions enables non-interactive tool/shell execution in CI
-          set -o pipefail
-          agy --model "$MODEL" --prompt "$PROMPT" --dangerously-skip-permissions 2>&1 | tee agent_output.txt
+          # Run agy headlessly with tool execution and automatic rate-limit cooldown
+          # Note: Free-tier Gemini API keys have a 5 request/min rate limit.
+          # When a turn hits this limit, agy pauses; we wait for the quota window and resume with --continue.
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          DELAY=45
+
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            > current_turn.txt
+            if [ $RETRY_COUNT -eq 0 ]; then
+              CMD=(agy --model "$MODEL" --prompt "$PROMPT" --dangerously-skip-permissions)
+            else
+              echo "Gemini Free Tier rate limit reached. Waiting ${DELAY}s before resuming..."
+              sleep $DELAY
+              CMD=(agy --model "$MODEL" --continue --dangerously-skip-permissions)
+            fi
+
+            set -o pipefail
+            if "${CMD[@]}" 2>&1 | tee current_turn.txt; then
+              cat current_turn.txt >> agent_output.txt
+              echo "Antigravity Agent finished turn successfully."
+              break
+            fi
+
+            cat current_turn.txt >> agent_output.txt
+            if grep -q -E "RESOURCE_EXHAUSTED|Error 429|quota" current_turn.txt; then
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+            else
+              echo "Fatal error encountered."
+              exit 1
+            fi
+          done
+
+          if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+            echo "Exceeded maximum retry attempts for Gemini rate limits."
+            exit 1
+          fi
 
       - name: Post comment
         if: always() && steps.run-agent.outcome == 'success'
@@ -108,8 +141,10 @@ jobs:
           NUMBER: ${{ github.event.issue.number || github.event.pull_request.number }}
         run: |
           if [ -s agent_output.txt ]; then
+            # Filter out internal error trace logs if retries occurred
+            grep -v -E "^(AGY_ERROR:|error: agent executor error:|\* Quota exceeded|Please retry in)" agent_output.txt > clean_output.txt || cp agent_output.txt clean_output.txt
             # Truncate if output exceeds GitHub comment size limit (~65k characters)
-            head -c 60000 agent_output.txt > comment_payload.txt
+            head -c 60000 clean_output.txt > comment_payload.txt
             gh issue comment "$NUMBER" --body-file comment_payload.txt
           fi
 
