@@ -59,6 +59,10 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           # --allowedTools lets Claude build the site to verify its changes.
+          # "bundle install" is needed too: Setup Ruby installs gems from the
+          # base branch's lockfile before the action checks out a PR branch,
+          # so a PR that changes Gemfile.lock (e.g. dependabot) can't build
+          # until the new gems are fetched.
           claude_args: >-
             --model ${{ steps.model.outputs.model }}
-            --allowedTools "Bash(bundle exec jekyll build)"
+            --allowedTools "Bash(bundle install:*),Bash(bundle exec jekyll build)"
