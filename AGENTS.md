@@ -95,7 +95,7 @@ Posts are written in Markdown and may be in English or Chinese (or both). The ti
 | `jekyll.yml` | Push to `master` | Builds with Jekyll → deploys to GitHub Pages via `peaceiris/actions-gh-pages` |
 | `firebase.yml` | Push to `master` | Builds with Jekyll → deploys to Firebase Hosting (`fb.hezongjian.com`) |
 | `conatainerisation.buidx.yml` | Push to `master` | Builds Jekyll site → builds multi-arch Docker image → pushes to Docker Hub |
-| `claude.yml` | `@claude` mention in an issue, PR comment, or review | Runs [Claude Code](https://github.com/anthropics/claude-code-action) to answer questions or implement the request, with Ruby set up so it can run `bundle exec jekyll build` |
+| `claude.yml` | `@claude` mention in an issue, PR comment, or review | Runs [Claude Code](https://github.com/anthropics/claude-code-action) to answer questions or implement the request, with Ruby set up so it can run `bundle exec jekyll build`. Uses Opus 5.5 by default; include `/fable` or `/sonnet` in the comment to use Fable 5.1 or Sonnet 5 instead |
 
 The three deploy workflows use Ruby 3.2 and run `bundle install` + `bundle exec jekyll build`.
 
