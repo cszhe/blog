@@ -60,7 +60,7 @@ jobs:
       - name: Install and configure Antigravity CLI
         run: |
           # Install official Antigravity CLI native binary
-          curl -fsSL https://antigravity.google/cli/install.sh | bash
+          curl --compressed -fsSL https://antigravity.google/cli/install.sh | bash
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
           # Install official Antigravity Python SDK
