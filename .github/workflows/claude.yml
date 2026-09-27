@@ -37,15 +37,28 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
+      - name: Pick model
+        id: model
+        # Opus 5.5 by default. Put "/fable" or "/sonnet" anywhere in the
+        # @claude comment (or issue body) to use that model instead.
+        # The || chain reads the text from whichever event fired: comment,
+        # review, or new issue.
+        env:
+          TEXT: ${{ github.event.comment.body || github.event.review.body || github.event.issue.body }}
+        run: |
+          case "${TEXT,,}" in
+            */fable*)  model=claude-fable-5-1 ;;
+            */sonnet*) model=claude-sonnet-5 ;;
+            *)         model=claude-opus-5-5 ;;
+          esac
+          echo "Using $model"
+          echo "model=$model" >> "$GITHUB_OUTPUT"
+
       - name: Run Claude Code
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          # Model: Opus 5.5 by default; put "/fable" anywhere in the @claude
-          # comment (or issue body) to run Fable 5.1 instead. contains() is
-          # case-insensitive. The || chain reads the text from whichever event
-          # fired: comment, review, or new issue.
           # --allowedTools lets Claude build the site to verify its changes.
           claude_args: >-
-            --model ${{ contains(github.event.comment.body || github.event.review.body || github.event.issue.body, '/fable') && 'claude-fable-5-1' || 'claude-opus-5-5' }}
+            --model ${{ steps.model.outputs.model }}
             --allowedTools "Bash(bundle exec jekyll build)"
