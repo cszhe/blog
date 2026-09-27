@@ -1,0 +1,92 @@
+name: Antigravity PR Assistant
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  antigravity:
+    # Only run when a PR comment mentions @antigravity or @gemini, ignoring bots
+    if: |
+      github.event.issue.pull_request &&
+      !github.event.comment.user.bot &&
+      (contains(github.event.comment.body, '@antigravity') || contains(github.event.comment.body, '@gemini'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Full history is required for posts lastmod hook and git diffing
+          fetch-depth: 0
+
+      - name: Checkout PR branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr checkout ${{ github.event.issue.number }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Install Antigravity CLI
+        run: |
+          # Install official Antigravity CLI native binary
+          curl -fsSL https://antigravity.google/cli/install.sh | bash
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+          # Install official Antigravity Python SDK
+          pip install google-antigravity
+
+      - name: Run Antigravity Agent
+        id: run-agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || secrets.ANTIGRAVITY_API_KEY }}
+          ANTIGRAVITY_API_KEY: ${{ secrets.ANTIGRAVITY_API_KEY || secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          # Extract user instruction from comment safely
+          PROMPT=$(echo "$COMMENT_BODY" | sed -E 's/@(antigravity|gemini)//gi' | sed 's/^[[:space:]]*//')
+          echo "Executing instruction: $PROMPT"
+
+          # Run agy headlessly with tool execution
+          # Note: --dangerously-skip-permissions enables non-interactive tool/shell execution in CI
+          set -o pipefail
+          agy --prompt "$PROMPT" --dangerously-skip-permissions 2>&1 | tee agent_output.txt
+
+      - name: Post comment on PR
+        if: always() && steps.run-agent.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -s agent_output.txt ]; then
+            # Truncate if output exceeds GitHub comment size limit (~65k characters)
+            head -c 60000 agent_output.txt > comment_payload.txt
+            gh pr comment ${{ github.event.issue.number }} --body-file comment_payload.txt
+          fi
+
+      - name: Commit and push changes
+        if: steps.run-agent.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Apply changes by Antigravity"
+            git push
+          fi

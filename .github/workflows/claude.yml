@@ -65,4 +65,4 @@ jobs:
           # until the new gems are fetched.
           claude_args: >-
             --model ${{ steps.model.outputs.model }}
-            --allowedTools "Bash(bundle install:*),Bash(bundle exec jekyll build)"
+            --allowedTools "Bash(bundle install:),Bash(bundle exec jekyll build)"
