@@ -55,7 +55,7 @@ GEM
       jekyll (>= 3.6, < 5.0)
     jekyll-feed (0.18.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-include-cache (0.2.2)
+    jekyll-include-cache (0.3.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-paginate (1.1.0)
     jekyll-redirect-from (0.16.0)
@@ -155,7 +155,7 @@ CHECKSUMS
   jekyll (4.4.1) sha256=4c1144d857a5b2b80d45b8cf5138289579a9f8136aadfa6dd684b31fe2bc18c1
   jekyll-archives (2.3.0) sha256=2dbd8ce22212fbace81fe2c9aa4152a6e21c748bcc626f135af5acfd813375f6
   jekyll-feed (0.18.0) sha256=8e6829f455b8764a8fa1bbb198d0ebb3525128dacc6ffe9d15f4df7388bc3647
-  jekyll-include-cache (0.2.2) sha256=fe31c75187c37b035fb3b62b689f1ca284f1871c3bb7f607a8bdf3cc439b0aa1
+  jekyll-include-cache (0.3.1) sha256=4ba9c00b05247245420656dc313826ca761c4e0b13c0976ad298225f9f7792d3
   jekyll-paginate (1.1.0) sha256=880aadf4b02529a93541d508c5cbb744f014cbfc071d0263a31f25ec9066eb64
   jekyll-redirect-from (0.16.0) sha256=6635cae569ef9b0f90ffb71ec014ba977177fafb44d32a2b0526288d4d9be6db
   jekyll-remote-theme (0.5.2) sha256=d41ba7358b7baa7c8f8f4ee03112bbae8dba90235e97d88c25b90a032abb6f55
