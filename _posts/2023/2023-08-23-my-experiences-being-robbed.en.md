@@ -33,13 +33,15 @@ This is the one everyone wants to hear about. It was 2016, before Trump, during 
 
 ![Figure 1 Presenting](/uploads/2023/rob1.webp)
 
+Before the last day, though, I need to fill in what happened on my first day in Philadelphia, because it matters later. I landed at Philadelphia airport after 1 a.m. There was no public transport into the city at that hour, so a taxi was my only choice. The driver quoted me a flat fare: 50 dollars to the hotel. When we got there I handed him 50 dollars, and he said, "I want tips, I want tips." I had only just arrived in the US and had no small bills, so I ended up giving him a whole 100-dollar note. The fare doubled on the spot, and he did very well out of it. After that I had no love for Philadelphia taxis.
+
 Everyone knows America has a tipping culture — tip for everything. (I personally hate tipping culture; it feels like moral blackmail. Thankfully China and New Zealand don't have it.) By the last day of the conference, I'd spent most of my cash. That evening I went to the hotel restaurant — meals were included, so I only needed my room key. I emptied my wallet, leaving maybe a few dozen dollars on the bed, and went to eat unencumbered.
 
 When I came back, the room had been cleaned. And the money on my bed was gone. I instantly understood — the cleaner had taken it as a tip and accepted gratefully. I couldn't bring myself to ask for it back. As a Chinese person abroad, I had to maintain face. Asking for it back would make Chinese people look cheap. Anyway, I had an early morning flight and didn't need cash anymore. Consider it their tip.
 
 ![Figure 2 Tip](/uploads/2023/rob2.webp)
 
-The next morning I got up before dawn to catch my flight. Philadelphia, being a major city and former capital, has a metro that starts early and goes straight to the airport. I dragged my suitcase into the subway.
+The next morning I got up before dawn to catch my flight. Philadelphia, being a major city and former capital, has a metro that starts early and goes straight to the airport. That, plus being fleeced by the taxi on day one, is why I skipped the taxi and dragged my suitcase into the subway.
 
 Going down the steps, I was shocked. The station was full of homeless people lying everywhere (I won't mention their skin color to avoid being politically incorrect). Big guys, all giving me menacing looks. No one else around. I decided this place wasn't safe and hurried to the platform.
 
